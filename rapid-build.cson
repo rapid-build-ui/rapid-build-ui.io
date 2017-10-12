@@ -11,11 +11,7 @@ common:
 		bootstrap: true
 		templateCache:
 			dev: true
-
-	dist:
-		client:
-			paths:
-				absolute: false
+			useAbsolutePaths: true
 
 	extra:
 		copy:

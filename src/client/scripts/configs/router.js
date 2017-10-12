@@ -3,14 +3,11 @@ angular.module('showcase').config(['$routeProvider',
 
 		$routeProvider
 			.when('/', {
-				templateUrl: 'views/mains/home.html'
+				templateUrl: '/views/home.html'
 			})
-			.when('/icon', {
-				templateUrl: 'views/mains/icon.html'
-			})
-			.when('/nav', {
-				templateUrl: 'views/mains/nav.html'
-			})
+			.when('/components/:component', { templateUrl: params => {
+				return `/views/components/${params.component}.html`;
+			}})
 			.otherwise({
 				redirectTo: '/'
 			});
