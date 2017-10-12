@@ -1,0 +1,19 @@
+/********
+ * LOGOS
+ ********/
+.rb-logo {
+	height: 65px;
+	&.mini { height: 33px; }
+}
+
+.rb-logo-link {
+	.rb-logo {
+		transition: filter 1s;
+	}
+	&:focus,
+	&:hover {
+		.rb-logo {
+			filter: brightness(125%);
+		}
+	}
+}

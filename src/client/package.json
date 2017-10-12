@@ -1,0 +1,32 @@
+{
+	"name": "rapid-build-ui",
+	"version": "0.1.0",
+	"description": "Rapid Build UI - Showcase Website",
+	"license": "MIT",
+	"engines": {
+		"npm": "5.x",
+		"node": "6.11.x"
+	},
+	"contributors": [
+		{
+			"name": "Judd Younce",
+			"email": "jyounce@yahoo.com",
+			"url": "https://github.com/jyounce"
+		},
+		{
+			"name": "Yevgeniy Okun",
+			"email": "yevgeniyokun@gmail.com",
+			"url": "https://github.com/yokun"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rapid-build-ui/rapid-build-ui.io"
+	},
+
+	"flat": true,
+
+	"dependencies": {
+		"rb-nav": "*"
+	}
+}

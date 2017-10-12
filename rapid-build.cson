@@ -1,0 +1,43 @@
+common:
+	# build: server: false
+	# browser: open: false, reload: false
+
+	ports:
+		server: 5000
+		reload: 5001
+
+	angular:
+		moduleName: 'showcase'
+		bootstrap: true
+		templateCache:
+			dev: true
+
+	dist:
+		client:
+			paths:
+				absolute: false
+
+	extra:
+		copy:
+			client: [
+				'node_modules/**'
+			]
+		watch:
+			client: [
+				'node_modules/rb-*/**'
+			]
+
+	spa:
+		autoInject: false
+		src:
+			filePath: 'spa.html'
+
+	# currently can't minify es6 javascript
+	# therefore prod build breaks - TODO: fix
+	minify:
+		spa:
+			file: false
+		css:
+			splitMinFile: false
+		# html:
+		# 	templateCache: false

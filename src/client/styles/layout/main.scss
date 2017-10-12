@@ -1,0 +1,12 @@
+/**************
+ * LAYOUT MAIN
+ **************/
+main {
+	min-height: 450px;
+	padding: 0 $layoutSidePadding 60px;
+
+	// example: homepage
+	.headlines {
+		text-align: center;
+	}
+}

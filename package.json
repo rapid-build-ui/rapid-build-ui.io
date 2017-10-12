@@ -1,0 +1,35 @@
+{
+	"name": "rapid-build-ui-proj",
+	"version": "0.1.0",
+	"description": "Rapid Build UI - Project",
+	"license": "MIT",
+	"engines": {
+		"npm": "5.x",
+		"node": "6.11.x"
+	},
+	"contributors": [
+		{
+			"name": "Judd Younce",
+			"email": "jyounce@yahoo.com",
+			"url": "https://github.com/jyounce"
+		},
+		{
+			"name": "Yevgeniy Okun",
+			"email": "yevgeniyokun@gmail.com",
+			"url": "https://github.com/yokun"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/rapid-build-ui/rapid-build-ui.io"
+	},
+	"bugs": {
+		"url": "https://github.com/rapid-build-ui/rapid-build-ui.io/issues"
+	},
+	"scripts": {
+		"npm-install-client": "cd src/client/ && yarn install",
+		"npm-install-server": "cd src/server/ && npm install",
+		"npm-install-project": "npm run npm-install-client && npm run npm-install-server"
+	},
+	"dependencies": {}
+}
