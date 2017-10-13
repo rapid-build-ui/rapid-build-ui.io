@@ -29,7 +29,8 @@
 	"scripts": {
 		"npm-install-client": "cd src/client/ && yarn install",
 		"npm-install-server": "cd src/server/ && npm install",
-		"npm-install-project": "npm run npm-install-client && npm run npm-install-server"
+		"npm-install-project": "npm run npm-install-client && npm run npm-install-server",
+		"install-rb-components": "cd src/client/ && yarn link @rapid-build-ui/rb-icon && yarn link @rapid-build-ui/rb-nav && npm install --no-save"
 	},
 	"dependencies": {}
 }

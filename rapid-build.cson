@@ -20,7 +20,7 @@ common:
 			]
 		watch:
 			client: [
-				'node_modules/rb-*/**'
+				'node_modules/@rapid-build-ui/**'
 			]
 
 	spa:
@@ -35,5 +35,3 @@ common:
 			file: false
 		css:
 			splitMinFile: false
-		# html:
-		# 	templateCache: false

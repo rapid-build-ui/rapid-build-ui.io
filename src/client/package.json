@@ -23,10 +23,9 @@
 		"type": "git",
 		"url": "https://github.com/rapid-build-ui/rapid-build-ui.io"
 	},
-
 	"flat": true,
-
 	"dependencies": {
-		"rb-nav": "*"
+		"@rapid-build-ui/rb-icon": "file:node_modules/@rapid-build-ui/rb-icon",
+		"@rapid-build-ui/rb-nav": "file:node_modules/@rapid-build-ui/rb-nav"
 	}
 }
