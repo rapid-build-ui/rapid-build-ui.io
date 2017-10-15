@@ -27,10 +27,9 @@
 		"url": "https://github.com/rapid-build-ui/rapid-build-ui.io/issues"
 	},
 	"scripts": {
-		"npm-install-client": "cd src/client/ && yarn install",
-		"npm-install-server": "cd src/server/ && npm install",
-		"npm-install-project": "npm run npm-install-client && npm run npm-install-server",
-		"install-rb-components": "cd src/client/ && yarn link @rapid-build-ui/rb-icon && yarn link @rapid-build-ui/rb-nav && npm install --no-save"
-	},
-	"dependencies": {}
+		"link": "cd src/client/ && yarn link @rapid-build-ui/rb-icon @rapid-build-ui/rb-nav",
+		"setup": "npm run install-server && npm run link && npm run install-client",
+		"install-client": "cd src/client/ && npm install --no-save",
+		"install-server": "cd src/server/ && npm install"
+	}
 }
