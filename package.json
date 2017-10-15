@@ -28,8 +28,8 @@
 	},
 	"scripts": {
 		"link": "cd src/client/ && yarn link @rapid-build-ui/rb-icon @rapid-build-ui/rb-nav",
-		"setup": "npm run install-server && npm run link && npm run install-client",
 		"install-client": "cd src/client/ && npm install --no-save",
-		"install-server": "cd src/server/ && npm install"
+		"install-server": "cd src/server/ && npm install",
+		"setup": "npm run install-server && npm run link && npm run install-client"
 	}
 }
