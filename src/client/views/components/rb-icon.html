@@ -3,6 +3,13 @@
 
 	<!-- COMPONENT -->
 	<div class="demo">
-		<rb-icon></rb-icon>
+		<form name="demoForm">
+			kind:
+			<label>
+				<input type="text" ng-model="kind">
+			</label>
+
+		</form>
+		<rb-icon kind="{{kind}}"></rb-icon>
 	</div>
 </div>
