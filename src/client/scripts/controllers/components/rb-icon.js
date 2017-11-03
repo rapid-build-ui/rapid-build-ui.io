@@ -1,6 +1,8 @@
 angular.module('showcase').controller('rbIconController', ['$scope', '$element',
 	($scope, $element) => {
 
-		console.log('Hello rb-icon!');
+		$scope.sizeValues = ['default','small', 'big']
+		$scope.activeSize = "default"
+		// $scope.activeBold = un
 
 }]);
