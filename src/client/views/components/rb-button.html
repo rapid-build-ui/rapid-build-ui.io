@@ -3,8 +3,28 @@
 
 	<!-- COMPONENT -->
 	<div class="demo">
-		<form>
+		<form name="demoForm">
+			<br><br>
+			Kind:
+			<span ng-repeat="item in kindValues">
+				{{item}}
+				<input  align="right" type="radio" name="kind" ng-value="item=='default' ? '' : item" ng-model="$parent.activeState.kind">
+			</span>
+			<br><br>
+
+			Size:
+			<span ng-repeat="item in sizeValues">
+				{{item}}
+				<input  align="right" type="radio" name="size" ng-value="item=='default' ? '' : item"" ng-model="$parent.activeState.size">
+			</span>
+			<br><br>
 		</form>
-		<rb-button kind="{{kind}}" size="{{activeSize}}" ></rb-button>
+
+		Preview:
+		<rb-button kind="{{activeState.kind}}"
+				size="{{activeState.size}}"
+				icon-options="{{iconOptions}}"
+				icon-position="right">Nice Button
+		</rb-button>
 	</div>
 </div>

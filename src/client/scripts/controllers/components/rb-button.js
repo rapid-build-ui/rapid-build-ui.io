@@ -1,5 +1,13 @@
 angular.module('showcase').controller('rbButtonController', ['$scope', '$element',
 	($scope, $element) => {
 
-		console.log('rb-button controller')
-}]);
+		$scope.sizeValues = ['default','small', 'big']
+		$scope.kindValues = ['default', 'primary', 'success', 'info', 'warning', 'error']
+		$scope.activeState = {
+			size: '',
+			kind: ''
+		}
+		$scope.iconOptions = {
+			kind: 'info'
+		}
+}])
