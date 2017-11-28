@@ -28,6 +28,18 @@ common:
 		src:
 			filePath: 'spa.html'
 
+	exclude:
+		from:
+			cacheBust: [
+				'node_modules/**'
+			]
+
 	minify:
 		spa:
 			file: false
+		client:
+			js:
+				es6: true
+		server:
+			js:
+				es6: true
