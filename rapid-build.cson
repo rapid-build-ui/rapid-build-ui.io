@@ -28,10 +28,6 @@ common:
 		src:
 			filePath: 'spa.html'
 
-	# currently can't minify es6 javascript
-	# therefore prod build breaks - TODO: fix
 	minify:
 		spa:
 			file: false
-		css:
-			splitMinFile: false
