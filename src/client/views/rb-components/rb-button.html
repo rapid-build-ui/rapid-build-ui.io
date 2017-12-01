@@ -15,6 +15,12 @@
 	<form name="demoForm">
 		<h5 rb-text-curve>Demo</h5>
 
+		<label>disabled</label>
+		<label class="radio">
+			<input type="checkbox" name="disable" ng-value="" ng-model="a.disabled">
+			{{item}}
+		</label><br>
+
 		<label>kind</label>
 		<label class="radio" ng-repeat="item in kinds">
 			<input type="radio" name="kind" ng-value="item" ng-model="a.kind">
@@ -36,6 +42,12 @@
 		<label>icon-position</label>
 		<label class="radio" ng-repeat="item in iconPositions">
 			<input type="radio" name="iconPosition" ng-value="item" ng-model="a.iconPosition">
+			{{item}}
+		</label><br>
+
+		<label>type</label>
+		<label class="radio" ng-repeat="item in types">
+			<input type="radio" name="type" ng-value="item" ng-model="a.type">
 			{{item}}
 		</label><br>
 
