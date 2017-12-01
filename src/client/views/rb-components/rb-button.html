@@ -33,6 +33,12 @@
 			{{item}}
 		</label><br>
 
+		<label>icon-position</label>
+		<label class="radio" ng-repeat="item in iconPositions">
+			<input type="radio" name="iconPosition" ng-value="item" ng-model="a.iconPosition">
+			{{item}}
+		</label><br>
+
 		<label>caption</label>
 		<input type="text" name="caption" ng-model="a.caption"><br>
 
