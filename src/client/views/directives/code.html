@@ -1,0 +1,34 @@
+<div ng-show="show === undefined ? true : show"
+	 ng-class="['rb-code', kind,
+				!!size ? size+'-size' : '',
+				!!height ? height+'-height' : '',
+				scroll !== undefined ? 'scroll' : ''
+			   ].join(' ')">
+	<h5 ng-bind="caption" ng-show="!!caption"></h5>
+	<span
+		class="optional"
+		ng-hide="optional === undefined"
+		ng-bind-html="optional !== undefined && !!optional ? optional : '(optional)'">
+	</span>
+	<div class="content" ng-switch="!!model">
+		<div ng-switch-when="true">
+			<!-- <div class="actions" ng-if="!!actions">
+				<a href tabindex="0" ng-click="clear()">clear</a>
+				<a href tabindex="0" ng-click="addAction()">add</a>
+				<a href tabindex="0" ng-click="compress()">compress</a>
+				<a href tabindex="0" ng-click="copy()">copy</a>
+				<a href tabindex="0" ng-click="edit()">edit</a>
+			</div> -->
+			<textarea
+				ng-keydown="keydown($event)"
+				ng-model="model"
+				ng-attr-readonly="{{readonly}}"
+				ng-attr-placeholder="{{placeholder}}">
+			</textarea>
+		</div>
+		<div ng-switch-default>
+			<pre ng-if="!!bind" ng-bind="bind"></pre>
+			<pre ng-if="!bind" ng-transclude></pre>
+		</div>
+	</div>
+</div>

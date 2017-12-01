@@ -2,33 +2,39 @@
  * NAV
  ******/
 nav {
+	display: flex;
+	// flex-direction: column; // TODO: stacked option
+	position: relative;
+	top: 1px;
 	a {
-		color: #789;
-		font-size: 13px;
+		margin: 0;
+		&:not(:last-child) {
+			margin-right: remy(2);
+		}
+		padding: remy(10) remy(10) remy(18);
+		color: lightslategrey;
+		font-size: remy(13);
 		font-weight: 700;
-		letter-spacing: .8px;
+		letter-spacing: .1px;
 		text-decoration: none;
 		text-transform: uppercase;
+		border-radius: 10px 10px 0 0;
+		border: 1px solid transparent;
+		border-bottom: none;
 		&:focus,
 		&:hover {
-			color: indianred;
+			color: lightslategrey;
+			background-color: white;
+			border-color: #ddd;
 			text-decoration: none;
-		}
-		&:focus {
-			outline: none;
-		}
-		&:not(:last-of-type) {
-			&:after {
-				position: relative;
-				top: -2px;
-				margin: 0 10px;
-				font-size: 70%;
-				content: '|';
-			}
 		}
 		&:active,
 		&.active {
-			color: indianred;
+			color: dimgray;
+			background-color: white;
+			border-color: #ddd;
+			cursor: default;
 		}
+		&:focus { outline: none; }
 	}
 }

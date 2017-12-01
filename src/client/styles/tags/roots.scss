@@ -1,0 +1,17 @@
+/********
+ * ROOTS
+ ********/
+:root { // browser's html tag
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 0;
+	padding: 0;
+	color: $generalTextColor;
+	font-size: $generalTextSize;
+	line-height: 1.5;
+	font-weight: 400;
+	font-family: $generalFont;
+}

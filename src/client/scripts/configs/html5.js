@@ -1,4 +1,4 @@
-angular.module('showcase').config(['$locationProvider',
+angular.module('rapid-build').config(['$locationProvider',
 	$locationProvider => {
 
 	$locationProvider.html5Mode({

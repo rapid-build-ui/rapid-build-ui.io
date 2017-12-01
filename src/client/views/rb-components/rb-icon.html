@@ -1,0 +1,46 @@
+<div ng-controller="rbIconController">
+	<h1>rb-icon</h1>
+
+	<!-- COMPONENT -->
+	<section class="grid comp-demo">
+		<div class="col">
+			<div rb-builder="markup"></div>
+		</div>
+		<div class="col">
+			<rb-code model="markup" caption="markup" height="avg"></rb-code>
+		</div>
+	</section>
+
+	<!-- DEMO -->
+	<form name="demoForm">
+		<h5 rb-text-curve>Demo</h5>
+
+		<label>kind</label>
+		<label class="radio" ng-repeat="item in kinds">
+			<input type="radio" name="kind" ng-value="item" ng-model="a.kind">
+			{{item}}
+		</label><br>
+
+		<label>size</label>
+		<label class="radio" ng-repeat="item in sizes">
+			<input type="radio" name="size" ng-value="item" ng-model="a.size">
+			{{item}}
+		</label><br>
+
+		<label class="checkbox">
+			bold
+			<input type="checkbox" name="bold" ng-model="a.bold">
+		</label>
+
+		<section class="buttons">
+			<button name="button" ng-click="reset()">Reset</button>
+		</section>
+	</form>
+
+	<!-- REFERENCE -->
+	<section>
+		<h5 rb-text-curve>Icons</h5>
+		<a target="_blank" href="http://fontawesome.io/icons/">font awesome icons</a><br>
+		<a target="_blank" href="http://vorillaz.github.io/devicons/#/dafont">devicons</a>
+	</section>
+</div>

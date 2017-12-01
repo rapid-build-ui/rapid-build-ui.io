@@ -1,0 +1,28 @@
+<div ng-controller="rbNavController">
+	<h1>rb-nav</h1>
+
+	<!-- COMPONENT -->
+	<section class="grid comp-demo">
+		<div class="col">
+			<div rb-builder="markup"></div>
+		</div>
+		<div class="col">
+			<rb-code model="markup" caption="markup" height="avg"></rb-code>
+		</div>
+	</section>
+
+	<!-- DEMO -->
+	<form name="demoForm">
+		<h5 rb-text-curve>Demo</h5>
+		
+		<label>layout</label>
+		<label class="radio" ng-repeat="item in layouts">
+			<input type="radio" name="layout" ng-value="item" ng-model="a.layout">
+			{{item}}
+		</label><br>
+
+		<section class="buttons">
+			<button name="button" ng-click="reset()">Reset</button>
+		</section>
+	</form>
+</div>

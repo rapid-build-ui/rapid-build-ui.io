@@ -2,11 +2,14 @@
  * LAYOUT MAIN
  **************/
 main {
-	min-height: 450px;
-	padding: 0 $layoutSidePadding 60px;
+	padding-top: 0;
+	padding-bottom: remy(60);
+	min-height: remy(450);
 
-	// example: homepage
-	.headlines {
-		text-align: center;
-	}
+	// page header
+    h1:first-of-type {
+    	margin: 0 0 remy(25);
+    	padding: 0 0 remy(10);
+    	border-bottom: 1px solid #e3e3e3; // ddd | e6e6e6
+    }
 }

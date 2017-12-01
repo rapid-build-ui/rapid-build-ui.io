@@ -1,26 +1,38 @@
 /***********
  * HEADINGS
  ***********/
-h1, h2, h3, h4, h5, h6 {
-	margin-top: 0;
-}
+// bottom margins
+h1 { margin-bottom: remy(20); }
+h2 { margin-bottom: remy(20); }
+h3 { margin-bottom: remy(20); }
+h4 { margin-bottom: remy(18); }
+h5 { margin-bottom: remy(18); }
+h6 { margin-bottom: remy(18); }
 
-main {
-	h1 {
-		margin: 0 0 30px;
-		padding: 0 0 30px;
-		color: steelblue;
-		font-size: 36px;
-		font-weight: 300;
-		text-shadow: 1px 1px 4px #eee;
-		border-bottom: 1px dashed #ddd;
-	}
-	h3 {
-		margin-bottom: 10px;
-		font-size: 18px;
-	}
-	h4 {
-		margin-bottom: 10px;
-		font-weight: 500;
-	}
-}
+// colors
+h1 { color: steelblue; }
+h2 { color: steelblue; }
+h3 { color: steelblue; }
+h4 { color: steelblue; }
+h5 { color: steelblue; }
+h6 { color: steelblue; }
+
+// font weights
+h1 { font-weight: 300; }
+h2 { font-weight: 300; }
+h3 { font-weight: 300; }
+h4 { font-weight: 400; }
+h5 { font-weight: 400; }
+h6 { font-weight: 400; }
+
+// font sizes
+h1 { font-size: remy(39); }
+h2 { font-size: remy(33); }
+h3 { font-size: remy(28); }
+h4 { font-size: remy(19); }
+h5 { font-size: remy(17); }
+h6 { font-size: remy(18); }
+
+// extra styling
+h1, h2, h3, h4, h5, h6 { text-shadow: 1px 1px 4px #eee; }
+h4, h5 { text-transform: uppercase; }

@@ -27,6 +27,7 @@
 	"dependencies": {
 		"@rapid-build-ui/rb-button": "file:node_modules/@rapid-build-ui/rb-button",
 		"@rapid-build-ui/rb-icon": "file:node_modules/@rapid-build-ui/rb-icon",
-		"@rapid-build-ui/rb-nav": "file:node_modules/@rapid-build-ui/rb-nav"
+		"@rapid-build-ui/rb-nav": "file:node_modules/@rapid-build-ui/rb-nav",
+		"gridlex": "2.6.1"
 	}
 }

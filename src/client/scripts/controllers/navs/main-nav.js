@@ -1,4 +1,4 @@
-angular.module('showcase').controller('mainNavController', ['$scope', '$location',
+angular.module('rapid-build').controller('mainNavController', ['$scope', '$location',
 	($scope, $location) => {
 		/* Public
 		 *********/

@@ -1,0 +1,24 @@
+/**************************
+ * CSS RESET - LOAD FIRST!
+ **************************/
+// blockquote, address, cite, q,
+// fieldset, label, legend,
+// table, caption, tbody, tfoot, thead, tr, th, td,
+// footer, header, aside, article, canvas, details,
+// main, menu, nav, output, section, summary,
+// time, mark, audio, video
+form, code, pre, p,
+h1, h2, h3, h4, h5, h6,
+dl, dt, dd, ol, ul, li {
+	margin-top: 0;
+	padding-top: 0;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Deprecated
+ *************/
+i { font-style: normal; }
+b { font-weight: normal; }

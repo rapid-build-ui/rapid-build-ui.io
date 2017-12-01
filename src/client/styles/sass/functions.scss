@@ -1,0 +1,7 @@
+/*********************
+ * SHOWCASE FUNCTIONS
+ *********************/
+// pixels to rem converter
+@function remy($px, $pxBase: 16) { // :rem
+	@return ($px / $pxBase) + rem;
+}

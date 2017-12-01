@@ -1,0 +1,149 @@
+/*******
+ * CODE
+ *******/
+.rb-code {
+	margin: 0 0 20px;
+
+	pre,
+	textarea {
+		position: relative;
+		width: 95%;
+		height: auto;
+		min-height: 0;
+		margin: 0;
+		padding: 4px 6px;
+		color: $greyCharcoal;
+		font-size: 11px;
+		font-family: $monoFont;
+		line-height: 16px;
+		cursor: auto;
+		background-color: $whiteLight;
+		border: 1px dashed $xxxGreyLight;
+		border-radius: 10px;
+		@include tabSize(2);
+		&:focus {
+			border-color: $greyDark;
+		}
+	}
+
+	/* Caption
+	 **********/
+	h5 {
+		display: inline-block;
+		position: relative;
+		top: 1px;
+		padding-left: 6px;
+		margin-bottom: 10px;
+		// color: $grey;
+	}
+
+	/* Optional
+	 ***********/
+	.optional {
+		position: relative;
+		top: 1px;
+		color: $xxxGreyLight;
+		font-style: italic;
+		font-weight: normal;
+		text-transform: none;
+		font-size: 12px;
+	}
+
+	/* Content (wrapper for actions and code)
+	 *****************************************/
+	.content {
+		position: relative;
+	}
+
+	/* Actions
+	 **********/
+	.actions {
+		position: absolute;
+		top: -29px;
+		right: 4.5%;
+		padding: 5px 10px;
+		background-color: $whiteLight;
+		border: 1px dashed $xxxGreyLight;
+		border-bottom: none;
+		border-radius: 10px 10px 0 0;
+		> a {
+			padding: 0;
+			margin-left: 5px;
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+
+	/* Kinds
+	 ********/
+	&.minor {
+		pre {
+			padding: 8px 12px;
+		}
+	}
+
+	&.secondary {
+		h5 {
+			padding: 0;
+			color: $greyDark;
+			font-size: 13px;
+			font-weight: normal;
+			text-transform: none;
+		}
+	}
+
+	/* Scroll Option
+	 ****************/
+	&.scroll pre { overflow-y: auto; }
+
+	/* Size Option
+	 **************/
+	&.mini-size,
+	&.small-size {
+		pre, textarea {
+			line-height: 14px;
+		}
+	}
+	&.mini-size {
+		pre, textarea { font-size: 10px; }
+	}
+
+	/* Mixins
+	 *********/
+	@mixin codeHeight($ht, $x: 0) {
+		pre, textarea { min-height: $ht; }
+		&.scroll pre  { height: $ht; } // textarea scrolls after surpassing min-height
+		&.mini-size,
+		&.small-size {
+			$htSmall: $ht - ($x * 2);
+			pre, textarea { min-height: $htSmall; }
+			&.scroll pre  { height: $htSmall; }
+		}
+	}
+
+	/* Height Option
+	 ****************/
+	// increments of 16, small = total-(lines*2)
+	&.teeny-height      { @include codeHeight(48px,  3);  }
+	&.tiny-height       { @include codeHeight(64px,  4);  }
+	&.mini-height       { @include codeHeight(80px,  5);  }
+	&.short-height      { @include codeHeight(96px,  6);  }
+	&.avg-height        { @include codeHeight(112px, 7);  }
+	&.tall-height       { @include codeHeight(128px, 8);  }
+	&.xtall-height      { @include codeHeight(144px, 9);  }
+	&.xxtall-height     { @include codeHeight(160px, 10); }
+	&.xxxtall-height    { @include codeHeight(176px, 11); }
+	&.xxxxtall-height   { @include codeHeight(192px, 12); }
+	&.xxxxxtall-height  { @include codeHeight(208px, 13); }
+	&.xxxxxxtall-height { @include codeHeight(235px, 13); }
+	&.giant-height      { @include codeHeight(320px, 20); }
+	&.xgiant-height     { @include codeHeight(352px, 22); }
+	&.xxgiant-height    { @include codeHeight(367px, 22); }
+	&.xxxgiant-height   { @include codeHeight(395px, 22); }
+	&.jumbo-height      { @include codeHeight(480px, 30); }
+
+}
+
+
+

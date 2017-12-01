@@ -1,4 +1,4 @@
-angular.module('showcase').config(['$routeProvider',
+angular.module('rapid-build').config(['$routeProvider',
 	$routeProvider => {
 
 		$routeProvider
@@ -6,7 +6,7 @@ angular.module('showcase').config(['$routeProvider',
 				templateUrl: '/views/home.html'
 			})
 			.when('/components/:component', { templateUrl: params => {
-				return `/views/components/${params.component}.html`;
+				return `/views/rb-components/${params.component}.html`;
 			}})
 			.otherwise({
 				redirectTo: '/'

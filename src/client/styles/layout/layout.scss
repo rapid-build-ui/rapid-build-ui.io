@@ -1,0 +1,14 @@
+/****************
+ * SHARED LAYOUT
+ ****************/
+header.main {
+	padding-left:  remy(30);
+	padding-right: remy(21);
+}
+
+main,
+footer.main {
+	$sidePadding: remy(32);
+	padding-left:  $sidePadding;
+	padding-right: $sidePadding;
+}

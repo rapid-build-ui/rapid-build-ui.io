@@ -7,11 +7,16 @@ common:
 		reload: 5001
 
 	angular:
-		moduleName: 'showcase'
+		moduleName: 'rapid-build'
 		bootstrap: true
 		templateCache:
 			dev: true
 			useAbsolutePaths: true
+
+	spa:
+		autoInject: ['ngCloakStyles']
+		src:
+			filePath: 'spa.html'
 
 	extra:
 		copy:
@@ -22,11 +27,6 @@ common:
 			client: [
 				'node_modules/@rapid-build-ui/**'
 			]
-
-	spa:
-		autoInject: false
-		src:
-			filePath: 'spa.html'
 
 	exclude:
 		from:
@@ -43,3 +43,23 @@ common:
 		server:
 			js:
 				es6: true
+
+	order: # build will merge this with dev or prod
+		styles:
+			first: [
+				'styles/reset.scss'
+			]
+
+dev:
+	order:
+		styles:
+			first: [
+				'node_modules/gridlex/dist/gridlex.css'
+			]
+
+prod:
+	order:
+		styles:
+			first: [
+				'node_modules/gridlex/dist/gridlex.min.css'
+			]

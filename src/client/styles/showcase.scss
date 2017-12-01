@@ -1,27 +1,35 @@
-/******************
- * SHOWCASE STYLES
- ******************/
-// Variables
-@import 'variables.scss';
-
-// Mixins
-@import 'mixins.scss';
+/***********************************
+ * SHOWCASE STYLES ~ LOAD IN ORDER!
+ ***********************************/
+// Sassy Goodness
+@import 'sass/functions.scss';
+@import 'sass/variables.scss';
+@import 'sass/mixins.scss';
 
 // Tags
-@import 'tags/body.scss';
+@import 'tags/buttons.scss';
 @import 'tags/forms.scss';
 @import 'tags/headings.scss';
 @import 'tags/hr.scss';
 @import 'tags/links.scss';
 @import 'tags/lists.scss';
 @import 'tags/nav.scss';
+@import 'tags/roots.scss';
+@import 'tags/sections.scss';
 
-// Layout
-@import 'layout/footer.scss';
-@import 'layout/header.scss';
-@import 'layout/main.scss';
-
+// Directives
+@import 'directives/code.scss';
+@import 'directives/text-curve.scss';
 
 // Misc
 @import 'misc/logos.scss';
-@import 'misc/ng.scss';
+
+// Layout
+@import 'layout/layout.scss';
+@import 'layout/header.scss';
+@import 'layout/main.scss';
+@import 'layout/footer.scss';
+
+// Sections
+@import 'sections/comp-demo.scss';
+@import 'sections/headlines.scss';

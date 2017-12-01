@@ -1,0 +1,164 @@
+/*********************
+ * SHOWCASE VARIABLES
+ *********************/
+// COLORS
+$rbBlue:          #0478ad;
+$rbGray:          #807f83;
+$black:           #000;
+
+$blueDarker:      #005580;
+$blueDark:        #046999;
+$blue:            #0078ad;
+$blueLight:       #3a87ad;
+$blueLighter:     #0088cc;
+$blueLightest:    #eff8fa; // super light blue
+
+$blueSky:         #81bcd6;
+$blueSkyLight:    #d7effd;
+$blueSkyLighter:  #d9edf7;
+$blueSkyLightest: #f0faff;
+
+$xxxDark:         #1c1c1c;
+$darkest:         #222;
+$darker:          #555;
+$dark:            #666;
+
+$gold:            #eccc03;
+
+$greenDark:       #186600;
+$green:           #468847;
+$greenLight:      #43a21f;
+$greenLightest:   #f2faef; // super light green
+
+$greyCharcoal:    #323232;
+$xxxGreyDark:     #414141;
+$greyDarkest:     #5f6e7e;
+$greyDarker:      #6b6b6b;
+$greyDark:        #7b7b7b;
+$grey:            #999;
+$greyLight:       #a3a3a3;
+$greyLighter:     #a6a6a6;
+$greyLightest:    #b2b2b2;
+$xxxGreyLight:    #ccc;
+$xxxxGreyLight:   #ddd;
+$xxxxxGreyLight:  #d5d5d5;
+$xxxxxxGreyLight: #d9d9d9;
+
+$light:           #e6e6e6;
+$lighter:         #e9e9e9;
+$lightest:        #eee;
+$xxxLight:        #f3f3f3;
+
+$orange:          #ff6600;
+
+$red:             #9d261d;
+$redLight:        #b94a48;
+$redLighter:      #dc4e43;
+$redLightest:     #fAf2ef; // super light red
+
+$tan:             #8a6d3b;
+
+$white:           #fff;
+$whiteLight:      #fcfcfc;
+
+$yellow:          #f7c401;
+$yellowLightest:  #ffffe1; // super light yellow
+
+/* Font Families
+ ****************/
+$generalFont: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$monoFont:     Monaco, Menlo, Consolas, 'Courier New', monospace; // fixed width font
+// $headerFont:  'Segoe UI', 'myriad pro', myriad, helvetica, arial, sans-serif;
+
+/* Font Colors
+ **************/
+$subtextColor:      $grey;
+$headerColor:       $blue;
+$subheaderColor:    $blue;
+$linkColor:         $blue;
+$linkColorHover:    $blueDarker;
+$linkColorActive:   $blueLighter;
+
+/* State colors for border, bg and text
+ ***************************************/
+$generalBorderColor:   $light;
+$generalTextColor:     $greyDarkest;
+
+$errorBorderColor:     $redLight;
+$errorTextColor:       $redLight;
+$errorBgColor:         $redLightest;
+
+$infoBorderColor:      $blueLight;
+$infoTextColor:        $blueLight;
+$infoBgColor:          $blueLightest;
+
+$successBorderColor:   $green;
+$successTextColor:     $green;
+$successBgColor:       $greenLightest;
+
+$warningBorderColor:   $yellow;
+$warningTextColor:     $tan;
+$warningBgColor:       $yellowLightest;
+
+
+/* Form Styles
+ **************/
+// text colors
+$placeholder:            $greyLightest;
+$optional:               $xxxGreyLight;
+$labelColor:             $grey;
+$subLabelColor:          $greyCharcoal;
+$formMessageColor:       $grey;
+$inputTextColor:         $greyCharcoal;
+
+// backgrounds
+$inputBgColor:           $white;
+$dropdownBoxShadow:      $xxxxGreyLight;
+
+// borders
+$inputBorderColor:       $xxxGreyLight;
+$inputBorderHoverColor:  $greyCharcoal;
+$inputBorderFocusColor:  $blue;
+$dropdownDividerColor:   $lighter;
+
+// state is used for borders, box-shadow and text
+$errorStateColor:        $redLight;
+$infoStateColor:         $blueLight;
+$successStateColor:      $green;
+$warningStateColor:      $redLight;
+
+$disabledTextColor:      $xxxGreyLight;
+$disabledBorderColor:    $xxxLight;
+$disabledBgColor:        $white;
+
+$readonlyTextColor:      $darker;
+$readonlyBorderColor:    $light;
+$readonlyBgColor:        $xxxLight;
+
+// font sizes
+$generalTextSize:        1rem; // browser default = 16px (usually)
+$labelFontSize:          remy(12);
+$subLabelFontSize:       remy(13);
+$optionalFontSize:       remy(12);
+$placeholderFontSize:    remy(12);
+$placeholderFontSizeBig: remy(15);
+$formMessageFontSize:    remy(13);
+
+// input font sizes
+$inputFontSize:          remy(12);
+$inputFontSizeMedium:    remy(14);
+$inputFontSizeBig:       remy(15);
+
+// button font sizes
+$buttonFontSizeSmall:    remy(11);
+$buttonFontSize:         remy(12);
+$buttonFontSizeMedium:   remy(13);
+$buttonFontSizeBig:      remy(15);
+
+// border radiuses
+$buttonBorderRadius:     remy(25);
+$inputBorderRadius:      remy(10);
+$inputBorderRadiusBig:   remy(12);
+
+// box shadows
+$buttonBoxShadowCoords: 0 -0.7px 2px 1px;

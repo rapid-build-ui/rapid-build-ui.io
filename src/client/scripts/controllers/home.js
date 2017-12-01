@@ -1,6 +1,6 @@
-angular.module('showcase').controller('homeController', ['$scope',
+angular.module('rapid-build').controller('homeController', ['$scope',
 	($scope) => {
 
-		console.log('Hello Rapid Build UI!');
+		// console.log('Hello Rapid Build UI!');
 
 }]);
