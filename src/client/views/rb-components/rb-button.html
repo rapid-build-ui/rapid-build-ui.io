@@ -6,7 +6,7 @@
 		<div class="col">
 			<div rb-builder="markup"></div>
 		</div>
-		<div class="col">
+		<div class="col-8">
 			<rb-code model="markup" caption="markup" height="avg"></rb-code>
 		</div>
 	</section>
@@ -14,12 +14,6 @@
 	<!-- DEMO -->
 	<form name="demoForm">
 		<h5 rb-text-curve>Demo</h5>
-
-		<label>disabled</label>
-		<label class="radio">
-			<input type="checkbox" name="disable" ng-value="" ng-model="a.disabled">
-			{{item}}
-		</label><br>
 
 		<label>kind</label>
 		<label class="radio" ng-repeat="item in kinds">
@@ -51,8 +45,25 @@
 			{{item}}
 		</label><br>
 
+		<label>disabled</label>
+		<label class="radio">
+			<input type="checkbox" name="disable" ng-value="" ng-model="a.disabled">
+			{{item}}
+		</label><br>
+
 		<label>caption</label>
 		<input type="text" name="caption" ng-model="a.caption"><br>
+
+		<label>icon-options</label><br>
+		<label ng-repeat="(opt, opts) in iconOpts" ng-switch="isType(opts)">
+			{{opt}}
+			<label class="radio" ng-repeat="item in opts" ng-switch-when="array">
+				<input type="radio" ng-value="!$index ? undefined : item" ng-model="a.iconOpts[opt]">
+				{{item}}
+			</label>
+			<input type="checkbox" ng-model="a.iconOpts[opt]" ng-switch-when="boolean">
+			<br>
+		</label><br>
 
 		<section class="buttons">
 			<button name="button" ng-click="reset()">Reset</button>
