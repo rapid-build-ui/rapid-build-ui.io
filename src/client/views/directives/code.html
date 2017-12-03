@@ -10,7 +10,7 @@
 		ng-hide="optional === undefined"
 		ng-bind-html="optional !== undefined && !!optional ? optional : '(optional)'">
 	</span>
-	<div class="content" ng-switch="!!model">
+	<div class="content" ng-switch="hasModel">
 		<div ng-switch-when="true">
 			<!-- <div class="actions" ng-if="!!actions">
 				<a href tabindex="0" ng-click="clear()">clear</a>
@@ -20,10 +20,10 @@
 				<a href tabindex="0" ng-click="edit()">edit</a>
 			</div> -->
 			<textarea
-				ng-keydown="keydown($event)"
+				readonly
 				ng-model="model"
-				ng-attr-readonly="{{readonly}}"
-				ng-attr-placeholder="{{placeholder}}">
+				ng-keydown="keydown($event)"
+				placeholder="{{placeholder}}">
 			</textarea>
 		</div>
 		<div ng-switch-default>

@@ -125,11 +125,11 @@
 	/* Height Option
 	 ****************/
 	// increments of 16, small = total-(lines*2)
+	@include codeHeight(112px, 7);
 	&.teeny-height      { @include codeHeight(48px,  3);  }
 	&.tiny-height       { @include codeHeight(64px,  4);  }
 	&.mini-height       { @include codeHeight(80px,  5);  }
 	&.short-height      { @include codeHeight(96px,  6);  }
-	&.avg-height        { @include codeHeight(112px, 7);  }
 	&.tall-height       { @include codeHeight(128px, 8);  }
 	&.xtall-height      { @include codeHeight(144px, 9);  }
 	&.xxtall-height     { @include codeHeight(160px, 10); }

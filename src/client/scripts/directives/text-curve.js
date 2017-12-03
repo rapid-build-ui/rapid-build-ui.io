@@ -2,6 +2,14 @@ angular.module('rapid-build').directive('rbaTextCurve', ['$window',
 	($window) => {
 		var win = angular.element($window);
 
+		/* COMPILE
+		 **********/
+		var Compile = function(tElement, tAttrs, transclude) {
+			if (!!tAttrs.rbaTextCurve) return Link; // has options
+			tElement[0].querySelector('b.caption').removeAttribute('rba-compile');
+			return Link;
+		}
+
 		/* LINK
 		 *******/
 		var Link = (scope, iElement, iAttrs) => {
@@ -62,14 +70,6 @@ angular.module('rapid-build').directive('rbaTextCurve', ['$window',
 				if (typeof Help.setCaptionWidth    === 'function') win.off('resize', Help.setCaptionWidth);
 				return destroy();
 			});
-		}
-
-		/* COMPILE
-		 **********/
-		var Compile = function(tElement, tAttrs, transclude) {
-			if (!!tAttrs.rbaTextCurve) return Link; // has options
-			tElement[0].querySelector('b.caption').removeAttribute('rba-compile');
-			return Link;
 		}
 
 		/* API

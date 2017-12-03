@@ -4,13 +4,28 @@
 # ===============================
 angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret',
 	($timeout, Caret) ->
-		# link
+		# COMPILE
+		# =======
+		Compile = (tElement, tAttrs, transclude) ->
+			return Link unless tAttrs.model
+			textarea = tElement[0].querySelector 'textarea'
+			readonly = tAttrs.readonly isnt undefined
+			textarea.removeAttribute 'ng-keydown'  if readonly
+			textarea.removeAttribute 'readonly'    unless readonly
+			textarea.removeAttribute 'placeholder' unless tAttrs.placeholder
+			Link
+
+		# LINK
 		# ====
-		link = (scope, iElement, iAttrs, controller) ->
+		Link = (scope, iElement, iAttrs, controller) ->
 			elmCaret = textarea = undefined
+			readonly = iAttrs.readonly isnt undefined
+			scope.hasModel = !!iAttrs.model
 
 			timer = $timeout -> # textarea not registered since moving into template switch
-				textarea = iElement.find('textarea')[0] if !!iAttrs.model and !scope.readOnly
+				return unless scope.hasModel
+				return if readonly
+				textarea = iElement.find('textarea')[0]
 				elmCaret = new Caret textarea if textarea
 
 			# Multi Tab Support
@@ -93,7 +108,7 @@ angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret',
 
 		# API
 		# ===
-		link: link
+		compile: Compile
 		replace: true
 		transclude: true
 		restrict: 'E'
@@ -110,7 +125,7 @@ angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret',
 			# localStorage: '@' # local storage key or valueless (generated key)
 			placeholder: '@'
 			optional: '@'     # valueless attribute | html | text
-			readOnly: '@'
-			scroll: '@'       # valueless attribute
+			readonly: '@'
+			scroll: '@'       # valueless attribute (doesn't apply to model)
 			size: '@'         # mini | small
 ]
