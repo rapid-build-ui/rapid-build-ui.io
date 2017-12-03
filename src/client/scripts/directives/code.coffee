@@ -109,7 +109,6 @@ angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret',
 		# API
 		# ===
 		compile: Compile
-		replace: true
 		transclude: true
 		restrict: 'E'
 		templateUrl: '/views/directives/code.html'
