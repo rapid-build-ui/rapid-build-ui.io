@@ -6,8 +6,12 @@
 	<label class="caption" ng-bind="caption"></label>
 	<div class="sub-controls">
 		<label class="sub-label" ng-repeat="item in data">
-			<input type="radio" name="{{name}}" ng-value="item" ng-model="$parent.model">
-			<span class="sub-caption" ng-bind="item"></span>
+			<rba-radio
+				value="item"
+				name="{{name}}"
+				sub-caption="{{item}}"
+				model="$parent.model">
+			</rba-radio>
 		</label>
 	</div>
 </div>
