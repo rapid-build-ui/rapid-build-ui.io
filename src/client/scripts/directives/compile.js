@@ -1,13 +1,13 @@
-angular.module('rapid-build').directive('rbCompile', ['$compile',
+angular.module('rapid-build').directive('rbaCompile', ['$compile',
 	function($compile) {
 		var link;
 		link = function(scope, iElement, iAttrs, controller) {
 			var hasProp = {}.hasOwnProperty; // add by coffee compile
 			if (!controller) return;
-			if (!iAttrs.rbCompile) return;
+			if (!iAttrs.rbaCompile) return;
 
 			var scopeWatch = scope.$watch(function(scope) {
-				return scope.$eval(scope.rbCompile);
+				return scope.$eval(scope.rbaCompile);
 			}, function(content) {
 				var key, ref, val;
 				if (!content) {
@@ -38,7 +38,7 @@ angular.module('rapid-build').directive('rbCompile', ['$compile',
 			transclude: true,
 			require: '?^ngController',
 			scope: {
-				rbCompile: '&',
+				rbaCompile: '&',
 				model: '='
 			}
 		};

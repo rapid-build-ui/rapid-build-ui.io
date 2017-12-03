@@ -1,7 +1,7 @@
 <b class="shell"
-	ng-class="[!!rbTextCurve.kind ? rbTextCurve.kind : 'standard',
-			   !!rbTextCurve.spacing && rbTextCurve.spacing != 'standard'? rbTextCurve.spacing+'-spacing' : ''
+	ng-class="[!!rbaTextCurve.kind ? rbaTextCurve.kind : 'standard',
+			   !!rbaTextCurve.spacing && rbaTextCurve.spacing != 'standard'? rbaTextCurve.spacing+'-spacing' : ''
 			  ].join(' ')">
 	<b class="content" ng-transclude>
-	</b><b class="caption" rb-compile="rbTextCurve.caption"></b>
+	</b><b class="caption" rba-compile="rbaTextCurve.caption"></b>
 </b>

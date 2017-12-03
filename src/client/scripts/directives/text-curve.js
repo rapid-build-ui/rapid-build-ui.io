@@ -1,4 +1,4 @@
-angular.module('rapid-build').directive('rbTextCurve', ['$window',
+angular.module('rapid-build').directive('rbaTextCurve', ['$window',
 	($window) => {
 		var win = angular.element($window);
 
@@ -40,7 +40,7 @@ angular.module('rapid-build').directive('rbTextCurve', ['$window',
 			 **********/
 			var Watches = {};
 
-			Watches.optionsWatch = scope.$watchCollection('rbTextCurve', (newVal, oldVal) => {
+			Watches.optionsWatch = scope.$watchCollection('rbaTextCurve', (newVal, oldVal) => {
 				if (!!newVal && newVal.display) {
 					iElement.toggleClass('display-inline', newVal.display == 'inline');
 					if (newVal.display != 'inline') Help.setCaptionWidth();
@@ -67,8 +67,8 @@ angular.module('rapid-build').directive('rbTextCurve', ['$window',
 		/* COMPILE
 		 **********/
 		var Compile = function(tElement, tAttrs, transclude) {
-			if (!!tAttrs.rbTextCurve) return Link; // has options
-			tElement[0].querySelector('b.caption').removeAttribute('rb-compile');
+			if (!!tAttrs.rbaTextCurve) return Link; // has options
+			tElement[0].querySelector('b.caption').removeAttribute('rba-compile');
 			return Link;
 		}
 
@@ -80,7 +80,7 @@ angular.module('rapid-build').directive('rbTextCurve', ['$window',
 			templateUrl: '/views/directives/text-curve.html',
 			transclude: true,
 			scope: {
-				rbTextCurve: '=?'
+				rbaTextCurve: '=?'
 				/* OPTIONS (via attribute object):
 				 * caption: '@' // right side text
 				 * display: '@' // *block | inline

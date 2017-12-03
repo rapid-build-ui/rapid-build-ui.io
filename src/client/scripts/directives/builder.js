@@ -1,11 +1,11 @@
-angular.module('rapid-build').directive('rbBuilder', [
+angular.module('rapid-build').directive('rbaBuilder', [
 	'$compile', 'idService', '$document', '$timeout',
 	function($compile, idService, $document, $timeout) {
 		var doc, link;
 		doc = $document[0];
 		link = function(scope, iElement, iAttrs, controller) {
 			var buildStr, builderWatch, canDestroy, id, oldScope, timer;
-			buildStr = iAttrs.rbBuilder;
+			buildStr = iAttrs.rbaBuilder;
 			if (!buildStr) {
 				return;
 			}

@@ -1,15 +1,15 @@
-angular.module('rapid-build').directive 'rbClickaway', ['$rootElement', '$parse',
+angular.module('rapid-build').directive 'rbaClickaway', ['$rootElement', '$parse',
 	($rootElement, $parse) ->
 		# LINK
 		# ====
 		link = (scope, $elm, attrs) ->
-			return unless !!attrs.rbClickaway
+			return unless !!attrs.rbaClickaway
 
 			# clickaway (cw)
 			# =========
 			cw =
 				active: null # :null | boolean
-				fn: $parse attrs.rbClickaway # expression to function
+				fn: $parse attrs.rbaClickaway # expression to function
 
 			# handlers
 			# ========
@@ -39,5 +39,5 @@ angular.module('rapid-build').directive 'rbClickaway', ['$rootElement', '$parse'
 		# ===
 		link: link
 		restrict: 'A'
-		# rb-clickaway: '&'
+		# rba-clickaway: '&'
 ]

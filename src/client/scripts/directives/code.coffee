@@ -2,7 +2,7 @@
 # For editing or displaying code.
 # TODO: add local storage support
 # ===============================
-angular.module('rapid-build').directive 'rbCode', ['$timeout', 'Caret',
+angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret',
 	($timeout, Caret) ->
 		# link
 		# ====
