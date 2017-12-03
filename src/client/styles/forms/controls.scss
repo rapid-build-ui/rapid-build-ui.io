@@ -5,16 +5,32 @@
 .controls { margin-bottom: remy(15); }
 .controls .control { margin-bottom: 0; }
 
-// FLEXBOX
+/* Flexbox
+ **********/
 .control {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: baseline;
 	.caption {
-		flex: 0 0 remy(75); // 75 problem if flex-direction: column
+		flex: 0 0 remy(75);
 	}
-	.sub-control {
+	.sub-controls {
 		display: flex;
-		align-items: baseline;
+		flex-wrap: wrap;
+	}
+	/* options
+	 **********/
+	&.vertical {
+		flex-direction: column;
+		.caption {
+			flex-basis: auto;
+		}
+	}
+	// for checkboxes and radios
+	&.stacked {
+		.sub-controls {
+			flex-direction: column;
+		}
 	}
 }
 
@@ -24,23 +40,16 @@
 	.caption {
 		margin-right: remy(10);
 	}
-	.sub-caption {
-		margin-left: 4px;
-	}
-	.sub-control {
-		&:not(.first) { margin-left: remy(10); }
+	.sub-label {
+		&:not(:last-of-type) { margin-right: remy(10); }
 		&:hover { cursor: pointer; }
 	}
 }
-
-/* Controls (wraps control)
- ***************************/
-.controls {
-	.control {
-		.caption {
-			color: #aaa;
-			font-size: remy(13);
-			text-align: right;
-		}
+.controls .control {
+	.caption {
+		color: #aaa;
+		font-size: remy(13);
+		text-align: right;
 	}
 }
+

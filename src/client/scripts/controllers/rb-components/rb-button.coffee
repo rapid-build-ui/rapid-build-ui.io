@@ -6,7 +6,7 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeSe
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 			attrs += "#{s}disabled" if $scope.a.disabled
-			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind isnt 'nil'
+			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind isnt 'default'
 			attrs += "#{s}size=\"#{$scope.a.size}\"" if $scope.a.size isnt 'nil'
 			attrs += "#{s}icon=\"#{$scope.a.icon}\"" if $scope.a.icon isnt 'nil'
 			attrs += "#{s}icon-position=\"#{$scope.a.iconPosition}\"" if $scope.a.iconPosition isnt 'right'
@@ -19,8 +19,8 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeSe
 		# Props
 		# =====
 		$scope.isType = typeService.get;
-		$scope.icons  = ['nil','heart','github','user']
-		$scope.kinds  = ['nil','success','danger','warning','info']
+		$scope.icons  = ['nil','heart','github','user','superpowers','html5']
+		$scope.kinds  = ['default','secondary','success','danger','warning','info']
 		$scope.sizes  = ['nil','small','big']
 		$scope.types  = ['submit','button']
 		$scope.iconPositions = ['right','left']
@@ -37,7 +37,7 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeSe
 				icon:         'nil'    # :string
 				iconOpts:     null       # :{}
 				iconPosition: 'right'  # :string
-				kind:         'nil'    # :string
+				kind:         'default'    # :string
 				size:         'nil'    # :string
 				type:         'submit' # :string
 

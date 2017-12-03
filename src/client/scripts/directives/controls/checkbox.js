@@ -23,9 +23,10 @@ angular.module('rapid-build').directive('rbaCheckbox', [() => {
 		templateUrl: '/views/directives/controls/checkbox.html',
 		scope: {
 			model:      '=',
+			name:       '@',
 			caption:    '@',
 			subCaption: '@',
-			name:       '@'
+			vertical:   '@'
 		}
 	};
 }]);

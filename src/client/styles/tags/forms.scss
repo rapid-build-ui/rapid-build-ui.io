@@ -9,7 +9,7 @@ form {
  *********/
 label {
 	display: inline-block;
-	&:not(.sub-control) {
+	&:not(.sub-label) {
 		color: $grey;
 		font-size: remy(14);
 		font-weight: 500;
@@ -42,8 +42,6 @@ input[type='password'] {
  ************************/
 input[type='radio'],
 input[type='checkbox'] {
-	top: 1px;
-	position: relative;
 	&:hover {
 		cursor: pointer;
 	}

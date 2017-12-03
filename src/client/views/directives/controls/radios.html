@@ -1,10 +1,12 @@
-<div class="control">
+<div class="control"
+	 ng-class="[vertical !== undefined ? 'vertical' : 'horizontal',
+				stacked !== undefined ? 'stacked' : ''
+			   ].join(' ')">
 	<label class="caption" ng-bind="caption"></label>
-	<label
-		class="sub-control"
-		ng-repeat="item in data"
-		ng-class="$first ? 'first' : ''">
-		<input type="radio" name="{{name}}" ng-value="item" ng-model="$parent.model">
-		<span class="sub-caption" ng-bind="item"></span>
-	</label>
+	<div class="sub-controls">
+		<label class="sub-label" ng-repeat="item in data">
+			<input type="radio" name="{{name}}" ng-value="item" ng-model="$parent.model">
+			<span class="sub-caption" ng-bind="item"></span>
+		</label>
+	</div>
 </div>

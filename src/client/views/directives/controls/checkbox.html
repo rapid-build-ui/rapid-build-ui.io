@@ -1,7 +1,10 @@
-<div class="control">
+<div class="control"
+	 ng-class="[vertical !== undefined ? 'vertical' : 'horizontal'].join(' ')">
 	<label class="caption" ng-bind="caption"></label>
-	<label class="sub-control first">
-		<input type="checkbox" name="{{name}}" ng-model="model">
-		<span class="sub-caption" ng-bind="subCaption"></span>
-	</label>
+	<div class="sub-controls">
+		<label class="sub-label">
+			<input type="checkbox" name="{{name}}" ng-model="model">
+			<span class="sub-caption" ng-bind="subCaption"></span>
+		</label>
+	</div>
 </div>

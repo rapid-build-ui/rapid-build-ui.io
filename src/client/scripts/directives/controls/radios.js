@@ -21,10 +21,12 @@ angular.module('rapid-build').directive('rbaRadios', [() => {
 		restrict: 'E',
 		templateUrl: '/views/directives/controls/radios.html',
 		scope: {
-			model:   '=',
-			caption: '@',
-			name:    '@',
-			data:    '='
+			data:     '=',
+			model:    '=',
+			name:     '@',
+			caption:  '@',
+			stacked:  '@',
+			vertical: '@'
 		}
 	};
 }]);
