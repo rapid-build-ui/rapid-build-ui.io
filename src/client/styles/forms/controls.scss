@@ -11,26 +11,22 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: baseline;
-	.caption {
-		flex: 0 0 remy(75);
-	}
 	.sub-controls {
 		display: flex;
 		flex-wrap: wrap;
 	}
 	/* options
 	 **********/
-	&.vertical {
-		flex-direction: column;
-		.caption {
-			flex-basis: auto;
-		}
+	&.inline {
+		display: inline-flex;
 	}
-	// for checkboxes and radios
-	&.stacked {
+	&.stacked { // for checkboxes and radios
 		.sub-controls {
 			flex-direction: column;
 		}
+	}
+	&.vertical {
+		flex-direction: column;
 	}
 }
 
@@ -38,6 +34,7 @@
  *********/
 .control {
 	.caption {
+		width: remy(75);
 		margin-right: remy(10);
 	}
 	.sub-label {
@@ -52,4 +49,19 @@
 		text-align: right;
 	}
 }
+
+// TODO: somehow add spacing between inline elements
+// [inline] + [inline] {
+// 	&:not(rba-radio):not(rba-checkbox) {
+// 		margin-left: 25px;
+// 	}
+// }
+// [inline] {
+// 	+ rba-radio,
+// 	+ rba-checkbox {
+// 		&[inline][caption] {
+// 			margin-left: 25px;
+// 		}
+// 	}
+// }
 

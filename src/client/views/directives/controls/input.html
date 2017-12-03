@@ -1,5 +1,7 @@
 <div class="control"
-	 ng-class="[vertical !== undefined ? 'vertical' : 'horizontal'].join(' ')">
+	 ng-class="[inline !== undefined ? 'inline' : '',
+				vertical !== undefined ? 'vertical' : ''
+			   ].join(' ')">
 	<label class="caption" ng-bind="caption"></label>
 	<input type="text" name="{{name}}" ng-model="model">
 </div>

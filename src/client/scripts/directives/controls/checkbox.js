@@ -26,6 +26,7 @@ angular.module('rapid-build').directive('rbaCheckbox', [() => {
 			name:       '@',
 			caption:    '@',
 			subCaption: '@',
+			inline:     '@',
 			vertical:   '@'
 		}
 	};

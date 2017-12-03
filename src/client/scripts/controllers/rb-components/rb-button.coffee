@@ -27,19 +27,22 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeSe
 		$scope.iconOpts =
 			bold: false
 			size: ['nil','small','big']
+		# $scope.radioVal1 = 'red'
+		# $scope.radioVal2 = 'blue'
 
 		# Methods
 		# =======
 		$scope.reset = ->
 			$scope.a =
-				caption:      'Button' # :string | html
-				disabled:     false    # :boolean
-				icon:         'nil'    # :string
-				iconOpts:     null       # :{}
-				iconPosition: 'right'  # :string
-				kind:         'default'    # :string
-				size:         'nil'    # :string
-				type:         'submit' # :string
+				caption:      'Button'  # :string | html
+				disabled:     false     # :boolean
+				icon:         'nil'     # :string
+				iconOpts:     null      # :{}
+				iconPosition: 'right'   # :string
+				kind:         'default' # :string
+				size:         'nil'     # :string
+				type:         'submit'  # :string
+				# radio:        null      # :string
 
 		$scope.save = ->
 			console.log $scope.demoForm

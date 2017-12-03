@@ -25,6 +25,7 @@ angular.module('rapid-build').directive('rbaRadios', [() => {
 			model:    '=',
 			name:     '@',
 			caption:  '@',
+			inline:   '@',
 			stacked:  '@',
 			vertical: '@'
 		}

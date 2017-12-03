@@ -1,10 +1,11 @@
-angular.module('rapid-build').directive('rbaInput', [() => {
+angular.module('rapid-build').directive('rbaRadio', [() => {
 	/* COMPILE
 	 **********/
 	var Compile = function(tElement, tAttrs, transclude) {
 		if (typeof tAttrs.caption === 'undefined')
 			tElement[0].querySelector('.caption').remove();
-
+		if (typeof tAttrs.subCaption === 'undefined')
+			tElement[0].querySelector('.sub-caption').remove();
 		return Link;
 	}
 
@@ -19,13 +20,15 @@ angular.module('rapid-build').directive('rbaInput', [() => {
 	return {
 		compile: Compile,
 		restrict: 'E',
-		templateUrl: '/views/directives/controls/input.html',
+		templateUrl: '/views/directives/controls/radio.html',
 		scope: {
-			model:    '=',
-			name:     '@',
-			caption:  '@',
-			inline:   '@',
-			vertical: '@'
+			value:      '=',
+			model:      '=',
+			name:       '@',
+			caption:    '@',
+			subCaption: '@',
+			inline:     '@',
+			vertical:   '@'
 		}
 	};
 }]);

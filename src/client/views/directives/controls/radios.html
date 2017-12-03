@@ -1,5 +1,6 @@
 <div class="control"
-	 ng-class="[vertical !== undefined ? 'vertical' : 'horizontal',
+	 ng-class="[inline !== undefined ? 'inline' : '',
+				vertical !== undefined ? 'vertical' : '',
 				stacked !== undefined ? 'stacked' : ''
 			   ].join(' ')">
 	<label class="caption" ng-bind="caption"></label>
