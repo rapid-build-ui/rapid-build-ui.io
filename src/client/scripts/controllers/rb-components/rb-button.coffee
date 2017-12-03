@@ -41,10 +41,14 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeSe
 				size:         'nil'    # :string
 				type:         'submit' # :string
 
+		$scope.save = ->
+			console.log $scope.demoForm
+
 		# Watches
 		# =======
 		markupWatch = $scope.$watch ->
 			$scope.markup = createMarkup()
+
 		# Init
 		# ====
 		$scope.reset()

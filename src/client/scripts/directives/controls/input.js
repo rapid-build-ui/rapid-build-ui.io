@@ -3,7 +3,7 @@ angular.module('rapid-build').directive('rbaInput', [() => {
 	 **********/
 	var Compile = function(tElement, tAttrs, transclude) {
 		if (typeof tAttrs.caption === 'undefined')
-			tElement[0].querySelector('label').remove();
+			tElement[0].querySelector('.caption').remove();
 
 		return Link;
 	}
@@ -11,19 +11,19 @@ angular.module('rapid-build').directive('rbaInput', [() => {
 	/* LINK
 	 *******/
 	var Link = (scope, iElement, iAttrs) => {
-
+		scope.name = scope.name || iAttrs.model;
 	}
 
 	/* API
 	 ******/
 	return {
 		compile: Compile,
-		replace: false,
 		restrict: 'E',
-		templateUrl: '/views/directives/input.html',
+		templateUrl: '/views/directives/controls/input.html',
 		scope: {
 			model:   '=',
-			caption: '@'
+			caption: '@',
+			name:    '@'
 		}
 	};
 }]);

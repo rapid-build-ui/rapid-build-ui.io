@@ -1,47 +1,43 @@
 /****************
  * FORM CONTROLS
  ****************/
+.control,
+.controls { margin-bottom: remy(15); }
+.controls .control { margin-bottom: 0; }
+
 // FLEXBOX
 .control {
 	display: flex;
 	align-items: baseline;
-	// flex-direction: column;
-	> label {
+	.caption {
 		flex: 0 0 remy(75); // 75 problem if flex-direction: column
 	}
-	.sub-controls {
+	.sub-control {
 		display: flex;
-		> label {
-			flex: 1 0 auto;
-		}
+		align-items: baseline;
 	}
 }
 
 /* Labels
  *********/
 .control {
-	margin-bottom: remy(15);
-	> label {
+	.caption {
 		margin-right: remy(10);
 	}
-	.sub-controls {
-		position: relative;
-		top: -1px;
-		label {
-			&:not(:first-child) { margin-left: remy(10); }
-			&:hover { cursor: pointer; }
-		}
+	.sub-caption {
+		margin-left: 4px;
+	}
+	.sub-control {
+		&:not(.first) { margin-left: remy(10); }
+		&:hover { cursor: pointer; }
 	}
 }
 
 /* Controls (wraps control)
  ***************************/
 .controls {
-	margin-bottom: remy(15);
 	.control {
-		margin-bottom: 0;
-		// margin-left: remy(25);
-		> label {
+		.caption {
 			color: #aaa;
 			font-size: remy(13);
 			text-align: right;

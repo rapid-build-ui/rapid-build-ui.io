@@ -12,93 +12,28 @@
 	</section>
 
 	<!-- DEMO -->
-	<form name="demoForm">
+	<form name="demoForm" ng-submit="save()">
 		<h5 rba-text-curve>Demo</h5>
 
-		<!-- <rba-input caption="caption" model="a.caption"></rba-input> -->
-
-		<div class="control">
-			<label>type</label>
-			<div class="sub-controls">
-				<label class="sub" ng-repeat="item in types">
-					<input type="radio" name="type" ng-value="item" ng-model="a.type">
-					{{item}}
-				</label>
-			</div>
-		</div>
-
-		<div class="control">
-			<label>kind</label>
-			<div class="sub-controls">
-				<label class="sub" ng-repeat="item in kinds">
-					<input type="radio" name="kind" ng-value="item" ng-model="a.kind">
-					{{item}}
-				</label>
-			</div>
-		</div>
-
-		<div class="control">
-			<label>size</label>
-			<div class="sub-controls">
-				<label class="sub" ng-repeat="item in sizes">
-					<input type="radio" name="size" ng-value="item" ng-model="a.size">
-					{{item}}
-				</label>
-			</div>
-		</div>
-
-		<div class="control">
-			<label>icon</label>
-			<div class="sub-controls">
-				<label class="sub" ng-repeat="item in icons">
-					<input type="radio" name="icon" ng-value="item" ng-model="a.icon">
-					{{item}}
-				</label>
-			</div>
-		</div>
-
-		<div class="control">
-			<label>icon-position</label>
-			<div class="sub-controls">
-				<label class="sub" ng-repeat="item in iconPositions">
-					<input type="radio" name="iconPosition" ng-value="item" ng-model="a.iconPosition">
-					{{item}}
-				</label>
-			</div>
-		</div>
-
-		<div class="control">
-			<label>caption</label>
-			<input type="text" name="caption" ng-model="a.caption">
-		</div>
-
-		<div class="control">
-			<label>disabled</label>
-			<div class="sub-controls">
-				<label class="sub">
-					<input type="checkbox" name="disable" ng-model="a.disabled">
-				</label>
-			</div>
-		</div>
+		<rba-radios caption="type" model="a.type" data="types"></rba-radios>
+		<rba-radios caption="kind" model="a.kind" data="kinds"></rba-radios>
+		<rba-radios caption="size" model="a.size" data="sizes"></rba-radios>
+		<rba-radios caption="icon" model="a.icon" data="icons"></rba-radios>
+		<rba-radios caption="icon-position" model="a.iconPosition" data="iconPositions"></rba-radios>
+		<rba-input caption="caption" model="a.caption"></rba-input>
+		<rba-checkbox caption="disabled" model="a.disabled"></rba-checkbox>
 
 		<div class="controls">
 			<label>icon-options</label>
-			<div class="control" ng-repeat="(opt, opts) in iconOpts" ng-switch="isType(opts)">
-				<label>{{opt}}</label>
-				<div class="sub-controls">
-					<label class="sub" ng-switch-when="boolean">
-						<input type="checkbox" ng-model="a.iconOpts[opt]">
-					</label>
-					<label class="sub" ng-repeat="item in opts" ng-switch-when="array">
-						<input type="radio" ng-value="!$index ? undefined : item" ng-model="a.iconOpts[opt]">
-						{{item}}
-					</label>
-				</div>
+			<div ng-repeat="(opt, opts) in iconOpts" ng-switch="isType(opts)">
+				<rba-checkbox ng-switch-when="boolean" caption="{{opt}}" model="a.iconOpts[opt]"></rba-checkbox>
+				<rba-radios ng-switch-when="array" caption="{{opt}}" model="a.iconOpts[opt]" data="opts"></rba-radios>
 			</div>
 		</div>
 
 		<section class="buttons">
-			<button name="button" ng-click="reset()">Reset</button>
+			<button>Save</button>
+			<button type="button" ng-click="reset()">Reset</button>
 		</section>
 	</form>
 </div>
