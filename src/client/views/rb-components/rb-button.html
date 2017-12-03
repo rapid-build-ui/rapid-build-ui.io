@@ -15,55 +15,85 @@
 	<form name="demoForm">
 		<h5 rb-text-curve>Demo</h5>
 
-		<label>kind</label>
-		<label class="radio" ng-repeat="item in kinds">
-			<input type="radio" name="kind" ng-value="item" ng-model="a.kind">
-			{{item}}
-		</label><br>
+		<div class="control">
+			<label>type</label>
+			<div class="sub-controls">
+				<label class="sub" ng-repeat="item in types">
+					<input type="radio" name="type" ng-value="item" ng-model="a.type">
+					{{item}}
+				</label>
+			</div>
+		</div>
 
-		<label>size</label>
-		<label class="radio" ng-repeat="item in sizes">
-			<input type="radio" name="size" ng-value="item" ng-model="a.size">
-			{{item}}
-		</label><br>
+		<div class="control">
+			<label>kind</label>
+			<div class="sub-controls">
+				<label class="sub" ng-repeat="item in kinds">
+					<input type="radio" name="kind" ng-value="item" ng-model="a.kind">
+					{{item}}
+				</label>
+			</div>
+		</div>
 
-		<label>icon</label>
-		<label class="radio" ng-repeat="item in icons">
-			<input type="radio" name="icon" ng-value="item" ng-model="a.icon">
-			{{item}}
-		</label><br>
+		<div class="control">
+			<label>size</label>
+			<div class="sub-controls">
+				<label class="sub" ng-repeat="item in sizes">
+					<input type="radio" name="size" ng-value="item" ng-model="a.size">
+					{{item}}
+				</label>
+			</div>
+		</div>
 
-		<label>icon-position</label>
-		<label class="radio" ng-repeat="item in iconPositions">
-			<input type="radio" name="iconPosition" ng-value="item" ng-model="a.iconPosition">
-			{{item}}
-		</label><br>
+		<div class="control">
+			<label>icon</label>
+			<div class="sub-controls">
+				<label class="sub" ng-repeat="item in icons">
+					<input type="radio" name="icon" ng-value="item" ng-model="a.icon">
+					{{item}}
+				</label>
+			</div>
+		</div>
 
-		<label>type</label>
-		<label class="radio" ng-repeat="item in types">
-			<input type="radio" name="type" ng-value="item" ng-model="a.type">
-			{{item}}
-		</label><br>
+		<div class="control">
+			<label>icon-position</label>
+			<div class="sub-controls">
+				<label class="sub" ng-repeat="item in iconPositions">
+					<input type="radio" name="iconPosition" ng-value="item" ng-model="a.iconPosition">
+					{{item}}
+				</label>
+			</div>
+		</div>
 
-		<label>disabled</label>
-		<label class="radio">
-			<input type="checkbox" name="disable" ng-value="" ng-model="a.disabled">
-			{{item}}
-		</label><br>
+		<div class="control">
+			<label>caption</label>
+			<input type="text" name="caption" ng-model="a.caption">
+		</div>
 
-		<label>caption</label>
-		<input type="text" name="caption" ng-model="a.caption"><br>
+		<div class="control">
+			<label>disabled</label>
+			<div class="sub-controls">
+				<label class="sub">
+					<input type="checkbox" name="disable" ng-model="a.disabled">
+				</label>
+			</div>
+		</div>
 
-		<label>icon-options</label><br>
-		<label ng-repeat="(opt, opts) in iconOpts" ng-switch="isType(opts)">
-			{{opt}}
-			<label class="radio" ng-repeat="item in opts" ng-switch-when="array">
-				<input type="radio" ng-value="!$index ? undefined : item" ng-model="a.iconOpts[opt]">
-				{{item}}
-			</label>
-			<input type="checkbox" ng-model="a.iconOpts[opt]" ng-switch-when="boolean">
-			<br>
-		</label><br>
+		<div class="controls">
+			<label>icon-options</label>
+			<div class="control" ng-repeat="(opt, opts) in iconOpts" ng-switch="isType(opts)">
+				<label>{{opt}}</label>
+				<div class="sub-controls">
+					<label class="sub" ng-switch-when="boolean">
+						<input type="checkbox" ng-model="a.iconOpts[opt]">
+					</label>
+					<label class="sub" ng-repeat="item in opts" ng-switch-when="array">
+						<input type="radio" ng-value="!$index ? undefined : item" ng-model="a.iconOpts[opt]">
+						{{item}}
+					</label>
+				</div>
+			</div>
+		</div>
 
 		<section class="buttons">
 			<button name="button" ng-click="reset()">Reset</button>

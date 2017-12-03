@@ -72,54 +72,54 @@ $monoFont:     Monaco, Menlo, Consolas, 'Courier New', monospace; // fixed width
 
 /* Font Colors
  **************/
-$subtextColor:      $grey;
-$headerColor:       $blue;
-$subheaderColor:    $blue;
-$linkColor:         $blue;
-$linkColorHover:    $blueDarker;
-$linkColorActive:   $blueLighter;
+$subtextColor:    $grey;
+$headerColor:     $blue;
+$subheaderColor:  $blue;
+$linkColor:       $blue;
+$linkColorHover:  $blueDarker;
+$linkColorActive: $blueLighter;
 
 /* State colors for border, bg and text
  ***************************************/
-$generalBorderColor:   $light;
-$generalTextColor:     $greyDarkest;
+$generalBorderColor: $light;
+$generalTextColor:   $greyDarkest;
 
-$errorBorderColor:     $redLight;
-$errorTextColor:       $redLight;
-$errorBgColor:         $redLightest;
+$errorBorderColor:   $redLight;
+$errorTextColor:     $redLight;
+$errorBgColor:       $redLightest;
 
-$infoBorderColor:      $blueLight;
-$infoTextColor:        $blueLight;
-$infoBgColor:          $blueLightest;
+$infoBorderColor:    $blueLight;
+$infoTextColor:      $blueLight;
+$infoBgColor:        $blueLightest;
 
-$successBorderColor:   $green;
-$successTextColor:     $green;
-$successBgColor:       $greenLightest;
+$successBorderColor: $green;
+$successTextColor:   $green;
+$successBgColor:     $greenLightest;
 
-$warningBorderColor:   $yellow;
-$warningTextColor:     $tan;
-$warningBgColor:       $yellowLightest;
+$warningBorderColor: $yellow;
+$warningTextColor:   $tan;
+$warningBgColor:     $yellowLightest;
 
 
 /* Form Styles
  **************/
 // text colors
-$placeholder:            $greyLightest;
-$optional:               $xxxGreyLight;
-$labelColor:             $grey;
-$subLabelColor:          $greyCharcoal;
-$formMessageColor:       $grey;
-$inputTextColor:         $greyCharcoal;
+$placeholder:      $greyLightest;
+$optional:         $xxxGreyLight;
+$labelColor:       $grey;
+$subLabelColor:    $greyCharcoal;
+$formMessageColor: $grey;
+$inputTextColor:   $greyCharcoal;
 
 // backgrounds
-$inputBgColor:           $white;
-$dropdownBoxShadow:      $xxxxGreyLight;
+$inputBgColor:      $white;
+$dropdownBoxShadow: $xxxxGreyLight;
 
 // borders
-$inputBorderColor:       $xxxGreyLight;
-$inputBorderHoverColor:  $greyCharcoal;
-$inputBorderFocusColor:  $blue;
-$dropdownDividerColor:   $lighter;
+$inputBorderColor:      $xxxGreyLight;
+$inputBorderHoverColor: $greyCharcoal;
+$inputBorderFocusColor: $blue;
+$dropdownDividerColor:  $lighter;
 
 // state is used for borders, box-shadow and text
 $errorStateColor:        $redLight;

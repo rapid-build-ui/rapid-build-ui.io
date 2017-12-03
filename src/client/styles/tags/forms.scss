@@ -5,37 +5,50 @@ form {
 	margin-bottom: remy(30);
 }
 
+/* Labels
+ *********/
 label {
-	&.cb,
-	&.radio {
-		&:hover {
-			cursor: pointer;
-		}
+	display: inline-block;
+	&:not(.sub) {
+		color: $grey;
+		font-size: remy(14);
+		font-weight: 500;
+		text-transform: uppercase;
 	}
 }
 
-input {
-	padding: 2px 5px;
-	color: #555;
+/* Text Inputs
+ **************/
+input[type='text'],
+input[type='date'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month']
+input[type='number'],
+input[type='password'] {
+	padding: remy(6) remy(8);
+	color: $darker;
 	line-height: 1.4;
-	border: 1px solid #ccc;
 	border-radius: 4px;
+	border: 1px solid $xxxGreyLight;
 	transition: border 200ms ease-out;
 	&:focus {
 		outline: none;
-		border: 1px solid #aaa;
+		border: 1px solid $greyLight;
 	}
 }
 
-input {
-	&[type="radio"],
-	&[type="checkbox"] {
-		&:hover {
-			cursor: pointer;
-		}
+/* Checkboxes and Radios
+ ************************/
+input[type='radio'],
+input[type='checkbox'] {
+	&:hover {
+		cursor: pointer;
 	}
 }
 
+/* Pseudo Elements
+ ******************/
 ::placeholder {
 	color: #ccc;
 }
