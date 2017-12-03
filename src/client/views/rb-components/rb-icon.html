@@ -15,22 +15,9 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<label>kind</label>
-		<label class="radio" ng-repeat="item in kinds">
-			<input type="radio" name="kind" ng-value="item" ng-model="a.kind">
-			{{item}}
-		</label><br>
-
-		<label>size</label>
-		<label class="radio" ng-repeat="item in sizes">
-			<input type="radio" name="size" ng-value="item" ng-model="a.size">
-			{{item}}
-		</label><br>
-
-		<label class="checkbox">
-			bold
-			<input type="checkbox" name="bold" ng-model="a.bold">
-		</label>
+		<rba-radios caption="kind" model="a.kind" data="kinds"></rba-radios>
+		<rba-radios caption="size" model="a.size" data="sizes"></rba-radios>
+		<rba-checkbox caption="bold" model="a.bold"></rba-checkbox>
 
 		<section class="buttons">
 			<button name="button" ng-click="reset()">Reset</button>
