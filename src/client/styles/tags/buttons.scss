@@ -1,6 +1,7 @@
-/**********
- * BUTTONS
- **********/
-button {
-	cursor: pointer;
-}
+/******************
+ * BUTTONS SECTION
+ ******************/
+ section.buttons {
+ 	padding: remy(14) 0 0;
+ 	border-top: 1px dashed #eee;
+ }
