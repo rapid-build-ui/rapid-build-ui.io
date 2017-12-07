@@ -40,7 +40,6 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeSe
 				kind:         'default' # :string
 				size:         'nil'     # :string
 				type:         'submit'  # :string
-				radio:        'asdf'      # :string
 
 		$scope.save = ->
 			console.log $scope.demoForm
