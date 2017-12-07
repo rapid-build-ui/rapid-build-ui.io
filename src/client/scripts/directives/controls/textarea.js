@@ -21,8 +21,8 @@ angular.module('rapid-build').directive('rbaTextarea', [() => {
 		restrict: 'E',
 		templateUrl: '/views/directives/controls/textarea.html',
 		scope: {
-			model:    '=',
 			name:     '@',
+			model:    '=',
 			caption:  '@',
 			inline:   '@',
 			vertical: '@'

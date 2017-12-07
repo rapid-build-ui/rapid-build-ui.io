@@ -1,4 +1,4 @@
-angular.module('rapid-build').directive('rbaInput', [() => {
+angular.module('rapid-build').directive('rbaSelect', [() => {
 	/* COMPILE
 	 **********/
 	var Compile = function(tElement, tAttrs, transclude) {
@@ -19,13 +19,15 @@ angular.module('rapid-build').directive('rbaInput', [() => {
 	return {
 		compile: Compile,
 		restrict: 'E',
-		templateUrl: '/views/directives/controls/input.html',
+		templateUrl: '/views/directives/controls/select.html',
 		scope: {
-			name:     '@',
-			model:    '=',
-			caption:  '@',
-			inline:   '@',
-			vertical: '@'
+			name:        '@',
+			model:       '=',
+			data:        '=',
+			caption:     '@',
+			inline:      '@',
+			vertical:    '@',
+			placeholder: '@'
 		}
 	};
 }]);

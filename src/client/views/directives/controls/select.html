@@ -1,0 +1,14 @@
+<div class="control"
+	 ng-class="[inline !== undefined ? 'inline' : '',
+				vertical !== undefined ? 'vertical' : ''
+			   ].join(' ')">
+	<label class="caption" ng-bind="caption"></label>
+	<select name="{{name}}" ng-model="model">
+		<option
+			value=""
+			class="placeholder"
+			ng-bind="placeholder !== undefined && !placeholder ? 'Select' : placeholder">
+		</option>
+		<option ng-repeat="item in data" ng-value="item" ng-bind="item"></option>
+	</select>
+</div>
