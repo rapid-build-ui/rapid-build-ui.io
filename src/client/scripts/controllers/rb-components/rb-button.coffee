@@ -19,16 +19,14 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeSe
 		# Props
 		# =====
 		$scope.isType = typeService.get;
-		$scope.icons  = ['nil','heart','github','user','superpowers','html5']
-		$scope.kinds  = ['default','secondary','success','danger','warning','info']
+		$scope.icons  = ['nil','heart','github','user']
+		$scope.kinds  = ['default','success','danger','warning','info'] # ,'secondary'
 		$scope.sizes  = ['nil','small','big']
 		$scope.types  = ['submit','button']
 		$scope.iconPositions = ['right','left']
 		$scope.iconOpts =
 			bold: false
 			size: ['nil','small','big']
-		# $scope.radioVal1 = 'red'
-		# $scope.radioVal2 = 'blue'
 
 		# Methods
 		# =======
@@ -42,7 +40,7 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeSe
 				kind:         'default' # :string
 				size:         'nil'     # :string
 				type:         'submit'  # :string
-				# radio:        null      # :string
+				radio:        'asdf'      # :string
 
 		$scope.save = ->
 			console.log $scope.demoForm

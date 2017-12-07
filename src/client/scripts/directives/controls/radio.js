@@ -22,9 +22,9 @@ angular.module('rapid-build').directive('rbaRadio', [() => {
 		restrict: 'E',
 		templateUrl: '/views/directives/controls/radio.html',
 		scope: {
-			value:      '=',
-			model:      '=',
 			name:       '@',
+			model:      '=',
+			value:      '=',
 			caption:    '@',
 			subCaption: '@',
 			inline:     '@',

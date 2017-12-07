@@ -2,10 +2,15 @@ angular.module('rapid-build').directive('rbaCheckbox', [() => {
 	/* COMPILE
 	 **********/
 	var Compile = function(tElement, tAttrs, transclude) {
+		var input = tElement[0].querySelector('input');
 		if (typeof tAttrs.caption === 'undefined')
 			tElement[0].querySelector('.caption').remove();
 		if (typeof tAttrs.subCaption === 'undefined')
 			tElement[0].querySelector('.sub-caption').remove();
+		typeof tAttrs.checked !== 'undefined' ?
+			input.removeAttribute('ng-model') :
+			input.removeAttribute('ng-checked');
+			
 		return Link;
 	}
 
@@ -22,12 +27,14 @@ angular.module('rapid-build').directive('rbaCheckbox', [() => {
 		restrict: 'E',
 		templateUrl: '/views/directives/controls/checkbox.html',
 		scope: {
-			model:      '=',
 			name:       '@',
+			model:      '=',
 			caption:    '@',
 			subCaption: '@',
 			inline:     '@',
-			vertical:   '@'
+			vertical:   '@',
+			click:      '&',
+			checked:    '=' // should not be used together with model option
 		}
 	};
 }]);

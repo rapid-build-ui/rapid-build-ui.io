@@ -5,7 +5,12 @@
 	<label class="caption" ng-bind="caption"></label>
 	<div class="sub-controls">
 		<label class="sub-label">
-			<input type="checkbox" name="{{name}}" ng-model="model">
+			<input
+				type="checkbox"
+				name="{{name}}"
+				ng-model="model"
+				ng-checked="checked"
+				ng-click="click({$event: $event})">
 			<span class="sub-caption" ng-bind="subCaption"></span>
 		</label>
 	</div>
