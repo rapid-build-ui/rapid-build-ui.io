@@ -18,7 +18,6 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeSe
 
 		# Props
 		# =====
-		console.log heroNames
 		$scope.isType = typeService.get;
 		$scope.icons  = ['nil','heart','github','user']
 		$scope.kinds  = ['default','success','danger','warning','info'] # ,'secondary'
