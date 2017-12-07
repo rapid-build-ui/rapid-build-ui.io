@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeService',
-	($scope, typeService) ->
+angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeService','heroNamesValue'
+	($scope, typeService, heroNames) ->
 		# Private
 		# =======
 		createMarkup = ->
@@ -18,6 +18,7 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeSe
 
 		# Props
 		# =====
+		console.log heroNames
 		$scope.isType = typeService.get;
 		$scope.icons  = ['nil','heart','github','user']
 		$scope.kinds  = ['default','success','danger','warning','info'] # ,'secondary'
