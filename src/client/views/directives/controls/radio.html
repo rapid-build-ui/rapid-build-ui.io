@@ -5,7 +5,17 @@
 	<label class="caption" ng-bind="caption"></label>
 	<div class="sub-controls">
 		<label class="sub-label">
-			<input type="radio" name="{{name}}" ng-value="value" ng-model="model">
+			<input
+				for="radio"
+				type="radio"
+				name="{{name}}"
+				ng-click="select(value); click({$event: $event});"
+				ng-checked="model !== undefined && model === value">
+			<input
+				for="radios"
+				type="radio"
+				ng-checked="checked"
+				ng-click="click({$event: $event})">
 			<span class="sub-caption" ng-bind="subCaption"></span>
 		</label>
 	</div>

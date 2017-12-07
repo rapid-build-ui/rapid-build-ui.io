@@ -5,12 +5,13 @@
 			   ].join(' ')">
 	<label class="caption" ng-bind="caption"></label>
 	<div class="sub-controls">
+		<input type="hidden" name="{{name}}" ng-model="model">
 		<label class="sub-label" ng-repeat="item in data">
 			<rba-radio
-				value="item"
-				name="{{name}}"
-				model="$parent.model"
-				sub-caption="{{item}}">
+				radios
+				click="select(item)"
+				sub-caption="{{item}}"
+				checked="model === item">
 			</rba-radio>
 		</label>
 	</div>

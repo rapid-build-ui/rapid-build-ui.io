@@ -12,6 +12,14 @@ angular.module('rapid-build').directive('rbaRadios', [() => {
 	 *******/
 	var Link = (scope, iElement, iAttrs) => {
 		scope.name = scope.name || iAttrs.model;
+		var toggle = iAttrs.toggle !== undefined; // togglable
+
+		/* Methods
+		 **********/
+		scope.select = (item) => {
+			if (!toggle) return scope.model = item;
+			scope.model = scope.model === item ? undefined : item;
+		}
 	}
 
 	/* API
@@ -21,13 +29,16 @@ angular.module('rapid-build').directive('rbaRadios', [() => {
 		restrict: 'E',
 		templateUrl: '/views/directives/controls/radios.html',
 		scope: {
-			name:     '@',
-			model:    '=',
-			data:     '=',
-			caption:  '@',
-			inline:   '@',
-			stacked:  '@',
-			vertical: '@'
+			model:    '=',  // :any
+			data:     '=',  // :[any]
+			name:     '@?', // :string | *attrs.model
+			caption:  '@?', // :string
+			/* VALUELESS
+			 ************/
+			inline:   '@?',
+			stacked:  '@?',
+			toggle:   '@?',
+			vertical: '@?'
 		}
 	};
 }]);

@@ -15,11 +15,11 @@
 	<form name="demoForm" ng-submit="save()">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rba-radios caption="type" model="a.type" data="types"></rba-radios>
-		<rba-radios caption="kind" model="a.kind" data="kinds"></rba-radios>
-		<rba-radios caption="size" model="a.size" data="sizes"></rba-radios>
-		<rba-radios caption="icon" model="a.icon" data="icons"></rba-radios>
-		<rba-radios caption="icon-position" model="a.iconPosition" data="iconPositions"></rba-radios>
+		<rba-radios caption="type" model="a.type" data="types" toggle></rba-radios>
+		<rba-radios caption="kind" model="a.kind" data="kinds" toggle></rba-radios>
+		<rba-radios caption="size" model="a.size" data="sizes" toggle></rba-radios>
+		<rba-radios caption="icon" model="a.icon" data="icons" toggle></rba-radios>
+		<rba-checkbox caption="icon-position" sub-caption="{{iconPosition}}" model="a.iconPosition"></rba-checkbox>
 		<rba-input caption="caption" model="a.caption"></rba-input>
 		<rba-checkbox caption="disabled" model="a.disabled"></rba-checkbox>
 
@@ -27,7 +27,7 @@
 			<label>icon-options</label>
 			<div ng-repeat="(opt, opts) in iconOpts" ng-switch="isType(opts)">
 				<rba-checkbox ng-switch-when="boolean" caption="{{opt}}" model="a.iconOpts[opt]"></rba-checkbox>
-				<rba-radios ng-switch-when="array" caption="{{opt}}" model="a.iconOpts[opt]" data="opts"></rba-radios>
+				<rba-radios ng-switch-when="array" caption="{{opt}}" model="a.iconOpts[opt]" data="opts" toggle></rba-radios>
 			</div>
 		</div>
 
