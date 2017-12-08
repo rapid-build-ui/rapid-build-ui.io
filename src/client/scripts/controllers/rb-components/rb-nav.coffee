@@ -6,21 +6,20 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope',
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
-			attrs += "#{s}layout=\"#{$scope.a.layout}\"" if $scope.a.layout isnt 'nil'
+			attrs += "#{s}layout=\"#{$scope.a.layout}\"" if $scope.a.layout
 			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
 
 			"<rb-nav#{attrs}>#{content}</rb-nav>"
 
 		# Props
 		# =====
-		$scope.layouts = ['horizontal','vertical']
+		$scope.layout = 'vertical'
 
 		# Methods
 		# =======
 		$scope.reset = ->
 			$scope.a =
-				layout:  'horizontal' # :string (required)
-				content: null         # :string | html
+				content: null # :string | html
 
 		# Watches
 		# =======

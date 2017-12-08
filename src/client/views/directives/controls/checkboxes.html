@@ -8,8 +8,9 @@
 		<input type="hidden" name="{{name}}" ng-model="model">
 		<label class="sub-label" ng-repeat="item in data">
 			<rba-checkbox
+				checkboxes
 				sub-caption="{{item}}"
-				click="toggle(item, $index)"
+				click="select(item, $index)"
 				checked="model.includes(item)">
 			</rba-checkbox>
 		</label>

@@ -21,11 +21,13 @@ angular.module('rapid-build').directive('rbaInput', [() => {
 		restrict: 'E',
 		templateUrl: '/views/directives/controls/input.html',
 		scope: {
-			name:     '@',
-			model:    '=',
-			caption:  '@',
-			inline:   '@',
-			vertical: '@'
+			model:    '=',  // :string
+			name:     '@?', // :string | *attrs.model
+			caption:  '@?', // :string
+			/* VALUELESS
+			 ************/
+			inline:   '@?',
+			vertical: '@?'
 		}
 	};
 }]);

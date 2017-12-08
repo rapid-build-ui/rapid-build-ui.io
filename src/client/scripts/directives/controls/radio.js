@@ -13,9 +13,10 @@ angular.module('rapid-build').directive('rbaRadio', [() => {
 		return Link;
 	}
 
-	/* LINK
-	 *******/
+	/* LINK (only for rb-radio)
+	 ***************************/
 	var Link = (scope, iElement, iAttrs) => {
+		if (typeof iAttrs.radios !== 'undefined') return;
 		scope.name = scope.name || iAttrs.model;
 		var toggle = iAttrs.toggle !== undefined; // togglable
 		if (iAttrs.value === undefined) scope.value = true; // default value
@@ -26,7 +27,6 @@ angular.module('rapid-build').directive('rbaRadio', [() => {
 			if (!toggle) return scope.model = item;
 			scope.model = scope.model === item ? undefined : item;
 		}
-
 	}
 
 	/* API

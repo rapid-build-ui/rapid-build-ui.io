@@ -1,7 +1,13 @@
-angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeService','heroNamesValue','$timeout',
-	($scope, typeService, heroNames, $timeout) ->
+angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeService','heroNamesValue',
+	($scope, typeService, heroNames) ->
 		# Private
 		# =======
+		hasOptions = (obj) ->
+			return false unless obj
+			for key, val of obj
+				return true if val isnt undefined
+			false
+
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
@@ -9,8 +15,8 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeSe
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}size=\"#{$scope.a.size}\"" if $scope.a.size
 			attrs += "#{s}icon=\"#{$scope.a.icon}\"" if $scope.a.icon
-			attrs += "#{s}icon-position=\"#{$scope.iconPosition}\"" if $scope.a.iconPosition
-			attrs += "#{s}icon-options='#{JSON.stringify($scope.a.iconOpts)}'" if $scope.a.iconOpts
+			attrs += "#{s}icon-position=\"#{$scope.a.iconPosition}\"" if $scope.a.iconPosition
+			attrs += "#{s}icon-options='#{JSON.stringify($scope.a.iconOpts)}'" if hasOptions $scope.a.iconOpts
 			attrs += "#{s}type=\"#{$scope.a.type}\"" if $scope.a.type
 			content = "#{nt}#{$scope.a.caption}#{n}" if $scope.a.caption
 

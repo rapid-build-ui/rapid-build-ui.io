@@ -4,7 +4,6 @@ angular.module('rapid-build').directive('rbaRadios', [() => {
 	var Compile = function(tElement, tAttrs, transclude) {
 		if (typeof tAttrs.caption === 'undefined')
 			tElement[0].querySelector('.caption').remove();
-
 		return Link;
 	}
 

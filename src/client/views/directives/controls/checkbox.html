@@ -6,9 +6,14 @@
 	<div class="sub-controls">
 		<label class="sub-label">
 			<input
+				for="checkbox"
 				type="checkbox"
 				name="{{name}}"
-				ng-model="model"
+				ng-click="select(value); click({$event: $event});"
+				ng-checked="model !== undefined && model === getTrueValue(value)">
+			<input
+				for="checkboxes"
+				type="checkbox"
 				ng-checked="checked"
 				ng-click="click({$event: $event})">
 			<span class="sub-caption" ng-bind="subCaption"></span>

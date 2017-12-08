@@ -4,7 +4,6 @@ angular.module('rapid-build').directive('rbaSelect', [() => {
 	var Compile = function(tElement, tAttrs, transclude) {
 		if (typeof tAttrs.caption === 'undefined')
 			tElement[0].querySelector('.caption').remove();
-
 		return Link;
 	}
 
@@ -21,13 +20,15 @@ angular.module('rapid-build').directive('rbaSelect', [() => {
 		restrict: 'E',
 		templateUrl: '/views/directives/controls/select.html',
 		scope: {
-			name:        '@',
-			model:       '=',
-			data:        '=',
-			caption:     '@',
+			model:       '=',  // :any
+			data:        '=',  // :[any]
+			name:        '@?', // :string | *attrs.model
+			caption:     '@?', // :string
+			/* VALUELESS
+			 ************/
 			inline:      '@',
 			vertical:    '@',
-			placeholder: '@'
+			placeholder: '@' // :string | undefined
 		}
 	};
 }]);

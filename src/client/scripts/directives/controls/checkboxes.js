@@ -4,7 +4,6 @@ angular.module('rapid-build').directive('rbaCheckboxes', [() => {
 	var Compile = function(tElement, tAttrs, transclude) {
 		if (typeof tAttrs.caption === 'undefined')
 			tElement[0].querySelector('.caption').remove();
-
 		return Link;
 	}
 
@@ -12,11 +11,11 @@ angular.module('rapid-build').directive('rbaCheckboxes', [() => {
 	 *******/
 	var Link = (scope, iElement, iAttrs) => {
 		scope.name = scope.name || iAttrs.model;
-		if (!Array.isArray(scope.model)) scope.model = [];
+		if (!Array.isArray(scope.model)) scope.model = []; // if model value isn't defined
 
 		/* Methods
 		 **********/
-		scope.toggle = (item, dataIndex) => {
+		scope.select = (item, dataIndex) => {
 			var modelIndex = scope.model.indexOf(item),
 				hasModel   = modelIndex !== -1;
 			if (hasModel)
@@ -33,13 +32,15 @@ angular.module('rapid-build').directive('rbaCheckboxes', [() => {
 		restrict: 'E',
 		templateUrl: '/views/directives/controls/checkboxes.html',
 		scope: {
-			name:     '@',
-			model:    '=',
-			data:     '=',
-			caption:  '@',
-			inline:   '@',
-			stacked:  '@',
-			vertical: '@'
+			model:    '=',  // :any
+			data:     '=',  // :[any]
+			name:     '@?', // :string | *attrs.model
+			caption:  '@?', // :string
+			/* VALUELESS
+			 ************/
+			inline:   '@?',
+			stacked:  '@?',
+			vertical: '@?'
 		}
 	};
 }]);
