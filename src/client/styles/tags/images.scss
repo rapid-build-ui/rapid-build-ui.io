@@ -1,0 +1,11 @@
+/**********
+ * IMAGES
+ *********/
+img {
+	&.bordered {
+		border: 1px solid #999;
+	}
+	&.rounded {
+		border-radius: 6px;
+	}
+}

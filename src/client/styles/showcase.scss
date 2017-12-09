@@ -11,6 +11,7 @@
 @import 'tags/forms.scss';
 @import 'tags/headings.scss';
 @import 'tags/hr.scss';
+@import 'tags/images.scss';
 @import 'tags/links.scss';
 @import 'tags/lists.scss';
 @import 'tags/nav.scss';
@@ -28,8 +29,10 @@
 @import 'misc/logos.scss';
 
 // Layout
-@import 'layout/layout.scss';
+@import 'layout/aside.scss';
+@import 'layout/content.scss';
 @import 'layout/header.scss';
+@import 'layout/layout.scss';
 @import 'layout/main.scss';
 @import 'layout/footer.scss';
 

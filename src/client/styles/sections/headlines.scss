@@ -3,13 +3,27 @@
  ********************/
 .headlines { // example: homepage
 	section {
-		margin: 0 0 remy(30);
-		padding: 0 0 remy(24);
+		margin: 0 0 remy(40);
+		padding: 0 0 remy(60);
 		border-bottom: 1px dashed #ddd;
 		text-align: center;
-		@include removeLastChildBottomMargin();
+		@include removeLastChildBottomSpacing();
 
 		h1 {
+			border-bottom: none;
+			margin-bottom: remy(22);
+			padding-bottom: 0;
+		}
+		p {
+			font-size: remy(18);
+		}
+
+		&:first-child {
+			padding-top: remy(30);
+			padding-bottom: remy(50);
+			font-style: italic;
+		}
+		&:last-child {
 			border-bottom: none;
 		}
 	}

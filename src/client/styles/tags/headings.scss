@@ -36,3 +36,10 @@ h6 { font-size: remy(18); }
 // extra styling
 h1, h2, h3, h4, h5, h6 { text-shadow: 1px 1px 4px #eee; }
 h4, h5 { text-transform: uppercase; }
+
+// sub headings
+h1, h2, h3, h4, h5, h6 {
+	&.sub {
+		color: #92a2b2;
+	}
+}

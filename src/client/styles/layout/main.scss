@@ -2,14 +2,14 @@
  * LAYOUT MAIN
  **************/
 main {
-	padding-top: 0;
-	padding-bottom: remy(50);
+	// padding-top: remy(30);
 	min-height: remy(450);
 
 	// page header
     h1:first-of-type {
     	margin: 0 0 remy(25);
-    	padding: 0 0 remy(10);
+		// margin-bottom: 0;
+    	padding: 0 0 remy(16);
     	border-bottom: 1px solid #e3e3e3; // ddd | e6e6e6
     }
 }
