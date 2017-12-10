@@ -5,25 +5,22 @@
 	section {
 		margin: 0 0 remy(40);
 		padding: 0 0 remy(60);
-		border-bottom: 1px dashed #ddd;
 		text-align: center;
+		border-bottom: 1px dashed #ddd;
 		@include removeLastChildBottomSpacing();
 
-		h1 {
-			border-bottom: none;
-			margin-bottom: remy(22);
-			padding-bottom: 0;
-		}
 		p {
 			font-size: remy(18);
 		}
 
 		&:first-child {
-			padding-top: remy(30);
+			margin-top: remy(17);
 			padding-bottom: remy(50);
 			font-style: italic;
 		}
+
 		&:last-child {
+			padding-bottom: 0;
 			border-bottom: none;
 		}
 	}

@@ -1,0 +1,11 @@
+/**********
+ * HEADERS
+ **********/
+header:not(.main) {
+	margin: 0 0 remy(25);
+	padding: 0 0 remy(16);
+	border-bottom: 1px solid #e3e3e3;
+	h1 {
+		margin-bottom: 0;
+	}
+}
