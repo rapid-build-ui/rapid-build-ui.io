@@ -20,6 +20,7 @@
 		border-radius: 10px;
 		@include tabSize(2);
 		&:focus {
+			outline: none;
 			border-color: $greyDark;
 		}
 	}

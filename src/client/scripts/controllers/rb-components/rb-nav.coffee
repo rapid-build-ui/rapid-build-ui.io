@@ -11,6 +11,12 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope',
 
 			"<rb-nav#{attrs}>#{content}</rb-nav>"
 
+		links = """
+			<a href="/">home</a>
+			<a href="/contact">contact</a>
+			<a href="/examples">examples</a>
+		"""
+
 		# Props
 		# =====
 		$scope.layout = 'vertical'
@@ -19,7 +25,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope',
 		# =======
 		$scope.reset = ->
 			$scope.a =
-				content: null # :string | html
+				content: links # :string | html
 
 		# Watches
 		# =======

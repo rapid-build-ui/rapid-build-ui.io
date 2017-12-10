@@ -19,6 +19,7 @@ label {
 
 /* Text Inputs
  **************/
+textarea,
 input[type='text'],
 input[type='date'],
 input[type='datetime-local'],
@@ -28,6 +29,7 @@ input[type='number'],
 input[type='password'] {
 	padding: remy(6) remy(8);
 	color: $darker;
+	font-size: remy(13);
 	line-height: 1.4;
 	border-radius: 4px;
 	border: 1px solid $xxxGreyLight;
@@ -36,6 +38,13 @@ input[type='password'] {
 		outline: none;
 		border: 1px solid $greyLight;
 	}
+}
+
+/* Textareas
+ ************/
+textarea {
+	width: remy(400);
+	height: remy(112);
 }
 
 /* Checkboxes and Radios
