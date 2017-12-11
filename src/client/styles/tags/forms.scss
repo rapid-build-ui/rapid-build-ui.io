@@ -30,7 +30,7 @@ input[type='password'] {
 	padding: remy(6) remy(8);
 	color: $darker;
 	font-size: remy(13);
-	line-height: 1.4;
+	line-height: .95rem;
 	border-radius: 4px;
 	border: 1px solid $xxxGreyLight;
 	transition: border 200ms ease-out;
@@ -43,6 +43,7 @@ input[type='password'] {
 /* Textareas
  ************/
 textarea {
+	line-height: 1.15rem;
 	width: remy(400);
 	height: remy(112);
 }
