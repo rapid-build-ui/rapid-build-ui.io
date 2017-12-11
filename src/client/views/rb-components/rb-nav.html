@@ -7,6 +7,7 @@
 	<section class="grid">
 		<div class="col">
 			<div rba-builder="markup"></div>
+			Rapid!
 		</div>
 		<div class="col-7">
 			<rba-code readonly model="markup" caption="markup"></rba-code>
@@ -17,19 +18,20 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<div class="grid-noGutter">
+		<div class="grid-noBottom">
 			<div class="col-8">
 				<rba-radios caption="kind" model="a.kind" data="kinds" toggle></rba-radios>
 				<rba-radios caption="active" model="a.active" data="actives" toggle></rba-radios>
 				<rba-input caption="caption" model="a.caption"></rba-input>
+				<rba-textarea caption="content" model="a.content"></rba-textarea>
 			</div>
 			<div class="col">
+				<rba-checkbox caption="inline" model="a.inline"></rba-checkbox>
 				<rba-checkbox caption="vertical" model="a.vertical"></rba-checkbox>
 				<rba-checkbox caption="dividers" model="a.dividers"></rba-checkbox>
 				<rba-checkbox caption="unresponsive" model="a.unresponsive"></rba-checkbox>
 			</div>
 		</div>
-		<rba-textarea caption="content" model="a.content"></rba-textarea>
 
 		<section class="buttons">
 			<button name="button" ng-click="reset()">Reset</button>

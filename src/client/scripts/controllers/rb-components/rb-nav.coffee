@@ -11,6 +11,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope',
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
 			attrs += "#{s}dividers" if $scope.a.dividers
+			attrs += "#{s}inline" if $scope.a.inline
 			attrs += "#{s}vertical" if $scope.a.vertical
 			attrs += "#{s}unresponsive" if $scope.a.unresponsive
 			attrs += "#{s}active=\"#{$scope.a.active}\"" if $scope.a.active
