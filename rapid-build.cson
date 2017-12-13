@@ -45,6 +45,10 @@ common:
 				es6: true
 
 	order: # build will merge this with dev or prod
+		scripts:
+			first: [
+				'scripts/polyfills/*.*'
+			]
 		styles:
 			first: [
 				'styles/reset.css'
