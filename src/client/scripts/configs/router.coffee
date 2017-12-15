@@ -6,7 +6,7 @@ angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 
 		.when '/components/:component',
 			layout: 'superman'
-			# title: format: false
+			reloadOnSearch: false
 			title: format: 'uppercase'
 			templateUrl: (params) ->
 				"/views/rb-components/#{params.component}.html"
