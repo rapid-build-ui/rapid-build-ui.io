@@ -26,14 +26,23 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope',
 			<a href="#about">about</a>
 			<a href="#contact">contact</a>
 		"""
-		
+
+		# links = """
+		# 	<a href="/home">home</a>
+		# 	<a href="/components/rb-icon#faq">faq</a>
+		# 	<a href="/components/rb-button?name=rapid">about</a>
+		# 	<a href="/components/rb-nav?name=rapid#build">contact</a>
+		# """
+
 		$scope.links = [
 			'home',
 			'about',
 			'contact'
 		]
-		$scope.addLink = (link = 'link') ->
-			$scope.links.push link
+
+		linkCnt = 1
+		$scope.addLink = ->
+			$scope.links.push "link#{linkCnt++}"
 
 		# Props
 		# =====
@@ -53,6 +62,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope',
 				content: links # :string | html
 				# active: false
 				# active: 'hash'
+				# active: 'path'
 				# kind:    'tabs'
 				# dividers: true
 				# vertical: true
