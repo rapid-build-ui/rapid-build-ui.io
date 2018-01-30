@@ -28,7 +28,7 @@
 	},
 	"scripts": {
 		"link": "cd src/client/ && yarn link @rapid-build-ui/rb-button @rapid-build-ui/rb-icon @rapid-build-ui/rb-nav",
-		"install-client": "cd src/client/ && npm install --no-save",
+		"install-client": "cd src/client/ && yarn install --ignore-engines",
 		"install-server": "cd src/server/ && npm install",
 		"setup": "npm run link && npm run install-client && npm run install-server"
 	}
