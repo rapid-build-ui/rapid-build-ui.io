@@ -21,6 +21,7 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope',
 		$scope.reset = ->
 			$scope.a =
 				kind: 'heart' # :string (required)
+				source: 'regular'
 
 		# Watches
 		# =======

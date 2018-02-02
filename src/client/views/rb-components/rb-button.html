@@ -20,30 +20,13 @@
 		<rba-radios caption="type" model="a.type" data="types" toggle></rba-radios>
 		<rba-radios caption="kind" model="a.kind" data="kinds" toggle></rba-radios>
 		<rba-radios caption="size" model="a.size" data="sizes" toggle></rba-radios>
-		<rba-radios caption="icon" model="a.icon" data="icons" toggle></rba-radios>
 		<rba-checkbox caption="disabled" model="a.disabled"></rba-checkbox>
 		<rba-input caption="caption" model="a.caption"></rba-input>
 
 		<!-- ICON OPTIONS -->
+		<rba-radios caption="icon-kind" model="a.iconKind" data="icons" toggle></rba-radios>
+		<rba-radios caption="icon-source" model="a.iconSource" data="iconSources" toggle></rba-radios>
 		<rba-checkbox caption="icon-position" model="a.iconPosition" value="iconPosition" sub-caption="{{iconPosition}}"></rba-checkbox>
-		<div class="controls">
-			<label>icon-options</label>
-			<div ng-repeat="(opt, opts) in iconOpts" ng-switch="isType(opts)">
-				<rba-checkbox
-					caption="{{opt}}"
-					model="a.iconOpts[opt]"
-					ng-switch-when="boolean"
-					value="{ false: undefined }">
-				</rba-checkbox>
-				<rba-radios
-					toggle
-					data="opts"
-					caption="{{opt}}"
-					ng-switch-when="array"
-					model="a.iconOpts[opt]">
-				</rba-radios>
-			</div>
-		</div>
 
 		<section class="buttons">
 			<button>Save</button>
