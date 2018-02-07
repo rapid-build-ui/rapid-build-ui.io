@@ -14,7 +14,7 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope','typeSe
 			attrs += "#{s}disabled" if $scope.a.disabled
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}size=\"#{$scope.a.size}\"" if $scope.a.size
-			attrs += "#{s}icon=\"#{$scope.a.icon}\"" if $scope.a.icon
+			attrs += "#{s}icon-kind=\"#{$scope.a.iconKind}\"" if $scope.a.iconKind
 			attrs += "#{s}icon-position=\"#{$scope.a.iconPosition}\"" if $scope.a.iconPosition
 			attrs += "#{s}icon-options='#{JSON.stringify($scope.a.iconOpts)}'" if hasOptions $scope.a.iconOpts
 			attrs += "#{s}type=\"#{$scope.a.type}\"" if $scope.a.type
