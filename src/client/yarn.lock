@@ -2,9 +2,13 @@
 # yarn lockfile v1
 
 
+"@fortawesome/fontawesome@FortAwesome/Font-Awesome#v5.0.6":
+  version "0.0.0"
+  resolved "https://codeload.github.com/FortAwesome/Font-Awesome/tar.gz/0a4935e849b1ae1360d03b84eaf84a4a205e9ebb"
+
 "@polymer/polymer@next":
-  version "3.0.0-pre.7"
-  resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.0.0-pre.7.tgz#c1e9720e47fae91d5e79f40064c12c97df19935f"
+  version "3.0.0-pre.8"
+  resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.0.0-pre.8.tgz#075001a300ca9164f4479473b296d46a28d0110e"
   dependencies:
     "@webcomponents/shadycss" "^1.0.0"
     "@webcomponents/webcomponentsjs" "^1.0.0"
