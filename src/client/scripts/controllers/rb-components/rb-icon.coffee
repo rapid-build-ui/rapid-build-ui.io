@@ -13,8 +13,8 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope',
 
 		# Props
 		# =====
-		$scope.kinds = ['heart','github','user']
-		$scope.sources = ['solid','light', 'branded']
+		$scope.kinds = ['heart','user','github']
+		$scope.sources = ['solid','brands']
 
 		# Methods
 		# =======

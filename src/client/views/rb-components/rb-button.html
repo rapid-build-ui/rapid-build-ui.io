@@ -14,7 +14,7 @@
 	</section>
 
 	<!-- DEMO -->
-	<form name="demoForm" ng-submit="save()">
+	<form name="demoForm" ng-submit="save($event)">
 		<h5 rba-text-curve>Demo</h5>
 
 		<rba-radios caption="type" model="a.type" data="types" toggle></rba-radios>
@@ -24,13 +24,22 @@
 		<rba-input caption="caption" model="a.caption"></rba-input>
 
 		<!-- ICON OPTIONS -->
-		<rba-radios caption="icon-kind" model="a.iconKind" data="icons" toggle></rba-radios>
+		<rba-radios caption="icon" model="a.icon" data="icons" toggle></rba-radios>
 		<rba-radios caption="icon-source" model="a.iconSource" data="iconSources" toggle></rba-radios>
 		<rba-checkbox caption="icon-position" model="a.iconPosition" value="iconPosition" sub-caption="{{iconPosition}}"></rba-checkbox>
 
+		<!-- FORM CONTROLS -->
 		<section class="buttons">
-			<button>Save</button>
-			<button type="button" ng-click="reset()">Reset</button>
+			<rb-button
+				data-reset
+				icon="sync"
+				icon-source="solid"
+				icon-position="left">
+				Reset
+			</rb-button>
 		</section>
 	</form>
 </div>
+
+
+
