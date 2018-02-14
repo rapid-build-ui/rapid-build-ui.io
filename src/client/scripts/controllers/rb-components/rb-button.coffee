@@ -38,14 +38,11 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 		markupWatch = $scope.$watch ->
 			$scope.markup = createMarkup()
 
-		# Event Testing
-		# =============
+		# Event Handlers
+		# ==============
 		resetFrm = -> $scope.$apply $scope.reset
 		resetBtn = $element[0].querySelector('[data-reset]')
-		resetBtn = angular.element resetBtn
-		# either way to add listner
-		# resetBtn.addEventListener 'clicked', resetFrm
-		resetBtn.on 'clicked', resetFrm
+		resetBtn.addEventListener 'clicked', resetFrm
 
 		# Init
 		# ====
@@ -54,8 +51,7 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 		# Destroys
 		# ========
 		$scope.$on '$destroy', ->
-			# resetBtn.removeEventListener 'clicked', resetFrm
-			resetBtn.off 'clicked', resetFrm
+			resetBtn.removeEventListener 'clicked', resetFrm
 			markupWatch()
 
 

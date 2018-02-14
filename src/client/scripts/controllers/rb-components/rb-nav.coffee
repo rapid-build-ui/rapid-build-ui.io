@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbNavController', ['$scope',
-	($scope) ->
+angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element',
+	($scope, $element) ->
 		# Private
 		# =======
 		formatContent = (content) ->
@@ -73,6 +73,12 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope',
 		markupWatch = $scope.$watch ->
 			$scope.markup = createMarkup()
 
+		# Event Handlers
+		# ==============
+		resetFrm = -> $scope.$apply $scope.reset
+		resetBtn = $element[0].querySelector('[data-reset]')
+		resetBtn.addEventListener 'clicked', resetFrm
+
 		# Init
 		# ====
 		$scope.reset()
@@ -80,5 +86,6 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope',
 		# Destroys
 		# ========
 		$scope.$on '$destroy', ->
+			resetBtn.removeEventListener 'clicked', resetFrm
 			markupWatch()
 ]

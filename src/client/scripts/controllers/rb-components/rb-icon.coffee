@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbIconController', ['$scope',
-	($scope) ->
+angular.module('rapid-build').controller 'rbIconController', ['$scope', '$element',
+	($scope, $element) ->
 		# Private
 		# =======
 		createMarkup = ->
@@ -28,6 +28,12 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope',
 		markupWatch = $scope.$watch ->
 			$scope.markup = createMarkup()
 
+		# Event Handlers
+		# ==============
+		resetFrm = -> $scope.$apply $scope.reset
+		resetBtn = $element[0].querySelector('[data-reset]')
+		resetBtn.addEventListener 'clicked', resetFrm
+
 		# Init
 		# ====
 		$scope.reset()
@@ -35,5 +41,6 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope',
 		# Destroys
 		# ========
 		$scope.$on '$destroy', ->
+			resetBtn.removeEventListener 'clicked', resetFrm
 			markupWatch()
 ]
