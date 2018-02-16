@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"engines": {
 		"npm": "5.x",
-		"node": "6.11.x"
+		"node": "8.x"
 	},
 	"contributors": [
 		{
