@@ -8,6 +8,7 @@ common:
 
 	angular:
 		moduleName: 'rapid-build'
+		modules: ['ngclipboard']
 		bootstrap: true
 		templateCache:
 			dev: true
@@ -56,6 +57,11 @@ common:
 
 dev:
 	order:
+		scripts:
+			first: [
+				'node_modules/clipboard/dist/clipboard.js'
+				'node_modules/ngclipboard/dist/ngclipboard.js'
+			]
 		styles:
 			first: [
 				'node_modules/gridlex/dist/gridlex.css'
@@ -63,6 +69,11 @@ dev:
 
 prod:
 	order:
+		scripts:
+			first: [
+				'node_modules/clipboard/dist/clipboard.min.js'
+				'node_modules/ngclipboard/dist/ngclipboard.min.js'
+			]
 		styles:
 			first: [
 				'node_modules/gridlex/dist/gridlex.min.css'

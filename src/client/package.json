@@ -28,6 +28,7 @@
 		"@rapid-build-ui/rb-button": "link:node_modules/@rapid-build-ui/rb-button",
 		"@rapid-build-ui/rb-icon": "link:node_modules/@rapid-build-ui/rb-icon",
 		"@rapid-build-ui/rb-nav": "link:node_modules/@rapid-build-ui/rb-nav",
-		"gridlex": "2.6.1"
+		"gridlex": "2.6.1",
+		"ngclipboard": "sachinchoolur/ngclipboard#v1.1.3"
 	}
 }
