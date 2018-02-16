@@ -11,7 +11,7 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 			attrs += "#{s}icon=\"#{$scope.a.icon}\"" if $scope.a.icon
 			attrs += "#{s}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
 			attrs += "#{s}icon-position=\"#{$scope.a.iconPosition}\"" if $scope.a.iconPosition
-			content = "#{nt}#{$scope.a.caption}#{n}" if $scope.a.caption
+			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
 
 			"<rb-button#{attrs}>#{content}</rb-button>"
 
@@ -28,7 +28,7 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 		# =======
 		$scope.reset = ->
 			$scope.a =
-				caption: 'Button' # :string | html
+				content: 'Button' # :string | html
 
 		$scope.save = (e) ->
 			console.log $scope.demoForm
@@ -54,8 +54,6 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 			resetBtn.removeEventListener 'clicked', resetFrm
 			markupWatch()
 
-
-
-
-
 ]
+
+
