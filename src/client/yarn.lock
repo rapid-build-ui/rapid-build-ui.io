@@ -21,6 +21,10 @@
   version "0.0.0"
   uid ""
 
+"@rapid-build-ui/rb-popover@link:node_modules/@rapid-build-ui/rb-popover":
+  version "0.0.0"
+  uid ""
+
 "@webcomponents/shadycss@^1.0.0":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.1.1.tgz#abc821961c99a2b1c5e0f225cd01b139899ebc4c"
