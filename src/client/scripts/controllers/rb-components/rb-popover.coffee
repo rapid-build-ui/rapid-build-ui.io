@@ -1,4 +1,4 @@
-angular.module('rapid-build').controller 'rbIconController', ['$scope', '$element',
+angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element',
 	($scope, $element) ->
 		# Private
 		# =======
@@ -6,22 +6,25 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
+			attrs += "#{s}caption=\"#{$scope.a.caption}\"" if $scope.a.caption
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
-			attrs += "#{s}source=\"#{$scope.a.source}\"" if $scope.a.source
+			attrs += "#{s}position=\"#{$scope.a.position}\"" if $scope.a.position
+			attrs += "#{s}trigger=\"#{$scope.trigger}\"" if $scope.a.trigger
+			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
 
-			"<rb-icon#{attrs}></rb-icon>"
+			"<rb-popover#{attrs}>#{content}</rb-popover>"
 
 		# Props
 		# =====
-		$scope.kinds   = ['heart','user','github']
-		$scope.sources = ['solid','brands']
+		$scope.kinds     = ['success','danger','warning','info']
+		$scope.positions = ['top','bottom','left']
+		$scope.trigger   = 'hover'
 
 		# Methods
 		# =======
 		$scope.reset = ->
 			$scope.a =
-				kind: 'heart' # :string (required)
-				source: null
+				content: 'Hello popover!'
 
 		# Watches
 		# =======

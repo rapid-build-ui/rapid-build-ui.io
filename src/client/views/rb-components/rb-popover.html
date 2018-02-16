@@ -1,0 +1,36 @@
+<div ng-controller="rbPopoverController">
+	<header>
+		<h1>rb-popover</h1>
+	</header>
+
+	<!-- COMPONENT -->
+	<section class="grid">
+		<div class="col">
+			<div rba-builder="markup"></div>
+		</div>
+		<div class="col-8">
+			<rba-code model="markup" caption="markup" readonly></rba-code>
+		</div>
+	</section>
+
+	<!-- DEMO -->
+	<form name="demoForm">
+		<h5 rba-text-curve>Demo</h5>
+
+		<rba-radios caption="kind" model="a.kind" data="kinds" toggle></rba-radios>
+		<rba-radios caption="position" model="a.position" data="positions" toggle></rba-radios>
+		<rba-checkbox caption="trigger" model="a.trigger" sub-caption="{{trigger}}"></rba-checkbox>
+		<rba-input caption="caption" model="a.caption"></rba-input>
+		<rba-textarea caption="content" model="a.content"></rba-textarea>
+
+		<section class="buttons">
+			<rb-button
+				data-reset
+				icon="sync"
+				icon-source="solid"
+				icon-position="left">
+				Reset
+			</rb-button>
+		</section>
+	</form>
+</div>
