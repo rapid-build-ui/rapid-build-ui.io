@@ -3,8 +3,8 @@
 
 
 "@polymer/polymer@next":
-  version "3.0.0-pre.8"
-  resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.0.0-pre.8.tgz#075001a300ca9164f4479473b296d46a28d0110e"
+  version "3.0.0-pre.9"
+  resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.0.0-pre.9.tgz#f25a9f6674a9fee0e486259b34ec60a6dcaffb28"
   dependencies:
     "@webcomponents/shadycss" "^1.0.0"
     "@webcomponents/webcomponentsjs" "^1.0.0"
