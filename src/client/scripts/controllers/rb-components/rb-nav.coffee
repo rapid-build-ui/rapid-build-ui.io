@@ -14,8 +14,8 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			attrs += "#{s}inline" if $scope.a.inline
 			attrs += "#{s}vertical" if $scope.a.vertical
 			attrs += "#{s}unresponsive" if $scope.a.unresponsive
-			attrs += "#{s}active=\"#{$scope.a.active}\"" if $scope.a.active? and !$scope.a.active.param
-			attrs += "#{s}active='#{angular.toJson($scope.a.active)}'" if $scope.a.active and $scope.a.active.param
+			attrs += "#{s}active=\"#{$scope.a.active}\"" if $scope.a.active? and !($scope.a.active.param or $scope.a.active.segment)
+			attrs += "#{s}active='#{angular.toJson($scope.a.active)}'" if $scope.a.active and ($scope.a.active.param or $scope.a.active.segment)
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}caption=\"#{$scope.a.caption}\"" if $scope.a.caption
 			content = "#{nt}#{formatContent($scope.a.content)}#{n}" if $scope.a.content
@@ -30,7 +30,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 
 		links = """
 			<a href="?name=home#home">home</a>
-			<a href="/components/rb-nav?name=about#about">about</a>
+			<a href="/components/rb-popover?name=about#about">about</a>
 			<a href="/components/rb-nav?name=contact#contact">contact</a>
 		"""
 
@@ -52,7 +52,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			'hash'
 			'path'
 			{ param: 'name' }
-			# { segment: 1 }
+			{ segment: 2 }
 		]
 
 		# Methods
@@ -60,7 +60,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 		$scope.reset = ->
 			$scope.a =
 				content: links # :string | html
-				# active: $scope.actives[3]
+				# active: $scope.actives[4]
 				# active: false
 				# active: 'hash'
 				# active: 'path'
