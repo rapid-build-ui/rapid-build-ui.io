@@ -3,5 +3,9 @@
 				vertical !== undefined ? 'vertical' : ''
 			   ].join(' ')">
 	<label class="caption" ng-bind="caption"></label>
-	<textarea name="{{name}}" ng-model="model"></textarea>
+	<textarea
+		name="{{name}}"
+		ng-model="model"
+		ng-class="[width].join(' ')">
+	</textarea>
 </div>

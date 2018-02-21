@@ -14,9 +14,9 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			attrs += "#{s}inline" if $scope.a.inline
 			attrs += "#{s}vertical" if $scope.a.vertical
 			attrs += "#{s}unresponsive" if $scope.a.unresponsive
+			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}active=\"#{$scope.a.active}\"" if $scope.a.active? and !($scope.a.active.param or $scope.a.active.segment)
 			attrs += "#{s}active='#{angular.toJson($scope.a.active)}'" if $scope.a.active and ($scope.a.active.param or $scope.a.active.segment)
-			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}caption=\"#{$scope.a.caption}\"" if $scope.a.caption
 			content = "#{nt}#{formatContent($scope.a.content)}#{n}" if $scope.a.content
 

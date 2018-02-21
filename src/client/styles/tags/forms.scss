@@ -46,6 +46,9 @@ textarea {
 	line-height: 1.15rem;
 	width: remy(325);
 	height: remy(112);
+	&.wide {
+		width: remy(430);
+	}
 }
 
 /* Checkboxes and Radios

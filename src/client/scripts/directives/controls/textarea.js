@@ -23,6 +23,7 @@ angular.module('rapid-build').directive('rbaTextarea', [() => {
 			model:    '=',  // :any
 			name:     '@?', // :string | *attrs.model
 			caption:  '@?', // :string
+			width:    '@?', // :string (wide)
 			/* VALUELESS
 			 ************/
 			inline:   '@',

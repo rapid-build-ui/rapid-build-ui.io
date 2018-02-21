@@ -16,6 +16,12 @@
 			<a href="?name=home#home">home</a>
 			<a href="?name=about#about">about</a>
 			<a href="?name=contact#contact">contact</a>
+			<a href="?name=faq#faq">faq</a>
+
+			<!-- <a href="#home">home</a>
+			<a href="#about">about</a>
+			<a href="#contact">contact</a>
+			<a href="#faq">faq</a> -->
 
 			<!-- <a href="#link">link</a> -->
 		</div>
@@ -33,13 +39,15 @@
 				<rba-radios caption="kind" model="a.kind" data="kinds" toggle></rba-radios>
 				<rba-radios caption="active" model="a.active" data="actives" stacked toggle></rba-radios>
 				<rba-input caption="caption" model="a.caption"></rba-input>
-				<rba-textarea caption="content" model="a.content"></rba-textarea>
 			</div>
 			<div class="col">
 				<rba-checkbox caption="inline" model="a.inline"></rba-checkbox>
 				<rba-checkbox caption="vertical" model="a.vertical"></rba-checkbox>
 				<rba-checkbox caption="dividers" model="a.dividers"></rba-checkbox>
 				<rba-checkbox caption="unresponsive" model="a.unresponsive"></rba-checkbox>
+			</div>
+			<div class="col">
+				<rba-textarea caption="content" model="a.content" width="wide"></rba-textarea>
 			</div>
 		</div>
 
