@@ -20,6 +20,7 @@
 	 **********/
 	&.inline {
 		display: inline-flex;
+		margin-right: remy(15);
 	}
 	&.stacked { // for checkboxes and radios
 		.sub-controls {

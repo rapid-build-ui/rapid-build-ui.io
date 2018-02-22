@@ -4,6 +4,8 @@ angular.module('rapid-build').directive('rbaTextarea', [() => {
 	var Compile = function(tElement, tAttrs, transclude) {
 		if (typeof tAttrs.caption === 'undefined')
 			tElement[0].querySelector('.caption').remove();
+		if (typeof tAttrs.placeholder === 'undefined')
+			tElement[0].querySelector('textarea').removeAttribute('placeholder');
 		return Link;
 	}
 
@@ -20,10 +22,11 @@ angular.module('rapid-build').directive('rbaTextarea', [() => {
 		restrict: 'E',
 		templateUrl: '/views/directives/controls/textarea.html',
 		scope: {
-			model:    '=',  // :any
-			name:     '@?', // :string | *attrs.model
-			caption:  '@?', // :string
-			width:    '@?', // :string (wide)
+			model:       '=',  // :any
+			name:        '@?', // :string | *attrs.model
+			caption:     '@?', // :string
+			width:       '@?', // :string (wide)
+			placeholder: '@?', // :string
 			/* VALUELESS
 			 ************/
 			inline:   '@',
