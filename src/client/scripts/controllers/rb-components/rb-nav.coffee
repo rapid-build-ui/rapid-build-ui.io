@@ -10,14 +10,14 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
-			attrs += "#{s}dividers" if $scope.a.dividers
-			attrs += "#{s}inline" if $scope.a.inline
-			attrs += "#{s}vertical" if $scope.a.vertical
-			attrs += "#{s}unresponsive" if $scope.a.unresponsive
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}active=\"#{$scope.a.active}\"" if $scope.a.active? and !($scope.a.active.param or $scope.a.active.segment)
 			attrs += "#{s}active='#{angular.toJson($scope.a.active)}'" if $scope.a.active and ($scope.a.active.param or $scope.a.active.segment)
 			attrs += "#{s}caption=\"#{$scope.a.caption}\"" if $scope.a.caption
+			attrs += "#{s}inline" if $scope.a.inline
+			attrs += "#{s}vertical" if $scope.a.vertical
+			attrs += "#{s}dividers" if $scope.a.dividers
+			attrs += "#{s}responsive" if $scope.a.responsive
 			content = "#{nt}#{formatContent($scope.a.content)}#{n}" if $scope.a.content
 
 			"<rb-nav#{attrs}>#{content}</rb-nav>"
@@ -30,7 +30,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 
 		links = """
 			<a href="?name=home#home">home</a>
-			<a href="/components/rb-popover?name=about#about">about</a>
+			<a href="?name=about#about">about</a>
 			<a href="/components/rb-nav?name=contact#contact">contact</a>
 		"""
 
@@ -60,6 +60,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 		$scope.reset = ->
 			$scope.a =
 				content: links # :string | html
+				# caption: 'Components'
 				# active: $scope.actives[4]
 				# active: false
 				# active: 'hash'
