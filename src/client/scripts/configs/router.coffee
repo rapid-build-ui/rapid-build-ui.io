@@ -5,11 +5,14 @@ angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 			templateUrl: '/views/home.html'
 
 		.when '/components/:component',
-			layout: 'superman'
+			layout: 'wolverine'
 			reloadOnSearch: false
 			title: format: 'uppercase'
 			templateUrl: (params) ->
 				"/views/rb-components/#{params.component}.html"
+
+		.when '/components/',
+			redirectTo: '/components/rb-button'
 
 		.otherwise
 			redirectTo: '/'

@@ -22,17 +22,17 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 
 			"<rb-nav#{attrs}>#{content}</rb-nav>"
 
-		# links = """
-		# 	<a href="#home">home</a>
-		# 	<a href="#about">about</a>
-		# 	<a href="#contact">contact</a>
-		# """
-
 		links = """
-			<a href="?name=home#home">home</a>
-			<a href="?name=about#about">about</a>
-			<a href="/components/rb-nav?name=contact#contact">contact</a>
+			<a href="#home">home</a>
+			<a href="#about">about</a>
+			<a href="#contact">contact</a>
 		"""
+
+		# links = """
+		# 	<a href="?name=home#home">home</a>
+		# 	<a href="?name=about#about">about</a>
+		# 	<a href="/components/rb-nav?name=contact#contact">contact</a>
+		# """
 
 		$scope.links = [
 			'home',

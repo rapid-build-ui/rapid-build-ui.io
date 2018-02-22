@@ -22,6 +22,16 @@ footer.main {
 	flex-shrink: 0;
 }
 
+/* Flex Grow Main
+ *****************/
+.app-main {
+	display: flex;
+	flex-direction: column;
+}
+main {
+	flex: 1 0 auto;
+}
+
 /* Main Containers
  ******************/
 header.main {
