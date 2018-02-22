@@ -1,12 +1,12 @@
 <div class="app-main">
 	<header
-		class="main grid-spaceBetween-noGutter-noBottom"
-		ng-include="'/views/layout/header.html'">
+		ng-include="'/views/layout/header.html'"
+		class="main grid-spaceBetween-noGutter-noBottom">
 	</header>
 	<main
 		ng-controller="layoutController"
-		class="grid-center-equalHeight-noGutter-noBottom"
-		ng-include="'/views/layout/main.html'">
+		ng-include="rbLayout.layout"
+		class="grid-center-equalHeight-noGutter-noBottom">
 	</main>
 </div>
 

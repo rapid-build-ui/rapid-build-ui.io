@@ -8,8 +8,8 @@ angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 			layout: 'wolverine'
 			reloadOnSearch: false
 			title: format: 'uppercase'
-			templateUrl: (params) ->
-				"/views/rb-components/#{params.component}.html"
+			views: aside: '/views/navs/components-nav.html'
+			templateUrl: (params) -> "/views/rb-components/#{params.component}.html"
 
 		.when '/components/',
 			redirectTo: '/components/rb-button'
