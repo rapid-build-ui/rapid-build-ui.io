@@ -27,9 +27,9 @@ footer.main {
 .app-main {
 	display: flex;
 	flex-direction: column;
-}
-main {
-	flex: 1 0 auto;
+	main {
+		flex: 1 0 auto;
+	}
 }
 
 /* Main Containers
@@ -40,7 +40,7 @@ header.main {
 
 main {
 	padding-left:  remy(38);
-	padding-right: remy(29);
+	padding-right: remy(38);
 }
 
 footer.main {

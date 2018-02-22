@@ -5,8 +5,13 @@
 	</header>
 	<main
 		ng-controller="layoutController"
-		ng-include="rbLayout.layout"
-		class="grid-center-equalHeight-noGutter-noBottom">
+		class="grid-center-equalHeight-noBottom-noGutter">
+		<div class="col-9_lg-12">
+			<div
+				class="grid-center-equalHeight-noBottom"
+				ng-include="rbLayout.layout">
+			</div>
+		</div>
 	</main>
 </div>
 
