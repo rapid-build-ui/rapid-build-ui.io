@@ -1,15 +1,17 @@
-<header
-	class="main grid-spaceBetween-noBottom"
-	ng-include="'/views/layout/header.html'">
-</header>
+<div class="app-main">
+	<header
+		class="main grid-spaceBetween-noGutter-noBottom"
+		ng-include="'/views/layout/header.html'">
+	</header>
 
-<main
-	ng-controller="layoutController"
-	class="grid-center-equalHeight-noBottom"
-	ng-include="'/views/layout/main.html'">
-</main>
+	<main
+		ng-controller="layoutController"
+		class="grid-center-equalHeight-noGutter-noBottom"
+		ng-include="'/views/layout/main.html'">
+	</main>
+</div>
 
 <footer
-	class="main grid-noBottom"
+	class="main grid-noGutter-noBottom"
 	ng-include="'/views/layout/footer.html'">
 </footer>
