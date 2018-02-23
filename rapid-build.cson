@@ -53,6 +53,7 @@ common:
 		styles:
 			first: [
 				'styles/reset.css'
+				'styles/grid.css'
 			]
 
 dev:
@@ -62,10 +63,6 @@ dev:
 				'node_modules/clipboard/dist/clipboard.js'
 				'node_modules/ngclipboard/dist/ngclipboard.js'
 			]
-		styles:
-			first: [
-				'node_modules/gridlex/dist/gridlex.css'
-			]
 
 prod:
 	order:
@@ -73,8 +70,4 @@ prod:
 			first: [
 				'node_modules/clipboard/dist/clipboard.min.js'
 				'node_modules/ngclipboard/dist/ngclipboard.min.js'
-			]
-		styles:
-			first: [
-				'node_modules/gridlex/dist/gridlex.min.css'
 			]
