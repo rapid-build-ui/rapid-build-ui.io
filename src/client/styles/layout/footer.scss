@@ -13,8 +13,12 @@ footer.main {
 
 	.rb-version {
 		display: block;
-		// margin-bottom: remy(16);
 		color: #666;
 		font-weight: normal;
+	}
+
+	rb-nav {
+		display: inline-block;
+		margin-top: remy(16);
 	}
 }

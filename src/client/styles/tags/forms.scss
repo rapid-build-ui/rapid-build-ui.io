@@ -49,6 +49,12 @@ textarea {
 	&.wide {
 		width: remy(430);
 	}
+	&.xwide {
+		width: remy(450);
+	}
+	&.xxwide {
+		width: remy(475);
+	}
 }
 
 /* Checkboxes and Radios
