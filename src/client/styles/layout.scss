@@ -1,0 +1,28 @@
+/*************
+ * APP LAYOUT
+ *************/
+// Sticky Footer
+html,
+body {
+	height: 100%;
+}
+body {
+	display: flex;
+	flex-direction: column;
+}
+.header-and-main {
+	flex: 1 0 auto;
+}
+footer.main {
+	flex-shrink: 0;
+}
+
+/* Flex Grow Main
+ *****************/
+.header-and-main {
+	display: flex;
+	flex-direction: column;
+	main {
+		flex: 1 0 auto;
+	}
+}

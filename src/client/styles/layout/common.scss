@@ -1,0 +1,18 @@
+/********************
+ * LAYOUT CONTAINERS
+ ********************/
+main,
+header.main,
+footer.main {
+	padding-left:  remy(38);
+	padding-right: remy(38);
+}
+
+header.main {
+	padding-top: remy(23);
+}
+
+footer.main {
+	padding-top:    remy(50);
+	padding-bottom: remy(55);
+}

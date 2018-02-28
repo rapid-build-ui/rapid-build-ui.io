@@ -1,0 +1,22 @@
+/*******************
+ * WOLVERINE LAYOUT
+ *******************/
+.wolverine-layout {
+	padding-left: 0;
+
+	.main-content {
+		padding-top:  remy(10);
+		padding-left: $gl-gutter;
+	}
+}
+
+/* Responsive
+ *************/
+@media (max-width: mapGet($gl-mq-list, sm)) {
+	.wolverine-layout {
+		padding-left: $gl-gutter;
+		.main-content {
+			padding-left: 0;
+		}
+	}
+}

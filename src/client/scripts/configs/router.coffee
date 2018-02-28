@@ -4,9 +4,9 @@ angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 			layout: 'star-lord'
 			templateUrl: '/views/mains/home.html'
 
-		.when '/how-to-use',
+		.when '/getting-started',
 			layout: 'superman'
-			templateUrl: '/views/mains/how-to-use.html'
+			templateUrl: '/views/mains/getting-started.html'
 
 		.when '/components/:component',
 			layout: 'wolverine'
