@@ -4,7 +4,7 @@
 			   ].join(' ')">
 	<label class="caption" ng-bind="caption"></label>
 	<input
-		type="text"
+		type="{{type || 'text'}}"
 		name="{{name}}"
 		ng-model="model"
 		placeholder="{{placeholder}}">

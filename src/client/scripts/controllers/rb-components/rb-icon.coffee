@@ -8,6 +8,7 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}source=\"#{$scope.a.source}\"" if $scope.a.source
+			attrs += "#{s}size=\"#{$scope.a.size}\"" if $scope.a.size
 
 			"<rb-icon#{attrs}></rb-icon>"
 
@@ -21,7 +22,6 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 		$scope.reset = ->
 			$scope.a =
 				kind: 'heart' # :string (required)
-				source: null
 
 		# Watches
 		# =======

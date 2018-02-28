@@ -17,9 +17,10 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rba-radios caption="source" model="a.source" data="sources" toggle></rba-radios>
 		<rba-radios caption="kind" model="a.kind" data="kinds" inline></rba-radios>
 		<rba-input model="a.kind" placeholder="font awesome" inline></rba-input>
+		<rba-radios caption="source" model="a.source" data="sources" toggle></rba-radios>
+		<rba-input caption="size" model="a.size" type="number"></rba-input>
 
 		<section class="buttons">
 			<rb-button

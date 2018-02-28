@@ -27,6 +27,7 @@ angular.module('rapid-build').directive('rbaInput', [() => {
 			name:        '@?', // :string | *attrs.model
 			caption:     '@?', // :string
 			placeholder: '@?', // :string
+			type:        '@?', // :string | *text
 			/* VALUELESS
 			 ************/
 			inline:   '@?',

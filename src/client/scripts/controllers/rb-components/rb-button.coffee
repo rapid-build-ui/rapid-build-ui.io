@@ -10,6 +10,7 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 			attrs += "#{s}type=\"#{$scope.a.type}\"" if $scope.a.type
 			attrs += "#{s}icon=\"#{$scope.a.icon}\"" if $scope.a.icon
 			attrs += "#{s}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
+			attrs += "#{s}icon-size=\"#{$scope.a.iconSize}\"" if $scope.a.iconSize
 			attrs += "#{s}icon-position=\"#{$scope.a.iconPosition}\"" if $scope.a.iconPosition
 			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
 
