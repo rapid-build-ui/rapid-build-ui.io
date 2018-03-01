@@ -5,8 +5,11 @@ main,
 header.main,
 footer.main {
 	margin: 0;
-	padding-left:  remy(38);
-	padding-right: remy(38);
+	padding: 0 remy(38);
+	> [class*='col'] {
+		&:first-child { padding-left:  0; }
+		&:last-child  { padding-right: 0; }
+	}
 }
 
 header.main {

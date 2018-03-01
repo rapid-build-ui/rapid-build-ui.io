@@ -3,12 +3,3 @@
  ********************************/
 @import 'sass/grid-vars.scss';
 @import '../node_modules/gridlex/src/gridlex.scss';
-
-/* Grid Adjustments
- *******************/
-[class*='grid'] {
-	> [class*='col'] {
-		&:first-child { padding-left:  0; }
-		&:last-child  { padding-right: 0; }
-	}
-}
