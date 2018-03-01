@@ -5,8 +5,7 @@
 	padding-left: 0;
 
 	.main-content {
-		padding-top:  remy(10);
-		padding-left: $gl-gutter;
+		padding-top: remy(10);
 	}
 }
 
@@ -15,8 +14,12 @@
 @media (max-width: mapGet($gl-mq-list, sm)) {
 	.wolverine-layout {
 		padding-left: $gl-gutter;
-		.main-content {
+
+		// columns are stacked
+		// so remove extra space
+		> [class*='col'] {
 			padding-left: 0;
+			padding-right: 0;
 		}
 	}
 }

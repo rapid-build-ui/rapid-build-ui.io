@@ -1,17 +1,17 @@
 <div class="header-and-main">
 	<header
 		ng-include="'/views/layout/header.html'"
-		class="main grid-spaceBetween-noBottom-noGutter">
+		class="main grid-spaceBetween-noBottom">
 	</header>
 	<main
 		ng-controller="layoutController"
 		ng-class="rbLayout.heroClass"
 		ng-include="rbLayout.layout"
-		class="grid-center-equalHeight-noBottom-noGutter">
+		class="grid-center-equalHeight-noBottom">
 	</main>
 </div>
 
 <footer
-	class="main grid-noBottom-noGutter"
+	class="main grid-noBottom"
 	ng-include="'/views/layout/footer.html'">
 </footer>
