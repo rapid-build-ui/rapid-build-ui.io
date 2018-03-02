@@ -13,7 +13,7 @@ angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 			reloadOnSearch: false
 			title: format: 'uppercase'
 			views: aside: '/views/navs/components-nav.html'
-			templateUrl: (params) -> "/views/rb-components/#{params.component}.html"
+			templateUrl: (params) -> "/views/components/#{params.component}.html"
 
 		.when '/components/',
 			redirectTo: '/components/rb-button'
