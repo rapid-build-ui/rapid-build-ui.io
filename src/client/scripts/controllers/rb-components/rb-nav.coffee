@@ -29,6 +29,15 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 		"""
 
 		# links = """
+		# 	<a target="_blank" href="https://www.npmjs.com/~rapid-build-ui">
+		# 		Chrome <rb-icon source="brands" kind="chrome"></rb-icon>
+		# 	</a>
+		# 	<a target="_blank" href="https://github.com/rapid-build-ui">
+		# 		GitHub <rb-icon source="brands" kind="github"></rb-icon>
+		# 	</a>
+		# """
+
+		# links = """
 		# 	<a href="?name=home#home">home</a>
 		# 	<a href="?name=about#about">about</a>
 		# 	<a href="/components/rb-nav?name=contact#contact">contact</a>
@@ -42,7 +51,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 
 		linkCnt = 1
 		$scope.addLink = ->
-			$scope.links.push "link#{linkCnt++}"
+			$scope.links.push " link#{linkCnt++} "
 
 		# Props
 		# =====
