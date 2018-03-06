@@ -13,7 +13,6 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}active=\"#{$scope.a.active}\"" if $scope.a.active? and !($scope.a.active.param or $scope.a.active.segment)
 			attrs += "#{s}active='#{angular.toJson($scope.a.active)}'" if $scope.a.active and ($scope.a.active.param or $scope.a.active.segment)
-			attrs += "#{s}caption=\"#{$scope.a.caption}\"" if $scope.a.caption
 			attrs += "#{s}inline" if $scope.a.inline
 			attrs += "#{s}vertical" if $scope.a.vertical
 			attrs += "#{s}dividers" if $scope.a.dividers
@@ -27,6 +26,14 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			<a href="#about">about</a>
 			<a href="#contact">contact</a>
 		"""
+
+		# links = """
+		# 	<h3>X</h3>
+		# 	<a href="#home">home</a>
+		# 	<a href="#about">about</a>
+		# 	<h3>X</h3>
+		# 	<a href="#contact">contact</a>
+		# """
 
 		# links = """
 		# 	<a target="_blank" href="https://www.npmjs.com/~rapid-build-ui">
@@ -69,7 +76,6 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 		$scope.reset = ->
 			$scope.a =
 				content: links # :string | html
-				# caption: 'Components'
 				# active: $scope.actives[4]
 				# active: false
 				# active: 'hash'
