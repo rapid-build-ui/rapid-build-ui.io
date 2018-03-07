@@ -3,51 +3,112 @@
  *********/
 table {
 	border-collapse: collapse;
-	width: calc(100% - 20px);
-	margin-left: 10px;
+
+	/* Shared
+	 *********/
 	th, td {
-		position: relative;
 		padding: 10px;
 		text-align: left;
 		vertical-align: top;
-		&:first-child {
-			left: -10px;
-			padding-left: 20px;
-			border-radius: 15px 0 0 15px;
+	}
+
+	/* Font Styles
+	 **************/
+	td {
+		font-size: remy(14.5);
+	}
+	th {
+		font-size: remy(13);
+		color: white;
+		font-weight: 700;
+		letter-spacing: .3px;
+		text-transform: uppercase;
+		text-shadow: 1px 1px #52626b;
+	}
+
+	/* Rounded End Caps
+	 *******************/
+	$capWidth:  14px;     // end caps width (sass variable)
+	$capRadius: $capWidth + 1px; // end caps border radius
+	position: relative;
+	left: $capWidth;
+	width: calc(100% - #{$capWidth * 2});
+	th, td {
+		position: relative;
+		&:first-child::before,
+		&:last-child::after {
+			position: absolute;
+			top: 0;
+			width: $capWidth;
+			height: 100%;
+			content: '';
 		}
-		&:last-child {
-			right: -10px;
-			padding-right: 20px;
-			border-radius: 0 15px 15px 0;
+		&:first-child::before {
+			left: -$capWidth;
+			border-radius: $capRadius 0 0 $capRadius;
+		}
+		&:last-child::after {
+			right: -$capWidth;
+			border-radius: 0 $capRadius $capRadius 0;
 		}
 	}
+
+	/* Background Colors
+	 ********************/
 	thead {
-		tr, th {
+		tr,
+		th:first-child::before,
+		th:last-child::after {
 			background: linear-gradient(#019fcc, #037bab);
-		}
-		th {
-			color: white;
-			text-transform: uppercase;
-			text-shadow: 1px 1px #52626B;
-			&:first-child {
-				border-right: 1px solid #0674ad;
-			}
-			&:last-child {
-				border-left: 1px solid #1d9dc7;
-			}
 		}
 	}
 	tbody {
-		tr:hover,
-		tr:hover td {
-			background-color: #f4f7fc;
+		tr:hover {
+			&,
+			td:first-child::before,
+			td:last-child::after {
+				background-color: #f4f7fc;
+			}
 		}
+	}
+	tfoot {
+		tr,
+		td:first-child::before,
+		td:last-child::after {
+			background-color: #fafafa;
+		}
+	}
+
+	/* Borders
+	 **********/
+	thead {
+		th {
+			&:not(:last-child)::after {
+				position: absolute;
+				top: 0;
+				right: 0;
+				border-left: 1px solid #0674ad;
+				border-right: 1px solid #1d9dc7;
+				height: 100%;
+				content: '';
+			}
+		}
+	}
+	tbody,
+	tfoot {
 		tr {
 			border-bottom: 1px dotted lightgrey;
 		}
 	}
-	tfoot {
-		td {
+
+	/* Extend tfoot
+	 ***************/
+	tfoot td {
+		&:first-child::before,
+		&:last-child::after {
+			top: -1px;
+			border-radius: 0;
+			border-top: 1px dotted lightgrey;
 			border-bottom: 1px dotted lightgrey;
 		}
 	}
