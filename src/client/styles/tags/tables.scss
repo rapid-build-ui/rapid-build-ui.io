@@ -2,11 +2,53 @@
  * TABLES
  *********/
 table {
-	tr {
+	border-collapse: collapse;
+	width: calc(100% - 20px);
+	margin-left: 10px;
+	th, td {
+		position: relative;
+		padding: 10px;
 		text-align: left;
-	}
-
-	td {
 		vertical-align: top;
+		&:first-child {
+			left: -10px;
+			padding-left: 20px;
+			border-radius: 15px 0 0 15px;
+		}
+		&:last-child {
+			right: -10px;
+			padding-right: 20px;
+			border-radius: 0 15px 15px 0;
+		}
+	}
+	thead {
+		tr, th {
+			background: linear-gradient(#019fcc, #037bab);
+		}
+		th {
+			color: white;
+			text-transform: uppercase;
+			text-shadow: 1px 1px #52626B;
+			&:first-child {
+				border-right: 1px solid #0674ad;
+			}
+			&:last-child {
+				border-left: 1px solid #1d9dc7;
+			}
+		}
+	}
+	tbody {
+		tr:hover,
+		tr:hover td {
+			background-color: #f4f7fc;
+		}
+		tr {
+			border-bottom: 1px dotted lightgrey;
+		}
+	}
+	tfoot {
+		td {
+			border-bottom: 1px dotted lightgrey;
+		}
 	}
 }
