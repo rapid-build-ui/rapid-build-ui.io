@@ -82,56 +82,10 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>kind</td>
-				<td>
-					The tabs option changes the display of the
-					nav links from lower case to capital letters
-					and adds a separating border for each one of them.
-				</td>
-			</tr>
-			<tr>
-				<td>active</td>
-				<td>false - This is awesome<br>
-					hash - This is super awesome<br>
-					path - This is super, super awesome<br>
-					{"param":"name"} - This is super, super, super awesome<br>
-					{"segment":2} - This is soooooooo awesome<br>
-				</td>
-			</tr>
-			<tr>
-				<td>caption</td>
-				<td>For captions use h3(s) in the content.</td>
-			</tr>
-			<tr>
-				<td>content</td>
-				<td>Use anchor tags to create links.</td>
-			</tr>
-			<tr>
-				<td>inline</td>
-				<td>It aligns the navigation links in a horizontal line</td>
-			</tr>
-			<tr>
-				<td>vertical</td>
-				<td>It aligns the navigation links vertically</td>
-			</tr>
-			<tr>
-				<td>dividers</td>
-				<td>
-					It divides, adds a right border to the
-					navigation links while horizontally aligned
-				</td>
-			</tr>
-			<tr>
-				<td>responsive</td>
-				<td>Coming soon...</td>
+			<tr ng-repeat="item in RB_NAV_API">
+				<td ng-bind="item.name"></td>
+				<td ng-bind-html="item.description"></td>
 			</tr>
 		</tbody>
-		<tfoot>
-			<tr>
-				<td>Footer</td>
-				<td>Footer content</td>
-			</tr>
-		</tfoot>
 	</table>
 </div>

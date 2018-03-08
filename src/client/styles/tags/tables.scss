@@ -28,7 +28,7 @@ table {
 
 	/* Rounded End Caps
 	 *******************/
-	$capWidth:  14px;     // end caps width (sass variable)
+	$capWidth:  4px;     // end caps width (sass variable)
 	$capRadius: $capWidth + 1px; // end caps border radius
 	position: relative;
 	left: $capWidth;

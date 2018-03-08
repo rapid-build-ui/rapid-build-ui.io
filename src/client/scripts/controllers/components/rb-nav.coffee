@@ -1,5 +1,7 @@
-angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element',
-	($scope, $element) ->
+angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element', 'RB_NAV_API',
+	($scope, $element, RB_NAV_API) ->
+		$scope.RB_NAV_API = RB_NAV_API
+		
 		# Private
 		# =======
 		formatContent = (content) ->
