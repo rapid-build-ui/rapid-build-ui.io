@@ -14,6 +14,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			attrs += "#{s}active=\"#{$scope.a.active}\"" if $scope.a.active? and !($scope.a.active.param or $scope.a.active.segment)
 			attrs += "#{s}active='#{angular.toJson($scope.a.active)}'" if $scope.a.active and ($scope.a.active.param or $scope.a.active.segment)
 			attrs += "#{s}inline" if $scope.a.inline
+			attrs += "#{s}inverse" if $scope.a.inverse
 			attrs += "#{s}vertical" if $scope.a.vertical
 			attrs += "#{s}dividers" if $scope.a.dividers
 			attrs += "#{s}responsive" if $scope.a.responsive
@@ -26,6 +27,13 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			<a href="#about">about</a>
 			<a href="#contact">contact</a>
 		"""
+
+		# links = """
+		# 	<h3>Rapid</h3>
+		# 	<a href="#home">home</a>
+		# 	<a href="#about">about</a>
+		# 	<a href="#contact">contact</a>
+		# """
 
 		# links = """
 		# 	<h3>X</h3>
@@ -80,6 +88,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 				# active: false
 				# active: 'hash'
 				# active: 'path'
+				# inverse: true
 				# kind:    'tabs'
 				# dividers: true
 				# vertical: true

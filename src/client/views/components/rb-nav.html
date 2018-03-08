@@ -6,29 +6,36 @@
 	<!-- COMPONENT -->
 	<section class="grid">
 		<div class="col">
-			<div rba-builder="markup"></div>
+			<section
+				class="component"
+				ng-class="[
+					a.inline ? 'inline' : '',
+					a.inverse ? 'inverse' : ''
+				].join(' ')">
+				<div rba-builder="markup"></div>
 
-			<!-- <rb-nav active="hash" dividers>
-				<a href="" ng-href="#{{link}}" ng-repeat="link in links" ng-bind="link"></a>
-			</rb-nav>
-			<br>
-			<button type="button" ng-click="addLink()">add link</button> -->
+				<!-- <rb-nav active="hash" dividers>
+					<a href="" ng-href="#{{link}}" ng-repeat="link in links" ng-bind="link"></a>
+				</rb-nav>
+				<br>
+				<button type="button" ng-click="addLink()">add link</button> -->
 
-			<!-- <br>
-			<a href="?name=home#home">home</a>
-			<a href="?name=about#about">about</a>
-			<a href="?name=contact#contact">contact</a>
-			<a href="?name=faq#faq">faq</a> -->
+				<!-- <br>
+				<a href="?name=home#home">home</a>
+				<a href="?name=about#about">about</a>
+				<a href="?name=contact#contact">contact</a>
+				<a href="?name=faq#faq">faq</a> -->
 
-			<!-- <br>
-			<a href="#home">home</a>
-			<a href="#about">about</a>
-			<a href="#contact">contact</a>
-			<a href="#faq">faq</a>  -->
+				<!-- <br>
+				<a href="#home">home</a>
+				<a href="#about">about</a>
+				<a href="#contact">contact</a>
+				<a href="#faq">faq</a>  -->
 
-			<!-- <a href="#link">link</a> -->
+				<!-- <a href="#link">link</a> -->
+			</section>
 		</div>
-		<div class="col-7">
+		<div class="col-6">
 			<rba-code readonly model="markup" caption="markup"></rba-code>
 		</div>
 	</section>
@@ -44,8 +51,9 @@
 			</div>
 			<div class="col">
 				<rba-checkbox caption="inline" model="a.inline"></rba-checkbox>
-				<rba-checkbox caption="vertical" model="a.vertical"></rba-checkbox>
+				<rba-checkbox caption="inverse" model="a.inverse"></rba-checkbox>
 				<rba-checkbox caption="dividers" model="a.dividers"></rba-checkbox>
+				<rba-checkbox caption="vertical" model="a.vertical"></rba-checkbox>
 				<rba-checkbox caption="responsive" model="a.responsive"></rba-checkbox>
 			</div>
 			<div class="col">
