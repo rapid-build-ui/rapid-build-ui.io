@@ -1,6 +1,7 @@
-angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$element',
-	($scope, $element) ->
-
+angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$element', 'RB_BUTTON_API',
+	($scope, $element, RB_BUTTON_API) ->
+		$scope.componentApi = RB_BUTTON_API
+		
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
@@ -56,5 +57,3 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 			markupWatch()
 
 ]
-
-

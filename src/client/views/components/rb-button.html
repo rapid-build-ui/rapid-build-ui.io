@@ -40,7 +40,21 @@
 			</rb-button>
 		</section>
 	</form>
+
+	<!-- API -->
+	<h5 rba-text-curve>API</h5>
+	<table>
+		<thead>
+			<tr>
+				<th>Options</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in componentApi">
+				<td ng-bind="item.name"></td>
+				<td ng-bind-html="item.description"></td>
+			</tr>
+		</tbody>
+	</table>
 </div>
-
-
-
