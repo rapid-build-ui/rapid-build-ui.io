@@ -1,46 +1,40 @@
 angular.module('rapid-build').constant('RB_BUTTON_API', [
 	{
 		name: "type",
-		description: `reset - This is awesome<br>
-			submit - This is super awesome`
+		description: `
+			<a target="_blank" href="https://www.w3schools.com/tags/att_button_type.asp">reference</a>
+		`
 	},
 	{
 		name: "kind",
-		description: `success - This is awesome<br>
-			danger - This is super awesome<br>
-			warning - This is super, super awesome<br>
-			info - This is super, super, super awesome`
+		description: `Changes the look of the display.`
 	},
 	{
 		name: "size",
-		description: `small - This is awesome<br>
-			big - This is super awesome`
+		description: `Changes the size of the button.`
 	},
 	{
 		name: "disabled",
-		description: `Coming soon...`
+		description: `Disables the button and changes the display.`
 	},
 	{
 		name: "content",
-		description: `Coming soon...`
+		description: `Button content.`
 	},
 	{
 		name: "icon",
-		description: `heart - This is awesome<br>
-			user - This is super awesome<br>
-			github - This is super, super awesome`
+		description: `Adds an <a target= "_blank" href="/components/rb-icon">icon</a>.`
 	},
 	{
 		name: "icon-source",
-		description: `solid - This is awesome<br>
-			brands - This is super awesome`
+		description: `<a target="_blank" href="/components/rb-icon">reference</a>`
 	},
 	{
 		name: "icon-position",
-		description: `left - Coming soon...`
+		description: `<a target="_blank" href="/components/rb-icon">reference</a`
 	},
 	{
 		name: "icon-size",
-		description: `Coming soon...`
+		description: `<a target="_blank" href="/components/rb-icon">reference</a`
 	}
 ]);

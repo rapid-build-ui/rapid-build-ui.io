@@ -1,17 +1,14 @@
 angular.module('rapid-build').constant('RB_ICON_API', [
 	{
 		name: "kind",
-		description: `heart - This is awesome<br>
-			user - This is super awesome<br>
-			github - This is super, super awesome`
+		description: `Any free <a target="_blank" href="https://fontawesome.com/icons?d=gallery&m=free">font awesome icons</a>.`
 	},
 	{
 		name: "source",
-		description: `solid - This is awesome<br>
-			brands - This is super awesome`
+		description: `Reference font awesome icon types, the default is regular.`
 	},
 	{
 		name: "size",
-		description: `Coming soon...`
+		description: `Changes the size of the icon.`
 	}
 ]);
