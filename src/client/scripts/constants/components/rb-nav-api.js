@@ -11,7 +11,7 @@ angular.module('rapid-build').constant('RB_NAV_API', [
 			hash - This is super awesome<br>
 			path - This is super, super awesome<br>
 			{"param":"name"} - This is super, super, super awesome<br>
-			{"segment":2} - This is soooooooo awesome<br>`
+			{"segment":2} - This is soooooooo awesome`
 	},
 	{
 		name: "caption",

@@ -1,5 +1,7 @@
-angular.module('rapid-build').controller 'rbIconController', ['$scope', '$element',
-	($scope, $element) ->
+angular.module('rapid-build').controller 'rbIconController', ['$scope', '$element', 'RB_ICON_API',
+	($scope, $element, RB_ICON_API) ->
+		$scope.componentApi = RB_ICON_API
+		
 		# Private
 		# =======
 		createMarkup = ->

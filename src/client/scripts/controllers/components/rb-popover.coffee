@@ -1,5 +1,7 @@
-angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element',
-	($scope, $element) ->
+angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element', 'RB_POPOVER_API'
+	($scope, $element, RB_POPOVER_API) ->
+		$scope.componentApi = RB_POPOVER_API
+		
 		# Private
 		# =======
 		createMarkup = ->
