@@ -1,0 +1,51 @@
+<div ng-controller="rbAlertController">
+	<header class="page-header">
+		<h1>rb-alert</h1>
+	</header>
+
+	<!-- COMPONENT -->
+	<section class="grid">
+		<div class="col">
+			<div rba-builder="markup"></div>
+		</div>
+		<div class="col-7">
+			<rba-code readonly model="markup" caption="markup"></rba-code>
+		</div>
+	</section>
+
+	<!-- DEMO -->
+	<form name="demoForm" ng-submit="save($event)">
+		<h5 rba-text-curve>Demo</h5>
+
+		<rba-radios caption="kind" model="a.kind" data="kinds" toggle></rba-radios>
+		<rba-input caption="content" model="a.content"></rba-input>
+
+		<!-- FORM CONTROLS -->
+		<section class="buttons">
+			<rb-button
+				data-reset
+				icon="sync"
+				icon-source="solid"
+				icon-position="left">
+				Reset
+			</rb-button>
+		</section>
+	</form>
+
+	<!-- API -->
+	<h5 rba-text-curve>API</h5>
+	<table>
+		<thead>
+			<tr>
+				<th>Options</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in componentApi">
+				<td ng-bind="item.name"></td>
+				<td ng-bind-html="item.description"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
