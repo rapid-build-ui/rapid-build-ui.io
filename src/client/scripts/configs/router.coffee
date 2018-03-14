@@ -16,7 +16,7 @@ angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 			templateUrl: (params) -> "/views/components/#{params.component}.html"
 
 		.when '/components/',
-			redirectTo: '/components/rb-button'
+			redirectTo: '/components/rb-alert'
 
 		.otherwise
 			redirectTo: '/'

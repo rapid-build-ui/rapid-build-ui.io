@@ -26,7 +26,11 @@ common:
 			]
 		watch:
 			client: [
-				'node_modules/@rapid-build-ui/**'
+				'node_modules/@rapid-build-ui/rb-alert/**',
+				'node_modules/@rapid-build-ui/rb-button/**'
+				'node_modules/@rapid-build-ui/rb-icon/**'
+				'node_modules/@rapid-build-ui/rb-nav/**'
+				'node_modules/@rapid-build-ui/rb-popover/**'
 			]
 
 	exclude:

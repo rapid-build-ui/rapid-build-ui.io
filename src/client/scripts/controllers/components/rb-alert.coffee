@@ -20,9 +20,6 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 			$scope.a =
 				content: 'Alert' # :string | html
 
-		$scope.save = (e) ->
-			console.log $scope.demoForm
-
 		# Watches
 		# =======
 		markupWatch = $scope.$watch ->

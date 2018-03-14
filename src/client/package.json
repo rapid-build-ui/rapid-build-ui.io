@@ -30,6 +30,7 @@
 	},
 	"flat": true,
 	"dependencies": {
+		"@rapid-build-ui/rb-alert": "link:node_modules/@rapid-build-ui/rb-alert",
 		"@rapid-build-ui/rb-button": "link:node_modules/@rapid-build-ui/rb-button",
 		"@rapid-build-ui/rb-icon": "link:node_modules/@rapid-build-ui/rb-icon",
 		"@rapid-build-ui/rb-nav": "link:node_modules/@rapid-build-ui/rb-nav",
