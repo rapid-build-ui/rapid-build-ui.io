@@ -2,13 +2,17 @@
  * LAYOUT ASIDE
  ***************/
  aside.main {
-	 border-right: 1px solid #e3e3e3;
- }
+	position: relative;
+	border-right: 1px solid #e3e3e3;
 
- /* Responsive
- *************/
-@media (max-width: mapGet($gl-mq-list, sm)) {
-	aside.main {
+	/* Responsive
+	*************/
+	@media (max-width: mapGet($gl-mq-list, sm)) {
 		border: none;
+		rb-nav {
+			position: absolute;
+			top: remy(20);
+			right: 0;
+		}
 	}
-}
+ }

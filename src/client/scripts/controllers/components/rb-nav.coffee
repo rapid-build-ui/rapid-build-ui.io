@@ -31,6 +31,13 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 		"""
 
 		# links = """
+		# 	<h3>Components</h3>
+		# 	<a href="#home">home</a>
+		# 	<a href="#about">about</a>
+		# 	<a href="#contact">contact</a>
+		# """
+
+		# links = """
 		# 	<h3>Rapid</h3>
 		# 	<a href="#home">home</a>
 		# 	<a href="#about">about</a>
@@ -68,7 +75,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 
 		linkCnt = 1
 		$scope.addLink = ->
-			$scope.links.push " link#{linkCnt++} "
+			$scope.links.push "link#{linkCnt++}"
 
 		# Props
 		# =====
@@ -94,6 +101,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 				# kind:    'tabs'
 				# dividers: true
 				# vertical: true
+				# responsive: true
 
 
 		# Watches

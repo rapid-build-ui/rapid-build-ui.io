@@ -13,9 +13,21 @@ header.main {
 		.rb-logo { height: 65px; }
 	}
 
-	// overlap bottom header border
-	rb-nav {
-		position: relative;
-		top: 1px;
+	.nav {
+		flex: none;
+		align-self: flex-end;
+		rb-nav {
+			position: relative;
+			top: 1px; // overlap bottom header border
+			white-space: nowrap;
+		}
+	}
+
+	 /* Responsive
+	 *************/
+	@media (max-width: mapGet($gl-mq-list, sm)) {
+		.nav {
+			align-self: flex-start;
+		}
 	}
 }
