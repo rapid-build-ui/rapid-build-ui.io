@@ -79,7 +79,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 
 		# Props
 		# =====
-		$scope.kinds = ['tabs']
+		$scope.kinds = ['primary']
 		$scope.actives = [
 			false
 			'hash'
@@ -98,7 +98,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 				# active: 'hash'
 				# active: 'path'
 				# inverse: true
-				# kind:    'tabs'
+				# kind:    'primary'
 				# dividers: true
 				# vertical: true
 				# responsive: true
