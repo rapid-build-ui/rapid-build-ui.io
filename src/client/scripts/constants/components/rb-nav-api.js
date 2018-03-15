@@ -35,6 +35,10 @@ angular.module('rapid-build').constant('RB_NAV_API', [
 	},
 	{
 		name: 'responsive',
-		description: `Changes the look of the display to be more suitable for smaller screens.`
+		description: `
+			Changes the look of the display to accommodate smaller screens
+			when <a target="_blank" href="https://goo.gl/KAhrH5">viewport</a>
+			width is less than or equal to 768px.
+		`
 	}
 ]);
