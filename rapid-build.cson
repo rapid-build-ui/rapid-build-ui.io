@@ -26,7 +26,7 @@ common:
 			]
 		watch:
 			client: [
-				'node_modules/@rapid-build-ui/**'
+				'node_modules/@rapid-build-ui/'
 			]
 
 	exclude:
