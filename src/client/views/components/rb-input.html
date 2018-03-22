@@ -1,6 +1,6 @@
-<div ng-controller="rbAlertController">
+<div ng-controller="rbInputController">
 	<header class="page-header">
-		<h1>rb-alert</h1>
+		<h1>rb-input</h1>
 	</header>
 
 	<!-- COMPONENT -->
@@ -8,7 +8,7 @@
 		<div class="col">
 			<div rba-builder="markup"></div>
 		</div>
-		<div class="col-6">
+		<div class="col-7">
 			<rba-code readonly model="markup" caption="markup"></rba-code>
 		</div>
 	</section>
@@ -16,11 +16,11 @@
 	<!-- DEMO -->
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
-		<rba-radios caption="kind" model="a.kind" data="kinds" toggle></rba-radios>
-		<rba-checkbox caption="removable" model="a.removable"></rba-checkbox>
-		<rba-textarea caption="content" model="a.content"></rba-textarea>
 
-		<!-- FORM CONTROLS -->
+		<rba-radios caption="kind" model="a.kind" data="kinds" inline></rba-radios>
+		<rba-input caption="label" model="a.label" type="text"></rba-input>
+		<rba-input caption="model" model="a.model" type="text"></rba-input>
+
 		<section class="buttons">
 			<rb-button
 				data-reset
@@ -31,6 +31,7 @@
 			</rb-button>
 		</section>
 	</form>
+
 
 	<!-- API -->
 	<h5 rba-text-curve>API</h5>
