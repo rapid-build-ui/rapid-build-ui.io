@@ -5,6 +5,8 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
+			
+			attrs += "#{s}removable" if $scope.a.removable
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
 
