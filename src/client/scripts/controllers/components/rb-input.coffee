@@ -1,6 +1,6 @@
-angular.module('rapid-build').controller 'rbIconController', ['$scope', '$element', 'RB_ICON_API',
-	($scope, $element, RB_ICON_API) ->
-		$scope.componentApi = RB_ICON_API
+angular.module('rapid-build').controller 'rbInputController', ['$scope', '$element', 'RB_INPUT_API',
+	($scope, $element, RB_INPUT_API) ->
+		$scope.componentApi = RB_INPUT_API
 
 		# Private
 		# =======
@@ -9,10 +9,10 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
-			attrs += "#{s}source=\"#{$scope.a.source}\"" if $scope.a.source
-			attrs += "#{s}size=\"#{$scope.a.size}\"" if $scope.a.size
+			attrs += "#{s}label=\"#{$scope.a.label}\"" if $scope.a.label
+			attrs += "#{s}model=\"#{$scope.a.model}\"" if $scope.a.model
 
-			"<rb-icon#{attrs}></rb-icon>"
+			"<rb-input#{attrs}></rb-input>"
 
 		# Props
 		# =====
@@ -23,7 +23,7 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 		# =======
 		$scope.reset = ->
 			$scope.a =
-				kind: 'heart' # :string (required)
+				label: 'My Input' # :string (required)
 
 		# Watches
 		# =======

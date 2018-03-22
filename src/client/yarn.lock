@@ -21,6 +21,10 @@
   version "0.0.0"
   uid ""
 
+"@rapid-build-ui/rb-input@link:node_modules/@rapid-build-ui/rb-input":
+  version "0.0.0"
+  uid ""
+
 "@rapid-build-ui/rb-nav@link:node_modules/@rapid-build-ui/rb-nav":
   version "0.0.0"
   uid ""
