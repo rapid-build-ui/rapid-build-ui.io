@@ -5,7 +5,7 @@ angular.module('rapid-build').constant('RB_ICON_API', [
 	},
 	{
 		name: 'source',
-		description: `Reference font awesome icon types, the default is regular.`
+		description: `Reference font awesome icon styles, default is regular.`
 	},
 	{
 		name: 'size',
