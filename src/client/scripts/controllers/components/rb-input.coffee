@@ -1,6 +1,6 @@
 angular.module('rapid-build').controller 'rbInputController', ['$scope', '$element', 'RB_INPUT_API',
 	($scope, $element, RB_INPUT_API) ->
-		$scope.componentApi = RB_INPUT_API
+		$scope.api = RB_INPUT_API
 
 		# Private
 		# =======
@@ -8,7 +8,6 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
-			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}label=\"#{$scope.a.label}\"" if $scope.a.label
 			attrs += "#{s}model=\"#{$scope.a.model}\"" if $scope.a.model
 
@@ -16,14 +15,12 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 
 		# Props
 		# =====
-		$scope.kinds   = ['heart','user','github']
-		$scope.sources = ['solid','brands']
 
 		# Methods
 		# =======
 		$scope.reset = ->
 			$scope.a =
-				label: 'My Input' # :string (required)
+				label: 'My Input'
 
 		# Watches
 		# =======

@@ -17,7 +17,6 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rba-radios caption="kind" model="a.kind" data="kinds" inline></rba-radios>
 		<rba-input caption="label" model="a.label" type="text"></rba-input>
 		<rba-input caption="model" model="a.model" type="text"></rba-input>
 
@@ -43,7 +42,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in componentApi">
+			<tr ng-repeat="item in api">
 				<td ng-bind="item.name"></td>
 				<td ng-bind-html="item.description"></td>
 			</tr>

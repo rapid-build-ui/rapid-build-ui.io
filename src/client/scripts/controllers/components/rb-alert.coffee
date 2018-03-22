@@ -1,11 +1,11 @@
 angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$element', 'RB_ALERT_API',
 	($scope, $element, RB_ALERT_API) ->
-		$scope.componentApi = RB_ALERT_API
+		$scope.api = RB_ALERT_API
 
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
-			
+
 			attrs += "#{s}removable" if $scope.a.removable
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content

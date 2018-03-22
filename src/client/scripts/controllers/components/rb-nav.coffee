@@ -1,6 +1,6 @@
 angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element', 'RB_NAV_API',
 	($scope, $element, RB_NAV_API) ->
-		$scope.componentApi = RB_NAV_API
+		$scope.api = RB_NAV_API
 
 		# Private
 		# =======
