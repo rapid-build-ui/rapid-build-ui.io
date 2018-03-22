@@ -1,7 +1,7 @@
 angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element', 'RB_POPOVER_API'
 	($scope, $element, RB_POPOVER_API) ->
 		$scope.componentApi = RB_POPOVER_API
-		
+
 		# Private
 		# =======
 		createMarkup = ->
@@ -11,7 +11,7 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 			attrs += "#{s}caption=\"#{$scope.a.caption}\"" if $scope.a.caption
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}position=\"#{$scope.a.position}\"" if $scope.a.position
-			attrs += "#{s}trigger=\"#{$scope.trigger}\"" if $scope.a.trigger
+			attrs += "#{s}hover" if $scope.a.hover
 			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
 
 			"<rb-popover#{attrs}>#{content}</rb-popover>"
@@ -20,7 +20,6 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 		# =====
 		$scope.kinds     = ['success','danger','warning','info']
 		$scope.positions = ['top','bottom','left']
-		$scope.trigger   = 'hover'
 
 		# Methods
 		# =======

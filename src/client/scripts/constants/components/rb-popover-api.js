@@ -8,7 +8,7 @@ angular.module('rapid-build').constant('RB_POPOVER_API', [
 		description: `Changes the position of the popover.`
 	},
 	{
-		name: 'trigger',
+		name: 'hover',
 		description: `Popover will be triggered when you hover over, the default is click.`
 	},
 	{
