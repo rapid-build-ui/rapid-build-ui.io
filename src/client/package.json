@@ -36,7 +36,6 @@
 		"@rapid-build-ui/rb-input": "link:node_modules/@rapid-build-ui/rb-input",
 		"@rapid-build-ui/rb-nav": "link:node_modules/@rapid-build-ui/rb-nav",
 		"@rapid-build-ui/rb-popover": "link:node_modules/@rapid-build-ui/rb-popover",
-		"gridlex": "2.7.1",
-		"ngclipboard": "sachinchoolur/ngclipboard#v1.1.3"
+		"gridlex": "2.7.1"
 	}
 }
