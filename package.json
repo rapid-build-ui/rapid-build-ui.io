@@ -34,8 +34,9 @@
 	"scripts": {
 		"install-client": "cd src/client/ && yarn install --ignore-engines",
 		"install-server": "cd src/server/ && npm install",
-		"presetup": "npm install && node scripts/presetup",
-		"setup": "npm run install-client && npm run install-server"
+		"presetup": "node scripts/setup/presetup",
+		"setup": "npm run install-client && npm run install-server",
+		"setup-components": "node scripts/setup/components"
 	},
 	"dependencies": {
 		"colors": "^1.2.1",

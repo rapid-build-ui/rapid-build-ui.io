@@ -1,14 +1,6 @@
 /* FOR DEVELOPMENT - YARN LINK RB-COMPONENTS
  ********************************************/
-require('colors').setTheme({
-	alert:   'yellow',
-	attn:    ['cyan', 'bold'],
-	error:   ['red', 'bold'],
-	info:    'cyan',
-	minor:   'gray',
-	success: ['green', 'bold'],
-	warn:    'magenta'
-});
+require('../bootstrap/colors');
 
 /* Requires
  ***********/
@@ -45,7 +37,7 @@ console.log(`\n${initMsg}`.attn);
 console.log(msgSeparator.info);
 for (let i in rbComponents) {
 	i = parseInt(i);
-	rbComponent        = `${rbScopedName}/${rbComponents[i]}`
+	let rbComponent    = `${rbScopedName}/${rbComponents[i]}`
 	yarnLinkStatement += ` ${rbComponent}`;
 	console.log(`${i+1}. ${rbComponent}`.info);
 }
