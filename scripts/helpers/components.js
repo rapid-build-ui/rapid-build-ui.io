@@ -5,55 +5,34 @@ const fse      = require('fs-extra');
 const path     = require('path');
 const clog     = require('./component-log');
 const template = require('./template-tags');
+const CWD      = process.cwd();
 const { execSync } = require('child_process');
 
-/* Constants
- ************/
-const CWD            = process.cwd();
-const CLIENT_PATH    = path.join(CWD, 'src', 'client');
-const RB_SCOPED_NAME = '@rapid-build-ui';
+/* Class
+ ********/
+class RbComponents {
+	constructor(names=[]) {
+		this.names = names;
+	}
 
-/* API
- ******/
-const RbComponents = {
-	getGlobalPath() { // :string
+	/* getters
+	 **********/
+	get globalPath() { // :string
 		let gPath = execSync('yarn global dir').toString(); // yarn's global path
-		let _path = path.join('..', 'link', RB_SCOPED_NAME);
+		let _path = path.join('..', 'link', this.scopedName);
 			_path = path.join(gPath, _path);
 		let exist = fse.pathExistsSync(_path); // validation
 		if (exist) return _path;
 		clog.noComponents({exit:true});
-	},
+	}
 
-	getPkg() { // :{}
-		let _path = path.join(CLIENT_PATH, 'package.json');
-		return require(_path);
-	},
-
-	getPkgNames() { // :string[]
-		let pkg      = this.getPkg();
-		let deps     = pkg.dependencies;
-		let pkgNames = [];
-		for (const [dep, version] of Object.entries(deps)) {
-			if (!dep.includes(RB_SCOPED_NAME)) continue;
-			pkgNames.push(dep);
-		}
-		return pkgNames.sort(); // asc order
-	},
-
-	getNames() { // :string[]
-		let pkgNames = this.getPkgNames();
-		return pkgNames.map(val => val.split('/')[1]);
-	},
-
-	getGlobalPaths() { // :string[]
-		let gPath    = this.getGlobalPath();
-		let names    = this.getNames();
+	get globalPaths() { // :string[]
+		let gPath    = this.globalPath;
+		let names    = this.names;
 		let paths    = [];
 		let unlinked = [];
 		for (const [i, name] of names.entries()) {
 			let _path = path.join(gPath, name);
-			// console.info(`${i+1}. ${_path}`.info);
 			paths.push(_path);
 		}
 		// validation
@@ -66,52 +45,103 @@ const RbComponents = {
 		}
 		!!unlinked.length && process.exit();
 		return paths;
-	},
+	}
 
-	getRealPaths() { // :string[]
-		let gPaths = this.getGlobalPaths();
-		let paths  = [];
-		for (const [i, gPath] of gPaths.entries()) {
-			const _path = fs.realpathSync(gPath);
-			// console.info(`${i+1}. ${_path}`.info);
-			paths.push(_path);
-		}
-		return paths;
-	},
+	get names() { // :string['rb-alert']
+		return this._names;
+	}
 
-	getProjectPaths() { // :string[]
-		let realPaths = this.getRealPaths();
+	get prefix() { // :string
+		return 'rb-';
+	}
+
+	get projectPaths() { // :string[]
+		let realPaths = this.realPaths;
 		let paths     = [];
 		for (const [i, realPath] of realPaths.entries()) {
 			const _path = path.join(realPath, '..', '..');
-			// console.info(`${i+1}. ${_path}`.info);
 			paths.push(_path);
 		}
 		return paths;
-	},
+	}
 
+	get realPaths() { // :string['symlink's real path']
+		let gPaths = this.globalPaths;
+		let paths  = [];
+		for (const [i, gPath] of gPaths.entries()) {
+			const _path = fs.realpathSync(gPath);
+			paths.push(_path);
+		}
+		return paths;
+	}
+
+	get scopedName() { // :string
+		return '@rapid-build-ui';
+	}
+
+	get showcaseClientPath() { // :string
+		return path.join(CWD, 'src', 'client');
+	}
+
+	get showcasePkg() { // :{} package.json
+		let _path = path.join(this.showcaseClientPath, 'package.json');
+		return require(_path);
+	}
+
+	get showcasePkgNames() { // :string['@rapid-build-ui/rb-alert']
+		let pkg      = this.showcasePkg;
+		let deps     = pkg.dependencies;
+		let pkgNames = [];
+		for (const [dep, version] of Object.entries(deps)) {
+			if (!dep.includes(this.scopedName)) continue;
+			pkgNames.push(dep);
+		}
+		return pkgNames.sort(); // asc order
+	}
+
+	/* setters
+	 **********/
+	set names(names=[]) {
+		let pkgNames = this.showcasePkgNames;
+		pkgNames = pkgNames.map(name => name.split('/')[1]);
+		if (!names.length) return this._names = pkgNames; // return all
+		// prep names
+		names = names.map(name => {
+			name = name.toLowerCase();
+			if (!name.indexOf(this.prefix)) return name;
+			return `${this.prefix}${name}`
+		});
+		// validation
+		for (let name of names) {
+			if (pkgNames.includes(name)) continue;
+			clog.invalidComponent(name,{exit:true});
+		}
+		this._names = names;
+	}
+
+	/* methods
+	 **********/
 	gitPull() { // :void
 		// let cmd       = 'git status'
 		// let cmd       = 'git error'
 		let cmd       = 'git pull'
-		let projPaths = this.getProjectPaths();
+		let projPaths = this.projectPaths;
 		for (const [i, projPath] of projPaths.entries()) {
 			let name = projPath.substr(projPath.lastIndexOf(path.sep) + 1)
 			clog.pullComponent(name, cmd);
-			let opts   = { cwd: projPaths[0] }
+			let opts   = { cwd: projPath };
 			let result = execSync(cmd, opts).toString();
 			console.info(result.minor);
 		}
-	},
+	}
 
 	runSetup() { // :void
 		let cmd       = 'npm run setup'
-		let projPaths = this.getProjectPaths();
+		let projPaths = this.projectPaths;
 		for (const [i, projPath] of projPaths.entries()) {
 			let name = projPath.substr(projPath.lastIndexOf(path.sep) + 1)
 			clog.setupComponent(name, cmd);
-			// console.info(template.underline`${i+1}. ${name}`.attn);
-			let opts   = { cwd: projPaths[0] }
+			let opts   = { cwd: projPath };
 			let result = execSync(cmd, opts).toString();
 			console.info(result.minor);
 		}

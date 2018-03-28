@@ -33,6 +33,16 @@ const Log = {
 		opts.exit && process.exit();
 	},
 
+	invalidComponent(name, opts={}) {
+		error(template.unindent`
+			${template.separate`
+				setup failed: invalid component name
+			`.toUpperCase()}
+			${name}
+		`.error, '\n');
+		opts.exit && process.exit();
+	},
+
 	pullComponent(name, cmd, opts={}) {
 		info(template.separate`
 			${`${name} running`.toUpperCase()}: ${cmd}
@@ -55,11 +65,15 @@ const Log = {
 		`.attn, '\n');
 	},
 
-	setupComplete(opts={}) {
-		info(template.separate`
-			success: rb-components setup
-		`.toUpperCase().attn, '\n');
-}
+	setupComplete(names, opts={}) {
+		names = names.map((val, i) => `${i+1}. ${val}`).join('\n');
+		info(template.underline`
+			${template.separate`
+				success: rb-components setup
+			`.toUpperCase()}
+			${names}
+		`.attn, '\n');
+	}
 }
 
 /* Export It!

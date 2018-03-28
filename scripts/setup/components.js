@@ -2,21 +2,33 @@
  *************************************/
 require('../bootstrap/colors');
 const clog         = require('../helpers/component-log');
-const rbComponents = require('../helpers/components');
-const components   = rbComponents.getNames();
+const components   = process.argv.slice(2); //: [] (component names)
+const rbComponents = new(require('../helpers/components'))(components);
 
-clog.setupBegin(components);
-// let result = rbComponents.getGlobalPath();
-// let result = rbComponents.getPkg();
-// let result = rbComponents.getPkgNames();
-// let result = rbComponents.getNames();
-// let result = rbComponents.getGlobalPaths();
-// let result = rbComponents.getRealPaths();
-// let result = rbComponents.getProjectPaths();
+/* SETUP BEGIN
+ **************/
+clog.setupBegin(rbComponents.names);
+
+/* TESTING
+ **********/
+// let result;
+// result = rbComponents.globalPath;
+// result = rbComponents.globalPaths;
+// result = rbComponents.names;
+// result = rbComponents.prefix;
+// result = rbComponents.projectPaths;
+// result = rbComponents.realPaths;
+// result = rbComponents.scopedName;
+// result = rbComponents.showcaseClientPath;
+// result = rbComponents.showcasePkg;
+// result = rbComponents.showcasePkgNames;
 // console.log(result);
+
+/* GIT PULL AND NPM RUN SETUP
+ *****************************/
 rbComponents.gitPull();
 rbComponents.runSetup();
 
 /* SETUP COMPLETE
  *****************/
-clog.setupComplete(); // (Whoot, There It Is!)
+clog.setupComplete(rbComponents.names);

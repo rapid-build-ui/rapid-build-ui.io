@@ -3,7 +3,8 @@ require('colors').setTheme({
 	attn:    ['cyan', 'bold'],
 	error:   ['red', 'bold'],
 	info:    'cyan',
-	minor:   'gray',
+	minor:   'grey',
+	// minor:   ['white', 'dim'],
 	success: ['green', 'bold'],
 	warn:    'magenta'
 });
