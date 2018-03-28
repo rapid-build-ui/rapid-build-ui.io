@@ -1,11 +1,10 @@
 /* FOR DEVELOPMENT - RB COMPONENTS HELPER
  *****************************************/
-const fs       = require('fs');
-const fse      = require('fs-extra');
-const path     = require('path');
-const clog     = require('./component-log');
-const template = require('./template-tags');
-const CWD      = process.cwd();
+const fs   = require('fs');
+const fse  = require('fs-extra');
+const path = require('path');
+const clog = require('./component-log');
+const CWD  = process.cwd();
 const { execSync } = require('child_process');
 
 /* Class
