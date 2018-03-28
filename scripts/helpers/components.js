@@ -1,67 +1,87 @@
 /* FOR DEVELOPMENT - RB COMPONENTS HELPER
  *****************************************/
-const fs           = require('fs');
-const path         = require('path');
-const fse          = require('fs-extra');
+const fs       = require('fs');
+const fse      = require('fs-extra');
+const path     = require('path');
+const clog     = require('./component-log');
+const template = require('./template-tags');
 const { execSync } = require('child_process');
-const template     = require('./template-tags');
 
 /* Constants
  ************/
-const CLIENT_PATH    = 'src/client';
+const CWD            = process.cwd();
+const CLIENT_PATH    = path.join(CWD, 'src', 'client');
 const RB_SCOPED_NAME = '@rapid-build-ui';
-const YARN_LINK_PATH = path.join(execSync('yarn global dir').toString(), '..', 'link');
-const RB_GLOBAL_PATH = path.join(YARN_LINK_PATH, RB_SCOPED_NAME);
-
-/* Messages
- ***********/
-const Messages = {
-	noComponents: template.stripIndent`
-		${template.underline`NO RB-COMPONENTS LINKED`.error}
-		Go to every component directory and run:
-		npm run setup
-	`.info + '\n'
-}
 
 /* API
  ******/
 const RbComponents = {
-	getLinkedPath() { // :string
-		const exist = fse.pathExistsSync(RB_GLOBAL_PATH);
-		if (exist) return RB_GLOBAL_PATH;
-		console.error(Messages.noComponents);
-		process.exit();
+	getGlobalPath() { // :string
+		let gPath = execSync('yarn global dir').toString(); // yarn's global path
+		let _path = path.join('..', 'link', RB_SCOPED_NAME);
+			_path = path.join(gPath, _path);
+		let exist = fse.pathExistsSync(_path); // validation
+		if (exist) return _path;
+		clog.noComponents({exit:true});
 	},
-	getLinkedComponents() { // :string[]
-		const components = fse.readdirSync(this.getLinkedPath());
-		if (components.length) return components;
-		console.error(Messages.noComponents);
-		process.exit();
+
+	getPkg() { // :{}
+		let _path = path.join(CLIENT_PATH, 'package.json');
+		return require(_path);
 	},
-	getLinkedComponentsPath() { // :string[]
-		const rbPath     = this.getLinkedPath();
-		const components = this.getLinkedComponents();
-		let paths = [];
-		for (const [i, component] of components.entries()) {
-			const _path = path.join(rbPath, component);
+
+	getPkgNames() { // :string[]
+		let pkg      = this.getPkg();
+		let deps     = pkg.dependencies;
+		let pkgNames = [];
+		for (const [dep, version] of Object.entries(deps)) {
+			if (!dep.includes(RB_SCOPED_NAME)) continue;
+			pkgNames.push(dep);
+		}
+		return pkgNames.sort(); // asc order
+	},
+
+	getNames() { // :string[]
+		let pkgNames = this.getPkgNames();
+		return pkgNames.map(val => val.split('/')[1]);
+	},
+
+	getGlobalPaths() { // :string[]
+		let gPath    = this.getGlobalPath();
+		let names    = this.getNames();
+		let paths    = [];
+		let unlinked = [];
+		for (const [i, name] of names.entries()) {
+			let _path = path.join(gPath, name);
+			// console.info(`${i+1}. ${_path}`.info);
+			paths.push(_path);
+		}
+		// validation
+		for (const [i, _path] of paths.entries()) {
+			let exist = fse.pathExistsSync(_path);
+			if (exist) continue;
+			let name = names[i];
+			unlinked.push(name);
+			clog.noComponent(name);
+		}
+		!!unlinked.length && process.exit();
+		return paths;
+	},
+
+	getRealPaths() { // :string[]
+		let gPaths = this.getGlobalPaths();
+		let paths  = [];
+		for (const [i, gPath] of gPaths.entries()) {
+			const _path = fs.realpathSync(gPath);
 			// console.info(`${i+1}. ${_path}`.info);
 			paths.push(_path);
 		}
 		return paths;
 	},
-	getComponentsRealPath() { // :string[]
-		const linkedPaths = this.getLinkedComponentsPath();
-		let paths = [];
-		for (const [i, linkedPath] of linkedPaths.entries()) {
-			const _path = fs.realpathSync(linkedPath);
-			// console.info(`${i+1}. ${_path}`.info);
-			paths.push(_path);
-		}
-		return paths;
-	},
-	getComponentsProjectPath() { // :string[]
-		const realPaths = this.getComponentsRealPath();
-		let paths = [];
+
+	getProjectPaths() { // :string[]
+		let realPaths = this.getRealPaths();
+		let paths     = [];
 		for (const [i, realPath] of realPaths.entries()) {
 			const _path = path.join(realPath, '..', '..');
 			// console.info(`${i+1}. ${_path}`.info);
@@ -69,26 +89,30 @@ const RbComponents = {
 		}
 		return paths;
 	},
-	update() { // :void
-		const cmd       = 'git pull'
-		// const cmd       = 'git status'
-		const projPaths = this.getComponentsProjectPath();
+
+	gitPull() { // :void
+		// let cmd       = 'git status'
+		// let cmd       = 'git error'
+		let cmd       = 'git pull'
+		let projPaths = this.getProjectPaths();
 		for (const [i, projPath] of projPaths.entries()) {
-			const name = projPath.substr(projPath.lastIndexOf(path.sep) + 1)
-			console.info(template.underline`${i+1}. ${name}`.attn);
-			const opts   = { cwd: projPaths[0] }
-			const result = execSync(cmd, opts).toString();
+			let name = projPath.substr(projPath.lastIndexOf(path.sep) + 1)
+			clog.pullComponent(name, cmd);
+			let opts   = { cwd: projPaths[0] }
+			let result = execSync(cmd, opts).toString();
 			console.info(result.minor);
 		}
 	},
+
 	runSetup() { // :void
-		const cmd       = 'npm run setup'
-		const projPaths = this.getComponentsProjectPath();
+		let cmd       = 'npm run setup'
+		let projPaths = this.getProjectPaths();
 		for (const [i, projPath] of projPaths.entries()) {
-			const name = projPath.substr(projPath.lastIndexOf(path.sep) + 1)
-			console.info(template.underline`${i+1}. ${name}`.attn);
-			const opts   = { cwd: projPaths[0] }
-			const result = execSync(cmd, opts).toString();
+			let name = projPath.substr(projPath.lastIndexOf(path.sep) + 1)
+			clog.setupComponent(name, cmd);
+			// console.info(template.underline`${i+1}. ${name}`.attn);
+			let opts   = { cwd: projPaths[0] }
+			let result = execSync(cmd, opts).toString();
 			console.info(result.minor);
 		}
 	}

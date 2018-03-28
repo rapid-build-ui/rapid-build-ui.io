@@ -1,49 +1,61 @@
 /* TEMPLATE TAGS HELPER
  ***********************/
+const stripAnsi = require('strip-ansi');
+
 // Helpers
 const Helpers = {
-	cleanArray(array) { // :[]
-		return array.filter(entry => /\S/.test(entry));
+	separate(literals, exps, opts={}) { // :string
+		let separator;
+		let template  = this.tag(literals, exps);
+			template  = Tags.unindent`${template}`;
+		let sepLength = 0;
+		let lines     = template.split('\n').map(val => stripAnsi(val));
+		for (const line of lines) {
+			let lineLength = line.length;
+			if (lineLength <= sepLength) continue;
+			sepLength = lineLength + 1;
+		}
+		if (sepLength === 0) return template;
+		separator = Array(sepLength).join('-');
+		switch (opts.position) {
+			case 'above': return `${separator}\n${template}`
+			case 'below': return `${template}\n${separator}`
+			default:      return `${separator}\n${template}\n${separator}`
+		}
 	},
-	stripIndent(string) { // :string
-		return string.replace(/\t/g,'');
+	tag(literals, exps) { // :string
+		let template = [];
+		for (const [i, literal] of literals.entries()) {
+			let string = exps[i] ? literal + exps[i] : literal;
+			template.push(string);
+		}
+		template = template.join('');
+		return template;
 	}
 }
 
-/* API
+/* API (all return string)
  ******/
-const Templates = {
-	stripIndent(tpls, ...exps) { // :string
-		let results = [];
-		for (const [i, tpl] of tpls.entries()) {
-			let result = exps[i] ? tpl + exps[i] : tpl;
-			result = Helpers.stripIndent(result);
-			results.push(result);
-		}
-		return results.join('').trim();
+const Tags = {
+	unindent(literals, ...exps) {
+		let template = Helpers.tag(literals, exps);
+			template = template.replace(/\t/g, '');
+			template = template.trim();
+		return template;
 	},
-
-	underline(tpls, ...exps) { // :string
-		const underline = '-';
-		let results     = [];
-		let lines       = []
-		let longestLine = 0;
-		for (const [i, tpl] of tpls.entries()) {
-			let result = exps[i] ? tpl + exps[i] : tpl;
-			results.push(result);
-		}
-		results = this.stripIndent`${results.join('')}`;
-		lines   = lines.concat(results.split('\n'));
-		for (const line of lines) {
-			let length = line.length;
-			if (length <= longestLine) continue;
-			longestLine = length + 1;
-		}
-		if (longestLine) results += `\n${Array(longestLine).join(underline)}`;
-		return results;
+	/* separators
+	 *************/
+	overline(literals, ...exps) {
+		return Helpers.separate(literals, exps, { position: 'above' });
+	},
+	separate(literals, ...exps) {
+		return Helpers.separate(literals, exps);
+	},
+	underline(literals, ...exps) {
+		return Helpers.separate(literals, exps, { position: 'below' });
 	}
 }
 
 /* Export It!
  *************/
-module.exports = Templates;
+module.exports = Tags;
