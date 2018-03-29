@@ -55,23 +55,27 @@ const Log = {
 		`.alert, '\n');
 	},
 
-	setupBegin(names, opts={}) {
+	setupBegin(names, message, opts={}) {
 		names = names.map((val, i) => `${i+1}. ${val}`).join('\n');
+		opts.prepend = !!opts.prepend ? `${opts.prepend}\n` : '';
+		opts.append  = !!opts.append  ? `\n${opts.append}`  : '';
 		info(template.underline`
 			${template.separate`
-				begin: rb-components setup
+				begin ${message}
 			`.toUpperCase()}
-			${names}
+			${opts.prepend}${names}${opts.append}
 		`.attn, '\n');
 	},
 
-	setupComplete(names, opts={}) {
+	setupComplete(names, message, opts={}) {
 		names = names.map((val, i) => `${i+1}. ${val}`).join('\n');
+		opts.prepend = !!opts.prepend ? `${opts.prepend}\n` : '';
+		opts.append  = !!opts.append  ? `\n${opts.append}`  : '';
 		info(template.underline`
 			${template.separate`
-				success: rb-components setup
+				${message} complete
 			`.toUpperCase()}
-			${names}
+			${opts.prepend}${names}${opts.append}
 		`.attn, '\n');
 	}
 }
