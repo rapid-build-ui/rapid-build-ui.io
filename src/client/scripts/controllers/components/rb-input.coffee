@@ -9,8 +9,11 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
 			attrs += "#{s}label=\"#{$scope.a.label}\"" if $scope.a.label
-			attrs += "#{s}model=\"#{$scope.a.model}\"" if $scope.a.model
-
+			attrs += "#{s}value=\"#{$scope.a.value}\"" if $scope.a.value
+			attrs += "#{s}subtext=\"#{$scope.a.subtext}\"" if $scope.a.subtext
+			attrs += "#{s}value=\"#{$scope.a.value}\"" if $scope.a.value
+			attrs += "#{s}disabled" if $scope.a.disabled
+			attrs += "#{s}right" if $scope.a.right
 			"<rb-input#{attrs}></rb-input>"
 
 		# Props
@@ -21,6 +24,8 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 		$scope.reset = ->
 			$scope.a =
 				label: 'My Input'
+				subtext: 'My subtext'
+				value: ""
 
 		# Watches
 		# =======
