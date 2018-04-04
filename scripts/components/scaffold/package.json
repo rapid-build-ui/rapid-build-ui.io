@@ -1,7 +1,7 @@
 {
-	"name": "rapid-build-ui-proj",
+	"name": "{{name}}-proj",
 	"version": "0.1.0",
-	"description": "Rapid Build UI - Project",
+	"description": "Rapid Build UI - Component Project: {{name}}",
 	"license": "MIT",
 	"engines": {
 		"npm": "5.x",
@@ -26,26 +26,18 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/rapid-build-ui/rapid-build-ui.io"
+		"url": "https://github.com/rapid-build-ui/{{name}}"
 	},
 	"bugs": {
-		"url": "https://github.com/rapid-build-ui/rapid-build-ui.io/issues"
+		"url": "https://github.com/rapid-build-ui/{{name}}/issues"
 	},
 	"scripts": {
-		"create-component": "node scripts/api/create-component",
+		"link": "cd dist/client/ && yarn link",
+		"unlink": "cd dist/client/ && yarn unlink",
+		"relink": "npm run link && npm run unlink && npm run link",
 		"install-client": "cd src/client/ && yarn install --ignore-engines",
 		"install-server": "cd src/server/ && npm install",
-		"presetup": "node scripts/api/link-components",
-		"setup": "npm run install-client && npm run install-server",
-		"setup-components": "node scripts/api/setup-components"
-	},
-	"dependencies": {
-		"colors": "^1.2.1",
-		"del": "^3.0.0",
-		"fs-extra": "^5.0.0",
-		"glob": "^7.1.2",
-		"mustache": "^2.3.0",
-		"request": "^2.85.0",
-		"strip-ansi": "^4.0.0"
+		"install-src": "npm run install-client && npm run install-server",
+		"setup": "npm run install-src && rapid-build && npm run relink"
 	}
 }

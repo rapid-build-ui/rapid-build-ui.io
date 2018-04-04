@@ -118,17 +118,22 @@ class RbComponents {
 		pkgNames = pkgNames.map(name => name.replace(this.scopedNameFull,''));
 		if (!names.length) return this._names = pkgNames; // return all
 		// prep names
-		names = names.map(name => {
-			name = name.toLowerCase();
-			if (!name.indexOf(this.prefix)) return name;
-			return `${this.prefix}${name}`
-		});
+		names = names.map(name => this.formatName(name));
 		// validation
 		for (let name of names) {
 			if (pkgNames.includes(name)) continue;
 			clog.invalidComponent(name,{exit:true});
 		}
 		this._names = names;
+	}
+
+	/* helpers
+	 **********/
+	formatName(name) { // :string
+		!name && clog.componentRequired({exit:true}); // validation
+		name = name.toLowerCase();
+		if (!name.indexOf(this.prefix)) return name;
+		return `${this.prefix}${name}`
 	}
 
 	/* methods

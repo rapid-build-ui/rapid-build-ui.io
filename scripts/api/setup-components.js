@@ -2,7 +2,7 @@
  *************************************/
 require('../bootstrap/colors');
 const clog         = require('../helpers/component-log');
-const components   = process.argv.slice(2); //: ['component names']
+const components   = process.argv.slice(2); // :['component names']
 const rbComponents = new(require('../helpers/components'))(components);
 const message      = 'rb-components setup';
 

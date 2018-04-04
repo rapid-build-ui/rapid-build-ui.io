@@ -33,6 +33,39 @@ const Log = {
 		opts.exit && process.exit();
 	},
 
+	noComponentRepo(name, opts={}) {
+		error(template.unindent`
+			${template.separate`
+				failed: github repo ${name} does not exist
+			`.toUpperCase().error}
+			Go to github and create repo ${name}:
+			https://github.com/rapid-build-ui?tab=repositories
+		`.info, '\n');
+		opts.exit && process.exit();
+	},
+
+	componentRepoEmpty(name, opts={}) {
+		error(template.unindent`
+			${template.separate`
+				failed: repo must have at least one file
+			`.toUpperCase().error}
+			Go to github and create a README.md file:
+			https://github.com/rapid-build-ui/${name}/new/master?readme=1
+		`.info, '\n');
+		opts.exit && process.exit();
+	},
+
+	notCollaborator(name, opts={}) {
+		error(template.unindent`
+			${template.separate`
+				failed: not a collaborator github repo ${name}
+			`.toUpperCase().error}
+			Go to github and add yourself as a collaborator:
+			https://github.com/rapid-build-ui/${name}/settings/collaboration
+		`.info, '\n');
+		opts.exit && process.exit();
+	},
+
 	invalidComponent(name, opts={}) {
 		error(template.unindent`
 			${template.separate`
@@ -43,9 +76,41 @@ const Log = {
 		opts.exit && process.exit();
 	},
 
+	componentExist(name, opts={}) {
+		error(template.unindent`
+			${template.separate`
+				failed: component already exist
+			`.toUpperCase()}
+			${name}
+		`.error, '\n');
+		opts.exit && process.exit();
+	},
+
+	componentRequired(opts={}) {
+		error(template.separate`
+			failed: component name required
+		`.toUpperCase().error, '\n');
+		opts.exit && process.exit();
+	},
+
 	pullComponent(name, cmd, opts={}) {
 		info(template.separate`
 			${`${name} running`.toUpperCase()}: ${cmd}
+		`.alert, '\n');
+	},
+
+	pushComponent(name, cmd, opts={}) {
+		info(template.separate`
+			pushing to github: ${name}
+		`.alert, '\n');
+	},
+
+	pushComponent(name, cmd, opts={}) {
+		info(template.unindent`
+			${template.separate`
+				pushing to github: ${name}
+			`.toUpperCase()}
+			${cmd}
 		`.alert, '\n');
 	},
 
@@ -55,8 +120,10 @@ const Log = {
 		`.alert, '\n');
 	},
 
-	setupBegin(names, message, opts={}) {
+	setupBegin(names, message, opts={}) { // names: string[] | string
+		names = typeof names === 'string' ? [names] : names;
 		names = names.map((val, i) => `${i+1}. ${val}`).join('\n');
+		opts.logType = opts.logType || 'attn';
 		opts.prepend = !!opts.prepend ? `${opts.prepend}\n` : '';
 		opts.append  = !!opts.append  ? `\n${opts.append}`  : '';
 		info(template.underline`
@@ -64,11 +131,13 @@ const Log = {
 				begin ${message}
 			`.toUpperCase()}
 			${opts.prepend}${names}${opts.append}
-		`.attn, '\n');
+		`[opts.logType], '\n');
 	},
 
-	setupComplete(names, message, opts={}) {
+	setupComplete(names, message, opts={}) { // names: string[] | string
+		names = typeof names === 'string' ? [names] : names;
 		names = names.map((val, i) => `${i+1}. ${val}`).join('\n');
+		opts.logType = opts.logType || 'attn';
 		opts.prepend = !!opts.prepend ? `${opts.prepend}\n` : '';
 		opts.append  = !!opts.append  ? `\n${opts.append}`  : '';
 		info(template.underline`
@@ -76,7 +145,7 @@ const Log = {
 				${message} complete
 			`.toUpperCase()}
 			${opts.prepend}${names}${opts.append}
-		`.attn, '\n');
+		`[opts.logType], '\n');
 	}
 }
 
