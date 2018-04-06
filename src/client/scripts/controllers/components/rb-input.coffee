@@ -14,10 +14,22 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			attrs += "#{s}value=\"#{$scope.a.value}\"" if $scope.a.value
 			attrs += "#{s}disabled" if $scope.a.disabled
 			attrs += "#{s}right" if $scope.a.right
+			attrs += "#{s}validation='#{JSON.stringify($scope.validation)}\'" if $scope.a.validation
+			# attrs += "#{s}validation=\"#{JSON.stringify($scope.a.validation).replace(/\"/g,'\\\'')}\"" if $scope.a.validation.length > 0
 			"<rb-input#{attrs}></rb-input>"
+
 
 		# Props
 		# =====
+		$scope.validation = [
+			'required',
+			'email',
+			(value) ->
+				console.log(value)
+				true
+			,
+
+		]
 
 		# Methods
 		# =======
@@ -26,6 +38,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 				label: 'My Input'
 				subtext: 'My subtext'
 				value: ""
+				validation: false
 
 		# Watches
 		# =======
