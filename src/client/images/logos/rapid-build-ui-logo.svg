@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360px" height="119px" viewBox="0 0 360 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>rapid-build-ui-logo</title>
+    <defs></defs>
+    <g id="Pyramid" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="rapid-build-ui-logo" transform="translate(0.000000, -11.000000)">
+            <g id="rapid-build-ui-mini-logo" transform="translate(0.000000, 18.000000)">
+                <g transform="translate(0.000000, -1.000000)">
+                    <path d="M13.4445599,56.7352438 L30.7775393,39.4022643 L73.4744914,82.0992164 L30.0150938,125.558614 L12.8583537,108.401874 L38.9847719,82.2754558 L13.4445599,56.7352438 Z" id="Combined-Shape" fill="#374551" transform="translate(43.459398, 82.480439) rotate(-270.000000) translate(-43.459398, -82.480439) "></path>
+                    <path d="M29.7380005,25.5727831 L43.2549262,39.0897089 L56.247853,26.0967821 L68.9000269,38.748956 L42.2636219,65.385361 L16.0945222,39.2162614 L29.7380005,25.5727831 Z" id="Combined-Shape" fill="#D0021B"></path>
+                    <rect id="Rectangle" fill="#D0021B" transform="translate(42.887252, 16.839192) rotate(-45.000000) translate(-42.887252, -16.839192) " x="31.487252" y="5.6391919" width="22.8" height="22.4"></rect>
+                </g>
+            </g>
+            <g id="text" transform="translate(98.000000, 0.000000)">
+                <text id="Build-UI" font-family="ClanOT-Medium, ClanOT" font-size="61" font-weight="400" fill="#374551">
+                    <tspan x="-4.26325641e-14" y="126">BUILD UI</tspan>
+                </text>
+                <text id="Rapid" font-family="ClanOT-News, ClanOT" font-size="62" font-weight="500" fill="#D0021B">
+                    <tspan x="1" y="61">rapid</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
