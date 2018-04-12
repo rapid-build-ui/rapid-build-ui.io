@@ -1,14 +1,14 @@
 /******************
  * BUTTONS SECTION
  ******************/
- section.buttons {
- 	display: flex;
- 	padding: remy(15) 0;
- 	border-top: 1px dashed #eee;
- 	rb-button {
- 		margin: 0 remy(10) 0 0;
- 		&:last-child {
- 			margin-right: 0;
- 		}
- 	}
- }
+section.buttons {
+	display: flex;
+	padding: remy(15) 0;
+	border-top: 1px dashed #eee;
+	rb-button {
+		margin: 0 remy(10) 0 0;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

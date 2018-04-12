@@ -1,0 +1,26 @@
+<rb-nav active="false">
+	<a target="_blank"
+	   ng-href="{{src.url}}"
+	   ng-repeat="src in source"
+	   title="{{
+		   (src.type == 'github') ? 'Repository' :
+		   (src.type == 'js')     ? 'JS'         :
+		   (src.type == 'html')   ? 'HTML'       :
+		   (src.type == 'css')    ? 'CSS'        : ''
+	   }}">
+		<rb-icon
+			source="{{
+				(src.type == 'github') ? 'brands' :
+				(src.type == 'js')     ? 'brands' :
+				(src.type == 'html')   ? 'brands' :
+				(src.type == 'css')    ? 'brands' : ''
+			}}"
+			kind="{{
+				(src.type == 'github') ? 'github'    :
+				(src.type == 'js')     ? 'js-square' :
+				(src.type == 'html')   ? 'html5'     :
+				(src.type == 'css')    ? 'css3-alt'  : ''
+			}}">
+		</rb-icon>
+	</a>
+</rb-nav>

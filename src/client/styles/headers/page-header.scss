@@ -1,0 +1,21 @@
+/**************
+ * PAGE HEADER
+ **************/
+header.page-header {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+
+	h1 {
+		line-height: remy(48);
+		font-variant: all-petite-caps;
+	}
+
+	/* Responsive
+	*************/
+	@media (max-width: mapGet($gl-mq-list, sm)) {
+		rb-nav {
+			right: remy(58);
+		}
+	}
+}
