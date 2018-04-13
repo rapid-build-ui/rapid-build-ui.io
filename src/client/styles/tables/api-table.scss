@@ -1,0 +1,59 @@
+/**********************
+ * COMPONENT API TABLE
+ **********************/
+.api-table {
+	// color: #5f6e7e; // set in tables.scss
+
+	/* Shared
+	 *********/
+	.th-,
+	.td- {
+		&required { text-align: center; }
+	}
+
+	/* Column Widths
+	 ****************/
+	.th- {
+		&name        { width: 16%; }
+		&description { width: 35%; }
+		&options     { width: 21%; }
+		&type        { width: 11%; }
+		&required    { width: 17%; }
+	}
+
+	/* Body Formatting
+	 ******************/
+	.td- {
+		&name { font-weight: 600; }
+		&type,
+		&options,
+		&required { color: #7c8895; }
+	}
+
+	/* Filtering
+	 ************/
+	.na,
+	.no { color: #c3c8ce; }
+
+	/* Optionize
+	 ************/
+	.optionize {
+		display: inline-flex;
+		flex-wrap: wrap;
+		b:not(:last-of-type)::after {
+			position: relative;
+			top: -1px;
+			margin: 0 4px;
+			font-size: .75em;
+			content: '|';
+		}
+	}
+
+	/* Misc
+	 *******/
+	.rb-default {
+		font-style: italic;
+		&::before { content: '\2018'; }
+		&::after  { content: '\2019'; }
+	}
+}

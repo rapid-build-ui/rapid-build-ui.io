@@ -1,0 +1,35 @@
+<table class="api-table">
+	<thead>
+		<tr>
+			<th ng-bind="::heading"
+				ng-class="'th-'+heading"
+				ng-repeat="heading in ::headings">
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="api in ::source">
+			<td class="td-name"
+				ng-bind="::api.name">
+			</td>
+
+			<td class="td-description"
+				ng-bind-html="::api.description | trustHtml">
+			</td>
+
+			<td class="td-options"
+				ng-class="!api.options ? 'na' : ''"
+				ng-bind-html="::api.options | na | optionize | trustHtml">
+			</td>
+
+			<td class="td-type"
+				ng-bind-html="::api.type | optionize | trustHtml">
+			</td>
+
+			<td class="td-required"
+				ng-class="!!api.required ? 'yes' : 'no'"
+				ng-bind-html="::api.required | required">
+			</td>
+		</tr>
+	</tbody>
+</table>
