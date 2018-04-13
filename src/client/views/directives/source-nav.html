@@ -1,7 +1,7 @@
 <rb-nav active="false">
 	<a target="_blank"
-	   ng-href="{{src.url}}"
-	   ng-repeat="src in source"
+	   ng-href="{{::src.url}}"
+	   ng-repeat="src in ::source"
 	   title="{{
 		   (src.type == 'github') ? 'Repository' :
 		   (src.type == 'js')     ? 'JS'         :

@@ -1,7 +1,7 @@
-angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$element', 'RB_ALERT_API',
-	($scope, $element, RB_ALERT_API) ->
-		$scope.api = RB_ALERT_API
-
+angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$element',
+	($scope, $element) ->
+		# Builder
+		# =======
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';

@@ -2,6 +2,7 @@
  * TABLES
  *********/
 table {
+	color: #5f6e7e;
 	border-collapse: collapse;
 
 	/* Shared
@@ -14,9 +15,6 @@ table {
 
 	/* Font Styles
 	 **************/
-	td {
-		font-size: remy(14.5);
-	}
 	th {
 		font-size: remy(13);
 		color: white;
@@ -24,6 +22,9 @@ table {
 		letter-spacing: .3px;
 		text-transform: uppercase;
 		text-shadow: 1px 1px #52626b;
+	}
+	td {
+		font-size: remy(13.5);
 	}
 
 	/* Rounded End Caps

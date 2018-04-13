@@ -21,7 +21,7 @@
 		<rba-radios caption="kind" model="a.kind" data="kinds" inline></rba-radios>
 		<rb-popover position="top" class="bumper-right-mini">
 			Name of any free
-			<a target="_blank" href="https://fontawesome.com/icons?d=gallery&m=free">font awesome icon</a>.
+			<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
 			Font awesome icon style must match icon source.
 		</rb-popover>
 		<rba-input model="a.kind" placeholder="font awesome" inline></rba-input>
@@ -41,18 +41,5 @@
 
 	<!-- API -->
 	<h5 rba-text-curve>API</h5>
-	<table>
-		<thead>
-			<tr>
-				<th>Options</th>
-				<th>Description</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="item in api">
-				<td ng-bind="item.name"></td>
-				<td ng-bind-html="item.description"></td>
-			</tr>
-		</tbody>
-	</table>
+	<rba-table source="icon"></rba-table>
 </div>

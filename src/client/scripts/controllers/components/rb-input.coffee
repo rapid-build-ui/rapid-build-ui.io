@@ -1,8 +1,6 @@
-angular.module('rapid-build').controller 'rbInputController', ['$scope', '$element', 'RB_INPUT_API',
-	($scope, $element, RB_INPUT_API) ->
-		$scope.api = RB_INPUT_API
-
-		# Private
+angular.module('rapid-build').controller 'rbInputController', ['$scope', '$element',
+	($scope, $element) ->
+		# Builder
 		# =======
 		createMarkup = ->
 			attrs = ''; content = '';

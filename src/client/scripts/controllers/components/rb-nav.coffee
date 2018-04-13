@@ -1,13 +1,7 @@
-angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element', 'RB_NAV_API',
-	($scope, $element, RB_NAV_API) ->
-		$scope.api = RB_NAV_API
-
-		# Private
+angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element',
+	($scope, $element) ->
+		# Builder
 		# =======
-		formatContent = (content) ->
-			return '' unless content
-			content.replace /\n/g, '\n\t'
-
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
@@ -108,6 +102,12 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 		# =======
 		markupWatch = $scope.$watch ->
 			$scope.markup = createMarkup()
+
+		# HELPERS
+		# =======
+		formatContent = (content) ->
+			return '' unless content
+			content.replace /\n/g, '\n\t'
 
 		# Event Handlers
 		# ==============

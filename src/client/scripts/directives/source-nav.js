@@ -15,7 +15,7 @@ angular.module('rapid-build').directive('rbaSourceNav', ['$injector',
 			 *********************************/
 			const prefix = 'rb-';
 			const suffix = '-nav';
-			let source = scope.srcNav.toLowerCase().replace(prefix,'');
+			let source = scope.src.toLowerCase().replace(prefix,'');
 				source = `${prefix}${source}${suffix}`.replace(/-/g,'_').toUpperCase();
 				source = $injector.get(source);
 			scope.source = source;
@@ -28,7 +28,7 @@ angular.module('rapid-build').directive('rbaSourceNav', ['$injector',
 			restrict: 'E',
 			templateUrl: '/views/directives/source-nav.html',
 			scope: {
-				srcNav: '@source'
+				src: '@source'
 			}
 		};
 	}
