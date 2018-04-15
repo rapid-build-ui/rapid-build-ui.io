@@ -1,7 +1,7 @@
 angular.module('rapid-build').constant 'RB_ALERT_API', [
 	attribute: 'content'
 	description: '
-		<em class="rb-content">not attribute</em>
+		<em class="not-attr">not attribute</em>
 		Content inside tag.
 	'
 	options: null

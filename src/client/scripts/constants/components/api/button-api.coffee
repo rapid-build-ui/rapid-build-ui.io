@@ -1,7 +1,7 @@
 angular.module('rapid-build').constant 'RB_BUTTON_API', [
 	attribute: 'content'
 	description: '
-		<em class="rb-content">not attribute</em>
+		<em class="not-attr">not attribute</em>
 		Content inside tag.
 	'
 	options: null
@@ -28,7 +28,7 @@ angular.module('rapid-build').constant 'RB_BUTTON_API', [
 ,
 	attribute: 'type'
 	description: '
-		Defaults to <em class="rb-default">button</em>.
+		<em class="default-val">defaults to <b>button</b></em>
 		Additional <a target="_blank" href="https://goo.gl/bdwtDR">reference</a>.
 	'
 	options: 'reset | submit'
@@ -37,7 +37,7 @@ angular.module('rapid-build').constant 'RB_BUTTON_API', [
 ,
 	attribute: 'icon'
 	description: 'Adds icon to component.'
-	options: 'rb-icon <a target= "_blank" href="/components/rb-icon">kind</a>'
+	options: '<a target= "_blank" href="/components/rb-icon">rb-icon kind</a>'
 	type: 'string'
 	required: false
 ,
@@ -49,13 +49,13 @@ angular.module('rapid-build').constant 'RB_BUTTON_API', [
 ,
 	attribute: 'icon-size'
 	description: 'Refer to options.'
-	options: 'rb-icon <a target= "_blank" href="/components/rb-icon">size</a>'
+	options: '<a target= "_blank" href="/components/rb-icon">rb-icon size</a>'
 	type: 'number'
 	required: false
 ,
 	attribute: 'icon-source'
 	description: 'Refer to options.'
-	options: 'rb-icon <a target= "_blank" href="/components/rb-icon">source</a>'
+	options: '<a target= "_blank" href="/components/rb-icon">rb-icon source</a>'
 	type: 'string'
 	required: false
 ]

@@ -2,19 +2,19 @@
  * LINKS
  ********/
 a {
-	color: lightcoral;
+	color: indianred;
+	text-decoration: none;
 
 	&:focus,
 	&:hover {
-		color: indianred;
+		color: lightcoral;
 		text-decoration: underline;
 	}
 	&:focus {
 		outline: none;
 	}
-
 	&:active,
 	&.active {
-		color: lightcoral;
+		color: indianred;
 	}
 }

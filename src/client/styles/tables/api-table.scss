@@ -1,9 +1,13 @@
 /**********************
  * COMPONENT API TABLE
  **********************/
-.api-table {
-	// color: #5f6e7e; // set in tables.scss
+$textColors: (
+	general:  #3a87ad, // set in tables.scss
+	required: #7c8895,
+	sub:      #c3c8ce
+);
 
+.api-table {
 	/* Shared
 	 *********/
 	.th-,
@@ -27,13 +31,12 @@
 		&attribute { font-weight: 600; }
 		&type,
 		&options,
-		&required { color: #7c8895; }
+		&required { color: mapGet($textColors, required); }
 	}
 
 	/* Filtering
 	 ************/
-	.na,
-	.no { color: #c3c8ce; }
+	.na, .no { color: mapGet($textColors, sub); }
 
 	/* Optionize
 	 ************/
@@ -49,18 +52,49 @@
 		}
 	}
 
+	/* Headings
+	 ***********/
+	h6 {
+		margin: remy(3) 0;
+		padding: 0;
+		color: inherit;
+		font-weight: 600;
+		font-size: inherit;
+		text-shadow: none;
+	}
+
+	/* Lists
+	 ********/
+	ul {
+		margin: 0;
+		padding-left: 1.2em;
+		li {
+			margin: 0 0 remy(4);
+		}
+	}
+
 	/* Misc
 	 *******/
-	.rb-content {
+	.tag {
+		&::before { content: '<'; }
+		&::after  { content: '>'; }
+	}
+	.not-attr {
 		display: block;
-		color: #c3c8ce;
+		color: mapGet($textColors, sub);
 		font-style: normal;
 		&::before { content: '('; }
 		&::after  { content: ')'; }
 	}
-	.rb-default {
-		font-style: italic;
-		&::before { content: '\2018'; }
-		&::after  { content: '\2019'; }
+	.default-val {
+		display: block;
+		color: mapGet($textColors, sub);
+		font-style: normal;
+		b {
+			&::before { content: '\''; }
+			&::after  { content: '\''; }
+		}
+		&::before { content: '('; }
+		&::after  { content: ')'; }
 	}
 }

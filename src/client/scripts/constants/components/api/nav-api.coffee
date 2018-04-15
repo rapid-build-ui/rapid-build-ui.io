@@ -1,12 +1,18 @@
 angular.module('rapid-build').constant 'RB_NAV_API', [
 	attribute: 'content'
 	description: '
-		<em class="rb-content">not attribute</em>
-		Content inside tag.<br>
-		Use the following html tags
-		in <em>root of rb-nav</em>:<br>
-		&lt;a&gt; to create links.<br>
-		&lt;h3&gt; to optionally create headings.
+		<em class="not-attr">not attribute</em>
+		Content inside tag.
+		Use the following html tags.
+		<h6>In root of rb-nav:</h6>
+		<ul>
+			<li>
+				<b class="tag">a</b> for links.
+			</li>
+			<li>
+				<b class="tag">h3</b> for optional headings.
+			</li>
+		</ul>
 	'
 	options: null
 	type: 'html'
@@ -57,25 +63,32 @@ angular.module('rapid-build').constant 'RB_NAV_API', [
 ,
 	attribute: 'active'
 	description: '
-		Visually indicates active link.<br>
+		Visually indicates active link.
 		By default clicking a link
-		sets it to active.<br>
-
-		<strong>Active options:</strong><br>
-		• false: disables activity<br>
-
-		• \'hash\':
-		link\'s hash matches browser\'s<br>
-
-		• \'path\':
-		link\'s path matches browser\'s<br>
-
-		• { param: string }:
-		link\'s query string param matches browser\'s<br>
-
-		• { segment: int }:
-		link\'s <a target="_blank" href="https://goo.gl/aG8C2q">segment</a>
-		matches browser\'s
+		sets it to active.
+		<h6>Active options:</h6>
+		<ul>
+			<li>
+				false: disables activity
+			</li>
+			<li>
+				hash:
+				link\'s hash matches browser\'s
+			</li>
+			<li>
+				path:
+				link\'s path matches browser\'s
+			</li>
+			<li>
+				{ param: string }:
+				link\'s query string param matches browser\'s
+			</li>
+			<li>
+				{ segment: int }:
+				link\'s <a target="_blank" href="https://goo.gl/aG8C2q">segment</a>
+				matches browser\'s
+			</li>
+		</ul>
 	'
 	options: 'false | hash | path | {param:string} | {segment:int}'
 	type: 'boolean | string | object'

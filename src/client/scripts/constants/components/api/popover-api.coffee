@@ -10,7 +10,7 @@ angular.module('rapid-build').constant 'RB_POPOVER_API', [
 ,
 	attribute: 'content'
 	description: '
-		<em class="rb-content">not attribute</em>
+		<em class="not-attr">not attribute</em>
 		Content inside tag.
 	'
 	options: null
@@ -31,7 +31,7 @@ angular.module('rapid-build').constant 'RB_POPOVER_API', [
 ,
 	attribute: 'position'
 	description: '
-		Defaults to <em class="rb-default">right</em>.
+		<em class="default-val">defaults to <b>right</b></em>
 		Position where popover opens. Will adjust if not in
 		<a target="_blank" href="https://goo.gl/DwJ1ke">viewport</a>.
 	'
