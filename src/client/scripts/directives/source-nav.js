@@ -1,5 +1,5 @@
-angular.module('rapid-build').directive('rbaSourceNav', ['$injector',
-	($injector) => {
+angular.module('rapid-build').directive('rbaSourceNav', ['componentService',
+	componentService => {
 		/* COMPILE
 		 **********/
 		const Compile = function(tElement, tAttrs, transclude) {
@@ -9,15 +9,7 @@ angular.module('rapid-build').directive('rbaSourceNav', ['$injector',
 		/* LINK
 		 *******/
 		const Link = (scope, iElement, iAttrs) => {
-			/* Prep the source to be
-			 * equal to the angular constant.
-			 * ex result: RB_ICON_NAV
-			 *********************************/
-			const prefix = 'rb-';
-			const suffix = '-nav';
-			let source = scope.src.toLowerCase().replace(prefix,'');
-				source = `${prefix}${source}${suffix}`.replace(/-/g,'_').toUpperCase();
-				source = $injector.get(source);
+			let source = componentService.getConstant(scope.src, 'rb', 'nav');
 			scope.source = source;
 		}
 
