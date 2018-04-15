@@ -102,6 +102,11 @@ table {
 			border-bottom: 1px dotted lightgrey;
 		}
 	}
+	tbody {
+		tr:last-child {
+			border-bottom: none;
+		}
+	}
 
 	/* Extend tfoot
 	 ***************/
