@@ -13,7 +13,9 @@ angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 			reloadOnSearch: false
 			title: format: 'uppercase'
 			views: aside: '/views/navs/components-nav.html'
-			templateUrl: (params) -> "/views/components/#{params.component}.html"
+			templateUrl: (params) ->
+				view = params.component.replace /rb-/i, ''
+				"/views/components/#{view}.html"
 
 		.when '/components/',
 			redirectTo: '/components/rb-alert'
