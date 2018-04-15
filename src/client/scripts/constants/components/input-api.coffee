@@ -1,23 +1,23 @@
 angular.module('rapid-build').constant 'RB_INPUT_API', [
-	name: 'disabled'
+	attribute: 'disabled'
 	description: 'Disables component.'
 	options: null
-	type: 'void'
+	type: null
 	required: false
 ,
-	name: 'label'
+	attribute: 'label'
 	description: 'Label text.'
 	options: null
 	type: 'string'
 	required: false
 ,
-	name: 'right'
+	attribute: 'right'
 	description: 'Align\'s component right.'
 	options: null
-	type: 'void'
+	type: null
 	required: false
 ,
-	name: 'subtext'
+	attribute: 'subtext'
 	description: '
 		Additional information.
 	'
@@ -25,13 +25,13 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 	type: 'string'
 	required: false
 ,
-	name: 'value'
+	attribute: 'value'
 	description: 'Input value.'
 	options: null
 	type: 'string'
 	required: false
 ,
-	name: 'validation'
+	attribute: 'validation'
 	description: '
 		Input validation.<br>
 		More info coming soon...

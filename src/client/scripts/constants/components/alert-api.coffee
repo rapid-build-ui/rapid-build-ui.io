@@ -1,19 +1,22 @@
 angular.module('rapid-build').constant 'RB_ALERT_API', [
-	name: 'content'
-	description: 'Content inside tag.'
+	attribute: 'content'
+	description: '
+		<em class="rb-content">not attribute</em>
+		Content inside tag.
+	'
 	options: null
 	type: 'html | string'
 	required: false
 ,
-	name: 'kind'
+	attribute: 'kind'
 	description: 'Varies look of display.'
 	options: 'info | danger | success | warning'
 	type: 'string'
 	required: false
 ,
-	name: 'removable'
+	attribute: 'removable'
 	description: 'Adds removable option to display.'
 	options: null
-	type: 'void'
+	type: null
 	required: false
 ]

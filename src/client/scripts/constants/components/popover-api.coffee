@@ -1,5 +1,5 @@
 angular.module('rapid-build').constant 'RB_POPOVER_API', [
-	name: 'caption'
+	attribute: 'caption'
 	description: '
 		Styled component
 		<a target="_blank" href="https://goo.gl/kLCstb">heading</a>.
@@ -8,25 +8,28 @@ angular.module('rapid-build').constant 'RB_POPOVER_API', [
 	type: 'string'
 	required: false
 ,
-	name: 'content'
-	description: 'Content inside tag.'
+	attribute: 'content'
+	description: '
+		<em class="rb-content">not attribute</em>
+		Content inside tag.
+	'
 	options: null
 	type: 'html | string'
 	required: false
 ,
-	name: 'hover'
+	attribute: 'hover'
 	description: 'Trigger popover via hover.'
 	options: null
-	type: 'void'
+	type: null
 	required: false
 ,
-	name: 'kind'
+	attribute: 'kind'
 	description: 'Varies look of display.'
 	options: 'info | danger | success | warning'
 	type: 'string'
 	required: false
 ,
-	name: 'position'
+	attribute: 'position'
 	description: '
 		Defaults to <em class="rb-default">right</em>.
 		Position where popover opens. Will adjust if not in

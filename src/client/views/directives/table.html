@@ -9,8 +9,8 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="api in ::source">
-			<td class="td-name"
-				ng-bind="::api.name">
+			<td class="td-attribute"
+				ng-bind="::api.attribute">
 			</td>
 
 			<td class="td-description"
@@ -23,7 +23,8 @@
 			</td>
 
 			<td class="td-type"
-				ng-bind-html="::api.type | optionize | trustHtml">
+				ng-class="!api.type ? 'na' : ''"
+				ng-bind-html="::api.type | na | optionize | trustHtml">
 			</td>
 
 			<td class="td-required"

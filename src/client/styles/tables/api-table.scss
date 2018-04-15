@@ -14,8 +14,8 @@
 	/* Column Widths
 	 ****************/
 	.th- {
-		&name        { width: 16%; }
-		&description { width: 35%; }
+		&attribute   { width: 18%; }
+		&description { width: 33%; }
 		&options     { width: 21%; }
 		&type        { width: 11%; }
 		&required    { width: 17%; }
@@ -24,7 +24,7 @@
 	/* Body Formatting
 	 ******************/
 	.td- {
-		&name { font-weight: 600; }
+		&attribute { font-weight: 600; }
 		&type,
 		&options,
 		&required { color: #7c8895; }
@@ -51,6 +51,13 @@
 
 	/* Misc
 	 *******/
+	.rb-content {
+		display: block;
+		color: #c3c8ce;
+		font-style: normal;
+		&::before { content: '('; }
+		&::after  { content: ')'; }
+	}
 	.rb-default {
 		font-style: italic;
 		&::before { content: '\2018'; }

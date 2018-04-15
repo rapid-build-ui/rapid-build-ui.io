@@ -1,29 +1,32 @@
 angular.module('rapid-build').constant 'RB_BUTTON_API', [
-	name: 'content'
-	description: 'Content inside tag.'
+	attribute: 'content'
+	description: '
+		<em class="rb-content">not attribute</em>
+		Content inside tag.
+	'
 	options: null
 	type: 'html | string'
 	required: false
 ,
-	name: 'disabled'
+	attribute: 'disabled'
 	description: 'Disables component.'
 	options: null
-	type: 'void'
+	type: null
 	required: false
 ,
-	name: 'kind'
+	attribute: 'kind'
 	description: 'Varies look of display.'
 	options: 'info | danger | success | warning'
 	type: 'string'
 	required: false
 ,
-	name: 'size'
+	attribute: 'size'
 	description: 'Changes the size.'
 	options: 'big | small'
 	type: 'string'
 	required: false
 ,
-	name: 'type'
+	attribute: 'type'
 	description: '
 		Defaults to <em class="rb-default">button</em>.
 		Additional <a target="_blank" href="https://goo.gl/bdwtDR">reference</a>.
@@ -32,25 +35,25 @@ angular.module('rapid-build').constant 'RB_BUTTON_API', [
 	type: 'string'
 	required: false
 ,
-	name: 'icon'
+	attribute: 'icon'
 	description: 'Adds icon to component.'
 	options: 'rb-icon <a target= "_blank" href="/components/rb-icon">kind</a>'
 	type: 'string'
 	required: false
 ,
-	name: 'icon-position'
+	attribute: 'icon-position'
 	description: 'Positions icon left.'
 	options: 'left'
 	type: 'string'
 	required: false
 ,
-	name: 'icon-size'
+	attribute: 'icon-size'
 	description: 'Refer to options.'
 	options: 'rb-icon <a target= "_blank" href="/components/rb-icon">size</a>'
 	type: 'number'
 	required: false
 ,
-	name: 'icon-source'
+	attribute: 'icon-source'
 	description: 'Refer to options.'
 	options: 'rb-icon <a target= "_blank" href="/components/rb-icon">source</a>'
 	type: 'string'

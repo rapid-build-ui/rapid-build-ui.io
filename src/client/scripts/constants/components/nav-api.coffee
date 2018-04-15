@@ -1,6 +1,7 @@
 angular.module('rapid-build').constant 'RB_NAV_API', [
-	name: 'content'
+	attribute: 'content'
 	description: '
+		<em class="rb-content">not attribute</em>
 		Content inside tag.<br>
 		Use the following html tags
 		in <em>root of rb-nav</em>:<br>
@@ -11,50 +12,50 @@ angular.module('rapid-build').constant 'RB_NAV_API', [
 	type: 'html'
 	required: true
 ,
-	name: 'dividers'
+	attribute: 'dividers'
 	description: 'Adds dividers between links.'
 	options: null
-	type: 'void'
+	type: null
 	required: false
 ,
-	name: 'inline'
+	attribute: 'inline'
 	description: '
 		Sets display to
 		<a target="_blank" href="https://goo.gl/fpGxpN">inline</a>.
 	'
 	options: null
-	type: 'void'
+	type: null
 	required: false
 ,
-	name: 'inverse'
+	attribute: 'inverse'
 	description: 'Changes styles for dark backgrounds.'
 	options: null
-	type: 'void'
+	type: null
 	required: false
 ,
-	name: 'kind'
+	attribute: 'kind'
 	description: 'Varies look of display.'
 	options: 'primary'
 	type: 'string'
 	required: false
 ,
-	name: 'responsive'
+	attribute: 'responsive'
 	description: '
 		Changes the look of the display to accommodate smaller screens
 		when <a target="_blank" href="https://goo.gl/KAhrH5">viewport</a>
 		width is less than or equal to 768px.
 	'
 	options: null
-	type: 'void'
+	type: null
 	required: false
 ,
-	name: 'vertical'
+	attribute: 'vertical'
 	description: 'Vertically aligns links.'
 	options: null
-	type: 'void'
+	type: null
 	required: false
 ,
-	name: 'active'
+	attribute: 'active'
 	description: '
 		Visually indicates active link.<br>
 		By default clicking a link
