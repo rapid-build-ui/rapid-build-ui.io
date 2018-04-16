@@ -44,7 +44,7 @@ angular.module('rapid-build').constant 'RB_BUTTON_API', [
 	attribute: 'icon-position'
 	description: '
 		<em class="default-val">defaults to <b>right</b></em>
-		Positions icon left.
+		Icon position.
 	'
 	options: 'left'
 	type: 'string'
