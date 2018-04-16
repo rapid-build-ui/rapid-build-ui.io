@@ -15,8 +15,11 @@ angular.module('rapid-build').constant 'RB_BUTTON_API', [
 	required: false
 ,
 	attribute: 'kind'
-	description: 'Varies look of display.'
-	options: 'info | danger | success | warning'
+	description: '
+		Varies look of display.<br>
+		(text kind unstyles button)
+	'
+	options: 'info | danger | success | warning | text'
 	type: 'string'
 	required: false
 ,
