@@ -42,7 +42,10 @@ angular.module('rapid-build').constant 'RB_BUTTON_API', [
 	required: false
 ,
 	attribute: 'icon-position'
-	description: 'Positions icon left.'
+	description: '
+		<em class="default-val">defaults to <b>right</b></em>
+		Positions icon left.
+	'
 	options: 'left'
 	type: 'string'
 	required: false
