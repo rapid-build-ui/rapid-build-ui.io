@@ -40,6 +40,12 @@ input[type='password'] {
 	}
 }
 
+/* Input Types
+ **************/
+input[type='number'] {
+	width: remy(50);
+}
+
 /* Textareas
  ************/
 textarea {
