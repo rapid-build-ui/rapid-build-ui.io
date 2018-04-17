@@ -16,7 +16,7 @@
 				type="checkbox"
 				ng-checked="checked"
 				ng-click="click({$event: $event})">
-			<span class="sub-caption" ng-bind="subCaption"></span>
+			<span class="sub-caption" ng-bind-html="subCaption | trustHtml"></span>
 		</label>
 	</div>
 </div>

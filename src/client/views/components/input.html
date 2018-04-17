@@ -6,11 +6,25 @@
 
 	<!-- COMPONENT -->
 	<section class="grid">
-		<div class="col">
+		<div class="col" id="markup">
 			<div rba-builder="markup"></div>
+			<!-- <rb-input
+				label="My Input"
+				subtext="My subtext"
+				validation='[
+					"required",
+					"email",
+					function() {
+						return {
+							valid: false,
+							message: "custom message"
+						}
+					}
+				]'>
+			</rb-input> -->
 		</div>
 		<div class="col-7">
-			<rba-code readonly model="markup" caption="markup"></rba-code>
+			<rba-code readonly model="markup" caption="markup" height="xxxxtall"></rba-code>
 		</div>
 	</section>
 
@@ -21,9 +35,10 @@
 		<rba-input caption="label" model="a.label" type="text"></rba-input>
 		<rba-input caption="value" model="a.value" type="text"></rba-input>
 		<rba-input caption="subtext" model="a.subtext" type="text"></rba-input>
-		<rba-checkbox caption="disabled" model="a.disabled" type="boolean"></rba-checkbox>
-		<rba-checkbox caption="right" model="a.right" type="boolean"></rba-checkbox>
-		<rba-checkbox caption="validation" model="a.validation" type="boolean"></rba-checkbox>
+		<rba-checkbox caption="disabled" model="a.disabled"></rba-checkbox>
+		<rba-checkbox caption="right" model="a.right""></rba-checkbox>
+		<!-- <rba-checkbox caption="validation" model="a.validation"></rba-checkbox> -->
+		<rba-checkboxes caption="validation" model="a.validation" data="validations"></rba-checkboxes>
 
 		<section class="buttons">
 			<rb-button

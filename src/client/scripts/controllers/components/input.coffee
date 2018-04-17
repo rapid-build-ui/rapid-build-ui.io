@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbInputController', ['$scope', '$element',
-	($scope, $element) ->
+angular.module('rapid-build').controller 'rbInputController', ['$scope', '$element', 'typeService',
+	($scope, $element, type) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -12,36 +12,52 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			attrs += "#{s}value=\"#{$scope.a.value}\"" if $scope.a.value
 			attrs += "#{s}disabled" if $scope.a.disabled
 			attrs += "#{s}right" if $scope.a.right
-			attrs += "#{s}validation='#{JSON.stringify($scope.validation)}\'" if $scope.a.validation
-			# attrs += "#{s}validation=\"#{JSON.stringify($scope.a.validation).replace(/\"/g,'\\\'')}\"" if $scope.a.validation.length > 0
+			attrs += "#{s}validation='#{JSON.stringify($scope.a.validation, stringifyModifier, '\t')
+											.replace(/\\n/g, '\n')
+											.replace(/\\"/g, '"')
+											.replace(/"function \(val\)/g, 'function(val)')
+											.replace(/\}"/g, '}')}'" if $scope.a.validation.length
 			"<rb-input#{attrs}></rb-input>"
-
-
-		# Props
-		# =====
-		$scope.validation = [
-			'required',
-			'email',
-			(value) ->
-				console.log(value)
-				true
-			,
-
-		]
 
 		# Methods
 		# =======
+		stringifyModifier = (key, val) ->
+			val = angular.copy val
+			return val unless type.is.function val
+			val.toString()
+
+		customValidation = (val) ->
+			valid: false,
+			message: "custom message"
+
+		$scope.validations = [
+			'required'
+			'email'
+			minLength: 3
+			customValidation
+		]
+
 		$scope.reset = ->
 			$scope.a =
 				label: 'My Input'
 				subtext: 'My subtext'
 				value: ""
-				validation: false
+				validation: [
+					# $scope.validations[0]
+					# $scope.validations[1]
+					# $scope.validations[2]
+					# $scope.validations[3]
+				]
 
 		# Watches
 		# =======
 		markupWatch = $scope.$watch ->
 			$scope.markup = createMarkup()
+			# test = $element[0].querySelector('#markup rb-input')
+			# return unless test
+			# return unless $scope.a.validation
+			# test.validation = $scope.a.validation
+
 
 		# Event Handlers
 		# ==============
