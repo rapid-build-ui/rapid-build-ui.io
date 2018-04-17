@@ -3,6 +3,8 @@ angular.module('rapid-build').directive('rbaSourceNav', ['componentService',
 		/* COMPILE
 		 **********/
 		const Compile = function(tElement, tAttrs, transclude) {
+			// required to copy popover content
+			tElement.append('<div style="height:0;"><br></div>');
 			return Link;
 		}
 

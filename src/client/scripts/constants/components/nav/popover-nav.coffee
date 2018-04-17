@@ -1,4 +1,7 @@
 angular.module('rapid-build').constant 'RB_POPOVER_NAV', [
+	type: 'install'
+	popover: 'yarn add @rapid-build-ui/rb-popover --flat'
+,
 	type: 'github'
 	url:  'https://git.io/vxAbT'
 ,

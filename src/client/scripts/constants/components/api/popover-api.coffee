@@ -17,6 +17,12 @@ angular.module('rapid-build').constant 'RB_POPOVER_API', [
 	type: 'html | string'
 	required: false
 ,
+	attribute: 'fit-content'
+	description: 'Makes popover as wide as content.'
+	options: null
+	type: null
+	required: false
+,
 	attribute: 'hover'
 	description: 'Trigger popover via hover.'
 	options: null

@@ -6,6 +6,7 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
+			attrs += "#{s}fit-content" if $scope.a.fitContent
 			attrs += "#{s}hover" if $scope.a.hover
 			attrs += "#{s}unstyled" if $scope.a.unstyled
 			attrs += "#{s}caption=\"#{$scope.a.caption}\"" if $scope.a.caption

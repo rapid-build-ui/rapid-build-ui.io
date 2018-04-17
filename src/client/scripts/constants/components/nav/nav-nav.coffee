@@ -1,4 +1,7 @@
 angular.module('rapid-build').constant 'RB_NAV_NAV', [
+	type: 'install'
+	popover: 'yarn add @rapid-build-ui/rb-nav --flat'
+,
 	type: 'github'
 	url:  'https://git.io/vxAFH'
 ,

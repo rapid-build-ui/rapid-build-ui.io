@@ -2,13 +2,24 @@
 	<a target="_blank"
 	   ng-href="{{::src.url}}"
 	   ng-repeat="src in ::source"
+	   ng-switch="!!src.popover"
 	   title="{{
 		   (src.type == 'github') ? 'Repository' :
 		   (src.type == 'js')     ? 'JS'         :
 		   (src.type == 'html')   ? 'HTML'       :
 		   (src.type == 'css')    ? 'CSS'        : ''
 	   }}">
+		<rb-popover
+			unstyled
+			fit-content
+			icon="download"
+			caption="Install"
+			icon-source="solid"
+			ng-switch-when="true">
+			{{ src.popover }}
+		</rb-popover>
 		<rb-icon
+			ng-switch-default
 			source="{{
 				(src.type == 'github') ? 'brands' :
 				(src.type == 'js')     ? 'brands' :
