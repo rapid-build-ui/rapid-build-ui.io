@@ -59,5 +59,10 @@ angular.module('rapid-build').constant 'RB_POPOVER_API', [
 	options: '<a target= "_blank" href="/components/rb-icon">rb-icon source</a>'
 	type: 'string'
 	required: false
-
+,
+	attribute: 'unstyled'
+	description: 'Removes trigger styles.'
+	options: null
+	type: null
+	required: false
 ]

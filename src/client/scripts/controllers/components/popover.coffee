@@ -7,6 +7,7 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
 			attrs += "#{s}hover" if $scope.a.hover
+			attrs += "#{s}unstyled" if $scope.a.unstyled
 			attrs += "#{s}caption=\"#{$scope.a.caption}\"" if $scope.a.caption
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}position=\"#{$scope.a.position}\"" if $scope.a.position
@@ -28,8 +29,8 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 		# =======
 		$scope.reset = ->
 			$scope.a =
-				content: 'Hello popover!'
 				caption: 'Caption'
+				content: 'Now that\'s poppin!'
 
 		# Watches
 		# =======
