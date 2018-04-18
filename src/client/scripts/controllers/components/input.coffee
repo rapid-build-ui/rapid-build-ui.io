@@ -27,13 +27,13 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			val.toString()
 
 		customValidation = (val) ->
-			valid: false,
-			message: "custom message"
+			valid: val is "rapid",
+			message: "must be rapid"
 
 		$scope.validations = [
 			'required'
 			'email'
-			minLength: 3
+			minLength: 2
 			customValidation
 		]
 
@@ -51,13 +51,9 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 
 		# Watches
 		# =======
-		markupWatch = $scope.$watch ->
+		markupWatch = $scope.$watch 'a', ->
 			$scope.markup = createMarkup()
-			# test = $element[0].querySelector('#markup rb-input')
-			# return unless test
-			# return unless $scope.a.validation
-			# test.validation = $scope.a.validation
-
+		, true
 
 		# Event Handlers
 		# ==============
