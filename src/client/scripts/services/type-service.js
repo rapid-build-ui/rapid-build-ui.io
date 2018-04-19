@@ -37,6 +37,10 @@ angular.module('rapid-build').service('typeService', [function() {
 			if (this.array(v)) return false;
 			return true;
 		},
+		promise(v) {
+			if (!this.object(v)) return false;
+			return !!v.then;
+		},
 		string: v => {
 			return typeof v === 'string';
 		},

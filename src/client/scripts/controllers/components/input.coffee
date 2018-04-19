@@ -30,11 +30,26 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			valid: val is "rapid",
 			message: "must be rapid"
 
+		customValidationPromise = (val) ->
+			new Promise (resolve) ->
+				setTimeout(
+					resolve
+					1500
+					valid: val is "rapid",
+					message: "must be rapid"
+				)
+
+		# validationPromise = customValidationPromise().then (validation) ->
+		# 	console.log validation
+
+		# console.log type.is.promise validationPromise
+
 		$scope.validations = [
 			'required'
-			'email'
 			minLength: 2
+			{ range: min: 2, max: 9}
 			customValidation
+			# customValidationPromise
 		]
 
 		$scope.reset = ->
