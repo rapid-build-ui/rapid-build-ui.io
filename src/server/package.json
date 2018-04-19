@@ -28,7 +28,5 @@
 		"start": "node rapid-build/start-server",
 		"stop": "node rapid-build/stop-server"
 	},
-	"dependencies": {
-		"cors": "^2.8.4"
-	}
+	"dependencies": {}
 }

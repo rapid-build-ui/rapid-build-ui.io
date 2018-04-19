@@ -2,11 +2,7 @@
  * RB-UI WEB SERVER
  *******************/
 module.exports = server => {
-	var app = server.app,
-		path = require('path'),
-		cors = require('cors');
-
-	app.use(cors());
+	var app = server.app;
 
 	/* Routes
 	 *********/
