@@ -15,7 +15,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			attrs += "#{s}validation='#{JSON.stringify($scope.a.validation, stringifyModifier, '\t')
 											.replace(/\\n/g, '\n')
 											.replace(/\\"/g, '"')
-											.replace(/"function \(val\)/g, 'function(val)')
+											.replace(/"function\s*\((.*)\)/g, 'function($1)')
 											.replace(/\}"/g, '}')}'" if $scope.a.validation.length
 			"<rb-input#{attrs}></rb-input>"
 
@@ -55,7 +55,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 		$scope.reset = ->
 			$scope.a =
 				label: 'My Input'
-				subtext: 'My subtext'
+				subtext: 'my subtext'
 				value: ""
 				validation: [
 					# $scope.validations[0]
