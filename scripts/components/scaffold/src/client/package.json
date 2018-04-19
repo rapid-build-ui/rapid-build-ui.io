@@ -1,6 +1,6 @@
 {
 	"name": "@rapid-build-ui/{{name}}",
-	"version": "0.1.0",
+	"version": "0.0.0",
 	"main": "scripts/{{name}}.js",
 	"description": "Rapid Build UI Component: {{name}}",
 	"license": "MIT",
