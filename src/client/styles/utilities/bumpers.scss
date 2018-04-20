@@ -1,6 +1,14 @@
 /**********
  * BUMPERS
  **********/
+.no-bumper           { margin:        0 !important; }
+.no-top-bumper       { margin-top:    0 !important; }
+.no-bottom-bumper    { margin-bottom: 0 !important; }
+.no-left-bumper      { margin-left:   0 !important; }
+.no-right-bumper     { margin-right:  0 !important; }
+.no-side-bumpers     { margin-left:   0 !important; margin-right:  0 !important; }
+.no-vertical-bumpers { margin-top:    0 !important; margin-bottom: 0 !important; }
+
 .bumper-left-tiny   { margin-left:  2px  !important; }
 .bumper-right-tiny  { margin-right: 2px  !important; }
 .bumper-left-mini   { margin-left:  5px  !important; }

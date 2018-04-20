@@ -8,6 +8,10 @@ angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 			layout: 'superman'
 			templateUrl: '/views/mains/getting-started.html'
 
+		.when '/browser-support',
+			layout: 'superman'
+			templateUrl: '/views/mains/browser-support.html'
+
 		.when '/components/:component',
 			layout: 'wolverine'
 			reloadOnSearch: false

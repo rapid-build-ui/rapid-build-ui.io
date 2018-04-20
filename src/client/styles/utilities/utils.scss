@@ -1,11 +1,16 @@
 /******************
  * UTILITY CLASSES
  ******************/
-// displays
+// Displays
+.block {
+	display: block !important;
+}
+.inline-block {
+	display: inline-block !important;
+}
 .flex {
 	display: flex !important;
 }
-// text
-.nowrap {
-	white-space: nowrap;
+.inline-flex {
+	display: inline-flex !important;
 }
