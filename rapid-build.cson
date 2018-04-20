@@ -43,6 +43,12 @@ common:
 		server:
 			js:
 				es6: true
+		html:
+			options:
+				ignoreCustomFragments: [
+					/<rba-code(\s*?.*?)*?rba-code>/gi
+					/\s?<rb-icon\s|<\/rb-icon>\s?/gi
+				]
 
 	order: # build will merge this with dev or prod
 		scripts:
