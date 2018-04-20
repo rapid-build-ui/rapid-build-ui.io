@@ -12,11 +12,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			attrs += "#{s}value=\"#{$scope.a.value}\"" if $scope.a.value
 			attrs += "#{s}disabled" if $scope.a.disabled
 			attrs += "#{s}right" if $scope.a.right
-			attrs += "#{s}validation='#{JSON.stringify($scope.a.validation, stringifyModifier, '\t')
-											.replace(/\\n/g, '\n')
-											.replace(/\\"/g, '"')
-											.replace(/"function\s*\((.*)\)/g, 'function($1)')
-											.replace(/\}"/g, '}')}'" if $scope.a.validation.length
+			attrs += "#{s}validation='#{_buldValidationMarkup()}'" if $scope.a.validation.length
 			"<rb-input#{attrs}></rb-input>"
 
 		# Methods
@@ -38,11 +34,41 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 					valid: val is "rapid",
 					message: "must be rapid"
 				)
+		_buldValidationMarkup = () ->
+			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
+			_validators = []
+			for validator, i in $scope.a.validation
+				do (validator) ->
+					switch validator
+						when 'required'
+							_validators.push $scope.validations[0]
+						when 'min length'
+							_validators.push $scope.validations[1]
+						when 'range'
+							_validators.push $scope.validations[2]
+						when 'custom'
+							_validators.push $scope.validations[3]
+
+			_attrs = ''
+			_attrs += "#{JSON.stringify(_validators, stringifyModifier, '\t')
+						.replace(/\\n/g, '\n')
+						.replace(/\\"/g, '"')
+						.replace(/"function\s*\((.*)\)/g, 'function($1)')
+						.replace(/\}"/g, '}')}
+					"
+
+			return _attrs;
 
 		# validationPromise = customValidationPromise().then (validation) ->
 		# 	console.log validation
 
 		# console.log type.is.promise validationPromise
+		$scope.validationLabels = [
+			'required',
+			'min length'
+			'range'
+			'custom'
+		]
 
 		$scope.validations = [
 			'required'
@@ -55,7 +81,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 		$scope.reset = ->
 			$scope.a =
 				label: 'My Input'
-				subtext: 'my subtext'
+				subtext: 'My subtext'
 				value: ""
 				validation: [
 					# $scope.validations[0]
