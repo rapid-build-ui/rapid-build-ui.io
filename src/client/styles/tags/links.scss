@@ -2,9 +2,9 @@
  * LINKS
  ********/
 a {
-	$links:  #d0021b; // red in logo
-	$hover:  lighten($links, 15);
-	$active: darken($hover, 15);
+	$links:  #db3a4d; // red in logo is #d0021b
+	$hover:  $links;
+	$active: darken($links, 5);
 
 	color: $links;
 	text-decoration: none;
@@ -12,7 +12,7 @@ a {
 	&:focus,
 	&:hover {
 		color: $hover;
-		text-decoration: none;
+		text-decoration: underline;
 	}
 	&:focus {
 		outline: none;
@@ -20,11 +20,6 @@ a {
 	&:active,
 	&.active {
 		color: $active;
+		text-decoration: none;
 	}
-}
-
-/* sub links
- ************/
-.sub a {
-	filter: opacity(.8);
 }
