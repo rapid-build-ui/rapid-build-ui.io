@@ -2,7 +2,19 @@
  * RB-UI WEB SERVER
  *******************/
 module.exports = server => {
-	var app = server.app;
+	const app         = server.app;
+	const httpToHttps = require('./middleware/http-to-https');
+
+	/* Http to Https (301 redirect)
+	 ****************/
+	app.use(httpToHttps({
+		ignoreHostnames: [
+			'localhost',
+			'jyounce-mac.local',
+			'yokun-mac.local',
+			'staging.rapid-build-ui.io'
+		]
+	}));
 
 	/* Routes
 	 *********/
