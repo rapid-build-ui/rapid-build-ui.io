@@ -32,6 +32,8 @@
 		"url": "https://github.com/rapid-build-ui/rapid-build-ui.io/issues"
 	},
 	"scripts": {
+		"start": "node server/rapid-build/start-server",
+		"stop": "node server/rapid-build/stop-server",
 		"create-component": "node scripts/api/create-component",
 		"install-client": "cd src/client/ && yarn install --ignore-engines",
 		"install-server": "cd src/server/ && npm install",
