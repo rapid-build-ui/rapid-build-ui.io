@@ -1,6 +1,6 @@
 angular.module('rapid-build').constant 'RB_ICON_NAV', [
 	type: 'install'
-	popover: 'yarn add @rapid-build-ui/rb-icon --flat'
+	popover: 'yarn add @rapid-build-ui/rb-icon'
 ,
 	type: 'github'
 	url:  'https://git.io/vxAFr'

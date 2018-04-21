@@ -1,6 +1,6 @@
 angular.module('rapid-build').constant 'RB_ALERT_NAV', [
 	type: 'install'
-	popover: 'yarn add @rapid-build-ui/rb-alert --flat'
+	popover: 'yarn add @rapid-build-ui/rb-alert'
 ,
 	type: 'github'
 	url:  'https://git.io/vxAdp'
