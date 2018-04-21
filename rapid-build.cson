@@ -60,3 +60,12 @@ common:
 				'styles/reset.css'
 				'styles/grid.css'
 			]
+
+# RUN BEFORE PUBLISHING TO HEROKU!!
+# rapid-build prod publish
+# =================================
+publish:
+	dist:
+		pack:
+			enable: true
+			fileName: 'app'
