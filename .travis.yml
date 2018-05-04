@@ -4,8 +4,6 @@ node_js:
 cache:
   directories:
     - /home/travis/.nvm/versions/node/v8.11.1/lib/node_modules
-before_install:
-  - npm install -g rapid-build
 notifications:
   email:
     on_success: always
