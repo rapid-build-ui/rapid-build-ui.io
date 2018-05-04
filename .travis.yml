@@ -8,9 +8,9 @@ cache:
 before_install:
   - if [[ $(npm -v) != '6.0.0' ]]; then npm install -g npm@6.0.0; fi # check version
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
-# notifications:
-#   email:
-#     on_success: always
+notifications:
+  email:
+    on_success: always
 after_script:
   - rapid-build --version
   - rapid-build --location
