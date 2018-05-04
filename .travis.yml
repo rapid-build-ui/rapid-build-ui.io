@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "8"
+cache:
+  directories:
+    - $(npm bin -g)/rapid-build
+    - $(npm root -g)/rapid-build
+before_install:
+  - npm install -g rapid-build
+notifications:
+  email:
+    on_success: always
+after_script:
+  - rapid-build --location
