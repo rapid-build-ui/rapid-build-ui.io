@@ -44,7 +44,7 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 			</li>
 			<li>
 				<em>object</em>: {key:value}<br>
-				See demo above for <strong>min length</strong>
+				See demo above for <strong>minLength</strong>
 			</li>
 			<li>
 				<em>nested object</em>:<br>
@@ -54,7 +54,7 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 				<br>
 				}
 				</pre>
-				See demo above for <strong>min max length</strong>
+				See demo above for <strong>minMaxLength</strong>
 			</li>
 			<li>
 				<em>function:</em><br>
@@ -68,5 +68,11 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 	'
 	options: null
 	type: 'array'
+	required: false
+,
+	attribute: 'placeholder'
+	description: 'Input placeholder.'
+	options: null
+	type: 'string'
 	required: false
 ]
