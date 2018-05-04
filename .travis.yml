@@ -3,10 +3,10 @@ node_js:
   - "8"
 cache:
   directories:
-    - $(npm config get prefix)/bin/rapid-build
-    - $(npm config get prefix)/lib/node_modules/rapid-build
-before_install:
-  - npm install -g rapid-build
+    - $(npm bin -g)/rapid-build
+    - $(npm root -g)/rapid-build
+# before_install:
+#   - npm install -g rapid-build
 notifications:
   email:
     on_success: always
