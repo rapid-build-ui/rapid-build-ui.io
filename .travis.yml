@@ -3,8 +3,9 @@ node_js:
   - '8'
 cache:
   directories:
-    - $(npm root -g) # global node_modules directory
-    - $(npm bin -g)/rapid-build
+    # - $(npm root -g) # global node_modules directory
+    # - $(npm bin -g)/rapid-build
+    - node_modules
 before_install:
   - if [[ $(npm -v) != '6.0.0' ]]; then npm install -g npm@6.0.0; fi # check version
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
