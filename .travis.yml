@@ -5,9 +5,9 @@ cache:
   directories:
     - $(npm root -g) # global node_modules directory
     - $(npm bin -g)/rapid-build
-# before_install:
-#   - npm install -g npm@5
-#   - npm install -g rapid-build@5
+before_install:
+  - npm install -g npm@6.0.0
+  - npm install -g rapid-build@5
 notifications:
   email:
     on_success: always
