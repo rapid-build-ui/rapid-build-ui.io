@@ -41,9 +41,9 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 				switch validator
 					when 'required'
 						validators.push $scope.validations[0]
-					when 'min length'
+					when 'minLength'
 						validators.push $scope.validations[1]
-					when 'range'
+					when 'minMaxLength'
 						validators.push $scope.validations[2]
 					when 'custom'
 						validators.push $scope.validations[3]
@@ -58,15 +58,15 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 		# =======
 		$scope.validationLabels = [
 			'required',
-			'min length'
-			'range'
+			'minLength'
+			'minMaxLength'
 			'custom'
 		]
 
 		$scope.validations = [
 			'required'
 			minLength: 2
-			{ range: min: 2, max: 9}
+			{ minMaxLength: min: 2, max: 5}
 			customValidation
 			# customValidationPromise
 		]
