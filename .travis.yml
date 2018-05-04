@@ -1,15 +1,21 @@
 language: node_js
 node_js:
-  - "8"
+  - '8'
 cache:
   directories:
+    - $(npm root -g) # global node_modules directory
+    - $(npm bin -g)/npm
+    - $(npm bin -g)/npx # installed by npm package
     - $(npm bin -g)/rapid-build
-    - $(npm root -g)/rapid-build
-# before_install:
-#   - npm install -g rapid-build
+before_install:
+  - npm install -g npm@6.0.0
+  - npm install -g rapid-build@5
 notifications:
   email:
     on_success: always
 after_script:
+  - rapid-build --version
   - rapid-build --location
   - npm list -g --depth=0
+  - ls -a1 $(npm root -g)
+  - ls -a1 $(npm bin -g)
