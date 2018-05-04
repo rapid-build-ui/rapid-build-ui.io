@@ -3,9 +3,9 @@ node_js:
   - '8'
 cache:
   directories:
-    # - $(npm root -g) # global node_modules directory
-    # - $(npm bin -g)/rapid-build
-    - node_modules
+    - $(npm root -g) # global node_modules directory
+    - $(npm bin -g)/rapid-build
+    - node_modules # repo root node_modules
 before_install:
   - if [[ $(npm -v) != '6.0.0' ]]; then npm install -g npm@6.0.0; fi # check version
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
@@ -19,3 +19,4 @@ after_script:
   - npm list -g --depth=0
   - ls -a1 $(npm root -g)
   - ls -a1 $(npm bin -g)
+  - ls -a1 $TRAVIS_BUILD_DIR
