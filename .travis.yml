@@ -19,4 +19,5 @@ after_script:
   - npm list -g --depth=0
   - ls -a1 $(npm root -g)
   - ls -a1 $(npm bin -g)
-  - ls -a1 $TRAVIS_BUILD_DIR
+  - ls -a1 /home/travis/build
+  # - ls -a1 $TRAVIS_BUILD_DIR
