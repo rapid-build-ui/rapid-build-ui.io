@@ -9,6 +9,7 @@ cache:
 before_install:
   - if [[ $(npm -v) != '6.0.0' ]]; then npm install -g npm@6.0.0; fi # check version
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
+  - git clone --depth 1 https://github.com/rapid-build-ui/rb-nav.git /home/travis/build/rapid-build-ui/rb-nav
 notifications:
   email:
     on_success: always
@@ -20,4 +21,5 @@ after_script:
   - ls -a1 $(npm root -g)
   - ls -a1 $(npm bin -g)
   - ls -a1 /home/travis/build
-  # - ls -a1 $TRAVIS_BUILD_DIR
+  - ls -a1 /home/travis/build/rapid-build-ui
+  # - ls -a1 $TRAVIS_BUILD_DIR # repo root
