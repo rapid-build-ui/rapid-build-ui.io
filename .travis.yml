@@ -3,7 +3,8 @@ node_js:
   - "8"
 cache:
   directories:
-    - /home/travis/.nvm/versions/node/v8.11.1/lib/node_modules
+    - $(npm bin -g)/rapid-build
+    - $(npm root -g)/rapid-build
 notifications:
   email:
     on_success: always
