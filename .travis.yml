@@ -6,7 +6,6 @@ env:
     - RB_SHOWCASE_DIR="$TRAVIS_BUILD_DIR"
     - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
     - RB_COMPONENT_SETUP="rapid-build prod publish && npm run link"
-    - RB_COMPONENT_CLONE="$(git clone --depth 1 https://github.com/rapid-build-ui)"
     - YARN_LINK_DIR="$(yarn global dir)/../link"
 cache:
   directories:
@@ -20,23 +19,21 @@ before_install:
   - if [[ $(yarn -v) != '1.6.0' ]]; then npm install -g yarn@1.6.0; fi           # check version
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
   - cd $RB_COMPONENTS_DIR
-  - $RB_COMPONENT_CLONE/rb-alert.git
-  - $RB_COMPONENT_CLONE//rb-button.git
-  # - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git
-  # - git clone --depth 1 https://github.com/rapid-build-ui/rb-button.git
-  # - git clone --depth 1 https://github.com/rapid-build-ui/rb-icon.git
-  # - git clone --depth 1 https://github.com/rapid-build-ui/rb-input.git
-  # - git clone --depth 1 https://github.com/rapid-build-ui/rb-nav.git
-  # - git clone --depth 1 https://github.com/rapid-build-ui/rb-popover.git
+  - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git
+  - git clone --depth 1 https://github.com/rapid-build-ui/rb-button.git
+  - git clone --depth 1 https://github.com/rapid-build-ui/rb-icon.git
+  - git clone --depth 1 https://github.com/rapid-build-ui/rb-input.git
+  - git clone --depth 1 https://github.com/rapid-build-ui/rb-nav.git
+  - git clone --depth 1 https://github.com/rapid-build-ui/rb-popover.git
   - cd $RB_COMPONENTS_DIR/rb-alert   && eval $RB_COMPONENT_SETUP
   - cd $RB_COMPONENTS_DIR/rb-button  && eval $RB_COMPONENT_SETUP
-  # - cd $RB_COMPONENTS_DIR/rb-icon    && eval $RB_COMPONENT_SETUP
-  # - cd $RB_COMPONENTS_DIR/rb-input   && eval $RB_COMPONENT_SETUP
-  # - cd $RB_COMPONENTS_DIR/rb-nav     && eval $RB_COMPONENT_SETUP
-  # - cd $RB_COMPONENTS_DIR/rb-popover && eval $RB_COMPONENT_SETUP
+  - cd $RB_COMPONENTS_DIR/rb-icon    && eval $RB_COMPONENT_SETUP
+  - cd $RB_COMPONENTS_DIR/rb-input   && eval $RB_COMPONENT_SETUP
+  - cd $RB_COMPONENTS_DIR/rb-nav     && eval $RB_COMPONENT_SETUP
+  - cd $RB_COMPONENTS_DIR/rb-popover && eval $RB_COMPONENT_SETUP
   - cd $YARN_LINK_DIR/@rapid-build-ui && ls -a1
   - cd $RB_SHOWCASE_DIR && pwd
-  # - npm run setup && rapid-build prod publish
+  - npm run setup && rapid-build prod publish
   # - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git /home/travis/build/rapid-build-ui/rb-alert
   # - echo $TRAVIS_BUILD_DIR && echo pwd
   # - cd $TRAVIS_BUILD_DIR/.. && pwd && rapid-build prod publish && npm run relink
@@ -57,4 +54,5 @@ after_script:
   # - ls -a1 $TRAVIS_BUILD_DIR # repo root
   # - cd $TRAVIS_BUILD_DIR/.. && ls -a1 # build dir
   - cd $RB_COMPONENTS_DIR && ls -a1 # build dir
+  - cd $RB_SHOWCASE_DIR && ls -a1 # build dir
   - echo pwd
