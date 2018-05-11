@@ -27,7 +27,7 @@ before_install:
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git
   # - git clone --depth 1 https://github.com/rapid-build-ui/rb-button.git
   # - cd $RB_COMPONENTS_DIR/rb-alert  && eval $RB_SETUP_COMPONENT
-  - eval $RB_SETUP_COMPONENT "rb-alert"
+  - eval $RB_SETUP_COMPONENT 'rb-alert'
   # - cd $RB_COMPONENTS_DIR/rb-button && eval $RB_SETUP_COMPONENT
   # - cd $(yarn global dir)/../link && ls -a1
   - cd $YARN_LINK_DIR && ls -a1
