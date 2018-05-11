@@ -21,6 +21,7 @@ before_install:
   - cd $RB_COMPONENTS_DIR
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-button.git
+  - cd $RB_COMPONENTS_DIR/rb-alert && rapid-build prod publish && npm run link
   - cd $(yarn global dir)/../link && ls -a1
   # - pwd && ls -a1
   # - cd $RB_COMPONENTS_DIR && pwd
