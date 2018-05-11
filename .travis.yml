@@ -1,3 +1,6 @@
+# notifications:
+#   email:
+#     on_success: always
 language: node_js
 node_js:
   - '8'
@@ -34,30 +37,9 @@ before_install:
   - cd $YARN_LINK_DIR/@rapid-build-ui && ls -a1
   - cd $RB_SHOWCASE_DIR && pwd
 before_script:
-  - echo '------------------------'
-  - echo 'RAPID before_script STEP'
-  - echo '------------------------'
-  - pwd
+  - cd $RB_SHOWCASE_DIR && pwd
   - npm run setup && rapid-build prod publish
-  # - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git /home/travis/build/rapid-build-ui/rb-alert
-  # - echo $TRAVIS_BUILD_DIR && echo pwd
-  # - cd $TRAVIS_BUILD_DIR/.. && pwd && rapid-build prod publish && npm run relink
-  # - cd $TRAVIS_BUILD_DIR && pwd
-# notifications:
-#   email:
-#     on_success: always
 after_script:
-  # - rapid-build --version
-  # - rapid-build --location
-  # - npm --version
-  # - yarn --version
-  # - npm list -g --depth=0
-  # - ls -a1 $(npm root -g)
-  # - ls -a1 $(npm bin -g)
-  # - ls -a1 /home/travis/build
-  # - ls -a1 /home/travis/build/rapid-build-ui
-  # - ls -a1 $TRAVIS_BUILD_DIR # repo root
-  # - cd $TRAVIS_BUILD_DIR/.. && ls -a1 # build dir
   - cd $RB_COMPONENTS_DIR && ls -a1 # build dir
   - cd $RB_SHOWCASE_DIR && ls -a1 # build dir
   - pwd
