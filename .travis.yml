@@ -46,6 +46,7 @@ before_script:
 deploy:
   provider: heroku
   app: rapid-build-ui-io-dev
+  skip_cleanup: true
   on:
     branch: master
   api_key:
