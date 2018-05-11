@@ -17,10 +17,12 @@ before_install:
   - if [[ $(yarn -v) != '1.6.0' ]]; then npm install -g yarn@1.6.0; fi           # check version
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
   # - cd $RB_SHOWCASE_DIR && pwd
+  - cd $(yarn global dir)/../link && ls -a1
   - cd $RB_COMPONENTS_DIR
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-button.git
-  - pwd && ls -a1
+  - cd $(yarn global dir)/../link && ls -a1
+  # - pwd && ls -a1
   # - cd $RB_COMPONENTS_DIR && pwd
   - cd $RB_SHOWCASE_DIR && pwd
   # - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git /home/travis/build/rapid-build-ui/rb-alert
