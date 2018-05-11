@@ -18,7 +18,7 @@ before_install:
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
   - cd $RB_SHOWCASE_DIR && pwd
   - cd $RB_COMPONENTS_DIR && pwd
-  - cd $RB_SHOWCASE_DIR && pwd
+  # - cd $RB_SHOWCASE_DIR && pwd
   # - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git /home/travis/build/rapid-build-ui/rb-alert
   # - echo $TRAVIS_BUILD_DIR && echo pwd
   # - cd $TRAVIS_BUILD_DIR/.. && pwd && rapid-build prod publish && npm run relink
