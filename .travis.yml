@@ -3,7 +3,7 @@ node_js:
   - '8'
 env:
   global:
-    - RB_BUILD_DIR="$TRAVIS_BUILD_DIR/.."
+    - RB_BUILD_DIR=$TRAVIS_BUILD_DIR/..
 cache:
   directories:
     - node_modules   # repo root node_modules
@@ -32,4 +32,4 @@ after_script:
   # - ls -a1 /home/travis/build/rapid-build-ui
   # - ls -a1 $TRAVIS_BUILD_DIR # repo root
   # - cd $TRAVIS_BUILD_DIR/.. && ls -a1 # build dir
-  - cd ${RB_BUILD_DIR} && pwd
+  - cd $RB_BUILD_DIR && pwd
