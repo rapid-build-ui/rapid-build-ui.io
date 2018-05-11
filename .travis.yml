@@ -7,10 +7,10 @@ cache:
     - $(npm bin -g)/rapid-build
     - node_modules # repo root node_modules
 before_install:
-  - if [[ $(npm -v) != '6.0.0' ]]; then npm install -g npm@6.0.0; fi # check version
+  - if [[ $(npm -v) != '6.0.1' ]]; then npm install -g npm@6.0.1; fi # check version
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
-  - git clone --depth 1 https://github.com/rapid-build-ui/rb-nav.git /home/travis/build/rapid-build-ui/rb-nav
-  - cd /home/travis/build/rapid-build-ui/rb-nav && rapid-build prod
+  # - git clone --depth 1 https://github.com/rapid-build-ui/rb-nav.git /home/travis/build/rapid-build-ui/rb-nav
+  # - cd /home/travis/build/rapid-build-ui/rb-nav && rapid-build prod
 notifications:
   email:
     on_success: always
