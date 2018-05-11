@@ -1,9 +1,6 @@
 language: node_js
 node_js:
   - '8'
-env:
-  global:
-    - RB_BUILD_DIR=$TRAVIS_BUILD_DIR/..
 cache:
   directories:
     - node_modules   # repo root node_modules
@@ -15,8 +12,9 @@ before_install:
   - if [[ $(npm -v) != '6.0.1' ]]; then npm install -g npm@6.0.1; fi             # check version
   - if [[ $(yarn -v) != '1.6.0' ]]; then npm install -g yarn@1.6.0; fi           # check version
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
-  # - git clone --depth 1 https://github.com/rapid-build-ui/rb-nav.git /home/travis/build/rapid-build-ui/rb-nav
-  # - cd /home/travis/build/rapid-build-ui/rb-nav && rapid-build prod
+  - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git /home/travis/build/rapid-build-ui/rb-alert
+  - cd $TRAVIS_BUILD_DIR/.. && pwd && rapid-build prod publish && npm run relink
+  - cd $TRAVIS_BUILD_DIR && pwd
 # notifications:
 #   email:
 #     on_success: always
@@ -32,4 +30,4 @@ after_script:
   # - ls -a1 /home/travis/build/rapid-build-ui
   # - ls -a1 $TRAVIS_BUILD_DIR # repo root
   # - cd $TRAVIS_BUILD_DIR/.. && ls -a1 # build dir
-  - cd $RB_BUILD_DIR && pwd
+  - echo pwd
