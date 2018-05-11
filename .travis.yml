@@ -5,7 +5,8 @@ env:
   global:
     - RB_SHOWCASE_DIR="$TRAVIS_BUILD_DIR"
     - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
-    - RB_COMPONENTS_SETUP="rapid-build prod publish && npm run link"
+    # - RB_COMPONENTS_SETUP="rapid-build prod publish && npm run link"
+    - RB_COMPONENTS_SETUP="$(rapid-build prod publish && npm run link)"
     - YARN_LINK_DIR="$(yarn global dir)/../link"
 cache:
   directories:
@@ -24,7 +25,8 @@ before_install:
   - cd $RB_COMPONENTS_DIR
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git
   # - git clone --depth 1 https://github.com/rapid-build-ui/rb-button.git
-  - cd $RB_COMPONENTS_DIR/rb-alert  && eval $RB_COMPONENTS_SETUP
+  # - cd $RB_COMPONENTS_DIR/rb-alert  && eval $RB_COMPONENTS_SETUP
+  - cd $RB_COMPONENTS_DIR/rb-alert  && ${RB_COMPONENTS_SETUP}
   # - cd $RB_COMPONENTS_DIR/rb-button && eval $RB_COMPONENTS_SETUP
   # - cd $(yarn global dir)/../link && ls -a1
   - cd $YARN_LINK_DIR && ls -a1
