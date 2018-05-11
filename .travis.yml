@@ -1,6 +1,10 @@
 language: node_js
 node_js:
   - '8'
+env:
+  global:
+    - RB_SHOWCASE_DIR="$TRAVIS_BUILD_DIR"
+    - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
 cache:
   directories:
     - node_modules   # repo root node_modules
@@ -12,8 +16,9 @@ before_install:
   - if [[ $(npm -v) != '6.0.1' ]]; then npm install -g npm@6.0.1; fi             # check version
   - if [[ $(yarn -v) != '1.6.0' ]]; then npm install -g yarn@1.6.0; fi           # check version
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
-  - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git /home/travis/build/rapid-build-ui/rb-alert
-  - echo $TRAVIS_BUILD_DIR && echo pwd
+  - echo $RB_SHOWCASE_DIR && echo $RB_COMPONENTS_DIR
+  # - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git /home/travis/build/rapid-build-ui/rb-alert
+  # - echo $TRAVIS_BUILD_DIR && echo pwd
   # - cd $TRAVIS_BUILD_DIR/.. && pwd && rapid-build prod publish && npm run relink
   # - cd $TRAVIS_BUILD_DIR && pwd
 # notifications:
