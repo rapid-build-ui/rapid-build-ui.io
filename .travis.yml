@@ -33,11 +33,11 @@ before_install:
   - cd $RB_COMPONENTS_DIR/rb-popover && eval $RB_COMPONENT_SETUP
   - cd $YARN_LINK_DIR/@rapid-build-ui && ls -a1
   - cd $RB_SHOWCASE_DIR && pwd
-install:
-  - echo '------------------'
-  - echo 'RAPID INSTALL STEP'
-  - echo '------------------'
-  - echo pwd
+before_script:
+  - echo '------------------------'
+  - echo 'RAPID before_script STEP'
+  - echo '------------------------'
+  - pwd
   - npm run setup && rapid-build prod publish
   # - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git /home/travis/build/rapid-build-ui/rb-alert
   # - echo $TRAVIS_BUILD_DIR && echo pwd
