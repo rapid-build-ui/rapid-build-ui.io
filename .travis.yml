@@ -5,6 +5,7 @@ env:
   global:
     - RB_SHOWCASE_DIR="$TRAVIS_BUILD_DIR"
     - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
+    - RB_COMPONENTS_SETUP="rapid-build prod publish && npm run link"
 cache:
   directories:
     - node_modules   # repo root node_modules
@@ -21,7 +22,8 @@ before_install:
   - cd $RB_COMPONENTS_DIR
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-button.git
-  - cd $RB_COMPONENTS_DIR/rb-alert && rapid-build prod publish && npm run link
+  - cd $RB_COMPONENTS_DIR/rb-alert && $(RB_COMPONENTS_SETUP)
+  # - cd $RB_COMPONENTS_DIR/rb-button && rapid-build prod publish && npm run link
   - cd $(yarn global dir)/../link && ls -a1
   # - pwd && ls -a1
   # - cd $RB_COMPONENTS_DIR && pwd
@@ -34,10 +36,10 @@ before_install:
 #   email:
 #     on_success: always
 after_script:
-  - rapid-build --version
-  - rapid-build --location
-  - npm --version
-  - yarn --version
+  # - rapid-build --version
+  # - rapid-build --location
+  # - npm --version
+  # - yarn --version
   # - npm list -g --depth=0
   # - ls -a1 $(npm root -g)
   # - ls -a1 $(npm bin -g)
@@ -46,3 +48,4 @@ after_script:
   # - ls -a1 $TRAVIS_BUILD_DIR # repo root
   # - cd $TRAVIS_BUILD_DIR/.. && ls -a1 # build dir
   - cd $RB_COMPONENTS_DIR && ls -a1 # build dir
+  - echo pwd
