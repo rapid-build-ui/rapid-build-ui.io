@@ -75,4 +75,25 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 	options: null
 	type: 'string'
 	required: false
+,
+	attribute: 'icon'
+	description: 'Adds icon to component.'
+	options: '<a target= "_blank" href="/components/rb-icon">rb-icon kind</a>'
+	type: 'string'
+	required: false
+,
+	attribute: 'icon-position'
+	description: '
+		<em class="default-val">defaults to <b>right</b></em>
+		Icon position.
+	'
+	options: 'left'
+	type: 'string'
+	required: false
+,
+	attribute: 'icon-source'
+	description: 'Refer to options.'
+	options: '<a target= "_blank" href="/components/rb-icon">rb-icon source</a>'
+	type: 'string'
+	required: false
 ]
