@@ -6,7 +6,7 @@ env:
     - RB_SHOWCASE_DIR="$TRAVIS_BUILD_DIR"
     - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
     - RB_COMPONENTS_SETUP="rapid-build prod publish && npm run link"
-    - YARN_LINK_DIR=$(yarn global dir)/../link
+    - YARN_LINK_DIR="$(yarn global dir)/../link"
 cache:
   directories:
     - node_modules   # repo root node_modules
