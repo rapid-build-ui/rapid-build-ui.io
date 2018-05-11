@@ -7,7 +7,7 @@ env:
     - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
     # - RB_SETUP_COMPONENT="rapid-build prod publish && npm run link"
     # - RB_SETUP_COMPONENT="$(rapid-build prod publish && npm run link)"
-    - RB_SETUP_COMPONENT="$(cd $RB_COMPONENTS_DIR/$1 && rapid-build prod publish && npm run link)"
+    - RB_SETUP_COMPONENT="$(cd $RB_COMPONENTS_DIR/${1} && rapid-build prod publish && npm run link)"
     - YARN_LINK_DIR="$(yarn global dir)/../link"
 cache:
   directories:
