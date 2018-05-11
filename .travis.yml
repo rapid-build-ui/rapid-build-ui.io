@@ -5,8 +5,8 @@ env:
   global:
     - RB_SHOWCASE_DIR="$TRAVIS_BUILD_DIR"
     - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
-    # - RB_COMPONENTS_SETUP="rapid-build prod publish && npm run link"
-    - RB_COMPONENTS_SETUP=$(rapid-build prod publish && npm run link)
+    - RB_COMPONENTS_SETUP="rapid-build prod publish && npm run link"
+    - YARN_LINK_DIR=$(yarn global dir)/../link
 cache:
   directories:
     - node_modules   # repo root node_modules
@@ -19,14 +19,15 @@ before_install:
   - if [[ $(yarn -v) != '1.6.0' ]]; then npm install -g yarn@1.6.0; fi           # check version
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
   # - cd $RB_SHOWCASE_DIR && pwd
-  - cd $(yarn global dir)/../link && ls -a1
+  # - cd $(yarn global dir)/../link && ls -a1
+  - cd $YARN_LINK_DIR && ls -a1
   - cd $RB_COMPONENTS_DIR
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git
   # - git clone --depth 1 https://github.com/rapid-build-ui/rb-button.git
-  # - cd $RB_COMPONENTS_DIR/rb-alert && eval $RB_COMPONENTS_SETUP
-  - cd $RB_COMPONENTS_DIR/rb-alert && $("$RB_COMPONENTS_SETUP")
-  # - cd $RB_COMPONENTS_DIR/rb-button && rapid-build prod publish && npm run link
-  - cd $(yarn global dir)/../link && ls -a1
+  - cd $RB_COMPONENTS_DIR/rb-alert  && eval $RB_COMPONENTS_SETUP
+  # - cd $RB_COMPONENTS_DIR/rb-button && eval $RB_COMPONENTS_SETUP
+  # - cd $(yarn global dir)/../link && ls -a1
+  - cd $YARN_LINK_DIR && ls -a1
   # - pwd && ls -a1
   # - cd $RB_COMPONENTS_DIR && pwd
   - cd $RB_SHOWCASE_DIR && pwd
