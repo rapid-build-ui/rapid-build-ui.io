@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - '8'
 env:
-  -RB_BUILD_DIR=$TRAVIS_BUILD_DIR/..
+  - RB_BUILD_DIR="$TRAVIS_BUILD_DIR/.."
 cache:
   directories:
     - node_modules   # repo root node_modules
