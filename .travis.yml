@@ -25,15 +25,19 @@ before_install:
   - cd $YARN_LINK_DIR && ls -a1
   - cd $RB_COMPONENTS_DIR
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git
-  # - git clone --depth 1 https://github.com/rapid-build-ui/rb-button.git
+  - git clone --depth 1 https://github.com/rapid-build-ui/rb-button.git
   # - git clone --depth 1 https://github.com/rapid-build-ui/rb-icon.git
   # - git clone --depth 1 https://github.com/rapid-build-ui/rb-input.git
   # - git clone --depth 1 https://github.com/rapid-build-ui/rb-nav.git
   # - git clone --depth 1 https://github.com/rapid-build-ui/rb-popover.git
-  - cd $RB_COMPONENTS_DIR/rb-alert  && eval $RB_SETUP_COMPONENT
-  # - cd $RB_COMPONENTS_DIR/rb-button && eval $RB_SETUP_COMPONENT
+  - cd $RB_COMPONENTS_DIR/rb-alert   && eval $RB_SETUP_COMPONENT
+  - cd $RB_COMPONENTS_DIR/rb-button  && eval $RB_SETUP_COMPONENT
+  # - cd $RB_COMPONENTS_DIR/rb-icon    && eval $RB_SETUP_COMPONENT
+  # - cd $RB_COMPONENTS_DIR/rb-input   && eval $RB_SETUP_COMPONENT
+  # - cd $RB_COMPONENTS_DIR/rb-nav     && eval $RB_SETUP_COMPONENT
+  # - cd $RB_COMPONENTS_DIR/rb-popover && eval $RB_SETUP_COMPONENT
   # - cd $(yarn global dir)/../link && ls -a1
-  - cd $YARN_LINK_DIR && ls -a1
+  - cd $YARN_LINK_DIR/@rapid-build-ui && ls -a1
   # - pwd && ls -a1
   # - cd $RB_COMPONENTS_DIR && pwd
   - cd $RB_SHOWCASE_DIR && pwd
