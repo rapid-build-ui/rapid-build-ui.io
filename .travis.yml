@@ -6,12 +6,12 @@ cache:
     - node_modules   # repo root node_modules
     - $(npm root -g) # global node_modules directory
     - $(npm bin -g)/rapid-build
-    - $(npm bin -g)/yarn
-    - $(npm bin -g)/yarnpkg
+    # - $(npm bin -g)/yarn
+    # - $(npm bin -g)/yarnpkg
 before_install:
   - if [[ $(npm -v) != '6.0.1' ]]; then npm install -g npm@6.0.1; fi             # check version
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
-  - if [[ -z $(command -v yarn) ]]; then npm install -g yarn@1; fi               # if not installed
+  # - if [[ -z $(command -v yarn) ]]; then npm install -g yarn@1; fi               # if not installed
   # - git clone --depth 1 https://github.com/rapid-build-ui/rb-nav.git /home/travis/build/rapid-build-ui/rb-nav
   # - cd /home/travis/build/rapid-build-ui/rb-nav && rapid-build prod
 notifications:
@@ -21,9 +21,11 @@ after_script:
   - rapid-build --version
   - rapid-build --location
   - npm --version
+  - yarn --version
   - npm list -g --depth=0
   - ls -a1 $(npm root -g)
   - ls -a1 $(npm bin -g)
   - ls -a1 /home/travis/build
   - ls -a1 /home/travis/build/rapid-build-ui
   - ls -a1 $TRAVIS_BUILD_DIR # repo root
+  - cd $TRAVIS_BUILD_DIR/.. && ls -a1 # build dir
