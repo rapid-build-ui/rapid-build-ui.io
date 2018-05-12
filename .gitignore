@@ -28,4 +28,5 @@ node_modules/
 
 # files (project specific)
 # ========================
+/app.zip # file created by rapid in travis to be deployed to heroku
 
