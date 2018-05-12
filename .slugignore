@@ -1,19 +1,20 @@
-# root folders
-# ============
-/artifacts/
-/scripts/api/
-/scripts/components/
-/src/
-
-# root dot files
-# ==============
+# root files
+# ==========
 /.gitignore
 /.gitattributes
 /.travis.yml
 
 # root files
 # ==========
-/rapid-build.cson
 /CHANGELOG.md
 /LICENSE
 /README.md
+/rapid-build.cson
+
+# root folders
+# ============
+/artifacts/
+/dist/
+/scripts/api/
+/scripts/components/
+/src/
