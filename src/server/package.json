@@ -4,7 +4,7 @@
 	"description": "Rapid Build UI - Web Server",
 	"license": "MIT",
 	"engines": {
-		"npm": "5.x",
+		"npm": "6.x",
 		"node": "8.x"
 	},
 	"contributors": [
