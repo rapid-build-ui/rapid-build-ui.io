@@ -24,7 +24,7 @@ for (const repoName of components.repoNames) {
 const setupCmd  = 'rapid-build prod publish && npm run link'
 const setupOpts = { stdio: [0,1,2] };
 for (const name of components.names) {
-	setupOpts.cwd = `${paths.components}/`
+	setupOpts.cwd = `${paths.components}/${name}`
 	execSync(setupCmd, setupOpts); console.log();
 	if (name == 'rb-alert') process.exit(1);
 }
