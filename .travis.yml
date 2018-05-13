@@ -23,7 +23,6 @@ before_install:
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
   # - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR $YARN_LINK_DIR
 before_script:
-  # - cd $RB_SHOWCASE_DIR && pwd
   - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR $YARN_LINK_DIR
   - npm run setup && rapid-build prod publish
 deploy:
