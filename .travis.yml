@@ -8,7 +8,6 @@ env:
   global:
     - RB_SHOWCASE_DIR="$TRAVIS_BUILD_DIR"
     - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
-    - RB_COMPONENT_SETUP="rapid-build prod publish && npm run link"
     - YARN_LINK_DIR="$(yarn global dir)/../link"
 cache:
   directories:
@@ -21,10 +20,8 @@ before_install:
   - if [[ $(npm -v) != '6.0.1' ]]; then npm install -g npm@6.0.1; fi             # check version
   - if [[ $(yarn -v) != '1.6.0' ]]; then npm install -g yarn@1.6.0; fi           # check version
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
-  # - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR $YARN_LINK_DIR
-before_script:
-  - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR $YARN_LINK_DIR
-  # - npm run setup && rapid-build prod publish
+before_script: # runs after npm install
+  - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR
 deploy:
   provider: heroku
   app: rapid-build-ui-io-dev
