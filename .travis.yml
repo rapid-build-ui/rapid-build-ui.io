@@ -22,7 +22,7 @@ before_install:
   - if [[ $(yarn -v) != '1.6.0' ]]; then npm install -g yarn@1.6.0; fi           # check version
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
   - cd $RB_SHOWCASE_DIR
-  - node scripts/travis/dev
+  - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR
   - cd $RB_COMPONENTS_DIR
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-button.git
@@ -41,10 +41,6 @@ before_install:
 before_script:
   - cd $RB_SHOWCASE_DIR && pwd
   - npm run setup && rapid-build prod publish
-# after_script:
-#   - cd $RB_COMPONENTS_DIR && ls -a1
-#   - cd $RB_SHOWCASE_DIR && ls -a1
-#   - pwd
 deploy:
   provider: heroku
   app: rapid-build-ui-io-dev
