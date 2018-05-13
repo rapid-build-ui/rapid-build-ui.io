@@ -7,8 +7,12 @@ const paths = {
 	components: args[1]
 };
 
-console.log(paths);
+console.log(process.cwd());
+
+process.chdir(paths.components);
+
+console.log(process.cwd());
 
 /* EXIT FOR TESTING
  *******************/
-process.exit(1);
+// process.exit(1);

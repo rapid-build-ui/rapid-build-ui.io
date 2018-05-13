@@ -23,6 +23,7 @@ before_install:
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
   - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR
   - cd $RB_COMPONENTS_DIR
+  - pwd
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-alert.git
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-button.git
   - git clone --depth 1 https://github.com/rapid-build-ui/rb-icon.git
