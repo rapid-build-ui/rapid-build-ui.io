@@ -24,7 +24,7 @@ before_install:
   # - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR $YARN_LINK_DIR
 before_script:
   - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR $YARN_LINK_DIR
-  - npm run setup && rapid-build prod publish
+  # - npm run setup && rapid-build prod publish
 deploy:
   provider: heroku
   app: rapid-build-ui-io-dev
