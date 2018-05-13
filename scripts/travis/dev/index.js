@@ -17,8 +17,8 @@ const CLONE_CMD = 'git clone --depth 1'
 const cloneOpts = { cwd: paths.components, stdio: [0,1,2] };
 for (const repoName of components.repoNames) {
 	let cmd    = `${CLONE_CMD} ${repoName}`;
-	let result = execSync(cmd, cloneOpts)//.toString();
-	console.log(result);
+	let result = execSync(cmd, cloneOpts).toString();
+	console.info(result);
 }
 
 const resultX = execSync('ls -a1', { cwd: paths.components }).toString();
