@@ -1,4 +1,5 @@
-/* FOR DEVELOPMENT - YARN LINK RB-COMPONENTS
+/********************************************
+ * FOR DEVELOPMENT - YARN LINK RB-COMPONENTS
  ********************************************/
 require('../bootstrap/colors');
 const clog         = require('../helpers/component-log');
