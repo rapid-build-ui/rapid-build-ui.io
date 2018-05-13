@@ -14,7 +14,9 @@ const { execSync } = require('child_process');
  ************************/
 const cloneCmd  = 'git clone --depth 1'
 const cloneOpts = { cwd: paths.components, stdio: [0,1,2] };
-for (const repoName of components.repoNames) {
+// for (const repoName of components.repoNames) {
+for (const [i, repoName] of components.repoNames.entries()) {
+	console.info(`CLONING ${components.names[i]}`);
 	let cmd = `${cloneCmd} ${repoName}`;
 	execSync(cmd, cloneOpts); console.log();
 }
@@ -24,6 +26,7 @@ for (const repoName of components.repoNames) {
 const setupCmd  = 'rapid-build prod publish && npm run link'
 const setupOpts = { stdio: [0,1,2] };
 for (const name of components.names) {
+	console.info(`SETUP COMPONENT ${name}`);
 	setupOpts.cwd = `${paths.components}/${name}`
 	execSync(setupCmd, setupOpts); console.log();
 	if (name == 'rb-alert') process.exit(1);
