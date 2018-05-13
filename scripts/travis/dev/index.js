@@ -1,6 +1,6 @@
 /* TRAVIS STEPS FOR DEV BUILD
  *****************************/
-require('../bootstrap/colors');
+require('../../bootstrap/colors');
 const args  = process.argv.slice(2);
 const paths = {
 	showcase:   args[0],
