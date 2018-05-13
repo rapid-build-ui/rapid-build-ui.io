@@ -10,6 +10,7 @@ env:
     - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
     - RB_COMPONENT_SETUP="rapid-build prod publish && npm run link"
     - YARN_LINK_DIR="$(yarn global dir)/../link"
+    - HEROKU_API_KEY="wvQVtDqvU2LrnEw3Fre+3nGPsB+w+kPRbwxqmRCyKYIWXn0lcIyp8AHkAS+OcCJ3owvkWKNQ1+hChzvzxeAVra38f2uiX2DN5xiW+v7+VmLCHLvvOmbJISE/w23OVjC8HjWWWerx/owyyqPsdevZqnP3MnvHFXBhZDU7zGG5gdCWqkNaHxZlyhGrsLlRSomtNox2n1meZjaLn3MCuXN+jgC7zQ2wKnnAeIKIQw6lqaqubLJBA+fA2ztXgrp1H1V53zXQRGzqMPnxauwxiFzi6b1E9bXPbUOms8pK3XTfuyPyt8kyjj20LmlAlgUN7ce+pcB4bIgZgGu+Ek1wfB2CgTUhar5tjKFjnqgdfc3teZ5svcQxvUc5T3GQtdvovMJg6C58MASDY0RvZ3Zt7SyquvZ85clfeiy60Vs5k17TtCWhQ32/SQFQ4CQXFXtKj2R5If32Rhw2OrsUU0BQlsNy9XkDjnN53v7CFdNWp9gmkDnsTTOZy9CLRBrMhD0Morv0MOHAHHUhm0l4SnMHQ2mpCMt4BczMpU9Cjffzp1KOoyTlTqjYm95hNx1+WH63ElkTYU4Tec9kBle5YYayM6af5w2xOhpkGnGjQ++5ULU704e8bqx1tdTXZcvcvTqHjygFTlbmXHAh6Xz7+Aiz0/Uqy7lsMyOsqE2TQfW3dsPiFaM="
 cache:
   directories:
     - node_modules     # repo root node_modules
@@ -50,4 +51,4 @@ deploy:
   on:
     branch: dev
   api_key:
-    secure: wvQVtDqvU2LrnEw3Fre+3nGPsB+w+kPRbwxqmRCyKYIWXn0lcIyp8AHkAS+OcCJ3owvkWKNQ1+hChzvzxeAVra38f2uiX2DN5xiW+v7+VmLCHLvvOmbJISE/w23OVjC8HjWWWerx/owyyqPsdevZqnP3MnvHFXBhZDU7zGG5gdCWqkNaHxZlyhGrsLlRSomtNox2n1meZjaLn3MCuXN+jgC7zQ2wKnnAeIKIQw6lqaqubLJBA+fA2ztXgrp1H1V53zXQRGzqMPnxauwxiFzi6b1E9bXPbUOms8pK3XTfuyPyt8kyjj20LmlAlgUN7ce+pcB4bIgZgGu+Ek1wfB2CgTUhar5tjKFjnqgdfc3teZ5svcQxvUc5T3GQtdvovMJg6C58MASDY0RvZ3Zt7SyquvZ85clfeiy60Vs5k17TtCWhQ32/SQFQ4CQXFXtKj2R5If32Rhw2OrsUU0BQlsNy9XkDjnN53v7CFdNWp9gmkDnsTTOZy9CLRBrMhD0Morv0MOHAHHUhm0l4SnMHQ2mpCMt4BczMpU9Cjffzp1KOoyTlTqjYm95hNx1+WH63ElkTYU4Tec9kBle5YYayM6af5w2xOhpkGnGjQ++5ULU704e8bqx1tdTXZcvcvTqHjygFTlbmXHAh6Xz7+Aiz0/Uqy7lsMyOsqE2TQfW3dsPiFaM=
+    secure: HEROKU_API_KEY
