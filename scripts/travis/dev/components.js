@@ -1,6 +1,6 @@
-/*****************
- * GET COMPONENTS
- *****************/
+/****************************
+ * TRAVIS DEV GET COMPONENTS
+ ****************************/
 const RB_PREFIX   = 'rapid-build-ui';
 const SCOPED_NAME = `@${RB_PREFIX}/`;
 const REPO_PREFIX = `https://github.com/${RB_PREFIX}/`
