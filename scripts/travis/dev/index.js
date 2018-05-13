@@ -4,19 +4,18 @@
 const args  = process.argv.slice(2);
 const paths = {
 	showcase:   args[0],
-	components: args[1]
+	components: args[1],
+	yarnLink:   args[2]
 };
 const components   = require('./get-components')(paths);
 const { execSync } = require('child_process');
-// console.log(components);
 
 /* Clone Component Repos
  ************************/
 const cloneCmd  = 'git clone --depth 1'
 const cloneOpts = { cwd: paths.components, stdio: [0,1,2] };
-// for (const repoName of components.repoNames) {
 for (const [i, repoName] of components.repoNames.entries()) {
-	console.info(`CLONING ${components.names[i]}`);
+	console.info(`cloning ${components.names[i]}`.toUpperCase());
 	let cmd = `${cloneCmd} ${repoName}`;
 	execSync(cmd, cloneOpts); console.log();
 }
@@ -26,16 +25,19 @@ for (const [i, repoName] of components.repoNames.entries()) {
 const setupCmd  = 'rapid-build prod publish && npm run link'
 const setupOpts = { stdio: [0,1,2] };
 for (const name of components.names) {
-	console.info(`SETUP COMPONENT ${name}`);
+	console.info(`setup component ${name}`.toUpperCase());
 	setupOpts.cwd = `${paths.components}/${name}`
 	execSync(setupCmd, setupOpts); console.log();
-	if (name == 'rb-alert') process.exit(1);
 }
 
 /* Extra Logging
  ****************/
-execSync('ls -a1', cloneOpts);
+execSync('ls -a1', { cwd: paths.components, stdio: [0,1,2] });
 console.log();
+
+execSync('ls -a1', { cwd: `${paths.yarnLink}/@rapid-build-ui`, stdio: [0,1,2] });
+console.log();
+
 console.log(process.cwd());
 
 /* EXIT FOR TESTING
