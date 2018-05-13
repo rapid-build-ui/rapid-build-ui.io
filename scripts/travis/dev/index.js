@@ -1,7 +1,6 @@
 /*****************************
  * TRAVIS STEPS FOR DEV BUILD
  *****************************/
-// require('../../bootstrap/colors');
 const args  = process.argv.slice(2);
 const paths = {
 	showcase:   args[0],
@@ -18,11 +17,13 @@ const cloneOpts = { cwd: paths.components, stdio: [0,1,2] };
 for (const repoName of components.repoNames) {
 	let cmd = `${CLONE_CMD} ${repoName}`;
 	execSync(cmd, cloneOpts);
+	console.log();
 }
 
 execSync('ls -a1', cloneOpts);
+console.log();
 console.log(process.cwd());
 
 /* EXIT FOR TESTING
  *******************/
-process.exit(0);
+process.exit(1);
