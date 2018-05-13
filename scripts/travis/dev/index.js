@@ -8,18 +8,29 @@ const paths = {
 };
 const components   = require('./get-components')(paths);
 const { execSync } = require('child_process');
-console.log(components);
+// console.log(components);
 
-/* CLONE COMPONENT REPOS
+/* Clone Component Repos
  ************************/
-const CLONE_CMD = 'git clone --depth 1'
+const cloneCmd  = 'git clone --depth 1'
 const cloneOpts = { cwd: paths.components, stdio: [0,1,2] };
 for (const repoName of components.repoNames) {
-	let cmd = `${CLONE_CMD} ${repoName}`;
-	execSync(cmd, cloneOpts);
-	console.log();
+	let cmd = `${cloneCmd} ${repoName}`;
+	execSync(cmd, cloneOpts); console.log();
 }
 
+/* Setup Components
+ *******************/
+const setupCmd  = 'rapid-build prod publish && npm run link'
+const setupOpts = { stdio: [0,1,2] };
+for (const name of components.names) {
+	setupOpts.cwd = `${paths.components}/`
+	execSync(setupCmd, setupOpts); console.log();
+	if (name == 'rb-alert') process.exit(1);
+}
+
+/* Extra Logging
+ ****************/
 execSync('ls -a1', cloneOpts);
 console.log();
 console.log(process.cwd());
