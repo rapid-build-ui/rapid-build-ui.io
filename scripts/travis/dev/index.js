@@ -32,14 +32,14 @@ for (const name of components.names) {
 
 /* Extra Logging
  ****************/
-execSync('ls -a1', { cwd: paths.components, stdio: [0,1,2] });
-console.log();
-
-execSync('ls -a1', { cwd: `${paths.yarnLink}/@rapid-build-ui`, stdio: [0,1,2] });
-console.log();
-
-console.log(process.cwd());
+// execSync('ls -a1', { cwd: paths.components, stdio: [0,1,2] });
+// console.log();
+//
+// execSync('ls -a1', { cwd: `${paths.yarnLink}/@rapid-build-ui`, stdio: [0,1,2] });
+// console.log();
+// 
+// console.log(process.cwd());
 
 /* EXIT FOR TESTING
  *******************/
-process.exit(1);
+// process.exit(1);
