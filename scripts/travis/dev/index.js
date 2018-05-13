@@ -12,7 +12,6 @@ const { execSync } = require('child_process');
 
 /* CLONE COMPONENT REPOS
  ************************/
-// process.chdir(paths.components);
 const CLONE_CMD = 'git clone --depth 1'
 const cloneOpts = { cwd: paths.components };
 for (const repoName of components.repoNames) {
@@ -21,6 +20,8 @@ for (const repoName of components.repoNames) {
 	console.info(result.minor);
 }
 
+const resultX = execSync('ls -a1', cloneOpts).toString();
+console.info(resultX.minor);
 console.log(components);
 console.log(process.cwd());
 
