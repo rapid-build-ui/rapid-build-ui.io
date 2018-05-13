@@ -17,4 +17,5 @@
 /dist/
 /scripts/api/
 /scripts/components/
+/scripts/travis/
 /src/
