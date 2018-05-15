@@ -13,11 +13,11 @@ const { execSync } = require('child_process');
 
 /* Build Steps: IN ORDER!
  *************************/
-steps.cloneComponentRepos();
-steps.setupComponents();
-steps.setupShowcase();
-steps.buildShowcase();
-return;
+// steps.cloneComponentRepos();
+// steps.setupComponents();
+// steps.setupShowcase();
+// steps.buildShowcase();
+// return;
 
 !async function() {
 	const repos           = await steps.cloneComponentRepos();
