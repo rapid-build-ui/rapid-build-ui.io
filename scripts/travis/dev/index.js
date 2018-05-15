@@ -12,7 +12,12 @@ const steps      = require('./steps')(paths, components);
 
 /* Build Steps: IN ORDER!
  *************************/
-steps.cloneComponentRepos();
-steps.setupComponents();
-steps.setupShowcase();
-steps.buildShowcase();
+!async function() {
+	const xxx = await steps.cloneComponentRepos();
+	console.log('XXX:');
+	console.log(xxx);
+	process.exit(1);
+	steps.setupComponents();
+	steps.setupShowcase();
+	steps.buildShowcase();
+}();

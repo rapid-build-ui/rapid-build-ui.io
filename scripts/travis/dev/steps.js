@@ -1,7 +1,9 @@
 /*************************
  * TRAVIS DEV BUILD STEPS
  *************************/
-const { execSync } = require('child_process');
+const { exec, execSync } = require('child_process');
+const util               = require('util');
+const execPromise        = util.promisify(exec);
 
 /* Steps
  ********/
@@ -10,11 +12,15 @@ const Steps = (paths, components) => { // :{}
 		cloneComponentRepos() {
 			const cloneCmd = 'git clone --depth 1';
 			const opts     = { cwd: paths.components, stdio: [0,1,2] };
+			let promises   = [];
 			for (const [i, repoName] of components.repoNames.entries()) {
 				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
 				let cmd = `${cloneCmd} ${repoName}`;
-				execSync(cmd, opts); console.log();
+				const promise = () => { return execPromise(cmd, opts); }
+				// execSync(cmd, opts); console.log();
+				promises.push(promise);
 			}
+			return Promise.all(promises);
 		},
 
 		setupComponents() {
