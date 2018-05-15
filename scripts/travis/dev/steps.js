@@ -19,7 +19,7 @@ const Steps = (paths, components) => { // :{}
 				// const cmd = `${cloneCmd} ${repoName}`;
 
 				const promise = new Promise((resolve, reject) => {
-					const git = spawn('git', ['clone', '--depth', '1', repoName], opts);
+					const git = spawn('git', ['clone', '--progress', '--depth', '1', repoName], opts);
 
 					git.stdout.on('data', data => {
 						console.log(`STDOUT: ${data}`);
