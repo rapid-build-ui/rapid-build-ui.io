@@ -67,19 +67,19 @@ const Steps = (paths, components) => { // :{}
 				// 	console.error(error);
 				// 	process.exit(1);
 				// });
-				const promise = execPromise('cmd xxx', opts);
+				const promise = execPromise(cmd, opts);
 				promises.push(promise);
 			}
 			return Promise.all(promises).then(results => {
-				console.log('RESULTS:');
-				for (const result of results) {
+				// console.log('RESULTS:');
+				for (const result of results)
 					console.info(`${result.stderr}`.minor); // git clone sends output to stderr
-				}
 				return results;
 			}).catch(error => {
 				console.error('error: clone component repos'.toUpperCase().error);
 				console.error(error);
 				process.exit(1);
+				return error;
 			});
 		},
 
