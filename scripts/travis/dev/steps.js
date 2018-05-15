@@ -12,6 +12,7 @@ const Steps = (paths, components) => { // :{}
 		cloneComponentRepos() {
 			const cloneCmd = 'git clone --depth 1';
 			const opts     = { cwd: paths.components, stdio: [0,1,2] };
+			// const opts     = { cwd: paths.components };
 			let promises   = [];
 			for (const [i, repoName] of components.repoNames.entries()) {
 				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
@@ -40,7 +41,7 @@ const Steps = (paths, components) => { // :{}
 				// 		console.log(x);
 				// 	})
 				// );
-				promises.push(execPromise(cmd));
+				promises.push(execPromise(cmd, opts));
 			}
 			return Promise.all(promises);
 		},
