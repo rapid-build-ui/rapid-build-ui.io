@@ -45,7 +45,7 @@ const Steps = (paths, components) => { // :{}
 		// },
 
 		cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
-			const cloneCmd = 'git clone --progress --depth 1';
+			const cloneCmd = 'git clone -q --progress --depth 1';
 			const opts     = { cwd: paths.components };
 			let promises   = [];
 			for (const [i, repoName] of components.repoNames.entries()) {
