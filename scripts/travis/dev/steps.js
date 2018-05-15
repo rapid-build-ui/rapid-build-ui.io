@@ -33,7 +33,7 @@ const Steps = (paths, components) => { // :{}
 						});
 					});
 				};
-				promise.push(promise);
+				promises.push(promise);
 				// promises.push(
 				// 	execPromise(cmd, opts).then((x, y, z) => {
 				// 		console.log(x);
