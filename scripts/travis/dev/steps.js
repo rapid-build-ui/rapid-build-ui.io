@@ -10,12 +10,10 @@ const execPromise        = util.promisify(exec);
 const Steps = (paths, components) => { // :{}
 	return {
 		cloneComponentRepos() { // :Promise[{}]
-			// const opts     = { cwd: paths.components, stdio: [0,1,2] };
 			const cloneCmd = 'git clone --depth 1';
 			const opts     = { cwd: paths.components };
 			let promises   = [];
 			for (const [i, repoName] of components.repoNames.entries()) {
-				// execSync(cmd, opts); console.log();
 				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
 				const cmd = `${cloneCmd} ${repoName}`;
 				const promise = execPromise(cmd, opts).then(result => {

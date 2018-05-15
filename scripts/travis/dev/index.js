@@ -15,7 +15,7 @@ const { execSync } = require('child_process');
  *************************/
 !async function() {
 	const repos           = await steps.cloneComponentRepos();
-	const setupComponents = await steps.setupComponents();
+	// const setupComponents = await steps.setupComponents();
 	console.log('REPOS:', repos);
 	console.log('REPOS:', setupComponents);
 	execSync('ls -a1', { cwd: paths.components, stdio: [0,1,2] });
