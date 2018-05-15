@@ -52,30 +52,31 @@ const Steps = (paths, components) => { // :{}
 		// 	return Promise.all(promises);
 		// },
 
-		cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
-			const cloneCmd = 'git clone --depth 1';
-			const opts     = { cwd: paths.components };
-			let promises   = [];
-			for (const [i, repoName] of components.repoNames.entries()) {
-				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
-				const cmd     = `${cloneCmd} ${repoName}`;
-				const promise = execPromise(cmd, opts).then(result => {
-					console.info('RESULT:', result);
-					return result;
-				}).catch(error => {
-					console.error('error: clone component repos'.toUpperCase().error);
-					console.error(error);
-					process.exit(1);
-				});
-				promises.push(promise);
-			}
-			return Promise.all(promises).then(results => {
-				console.log('RESULTS:');
-				for (const result of results) {
-					console.info(`${result.stderr}`.minor); // git clone sends output to stderr
-				}
-			});
-		},
+		// cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
+		// 	const cloneCmd = 'git clone --depth 1';
+		// 	const opts     = { cwd: paths.components };
+		// 	let promises   = [];
+		// 	for (const [i, repoName] of components.repoNames.entries()) {
+		// 		console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
+		// 		const cmd     = `${cloneCmd} ${repoName}`;
+		// 		const promise = execPromise(cmd, opts).then(result => {
+		// 			console.info('RESULT:', result);
+		// 			return result;
+		// 		}).catch(error => {
+		// 			console.error('error: clone component repos'.toUpperCase().error);
+		// 			console.error(error);
+		// 			process.exit(1);
+		// 		});
+		// 		promises.push(promise);
+		// 	}
+		// 	return Promise.all(promises).then(results => {
+		// 		console.log('RESULTS:');
+		// 		for (const result of results) {
+		// 			console.info(`${result.stderr}`.minor); // git clone sends output to stderr
+		// 		}
+		// 		return results;
+		// 	});
+		// },
 
 		// setupComponents() { // :Promise[{}] - (runs asynchronously)
 		// 	const cmd    = 'rapid-build prod publish && npm run link'
@@ -96,15 +97,15 @@ const Steps = (paths, components) => { // :{}
 		// 	return Promise.all(promises);
 		// },
 
-		// cloneComponentRepos() {
-		// 	const cloneCmd = 'git clone --depth 1';
-		// 	const opts     = { cwd: paths.components, stdio: [0,1,2] };
-		// 	for (const [i, repoName] of components.repoNames.entries()) {
-		// 		console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
-		// 		let cmd = `${cloneCmd} ${repoName}`;
-		// 		execSync(cmd, opts); console.log();
-		// 	}
-		// },
+		cloneComponentRepos() {
+			const cloneCmd = 'git clone --depth 1';
+			const opts     = { cwd: paths.components, stdio: [0,1,2] };
+			for (const [i, repoName] of components.repoNames.entries()) {
+				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
+				let cmd = `${cloneCmd} ${repoName}`;
+				execSync(cmd, opts); console.log();
+			}
+		},
 
 		setupComponents() {
 			const cmd  = 'rapid-build prod publish && npm run link'
