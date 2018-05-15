@@ -15,7 +15,7 @@ const { execSync } = require('child_process');
  *************************/
 !async function() {
 	const repos           = await steps.cloneComponentRepos();
-	const setupComponents = await steps.setupComponents();
+	// const setupComponents = await steps.setupComponents();
 	let pathExt = '';
 	// let pathExt = '/src/client/scripts';
 	// let pathExt = '/dist/client/scripts';
