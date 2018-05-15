@@ -67,7 +67,7 @@ const Steps = (paths, components) => { // :{}
 				// 	console.error(error);
 				// 	process.exit(1);
 				// });
-				const promise = execPromise(cmd, opts);
+				const promise = execPromise('cmd xxx', opts);
 				promises.push(promise);
 			}
 			return Promise.all(promises).then(results => {
@@ -75,7 +75,7 @@ const Steps = (paths, components) => { // :{}
 				for (const result of results) {
 					console.info(`${result.stderr}`.minor); // git clone sends output to stderr
 				}
-				// return results;
+				return results;
 			});
 		},
 
