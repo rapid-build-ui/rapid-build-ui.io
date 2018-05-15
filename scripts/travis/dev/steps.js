@@ -9,13 +9,13 @@ const execPromise        = util.promisify(exec);
  ********/
 const Steps = (paths, components) => { // :{}
 	return {
-		cloneComponentRepos() { // :Promise[{}]
+		cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
 			const cloneCmd = 'git clone --depth 1';
 			const opts     = { cwd: paths.components };
 			let promises   = [];
 			for (const [i, repoName] of components.repoNames.entries()) {
 				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
-				const cmd = `${cloneCmd} ${repoName}`;
+				const cmd     = `${cloneCmd} ${repoName}`;
 				const promise = execPromise(cmd, opts).then(result => {
 					console.log('RESULT:', result);
 					return result;
@@ -29,24 +29,43 @@ const Steps = (paths, components) => { // :{}
 			return Promise.all(promises);
 		},
 
-		setupComponents() {
-			const cmd  = 'rapid-build prod publish && npm run link'
-			const opts = { stdio: [0,1,2] };
+		setupComponents() { // :Promise[{}] - (runs asynchronously)
+			const cmd    = 'rapid-build prod publish && npm run link'
+			let promises = [];
 			for (const name of components.names) {
 				console.info(`setup component ${name}`.toUpperCase().alert);
-				opts.cwd = `${paths.components}/${name}`
-				execSync(cmd, opts); console.log();
+				const opts    = { cwd: `${paths.components}/${name}` };
+				const promise = execPromise(cmd, opts).then(result => {
+					console.log('RESULT:', result);
+					return result;
+				}).catch(error => {
+					console.error('error: setup components'.toUpperCase().error);
+					console.error(error);
+					process.exit(1);
+				});
+				promises.push(promise);
 			}
+			return Promise.all(promises);
 		},
 
-		setupShowcase() {
+		// setupComponents() {
+		// 	const cmd  = 'rapid-build prod publish && npm run link'
+		// 	const opts = { stdio: [0,1,2] };
+		// 	for (const name of components.names) {
+		// 		console.info(`setup component ${name}`.toUpperCase().alert);
+		// 		opts.cwd = `${paths.components}/${name}`
+		// 		execSync(cmd, opts); console.log();
+		// 	}
+		// },
+
+		setupShowcase() { // :void - (runs synchronously)
 			const cmd  = 'npm run setup'
 			const opts = { cwd: paths.showcase, stdio: [0,1,2] };
 			console.info(`setup showcase`.toUpperCase().alert);
 			execSync(cmd, opts); console.log();
 		},
 
-		buildShowcase() {
+		buildShowcase() { // :void - (runs synchronously)
 			const cmd  = 'rapid-build prod publish'
 			const opts = { cwd: paths.showcase, stdio: [0,1,2] };
 			console.info(`build showcase`.toUpperCase().alert);

@@ -15,13 +15,13 @@ const { execSync } = require('child_process');
  *************************/
 !async function() {
 	const repos           = await steps.cloneComponentRepos();
-	// const setupComponents = await steps.setupComponents();
+	const setupComponents = await steps.setupComponents();
+	// let pathExt = '';
+	// let pathExt = '/src/client/scripts';
+	let pathExt = '/dist/client/scripts';
 	console.log('REPOS:', repos);
 	console.log('REPOS:', setupComponents);
 	execSync('ls -a1', { cwd: paths.components, stdio: [0,1,2] });
-	const pathExt = '';
-	// const pathExt = '/src/client/scripts'
-	// const pathExt = '/dist/client/scripts'
 	execSync('ls -a1', { stdio: [0,1,2], cwd: `${paths.components}/rb-alert${pathExt}` });
 	execSync('ls -a1', { stdio: [0,1,2], cwd: `${paths.components}/rb-button${pathExt}` });
 	execSync('ls -a1', { stdio: [0,1,2], cwd: `${paths.components}/rb-icon${pathExt}` });
