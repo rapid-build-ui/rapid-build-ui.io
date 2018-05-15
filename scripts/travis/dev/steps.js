@@ -19,11 +19,13 @@ const Steps = (paths, components) => { // :{}
 				// const promise = () => { return execPromise(cmd, opts); }
 				// execSync(cmd, opts); console.log();
 				// promises.push(promise);
-				promises.push(execPromise(cmd, opts).then((x, y, z) => {
-					console.log(x);
-					console.log(y);
-					console.log(x);
-				});
+				promises.push(
+					execPromise(cmd, opts).then((x, y, z) => {
+						console.log(x);
+						console.log(y);
+						console.log(x);
+					})
+				);
 			}
 			return Promise.all(promises);
 		},
