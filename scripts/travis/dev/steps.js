@@ -43,10 +43,9 @@ const Steps = (paths, components) => { // :{}
 				// );
 				// promises.push(execPromise(cmd, opts));
 
-				const promise = execPromise(cmd, opts).then((x, y, z) => {
-					console.log('X:', x);
-					console.log('Y:', y);
-					console.log('Z:', z);
+				const promise = execPromise(cmd, opts).then(result => {
+					console.log('RESULT:', result);
+					return result;
 				});
 				promises.push(promise);
 			}
