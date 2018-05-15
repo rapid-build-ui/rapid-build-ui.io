@@ -15,8 +15,9 @@ const { execSync } = require('child_process');
  *************************/
 !async function() {
 	const repos = await steps.cloneComponentRepos();
-	console.log('stdout:', repos[0].stdout);
-	console.log('stderr:', repos[0].stderr);
+	console.log('REPOS:', repos);
+	console.log('STDOUT:', repos[0].stdout);
+	console.log('STDERR:', repos[0].stderr);
 	execSync('ls -a1', { cwd: paths.components, stdio: [0,1,2] });
 	execSync('ls -a1', { cwd: paths.components+'/rb-alert/src/client/scripts', stdio: [0,1,2] });
 	execSync('ls -a1', { cwd: paths.components+'/rb-button/src/client/scripts', stdio: [0,1,2] });

@@ -9,48 +9,21 @@ const execPromise        = util.promisify(exec);
  ********/
 const Steps = (paths, components) => { // :{}
 	return {
-		cloneComponentRepos() {
-			const cloneCmd = 'git clone --depth 1';
+		cloneComponentRepos() { // :Promise[{}]
 			// const opts     = { cwd: paths.components, stdio: [0,1,2] };
+			const cloneCmd = 'git clone --depth 1';
 			const opts     = { cwd: paths.components };
 			let promises   = [];
 			for (const [i, repoName] of components.repoNames.entries()) {
-				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
-				// let cmd = `${cloneCmd} ${repoName}`;
-				const cmd = `${cloneCmd} ${repoName}`;
-				// const promise = () => { return execPromise(cmd, opts); }
 				// execSync(cmd, opts); console.log();
-				// promises.push(promise);
-				// const promise = new Promise((resolve, reject) => {
-				// 	exec(cmd, (error, stdout, stderr) => {
-				// 		if (error) {
-				// 			console.error(`exec error: ${error}`);
-				// 			reject(error);
-				// 			return;
-				// 		}
-				// 		console.log(`stdout: ${stdout}`);
-				// 		console.log(`stderr: ${stderr}`);
-				// 		resolve(true);
-				// 	});
-				// });
-				// promises.push(promise);
-				// promises.push(
-				// 	execPromise(cmd, opts).then((x, y, z) => {
-				// 		console.log(x);
-				// 		console.log(y);
-				// 		console.log(x);
-				// 	})
-				// );
-				// promises.push(execPromise(cmd, opts));
-
-				const promise = execPromise('afdasdf', opts).then(result => {
-					// result.stderr = result.stderr.replace(/\\/g, ' ');
+				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
+				const cmd = `${cloneCmd} ${repoName}`;
+				const promise = execPromise(cmd, opts).then(result => {
 					console.log('RESULT:', result);
 					return result;
 				}).catch(error => {
 					console.error('ERROR\n'.error, error);
 					process.exit(1);
-					return error;
 				});
 				promises.push(promise);
 			}
