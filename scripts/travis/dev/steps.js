@@ -16,9 +16,10 @@ const Steps = (paths, components) => { // :{}
 			for (const [i, repoName] of components.repoNames.entries()) {
 				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
 				let cmd = `${cloneCmd} ${repoName}`;
-				const promise = () => { return execPromise(cmd, opts); }
+				// const promise = () => { return execPromise(cmd, opts); }
 				// execSync(cmd, opts); console.log();
-				promises.push(promise);
+				// promises.push(promise);
+				promises.push(execPromise(cmd, opts));
 			}
 			return Promise.all(promises);
 		},
