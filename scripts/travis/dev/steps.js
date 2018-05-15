@@ -3,7 +3,7 @@
  *************************/
 const { exec, execSync } = require('child_process');
 const util               = require('util');
-// const execPromise        = util.promisify(exec);
+const execPromise        = util.promisify(exec);
 
 /* Steps
  ********/
@@ -15,23 +15,24 @@ const Steps = (paths, components) => { // :{}
 			let promises   = [];
 			for (const [i, repoName] of components.repoNames.entries()) {
 				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
-				let cmd = `${cloneCmd} ${repoName}`;
+				// let cmd = `${cloneCmd} ${repoName}`;
+				const cmd = `${cloneCmd} ${repoName}`;
 				// const promise = () => { return execPromise(cmd, opts); }
 				// execSync(cmd, opts); console.log();
 				// promises.push(promise);
-				const promise = new Promise((resolve, reject) => {
-					exec(cmd, (error, stdout, stderr) => {
-						if (error) {
-							console.error(`exec error: ${error}`);
-							reject(error);
-							return;
-						}
-						console.log(`stdout: ${stdout}`);
-						console.log(`stderr: ${stderr}`);
-						resolve(true);
-					});
-				});
-				promises.push(promise);
+				// const promise = new Promise((resolve, reject) => {
+				// 	exec(cmd, (error, stdout, stderr) => {
+				// 		if (error) {
+				// 			console.error(`exec error: ${error}`);
+				// 			reject(error);
+				// 			return;
+				// 		}
+				// 		console.log(`stdout: ${stdout}`);
+				// 		console.log(`stderr: ${stderr}`);
+				// 		resolve(true);
+				// 	});
+				// });
+				// promises.push(promise);
 				// promises.push(
 				// 	execPromise(cmd, opts).then((x, y, z) => {
 				// 		console.log(x);
@@ -39,6 +40,7 @@ const Steps = (paths, components) => { // :{}
 				// 		console.log(x);
 				// 	})
 				// );
+				promises.push(execPromise(cmd));
 			}
 			return Promise.all(promises);
 		},
