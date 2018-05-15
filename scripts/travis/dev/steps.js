@@ -44,6 +44,7 @@ const Steps = (paths, components) => { // :{}
 				// promises.push(execPromise(cmd, opts));
 
 				const promise = execPromise(cmd, opts).then(result => {
+					result.stderr = result.stderr.replace(\\n\g, ' ');
 					console.log('RESULT:', result);
 					return result;
 				});
