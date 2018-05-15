@@ -19,20 +19,18 @@ const Steps = (paths, components) => { // :{}
 				// const promise = () => { return execPromise(cmd, opts); }
 				// execSync(cmd, opts); console.log();
 				// promises.push(promise);
-				const promise = cmd => {
-					return new Promise((resolve, reject) => {
-						exec(cmd, (error, stdout, stderr) => {
-							if (error) {
-								console.error(`exec error: ${error}`);
-								reject(error);
-								return;
-							}
-							console.log(`stdout: ${stdout}`);
-							console.log(`stderr: ${stderr}`);
-							resolve(true);
-						});
+				const promise = new Promise((resolve, reject) => {
+					exec(cmd, (error, stdout, stderr) => {
+						if (error) {
+							console.error(`exec error: ${error}`);
+							reject(error);
+							return;
+						}
+						console.log(`stdout: ${stdout}`);
+						console.log(`stderr: ${stderr}`);
+						resolve(true);
 					});
-				};
+				});
 				promises.push(promise);
 				// promises.push(
 				// 	execPromise(cmd, opts).then((x, y, z) => {
