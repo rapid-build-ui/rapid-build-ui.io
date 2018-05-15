@@ -13,10 +13,10 @@ const { execSync } = require('child_process');
 
 /* Build Steps: IN ORDER!
  *************************/
-!async function() {
-	const repos = await steps.cloneComponentRepos();
-	console.log('stdout:', repos[0].stdout.toString());
-	console.log('stderr:', repos[0].stderr.toString());
+!function() {
+	const repos = steps.cloneComponentRepos();
+	console.log('stdout:', repos[0].stdout);
+	console.log('stderr:', repos[0].stderr);
 	execSync('ls -a1', { cwd: paths.components, stdio: [0,1,2] });
 	execSync('ls -a1', { cwd: paths.components+'/rb-alert/src/client/scripts', stdio: [0,1,2] });
 	execSync('ls -a1', { cwd: paths.components+'/rb-button/src/client/scripts', stdio: [0,1,2] });
