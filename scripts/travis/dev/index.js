@@ -14,19 +14,23 @@ const { execSync } = require('child_process');
 /* Build Steps: IN ORDER!
  *************************/
 !async function() {
-	const repos = await steps.cloneComponentRepos();
+	const repos           = await steps.cloneComponentRepos();
+	const setupComponents = await steps.setupComponents();
 	console.log('REPOS:', repos);
-	console.log('STDOUT:', repos[0].stdout);
-	console.log('STDERR:', repos[0].stderr);
+	console.log('REPOS:', setupComponents);
 	execSync('ls -a1', { cwd: paths.components, stdio: [0,1,2] });
-	execSync('ls -a1', { cwd: paths.components+'/rb-alert/src/client/scripts', stdio: [0,1,2] });
-	execSync('ls -a1', { cwd: paths.components+'/rb-button/src/client/scripts', stdio: [0,1,2] });
-	execSync('ls -a1', { cwd: paths.components+'/rb-icon/src/client/scripts', stdio: [0,1,2] });
-	execSync('ls -a1', { cwd: paths.components+'/rb-input/src/client/scripts', stdio: [0,1,2] });
-	execSync('ls -a1', { cwd: paths.components+'/rb-nav/src/client/scripts', stdio: [0,1,2] });
-	execSync('ls -a1', { cwd: paths.components+'/rb-popover/src/client/scripts', stdio: [0,1,2] });
+	const pathExt = '';
+	// const pathExt = '/src/client/scripts'
+	// const pathExt = '/dist/client/scripts'
+	execSync('ls -a1', { stdio: [0,1,2], cwd: `${paths.components}/rb-alert${pathExt}` });
+	execSync('ls -a1', { stdio: [0,1,2], cwd: `${paths.components}/rb-button${pathExt}` });
+	execSync('ls -a1', { stdio: [0,1,2], cwd: `${paths.components}/rb-icon${pathExt}` });
+	execSync('ls -a1', { stdio: [0,1,2], cwd: `${paths.components}/rb-input${pathExt}` });
+	execSync('ls -a1', { stdio: [0,1,2], cwd: `${paths.components}/rb-nav${pathExt}` });
+	execSync('ls -a1', { stdio: [0,1,2], cwd: `${paths.components}/rb-popover${pathExt}` });
 	console.log();
 	process.exit(1);
+	// steps.cloneComponentRepos();
 	steps.setupComponents();
 	steps.setupShowcase();
 	steps.buildShowcase();
