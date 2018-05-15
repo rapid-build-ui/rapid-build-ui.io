@@ -70,8 +70,8 @@ const Steps = (paths, components) => { // :{}
 				promises.push(promise);
 			}
 			return Promise.all(promises).then(results => {
+				console.log('RESULTS:');
 				for (const result of results) {
-					console.log('RESULTS:');
 					console.info(`${result.stderr}`.minor); // git clone sends output to stderr
 				}
 			});
