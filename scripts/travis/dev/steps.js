@@ -1,20 +1,25 @@
 /*************************
  * TRAVIS DEV BUILD STEPS
  *************************/
-const { exec, execSync, spawn } = require('child_process');
-const util        = require('util');
-const execPromise = util.promisify(exec);
+const { exec, execSync } = require('child_process');
+const util               = require('util');
+const execPromise        = util.promisify(exec);
+const template           = require('../../helpers/template-tags');
 
 /* Steps
  ********/
 const Steps = (paths, components) => { // :{}
 	return {
 		cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
+			console.info(template.separate`
+				begin: cloning rb components
+			`.toUpperCase().alert);
+
 			const cloneCmd = 'git clone --depth 1';
 			const opts     = { cwd: paths.components };
 			let promises   = [];
 			for (const [i, repoName] of components.repoNames.entries()) {
-				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
+				console.info(`${i}. cloning ${components.names[i]}`.minor);
 				const cmd     = `${cloneCmd} ${repoName}`;
 				const promise = execPromise(cmd, opts);
 				promises.push(promise);
