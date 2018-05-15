@@ -43,10 +43,13 @@ const Steps = (paths, components) => { // :{}
 				// );
 				// promises.push(execPromise(cmd, opts));
 
-				const promise = execPromise(cmd, opts).then(result => {
+				const promise = execPromise('asdf asdf', opts).then(result => {
 					result.stderr = result.stderr.replace(/\\/g, ' ');
 					console.log('RESULT:', result);
 					return result;
+				}).catch(error => {
+					console.log('ERROR:', error);
+					return error;
 				});
 				promises.push(promise);
 			}
