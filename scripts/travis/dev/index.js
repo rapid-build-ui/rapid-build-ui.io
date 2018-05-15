@@ -15,7 +15,7 @@ const steps      = require('./steps')(paths, components);
 !async function() {
 	const xxx = await steps.cloneComponentRepos();
 	console.log('XXX:');
-	console.log(xxx[0].stderr);
+	console.log(xxx);
 	process.exit(1);
 	steps.setupComponents();
 	steps.setupShowcase();
