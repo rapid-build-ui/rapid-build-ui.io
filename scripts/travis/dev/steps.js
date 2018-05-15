@@ -43,12 +43,13 @@ const Steps = (paths, components) => { // :{}
 				// );
 				// promises.push(execPromise(cmd, opts));
 
-				const promise = execPromise('asdf asdf', opts).then(result => {
-					result.stderr = result.stderr.replace(/\\/g, ' ');
+				const promise = execPromise('afdasdf', opts).then(result => {
+					// result.stderr = result.stderr.replace(/\\/g, ' ');
 					console.log('RESULT:', result);
 					return result;
 				}).catch(error => {
-					console.log('ERROR:', error);
+					console.error('ERROR:', error);
+					process.exit(1);
 					return error;
 				});
 				promises.push(promise);
