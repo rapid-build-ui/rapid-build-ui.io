@@ -21,31 +21,33 @@ const Steps = (paths, components) => { // :{}
 				const promise = new Promise((resolve, reject) => {
 					const git = spawn('git', ['clone', '--depth', '1', repoName], opts);
 
-					git.stdout.on('data', data => {
-						console.log(`STDOUT: ${data}`);
-					});
+					// git.stdout.on('data', data => {
+					// 	console.log(`STDOUT: ${data}`);
+					// });
 
-					git.stderr.on('data', data => {
-						console.log(`STDERR: ${data}`);
-					});
+					// git.stderr.on('data', data => {
+					// 	console.log(`STDERR: ${data}`);
+					// });
 
 					git.on('close', code => {
 						console.log(`CLOSE: child process closed with code ${code}`);
 						resolve(true);
 					});
 
-					git.on('exit', code => {
-						console.log(`EXIT: child process exited with code ${code}`);
-						resolve(true);
-					});
+					// git.on('exit', code => {
+					// 	console.log(`EXIT: child process exited with code ${code}`);
+					// 	resolve(true);
+					// });
 
-					git.on('message', msg => {
-						console.log(`MESSAGE: ${msg}`);
-					});
+					// git.on('message', msg => {
+					// 	console.log(`MESSAGE: ${msg}`);
+					// });
 
-					git.on('error', err => {
-						console.log('ERROR: Failed to start subprocess.');
-						reject(err);
+					git.on('error', error => {
+						// console.log('ERROR: Failed to start subprocess.');
+						console.error('error: clone component repos'.toUpperCase().error);
+						console.error(error);
+						reject(error);
 					});
 				})
 
