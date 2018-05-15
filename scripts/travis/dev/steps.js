@@ -48,7 +48,7 @@ const Steps = (paths, components) => { // :{}
 					console.log('RESULT:', result);
 					return result;
 				}).catch(error => {
-					console.error('ERROR:', error);
+					console.error('ERROR:\n'.error, error);
 					process.exit(1);
 					return error;
 				});
