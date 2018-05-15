@@ -1,42 +1,35 @@
 language: node_js
+
 node_js:
   - '8'
-stages:
-  - set_global_vars
-  - cache
-  - install_global_deps
-  - build_dev
-  - deploy
-jobs:
-  include:
-    - stage: set_global_vars
-      env:
-        global:
-          - RB_SHOWCASE_DIR="$TRAVIS_BUILD_DIR"
-          - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
-          - YARN_LINK_DIR="$(yarn global dir)/../link"
-    - stage: cache
-      cache:
-        directories:
-          - node_modules     # repo root node_modules
-          - "$(npm root -g)" # global node_modules directory
-          - "$(npm bin -g)/rapid-build"
-          - "$(npm bin -g)/yarn"
-          - "$(npm bin -g)/yarnpkg"
-    - stage: install_global_deps
-      before_install:
-        - if [[ $(npm -v) != '6.0.1' ]]; then npm install -g npm@6.0.1; fi             # check version
-        - if [[ $(yarn -v) != '1.6.0' ]]; then npm install -g yarn@1.6.0; fi           # check version
-        - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
-    - stage: build_dev
-      before_script: # runs after npm install
-        - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR
-    - stage: deploy
-      deploy:
-        provider: heroku
-        app: rapid-build-ui-io-dev
-        skip_cleanup: true
-        on:
-          branch: dev
-        api_key:
-          secure: wvQVtDqvU2LrnEw3Fre+3nGPsB+w+kPRbwxqmRCyKYIWXn0lcIyp8AHkAS+OcCJ3owvkWKNQ1+hChzvzxeAVra38f2uiX2DN5xiW+v7+VmLCHLvvOmbJISE/w23OVjC8HjWWWerx/owyyqPsdevZqnP3MnvHFXBhZDU7zGG5gdCWqkNaHxZlyhGrsLlRSomtNox2n1meZjaLn3MCuXN+jgC7zQ2wKnnAeIKIQw6lqaqubLJBA+fA2ztXgrp1H1V53zXQRGzqMPnxauwxiFzi6b1E9bXPbUOms8pK3XTfuyPyt8kyjj20LmlAlgUN7ce+pcB4bIgZgGu+Ek1wfB2CgTUhar5tjKFjnqgdfc3teZ5svcQxvUc5T3GQtdvovMJg6C58MASDY0RvZ3Zt7SyquvZ85clfeiy60Vs5k17TtCWhQ32/SQFQ4CQXFXtKj2R5If32Rhw2OrsUU0BQlsNy9XkDjnN53v7CFdNWp9gmkDnsTTOZy9CLRBrMhD0Morv0MOHAHHUhm0l4SnMHQ2mpCMt4BczMpU9Cjffzp1KOoyTlTqjYm95hNx1+WH63ElkTYU4Tec9kBle5YYayM6af5w2xOhpkGnGjQ++5ULU704e8bqx1tdTXZcvcvTqHjygFTlbmXHAh6Xz7+Aiz0/Uqy7lsMyOsqE2TQfW3dsPiFaM=
+
+env:
+  global:
+    - RB_SHOWCASE_DIR="$TRAVIS_BUILD_DIR"
+    - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
+    - YARN_LINK_DIR="$(yarn global dir)/../link"
+
+cache:
+  directories:
+    - node_modules     # repo root node_modules
+    - "$(npm root -g)" # global node_modules directory
+    - "$(npm bin -g)/rapid-build"
+    - "$(npm bin -g)/yarn"
+    - "$(npm bin -g)/yarnpkg"
+
+before_install:
+  - if [[ $(npm -v) != '6.0.1' ]]; then npm install -g npm@6.0.1; fi             # check version
+  - if [[ $(yarn -v) != '1.6.0' ]]; then npm install -g yarn@1.6.0; fi           # check version
+  - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
+
+before_script: # runs after npm install
+  - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR
+
+deploy:
+  provider: heroku
+  app: rapid-build-ui-io-dev
+  skip_cleanup: true
+  on:
+    branch: dev
+  api_key:
+    secure: wvQVtDqvU2LrnEw3Fre+3nGPsB+w+kPRbwxqmRCyKYIWXn0lcIyp8AHkAS+OcCJ3owvkWKNQ1+hChzvzxeAVra38f2uiX2DN5xiW+v7+VmLCHLvvOmbJISE/w23OVjC8HjWWWerx/owyyqPsdevZqnP3MnvHFXBhZDU7zGG5gdCWqkNaHxZlyhGrsLlRSomtNox2n1meZjaLn3MCuXN+jgC7zQ2wKnnAeIKIQw6lqaqubLJBA+fA2ztXgrp1H1V53zXQRGzqMPnxauwxiFzi6b1E9bXPbUOms8pK3XTfuyPyt8kyjj20LmlAlgUN7ce+pcB4bIgZgGu+Ek1wfB2CgTUhar5tjKFjnqgdfc3teZ5svcQxvUc5T3GQtdvovMJg6C58MASDY0RvZ3Zt7SyquvZ85clfeiy60Vs5k17TtCWhQ32/SQFQ4CQXFXtKj2R5If32Rhw2OrsUU0BQlsNy9XkDjnN53v7CFdNWp9gmkDnsTTOZy9CLRBrMhD0Morv0MOHAHHUhm0l4SnMHQ2mpCMt4BczMpU9Cjffzp1KOoyTlTqjYm95hNx1+WH63ElkTYU4Tec9kBle5YYayM6af5w2xOhpkGnGjQ++5ULU704e8bqx1tdTXZcvcvTqHjygFTlbmXHAh6Xz7+Aiz0/Uqy7lsMyOsqE2TQfW3dsPiFaM=
