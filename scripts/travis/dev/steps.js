@@ -9,70 +9,60 @@ const execPromise        = util.promisify(exec);
  ********/
 const Steps = (paths, components) => { // :{}
 	return {
-		cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
-			// const cloneCmd = 'git clone --depth 1';
-			const opts     = { cwd: paths.components };
-			let promises   = [];
-
-			for (const [i, repoName] of components.repoNames.entries()) {
-				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
-				// const cmd = `${cloneCmd} ${repoName}`;
-
-				const promise = new Promise((resolve, reject) => {
-					const git = spawn('git', ['clone', '--progress', '--depth', '1', repoName], opts);
-
-					git.stdout.on('data', data => {
-						console.log(`STDOUT: ${data}`);
-					});
-
-					git.stderr.on('data', data => {
-						console.log(`STDERR: ${data}`);
-					});
-
-					git.on('close', code => {
-						console.log(`child process exited with code ${code}`);
-						resolve(true);
-					});
-
-					git.on('error', err => {
-						console.log('Failed to start subprocess.');
-						reject(err);
-					});
-				})
-				// const promise = execPromise(cmd, opts).then(result => {
-				// 	console.log('RESULT:', result);
-				// 	return result;
-				// }).catch(error => {
-				// 	console.error('error: clone component repos'.toUpperCase().error);
-				// 	console.error(error);
-				// 	process.exit(1);
-				// });
-
-				promises.push(promise);
-			}
-
-			return Promise.all(promises);
-		},
-
 		// cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
-		// 	const cloneCmd = 'git clone --depth 1';
 		// 	const opts     = { cwd: paths.components };
 		// 	let promises   = [];
+		//
 		// 	for (const [i, repoName] of components.repoNames.entries()) {
 		// 		console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
-		// 		const cmd     = `${cloneCmd} ${repoName}`;
-		// 		const promise = execPromise(cmd, opts).then(result => {
-		// 			console.log('RESULT:', result);
-		// 			return result;
-		// 		}).catch(error => {
-		// 			console.error('error: clone component repos'.toUpperCase().error);
-		// 			console.error(error);
-		// 			process.exit(1);
-		// 		});
+		//
+		// 		const promise = new Promise((resolve, reject) => {
+		// 			const git = spawn('git', ['clone', '--progress', '--depth', '1', repoName], opts);
+		//
+		// 			git.stdout.on('data', data => {
+		// 				console.log(`STDOUT: ${data}`);
+		// 			});
+		//
+		// 			git.stderr.on('data', data => {
+		// 				console.log(`STDERR: ${data}`);
+		// 			});
+		//
+		// 			git.on('close', code => {
+		// 				console.log(`child process exited with code ${code}`);
+		// 				resolve(true);
+		// 			});
+		//
+		// 			git.on('error', err => {
+		// 				console.log('Failed to start subprocess.');
+		// 				reject(err);
+		// 			});
+		// 		})
+		//
 		// 		promises.push(promise);
 		// 	}
+		//
 		// 	return Promise.all(promises);
 		// },
+
+		cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
+			const cloneCmd = 'git clone --progress --depth 1';
+			const opts     = { cwd: paths.components };
+			let promises   = [];
+			for (const [i, repoName] of components.repoNames.entries()) {
+				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
+				const cmd     = `${cloneCmd} ${repoName}`;
+				const promise = execPromise(cmd, opts).then(result => {
+					console.log('RESULT:', result);
+					return result;
+				}).catch(error => {
+					console.error('error: clone component repos'.toUpperCase().error);
+					console.error(error);
+					process.exit(1);
+				});
+				promises.push(promise);
+			}
+			return Promise.all(promises);
+		},
 
 		setupComponents() { // :Promise[{}] - (runs asynchronously)
 			const cmd    = 'rapid-build prod publish && npm run link'
