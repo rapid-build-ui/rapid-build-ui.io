@@ -11,8 +11,8 @@ const Steps = (paths, components) => { // :{}
 	return {
 		cloneComponentRepos() {
 			const cloneCmd = 'git clone --depth 1';
-			const opts     = { cwd: paths.components, stdio: [0,1,2] };
-			// const opts     = { cwd: paths.components };
+			// const opts     = { cwd: paths.components, stdio: [0,1,2] };
+			const opts     = { cwd: paths.components };
 			let promises   = [];
 			for (const [i, repoName] of components.repoNames.entries()) {
 				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
