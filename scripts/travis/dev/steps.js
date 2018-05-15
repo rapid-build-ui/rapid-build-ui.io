@@ -59,14 +59,15 @@ const Steps = (paths, components) => { // :{}
 			for (const [i, repoName] of components.repoNames.entries()) {
 				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
 				const cmd     = `${cloneCmd} ${repoName}`;
-				const promise = execPromise(cmd, opts).then(result => {
-					console.info('RESULT:', result);
-					return result;
-				}).catch(error => {
-					console.error('error: clone component repos'.toUpperCase().error);
-					console.error(error);
-					process.exit(1);
-				});
+				// const promise = execPromise(cmd, opts).then(result => {
+				// 	console.info('RESULT:', result);
+				// 	return result;
+				// }).catch(error => {
+				// 	console.error('error: clone component repos'.toUpperCase().error);
+				// 	console.error(error);
+				// 	process.exit(1);
+				// });
+				const promise = execPromise(cmd, opts);
 				promises.push(promise);
 			}
 			return Promise.all(promises).then(results => {
@@ -74,7 +75,7 @@ const Steps = (paths, components) => { // :{}
 				for (const result of results) {
 					console.info(`${result.stderr}`.minor); // git clone sends output to stderr
 				}
-				return results;
+				// return results;
 			});
 		},
 
