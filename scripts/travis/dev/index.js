@@ -35,9 +35,9 @@ const { execSync } = require('child_process');
 	// execSync('ls -a1', { stdio: [0,1,2], cwd: `${paths.components}/rb-nav${pathExt}` });
 	// execSync('ls -a1', { stdio: [0,1,2], cwd: `${paths.components}/rb-popover${pathExt}` });
 	// console.log();
-	// process.exit(1);
+	process.exit(1);
 
-	
+
 	// steps.cloneComponentRepos();
 	// steps.setupComponents();
 	// steps.setupShowcase();
