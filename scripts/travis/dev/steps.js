@@ -20,7 +20,7 @@ const Steps = (paths, components) => { // :{}
 				promises.push(promise);
 			}
 			return Promise.all(promises).then(results => {
-				console.info(`rb components: cloned`.toUpperCase().success);
+				console.info(`rb components: cloned\n`.toUpperCase().success);
 				// for (const result of results)
 				// 	console.info(`${result.stderr}`.minor); // git clone sends output to stderr
 				return results;
@@ -39,22 +39,12 @@ const Steps = (paths, components) => { // :{}
 				console.info(`setup component ${name}`.toUpperCase().alert);
 				const opts    = { cwd: `${paths.components}/${name}` };
 				const promise = execPromise(cmd, opts);
-				// const promise = execPromise(cmd, opts).then(result => {
-				// 	console.log('RESULT:', result);
-				// 	return result;
-				// }).catch(error => {
-				// 	console.error('error: setup components'.toUpperCase().error);
-				// 	console.error(error);
-				// 	process.exit(1);
-				// });
 				promises.push(promise);
 			}
 			return Promise.all(promises).then(results => {
-				console.info(`rb components: setup`.toUpperCase().success);
-				for (const result of results) {
-					// console.log(`${result.stdout}`);
-					console.log(result.stdout);
-				}
+				console.info(`rb components: setup\n`.toUpperCase().success);
+				for (const result of results)
+					console.log(`${result.stdout}`);
 				return results;
 			}).catch(error => {
 				console.error('error: setup components'.toUpperCase().error);
