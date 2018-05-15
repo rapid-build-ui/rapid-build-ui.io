@@ -18,11 +18,12 @@ const Steps = (paths, components) => { // :{}
 				// execSync(cmd, opts); console.log();
 				console.info(`cloning ${components.names[i]}`.toUpperCase().alert);
 				const cmd = `${cloneCmd} ${repoName}`;
-				const promise = execPromise(cmd, opts).then(result => {
+				const promise = execPromise('asdf', opts).then(result => {
 					console.log('RESULT:', result);
 					return result;
 				}).catch(error => {
-					console.error('ERROR\n'.error, error);
+					console.error('error: clone component repos'.toUpperCase().error);
+					console.error(error);
 					process.exit(1);
 				});
 				promises.push(promise);
