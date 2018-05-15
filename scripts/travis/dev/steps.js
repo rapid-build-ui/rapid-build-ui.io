@@ -48,16 +48,6 @@ const Steps = (paths, components) => { // :{}
 			return Promise.all(promises);
 		},
 
-		// setupComponents() {
-		// 	const cmd  = 'rapid-build prod publish && npm run link'
-		// 	const opts = { stdio: [0,1,2] };
-		// 	for (const name of components.names) {
-		// 		console.info(`setup component ${name}`.toUpperCase().alert);
-		// 		opts.cwd = `${paths.components}/${name}`
-		// 		execSync(cmd, opts); console.log();
-		// 	}
-		// },
-
 		setupShowcase() { // :void - (runs synchronously)
 			const cmd  = 'npm run setup'
 			const opts = { cwd: paths.showcase, stdio: [0,1,2] };
