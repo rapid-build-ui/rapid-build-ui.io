@@ -33,7 +33,7 @@ deploy: &heroku
 
 jobs:
   include:
-    - if: branch = dev
+    - if: branch = master
       deploy:
         <<: *heroku
         app: rapid-build-ui-io-dev
