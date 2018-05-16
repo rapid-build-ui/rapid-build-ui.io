@@ -30,9 +30,12 @@ deploy: &heroku
 
 jobs:
   include:
-    - if: branch = master
-      before_script: # runs after npm install
+    - if: branch = dev
+
+      # runs after npm install
+      before_script:
         - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR
+
       deploy:
         <<: *heroku
         app: rapid-build-ui-io-dev
