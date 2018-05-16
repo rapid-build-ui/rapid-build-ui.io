@@ -5,6 +5,7 @@ node_js:
 
 env:
   global:
+    - secure: "encrypted-heroku-api-key"
     - RB_SHOWCASE_DIR="$TRAVIS_BUILD_DIR"
     - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
     - YARN_LINK_DIR="$(yarn global dir)/../link"
