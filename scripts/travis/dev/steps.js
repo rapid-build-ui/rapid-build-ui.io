@@ -33,7 +33,7 @@ const Steps = (paths, components) => { // :{}
 			}
 			return Promise.all(promises).then(results => {
 				// info(template.underline`rb components: cloned`.toUpperCase().success);
-				info(`✔ rb components cloned`.toUpperCase().success);
+				info(`✔ cloned rb components`.toUpperCase().success);
 				return results; // git clone sends output to stderr
 			}).catch(e => {
 				error(template.underline`error: clone component repos`.toUpperCase().error);
@@ -55,7 +55,7 @@ const Steps = (paths, components) => { // :{}
 			return Promise.all(promises).then(results => {
 				for (const result of results) log(`${result.stdout}`);
 				// info(template.underline`rb components: setup`.toUpperCase().success);
-				info(`✔ rb components setup`.toUpperCase().success);
+				info(`✔ setup rb components`.toUpperCase().success);
 				return results;
 			}).catch(e => {
 				error(template.underline`error: setup components`.toUpperCase().error);
