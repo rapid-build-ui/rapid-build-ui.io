@@ -31,5 +31,4 @@ deploy:
   skip_cleanup: true
   on:
     branch: dev
-  api_key:
-    secure: "$HEROKU_API_KEY"
+  api_key: $HEROKU_API_KEY
