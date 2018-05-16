@@ -19,15 +19,14 @@ const Steps = (paths, components) => { // :{}
 	return {
 		cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
 			// info(template.separate`begin: cloning rb components`.toUpperCase().alert);
-			clog.setupBegin(components.names, 'cloning rb components');
+			clog.setupBegin(components.names, 'cloning rb components', { logType: 'alert' });
 
 			const cloneCmd = 'git clone --depth 1';
 			const opts     = { cwd: paths.components };
 			let promises   = [];
 			for (const [i, repoName] of components.repoNames.entries()) {
-				// info(`${i+1}. cloning ${components.names[i]}`.minor);
 				const cmd     = `${cloneCmd} ${repoName}`;
-				const promise = execPromise(cmd, opts);
+				const promise = execPromise('asdf', opts);
 				promises.push(promise);
 			}
 			return Promise.all(promises).then(results => {
@@ -36,7 +35,8 @@ const Steps = (paths, components) => { // :{}
 				// 	info(`${result.stderr}`.minor); // git clone sends output to stderr
 				return results;
 			}).catch(e => {
-				error('error: clone component repos'.toUpperCase().error);
+				error(template.separate`error: clone component repos`.toUpperCase().error);
+				// error('error: clone component repos'.toUpperCase().error);
 				error(e);
 				process.exit(1);
 				return e;
