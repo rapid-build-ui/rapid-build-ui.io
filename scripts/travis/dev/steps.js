@@ -32,7 +32,8 @@ const Steps = (paths, components) => { // :{}
 				promises.push(promise);
 			}
 			return Promise.all(promises).then(results => {
-				info(template.underline`rb components: cloned`.toUpperCase().success);
+				// info(template.underline`rb components: cloned`.toUpperCase().success);
+				info(`✔ rb components cloned`.toUpperCase().success);
 				return results; // git clone sends output to stderr
 			}).catch(e => {
 				error(template.underline`error: clone component repos`.toUpperCase().error);
@@ -47,16 +48,14 @@ const Steps = (paths, components) => { // :{}
 			const cmd    = 'rapid-build prod publish && npm run link'
 			let promises = [];
 			for (const name of components.names) {
-				// info(`setup component ${name}`.toUpperCase().alert);
 				const opts    = { cwd: `${paths.components}/${name}` };
 				const promise = execPromise(cmd, opts);
 				promises.push(promise);
 			}
 			return Promise.all(promises).then(results => {
-				// info(`rb components: setup\n`.toUpperCase().success);
-				for (const result of results)
-					log(`${result.stdout}`);
-				info(template.underline`rb components: setup`.toUpperCase().success);
+				for (const result of results) log(`${result.stdout}`);
+				// info(template.underline`rb components: setup`.toUpperCase().success);
+				info(`✔ rb components setup`.toUpperCase().success);
 				return results;
 			}).catch(e => {
 				error(template.underline`error: setup components`.toUpperCase().error);
