@@ -30,14 +30,26 @@ deploy: &heroku
 
 jobs:
   include:
+    # continuous branch
+    # -----------------
     - if: branch = dev
-
-      # runs after npm install
       before_script:
+        # runs after npm install
         - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR
-
       deploy:
         <<: *heroku
         app: rapid-build-ui-io-dev
         on:
           branch: dev
+
+    # tagged releases (valid semver, ex: v1.0.0)
+    # ---------------
+    - if: tag =~ ^v(\d+\.)(\d+\.)(\d+)(-([A-Za-z]+\.)?(\d+\.)?(\d+\.)?(\d+))?$
+      before_script:
+        # runs after npm install
+        - node scripts/travis/release $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR
+      deploy:
+        <<: *heroku
+        app: rapid-build-ui-io-xxx
+        on:
+          tags: true
