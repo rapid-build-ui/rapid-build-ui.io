@@ -19,7 +19,7 @@ const Steps = (paths, components) => { // :{}
 	return {
 		cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
 			// info(template.separate`begin: cloning rb components`.toUpperCase().alert);
-			clog.setupBegin(components.names, 'cloning rb components', { logType: 'alert', separate: 'underline' });
+			clog.setupBegin(components.names, 'cloning rb components', { logType: 'alert' });
 
 			const cloneCmd = 'git clone --depth 1';
 			const opts     = { cwd: paths.components };
@@ -30,7 +30,8 @@ const Steps = (paths, components) => { // :{}
 				promises.push(promise);
 			}
 			return Promise.all(promises).then(results => {
-				info(`rb components: cloned\n`.toUpperCase().success);
+				// info(`rb components: cloned\n`.toUpperCase().success);
+				info(template.underline`rb components: cloned`.toUpperCase().success);
 				// for (const result of results)
 				// 	info(`${result.stderr}`.minor); // git clone sends output to stderr
 				return results;
