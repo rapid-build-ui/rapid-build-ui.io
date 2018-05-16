@@ -5,7 +5,7 @@ const { exec, execSync } = require('child_process');
 const util               = require('util');
 const execPromise        = util.promisify(exec);
 const template           = require('../../helpers/template-tags');
-const clog               = require('../../component-log');
+const clog               = require('../../helpers/component-log');
 
 /* Loggers
  **********/
