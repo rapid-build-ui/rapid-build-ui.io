@@ -22,7 +22,7 @@ const beginLogOpts = { logType: 'alert', separate: 'underline' };
 const Steps = (paths, components) => { // :{}
 	return {
 		cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
-			clog.setupBegin(components.names, 'cloning rb components', beginLogOpts);
+			clog.setupBegin(components.names, '\ncloning rb components', beginLogOpts);
 			const cloneCmd = 'git clone --depth 1';
 			const opts     = { cwd: paths.components };
 			let promises   = [];
@@ -32,7 +32,7 @@ const Steps = (paths, components) => { // :{}
 				promises.push(promise);
 			}
 			return Promise.all(promises).then(results => {
-				info(template.underline`rb components: cloned\n`.toUpperCase().success);
+				info(template.underline`rb components: cloned`.toUpperCase().success);
 				return results; // git clone sends output to stderr
 			}).catch(e => {
 				error(template.underline`error: clone component repos`.toUpperCase().error);
@@ -43,7 +43,7 @@ const Steps = (paths, components) => { // :{}
 		},
 
 		setupComponents() { // :Promise[{}] - (runs asynchronously)
-			clog.setupBegin(components.names, 'rb components setup', beginLogOpts);
+			clog.setupBegin(components.names, '\nrb components setup', beginLogOpts);
 			const cmd    = 'rapid-build prod publish && npm run link'
 			let promises = [];
 			for (const name of components.names) {
@@ -56,7 +56,7 @@ const Steps = (paths, components) => { // :{}
 				// info(`rb components: setup\n`.toUpperCase().success);
 				for (const result of results)
 					log(`${result.stdout}`);
-				info(template.underline`rb components: setup\n`.toUpperCase().success);
+				info(template.underline`rb components: setup`.toUpperCase().success);
 				return results;
 			}).catch(e => {
 				error(template.underline`error: setup components`.toUpperCase().error);
