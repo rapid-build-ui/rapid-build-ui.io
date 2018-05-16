@@ -35,7 +35,7 @@ const Steps = (paths, components) => { // :{}
 				// 	info(`${result.stderr}`.minor); // git clone sends output to stderr
 				return results;
 			}).catch(e => {
-				error(template.separate`error: clone component repos`.toUpperCase().error);
+				error(template.underline`error: clone component repos`.toUpperCase().error);
 				// error('error: clone component repos'.toUpperCase().error);
 				error(e);
 				process.exit(1);
