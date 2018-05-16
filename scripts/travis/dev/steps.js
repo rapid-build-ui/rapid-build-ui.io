@@ -15,7 +15,7 @@ const error = console.error.bind(console);
 
 /* Log Opts
  ***********/
-const BEGIN_LOG_OPTS = { logType: 'alert', separate: 'underline', topBumper: true };
+const BEGIN_LOG_OPTS = { logType: 'attn', separate: 'underline', topBumper: true };
 
 /* Steps
  ********/
@@ -64,7 +64,8 @@ const Steps = (paths, components) => { // :{}
 		},
 
 		setupShowcase() { // :void - (runs synchronously)
-			info('\n', template.underline`begin showcase setup`.toUpperCase().alert);
+			info();
+			info(template.underline`begin showcase setup`.toUpperCase().attn);
 			const cmd  = 'npm run setup'
 			const opts = { cwd: paths.showcase, stdio: [0,1,2] };
 			execSync(cmd, opts); log();
@@ -72,7 +73,8 @@ const Steps = (paths, components) => { // :{}
 		},
 
 		buildShowcase() { // :void - (runs synchronously)
-			info('\n', template.underline`begin showcase build`.toUpperCase().alert);
+			info();
+			info(template.underline`begin showcase build`.toUpperCase().attn);
 			const cmd  = 'rapid-build prod publish'
 			const opts = { cwd: paths.showcase, stdio: [0,1,2] };
 			execSync(cmd, opts); log();
