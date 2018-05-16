@@ -5,6 +5,7 @@ const { exec, execSync } = require('child_process');
 const util               = require('util');
 const execPromise        = util.promisify(exec);
 const template           = require('../../helpers/template-tags');
+const clog               = require('../../component-log');
 
 /* Loggers
  **********/
@@ -17,13 +18,14 @@ const error = console.error.bind(console);
 const Steps = (paths, components) => { // :{}
 	return {
 		cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
-			info(template.separate`begin: cloning rb components`.toUpperCase().alert);
+			// info(template.separate`begin: cloning rb components`.toUpperCase().alert);
+			clog.setupBegin(components.names, 'cloning rb components');
 
 			const cloneCmd = 'git clone --depth 1';
 			const opts     = { cwd: paths.components };
 			let promises   = [];
 			for (const [i, repoName] of components.repoNames.entries()) {
-				info(`${i+1}. cloning ${components.names[i]}`.minor);
+				// info(`${i+1}. cloning ${components.names[i]}`.minor);
 				const cmd     = `${cloneCmd} ${repoName}`;
 				const promise = execPromise(cmd, opts);
 				promises.push(promise);
