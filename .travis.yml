@@ -22,9 +22,6 @@ before_install:
   - if [[ $(yarn -v) != '1.6.0' ]]; then npm install -g yarn@1.6.0; fi           # check version
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi # if not installed
 
-before_script: # runs after npm install
-  - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR
-
 deploy: &heroku
   provider: heroku
   skip_cleanup: true
@@ -34,6 +31,8 @@ deploy: &heroku
 jobs:
   include:
     - if: branch = master
+      before_script: # runs after npm install
+        - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR
       deploy:
         <<: *heroku
         app: rapid-build-ui-io-dev
