@@ -64,7 +64,7 @@ const Steps = (paths, components) => { // :{}
 		},
 
 		setupShowcase() { // :void - (runs synchronously)
-			info(template.underline`\nbegin showcase setup\n`.toUpperCase().alert);
+			info('\n', template.underline`begin showcase setup`.toUpperCase().alert);
 			const cmd  = 'npm run setup'
 			const opts = { cwd: paths.showcase, stdio: [0,1,2] };
 			execSync(cmd, opts); log();
@@ -72,7 +72,7 @@ const Steps = (paths, components) => { // :{}
 		},
 
 		buildShowcase() { // :void - (runs synchronously)
-			info(template.underline`\nbegin showcase build\n`.toUpperCase().alert);
+			info('\n', template.underline`begin showcase build`.toUpperCase().alert);
 			const cmd  = 'rapid-build prod publish'
 			const opts = { cwd: paths.showcase, stdio: [0,1,2] };
 			execSync(cmd, opts); log();
