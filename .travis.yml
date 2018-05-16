@@ -5,10 +5,10 @@ node_js:
 
 env:
   global:
-    - secure: "encrypted-heroku-api-key"
     - RB_SHOWCASE_DIR="$TRAVIS_BUILD_DIR"
     - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
     - YARN_LINK_DIR="$(yarn global dir)/../link"
+    - secure: v8hjWVO4gV4xnDCuee6Q5xrAMEOHPlJJcWk1WZexL3cbWKjF2iRgkTpUsFKsk5uV40e3Tpy6mRZ6khrS9KEXjK3j12dmFm3FZZ9zFkkTx0Pjs1aLTfKoD11zkeakrBLl2OuKQbBKcTXUOBpvKQk3FxwNy2Uggpap5S8H3nEF4XKuXg8ekTeGw+V6StQOkESIPzvz5g58EVnieNfQdfCLXWrwu6JzLJixAn/Vh3NODavgslKUFxo+2YFSPYFOf0mTYACcQ+QmcyKUgbwjxUQ62gY+v1lfWyFg1xTiSvw0b4YpQrQk6vlESniE5GVf4sHYNGtr+DZyDHRbO5sL3teTvr53Hm1Ezb0FBx3JWeXWvFaZJQFVKeNme/f7uZnfgtjwDxcd45R+STq0auqLU7kacdJSdUt0aYMi9hDMrkxPWUfSlCPC5+WuI40kQ6WB60LMYqWt7f94q7B43qsnLlg4tcMHQLYtVzA+ekfuCKaf8wOhb628ozOfZoUbGLsx5jZRbmcN7DMXaIB4kvkvdBXOFRAWoteN9bh8O7Rh+xqgec1KXGvz5wcy6dIx3+7KW7qrIfG+/s8By9EUdgk6rfALedj8bH+B/qjdNyt59WEMJmCFLR3F6NfXYsH6HA0jlbeKK7OZ+maP6XEfNRjpzQkyjmSwzRYNG1IwSMpbQUOPKmc=
 
 cache:
   directories:
@@ -28,8 +28,8 @@ before_script: # runs after npm install
 
 deploy:
   provider: heroku
+  api_key: $HEROKU_API_KEY
   app: rapid-build-ui-io-dev
   skip_cleanup: true
   on:
     branch: dev
-  api_key: $HEROKU_API_KEY
