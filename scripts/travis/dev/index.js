@@ -20,7 +20,6 @@ const { execSync } = require('child_process');
 // return;
 
 !async function() {
-	// console.log();
 	const repos           = await steps.cloneComponentRepos();
 	const setupComponents = await steps.setupComponents();
 	// let pathExt = '';

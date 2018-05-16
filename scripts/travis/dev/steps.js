@@ -15,14 +15,14 @@ const error = console.error.bind(console);
 
 /* Log Opts
  ***********/
-const beginLogOpts = { logType: 'alert', separate: 'underline' };
+const beginLogOpts = { logType: 'alert', separate: 'underline', topBumper: true };
 
 /* Steps
  ********/
 const Steps = (paths, components) => { // :{}
 	return {
 		cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
-			clog.setupBegin(components.names, '\ncloning rb components', beginLogOpts);
+			clog.setupBegin(components.names, 'cloning rb components', beginLogOpts);
 			const cloneCmd = 'git clone --depth 1';
 			const opts     = { cwd: paths.components };
 			let promises   = [];
@@ -43,7 +43,7 @@ const Steps = (paths, components) => { // :{}
 		},
 
 		setupComponents() { // :Promise[{}] - (runs asynchronously)
-			clog.setupBegin(components.names, '\nrb components setup', beginLogOpts);
+			clog.setupBegin(components.names, 'rb components setup', beginLogOpts);
 			const cmd    = 'rapid-build prod publish && npm run link'
 			let promises = [];
 			for (const name of components.names) {

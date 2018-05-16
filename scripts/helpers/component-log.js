@@ -127,6 +127,7 @@ const Log = {
 		opts.separate = opts.separate || 'separate';
 		opts.prepend  = !!opts.prepend ? `${opts.prepend}\n` : '';
 		opts.append   = !!opts.append  ? `\n${opts.append}`  : '';
+		if (opts.topBumper) log();
 		info(template.underline`
 			${template[opts.separate]`
 				begin ${message}
@@ -142,6 +143,7 @@ const Log = {
 		opts.separate = opts.separate || 'separate';
 		opts.prepend  = !!opts.prepend ? `${opts.prepend}\n` : '';
 		opts.append   = !!opts.append  ? `\n${opts.append}`  : '';
+		if (opts.topBumper) log();
 		info(template.underline`
 			${template[opts.separate]`
 				${message} complete
