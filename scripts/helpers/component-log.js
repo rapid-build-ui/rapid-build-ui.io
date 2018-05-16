@@ -123,11 +123,12 @@ const Log = {
 	setupBegin(names, message, opts={}) { // names: string[] | string
 		names = typeof names === 'string' ? [names] : names;
 		names = names.map((val, i) => `${i+1}. ${val}`).join('\n');
-		opts.logType = opts.logType || 'attn';
-		opts.prepend = !!opts.prepend ? `${opts.prepend}\n` : '';
-		opts.append  = !!opts.append  ? `\n${opts.append}`  : '';
+		opts.logType  = opts.logType  || 'attn';
+		opts.separate = opts.separate || 'separate';
+		opts.prepend  = !!opts.prepend ? `${opts.prepend}\n` : '';
+		opts.append   = !!opts.append  ? `\n${opts.append}`  : '';
 		info(template.underline`
-			${template.separate`
+			${template[opts.separate]`
 				begin ${message}
 			`.toUpperCase()}
 			${opts.prepend}${names}${opts.append}
@@ -137,11 +138,12 @@ const Log = {
 	setupComplete(names, message, opts={}) { // names: string[] | string
 		names = typeof names === 'string' ? [names] : names;
 		names = names.map((val, i) => `${i+1}. ${val}`).join('\n');
-		opts.logType = opts.logType || 'attn';
-		opts.prepend = !!opts.prepend ? `${opts.prepend}\n` : '';
-		opts.append  = !!opts.append  ? `\n${opts.append}`  : '';
+		opts.logType  = opts.logType  || 'attn';
+		opts.separate = opts.separate || 'separate';
+		opts.prepend  = !!opts.prepend ? `${opts.prepend}\n` : '';
+		opts.append   = !!opts.append  ? `\n${opts.append}`  : '';
 		info(template.underline`
-			${template.separate`
+			${template[opts.separate]`
 				${message} complete
 			`.toUpperCase()}
 			${opts.prepend}${names}${opts.append}

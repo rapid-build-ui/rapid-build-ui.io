@@ -19,14 +19,14 @@ const Steps = (paths, components) => { // :{}
 	return {
 		cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
 			// info(template.separate`begin: cloning rb components`.toUpperCase().alert);
-			clog.setupBegin(components.names, 'cloning rb components', { logType: 'alert' });
+			clog.setupBegin(components.names, 'cloning rb components', { logType: 'alert', separate: 'underline' });
 
 			const cloneCmd = 'git clone --depth 1';
 			const opts     = { cwd: paths.components };
 			let promises   = [];
 			for (const [i, repoName] of components.repoNames.entries()) {
 				const cmd     = `${cloneCmd} ${repoName}`;
-				const promise = execPromise('asdf', opts);
+				const promise = execPromise(cmd, opts);
 				promises.push(promise);
 			}
 			return Promise.all(promises).then(results => {
