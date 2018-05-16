@@ -1,3 +1,6 @@
+/*******************
+ * BOOTSTRAP COLORS
+ *******************/
 require('colors').setTheme({
 	alert:   'yellow',
 	attn:    ['cyan', 'bold'],

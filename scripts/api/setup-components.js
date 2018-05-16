@@ -1,4 +1,5 @@
-/* FOR DEVELOPMENT - SETUP COMPONENTS
+/*************************************
+ * FOR DEVELOPMENT - SETUP COMPONENTS
  *************************************/
 require('../bootstrap/colors');
 const clog         = require('../helpers/component-log');
