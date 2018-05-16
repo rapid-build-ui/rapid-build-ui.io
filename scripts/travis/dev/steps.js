@@ -13,14 +13,16 @@ const log   = console.log.bind(console);
 const info  = console.info.bind(console);
 const error = console.error.bind(console);
 
+/* Log Opts
+ ***********/
+const beginLogOpts = { logType: 'alert', separate: 'underline' };
+
 /* Steps
  ********/
 const Steps = (paths, components) => { // :{}
 	return {
 		cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
-			// info(template.separate`begin: cloning rb components`.toUpperCase().alert);
-			clog.setupBegin(components.names, 'cloning rb components', { logType: 'alert' });
-
+			clog.setupBegin(components.names, 'cloning rb components', beginLogOpts);
 			const cloneCmd = 'git clone --depth 1';
 			const opts     = { cwd: paths.components };
 			let promises   = [];
@@ -30,14 +32,10 @@ const Steps = (paths, components) => { // :{}
 				promises.push(promise);
 			}
 			return Promise.all(promises).then(results => {
-				// info(`rb components: cloned\n`.toUpperCase().success);
 				info(template.underline`rb components: cloned`.toUpperCase().success);
-				// for (const result of results)
-				// 	info(`${result.stderr}`.minor); // git clone sends output to stderr
-				return results;
+				return results; // git clone sends output to stderr
 			}).catch(e => {
 				error(template.underline`error: clone component repos`.toUpperCase().error);
-				// error('error: clone component repos'.toUpperCase().error);
 				error(e);
 				process.exit(1);
 				return e;
@@ -45,21 +43,23 @@ const Steps = (paths, components) => { // :{}
 		},
 
 		setupComponents() { // :Promise[{}] - (runs asynchronously)
+			clog.setupBegin(components.names, 'setup rb components', beginLogOpts);
 			const cmd    = 'rapid-build prod publish && npm run link'
 			let promises = [];
 			for (const name of components.names) {
-				info(`setup component ${name}`.toUpperCase().alert);
+				// info(`setup component ${name}`.toUpperCase().alert);
 				const opts    = { cwd: `${paths.components}/${name}` };
 				const promise = execPromise(cmd, opts);
 				promises.push(promise);
 			}
 			return Promise.all(promises).then(results => {
-				info(`rb components: setup\n`.toUpperCase().success);
+				// info(`rb components: setup\n`.toUpperCase().success);
 				for (const result of results)
 					log(`${result.stdout}`);
+				info(template.underline`rb components: setup`.toUpperCase().success);
 				return results;
 			}).catch(e => {
-				error('error: setup components'.toUpperCase().error);
+				error(template.underline`error: setup components`.toUpperCase().error);
 				error(e);
 				process.exit(1);
 				return e;
