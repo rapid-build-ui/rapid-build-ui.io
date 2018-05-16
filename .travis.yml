@@ -57,6 +57,12 @@ jobs:
     # ==========
     - if: branch = dev
       before_script:
+        # STEPS (in order)
+        # ================
+        # Clone Component Repos
+        # Setup Components
+        # Setup Showcase
+        # Build Showcase
         - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR
       deploy:
         <<: *heroku
@@ -68,6 +74,11 @@ jobs:
     # =======
     - if: tag =~ ^v(\d+\.)(\d+\.)(\d+)(-([A-Za-z]+\.)?(\d+\.)?(\d+\.)?(\d+))?$
       before_script:
+        # STEPS (in order)
+        # ================
+        # Install Client
+        # Install Server
+        # Build Showcase
         - node scripts/travis/release $RB_SHOWCASE_DIR
       deploy:
         <<: *heroku
