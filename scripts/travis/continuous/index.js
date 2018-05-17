@@ -1,6 +1,6 @@
-/*******************
- * TRAVIS DEV BUILD
- *******************/
+/**************************
+ * TRAVIS CONTINUOUS BUILD
+ **************************/
 require('../../bootstrap/colors');
 const args  = process.argv.slice(2);
 const paths = {

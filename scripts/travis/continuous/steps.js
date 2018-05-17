@@ -1,6 +1,6 @@
-/*************************
- * TRAVIS DEV BUILD STEPS
- *************************/
+/********************************
+ * TRAVIS CONTINUOUS BUILD STEPS
+ ********************************/
 const { exec, execSync } = require('child_process');
 const util               = require('util');
 const execPromise        = util.promisify(exec);

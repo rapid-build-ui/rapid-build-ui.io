@@ -1,10 +1,10 @@
-# ============================
+# ==============================
 # COMMON SETUP
-# ============================
+# ==============================
 # Travis only runs on:
-# Commit to "dev" branch.
+# Commit to "continuous" branch.
 # Valid semver tag is created.
-# ============================
+# ==============================
 language: node_js
 
 node_js:
@@ -55,7 +55,7 @@ jobs:
   include:
     # Continuous
     # ==========
-    - if: branch = dev
+    - if: branch = continuous
       before_script:
         # STEPS (in order)
         # ================
@@ -63,12 +63,12 @@ jobs:
         # Setup Components
         # Setup Showcase
         # Build Showcase
-        - node scripts/travis/dev $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR
+        - node scripts/travis/continuous $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR
       deploy:
         <<: *heroku
         app: rapid-build-ui-io-dev
         on:
-          branch: dev
+          branch: continuous
 
     # Release
     # =======
