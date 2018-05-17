@@ -22,8 +22,8 @@ const BEGIN_LOG_OPTS = { logType: 'alert', separate: 'underline', topBumper: tru
 const Steps = (paths, components) => { // :{}
 	return {
 		cloneComponentRepos() { // :Promise[{}] - (runs asynchronously)
-			clog.setupBegin(components.names, 'cloning rb components', BEGIN_LOG_OPTS);
-			const cloneCmd = 'git clone --depth 1';
+			clog.setupBegin(components.names, 'cloning rb components continuous', BEGIN_LOG_OPTS);
+			const cloneCmd = 'git clone --depth 1 --branch continuous';
 			const opts     = { cwd: paths.components };
 			let promises   = [];
 			for (const [i, repoName] of components.repoNames.entries()) {
