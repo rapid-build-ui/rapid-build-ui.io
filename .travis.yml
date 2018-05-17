@@ -81,12 +81,12 @@ jobs:
           branch: continuous
       notifications:
         email:
-          on_success: always
-          on_failure: always
           recipients:
             - jyounce@yahoo.com
             - yevgeniyokun@gmail.com
             - rapidbuildui@yahoo.com
+          on_success: always
+          on_failure: always
 
     # Release
     # =======
