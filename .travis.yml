@@ -45,8 +45,7 @@ deploy: &heroku
 
 # Notifications
 # =============
-notifications: &notify
-  email:
+rb_notify: &notify-email
     on_success: never
     on_failure: always
     recipients:
@@ -81,8 +80,8 @@ jobs:
         on:
           branch: continuous
       notifications:
-        <<: *notify
         email:
+          <<: *notify-email
           on_success: always
 
     # Release
