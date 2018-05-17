@@ -31,7 +31,7 @@ cache:
 # Install Global Dependencies
 # ===========================
 before_install:
-  - if [[ $(npm -v) != '6.0.1' ]]; then npm install -g npm@6.0.1; fi                   # version check
+  - if [[ $(npm -v) != $NPM_VERSION ]]; then npm install -g npm@${NPM_VERSION}; fi     # version check
   - if [[ $(yarn -v) != $YARN_VERSION ]]; then npm install -g yarn@${YARN_VERSION}; fi # version check
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi       # if not installed
 
