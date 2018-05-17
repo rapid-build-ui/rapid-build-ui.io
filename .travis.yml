@@ -45,13 +45,13 @@ deploy: &heroku
 
 # Notifications
 # =============
-rb_notify: &rb_notify
-    on_success: never
-    on_failure: always
-    recipients:
-      - jyounce@yahoo.com
-      - yevgeniyokun@gmail.com
-      - rapidbuildui@yahoo.com
+# rb_notify: &rb_notify
+#     on_success: never
+#     on_failure: always
+#     recipients:
+#       - jyounce@yahoo.com
+#       - yevgeniyokun@gmail.com
+#       - rapidbuildui@yahoo.com
 
 # ====================================
 # SPECIFIC JOBS
@@ -81,8 +81,12 @@ jobs:
           branch: continuous
       notifications:
         email:
-          <<: *rb_notify
           on_success: always
+          on_failure: always
+          recipients:
+            - jyounce@yahoo.com
+            - yevgeniyokun@gmail.com
+            - rapidbuildui@yahoo.com
 
     # Release
     # =======
