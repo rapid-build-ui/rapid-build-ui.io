@@ -1,10 +1,15 @@
-# ==============================
+# ================================
 # COMMON SETUP
-# ==============================
+# ================================
 # Travis only runs on:
-# Commit to "continuous" branch.
-# Valid semver tag is created.
-# ==============================
+# - Commit to "continuous" branch.
+# - Valid semver tag is created.
+# ================================
+# TOKENS AVAILABLE
+# Added via web gui -> settings
+# ================================
+# HEROKU_API_KEY
+# ================================
 language: node_js
 
 node_js:
@@ -19,8 +24,6 @@ env:
     - RB_SHOWCASE_DIR="$TRAVIS_BUILD_DIR"
     - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
     - YARN_LINK_DIR="$(yarn global dir)/../link"
-    # TOKENS (in order): HEROKU_API_KEY
-    - secure: f/m6AZl0/n+bGmPSmWL4zn7dcr3HINMsBdzh7jvdSs/rqcY24bgDxeMJmz21tIOiCn5SMSM908+C2sUJ9wIk3GG12ejIIyxX5nRtBo54wSRl2cBoEW4ARAYzGr8QzXWc63ykX9kovRbtNCLI8BDMENuwJHeQg9CcEoUfJmv+fe21KY5Q/zLFOcEbZJIwn84yoApBQnq5ukd0n/GjBSrv2zwHunhGV09y9PHV4rGRMfeQ5tpXz40qLCFEYXohqejIWE/PudrUck4St6jLvZLpnOuWGDNQu0G5Uy/2HnS48HT0ljZZy+KxGhFj8y+1lHtTEuFaY6i37AUD0NT/alKUs4Y/56IrSD/k4h6jpsyuSLIiOGk0q2gY6WhBJvDIv4PNTQOzjK+o/uG44c1J0d+wV+mj9A5g+1tvn0tP68s5sLA4TIVGmnPTFEgToZX1WHGVp12ViLvOmpFsdtsh/KKLcTyOzBO+KYbMd4hcNq+mTPyM+GlKm4mX5waHwD19httu96KXqfcf5+U8Ttrnq+jW+w/6+AmFQwkxZ1Cta+y5g2KmBJju7gU1aXSYTvyrBhvcQe4x2E2755leYHz5AnUzVt8QS3LuUTT6Pf2/Qz+gkqeUExTjK0NEWtn22FfKmr30Gy+Tz5kigIBYfW4Ub1pfj05umX5XpAHAJo3Cpk5HmvA=
 
 cache:
   directories:
