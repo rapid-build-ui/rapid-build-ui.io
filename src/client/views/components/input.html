@@ -16,12 +16,11 @@
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Demo</h5>
-
-		<rba-input caption="label" model="a.label" type="text"></rba-input>
-		<rba-input caption="value" model="a.value" type="text"></rba-input>
-		<rba-input caption="subtext" model="a.subtext" type="text"></rba-input>
-		<rba-input caption="placeholder" model="a.placeholder" type="text"></rba-input>
+		<h5 style="padding-bottom: 15px;" rba-text-curve>Demo</h5>
+		<rb-input label="label" value="{{a.label}}"></rb-input>
+		<rb-input label="value" model="{{a.value}}"></rb-input>
+		<rb-input label="subtext" model="{{a.subtext}}"></rb-input>
+		<rb-input label="placeholder" model="{{a.placeholder}}"></rb-input>
 
 		<!-- ICON OPTIONS -->
 		<rba-radios caption="icon" model="a.icon" data="icons" toggle></rba-radios>
