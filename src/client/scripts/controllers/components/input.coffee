@@ -88,13 +88,13 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 
 		# Watches
 		# =======
-		markupWatch = $scope.$watch 'a', (oldVal, newVal) ->
+		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
 		, true
 
 		# Input Listeners
 		# ===============
-		evenListener.addListenersToInputs $element, $scope
+		evenListener.addListenersToInputs $element
 
 
 		# Event Handlers
