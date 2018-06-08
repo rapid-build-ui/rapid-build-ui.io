@@ -5,8 +5,35 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 	type: null
 	required: false
 ,
+	attribute: 'icon'
+	description: 'Adds icon to component.'
+	options: '<a target= "_blank" href="/components/rb-icon">rb-icon kind</a>'
+	type: 'string'
+	required: false
+,
+	attribute: 'icon-position'
+	description: '
+		<em class="default-val">defaults to <b>right</b></em>
+		Icon position.
+	'
+	options: 'left'
+	type: 'string'
+	required: false
+,
+	attribute: 'icon-source'
+	description: 'Refer to options.'
+	options: '<a target= "_blank" href="/components/rb-icon">rb-icon source</a>'
+	type: 'string'
+	required: false
+,
 	attribute: 'label'
 	description: 'Label text.'
+	options: null
+	type: 'string'
+	required: false
+,
+	attribute: 'placeholder'
+	description: 'Input placeholder.'
 	options: null
 	type: 'string'
 	required: false
@@ -22,6 +49,15 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 		Additional information.
 	'
 	options: null
+	type: 'string'
+	required: false
+,
+	attribute: 'type'
+	description: '
+		<em class="default-val"><b>text</b> - defult</em>
+		Input type attribute.
+	'
+	options: 'number'
 	type: 'string'
 	required: false
 ,
@@ -68,32 +104,5 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 	'
 	options: null
 	type: 'array'
-	required: false
-,
-	attribute: 'placeholder'
-	description: 'Input placeholder.'
-	options: null
-	type: 'string'
-	required: false
-,
-	attribute: 'icon'
-	description: 'Adds icon to component.'
-	options: '<a target= "_blank" href="/components/rb-icon">rb-icon kind</a>'
-	type: 'string'
-	required: false
-,
-	attribute: 'icon-position'
-	description: '
-		<em class="default-val">defaults to <b>right</b></em>
-		Icon position.
-	'
-	options: 'left'
-	type: 'string'
-	required: false
-,
-	attribute: 'icon-source'
-	description: 'Refer to options.'
-	options: '<a target= "_blank" href="/components/rb-icon">rb-icon source</a>'
-	type: 'string'
 	required: false
 ]

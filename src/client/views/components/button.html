@@ -22,13 +22,15 @@
 		<rba-radios caption="kind" model="a.kind" data="kinds" toggle></rba-radios>
 		<rba-radios caption="size" model="a.size" data="sizes" toggle></rba-radios>
 		<rba-checkbox caption="disabled" model="a.disabled"></rba-checkbox>
-		<rba-input caption="content" model="a.content"></rba-input>
+		<rb-input label="content" value="{{a.content}}"></rb-input>
 
 		<!-- ICON OPTIONS -->
 		<rba-radios caption="icon" model="a.icon" data="icons" toggle></rba-radios>
 		<rba-radios caption="icon-source" model="a.iconSource" data="iconSources" toggle></rba-radios>
 		<rba-checkbox caption="icon-position" model="a.iconPosition" value="iconPosition" sub-caption="{{iconPosition}}"></rba-checkbox>
-		<rba-input caption="icon-size" model="a.iconSize" type="number"></rba-input>
+		<rb-input label="icon-size" value="{{a.iconSize}}" type="number"></rb-input>
+
+
 
 		<!-- FORM CONTROLS -->
 		<section class="buttons">

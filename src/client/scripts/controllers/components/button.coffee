@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$element',
-	($scope, $element) ->
+angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$element', 'evenListenerService',
+	($scope, $element, evenListener) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -32,6 +32,9 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 			$scope.a =
 				content: 'Button' # :string | html
 
+			evenListener.resetInputs $element, $scope.a
+
+
 		$scope.save = (e) ->
 			console.log $scope.demoForm
 
@@ -39,6 +42,10 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 		# =======
 		markupWatch = $scope.$watch ->
 			$scope.markup = createMarkup()
+
+		# Input Listeners
+		# ===============
+		evenListener.addListenersToInputs $element, $scope
 
 		# Event Handlers
 		# ==============
@@ -54,6 +61,7 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 		# ========
 		$scope.$on '$destroy', ->
 			resetBtn.removeEventListener 'clicked', resetFrm
+			evenListener.removeListenersToInputs $element
 			markupWatch()
 
 ]

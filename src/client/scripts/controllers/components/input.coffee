@@ -8,6 +8,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 
 			attrs += "#{s}label=\"#{$scope.a.label}\"" if $scope.a.label
 			attrs += "#{s}value=\"#{$scope.a.value}\"" if $scope.a.value
+			attrs += "#{s}type=\"#{$scope.a.type}\"" if $scope.a.type?.length
 			attrs += "#{s}subtext=\"#{$scope.a.subtext}\"" if $scope.a.subtext
 			attrs += "#{s}placeholder=\"#{$scope.a.placeholder}\"" if $scope.a.placeholder
 			attrs += "#{s}disabled" if $scope.a.disabled
@@ -68,6 +69,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			'minMaxLength'
 			'custom'
 		]
+		$scope.types = ['number']
 
 		$scope.validations = [
 			'required'
