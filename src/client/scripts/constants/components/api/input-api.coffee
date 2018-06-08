@@ -26,6 +26,12 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 	type: 'string'
 	required: false
 ,
+	attribute: 'inline'
+	description: 'Displays input inline'
+	options: null
+	type: null
+	required: false
+,
 	attribute: 'label'
 	description: 'Label text.'
 	options: null

@@ -13,6 +13,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			attrs += "#{s}placeholder=\"#{$scope.a.placeholder}\"" if $scope.a.placeholder
 			attrs += "#{s}disabled" if $scope.a.disabled
 			attrs += "#{s}right" if $scope.a.right
+			attrs += "#{s}inline" if $scope.a.inline
 			attrs += "#{s}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
 			attrs += "#{s}icon=\"#{$scope.a.icon}\"" if $scope.a.icon
 			attrs += "#{s}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
