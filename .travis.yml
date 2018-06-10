@@ -8,7 +8,7 @@
 # TOKENS AVAILABLE
 # Added via web gui -> settings
 # ================================
-# HEROKU_API_KEY
+# HEROKU_TOKEN
 # ================================
 language: node_js
 
@@ -45,7 +45,7 @@ before_install:
 deploy: &heroku
   provider: heroku
   skip_cleanup: true
-  api_key: $HEROKU_API_KEY
+  api_key: $HEROKU_TOKEN
 
 # ===================================
 # SPECIFIC JOBS
