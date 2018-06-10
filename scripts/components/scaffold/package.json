@@ -1,43 +1,43 @@
 {
-	"name": "{{name}}-proj",
-	"version": "0.0.0",
-	"description": "Rapid Build UI - Component Project: {{name}}",
-	"license": "MIT",
-	"engines": {
-		"npm": "5.x",
-		"node": "8.x"
-	},
-	"contributors": [
-		{
-			"name": "Judd Younce",
-			"email": "jyounce@yahoo.com",
-			"url": "https://github.com/jyounce"
-		},
-		{
-			"name": "Yevgeniy Okun",
-			"email": "yevgeniyokun@gmail.com",
-			"url": "https://github.com/yokun"
-		},
-		{
-			"name": "Alina Younce",
-			"email": "crisan_alina2003@yahoo.com",
-			"url": "https://github.com/ayounce"
-		}
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/rapid-build-ui/{{name}}"
-	},
-	"bugs": {
-		"url": "https://github.com/rapid-build-ui/{{name}}/issues"
-	},
-	"scripts": {
-		"link": "cd dist/client/ && yarn link",
-		"unlink": "cd dist/client/ && yarn unlink",
-		"relink": "npm run link && npm run unlink && npm run link",
-		"install-client": "cd src/client/ && yarn install --ignore-engines",
-		"install-server": "cd src/server/ && npm install",
-		"install-src": "npm run install-client && npm run install-server",
-		"setup": "npm run install-src && rapid-build && npm run relink"
-	}
+  "name": "{{name}}-proj",
+  "version": "0.0.0",
+  "description": "Rapid Build UI - Component Project: {{name}}",
+  "license": "MIT",
+  "engines": {
+    "npm": "5.x",
+    "node": "8.x"
+  },
+  "contributors": [
+    {
+      "name": "Judd Younce",
+      "email": "jyounce@yahoo.com",
+      "url": "https://github.com/jyounce"
+    },
+    {
+      "name": "Yevgeniy Okun",
+      "email": "yevgeniyokun@gmail.com",
+      "url": "https://github.com/yokun"
+    },
+    {
+      "name": "Alina Younce",
+      "email": "crisan_alina2003@yahoo.com",
+      "url": "https://github.com/ayounce"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rapid-build-ui/{{name}}"
+  },
+  "bugs": {
+    "url": "https://github.com/rapid-build-ui/{{name}}/issues"
+  },
+  "scripts": {
+    "link": "cd dist/client/ && yarn link",
+    "unlink": "cd dist/client/ && yarn unlink",
+    "relink": "npm run link && npm run unlink && npm run link",
+    "install-client": "cd src/client/ && yarn install --ignore-engines",
+    "install-server": "cd src/server/ && npm install",
+    "install-src": "npm run install-client && npm run install-server",
+    "setup": "npm run install-src && rapid-build && npm run relink"
+  }
 }

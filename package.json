@@ -1,56 +1,56 @@
 {
-	"name": "rapid-build-ui-proj",
-	"version": "0.0.3",
-	"description": "Rapid Build UI - Project",
-	"license": "MIT",
-	"engines": {
-		"npm": "6.x",
-		"node": "8.x"
-	},
-	"contributors": [
-		{
-			"name": "Judd Younce",
-			"email": "jyounce@yahoo.com",
-			"url": "https://github.com/jyounce"
-		},
-		{
-			"name": "Yevgeniy Okun",
-			"email": "yevgeniyokun@gmail.com",
-			"url": "https://github.com/yokun"
-		},
-		{
-			"name": "Alina Younce",
-			"email": "crisan_alina2003@yahoo.com",
-			"url": "https://github.com/ayounce"
-		}
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/rapid-build-ui/rapid-build-ui.io"
-	},
-	"bugs": {
-		"url": "https://github.com/rapid-build-ui/rapid-build-ui.io/issues"
-	},
-	"scripts": {
-		"start": "node server/rapid-build/start-server",
-		"stop": "node server/rapid-build/stop-server",
-		"heroku-postbuild": "node scripts/heroku/postbuild",
-		"create-component": "node scripts/api/create-component",
-		"install-client": "cd src/client/ && yarn install --ignore-engines",
-		"install-server": "cd src/server/ && npm install",
-		"presetup": "node scripts/api/link-components",
-		"setup": "npm run install-client && npm run install-server",
-		"setup-components": "node scripts/api/setup-components"
-	},
-	"dependencies": {
-		"colors": "^1.2.1",
-		"del": "^3.0.0",
-		"extract-zip": "^1.6.6",
-		"fs-extra": "^6.0.0",
-		"glob": "^7.1.2",
-		"mustache": "^2.3.0",
-		"q": "^1.5.1",
-		"request": "^2.85.0",
-		"strip-ansi": "^4.0.0"
-	}
+  "name": "rapid-build-ui-proj",
+  "version": "0.0.3",
+  "description": "Rapid Build UI - Project",
+  "license": "MIT",
+  "engines": {
+    "npm": "6.x",
+    "node": "8.x"
+  },
+  "contributors": [
+    {
+      "name": "Judd Younce",
+      "email": "jyounce@yahoo.com",
+      "url": "https://github.com/jyounce"
+    },
+    {
+      "name": "Yevgeniy Okun",
+      "email": "yevgeniyokun@gmail.com",
+      "url": "https://github.com/yokun"
+    },
+    {
+      "name": "Alina Younce",
+      "email": "crisan_alina2003@yahoo.com",
+      "url": "https://github.com/ayounce"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rapid-build-ui/rapid-build-ui.io"
+  },
+  "bugs": {
+    "url": "https://github.com/rapid-build-ui/rapid-build-ui.io/issues"
+  },
+  "scripts": {
+    "start": "node server/rapid-build/start-server",
+    "stop": "node server/rapid-build/stop-server",
+    "heroku-postbuild": "node scripts/heroku/postbuild",
+    "create-component": "node scripts/api/create-component",
+    "install-client": "cd src/client/ && yarn install --ignore-engines",
+    "install-server": "cd src/server/ && npm install",
+    "presetup": "node scripts/api/link-components",
+    "setup": "npm run install-client && npm run install-server",
+    "setup-components": "node scripts/api/setup-components"
+  },
+  "dependencies": {
+    "colors": "^1.2.1",
+    "del": "^3.0.0",
+    "extract-zip": "^1.6.6",
+    "fs-extra": "^6.0.0",
+    "glob": "^7.1.2",
+    "mustache": "^2.3.0",
+    "q": "^1.5.1",
+    "request": "^2.85.0",
+    "strip-ansi": "^4.0.0"
+  }
 }

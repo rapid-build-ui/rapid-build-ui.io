@@ -1,39 +1,39 @@
 {
-	"name": "@rapid-build-ui/{{name}}",
-	"version": "0.0.0",
-	"main": "scripts/{{name}}.js",
-	"description": "Rapid Build UI Component: {{name}}",
-	"license": "MIT",
-	"engines": {
-		"npm": "5.x",
-		"node": "8.x"
-	},
-	"contributors": [
-		{
-			"name": "Judd Younce",
-			"email": "jyounce@yahoo.com",
-			"url": "https://github.com/jyounce"
-		},
-		{
-			"name": "Yevgeniy Okun",
-			"email": "yevgeniyokun@gmail.com",
-			"url": "https://github.com/yokun"
-		},
-		{
-			"name": "Alina Younce",
-			"email": "crisan_alina2003@yahoo.com",
-			"url": "https://github.com/ayounce"
-		}
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/rapid-build-ui/{{name}}"
-	},
-	"bugs": {
-		"url": "https://github.com/rapid-build-ui/{{name}}/issues"
-	},
-	"flat": true,
-	"dependencies": {
-		"@polymer/polymer": "next"
-	}
+  "name": "@rapid-build-ui/{{name}}",
+  "version": "0.0.0",
+  "main": "scripts/{{name}}.js",
+  "description": "Rapid Build UI Component: {{name}}",
+  "license": "MIT",
+  "engines": {
+    "npm": "5.x",
+    "node": "8.x"
+  },
+  "contributors": [
+    {
+      "name": "Judd Younce",
+      "email": "jyounce@yahoo.com",
+      "url": "https://github.com/jyounce"
+    },
+    {
+      "name": "Yevgeniy Okun",
+      "email": "yevgeniyokun@gmail.com",
+      "url": "https://github.com/yokun"
+    },
+    {
+      "name": "Alina Younce",
+      "email": "crisan_alina2003@yahoo.com",
+      "url": "https://github.com/ayounce"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rapid-build-ui/{{name}}"
+  },
+  "bugs": {
+    "url": "https://github.com/rapid-build-ui/{{name}}/issues"
+  },
+  "flat": true,
+  "dependencies": {
+    "@polymer/polymer": "next"
+  }
 }
