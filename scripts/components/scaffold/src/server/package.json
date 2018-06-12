@@ -1,11 +1,11 @@
 {
   "name": "{{name}}-server",
   "version": "0.0.0",
-  "description": "Rapid Build UI - Component Server: {{name}}",
+  "description": "Rapid Build UI Web Component Server: {{name}}",
   "license": "MIT",
   "engines": {
-    "npm": "5.x",
-    "node": "8.x"
+    "node": "8.x",
+    "npm": "6.x"
   },
   "contributors": [
     {
@@ -24,6 +24,13 @@
       "url": "https://github.com/ayounce"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rapid-build-ui/{{name}}"
+  },
+  "bugs": {
+    "url": "https://github.com/rapid-build-ui/{{name}}/issues"
+  },
   "scripts": {
     "start": "node rapid-build/start-server",
     "stop": "node rapid-build/stop-server"

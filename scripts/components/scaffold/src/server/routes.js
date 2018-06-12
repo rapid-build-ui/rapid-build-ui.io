@@ -2,7 +2,7 @@
  * {{upName}} SERVER
  *****************/
 module.exports = server => {
-	var app  = server.app;
+	var app  = server.app,
 		cors = require('cors');
 
 	app.use(cors());

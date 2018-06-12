@@ -2,11 +2,14 @@
   "name": "@rapid-build-ui/{{name}}",
   "version": "0.0.0",
   "main": "scripts/{{name}}.js",
-  "description": "Rapid Build UI Component: {{name}}",
+  "description": "Rapid Build UI Web Component: {{name}}",
   "license": "MIT",
   "engines": {
-    "npm": "5.x",
-    "node": "8.x"
+    "node": "8.x",
+    "npm": "6.x"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "contributors": [
     {
@@ -34,6 +37,6 @@
   },
   "flat": true,
   "dependencies": {
-    "@polymer/polymer": "next"
+    "@polymer/polymer": "^3"
   }
 }
