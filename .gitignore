@@ -24,6 +24,7 @@ node_modules/
 
 # folders (project specific)
 # ==========================
+/.rb-components/
 /scripts/components/.*
 
 # files (project specific)

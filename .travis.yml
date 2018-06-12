@@ -1,15 +1,15 @@
-# ================================
+# ===============================
 # COMMON SETUP
-# ================================
-# Travis only runs on:
-# - Commit to "continuous" branch.
-# - Valid semver tag is created.
-# ================================
+# ===============================
+# Travis only runs on commit to:
+# - continuous branch
+# - master branch (for releases)
+# ===============================
 # TOKENS AVAILABLE
-# Added via web gui -> settings
-# ================================
-# HEROKU_TOKEN
-# ================================
+# - Added via web gui -> settings
+# - GITHUB_TOKEN
+# - HEROKU_TOKEN
+# ===============================
 language: node_js
 
 node_js:
@@ -20,10 +20,9 @@ env:
     # Versions
     - NPM_VERSION="6.0.1"
     - YARN_VERSION="1.6.0"
-    # Directories
-    - RB_SHOWCASE_DIR="$TRAVIS_BUILD_DIR"
-    - RB_COMPONENTS_DIR="$RB_SHOWCASE_DIR/.."
-    - YARN_LINK_DIR="$(yarn global dir)/../link"
+    - RB_REPO_SLUG="$TRAVIS_REPO_SLUG"
+    - RB_PROJECT_PATH="$TRAVIS_BUILD_DIR"
+    - YARN_LINK_PATH="$(yarn global dir)/../link"
 
 cache:
   directories:
@@ -40,54 +39,44 @@ before_install:
   - if [[ $(yarn -v) != $YARN_VERSION ]]; then npm install -g yarn@${YARN_VERSION}; fi # version check
   - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi       # if not installed
 
-# Shared Heroku Settings
-# ======================
-deploy: &heroku
-  provider: heroku
-  skip_cleanup: true
-  api_key: $HEROKU_TOKEN
-
 # ===================================
 # SPECIFIC JOBS
 # ===================================
 # - before_script:
 #   Runs after npm install.
 #   Stops build immediately on error.
-# - Release Job:
-#   Must be a valid semver tag.
-#   Examples: v1.0.0 or v1.0.0-beta.1
 # ===================================
 jobs:
   include:
     # Continuous
     # ==========
     - if: branch = continuous
-      before_script:
-        # STEPS (in order)
-        # ================
-        # Clone Component Repos
-        # Setup Components
-        # Setup Showcase
-        # Build Showcase
-        - node scripts/travis/continuous $RB_SHOWCASE_DIR $RB_COMPONENTS_DIR
       deploy:
-        <<: *heroku
-        app: rapid-build-ui-io-dev
+        # create directory for cloned components (.rb-components)
+        # clone component repos (into .rb-components)
+        # setup components
+        # setup showcase
+        # build showcase
+        # create heroku dist/package.json
+        # publish heroku app rapid-build-ui-io-dev
+        script: npm run build-continuous
+        provider: script
+        skip_cleanup: true
         on:
           branch: continuous
 
     # Release
     # =======
-    - if: tag =~ ^v(\d+\.)(\d+\.)(\d+)(-([A-Za-z]+\.)?(\d+\.)?(\d+\.)?(\d+))?$
-      before_script:
-        # STEPS (in order)
-        # ================
-        # Install Client
-        # Install Server
-        # Build Showcase
-        - node scripts/travis/release $RB_SHOWCASE_DIR
+    - if: branch = master
       deploy:
-        <<: *heroku
-        app: rapid-build-ui-io-staging
+        # install client
+        # install server
+        # build showcase
+        # create heroku dist/package.json
+        # publish heroku app rapid-build-ui-io-staging
+        # publish github release from master
+        script: npm run build-release
+        provider: script
+        skip_cleanup: true
         on:
-          tags: true
+          branch: master
