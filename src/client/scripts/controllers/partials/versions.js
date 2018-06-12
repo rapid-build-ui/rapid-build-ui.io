@@ -1,6 +1,6 @@
-angular.module('rapid-build').controller('versionsController', ['$scope', 'SHOWCASE_VERSION',
-	($scope, SHOWCASE_VERSION) => {
+angular.module('rapid-build').controller('versionsController', ['$scope', 'VERSIONS',
+	($scope, VERSIONS) => {
 
-		$scope.showcaseVersion = `v${SHOWCASE_VERSION}`;
+		$scope.showcaseVersion = `v${VERSIONS.showcase}`;
 
 }]);
