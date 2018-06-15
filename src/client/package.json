@@ -36,6 +36,7 @@
     "@rapid-build-ui/rb-input": "*",
     "@rapid-build-ui/rb-nav": "*",
     "@rapid-build-ui/rb-popover": "*",
+    "@webcomponents/webcomponentsjs": "^2.0.2",
     "gridlex": "2.7.1"
   }
 }
