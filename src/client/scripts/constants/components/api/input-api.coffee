@@ -60,7 +60,7 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 ,
 	attribute: 'type'
 	description: '
-		<em class="default-val"><b>text</b> - defult</em>
+		<em class="default-val">defaults to <b>text</b></em>
 		Input type attribute.
 	'
 	options: 'number'
@@ -74,40 +74,50 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 	required: false
 ,
 	attribute: 'validation'
-	description: '
+	description: """
 		Collection of one or more validations
 		that will be triggered in the provided sequence.
-
-		<h6>options:</h6>
+		<h6>Validation options:</h6>
 		<ul>
 			<li>
-				<em>string</em><br>
-				See demo above for <strong>required</strong>.
+				<strong>string</strong>
+				<b class="sub">(see demo required)</b>
 			</li>
 			<li>
-				<em>object</em>: {key:value}<br>
-				See demo above for <strong>minLength</strong>
-			</li>
-			<li>
-				<em>nested object</em>:<br>
+				<strong>object</strong>
+				<b class="sub">(see demo minLength)</b>
 				<pre>
-				{<br>
-					&#9 key: {key1: value, key2: value ...}
-				<br>
+				{
+					key: value
 				}
 				</pre>
-				See demo above for <strong>minMaxLength</strong>
 			</li>
 			<li>
-				<em>function:</em><br>
-				Custom function which takes one value parameter and should return an object with two properties:
+				<strong>nested object</strong>
+				<b class="sub">(see demo minMaxLength)</b>
 				<pre>
-					&#9 {valid: bool, message: string}
+				{
+					key: {
+						key: value[, key: value]
+					}
+				}
 				</pre>
-				See demo above for <strong>custom</strong>
+			</li>
+			<li>
+				<strong>function</strong>
+				<b class="sub">(see demo custom)</b><br>
+				Custom function takes one
+				value parameter and must return
+				an object with two properties:
+				<pre>
+				{
+					valid: bool,
+					message: string
+				}
+				</pre>
 			</li>
 		</ul>
-	'
+	"""
 	options: null
 	type: 'array'
 	required: false
