@@ -8,6 +8,7 @@ common:
 
 	angular:
 		moduleName: 'rapid-build'
+		modules: ['ngclipboard']
 		bootstrap: true
 		templateCache:
 			dev: true
@@ -54,6 +55,8 @@ common:
 		scripts:
 			first: [
 				'scripts/polyfills/*.*'
+				'node_modules/clipboard/dist/clipboard.min.js'
+				'node_modules/ngclipboard/dist/ngclipboard.min.js'
 			]
 		styles:
 			first: [

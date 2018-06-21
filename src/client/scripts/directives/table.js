@@ -14,12 +14,12 @@ angular.module('rapid-build').directive('rbaTable', ['$filter', '$injector', 'pr
 			const headings = angular.copy(source[0]); // removes angular's $$hashKey
 
 			/* Props
-		 	 ********/
+			 ********/
 			scope.source   = source;
 			scope.headings = Object.keys(headings); // props of first object
 
 			/* Methods
-		 	 **********/
+			 **********/
 			scope.getHtml = (key, val) => {
 				const filter = item =>
 					val = $filter(item)(val);

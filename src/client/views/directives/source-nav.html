@@ -1,4 +1,4 @@
-<rb-nav active="false">
+<rb-nav class="rb-source-nav" active="false">
 	<a target="_blank"
 	   ng-href="{{::src.url}}"
 	   ng-repeat="src in ::source"
@@ -16,6 +16,15 @@
 			caption="Install"
 			icon-source="solid"
 			ng-switch-when="true">
+			<rb-popover
+				unstyled
+				icon="copy"
+				position="top"
+				ngclipboard
+				ngclipboard-success="copied(e)"
+				data-clipboard-text="{{ src.popover }}">
+				Copied!
+			</rb-popover>
 			{{ src.popover }}
 		</rb-popover>
 		<rb-icon
