@@ -94,10 +94,29 @@ angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret',
 
 			# Actions
 			# =======
-			if iAttrs.actions == 'clear'
+			if iAttrs.actions == 'clear' # TODO
 				scope.clear = ->
 					scope.model = ''
 					textarea?.focus()
+
+			if iAttrs.actions == 'copy'
+				copiedMsg =
+					_timer: null
+					_isShowing: ->
+						return true if !this._timer
+						$timeout.cancel this._timer
+						this._timer = null;
+						false;
+					hide: (e, delay) ->
+						return if !this._isShowing()
+						@_timer = $timeout =>
+							e.trigger.click(e)
+							@_timer = null
+							e.clearSelection()
+						, delay
+				scope.copied = (e) ->
+					copiedMsg.hide e, 2000
+					e.clearSelection()
 
 			# Destroys
 			# ========

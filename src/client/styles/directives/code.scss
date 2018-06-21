@@ -28,12 +28,10 @@
 	/* Caption
 	 **********/
 	h5 {
-		display: inline-block;
-		position: relative;
-		top: 1px;
-		padding-left: 6px;
+		display: flex;
+		// justify-content: space-between;
+		padding: 0 4.5% 0 6px;
 		margin-bottom: 10px;
-		// color: $grey;
 	}
 
 	/* Optional
@@ -56,20 +54,42 @@
 
 	/* Actions
 	 **********/
+	// .actions {
+	// 	position: absolute;
+	// 	top: -29px;
+	// 	right: 4.5%;
+	// 	padding: 5px 10px;
+	// 	background-color: $whiteLight;
+	// 	border: 1px dashed $xxxGreyLight;
+	// 	border-bottom: none;
+	// 	border-radius: 10px 10px 0 0;
+	// 	> a {
+	// 		padding: 0;
+	// 		margin-left: 5px;
+	// 		&:first-child {
+	// 			margin-left: 0;
+	// 		}
+	// 	}
+	// 	rb-popover {
+	// 		color: $grey;
+	// 		&:hover,
+	// 		&:focus {
+	// 			color: $greyLightest;
+	// 		}
+	// 	}
+	// }
+
 	.actions {
-		position: absolute;
-		top: -29px;
-		right: 4.5%;
-		padding: 5px 10px;
-		background-color: $whiteLight;
-		border: 1px dashed $xxxGreyLight;
-		border-bottom: none;
-		border-radius: 10px 10px 0 0;
-		> a {
-			padding: 0;
-			margin-left: 5px;
-			&:first-child {
-				margin-left: 0;
+		position: relative;
+		top: 1px;
+		margin: 0 0 0 remy(10);
+		text-transform: none;
+		font-size: .9em;
+		rb-popover {
+			&:hover,
+			&:focus {
+				color: darken(steelblue, 15%);
+				// color: lighten(steelblue, 15%);
 			}
 		}
 	}

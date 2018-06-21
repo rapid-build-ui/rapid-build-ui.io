@@ -4,7 +4,24 @@
 				!!height ? height+'-height' : '',
 				scroll !== undefined ? 'scroll' : ''
 			   ].join(' ')">
-	<h5 ng-bind="caption" ng-show="!!caption"></h5>
+	<h5 ng-show="!!caption || !!actions">
+		{{ caption }}
+		<div class="actions" ng-if="!!actions">
+			<!-- <a href tabindex="0" ng-click="clear()">clear</a> -->
+			<!-- <a href tabindex="0" ng-click="addAction()">add</a> -->
+			<!-- <a href tabindex="0" ng-click="compress()">compress</a> -->
+			<!-- <a href tabindex="0" ng-click="edit()">edit</a> -->
+			<rb-popover
+				unstyled
+				icon="copy"
+				position="top"
+				ngclipboard
+				ngclipboard-success="copied(e)"
+				data-clipboard-target="textarea">
+				Copied!
+			</rb-popover>
+		</div>
+	</h5>
 	<span
 		class="optional"
 		ng-hide="optional === undefined"
@@ -12,13 +29,6 @@
 	</span>
 	<div class="content" ng-switch="hasModel">
 		<div ng-switch-when="true">
-			<!-- <div class="actions" ng-if="!!actions">
-				<a href tabindex="0" ng-click="clear()">clear</a>
-				<a href tabindex="0" ng-click="addAction()">add</a>
-				<a href tabindex="0" ng-click="compress()">compress</a>
-				<a href tabindex="0" ng-click="copy()">copy</a>
-				<a href tabindex="0" ng-click="edit()">edit</a>
-			</div> -->
 			<textarea
 				readonly
 				ng-model="$parent.model"
