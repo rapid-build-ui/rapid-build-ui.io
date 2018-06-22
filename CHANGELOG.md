@@ -1,3 +1,21 @@
-# CHANGELOG
+## [0.0.4](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.3...v0.0.4) (2018-06-22)
 
-&#9874; Will be kept once official releases start.
+
+### Bug Fixes
+
+* **safari support:** fix safari from crashing by updating @rapid-build-ui/rb-button dep ([0521e18](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/0521e18))
+* **fix icons:** from not showing up for all evergreen browsers by updating @rapid-build-ui/rb-icon dep ([0521e18](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/0521e18))
+* **polyfill:** add webcomponents-loader.js polyfill to somewhat fix firefox and edge ([c6a9c53](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/c6a9c53))
+
+
+### Features
+
+* **dog food:** use rb-input component instead of angular directive rba-input ([17c26bb](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/17c26bb))
+* **getting started page:** update it ([c37bc2d](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/c37bc2d))
+* **browser support page:** update it ([3728539](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/3728539))
+* **rb-input showcase page:** add inline option ([dfaa34f](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/dfaa34f))
+* **copy component install button:** create it for easy copying of component install cli ([afb0468](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/afb0468))
+* **copy component markup button:** create it for easy copying of component(s) markup ([2920c22](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/2920c22))
+
+
+
