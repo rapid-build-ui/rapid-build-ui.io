@@ -35,8 +35,8 @@
     "@rapid-build-ui/rb-icon": "^0.0.3",
     "@rapid-build-ui/rb-input": "^0.0.3",
     "@rapid-build-ui/rb-nav": "^0.0.3",
-    "@rapid-build-ui/rb-radios": "~0.0.0",
     "@rapid-build-ui/rb-popover": "^0.0.4",
+    "@rapid-build-ui/rb-radios": "~0.0.0",
     "@webcomponents/webcomponentsjs": "^2.0.2",
     "gridlex": "2.7.1",
     "ngclipboard": "^2.0.0"
