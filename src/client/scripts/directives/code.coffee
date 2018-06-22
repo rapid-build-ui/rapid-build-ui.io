@@ -120,15 +120,14 @@ angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret', 'preSer
 						$timeout.cancel this._timer
 						this._timer = null;
 						false;
-					hide: (e, delay) ->
+					hide: (trigger, delay) ->
 						return if !this._isShowing()
 						@_timer = $timeout =>
-							e.trigger.click(e)
+							trigger._hidden = true;
 							@_timer = null
-							e.clearSelection()
 						, delay
 				scope.copied = (e) ->
-					copiedMsg.hide e, 1500
+					copiedMsg.hide e.trigger, 1500
 					e.clearSelection()
 
 			# Format Transclude

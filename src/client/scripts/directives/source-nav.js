@@ -3,8 +3,6 @@ angular.module('rapid-build').directive('rbaSourceNav', ['componentService', '$t
 		/* COMPILE
 		 **********/
 		const Compile = function(tElement, tAttrs, transclude) {
-			// required to copy popover content
-			// tElement.append('<div style="height:0;"><br></div>');
 			return Link;
 		}
 
@@ -23,7 +21,7 @@ angular.module('rapid-build').directive('rbaSourceNav', ['componentService', '$t
 				hide(trigger, delay) {
 					if (!this._isShowing()) return;
 					this._timer = $timeout(() => {
-						trigger.click();
+						trigger._hidden = true;
 						this._timer = null;
 					}, delay);
 				}
@@ -36,7 +34,7 @@ angular.module('rapid-build').directive('rbaSourceNav', ['componentService', '$t
 			/* Methods
 			 **********/
 			scope.copied = e => {
-				copiedMsg.hide(e.trigger, 2000);
+				copiedMsg.hide(e.trigger, 1500);
 			};
 		}
 

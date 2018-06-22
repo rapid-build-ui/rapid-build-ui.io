@@ -49,6 +49,8 @@ common:
 				ignoreCustomFragments: [
 					/<rba-code(\s*?.*?)*?rba-code>/gi
 					/\s?<rb-icon\s|<\/rb-icon>\s?/gi
+					/\s?<rba-copy[^]*?rba-copy>\s?/gi
+					/\s?<rb-popover[^]*?rb-popover>\s?/gi
 				]
 
 	order: # build will merge this with dev or prod
