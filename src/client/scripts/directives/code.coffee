@@ -2,13 +2,25 @@
 # For editing or displaying code.
 # TODO: add local storage support
 # ===============================
-angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret',
-	($timeout, Caret) ->
+angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret', 'preService',
+	($timeout, Caret, preService) ->
 		# COMPILE
 		# =======
 		Compile = (tElement, tAttrs, transclude) ->
-			return Link unless tAttrs.model
-			textarea = tElement[0].querySelector 'textarea'
+			textarea      = tElement[0].querySelector 'textarea'
+			bindPre       = tElement[0].querySelector '[ng-bind="bind"]'
+			transcludePre = tElement[0].querySelector '[ng-transclude]'
+			switch true
+				when tAttrs.model != undefined
+					bindPre.remove()
+					transcludePre.remove()
+				when tAttrs.bind != undefined
+					textarea.remove()
+					transcludePre.remove()
+				else
+					textarea.remove()
+					bindPre.remove()
+			return Link if tAttrs.model == undefined
 			readonly = tAttrs.readonly isnt undefined
 			textarea.removeAttribute 'ng-keydown'  if readonly
 			textarea.removeAttribute 'readonly'    unless readonly
@@ -17,9 +29,11 @@ angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret',
 
 		# LINK
 		# ====
-		Link = (scope, iElement, iAttrs, controller) ->
-			elmCaret = textarea = undefined
-			readonly = iAttrs.readonly isnt undefined
+		Link = (scope, iElement, iAttrs, controller, transclude) ->
+			elmCaret      = textarea = undefined
+			isTransclude  = iAttrs.bind == undefined && iAttrs.model == undefined
+			transcludePre = iElement[0].querySelector '[ng-transclude]'
+			readonly      = iAttrs.readonly isnt undefined
 			scope.hasModel = !!iAttrs.model
 
 			timer = $timeout -> # textarea not registered since moving into template switch
@@ -31,7 +45,6 @@ angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret',
 			# Multi Tab Support
 			# =================
 			scope.keydown = (e) ->
-				# return if browser.is.ie # TODO: check ie (might be ok)
 				keyCode = e.keyCode or e.which
 				if keyCode is 9 # tab key
 					e.preventDefault()
@@ -115,8 +128,14 @@ angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret',
 							e.clearSelection()
 						, delay
 				scope.copied = (e) ->
-					copiedMsg.hide e, 2000
+					copiedMsg.hide e, 1500
 					e.clearSelection()
+
+			# Format Transclude
+			# =================
+			if isTransclude
+				transclude (clone) ->
+					transcludePre.textContent = preService.get.text clone[0].textContent
 
 			# Destroys
 			# ========
@@ -142,8 +161,11 @@ angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret',
 			kind: '@'         # minor | secondary
 			# localStorage: '@' # local storage key or valueless (generated key)
 			placeholder: '@'
-			optional: '@'     # valueless attribute | html | text
-			readonly: '@'
-			scroll: '@'       # valueless attribute (doesn't apply to model)
 			size: '@'         # mini | small
+			# VALUELESS
+			# =========
+			optional: '@'     # html | text
+			readonly: '@'
+			scroll: '@'       # doesn't apply to model
+			wrap: '@'         # doesn't apply to model
 ]

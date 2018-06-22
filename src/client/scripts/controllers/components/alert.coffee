@@ -40,8 +40,9 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 
 		# Watches
 		# =======
-		markupWatch = $scope.$watch ->
+		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
+		, true
 
 		# Event Handlers
 		# ==============

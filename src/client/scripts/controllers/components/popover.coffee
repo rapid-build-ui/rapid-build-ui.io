@@ -42,8 +42,9 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 
 		# Watches
 		# =======
-		markupWatch = $scope.$watch ->
+		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
+		, true
 
 		# Event Handlers
 		# ==============

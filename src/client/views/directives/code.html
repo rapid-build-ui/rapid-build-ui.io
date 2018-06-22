@@ -2,7 +2,8 @@
 	 ng-class="['rb-code', kind,
 				!!size ? size+'-size' : '',
 				!!height ? height+'-height' : '',
-				scroll !== undefined ? 'scroll' : ''
+				scroll !== undefined ? 'scroll' : '',
+				wrap !== undefined ? 'wrap' : ''
 			   ].join(' ')">
 	<h5 ng-show="!!caption || !!actions">
 		{{ caption }}
@@ -17,7 +18,7 @@
 				position="top"
 				ngclipboard
 				ngclipboard-success="copied(e)"
-				data-clipboard-target="textarea">
+				data-clipboard-target="{{hasModel ? 'textarea' : 'pre'}}">
 				Copied!
 			</rb-popover>
 		</div>
@@ -27,18 +28,14 @@
 		ng-hide="optional === undefined"
 		ng-bind-html="optional !== undefined && !!optional ? optional : '(optional)'">
 	</span>
-	<div class="content" ng-switch="hasModel">
-		<div ng-switch-when="true">
-			<textarea
-				readonly
-				ng-model="$parent.model"
-				ng-keydown="keydown($event)"
-				placeholder="{{placeholder}}">
-			</textarea>
-		</div>
-		<div ng-switch-default>
-			<pre ng-if="!!bind" ng-bind="bind"></pre>
-			<pre ng-if="!bind" ng-transclude></pre>
-		</div>
+	<div class="content">
+		<textarea
+			readonly
+			ng-model="model"
+			ng-keydown="keydown($event)"
+			placeholder="{{placeholder}}">
+		</textarea>
+		<pre ng-bind="bind"></pre>
+		<pre ng-transclude></pre>
 	</div>
 </div>

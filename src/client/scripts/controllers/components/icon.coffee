@@ -30,8 +30,9 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 
 		# Watches
 		# =======
-		markupWatch = $scope.$watch ->
+		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
+		, true
 
 		# Event Handlers
 		# ==============
