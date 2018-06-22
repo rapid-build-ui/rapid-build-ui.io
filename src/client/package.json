@@ -30,12 +30,12 @@
   },
   "flat": true,
   "dependencies": {
-    "@rapid-build-ui/rb-alert": "*",
-    "@rapid-build-ui/rb-button": "*",
-    "@rapid-build-ui/rb-icon": "*",
-    "@rapid-build-ui/rb-input": "*",
-    "@rapid-build-ui/rb-nav": "*",
-    "@rapid-build-ui/rb-popover": "*",
+    "@rapid-build-ui/rb-alert": "^0.0.8",
+    "@rapid-build-ui/rb-button": "^0.0.4",
+    "@rapid-build-ui/rb-icon": "^0.0.3",
+    "@rapid-build-ui/rb-input": "^0.0.3",
+    "@rapid-build-ui/rb-nav": "^0.0.3",
+    "@rapid-build-ui/rb-popover": "^0.0.4",
     "@webcomponents/webcomponentsjs": "^2.0.2",
     "gridlex": "2.7.1",
     "ngclipboard": "^2.0.0"
