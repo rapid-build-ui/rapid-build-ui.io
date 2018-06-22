@@ -10,7 +10,11 @@
 			<div rba-builder="markup"></div>
 		</div>
 		<div class="col-7">
-			<rba-code model="markup" caption="markup" readonly></rba-code>
+			<rba-code
+				bind="markup"
+				actions="copy"
+				caption="markup">
+			</rba-code>
 		</div>
 	</section>
 
@@ -32,7 +36,7 @@
 		<rba-checkbox caption="unstyled" model="a.unstyled"></rba-checkbox>
 
 		<!-- INPUT CONTROLS -->
-		<rba-input caption="caption" model="a.caption"></rba-input>
+		<rb-input label="caption" value="a.caption"></rb-input>
 		<rba-textarea caption="content" model="a.content"></rba-textarea>
 
 		<section class="buttons">
@@ -48,5 +52,5 @@
 
 	<!-- API -->
 	<h5 rba-text-curve>API</h5>
-	<rba-table source="popover"></rba-table>
+	<rba-table source="RB_POPOVER_API" inject></rba-table>
 </div>

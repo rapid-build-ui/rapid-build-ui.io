@@ -1,0 +1,18 @@
+<rb-popover
+	unstyled
+	fit-content
+	icon="download"
+	class="rb-copy"
+	caption="Install"
+	icon-source="solid">
+	<rb-popover
+		unstyled
+		icon="copy"
+		position="top"
+		ngclipboard
+		ngclipboard-success="copied(e)"
+		data-clipboard-target="#rb-copy-{{$id}}">
+		Copied!
+	</rb-popover>
+	<span id="rb-copy-{{$id}}" ng-transclude></span>
+</rb-popover>

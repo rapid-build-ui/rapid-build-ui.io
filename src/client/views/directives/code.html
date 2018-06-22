@@ -2,33 +2,40 @@
 	 ng-class="['rb-code', kind,
 				!!size ? size+'-size' : '',
 				!!height ? height+'-height' : '',
-				scroll !== undefined ? 'scroll' : ''
+				scroll !== undefined ? 'scroll' : '',
+				wrap !== undefined ? 'wrap' : ''
 			   ].join(' ')">
-	<h5 ng-bind="caption" ng-show="!!caption"></h5>
+	<h5 ng-show="!!caption || !!actions">
+		{{ caption }}
+		<div class="actions" ng-if="!!actions">
+			<!-- <a href tabindex="0" ng-click="clear()">clear</a> -->
+			<!-- <a href tabindex="0" ng-click="addAction()">add</a> -->
+			<!-- <a href tabindex="0" ng-click="compress()">compress</a> -->
+			<!-- <a href tabindex="0" ng-click="edit()">edit</a> -->
+			<rb-popover
+				unstyled
+				icon="copy"
+				position="top"
+				ngclipboard
+				ngclipboard-success="copied(e)"
+				data-clipboard-target="{{hasModel ? 'textarea' : 'pre'}}">
+				Copied!
+			</rb-popover>
+		</div>
+	</h5>
 	<span
 		class="optional"
 		ng-hide="optional === undefined"
 		ng-bind-html="optional !== undefined && !!optional ? optional : '(optional)'">
 	</span>
-	<div class="content" ng-switch="hasModel">
-		<div ng-switch-when="true">
-			<!-- <div class="actions" ng-if="!!actions">
-				<a href tabindex="0" ng-click="clear()">clear</a>
-				<a href tabindex="0" ng-click="addAction()">add</a>
-				<a href tabindex="0" ng-click="compress()">compress</a>
-				<a href tabindex="0" ng-click="copy()">copy</a>
-				<a href tabindex="0" ng-click="edit()">edit</a>
-			</div> -->
-			<textarea
-				readonly
-				ng-model="$parent.model"
-				ng-keydown="keydown($event)"
-				placeholder="{{placeholder}}">
-			</textarea>
-		</div>
-		<div ng-switch-default>
-			<pre ng-if="!!bind" ng-bind="bind"></pre>
-			<pre ng-if="!bind" ng-transclude></pre>
-		</div>
+	<div class="content">
+		<textarea
+			readonly
+			ng-model="model"
+			ng-keydown="keydown($event)"
+			placeholder="{{placeholder}}">
+		</textarea>
+		<pre ng-bind="bind"></pre>
+		<pre ng-transclude></pre>
 	</div>
 </div>

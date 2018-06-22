@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element',
-	($scope, $element) ->
+angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element','evenListenerService',
+	($scope, $element, evenListener) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -26,6 +26,10 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 		$scope.icons       = ['question-circle','download','github']
 		$scope.iconSources = ['solid','brands']
 
+		# Input Listeners
+		# ===============
+		evenListener.addListenersToInputs $element, $scope
+
 		# Methods
 		# =======
 		$scope.reset = ->
@@ -33,10 +37,14 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 				caption: 'Caption'
 				content: 'Now that\'s poppin!'
 
+			evenListener.resetInputs $element, $scope.a
+
+
 		# Watches
 		# =======
-		markupWatch = $scope.$watch ->
+		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
+		, true
 
 		# Event Handlers
 		# ==============
@@ -52,5 +60,6 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 		# ========
 		$scope.$on '$destroy', ->
 			resetBtn.removeEventListener 'clicked', resetFrm
+			evenListener.removeListenersToInputs $element
 			markupWatch()
 ]

@@ -1,6 +1,18 @@
 /**********
  * BUMPERS
  **********/
+$bumpers: (
+	tiny:      2px  !important,
+	mini:      5px  !important,
+	small:     10px !important,
+	default:   15px !important,
+	large:     20px !important,
+	xlarge:    25px !important,
+	xxlarge:   30px !important,
+	xxxlarge:  35px !important,
+	xxxxlarge: 40px !important
+);
+
 .no-bumper           { margin:        0 !important; }
 .no-top-bumper       { margin-top:    0 !important; }
 .no-bottom-bumper    { margin-bottom: 0 !important; }
@@ -9,11 +21,42 @@
 .no-side-bumpers     { margin-left:   0 !important; margin-right:  0 !important; }
 .no-vertical-bumpers { margin-top:    0 !important; margin-bottom: 0 !important; }
 
-.bumper-left-tiny   { margin-left:  2px  !important; }
-.bumper-right-tiny  { margin-right: 2px  !important; }
-.bumper-left-mini   { margin-left:  5px  !important; }
-.bumper-right-mini  { margin-right: 5px  !important; }
-.bumper-left-small  { margin-left:  10px !important; }
-.bumper-right-small { margin-right: 10px !important; }
-.bumper-left        { margin-left:  15px !important; }
-.bumper-right       { margin-right: 15px !important; }
+.bumper-top-tiny         { margin-top: mapGet($bumpers, tiny); }
+.bumper-top-mini         { margin-top: mapGet($bumpers, mini); }
+.bumper-top-small        { margin-top: mapGet($bumpers, small); }
+.bumper-top              { margin-top: mapGet($bumpers, default); }
+.bumper-top-large        { margin-top: mapGet($bumpers, large); }
+.bumper-top-xlarge       { margin-top: mapGet($bumpers, xlarge); }
+.bumper-top-xxlarge      { margin-top: mapGet($bumpers, xxlarge); }
+.bumper-top-xxxlarge     { margin-top: mapGet($bumpers, xxxlarge); }
+.bumper-top-xxxxlarge    { margin-top: mapGet($bumpers, xxxxlarge); }
+
+.bumper-bottom-tiny      { margin-bottom: mapGet($bumpers, tiny); }
+.bumper-bottom-mini      { margin-bottom: mapGet($bumpers, mini); }
+.bumper-bottom-small     { margin-bottom: mapGet($bumpers, small); }
+.bumper-bottom           { margin-bottom: mapGet($bumpers, default); }
+.bumper-bottom-large     { margin-bottom: mapGet($bumpers, large); }
+.bumper-bottom-xlarge    { margin-bottom: mapGet($bumpers, xlarge); }
+.bumper-bottom-xxlarge   { margin-bottom: mapGet($bumpers, xxlarge); }
+.bumper-bottom-xxxlarge  { margin-bottom: mapGet($bumpers, xxxlarge); }
+.bumper-bottom-xxxxlarge { margin-bottom: mapGet($bumpers, xxxxlarge); }
+
+.bumper-left-tiny        { margin-left: mapGet($bumpers, tiny); }
+.bumper-left-mini        { margin-left: mapGet($bumpers, mini); }
+.bumper-left-small       { margin-left: mapGet($bumpers, small); }
+.bumper-left             { margin-left: mapGet($bumpers, default); }
+.bumper-left-large       { margin-left: mapGet($bumpers, large); }
+.bumper-left-xlarge      { margin-left: mapGet($bumpers, xlarge); }
+.bumper-left-xxlarge     { margin-left: mapGet($bumpers, xxlarge); }
+.bumper-left-xxxlarge    { margin-left: mapGet($bumpers, xxxlarge); }
+.bumper-left-xxxxlarge   { margin-left: mapGet($bumpers, xxxxlarge); }
+
+.bumper-right-tiny       { margin-right: mapGet($bumpers, tiny); }
+.bumper-right-mini       { margin-right: mapGet($bumpers, mini); }
+.bumper-right-small      { margin-right: mapGet($bumpers, small); }
+.bumper-right            { margin-right: mapGet($bumpers, default); }
+.bumper-right-large      { margin-right: mapGet($bumpers, large); }
+.bumper-right-xlarge     { margin-right: mapGet($bumpers, xlarge); }
+.bumper-right-xxlarge    { margin-right: mapGet($bumpers, xxlarge); }
+.bumper-right-xxxlarge   { margin-right: mapGet($bumpers, xxxlarge); }
+.bumper-right-xxxxlarge  { margin-right: mapGet($bumpers, xxxxlarge); }

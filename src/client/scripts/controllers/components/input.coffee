@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbInputController', ['$scope', '$element', 'typeService',
-	($scope, $element, type) ->
+angular.module('rapid-build').controller 'rbInputController', ['$scope', '$element', 'typeService', 'evenListenerService',
+	($scope, $element, type, evenListener) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -8,12 +8,13 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 
 			attrs += "#{s}label=\"#{$scope.a.label}\"" if $scope.a.label
 			attrs += "#{s}value=\"#{$scope.a.value}\"" if $scope.a.value
+			attrs += "#{s}type=\"#{$scope.a.type}\"" if $scope.a.type?.length
 			attrs += "#{s}subtext=\"#{$scope.a.subtext}\"" if $scope.a.subtext
 			attrs += "#{s}placeholder=\"#{$scope.a.placeholder}\"" if $scope.a.placeholder
-			attrs += "#{s}value=\"#{$scope.a.value}\"" if $scope.a.value
 			attrs += "#{s}disabled" if $scope.a.disabled
 			attrs += "#{s}right" if $scope.a.right
-			attrs += "#{s}validation='#{buldValidationMarkup()}'" if $scope.a.validation.length
+			attrs += "#{s}inline" if $scope.a.inline
+			attrs += "#{s}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
 			attrs += "#{s}icon=\"#{$scope.a.icon}\"" if $scope.a.icon
 			attrs += "#{s}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
 			attrs += "#{s}icon-position=\"#{$scope.a.iconPosition}\"" if $scope.a.iconPosition
@@ -69,32 +70,32 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			'minMaxLength'
 			'custom'
 		]
+		$scope.types = ['number']
 
 		$scope.validations = [
 			'required'
 			minLength: 2
 			{ minMaxLength: min: 2, max: 5}
 			customValidation
-			# customValidationPromise
 		]
 
 		$scope.reset = ->
 			$scope.a =
-				label: 'My Input'
-				subtext: 'My subtext'
-				value: ""
-				validation: [
-					# $scope.validationLabels[0]
-					# $scope.validationLabels[1]
-					# $scope.validationLabels[2]
-					# $scope.validationLabels[3]
-				]
+				label: 'First Name'
+
+			evenListener.resetInputs $element, $scope.a
+
 
 		# Watches
 		# =======
-		markupWatch = $scope.$watch 'a', ->
+		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
 		, true
+
+		# Input Listeners
+		# ===============
+		evenListener.addListenersToInputs $element
+
 
 		# Event Handlers
 		# ==============
@@ -110,5 +111,6 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 		# ========
 		$scope.$on '$destroy', ->
 			resetBtn.removeEventListener 'clicked', resetFrm
+			evenListener.removeListenersToInputs $element
 			markupWatch()
 ]

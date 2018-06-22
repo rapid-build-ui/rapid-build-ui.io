@@ -1,41 +1,43 @@
 {
-	"name": "rapid-build-ui",
-	"version": "0.0.3",
-	"description": "Rapid Build UI - Showcase Website",
-	"license": "MIT",
-	"engines": {
-		"npm": "6.x",
-		"node": "8.x"
-	},
-	"contributors": [
-		{
-			"name": "Judd Younce",
-			"email": "jyounce@yahoo.com",
-			"url": "https://github.com/jyounce"
-		},
-		{
-			"name": "Yevgeniy Okun",
-			"email": "yevgeniyokun@gmail.com",
-			"url": "https://github.com/yokun"
-		},
-		{
-			"name": "Alina Younce",
-			"email": "crisan_alina2003@yahoo.com",
-			"url": "https://github.com/ayounce"
-		}
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/rapid-build-ui/rapid-build-ui.io"
-	},
-	"flat": true,
-	"dependencies": {
-		"@rapid-build-ui/rb-alert": "*",
-		"@rapid-build-ui/rb-button": "*",
-		"@rapid-build-ui/rb-icon": "*",
-		"@rapid-build-ui/rb-input": "*",
-		"@rapid-build-ui/rb-nav": "*",
-		"@rapid-build-ui/rb-popover": "*",
-		"gridlex": "2.7.1"
-	}
+  "name": "rapid-build-ui",
+  "version": "0.0.3",
+  "description": "Rapid Build UI - Showcase Website",
+  "license": "MIT",
+  "engines": {
+    "node": "8.x",
+    "npm": "6.x"
+  },
+  "contributors": [
+    {
+      "name": "Judd Younce",
+      "email": "jyounce@yahoo.com",
+      "url": "https://github.com/jyounce"
+    },
+    {
+      "name": "Yevgeniy Okun",
+      "email": "yevgeniyokun@gmail.com",
+      "url": "https://github.com/yokun"
+    },
+    {
+      "name": "Alina Younce",
+      "email": "crisan_alina2003@yahoo.com",
+      "url": "https://github.com/ayounce"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rapid-build-ui/rapid-build-ui.io"
+  },
+  "flat": true,
+  "dependencies": {
+    "@rapid-build-ui/rb-alert": "^0.0.8",
+    "@rapid-build-ui/rb-button": "^0.0.4",
+    "@rapid-build-ui/rb-icon": "^0.0.3",
+    "@rapid-build-ui/rb-input": "^0.0.3",
+    "@rapid-build-ui/rb-nav": "^0.0.3",
+    "@rapid-build-ui/rb-popover": "^0.0.4",
+    "@webcomponents/webcomponentsjs": "^2.0.2",
+    "gridlex": "2.7.1",
+    "ngclipboard": "^2.0.0"
+  }
 }

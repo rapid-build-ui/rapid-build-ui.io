@@ -9,27 +9,13 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="api in ::source">
-			<td class="td-attribute"
-				ng-bind="::api.attribute">
-			</td>
-
-			<td class="td-description"
-				ng-bind-html="::api.description | trustHtml">
-			</td>
-
-			<td class="td-options"
-				ng-class="!api.options ? 'na' : ''"
-				ng-bind-html="::api.options | na | optionize | trustHtml">
-			</td>
-
-			<td class="td-type"
-				ng-class="!api.type ? 'na' : ''"
-				ng-bind-html="::api.type | na | optionize | trustHtml">
-			</td>
-
-			<td class="td-required"
-				ng-class="!!api.required ? 'yes' : 'no'"
-				ng-bind-html="::api.required | required">
+			<td ng-repeat="heading in ::headings"
+				ng-class="[
+					'td-' + headings[$index],
+					headings[$index] === 'options'  ? !api[heading]  ? 'na'  : ''   : '',
+					headings[$index] === 'required' ? !!api[heading] ? 'yes' : 'no' : ''
+				]"
+				ng-bind-html="getHtml(headings[$index], api[heading])"">
 			</td>
 		</tr>
 	</tbody>

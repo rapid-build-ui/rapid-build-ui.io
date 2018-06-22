@@ -1,0 +1,18 @@
+/*************
+ * SOURCE NAV
+ *************/
+.rb-source-nav {
+	rb-popover {
+		rb-popover {
+			&:hover,
+			&:focus {
+				color: indianred;
+				// filter: brightness(125%);
+			}
+			&:active {
+				color: #a93434;
+				// filter: brightness(75%);
+			}
+		}
+	}
+}

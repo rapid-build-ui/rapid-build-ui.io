@@ -10,18 +10,22 @@
 			<div rba-builder="markup"></div>
 		</div>
 		<div class="col-7">
-			<rba-code readonly model="markup" caption="markup" height="xxxxxtall"></rba-code>
+			<rba-code
+				bind="markup"
+				actions="copy"
+				caption="markup"
+				height="xxxxxtall">
+			</rba-code>
 		</div>
 	</section>
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Demo</h5>
-
-		<rba-input caption="label" model="a.label" type="text"></rba-input>
-		<rba-input caption="value" model="a.value" type="text"></rba-input>
-		<rba-input caption="subtext" model="a.subtext" type="text"></rba-input>
-		<rba-input caption="placeholder" model="a.placeholder" type="text"></rba-input>
+		<h5 style="padding-bottom: 15px;" rba-text-curve>Demo</h5>
+		<rb-input label="label" value="a.label"></rb-input>
+		<rb-input label="value" value="a.value"></rb-input>
+		<rb-input label="subtext" value="a.subtext"></rb-input>
+		<rb-input label="placeholder" value="a.placeholder"></rb-input>
 
 		<!-- ICON OPTIONS -->
 		<rba-radios caption="icon" model="a.icon" data="icons" toggle></rba-radios>
@@ -33,8 +37,10 @@
 			model="a.validation"
 			data="validationLabels">
 		</rba-checkboxes>
+		<rba-checkboxes caption="type" model="a.type" data="types"></rba-checkboxes>
 		<rba-checkbox caption="disabled" model="a.disabled"></rba-checkbox>
 		<rba-checkbox caption="right" model="a.right"></rba-checkbox>
+		<rba-checkbox caption="inline" model="a.inline"></rba-checkbox>
 
 		<section class="buttons">
 			<rb-button
@@ -49,5 +55,5 @@
 
 	<!-- API -->
 	<h5 rba-text-curve>API</h5>
-	<rba-table source="input"></rba-table>
+	<rba-table source="RB_INPUT_API" inject></rba-table>
 </div>

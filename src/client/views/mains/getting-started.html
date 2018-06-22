@@ -3,16 +3,101 @@
 		<h1>Getting Started</h1>
 	</header>
 
-	<p>
-		<em>Damn these are sweet!</em>
-		How can I use them?
-	</p>
+	<section class="sub">
+		<h3>
+			<rb-icon kind="exclamation-triangle" source="solid" size=".8"></rb-icon>
+			Status: In Development
+		</h3>
+		<p>
+			The components are in early stages
+			of development.
+		</p>
+	</section>
 
-	<p>
-		Sorry they aren't ready yet.<br>
-		Check back later <rb-icon kind="thumbs-up"></rb-icon>
-	</p>
+	<hr>
+
+	<section class="sub">
+		<h3>
+			<rb-icon kind="exclamation-triangle" source="solid" size=".8"></rb-icon>
+			Prerequisites
+			<small class="sub">(these must be installed first)</small>
+		</h3>
+		<ul>
+			<li>
+				<a target="_blank" href="https://nodejs.org/">
+					Node.js
+				</a>
+			</li>
+			<li>
+				<a target="_blank" href="https://www.npmjs.com/package/yarn">
+					Yarn
+				</a>
+				<ul>
+					<li>
+						You can use npm instead, just
+						make sure the components are
+						<a target="_blank" href="https://goo.gl/5zwDfb">installed flat</a>.
+					</li>
+					<li>
+						Only one version of each
+						component can be installed.
+					</li>
+					<li>
+						Yarn has a built in
+						feature: yarn install --flat.
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+
+	<hr>
+
+	<section class="sub">
+		<h3>
+			<rb-icon kind="exclamation-circle" source="solid" size=".8"></rb-icon>
+			How to Use <small class="sub">(each component is it's own package)</small>
+		</h3>
+		<ol>
+			<li>
+				Click on the install icon
+				on any of the <a href="/components/">component pages</a>.
+				<ul>
+					<li>
+						Example:
+						<rba-copy>
+							yarn add @rapid-build-ui/rb-alert
+						</rba-copy>
+					</li>
+				</ul>
+			</li>
+			<li>
+				Once installed place the component script tag in your html.
+				<ul>
+					<li>
+						Example:
+						<rba-code wrap height="tiny">
+							&lt;script
+								type="module"
+								src="/node_modules/@rapid-build-ui/rb-alert/scripts/rb-alert.js"&gt;
+							&lt;/script&gt;
+						</rba-code>
+					</li>
+				</ul>
+			</li>
+			<li>
+				The component is ready! Use it anywhere in your html.
+				<ul>
+					<li>
+						Example:
+						<rba-code wrap height="teeny">
+							&lt;rb-alert&gt;
+								Hello Gorgeous!
+							&lt;/rb-alert&gt;
+						</rba-code>
+					</li>
+				</ul>
+			</li>
+		</ol>
+	</section>
 </div>
-
-
-

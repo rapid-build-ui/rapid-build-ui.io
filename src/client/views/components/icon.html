@@ -10,7 +10,11 @@
 			<div rba-builder="markup"></div>
 		</div>
 		<div class="col-7">
-			<rba-code readonly model="markup" caption="markup"></rba-code>
+			<rba-code
+				bind="markup"
+				actions="copy"
+				caption="markup">
+			</rba-code>
 		</div>
 	</section>
 
@@ -24,9 +28,9 @@
 			<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
 			Font awesome icon style must match icon source.
 		</rb-popover>
-		<rba-input model="a.kind" placeholder="font awesome" inline></rba-input>
+		<rb-input value="a.kind" placeholder="font awesome" inline></rb-input>
 		<rba-radios caption="source" model="a.source" data="sources" toggle></rba-radios>
-		<rba-input caption="size" model="a.size" type="number"></rba-input>
+		<rb-input label="size" value="a.size" type="number"></rb-input>
 
 		<section class="buttons">
 			<rb-button
@@ -41,5 +45,5 @@
 
 	<!-- API -->
 	<h5 rba-text-curve>API</h5>
-	<rba-table source="icon"></rba-table>
+	<rba-table source="RB_ICON_API" inject></rba-table>
 </div>

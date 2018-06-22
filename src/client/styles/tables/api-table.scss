@@ -34,6 +34,26 @@ $textColors: (
 		&required { color: mapGet($textColors, required); }
 	}
 
+	/* Browser Support Page
+	 ***********************/
+	.th-,
+	.td- {
+		&browser { text-align: center; }
+	}
+	.th- {
+		&notes { width: 33%; }
+	}
+	.td- {
+		&browser { font-weight: 600; vertical-align: middle; }
+	}
+	.support { text-align: center; vertical-align: middle; }
+
+	// icon colors
+	.full-support    { color: #28a745; }
+	.partial-support { color: #e7af00; }
+	.no-support      { color: #dc3545; }
+
+
 	/* Filtering
 	 ************/
 	.na, .no { color: mapGet($textColors, sub); }
@@ -71,6 +91,12 @@ $textColors: (
 		li {
 			margin: 0 0 remy(4);
 		}
+	}
+
+	/* Pre's
+	 ********/
+	pre {
+		margin: 0;
 	}
 
 	/* Misc

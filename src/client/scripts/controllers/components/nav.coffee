@@ -100,8 +100,9 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 
 		# Watches
 		# =======
-		markupWatch = $scope.$watch ->
+		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
+		, true
 
 		# HELPERS
 		# =======

@@ -8,6 +8,7 @@ common:
 
 	angular:
 		moduleName: 'rapid-build'
+		modules: ['ngclipboard']
 		bootstrap: true
 		templateCache:
 			dev: true
@@ -48,24 +49,18 @@ common:
 				ignoreCustomFragments: [
 					/<rba-code(\s*?.*?)*?rba-code>/gi
 					/\s?<rb-icon\s|<\/rb-icon>\s?/gi
+					/\s?<rba-copy[^]*?rba-copy>\s?/gi
 				]
 
 	order: # build will merge this with dev or prod
 		scripts:
 			first: [
 				'scripts/polyfills/*.*'
+				'node_modules/clipboard/dist/clipboard.min.js'
+				'node_modules/ngclipboard/dist/ngclipboard.min.js'
 			]
 		styles:
 			first: [
 				'styles/reset.css'
 				'styles/grid.css'
 			]
-
-# RUN BEFORE PUBLISHING TO HEROKU!!
-# rapid-build prod publish
-# =================================
-publish:
-	dist:
-		pack:
-			enable: true
-			fileName: 'app'

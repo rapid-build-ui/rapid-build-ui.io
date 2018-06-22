@@ -8,7 +8,8 @@
 # TOKENS AVAILABLE
 # - Added via web gui -> settings
 # - GITHUB_TOKEN
-# - HEROKU_TOKEN
+# - NPM_TOKEN
+# - TRAVIS_TOKEN
 # ===============================
 language: node_js
 
@@ -17,27 +18,21 @@ node_js:
 
 env:
   global:
-    # Versions
-    - NPM_VERSION="6.0.1"
-    - YARN_VERSION="1.6.0"
+    - NPM_VERSION="6.1.0"
     - RB_REPO_SLUG="$TRAVIS_REPO_SLUG"
     - RB_PROJECT_PATH="$TRAVIS_BUILD_DIR"
-    - YARN_LINK_PATH="$(yarn global dir)/../link"
 
 cache:
   directories:
     - node_modules     # repo root node_modules
     - "$(npm root -g)" # global node_modules directory
     - "$(npm bin -g)/rapid-build"
-    - "$(npm bin -g)/yarn"
-    - "$(npm bin -g)/yarnpkg"
 
 # Install Global Dependencies
 # ===========================
 before_install:
-  - if [[ $(npm -v) != $NPM_VERSION ]]; then npm install -g npm@${NPM_VERSION}; fi     # version check
-  - if [[ $(yarn -v) != $YARN_VERSION ]]; then npm install -g yarn@${YARN_VERSION}; fi # version check
-  - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi       # if not installed
+  - if [[ $(npm -v) != $NPM_VERSION ]]; then npm install -g npm@${NPM_VERSION}; fi # version check
+  - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi   # if not installed
 
 # ===================================
 # SPECIFIC JOBS
@@ -51,29 +46,20 @@ jobs:
     # Continuous
     # ==========
     - if: branch = continuous
-      deploy:
-        # create directory for cloned components (.rb-components)
-        # clone component repos (into .rb-components)
-        # setup components
-        # setup showcase
-        # build showcase
-        # create heroku dist/package.json
-        # publish heroku app rapid-build-ui-io-dev
-        script: npm run build-continuous
-        provider: script
-        skip_cleanup: true
-        on:
-          branch: continuous
+      before_script:
+        # build component
+        # copy root files to: dist/client/ (ex: LICENSE)
+        # trigger showcase ci build
+        - npm run build-continuous
 
     # Release
     # =======
     - if: branch = master
       deploy:
-        # install client
-        # install server
-        # build showcase
-        # create heroku dist/package.json
-        # publish heroku app rapid-build-ui-io-staging
+        # build component
+        # copy root files to: dist/client/
+        # copy npm config to dist/client/
+        # publish npm package from dist/client/
         # publish github release from master
         script: npm run build-release
         provider: script

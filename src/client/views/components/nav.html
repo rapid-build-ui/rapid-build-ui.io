@@ -39,7 +39,11 @@
 			</section>
 		</div>
 		<div class="col-6">
-			<rba-code readonly model="markup" caption="markup"></rba-code>
+			<rba-code
+				bind="markup"
+				actions="copy"
+				caption="markup">
+			</rba-code>
 		</div>
 	</section>
 
@@ -77,5 +81,5 @@
 
 	<!-- API -->
 	<h5 rba-text-curve>API</h5>
-	<rba-table source="nav"></rba-table>
+	<rba-table source="RB_NAV_API" inject></rba-table>
 </div>

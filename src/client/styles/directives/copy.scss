@@ -1,0 +1,24 @@
+/*******
+ * COPY
+ *******/
+rb-popover {
+	$color: #92a2b2;
+
+	&.rb-copy {
+		&:hover,
+		&:focus {
+			color: darken($color, 15%);
+		}
+		rb-popover {
+			&:hover,
+			&:focus {
+				color: darken($color, 45%);
+				// color: indianred;
+			}
+			&:active {
+				color: darken($color, 85%);
+				// color: #a93434;
+			}
+		}
+	}
+}
