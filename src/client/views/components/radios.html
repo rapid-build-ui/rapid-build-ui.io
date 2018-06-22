@@ -1,0 +1,47 @@
+<div ng-controller="rbRadiosController">
+	<header class="page-header">
+		<h1>rb-radios</h1>
+		<!-- <rba-source-nav source="radios"></rba-source-nav> -->
+	</header>
+
+	<!-- COMPONENT -->
+	<section class="grid">
+		<div class="col">
+			<div rba-builder="markup"></div>
+		</div>
+		<div class="col-6">
+			<rba-code
+				bind="markup"
+				actions="copy"
+				caption="markup">
+			</rba-code>
+		</div>
+	</section>
+
+	<!-- DEMO -->
+	<form name="demoForm">
+		<h5 rba-text-curve>Demo</h5>
+
+		<rba-checkbox
+			caption="data"
+			model="a.data"
+			value="data"
+			>
+		</rba-checkbox>
+
+		<!-- FORM CONTROLS -->
+		<section class="buttons">
+			<rb-button
+				data-reset
+				icon="sync"
+				icon-source="solid"
+				icon-position="left">
+				Reset
+			</rb-button>
+		</section>
+	</form>
+
+	<!-- API -->
+	<h5 rba-text-curve>API</h5>
+	<!-- <rba-table source="RB_RADIOS_API" inject></rba-table> -->
+</div>
