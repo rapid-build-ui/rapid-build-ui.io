@@ -1,6 +1,6 @@
 {
   "name": "rapid-build-ui-server",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Rapid Build UI - Web Server",
   "license": "MIT",
   "engines": {

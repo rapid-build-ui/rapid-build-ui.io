@@ -1,3 +1,15 @@
+## [0.0.5](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.4...v0.0.5) (2018-07-08)
+
+
+Release includes rb-components that use web components library [SkateJS](http://skatejs.netlify.com/) and view renderer [lit-html](https://polymer.github.io/lit-html/) instead of Polymer 3.
+
+
+### Features
+
+* **rb-radios:** add initial showcase page
+
+
+
 ## [0.0.4](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.3...v0.0.4) (2018-06-22)
 
 
