@@ -15,27 +15,53 @@
 				].join(' ')">
 
 				<div rba-builder="markup"></div>
-				<!-- before <div rba-builder="markup"></div> after -->
+				<!-- <hr> -->
 
-				<!-- <rb-nav active="hash" dividers>
-					<a href="" ng-href="#{{link}}" ng-repeat="link in links" ng-bind="link"></a>
+				<!-- ACTIVE TEST -->
+				<!-- <rb-nav active="false"> -->
+				<!-- <rb-nav active="true"> -->
+				<!-- <rb-nav active="test"> -->
+				<!-- <rb-nav active> -->
+				<!-- <rb-nav>
+					<a href="#home">home</a>
+					<a href="#about">about</a>
+					<a href="#contact">contact</a>
+				</rb-nav> -->
+
+				<!-- RESPONSIVE TEST -->
+				<!-- <rb-nav> -->
+				<!-- <rb-nav responsive> -->
+				<!-- <rb-nav responsive='{ "closeOnClick": false }'>
+					<a href="#home">home</a>
+					<a href="#about">about</a>
+					<a href="#contact">contact</a>
+				</rb-nav> -->
+
+				<!-- DYNAMIC SLOT TEST -->
+				<!-- <rb-nav active="hash">
+					<a href="" ng-href="#{{link.href}}" ng-repeat="link in links" ng-bind-html="link.content | trustHtml"></a>
 				</rb-nav>
 				<br>
-				<button type="button" ng-click="addLink()">add link</button> -->
+				<button type="button" ng-click="addLink()">add link</button>
+				<button type="button" ng-click="removeLink()">remove link</button> -->
 
-				<!-- <br>
-				<a href="?name=home#home">home</a>
-				<a href="?name=about#about">about</a>
-				<a href="?name=contact#contact">contact</a>
-				<a href="?name=faq#faq">faq</a> -->
+				<!-- INLINE TEST -->
+				<!-- before <div rba-builder="markup"></div> after -->
 
-				<!-- <br>
-				<a href="#home">home</a>
-				<a href="#about">about</a>
-				<a href="#contact">contact</a>
-				<a href="#faq">faq</a>  -->
+				<!-- ACTIVE PARAM TEST -->
+				<!-- <rb-nav active='{"param":"name"}'>
+					<a href="?name=home#home">home</a>
+					<a href="?name=about#about">about</a>
+					<a href="?name=contact#contact">contact</a>
+					<a href="?name=faq#faq">faq</a>
+				</rb-nav> -->
 
-				<!-- <a href="#link">link</a> -->
+				<!-- ACTIVE SEGMENT TEST -->
+				<!-- <rb-nav active='{"segment":2}'>
+					<a href="/components/rb-alert">alert</a>
+					<a href="/components/rb-button">button</a>
+					<a href="/components/rb-nav">nav</a>
+				</rb-nav> -->
 			</section>
 		</div>
 		<div class="col-6">

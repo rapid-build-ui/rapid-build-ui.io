@@ -123,7 +123,7 @@ angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret', 'preSer
 					hide: (trigger, delay) ->
 						return if !this._isShowing()
 						@_timer = $timeout =>
-							trigger._hidden = true;
+							trigger.showPopover = false
 							@_timer = null
 						, delay
 				scope.copied = (e) ->
@@ -163,8 +163,8 @@ angular.module('rapid-build').directive 'rbaCode', ['$timeout', 'Caret', 'preSer
 			size: '@'         # mini | small
 			# VALUELESS
 			# =========
+			nowrap: '@'       # doesn't apply to model
 			optional: '@'     # html | text
 			readonly: '@'
 			scroll: '@'       # doesn't apply to model
-			wrap: '@'         # doesn't apply to model
 ]

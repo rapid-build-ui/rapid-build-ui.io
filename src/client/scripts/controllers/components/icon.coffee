@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbIconController', ['$scope', '$element', 'evenListenerService',
-	($scope, $element, evenListener) ->
+angular.module('rapid-build').controller 'rbIconController', ['$scope', '$element', 'rbEventService',
+	($scope, $element, rbEvents) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -17,22 +17,21 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 		$scope.kinds   = ['heart','user','github']
 		$scope.sources = ['solid','brands']
 
-		# Input Listeners
-		# ===============
-		evenListener.addListenersToInputs $element, $scope
-
 		# Methods
 		# =======
 		$scope.reset = ->
 			$scope.a =
 				kind: 'heart' # :string (required)
-			evenListener.resetInputs $element, $scope.a
 
 		# Watches
 		# =======
 		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
 		, true
+
+		# Rb Eventing
+		# ===========
+		rbEvents.addListeners $element, 'rb-input', 'value-changed'
 
 		# Event Handlers
 		# ==============
@@ -48,6 +47,5 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 		# ========
 		$scope.$on '$destroy', ->
 			resetBtn.removeEventListener 'clicked', resetFrm
-			evenListener.removeListenersToInputs $element
 			markupWatch()
 ]

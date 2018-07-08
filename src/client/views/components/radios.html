@@ -1,13 +1,35 @@
 <div ng-controller="rbRadiosController">
 	<header class="page-header">
 		<h1>rb-radios</h1>
-		<!-- <rba-source-nav source="radios"></rba-source-nav> -->
+		<rba-source-nav source="radios"></rba-source-nav>
 	</header>
+
+	<!-- HEADS UP -->
+	<!-- <section class="bumper-bottom-xxxlarge">
+		<rb-alert kind="danger">
+			<rb-icon
+				size="1.2"
+				source="solid"
+				class="bumper-right-mini"
+				kind="exclamation-triangle">
+			</rb-icon>
+			Just started developing, not for use.
+		</rb-alert>
+	</section> -->
 
 	<!-- COMPONENT -->
 	<section class="grid">
 		<div class="col">
 			<div rba-builder="markup"></div>
+			<!-- <rb-radios
+				label="Superheroes"
+				value="superhero"
+				data='[
+					"superman",
+					"wolverine",
+					"wonder woman"
+				]'>
+			</rb-radios> -->
 		</div>
 		<div class="col-6">
 			<rba-code
@@ -22,12 +44,19 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
+		<rb-input label="label" value="a.label"></rb-input>
+		<rb-input label="value" value="a.value"></rb-input>
+		<rb-input label="subtext" value="a.subtext"></rb-input>
+
 		<rba-checkbox
-			caption="data"
-			model="a.data"
+			inline
 			value="data"
-			>
+			model="a.data"
+			caption="data">
 		</rba-checkbox>
+		<rba-checkbox inline caption="disabled" model="a.disabled"></rba-checkbox><br>
+		<rba-checkbox inline caption="right" model="a.right"></rba-checkbox>
+		<rba-checkbox inline caption="inline" model="a.inline"></rba-checkbox>
 
 		<!-- FORM CONTROLS -->
 		<section class="buttons">
@@ -43,5 +72,5 @@
 
 	<!-- API -->
 	<h5 rba-text-curve>API</h5>
-	<!-- <rba-table source="RB_RADIOS_API" inject></rba-table> -->
+	<rba-table source="RB_RADIOS_API" inject></rba-table>
 </div>

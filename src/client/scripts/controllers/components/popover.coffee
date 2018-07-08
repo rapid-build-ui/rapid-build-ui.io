@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element','evenListenerService',
-	($scope, $element, evenListener) ->
+angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element','rbEventService',
+	($scope, $element, rbEvents) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -12,6 +12,7 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 			attrs += "#{s}caption=\"#{$scope.a.caption}\"" if $scope.a.caption
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}position=\"#{$scope.a.position}\"" if $scope.a.position
+			attrs += "#{s}show-popover=\"#{$scope.a.showPopover}\"" if $scope.a.showPopover
 			attrs += "#{s}icon=\"#{$scope.a.icon}\"" if $scope.a.icon
 			attrs += "#{s}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
 			# attrs += "#{s}icon-size=\"#{$scope.a.iconSize}\"" if $scope.a.iconSize
@@ -26,10 +27,6 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 		$scope.icons       = ['question-circle','download','github']
 		$scope.iconSources = ['solid','brands']
 
-		# Input Listeners
-		# ===============
-		evenListener.addListenersToInputs $element, $scope
-
 		# Methods
 		# =======
 		$scope.reset = ->
@@ -37,14 +34,15 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 				caption: 'Caption'
 				content: 'Now that\'s poppin!'
 
-			evenListener.resetInputs $element, $scope.a
-
-
 		# Watches
 		# =======
 		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
 		, true
+
+		# Rb Eventing
+		# ===========
+		rbEvents.addListeners $element, 'rb-input', 'value-changed'
 
 		# Event Handlers
 		# ==============
@@ -60,6 +58,5 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 		# ========
 		$scope.$on '$destroy', ->
 			resetBtn.removeEventListener 'clicked', resetFrm
-			evenListener.removeListenersToInputs $element
 			markupWatch()
 ]

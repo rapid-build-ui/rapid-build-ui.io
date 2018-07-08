@@ -2,61 +2,58 @@
 # yarn lockfile v1
 
 
-"@polymer/polymer@^3":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@polymer/polymer/-/polymer-3.0.2.tgz#626e6f9fae9716b0962ce0211e21df242153eab2"
+"@rapid-build-ui/rb-alert@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-alert/-/rb-alert-0.0.9.tgz#006264219875002676396e0f3d014fc8ba135d7d"
   dependencies:
-    "@webcomponents/shadycss" "^1.2.0"
+    "@rapid-build-ui/rb-button" "^0.0.5"
+    lit-html "^0.10.2"
+    skatejs "^5.2.0"
 
-"@rapid-build-ui/rb-alert@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-alert/-/rb-alert-0.0.8.tgz#376c2c1b2e25f96d7ce5cf73fec9fbea4bd86469"
+"@rapid-build-ui/rb-button@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-button/-/rb-button-0.0.5.tgz#f09f210589340e2bcf0f4ed2d3fb6e43b4578733"
   dependencies:
-    "@polymer/polymer" "^3"
-    "@rapid-build-ui/rb-icon" "^0.0.3"
+    "@rapid-build-ui/rb-icon" "^0.0.4"
+    lit-html "^0.10.2"
+    skatejs "^5.2.0"
 
-"@rapid-build-ui/rb-button@^0.0.4":
+"@rapid-build-ui/rb-icon@^0.0.4":
   version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-button/-/rb-button-0.0.4.tgz#5c2e1914779db68b7b35c63ef7e3c44985467aaf"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-icon/-/rb-icon-0.0.4.tgz#29ef862dfcd60ff1c256929103fec569e7b4ac43"
   dependencies:
-    "@polymer/polymer" "^3"
-    "@rapid-build-ui/rb-icon" "^0.0.3"
+    lit-html "^0.10.2"
+    skatejs "^5.2.0"
 
-"@rapid-build-ui/rb-icon@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-icon/-/rb-icon-0.0.3.tgz#ebb078b075c7743856674a47f9b7e2b7bb8b0aad"
-  dependencies:
-    "@polymer/polymer" "^3"
-
-"@rapid-build-ui/rb-input@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-input/-/rb-input-0.0.3.tgz#074334462e4e75bf0f6b034b088ab6358a1a8fb8"
-  dependencies:
-    "@polymer/polymer" "^3"
-    "@rapid-build-ui/rb-icon" "^0.0.3"
-
-"@rapid-build-ui/rb-nav@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-nav/-/rb-nav-0.0.3.tgz#c16e1baf4ae6613ad1389cd3f9e94fd256daa5fa"
-  dependencies:
-    "@polymer/polymer" "^3"
-
-"@rapid-build-ui/rb-popover@^0.0.4":
+"@rapid-build-ui/rb-input@^0.0.4":
   version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-popover/-/rb-popover-0.0.4.tgz#a791de9d03874e65f1a41bbcdd490d5b1482d7b5"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-input/-/rb-input-0.0.4.tgz#728d7c521bf0e9623ea271fc60f1a689dc6bd3b5"
   dependencies:
-    "@polymer/polymer" "^3"
-    "@rapid-build-ui/rb-button" "^0.0.4"
+    "@rapid-build-ui/rb-icon" "^0.0.4"
+    lit-html "^0.10.2"
+    skatejs "^5.2.0"
 
-"@rapid-build-ui/rb-radios@~0.0.0":
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-radios/-/rb-radios-0.0.0.tgz#5457e23a70d9b57a9b162b4f0f198e46b9032f41"
+"@rapid-build-ui/rb-nav@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-nav/-/rb-nav-0.0.4.tgz#f261792d9326ea232c993c1aade06dd511c15fb9"
   dependencies:
-    "@polymer/polymer" "^3"
+    lit-html "^0.10.2"
+    skatejs "^5.2.0"
 
-"@webcomponents/shadycss@^1.2.0":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@webcomponents/shadycss/-/shadycss-1.3.1.tgz#9320a7a86c8abfec97d41a41e82691a0dfc3a13a"
+"@rapid-build-ui/rb-popover@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-popover/-/rb-popover-0.0.5.tgz#f1bc5143233bd8f26eca213191fe319841271461"
+  dependencies:
+    "@rapid-build-ui/rb-button" "^0.0.5"
+    lit-html "^0.10.2"
+    skatejs "^5.2.0"
+
+"@rapid-build-ui/rb-radios@~0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-radios/-/rb-radios-0.0.1.tgz#8257e80925e6e2f37008e8b051507c0f564fb4db"
+  dependencies:
+    lit-html "^0.10.2"
+    skatejs "^5.2.0"
 
 "@webcomponents/webcomponentsjs@^2.0.2":
   version "2.0.2"
@@ -84,6 +81,10 @@ gridlex@2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/gridlex/-/gridlex-2.7.1.tgz#ff562762dc8fc7e59bee2163afaa116859961ef7"
 
+lit-html@^0.10.2:
+  version "0.10.2"
+  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-0.10.2.tgz#53c846afcf91bb1e6623179ef22e327ab8ac0e0e"
+
 ngclipboard@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ngclipboard/-/ngclipboard-2.0.0.tgz#406f6c34d21d78c13faafa7f7df2ae4acd50e75a"
@@ -93,6 +94,10 @@ ngclipboard@^2.0.0:
 select@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
+
+skatejs@^5.2.0:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/skatejs/-/skatejs-5.2.1.tgz#d53095b31a81e9654c1ed6a79b03f89b74235e26"
 
 tiny-emitter@^2.0.0:
   version "2.0.2"

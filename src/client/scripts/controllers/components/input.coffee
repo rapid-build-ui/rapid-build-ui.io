@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbInputController', ['$scope', '$element', 'typeService', 'evenListenerService',
-	($scope, $element, type, evenListener) ->
+angular.module('rapid-build').controller 'rbInputController', ['$scope', '$element', 'typeService', 'rbEventService',
+	($scope, $element, type, rbEvents) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -82,9 +82,8 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 		$scope.reset = ->
 			$scope.a =
 				label: 'First Name'
-
-			evenListener.resetInputs $element, $scope.a
-
+				type: []
+				validation: []
 
 		# Watches
 		# =======
@@ -92,10 +91,9 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			$scope.markup = createMarkup()
 		, true
 
-		# Input Listeners
-		# ===============
-		evenListener.addListenersToInputs $element
-
+		# Rb Eventing
+		# ===========
+		rbEvents.addListeners $element, 'rb-input', 'value-changed'
 
 		# Event Handlers
 		# ==============
@@ -111,6 +109,5 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 		# ========
 		$scope.$on '$destroy', ->
 			resetBtn.removeEventListener 'clicked', resetFrm
-			evenListener.removeListenersToInputs $element
 			markupWatch()
 ]
