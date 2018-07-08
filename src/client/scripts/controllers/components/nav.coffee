@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element',
-	($scope, $element) ->
+angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element', 'rbEventService',
+	($scope, $element, rbEvents) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -23,6 +23,7 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			<a href="#about">about</a>
 			<a href="#contact">contact</a>
 		"""
+		# <a href="#contact">contact <rb-icon kind="heart"></rb-icon></a>
 
 		# links = """
 		# 	<h3>Components</h3>
@@ -62,14 +63,31 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 		# """
 
 		$scope.links = [
-			'home',
-			'about',
-			'contact'
+			href:    'home'
+			content: 'home'
+		,
+			href:    'about'
+			content: 'about'
+		,
+			href:    'contact'
+			content: 'contact <rb-icon kind="heart"></rb-icon></a>'
 		]
 
 		linkCnt = 1
 		$scope.addLink = ->
-			$scope.links.push "link#{linkCnt++}"
+			newLink = "link#{linkCnt++}"
+			newLink = href: newLink, content: newLink
+			$scope.links.push newLink
+
+		$scope.removeLink = ->
+			$scope.links.pop()
+			linkCnt--
+
+		# HELPERS
+		# =======
+		formatContent = (content) ->
+			return '' unless content
+			content.replace /\n/g, '\n\t'
 
 		# Props
 		# =====
@@ -104,11 +122,9 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			$scope.markup = createMarkup()
 		, true
 
-		# HELPERS
-		# =======
-		formatContent = (content) ->
-			return '' unless content
-			content.replace /\n/g, '\n\t'
+		# Rb Eventing
+		# ===========
+		rbEvents.addListeners $element, 'rb-input', 'value-changed'
 
 		# Event Handlers
 		# ==============

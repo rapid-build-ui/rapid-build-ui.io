@@ -2,8 +2,9 @@
  * CODE
  *******/
 .rb-code {
-	pre,
-	textarea {
+	/* Common
+	 *********/
+	pre, textarea {
 		position: relative;
 		width: 95%;
 		height: auto;
@@ -23,6 +24,12 @@
 			outline: none;
 			border-color: $greyDark;
 		}
+	}
+
+	/* Pre
+	 ******/
+	pre {
+		white-space: pre-wrap;
 	}
 
 	/* Caption
@@ -88,7 +95,6 @@
 			&:hover,
 			&:focus {
 				color: darken(steelblue, 15%);
-				// color: lighten(steelblue, 15%);
 			}
 		}
 	}
@@ -114,7 +120,7 @@
 	/* Pre Options
 	 **************/
 	&.scroll pre { overflow-y: auto; }
-	&.wrap pre { white-space: pre-wrap; }
+	&.pre-nowrap pre { white-space: pre; }
 
 	/* Size Option
 	 **************/

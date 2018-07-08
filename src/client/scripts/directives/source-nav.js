@@ -21,7 +21,7 @@ angular.module('rapid-build').directive('rbaSourceNav', ['componentService', '$t
 				hide(trigger, delay) {
 					if (!this._isShowing()) return;
 					this._timer = $timeout(() => {
-						trigger._hidden = true;
+						trigger.showPopover = false;
 						this._timer = null;
 					}, delay);
 				}

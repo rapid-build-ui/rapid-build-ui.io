@@ -66,6 +66,15 @@ angular.module('rapid-build').constant 'RB_POPOVER_API', [
 	type: 'string'
 	required: false
 ,
+	attribute: 'show-popover'
+	description: '
+		<em class="default-val">defaults to <b>false</b></em>
+		Programmatically show or hide the popover.
+	'
+	options: 'true'
+	type: 'boolean'
+	required: false
+,
 	attribute: 'unstyled'
 	description: 'Removes trigger styles.'
 	options: null

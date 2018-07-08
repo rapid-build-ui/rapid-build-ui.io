@@ -21,22 +21,19 @@
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 style="padding-bottom: 15px;" rba-text-curve>Demo</h5>
+		<h5 rba-text-curve>Demo</h5>
+
 		<rb-input label="label" value="a.label"></rb-input>
 		<rb-input label="value" value="a.value"></rb-input>
-		<rb-input label="subtext" value="a.subtext"></rb-input>
 		<rb-input label="placeholder" value="a.placeholder"></rb-input>
+		<rb-input label="subtext" value="a.subtext"></rb-input>
 
 		<!-- ICON OPTIONS -->
 		<rba-radios caption="icon" model="a.icon" data="icons" toggle></rba-radios>
 		<rba-radios caption="icon-source" model="a.iconSource" data="iconSources" toggle></rba-radios>
 		<rba-checkbox caption="icon-position" model="a.iconPosition" value="iconPosition" sub-caption="{{iconPosition}}"></rba-checkbox>
 
-		<rba-checkboxes
-			caption="validation"
-			model="a.validation"
-			data="validationLabels">
-		</rba-checkboxes>
+		<rba-checkboxes caption="validation" model="a.validation" data="validationLabels"></rba-checkboxes>
 		<rba-checkboxes caption="type" model="a.type" data="types"></rba-checkboxes>
 		<rba-checkbox caption="disabled" model="a.disabled"></rba-checkbox>
 		<rba-checkbox caption="right" model="a.right"></rba-checkbox>

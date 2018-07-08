@@ -1,30 +1,22 @@
 /***********
  * {{upName}}
  ***********/
-import { PolymerElement, html } from '../../../@polymer/polymer/polymer-element.js';
+import { props, withComponent } from '../../../skatejs/dist/esnext/index.js';
+import { html, withRenderer } from './renderer.js';
 import template from '../views/{{name}}.html';
 
-export class {{className}} extends PolymerElement {
-	/* Lifecycle
-	 ************/
-	constructor() {
-		super();
-	}
-
+export class {{className}} extends withComponent(withRenderer()) {
 	/* Properties
 	 *************/
-	static get properties() {
+	static get props() {
 		return {
-			kind: {
-				type: String,
-				value: 'default'
-			}
-		}
+			kind: props.string
+		};
 	}
 
 	/* Template
 	 ***********/
-	static get template() { // :string
+	render({ props }) { // :string
 		return html template;
 	}
 }

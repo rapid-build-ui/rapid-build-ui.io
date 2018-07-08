@@ -22,13 +22,13 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rba-radios caption="kind" model="a.kind" data="kinds" inline></rba-radios>
+		<rba-radios inline caption="kind" model="a.kind" data="kinds"></rba-radios>
 		<rb-popover position="top" class="bumper-right-mini">
 			Name of any free
 			<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
 			Font awesome icon style must match icon source.
 		</rb-popover>
-		<rb-input value="a.kind" placeholder="font awesome" inline></rb-input>
+		<rb-input inline value="a.kind" placeholder="font awesome"></rb-input>
 		<rba-radios caption="source" model="a.source" data="sources" toggle></rba-radios>
 		<rb-input label="size" value="a.size" type="number"></rb-input>
 
