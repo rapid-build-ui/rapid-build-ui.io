@@ -38,6 +38,6 @@
   "flat": true,
   "dependencies": {
     "lit-html": "^0.10.2",
-    "skatejs": "^5.2.0"
+    "skatejs": "^5.2.1"
   }
 }
