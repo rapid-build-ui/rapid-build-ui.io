@@ -11,6 +11,7 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 			attrs += "#{s}disabled" if $scope.a.disabled
 			attrs += "#{s}right" if $scope.a.right
 			attrs += "#{s}inline" if $scope.a.inline
+			attrs += "#{s}horizontal" if $scope.a.horizontal
 			attrs += "#{s}stacked" if $scope.a.stacked
 			attrs += "#{s}data='#{buldDataMarkup()}'" if $scope.a.data?.length
 
