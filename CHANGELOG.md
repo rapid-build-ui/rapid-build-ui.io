@@ -1,3 +1,15 @@
+## [0.0.6](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.5...v0.0.6) (2018-07-11)
+
+
+### Features
+
+* **radios api:** documentation complete ([3c4e0b4](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/3c4e0b4))
+* **radios showcase page:** add horizontal api option ([70476f0](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/70476f0))
+* **responsive table:** add responsive support for all tables, simple version ([512adb0](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/512adb0))
+* **rb components:** bumped all of them which contain bug fixes and features ([b61551d](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/b61551d))
+
+
+
 ## [0.0.5](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.4...v0.0.5) (2018-07-08)
 
 
