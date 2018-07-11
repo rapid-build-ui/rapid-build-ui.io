@@ -46,7 +46,7 @@ angular.module('rapid-build').run(['$rootScope', '$location', 'typeService', ($r
 		var path = $location.path();
 
 		// route is homepage
-		if (path === '/') return setTitle('Showcase');
+		if (path === '/') return setTitle('Web Components');
 
 		// route.title :string
 		var title     = current.$$route.title, // :string | {}
