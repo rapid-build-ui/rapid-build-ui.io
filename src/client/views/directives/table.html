@@ -1,23 +1,25 @@
-<table class="api-table">
-	<thead>
-		<tr>
-			<th ng-bind="::heading"
-				ng-class="'th-'+heading"
-				ng-repeat="heading in ::headings">
-			</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="api in ::source">
-			<td ng-repeat="heading in ::headings"
-				ng-class="[
-					'td-' + headings[$index],
-					headings[$index] === 'options'  ? !api[heading]  ? 'na'  : ''   : '',
-					headings[$index] === 'type'     ? !api[heading]  ? 'na'  : ''   : '',
-					headings[$index] === 'required' ? !!api[heading] ? 'yes' : 'no' : ''
-				]"
-				ng-bind-html="getHtml(headings[$index], api[heading])"">
-			</td>
-		</tr>
-	</tbody>
-</table>
+<div class="responsive-table">
+	<table class="api-table">
+		<thead>
+			<tr>
+				<th ng-bind="::heading"
+					ng-class="'th-'+heading"
+					ng-repeat="heading in ::headings">
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="api in ::source">
+				<td ng-repeat="heading in ::headings"
+					ng-class="[
+						'td-' + headings[$index],
+						headings[$index] === 'options'  ? !api[heading]  ? 'na'  : ''   : '',
+						headings[$index] === 'type'     ? !api[heading]  ? 'na'  : ''   : '',
+						headings[$index] === 'required' ? !!api[heading] ? 'yes' : 'no' : ''
+					]"
+					ng-bind-html="getHtml(headings[$index], api[heading])"">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
