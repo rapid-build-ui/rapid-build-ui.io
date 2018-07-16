@@ -65,7 +65,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 		$scope.iconSources  = ['solid','brands']
 		$scope.iconPosition = 'left'
 		$scope.validationLabels = [
-			'required',
+			'required'
 			'minLength'
 			'minMaxLength'
 			'custom'

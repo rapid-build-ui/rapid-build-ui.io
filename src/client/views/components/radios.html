@@ -4,19 +4,6 @@
 		<rba-source-nav source="radios"></rba-source-nav>
 	</header>
 
-	<!-- HEADS UP -->
-	<!-- <section class="bumper-bottom-xxxlarge">
-		<rb-alert kind="danger">
-			<rb-icon
-				size="1.2"
-				source="solid"
-				class="bumper-right-mini"
-				kind="exclamation-triangle">
-			</rb-icon>
-			Just started developing, not for use.
-		</rb-alert>
-	</section> -->
-
 	<!-- COMPONENT -->
 	<section class="grid">
 		<div class="col">
@@ -31,7 +18,7 @@
 				]'>
 			</rb-radios> -->
 		</div>
-		<div class="col-6">
+		<div class="col-5">
 			<rba-code
 				bind="markup"
 				actions="copy"
@@ -43,12 +30,11 @@
 	<!-- DEMO -->
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
-
 		<rb-input label="label" value="a.label"></rb-input>
 		<rb-input label="value" value="a.value"></rb-input>
 		<rb-input label="subtext" value="a.subtext"></rb-input>
-
-		<rba-checkbox inline value="data" model="a.data" caption="data"></rba-checkbox>
+		<rb-radios horizontal label="data:" value="a.data" data="{{dataLabels}}"></rb-radios>
+		<rb-radios horizontal label="label-prop:" value="a.labelProp" data="{{labelProps}}"></rb-radios>
 		<rba-checkbox inline caption="disabled" model="a.disabled"></rba-checkbox><br>
 		<rba-checkbox inline caption="right" model="a.right"></rba-checkbox>
 		<rba-checkbox inline caption="inline" model="a.inline"></rba-checkbox><br>
