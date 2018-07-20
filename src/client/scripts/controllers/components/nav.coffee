@@ -125,6 +125,8 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 		# Rb Eventing
 		# ===========
 		rbEvents.addListeners $element, 'rb-input', 'value-changed'
+		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
+
 
 		# Event Handlers
 		# ==============

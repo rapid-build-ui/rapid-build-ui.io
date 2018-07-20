@@ -47,6 +47,8 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 		# Rb Eventing
 		# ===========
 		rbEvents.addListeners $element, 'rb-input', 'value-changed'
+		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
+
 
 		# Event Handlers
 		# ==============
