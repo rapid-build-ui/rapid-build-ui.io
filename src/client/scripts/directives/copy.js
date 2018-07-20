@@ -42,6 +42,8 @@ angular.module('rapid-build').directive('rbaCopy', ['$timeout', $timeout => {
 		transclude: true,
 		restrict: 'E',
 		templateUrl: '/views/directives/copy.html',
-		scope: {}
+		scope: {
+			iconSize: '@?'
+		}
 	};
 }]);

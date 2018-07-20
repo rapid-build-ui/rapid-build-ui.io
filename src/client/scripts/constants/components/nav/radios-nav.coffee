@@ -1,7 +1,4 @@
 angular.module('rapid-build').constant 'RB_RADIOS_NAV', [
-	type: 'install'
-	popover: 'yarn add @rapid-build-ui/rb-radios'
-,
 	type: 'github'
 	url:  'https://git.io/fbx5m'
 ,

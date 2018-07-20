@@ -8,9 +8,27 @@
 .inline-block {
 	display: inline-block !important;
 }
+
+/* Flexbox
+ **********/
 .flex {
 	display: flex !important;
 }
 .inline-flex {
 	display: inline-flex !important;
+}
+.row-reverse {
+	flex-direction: row-reverse !important;
+}
+
+/* Text Align
+ *************/
+.text-left {
+	text-align: left !important;
+}
+.text-center {
+	text-align: center !important;
+}
+.text-right {
+	text-align: right !important;
 }

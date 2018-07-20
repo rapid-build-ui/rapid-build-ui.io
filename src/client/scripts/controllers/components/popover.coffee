@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element','rbEventService',
-	($scope, $element, rbEvents) ->
+angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element', '$timeout', 'rbEventService',
+	($scope, $element, $timeout, rbEvents) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -15,7 +15,7 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 			attrs += "#{s}show-popover=\"#{$scope.a.showPopover}\"" if $scope.a.showPopover
 			attrs += "#{s}icon=\"#{$scope.a.icon}\"" if $scope.a.icon
 			attrs += "#{s}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
-			# attrs += "#{s}icon-size=\"#{$scope.a.iconSize}\"" if $scope.a.iconSize
+			attrs += "#{s}icon-size=\"#{$scope.a.iconSize}\"" if $scope.a.iconSize
 			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
 
 			"<rb-popover#{attrs}>#{content}</rb-popover>"
@@ -37,7 +37,12 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 		# Watches
 		# =======
 		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
-			$scope.markup = createMarkup()
+			if not newVal.showPopover
+				$scope.markup = createMarkup()
+			else
+				# needed to show example of show-popover
+				# avoids closing popover on window click
+				$timeout -> $scope.markup = createMarkup()
 		, true
 
 		# Rb Eventing

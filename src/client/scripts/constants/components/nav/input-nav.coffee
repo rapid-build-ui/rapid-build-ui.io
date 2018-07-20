@@ -1,7 +1,4 @@
 angular.module('rapid-build').constant 'RB_INPUT_NAV', [
-	type: 'install'
-	popover: 'yarn add @rapid-build-ui/rb-input'
-,
 	type: 'github'
 	url:  'https://git.io/vxAFx'
 ,

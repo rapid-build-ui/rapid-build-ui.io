@@ -7,15 +7,23 @@ header.page-header {
 	justify-content: space-between;
 
 	h1 {
+		display: flex;
 		line-height: remy(48);
 		font-variant: all-petite-caps;
+		rba-install {
+			position: relative;
+			top: 2px;
+			margin-right: remy(7.5);
+		}
 	}
 
 	/* Responsive
 	 *************/
 	@media (max-width: mapGet($gl-mq-list, sm)) {
-		rb-nav {
+		rba-source-nav {
+			position: relative;
 			right: remy(58);
+			// margin-right: remy(58);
 		}
 	}
 }

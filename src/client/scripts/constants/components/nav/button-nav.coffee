@@ -1,7 +1,4 @@
 angular.module('rapid-build').constant 'RB_BUTTON_NAV', [
-	type: 'install'
-	popover: 'yarn add @rapid-build-ui/rb-button'
-,
 	type: 'github'
 	url:  'https://git.io/vxA6e'
 ,
