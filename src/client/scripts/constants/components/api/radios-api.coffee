@@ -49,6 +49,12 @@ angular.module('rapid-build').constant 'RB_RADIOS_API', [
 	type: 'string'
 	required: false
 ,
+	attribute: 'toggle'
+	description: 'Adds ability to deselect a radio.'
+	options: null
+	type: null
+	required: false
+,
 	attribute: 'value'
 	description: '
 		Radios value.<br>
