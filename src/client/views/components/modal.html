@@ -1,0 +1,50 @@
+<div ng-controller="rbModalController">
+	<header class="page-header">
+		<h1>
+			<rba-install
+				source="modal"
+				icon-size=".55">
+			</rba-install>
+			rb-modal
+		</h1>
+		<rba-source-nav source="modal"></rba-source-nav>
+	</header>
+
+	<!-- COMPONENT -->
+	<section class="grid">
+		<div class="col">
+			<!-- <div rba-builder="markup"></div> -->
+			<ng-include ng-if="!!a.show" src="'/views/directives/modal.html'"></ng-include>
+		</div>
+		<div class="col-7">
+			<rba-code
+				scroll
+				bind="markup"
+				actions="copy"
+				caption="markup">
+			</rba-code>
+		</div>
+	</section>
+
+	<!-- DEMO -->
+	<form name="demoForm">
+		<h5 rba-text-curve>Demo</h5>
+
+		<rba-checkbox caption="show" model="a.show"></rba-checkbox>
+		<rb-radios toggle horizontal label="kind" value="a.kind" data="{{kinds}}"></rb-radios>
+
+		<section class="buttons">
+			<rb-button
+				data-reset
+				icon="sync"
+				icon-source="solid"
+				icon-position="left">
+				Reset
+			</rb-button>
+		</section>
+	</form>
+
+	<!-- API -->
+	<h5 rba-text-curve>API</h5>
+	<rba-table source="RB_MODAL_API" inject></rba-table>
+</div>
