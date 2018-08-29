@@ -1,5 +1,6 @@
 # PUBLISHING ORDER
 # ================
+✔ v0.0.x - base
 ✔ v0.0.x - icon
 ✔ v0.0.x - button
 ✔ v0.0.x - popover
