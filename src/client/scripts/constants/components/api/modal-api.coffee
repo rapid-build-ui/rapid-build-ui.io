@@ -1,4 +1,10 @@
 angular.module('rapid-build').constant 'RB_MODAL_API', [
+	attribute: 'center'
+	description: 'Vertically centers modal.'
+	options: null
+	type: null
+	required: false
+,
 	attribute: 'kind'
 	description: 'Varies look of display.'
 	options: 'info | danger | success | warning'

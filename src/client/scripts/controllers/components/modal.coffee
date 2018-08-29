@@ -6,6 +6,7 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
+			attrs += "#{s}center" if $scope.a.center
 			attrs += "#{s}show=\"#{$scope.a.show}\"" if $scope.a.show
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			"<rb-modal#{attrs}></rb-modal>"
