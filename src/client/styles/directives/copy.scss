@@ -21,4 +21,11 @@ rb-popover {
 			}
 		}
 	}
+
+	/* Remove Whitespace
+	 ********************/
+	.rb-copy-msg {
+		display: inline-flex;
+		margin-left: remy(4);
+	}
 }

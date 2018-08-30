@@ -1,0 +1,57 @@
+/********
+ * MODAL
+ ********/
+.rb-modal {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 2000;
+	display: flex;
+	align-items: flex-start;
+	background-color: rgba(0, 0, 0, 0.5);
+
+	&.center {
+		align-items: center;
+	}
+
+	.container {
+		max-width: 500px;
+		margin: 1.75rem auto;
+		background-color: white;
+		border: 1px solid rgba(0, 0, 0, .2);
+		border-radius: .3rem;
+		flex-grow: 1;
+
+		/* First Clear Inherited Styles
+		 *******************************/
+		> * {
+			margin: 0;
+			border: none;
+		}
+
+		/* Content Containers: Common
+		 *****************************/
+		> * {
+			padding: 16px;
+		}
+
+		/* Content Containers (Conditional Borders)
+		 *********************/
+		> header + .body,
+		> header + footer,
+		> .body  + footer {
+			border-top: 1px solid #e9ecef;
+		}
+
+		/* Header Content
+		 *****************/
+		> header {
+			h3 {
+				margin: 0;
+				font-size: remy(20);
+			}
+		}
+	}
+}

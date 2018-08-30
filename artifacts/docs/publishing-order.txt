@@ -1,9 +1,11 @@
 # PUBLISHING ORDER
 # ================
+✔ v0.0.x - base
 ✔ v0.0.x - icon
 ✔ v0.0.x - button
 ✔ v0.0.x - popover
 ✔ v0.0.x - alert
-✔ v0.0.x - input
 ✔ v0.0.x - nav
+✔ v0.0.x - input
 ✔ v0.0.x - radios
+✔ v0.0.x - modal

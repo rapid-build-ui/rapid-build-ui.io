@@ -1,16 +1,13 @@
 angular.module('rapid-build').constant 'RB_POPOVER_NAV', [
-	type: 'install'
-	popover: 'yarn add @rapid-build-ui/rb-popover'
-,
 	type: 'github'
-	url:  'https://git.io/vxAbT'
+	url:  'https://github.com/rapid-build-ui/rb-popover'
 ,
 	type: 'js'
-	url:  'https://git.io/vxAbL'
+	url:  'https://github.com/rapid-build-ui/rb-popover/blob/master/src/client/scripts/rb-popover.js'
 ,
 	type: 'html'
-	url:  'https://git.io/vxAbm'
+	url:  'https://github.com/rapid-build-ui/rb-popover/blob/master/src/client/views/rb-popover.html'
 ,
 	type: 'css'
-	url:  'https://git.io/vxAbO'
+	url:  'https://github.com/rapid-build-ui/rb-popover/blob/master/src/client/styles/rb-popover.scss'
 ]

@@ -32,6 +32,7 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 		# Rb Eventing
 		# ===========
 		rbEvents.addListeners $element, 'rb-input', 'value-changed'
+		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
 
 		# Event Handlers
 		# ==============

@@ -1,6 +1,12 @@
 <div ng-controller="rbIconController">
 	<header class="page-header">
-		<h1>rb-icon</h1>
+		<h1>
+			<rba-install
+				source="icon"
+				icon-size=".55">
+			</rba-install>
+			rb-icon
+		</h1>
 		<rba-source-nav source="icon"></rba-source-nav>
 	</header>
 
@@ -11,6 +17,7 @@
 		</div>
 		<div class="col-7">
 			<rba-code
+				scroll
 				bind="markup"
 				actions="copy"
 				caption="markup">
@@ -22,14 +29,16 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rba-radios inline caption="kind" model="a.kind" data="kinds"></rba-radios>
-		<rb-popover position="top" class="bumper-right-mini">
-			Name of any free
-			<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
-			Font awesome icon style must match icon source.
-		</rb-popover>
-		<rb-input inline value="a.kind" placeholder="font awesome"></rb-input>
-		<rba-radios caption="source" model="a.source" data="sources" toggle></rba-radios>
+		<rb-radios horizontal label="kind" value="a.kind" data="{{kinds}}" style="margin-right: -20px" toggle inline></rb-radios>
+		<div class="inline-block">
+			<rb-popover position="top" class="bumper-right-mini">
+				Name of any free
+				<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
+				Font awesome icon style must match icon source.
+			</rb-popover>
+			<rb-input value="a.kind" placeholder="any font awesome icon" toggle inline></rb-input>
+		</div>
+		<rb-radios horizontal label="source" value="a.source" data="{{sources}}" toggle></rb-radios>
 		<rb-input label="size" value="a.size" type="number"></rb-input>
 
 		<section class="buttons">

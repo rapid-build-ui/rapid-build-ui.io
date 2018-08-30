@@ -1,21 +1,22 @@
-<div ng-controller="rbAlertController">
+<div ng-controller="rbModalController">
 	<header class="page-header">
 		<h1>
 			<rba-install
-				source="alert"
+				source="modal"
 				icon-size=".55">
 			</rba-install>
-			rb-alert
+			rb-modal
 		</h1>
-		<rba-source-nav source="alert"></rba-source-nav>
+		<rba-source-nav source="modal"></rba-source-nav>
 	</header>
 
 	<!-- COMPONENT -->
 	<section class="grid">
 		<div class="col">
-			<div rba-builder="markup"></div>
+			<!-- <div rba-builder="markup"></div> -->
+			<ng-include ng-if="!!a.show" src="'/views/directives/modal.html'"></ng-include>
 		</div>
-		<div class="col-6">
+		<div class="col-7">
 			<rba-code
 				scroll
 				bind="markup"
@@ -29,11 +30,10 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rb-radios horizontal label="kind" value="a.kind" data="{{kinds}}" toggle></rb-radios>
- 		<rba-checkbox caption="removable" model="a.removable"></rba-checkbox>
-		<rba-textarea caption="content" model="a.content"></rba-textarea>
+		<rba-checkbox caption="show" model="a.show"></rba-checkbox>
+		<rba-checkbox caption="center" model="a.center"></rba-checkbox>
+		<rb-radios toggle horizontal label="kind" value="a.kind" data="{{kinds}}"></rb-radios>
 
-		<!-- FORM CONTROLS -->
 		<section class="buttons">
 			<rb-button
 				data-reset
@@ -47,5 +47,5 @@
 
 	<!-- API -->
 	<h5 rba-text-curve>API</h5>
-	<rba-table source="RB_ALERT_API" inject></rba-table>
+	<rba-table source="RB_MODAL_API" inject></rba-table>
 </div>

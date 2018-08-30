@@ -1,4 +1,4 @@
-angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$element', 'rbEventService',
+angular.module('rapid-build').controller 'rbModalController', ['$scope', '$element', 'rbEventService',
 	($scope, $element, rbEvents) ->
 		# Builder
 		# =======
@@ -6,37 +6,21 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
-			attrs += "#{s}removable" if $scope.a.removable
+			attrs += "#{s}center" if $scope.a.center
+			attrs += "#{s}show=\"#{$scope.a.show}\"" if $scope.a.show
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
-			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
-
-			"<rb-alert#{attrs}>#{content}</rb-alert>"
+			"<rb-modal#{attrs}></rb-modal>"
 
 		# Props
 		# =====
 		$scope.kinds = ['success','danger','warning','info']
 
-		# Content
-		# =======
-		content = """
-			Hello Gorgeous!
-		"""
-
-		# content = """
-		# 	Alert
-		# 	<hr>
-		# 	Alina
-		# """
-
 		# Methods
 		# =======
 		$scope.reset = ->
 			$scope.a =
-				# kind: 'success'
-				# kind: 'danger'
-				# kind: 'warning'
-				# kind: 'info'
-				content: content
+				show: false
+				# show: true
 
 		# Watches
 		# =======
@@ -65,5 +49,4 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 		$scope.$on '$destroy', ->
 			resetBtn.removeEventListener 'clicked', resetFrm
 			markupWatch()
-
 ]

@@ -44,6 +44,8 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 		# Rb Eventing
 		# ===========
 		rbEvents.addListeners $element, 'rb-input', 'value-changed'
+		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
+
 
 		# Event Handlers
 		# ==============

@@ -137,7 +137,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Internet Explorer, no way! We only support
+		Internet Explorer not supported. We only support
 		<a target="_blank" href="https://goo.gl/q9cxrY">evergreen browsers</a>.
 	'
 	'full support': null

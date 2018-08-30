@@ -1,6 +1,12 @@
 <div ng-controller="rbPopoverController">
 	<header class="page-header">
-		<h1>rb-popover</h1>
+		<h1>
+			<rba-install
+				source="popover"
+				icon-size=".55">
+			</rba-install>
+			rb-popover
+		</h1>
 		<rba-source-nav source="popover"></rba-source-nav>
 	</header>
 
@@ -11,6 +17,7 @@
 		</div>
 		<div class="col-7">
 			<rba-code
+				scroll
 				bind="markup"
 				actions="copy"
 				caption="markup">
@@ -22,13 +29,13 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rba-radios caption="kind" model="a.kind" data="kinds" toggle></rba-radios>
-		<rba-radios caption="position" model="a.position" data="positions" toggle></rba-radios>
+		<rb-radios horizontal label="kind" value="a.kind" data="{{kinds}}" toggle></rb-radios>
+		<rb-radios horizontal label="position" value="a.position" data="{{positions}}" toggle></rb-radios>
 
 		<!-- ICON OPTIONS -->
-		<rba-radios caption="icon" model="a.icon" data="icons" toggle></rba-radios>
-		<rba-radios caption="icon-source" model="a.iconSource" data="iconSources" toggle></rba-radios>
-		<!-- <rb-input type="number" label="icon-size" value="a.iconSize"></rb-input> -->
+		<rb-radios horizontal label="icon" value="a.icon" data="{{icons}}" toggle></rb-radios>
+		<rb-radios horizontal label="icon-source" value="a.iconSource" data="{{iconSources}}" toggle></rb-radios>
+		<rb-input type="number" label="icon-size" value="a.iconSize"></rb-input>
 
 		<!-- VALUELESS -->
 		<rba-checkbox inline caption="fit-content" model="a.fitContent"></rba-checkbox>

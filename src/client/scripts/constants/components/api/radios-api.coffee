@@ -1,11 +1,11 @@
 angular.module('rapid-build').constant 'RB_RADIOS_API', [
 	attribute: 'data'
 	description: '
-		Currently only supports an array of
+		Supports an array of
 		<a target="_blank" href="https://goo.gl/d9wizE">primitive</a>
-		values, array of
-		<a target="_blank" href="https://goo.gl/X5D796">objects</a>
-		support coming soon.
+		values and an array of
+		<a target="_blank" href="https://goo.gl/X5D796">objects</a>.<br>
+		<b class="sub">(array of objects, see label-prop)</b>
 	'
 	options: null
 	type: 'array'
@@ -35,6 +35,15 @@ angular.module('rapid-build').constant 'RB_RADIOS_API', [
 	type: 'string'
 	required: false
 ,
+	attribute: 'label-prop'
+	description: '
+		Property name used for radio labels.
+		<b class="sub">(data must be array of objects)</b>
+	'
+	options: null
+	type: 'string'
+	required: false
+,
 	attribute: 'right'
 	description: 'Align\'s component right.'
 	options: null
@@ -49,19 +58,21 @@ angular.module('rapid-build').constant 'RB_RADIOS_API', [
 	type: 'string'
 	required: false
 ,
+	attribute: 'toggle'
+	description: 'Adds ability to deselect a radio.'
+	options: null
+	type: null
+	required: false
+,
 	attribute: 'value'
 	description: '
-		Radios value.<br>
-		Currently only supports
+		Radios value supports
 		<a target="_blank" href="https://goo.gl/d9wizE">primitive</a>
-		values,
-		<a target="_blank" href="https://goo.gl/X5D796">object</a>
-		support coming soon.
+		values and
+		<a target="_blank" href="https://goo.gl/X5D796">objects</a>.
 	'
 	options: null
-	type: '
-		<a target="_blank" href="https://goo.gl/d9wizE">primitives</a>
-	'
+	type: 'primitives | objects'
 	required: false
 ,
 	attribute: 'validation'

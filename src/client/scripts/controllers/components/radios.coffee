@@ -6,21 +6,34 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 			attrs += "#{s}label=\"#{$scope.a.label}\"" if $scope.a.label
+			# attrs += "#{s}value='#{$scope.a.value}'" if $scope.a.value
 			attrs += "#{s}value='#{$scope.a.value}'" if $scope.a.value
 			attrs += "#{s}subtext=\"#{$scope.a.subtext}\"" if $scope.a.subtext
 			attrs += "#{s}disabled" if $scope.a.disabled
 			attrs += "#{s}right" if $scope.a.right
 			attrs += "#{s}inline" if $scope.a.inline
 			attrs += "#{s}horizontal" if $scope.a.horizontal
+			attrs += "#{s}toggle" if $scope.a.toggle
 			attrs += "#{s}stacked" if $scope.a.stacked
 			attrs += "#{s}data='#{buldDataMarkup()}'" if $scope.a.data?.length
-
+			attrs += "#{s}label-prop='#{$scope.a.labelProp}'" if $scope.a.labelProp
 			"<rb-radios#{attrs}></rb-radios>"
 
 		# Props
 		# =====
-		$scope.data = ['batman', 'superman', 'wolverine'] # batman thor wolverine
-		$scope.superhero = 'wolverine';
+		$scope.data = [
+			['batman', 'superman', 'wolverine']
+			[
+				{id: 1, name: 'batman'}
+				{id: 2, name: 'superman'}
+				{id: 3, name: 'wolverine'}
+			]
+		]
+		$scope.dataLabels = [
+			'array of strings',
+			'array of objects'
+		]
+		$scope.labelProps = ['name', 'id']
 
 		# Helpers
 		# =======
@@ -30,7 +43,15 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 			val.toString()
 
 		buldDataMarkup = () ->
-			JSON.stringify($scope.data, stringifyModifier, '\t')
+			_data = []
+
+			switch $scope.a.data
+				when 'array of strings'
+					_data = $scope.data[0]
+				when 'array of objects'
+					_data = $scope.data[1]
+
+			JSON.stringify(_data, stringifyModifier, '\t')
 				.replace(/\\n/g, '\n')
 				.replace(/\\"/g, '"')
 				.replace(/"function\s*\((.*)\)/g, 'function($1)')
@@ -40,8 +61,8 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 		# =======
 		$scope.reset = ->
 			$scope.a =
-				data: $scope.data
 				label: 'Superheroes'
+				data: 'array of strings'
 
 		# Watches
 		# =======
@@ -52,7 +73,7 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 		# Rb Eventing
 		# ===========
 		rbEvents.addListeners $element, 'rb-input', 'value-changed'
-		# rbEvents.addListeners $element, 'rb-radios', 'value-changed'
+		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
 
 		# Event Handlers
 		# ==============

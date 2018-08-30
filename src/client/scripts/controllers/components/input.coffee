@@ -65,7 +65,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 		$scope.iconSources  = ['solid','brands']
 		$scope.iconPosition = 'left'
 		$scope.validationLabels = [
-			'required',
+			'required'
 			'minLength'
 			'minMaxLength'
 			'custom'
@@ -94,6 +94,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 		# Rb Eventing
 		# ===========
 		rbEvents.addListeners $element, 'rb-input', 'value-changed'
+		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
 
 		# Event Handlers
 		# ==============

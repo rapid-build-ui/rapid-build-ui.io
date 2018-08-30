@@ -1,16 +1,13 @@
 angular.module('rapid-build').constant 'RB_ICON_NAV', [
-	type: 'install'
-	popover: 'yarn add @rapid-build-ui/rb-icon'
-,
 	type: 'github'
-	url:  'https://git.io/vxAFr'
+	url:  'https://github.com/rapid-build-ui/rb-icon'
 ,
 	type: 'js'
-	url:  'https://git.io/vxAF6'
+	url:  'https://github.com/rapid-build-ui/rb-icon/blob/master/src/client/scripts/rb-icon.js'
 ,
 	type: 'html'
-	url:  'https://git.io/vxAFD'
+	url:  'https://github.com/rapid-build-ui/rb-icon/blob/master/src/client/views/rb-icon.html'
 ,
 	type: 'css'
-	url:  'https://git.io/vxAFP'
+	url:  'https://github.com/rapid-build-ui/rb-icon/blob/master/src/client/styles/rb-icon.scss'
 ]

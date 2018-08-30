@@ -1,16 +1,13 @@
 angular.module('rapid-build').constant 'RB_RADIOS_NAV', [
-	type: 'install'
-	popover: 'yarn add @rapid-build-ui/rb-radios'
-,
 	type: 'github'
-	url:  'https://git.io/fbx5m'
+	url:  'https://github.com/rapid-build-ui/rb-radios'
 ,
 	type: 'js'
-	url:  'https://git.io/fbx5O'
+	url:  'https://github.com/rapid-build-ui/rb-radios/blob/master/src/client/scripts/rb-radios.js'
 ,
 	type: 'html'
-	url:  'https://git.io/fbx5G'
+	url:  'https://github.com/rapid-build-ui/rb-radios/blob/master/src/client/views/rb-radios.html'
 ,
 	type: 'css'
-	url:  'https://git.io/fbx5u'
+	url:  'https://github.com/rapid-build-ui/rb-radios/blob/master/src/client/styles/rb-radios.scss'
 ]
