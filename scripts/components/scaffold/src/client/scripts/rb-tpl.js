@@ -1,11 +1,10 @@
 /***********
  * {{upName}}
  ***********/
-import { props, withComponent } from '../../../skatejs/dist/esnext/index.js';
-import { html, withRenderer } from './renderer.js';
+import { props, html, RbBase } from '../../rb-base/scripts/rb-base.js';
 import template from '../views/{{name}}.html';
 
-export class {{className}} extends withComponent(withRenderer()) {
+export class {{className}} extends RbBase() {
 	/* Properties
 	 *************/
 	static get props() {
