@@ -29,13 +29,15 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rb-input label="icon" value="a.kind" placeholder="font awesome" toggle></rb-input>
-		<rb-radios horizontal label="kind" value="a.kind" data="{{kinds}}" inline toggle></rb-radios>
-		<rb-popover position="top" class="bumper-right-mini">
-			Name of any free
-			<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
-			Font awesome icon style must match icon source.
-		</rb-popover>
+		<rb-radios horizontal label="kind" value="a.kind" data="{{kinds}}" style="margin-right: -20px" toggle inline></rb-radios>
+		<div class="inline-block">
+			<rb-popover position="top" class="bumper-right-mini">
+				Name of any free
+				<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
+				Font awesome icon style must match icon source.
+			</rb-popover>
+			<rb-input value="a.kind" placeholder="any font awesome icon" toggle inline></rb-input>
+		</div>
 		<rb-radios horizontal label="source" value="a.source" data="{{sources}}" toggle></rb-radios>
 		<rb-input label="size" value="a.size" type="number"></rb-input>
 
