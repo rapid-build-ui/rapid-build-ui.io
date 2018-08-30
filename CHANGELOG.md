@@ -1,3 +1,16 @@
+## [0.0.7](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.6...v0.0.7) (2018-08-30)
+
+
+### Features
+
+* **homepage:** update with standout logo ([40bf1e7](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/40bf1e7))
+* **dog food:** use rb-radios instead of normal radios ([44723b9](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/44723b9))
+* **rb radios showcase:** add api option to handle array of objects for data ([44c3ce7](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/44c3ce7))
+* **source nav:** update urls on dev site to point to github continuous branch ([e6de8ea](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/e6de8ea))
+* **rb components:** bump all rb components to the versions that use rb-base ([dbac498](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/dbac498))
+
+
+
 ## [0.0.6](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.5...v0.0.6) (2018-07-11)
 
 
