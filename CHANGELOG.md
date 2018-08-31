@@ -1,3 +1,10 @@
+## [0.0.8](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.7...v0.0.8) (2018-08-31)
+
+
+Release only includes a couple verbiage tweaks.
+
+
+
 ## [0.0.7](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.6...v0.0.7) (2018-08-30)
 
 
