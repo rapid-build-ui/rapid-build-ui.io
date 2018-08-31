@@ -111,8 +111,8 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Edge has major issues (no surprise),
-		however some things do work via including the
+		Edge has major issues, however
+		some things do work via including the
 		<a target="_blank" href="https://git.io/vFMnE">webcomponentsjs polyfill</a>.
 	'
 	'full support': null
