@@ -5,17 +5,22 @@
 		</h1>
 	</header>
 
-	<!-- EXAMPLE -->
-	<form name="demoForm" action="/examples/validation">
-		<rb-input
-			label="First Name"
-			validation='[
-				"required"
-			]'>
-		</rb-input>
+	<!-- COMPONENT -->
+	<section class="grid">
+		<div class="col" id="markup">
+			<div rba-builder="markup"></div>
+		</div>
+	</section>
 
-		<!-- FORM CONTROLS -->
-		<button type="submit">Submit</button>
-		<!-- <rb-button type="submit">Submit</rb-button> -->
-	</form>
+	<div class="grid">
+		<div class="col">
+			<rba-code
+				scroll
+				bind="markup"
+				actions="copy"
+				caption="html"
+				height="giant">
+			</rba-code>
+		</div>
+	</div>
 </div>
