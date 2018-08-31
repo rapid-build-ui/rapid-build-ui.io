@@ -36,6 +36,12 @@
     "@rapid-build-ui/rb-base" "^0.0.1"
     "@rapid-build-ui/rb-icon" "^0.0.6"
 
+"@rapid-build-ui/rb-modal@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-modal/-/rb-modal-0.0.0.tgz#4648ecf67507a09b7c68c77b7e1d1f53cee5294f"
+  dependencies:
+    "@rapid-build-ui/rb-base" "^0.0.1"
+
 "@rapid-build-ui/rb-nav@^0.0.6":
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-nav/-/rb-nav-0.0.6.tgz#e6989ef914e8bb6e4c2b58f28d8dd069f1acfa13"
