@@ -1,0 +1,21 @@
+<div ng-controller="validationController">
+	<header class="page-header">
+		<h1>
+			Form Validation
+		</h1>
+	</header>
+
+	<!-- EXAMPLE -->
+	<form name="demoForm" action="/examples/validation">
+		<rb-input
+			label="First Name"
+			validation='[
+				"required"
+			]'>
+		</rb-input>
+
+		<!-- FORM CONTROLS -->
+		<button type="submit">Submit</button>
+		<!-- <rb-button type="submit">Submit</rb-button> -->
+	</form>
+</div>
