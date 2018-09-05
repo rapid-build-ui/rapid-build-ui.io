@@ -1,3 +1,23 @@
+## [0.0.9](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.8...v0.0.9) (2018-09-05)
+
+
+### Bug Fixes
+
+* **display:** main header nav from dropping down at smaller screen widths ([2d35846](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/2d35846))
+* **layout:** wolverine's main content to extend full height when viewport is small ([81e9cac](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/81e9cac))
+
+
+### Features
+
+* **new site examples section:** add it with one page, form validation ([9275e8d](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/9275e8d))
+* **form validation:** add html for the example form ([4d0a4c8](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/4d0a4c8))
+* **rb-modal:** add api description for content option ([fbb2b8e](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/fbb2b8e))
+* **rb-modal:** add content option to showcase page ([f4f82e5](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/f4f82e5))
+* **rb-modal:** add component ([6c2a5a4](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/6c2a5a4))
+* **rb components:** bump all rb components to the versions that use rb-base v0.0.2 ([61e4eb2](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/61e4eb2))
+
+
+
 ## [0.0.8](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.7...v0.0.8) (2018-08-31)
 
 
