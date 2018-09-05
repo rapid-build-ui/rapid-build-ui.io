@@ -23,6 +23,7 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 			$scope.a =
 				show: false
 				# show: true
+				content: 'Modal Content'
 
 		# Watches
 		# =======
