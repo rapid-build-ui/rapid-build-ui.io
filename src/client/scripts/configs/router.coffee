@@ -24,6 +24,17 @@ angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 		.when '/components/',
 			redirectTo: '/components/rb-alert'
 
+		.when '/examples/:example',
+			layout: 'wolverine'
+			reloadOnSearch: false
+			views: aside: '/views/navs/examples-nav.html'
+			templateUrl: (params) ->
+				view = params.example
+				"/views/examples/#{view}.html"
+
+		.when '/examples/',
+			redirectTo: '/examples/validation'
+
 		.otherwise
 			redirectTo: '/'
 ]

@@ -20,6 +20,11 @@
 		> [class*='col'] {
 			padding-left: 0;
 			padding-right: 0;
+
+			// make nav column last
+			&:first-of-type {
+				order: 2;
+			}
 		}
 	}
 }
