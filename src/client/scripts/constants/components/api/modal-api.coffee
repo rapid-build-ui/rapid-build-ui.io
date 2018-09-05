@@ -1,4 +1,13 @@
 angular.module('rapid-build').constant 'RB_MODAL_API', [
+	attribute: 'content'
+	description: '
+		<em class="not-attr">not attribute</em>
+		Content inside tag.
+	'
+	options: null
+	type: 'html | string'
+	required: false
+,
 	attribute: 'center'
 	description: 'Vertically centers modal.'
 	options: null
