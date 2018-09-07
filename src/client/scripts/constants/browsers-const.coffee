@@ -10,7 +10,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Fully supported (rock solid!).
+		Fully supported.
 	'
 	'full support': '
 		<rb-icon
@@ -20,7 +20,6 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 			class="full-support">
 		</rb-icon>
 	'
-	'partial support': null
 	'no support': null
 ,
 	# SAFARI
@@ -34,8 +33,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		All good besides a
-		few minor display issues.
+		Fully supported.
 	'
 	'full support': '
 		<rb-icon
@@ -45,7 +43,29 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 			class="full-support">
 		</rb-icon>
 	'
-	'partial support': null
+	'no support': null
+,
+	# OPERA
+	# =====
+	browser: '
+		<rb-icon
+			size="2.5"
+			kind="opera"
+			title="Opera"
+			source="brands">
+		</rb-icon>
+	'
+	notes: '
+		Fully supported.
+	'
+	'full support': '
+		<rb-icon
+			size="2"
+			kind="check"
+			source="solid"
+			class="full-support">
+		</rb-icon>
+	'
 	'no support': null
 ,
 	# FIREFOX
@@ -61,43 +81,21 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 	notes: '
 		Fully supported via enabling Firefox\'s
 		dom.webcomponents.shadowdom.enabled
-		(needs to be set to true).
-		To change preferences in Firefox, visit
-		<a target="_blank" href="https://goo.gl/cmG8fk">about:config</a>.
+		preference (needs to be set to true).
+		To change, open its
+		<a target="_blank" href="https://goo.gl/cmG8fk">configuration editor</a>.<br>
+		Fully supported starting at
+		<a target="_blank" href="https://goo.gl/eckZud">version 63</a>.
 	'
 	'full support': '
 		<rb-icon
 			size="1.65"
 			kind="flag"
 			source="solid"
-			class="full-support">
+			class="full-support"
+			title="Supported Behind Flag">
 		</rb-icon>
 	'
-	'partial support': null
-	'no support': null
-,
-	# OPERA
-	# =====
-	browser: '
-		<rb-icon
-			size="2.5"
-			kind="opera"
-			title="Opera"
-			source="brands">
-		</rb-icon>
-	'
-	notes: '
-		Fully supported (never ceases to amaze).
-	'
-	'full support': '
-		<rb-icon
-			size="2"
-			kind="check"
-			source="solid"
-			class="full-support">
-		</rb-icon>
-	'
-	'partial support': null
 	'no support': null
 ,
 	# EDGE
@@ -111,20 +109,20 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Edge has major issues, however
-		some things do work via including the
-		<a target="_blank" href="https://git.io/vFMnE">webcomponentsjs polyfill</a>.
+		Edge is currently unsupported
+		until they release a version with
+		custom elements and shadow dom support.
+		Hopefully <a target="_blank" href="https://goo.gl/WB51yG">coming soon</a>.
 	'
 	'full support': null
-	'partial support': '
+	'no support': '
 		<rb-icon
 			size="2"
 			kind="check"
 			source="solid"
-			class="partial-support">
+			class="no-support">
 		</rb-icon>
 	'
-	'no support': null
 ,
 	# INTERNET EXPLORER
 	# =================
@@ -137,11 +135,9 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Internet Explorer not supported. We only support
-		<a target="_blank" href="https://goo.gl/q9cxrY">evergreen browsers</a>.
+		Internet Explorer unsupported.
 	'
 	'full support': null
-	'partial support': null
 	'no support': '
 		<rb-icon
 			size="2"
