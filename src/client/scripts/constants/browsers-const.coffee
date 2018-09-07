@@ -81,7 +81,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 	notes: '
 		Firefox fully supported starting at
 		<a target="_blank" href="https://goo.gl/eckZud">version 63</a>.<br>
-		For versions les than 63 do the following:
+		For versions less than 63 do the following:
 		<ol>
 			<li>
 				Open its <a target="_blank" href="https://goo.gl/cmG8fk">configuration editor</a>.
