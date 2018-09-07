@@ -10,7 +10,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Fully supported.
+		Chrome fully supported.
 	'
 	'full support': '
 		<rb-icon
@@ -33,7 +33,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Fully supported.
+		Safari fully supported.
 	'
 	'full support': '
 		<rb-icon
@@ -56,7 +56,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Fully supported.
+		Opera fully supported.
 	'
 	'full support': '
 		<rb-icon
@@ -79,13 +79,21 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Fully supported via enabling Firefox\'s
-		dom.webcomponents.shadowdom.enabled
-		preference (needs to be set to true).
-		To change, open its
-		<a target="_blank" href="https://goo.gl/cmG8fk">configuration editor</a>.<br>
-		Fully supported starting at
-		<a target="_blank" href="https://goo.gl/eckZud">version 63</a>.
+		Firefox fully supported starting at
+		<a target="_blank" href="https://goo.gl/eckZud">version 63</a>.<br>
+		For versions les than 63 do the following:
+		<ol>
+			<li>
+				Open its <a target="_blank" href="https://goo.gl/cmG8fk">configuration editor</a>.
+			</li>
+			<li>
+				Set the following <strong>preferences to true</strong>:
+				<ul>
+					<li>dom.webcomponents.customelements.enabled</li>
+					<li>dom.webcomponents.shadowdom.enabled</li>
+				</ul>
+			</li>
+		</ol>
 	'
 	'full support': '
 		<rb-icon
