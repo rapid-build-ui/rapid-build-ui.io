@@ -1,3 +1,10 @@
+## [0.0.11](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.10...v0.0.11) (2018-09-08)
+
+
+Quick release to remove the rb-modal link. It's not quite ready yet.
+
+
+
 ## [0.0.10](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.9...v0.0.10) (2018-09-08)
 
 
