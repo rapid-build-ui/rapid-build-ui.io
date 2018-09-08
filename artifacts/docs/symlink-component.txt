@@ -1,0 +1,15 @@
+--------------------
+CREATE SYMBOLIC LINK
+--------------------
+ln -s /path/to/original/ /path/to/link
+
+--------------------
+SYMLINK RB COMPONENT
+--------------------
+• example
+• !! use absolute paths!!
+• copy all then paste and run in terminal
+--------------------
+ln -s \
+/component-path/rb-component/dist/client/ \
+/showcase-path/rapid-build-ui.io/src/client/node_modules/@rapid-build-ui/rb-component
