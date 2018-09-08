@@ -30,6 +30,7 @@
   },
   "flat": true,
   "dependencies": {
+    "@rapid-build-ui/form-control": "^0.0.1",
     "@rapid-build-ui/rb-alert": "^0.0.13",
     "@rapid-build-ui/rb-base": "^0.0.2",
     "@rapid-build-ui/rb-button": "^0.0.9",
