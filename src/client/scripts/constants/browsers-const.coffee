@@ -10,7 +10,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Fully supported (rock solid!).
+		Chrome fully supported.
 	'
 	'full support': '
 		<rb-icon
@@ -20,7 +20,6 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 			class="full-support">
 		</rb-icon>
 	'
-	'partial support': null
 	'no support': null
 ,
 	# SAFARI
@@ -34,8 +33,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		All good besides a
-		few minor display issues.
+		Safari fully supported.
 	'
 	'full support': '
 		<rb-icon
@@ -45,35 +43,6 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 			class="full-support">
 		</rb-icon>
 	'
-	'partial support': null
-	'no support': null
-,
-	# FIREFOX
-	# =======
-	browser: '
-		<rb-icon
-			size="2.5"
-			kind="firefox"
-			title="Firefox"
-			source="brands">
-		</rb-icon>
-	'
-	notes: '
-		Fully supported via enabling Firefox\'s
-		dom.webcomponents.shadowdom.enabled
-		(needs to be set to true).
-		To change preferences in Firefox, visit
-		<a target="_blank" href="https://goo.gl/cmG8fk">about:config</a>.
-	'
-	'full support': '
-		<rb-icon
-			size="1.65"
-			kind="flag"
-			source="solid"
-			class="full-support">
-		</rb-icon>
-	'
-	'partial support': null
 	'no support': null
 ,
 	# OPERA
@@ -87,7 +56,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Fully supported (never ceases to amaze).
+		Opera fully supported.
 	'
 	'full support': '
 		<rb-icon
@@ -97,7 +66,44 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 			class="full-support">
 		</rb-icon>
 	'
-	'partial support': null
+	'no support': null
+,
+	# FIREFOX
+	# =======
+	browser: '
+		<rb-icon
+			size="2.5"
+			kind="firefox"
+			title="Firefox"
+			source="brands">
+		</rb-icon>
+	'
+	notes: '
+		Firefox fully supported starting at
+		<a target="_blank" href="https://goo.gl/eckZud">version 63</a>.<br>
+		For versions less than 63 do the following:
+		<ol>
+			<li>
+				Open its <a target="_blank" href="https://goo.gl/cmG8fk">configuration editor</a>.
+			</li>
+			<li>
+				Set the following <strong>preferences to true</strong>:
+				<ul>
+					<li>dom.webcomponents.customelements.enabled</li>
+					<li>dom.webcomponents.shadowdom.enabled</li>
+				</ul>
+			</li>
+		</ol>
+	'
+	'full support': '
+		<rb-icon
+			size="1.65"
+			kind="flag"
+			source="solid"
+			class="full-support"
+			title="Supported Behind Flag">
+		</rb-icon>
+	'
 	'no support': null
 ,
 	# EDGE
@@ -111,20 +117,21 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Edge has major issues, however
-		some things do work via including the
-		<a target="_blank" href="https://git.io/vFMnE">webcomponentsjs polyfill</a>.
+		Microsoft Edge currently unsupported until
+		<strong>custom elements</strong> and
+		<strong>shadow dom</strong> is supported.
+		<a target="_blank" href="https://goo.gl/WB51yG" title="Microsoft Edge Dev Blog">Please
+		join the thousands of people and upvote for them</a>.
 	'
 	'full support': null
-	'partial support': '
+	'no support': '
 		<rb-icon
 			size="2"
 			kind="check"
 			source="solid"
-			class="partial-support">
+			class="no-support">
 		</rb-icon>
 	'
-	'no support': null
 ,
 	# INTERNET EXPLORER
 	# =================
@@ -137,11 +144,9 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Internet Explorer not supported. We only support
-		<a target="_blank" href="https://goo.gl/q9cxrY">evergreen browsers</a>.
+		Internet Explorer unsupported.
 	'
 	'full support': null
-	'partial support': null
 	'no support': '
 		<rb-icon
 			size="2"

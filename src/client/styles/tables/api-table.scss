@@ -53,7 +53,6 @@ $textColors: (
 	.partial-support { color: #e7af00; }
 	.no-support      { color: #dc3545; }
 
-
 	/* Filtering
 	 ************/
 	.na, .no { color: mapGet($textColors, sub); }
@@ -75,7 +74,7 @@ $textColors: (
 	/* Headings
 	 ***********/
 	h6 {
-		margin: remy(3) 0;
+		margin: 0;
 		padding: 0;
 		color: inherit;
 		font-weight: 600;
@@ -85,11 +84,11 @@ $textColors: (
 
 	/* Lists
 	 ********/
-	ul {
+	ol, ul {
 		margin: 0;
 		padding-left: 1.2em;
 		li {
-			margin: 0 0 remy(4);
+			margin: 0;
 		}
 	}
 

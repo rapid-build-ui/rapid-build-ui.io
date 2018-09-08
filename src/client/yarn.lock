@@ -2,6 +2,12 @@
 # yarn lockfile v1
 
 
+"@rapid-build-ui/form-control@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/form-control/-/form-control-0.0.1.tgz#cdae8bb5f023472c2226196410a487c58897acd6"
+  dependencies:
+    "@rapid-build-ui/rb-base" "^0.0.2"
+
 "@rapid-build-ui/rb-alert@^0.0.13":
   version "0.0.13"
   resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-alert/-/rb-alert-0.0.13.tgz#3733ba6e1cea8d465340dabecbf73c34deef34eb"
@@ -29,10 +35,11 @@
   dependencies:
     "@rapid-build-ui/rb-base" "^0.0.2"
 
-"@rapid-build-ui/rb-input@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-input/-/rb-input-0.0.7.tgz#4395bbd87b48c2bcc07a92f5df67dc6263de64fd"
+"@rapid-build-ui/rb-input@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-input/-/rb-input-0.0.8.tgz#2af679f4248aaeacfee0560d579204827bd64dde"
   dependencies:
+    "@rapid-build-ui/form-control" "^0.0.1"
     "@rapid-build-ui/rb-base" "^0.0.2"
     "@rapid-build-ui/rb-icon" "^0.0.7"
 
@@ -61,10 +68,6 @@
   resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-radios/-/rb-radios-0.0.4.tgz#081dd2999fd2a7898c130eac0213a374d4c554c4"
   dependencies:
     "@rapid-build-ui/rb-base" "^0.0.2"
-
-"@webcomponents/webcomponentsjs@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@webcomponents/webcomponentsjs/-/webcomponentsjs-2.1.1.tgz#2884f5a878d0823dd6b3a15a06fb0382c3012d88"
 
 clipboard@^2.0.0:
   version "2.0.1"

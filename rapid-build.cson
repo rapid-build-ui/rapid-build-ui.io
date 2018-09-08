@@ -34,6 +34,10 @@ common:
 			cacheBust: [
 				'node_modules/**'
 			]
+			spaFile:
+				scripts: [
+					'scripts/rapid.js'
+				]
 
 	minify:
 		spa:
