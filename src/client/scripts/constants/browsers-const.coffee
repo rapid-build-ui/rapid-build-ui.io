@@ -117,10 +117,11 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Edge is currently unsupported
-		until they release a version with
-		custom elements and shadow dom support.
-		Hopefully <a target="_blank" href="https://goo.gl/WB51yG">coming soon</a>.
+		Microsoft Edge currently unsupported until
+		<strong>custom elements</strong> and
+		<strong>shadow dom</strong> is supported.
+		<a target="_blank" href="https://goo.gl/WB51yG" title="Microsoft Edge Dev Blog">Please
+		join the thousands of people and upvote for them</a>.
 	'
 	'full support': null
 	'no support': '
