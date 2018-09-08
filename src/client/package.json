@@ -35,7 +35,7 @@
     "@rapid-build-ui/rb-base": "^0.0.2",
     "@rapid-build-ui/rb-button": "^0.0.9",
     "@rapid-build-ui/rb-icon": "^0.0.7",
-    "@rapid-build-ui/rb-input": "^0.0.7",
+    "@rapid-build-ui/rb-input": "^0.0.8",
     "@rapid-build-ui/rb-modal": "^0.0.1",
     "@rapid-build-ui/rb-nav": "^0.0.7",
     "@rapid-build-ui/rb-popover": "^0.0.9",

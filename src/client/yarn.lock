@@ -35,10 +35,11 @@
   dependencies:
     "@rapid-build-ui/rb-base" "^0.0.2"
 
-"@rapid-build-ui/rb-input@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-input/-/rb-input-0.0.7.tgz#4395bbd87b48c2bcc07a92f5df67dc6263de64fd"
+"@rapid-build-ui/rb-input@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-input/-/rb-input-0.0.8.tgz#2af679f4248aaeacfee0560d579204827bd64dde"
   dependencies:
+    "@rapid-build-ui/form-control" "^0.0.1"
     "@rapid-build-ui/rb-base" "^0.0.2"
     "@rapid-build-ui/rb-icon" "^0.0.7"
 
