@@ -1,3 +1,12 @@
+## [0.0.10](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.9...v0.0.10) (2018-09-08)
+
+
+### Bug Fixes
+
+* **rb-input:** [icon-source option](https://github.com/rapid-build-ui/rb-input/commit/18e5809) by bumping rb-input to v0.0.8 ([f97352e](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/f97352e))
+
+
+
 ## [0.0.9](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.8...v0.0.9) (2018-09-05)
 
 
