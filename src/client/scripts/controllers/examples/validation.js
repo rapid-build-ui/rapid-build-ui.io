@@ -11,7 +11,11 @@ angular.module('rapid-build').controller('validationController', ['$scope', '$el
 			"required"
 		]'>
 	</rb-input>
-	<button type="submit">Submit</button>
+	<rb-button
+		size="small"
+		type="submit">
+		Submit
+	</rb-button>
 </form>
 		`.trim();
 }]);
