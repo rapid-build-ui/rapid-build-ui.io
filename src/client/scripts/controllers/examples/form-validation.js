@@ -11,9 +11,7 @@ angular.module('rapid-build').controller('formValidationController', ['$scope', 
 			"required"
 		]'>
 	</rb-input>
-	<rb-button
-		size="small"
-		type="submit">
+	<rb-button type="submit">
 		Submit
 	</rb-button>
 </form>
