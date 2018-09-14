@@ -1,3 +1,14 @@
+## [0.0.12](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.11...v0.0.12) (2018-09-14)
+
+
+### Features
+
+* **bump:** deps all rb components ([9d1a4f0](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/9d1a4f0))
+* **rb-modal:** add unclosable to api section ([945302e](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/945302e))
+* **rb-modal:** unclosable option ([66f9a35](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/66f9a35))
+
+
+
 ## [0.0.11](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.10...v0.0.11) (2018-09-08)
 
 
