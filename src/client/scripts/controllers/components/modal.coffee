@@ -9,6 +9,7 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 			attrs += "#{s}center" if $scope.a.center
 			attrs += "#{s}show=\"#{$scope.a.show}\"" if $scope.a.show
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
+			attrs += "#{s}unclosable" if $scope.a.unclosable
 			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
 
 			"<rb-modal#{attrs}>#{content}</rb-modal>"
@@ -22,7 +23,7 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		$scope.reset = ->
 			$scope.a =
 				show: false
-				# show: true
+				closable: true
 				content: 'Modal Content'
 
 		# Watches
