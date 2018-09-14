@@ -23,7 +23,6 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		$scope.reset = ->
 			$scope.a =
 				show: false
-				closable: true
 				content: 'Modal Content'
 
 		# Watches
