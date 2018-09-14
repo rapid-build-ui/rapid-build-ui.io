@@ -36,6 +36,7 @@
     "build-release": "node node_modules/@rapid-build-ui/utils/ci showcase release",
     "bump": "node node_modules/@rapid-build-ui/utils/bump showcase patch",
     "create-component": "node scripts/api/create-component",
+    "create-mixin": "node scripts/api/create-mixin",
     "install-client": "cd src/client/ && yarn install --ignore-engines",
     "install-server": "cd src/server/ && npm install",
     "presetup": "node scripts/api/link-components",

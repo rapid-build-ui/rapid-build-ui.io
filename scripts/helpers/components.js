@@ -13,6 +13,11 @@ const exec = util.promisify(execAsync);
  ********/
 class RbComponents {
 	constructor(names=[]) {
+		// Names can be provided when calling api:
+		// link-components.js or setup-components.js
+		// Currently can't provide a mixin name
+		// because of this.prefix validation in:
+		// set names -> this.formatName(name);
 		this.names = names;
 	}
 
@@ -131,9 +136,10 @@ class RbComponents {
 
 	/* helpers
 	 **********/
-	formatName(name) { // :string
+	formatName(name, isMixin = false) { // :string
 		!name && clog.componentRequired({exit:true}); // validation
 		name = name.toLowerCase();
+		if (isMixin) return name; // mixins are not prefix with rb-
 		if (!name.indexOf(this.prefix)) return name;
 		return `${this.prefix}${name}`
 	}

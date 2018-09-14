@@ -15,8 +15,9 @@ const RbComponents = require('../helpers/components');
 /* Class
  ********/
 class RbCreateComponent extends RbComponents {
-	constructor(name) {
+	constructor(name, opts={}) {
 		super();
+		this.type = opts.type;
 		this.name = name;
 	}
 
@@ -94,12 +95,27 @@ class RbCreateComponent extends RbComponents {
 		return `${this.componentsPath}/.temp`;
 	}
 
+	get type() { // :string (component || mixin)
+		return this._type;
+	}
+
+	get types() { // :string[]
+		return ['component', 'mixin'];
+	}
+
 	/* setters
 	 **********/
 	set name(name) {
-		name = this.formatName(name); // validation (must be unique component)
+		const isMixin = this.type === 'mixin';
+		name = this.formatName(name, isMixin); // validation (must be unique component or mixin)
 		this.names.includes(name) && clog.componentExist(name, {exit:true});
 		this._name = name;
+	}
+
+	set type(type) { // component || mixin
+		type = typeof type === 'string' ? type.toLowerCase() : 'component';
+		!this.types.includes(type) && clog.invalidType(type, {exit:true}); // validation
+		this._type = type;
 	}
 
 	/* private
