@@ -14,6 +14,12 @@ angular.module('rapid-build').constant 'RB_MODAL_API', [
 	type: null
 	required: false
 ,
+	attribute: 'unclosable'
+	description: 'It prevents the modal from being closed'
+	option: null
+	type: 'null'
+	required: false
+,
 	attribute: 'kind'
 	description: 'Varies look of display.'
 	options: 'info | danger | success | warning'

@@ -1,9 +1,9 @@
-angular.module('rapid-build').controller('validationController', ['$scope', '$element', 'rbEventService',
+angular.module('rapid-build').controller('formValidationController', ['$scope', '$element', 'rbEventService',
 	($scope, $element, rbEvents) => {
 		// Builder
 		// =======
 		$scope.markup = `
-<form action="/examples/validation">
+<form action>
 	<rb-input
 		name="name"
 		label="Name"
@@ -11,7 +11,9 @@ angular.module('rapid-build').controller('validationController', ['$scope', '$el
 			"required"
 		]'>
 	</rb-input>
-	<button type="submit">Submit</button>
+	<rb-button type="submit">
+		Submit
+	</rb-button>
 </form>
 		`.trim();
 }]);
