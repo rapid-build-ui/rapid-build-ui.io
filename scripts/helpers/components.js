@@ -2,10 +2,12 @@
  *****************************************/
 const fs   = require('fs');
 const fse  = require('fs-extra');
+const util = require('util');
 const path = require('path');
 const clog = require('./component-log');
 const CWD  = process.cwd();
-const { execSync } = require('child_process');
+const { execSync, exec: execAsync } = require('child_process');
+const exec = util.promisify(execAsync);
 
 /* Class
  ********/
@@ -138,30 +140,58 @@ class RbComponents {
 
 	/* methods
 	 **********/
-	gitPull() { // :void
-		// let cmd       = 'git status'
-		// let cmd       = 'git error'
-		let cmd       = 'git pull'
-		let projPaths = this.projectPaths;
+	gitPull() { // :Promise[{}] (runs async)
+		// const cmd       = 'git status';
+		// const cmd       = 'git error';
+		const cmd       = 'git pull';
+		const projPaths = this.projectPaths;
+		const promises  = [];
 		for (const projPath of projPaths) {
-			let name = projPath.substr(projPath.lastIndexOf(path.sep) + 1);
-			clog.pullComponent(name, cmd);
-			let opts   = { cwd: projPath };
-			let result = execSync(cmd, opts).toString();
-			console.info(result.minor);
+			const name    = projPath.substr(projPath.lastIndexOf(path.sep) + 1);
+			const opts    = { cwd: projPath };
+			const promise = exec(cmd, opts)
+				.then(res  => { return { cmd, name, res } })
+				.catch(err => { return { cmd, name, err } });
+			promises.push(promise);
 		}
+		return Promise.all(promises).then(results => {
+			for (const result of results) {
+				clog.pullComponent(result.name, result.cmd, { bumper: false });
+				if (result.err) {
+					console.error('ERROR:'.error, result.err.stderr.error);
+					process.exit(1);
+					break;
+				}
+				console.info(result.res.stdout.minor, '');
+			}
+			return results;
+		});
 	}
 
-	runSetup() { // :void
-		let cmd       = 'npm run setup'
-		let projPaths = this.projectPaths;
+	runSetup() { // :Promise[{}] (runs async)
+		const cmd       = 'npm run setup';
+		const projPaths = this.projectPaths;
+		const promises  = [];
 		for (const projPath of projPaths) {
-			let name = projPath.substr(projPath.lastIndexOf(path.sep) + 1);
-			clog.setupComponent(name, cmd);
-			let opts   = { cwd: projPath };
-			let result = execSync(cmd, opts).toString();
-			console.info(result.minor);
+			const name    = projPath.substr(projPath.lastIndexOf(path.sep) + 1);
+			const opts    = { cwd: projPath };
+			const promise = exec(cmd, opts)
+				.then(res  => { return { cmd, name, res } })
+				.catch(err => { return { cmd, name, err } });
+			promises.push(promise);
 		}
+		return Promise.all(promises).then(results => {
+			for (const result of results) {
+				clog.setupComponent(result.name, result.cmd, { bumper: false });
+				if (result.err) {
+					console.error('ERROR:'.error, result.err.stderr.error);
+					process.exit(1);
+					break;
+				}
+				console.info(result.res.stdout.minor, '');
+			}
+			return results;
+		});
 	}
 
 	yarnLink() { // :void

@@ -94,9 +94,10 @@ const Log = {
 	},
 
 	pullComponent(name, cmd, opts={}) {
+		const bumper = opts.bumper === false ? '' : '\n';
 		info(template.separate`
 			${`${name} running`.toUpperCase()}: ${cmd}
-		`.alert, '\n');
+		`.alert, bumper);
 	},
 
 	pushComponent(name, cmd, opts={}) {
@@ -115,9 +116,10 @@ const Log = {
 	},
 
 	setupComponent(name, cmd, opts={}) {
+		const bumper = opts.bumper === false ? '' : '\n';
 		info(template.separate`
 			${`${name} running`.toUpperCase()}: ${cmd}
-		`.alert, '\n');
+		`.alert, bumper);
 	},
 
 	setupBegin(names, message, opts={}) { // names: string[] | string
