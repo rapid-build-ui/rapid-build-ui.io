@@ -47,17 +47,3 @@ common:
 		server:
 			js:
 				es6: true
-
-demo:
-	build: server: true
-	browser: open: true, reload: true
-
-	ports:
-		server: 5004
-		reload: 5005
-
-	extra:
-		copy:
-			client: [
-				'node_modules/**'
-			]
