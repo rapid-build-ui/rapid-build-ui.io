@@ -8,16 +8,26 @@ angular.module('rapid-build').constant 'RB_MODAL_API', [
 	type: 'html | string'
 	required: false
 ,
+	attribute: 'header'
+	description: '
+		Coming soon...
+	'
+	options: null
+	type: 'html | string'
+	required: false
+,
+	attribute: 'footer'
+	description: '
+		Coming soon...
+	'
+	options: null
+	type: 'html | string'
+	required: false
+,
 	attribute: 'center'
 	description: 'Vertically centers modal.'
 	options: null
 	type: null
-	required: false
-,
-	attribute: 'unclosable'
-	description: 'It prevents the modal from being closed'
-	option: null
-	type: 'null'
 	required: false
 ,
 	attribute: 'kind'
@@ -34,5 +44,11 @@ angular.module('rapid-build').constant 'RB_MODAL_API', [
 	'
 	options: 'true'
 	type: 'boolean'
+	required: false
+,
+	attribute: 'unclosable'
+	description: 'It prevents the modal from being closed'
+	option: null
+	type: null
 	required: false
 ]

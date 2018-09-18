@@ -6,7 +6,10 @@
 	<textarea
 		name="{{name}}"
 		ng-model="model"
-		ng-class="width"
-		placeholder="{{placeholder}}">
+		placeholder="{{placeholder}}"
+		ng-class="[
+			!!width ? width+'-width' : '',
+			!!height ? height+'-height' : ''
+		].join(' ')">
 	</textarea>
 </div>

@@ -52,15 +52,10 @@ textarea {
 	line-height: 1.15rem;
 	width: remy(325);
 	height: remy(112);
-	&.wide {
-		width: remy(430);
-	}
-	&.xwide {
-		width: remy(450);
-	}
-	&.xxwide {
-		width: remy(475);
-	}
+	&.wide-width   { width: remy(430); }
+	&.xwide-width  { width: remy(450); }
+	&.xxwide-width { width: remy(475); }
+	&.short-height { height: remy(55); }
 }
 
 /* Checkboxes and Radios
