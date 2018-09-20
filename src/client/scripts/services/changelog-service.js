@@ -1,8 +1,8 @@
 /********************
  * CHANGELOG SERVICE
  ********************/
-angular.module('rapid-build').service('changelogService', ['$http',
-	function($http) {
+angular.module('rapid-build').service('changelogService', ['$http', 'ENV',
+	function($http, ENV) {
 
 		this.get = component => { // :promise
 			const config = {
@@ -10,7 +10,9 @@ angular.module('rapid-build').service('changelogService', ['$http',
 				cache: true,
 				url: `/api/${component}/changelog`
 			}
-			// config.params = { branch: 'continuous' }
+
+			if (ENV.is.dev)
+				config.params = { branch: 'continuous' };
 
 			return $http(config).then(res => {
 				return res.data;
@@ -19,5 +21,4 @@ angular.module('rapid-build').service('changelogService', ['$http',
 			});
 		};
 
-	}
-]);
+}]);

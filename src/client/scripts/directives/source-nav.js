@@ -1,5 +1,5 @@
-angular.module('rapid-build').directive('rbaSourceNav', ['componentService', '$location',
-	(componentService, $location) => {
+angular.module('rapid-build').directive('rbaSourceNav', ['componentService', 'ENV',
+	(componentService, ENV) => {
 		/* COMPILE
 		 **********/
 		const Compile = function(tElement, tAttrs, transclude) {
@@ -28,11 +28,8 @@ angular.module('rapid-build').directive('rbaSourceNav', ['componentService', '$l
 
 			/* Prep Source Urls for Environment
 			 ***********************************/
-			const host      = $location.host().toLowerCase(); // ex: rapid-build-ui.io
-			const isStaging = host.indexOf('staging') === 0;
-			const isProd    = host.indexOf('rapid') === 0;
-			const isDev     = !isStaging && !isProd;
-			if (isDev) Helpers.updateDevUrls(source);
+			if (ENV.is.dev)
+				Helpers.updateDevUrls(source);
 
 			/* Props
 			 ********/

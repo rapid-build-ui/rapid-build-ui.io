@@ -31,16 +31,6 @@ angular.module('rapid-build').directive('rbaChangelog', ['changelogService',
 			};
 		}
 
-		/* HELPERS
-		 **********/
-		// const Helpers = {
-		// 	getComponentName(name) { // :string
-		// 		if (typeof name !== 'string') return name;
-		// 		if (name.includes('rb-')) return name;
-		// 		return `rb-${name}`;
-		// 	}
-		// }
-
 		/* API
 		 ******/
 		return {
