@@ -10,7 +10,7 @@ angular.module('rapid-build').constant 'RB_MODAL_API', [
 ,
 	attribute: 'header'
 	description: '
-		Coming soon...
+		Add content in the header using slot attribute equals header.
 	'
 	options: null
 	type: 'html | string'
@@ -18,7 +18,7 @@ angular.module('rapid-build').constant 'RB_MODAL_API', [
 ,
 	attribute: 'footer'
 	description: '
-		Coming soon...
+		Add content in the footer using slot attribute equals footer.
 	'
 	options: null
 	type: 'html | string'
