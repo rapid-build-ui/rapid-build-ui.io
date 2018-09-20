@@ -1,5 +1,6 @@
 common:
 	# build: server: false
+	# build: client: false
 	# browser: open: false, reload: false
 
 	ports:
@@ -18,6 +19,10 @@ common:
 		autoInject: ['ngCloakStyles']
 		src:
 			filePath: 'spa.html'
+
+	dist:
+		server:
+			fileName: 'app.js'
 
 	extra:
 		copy:

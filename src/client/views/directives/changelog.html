@@ -1,0 +1,13 @@
+<section class="rb-changelog">
+	<h5 class="trigger" rba-text-curve>
+		<rb-button
+			kind="text"
+			icon-source="solid"
+			icon-position="left"
+			ng-click="setChangelog(src)"
+			icon="caret-{{toggle === 'open' ? 'down' : 'right'}}">
+			CHANGELOG
+		</rb-button>
+	</h5>
+	<div class="changelog" ng-bind-html="changelog | trustHtml"></div>
+</section>

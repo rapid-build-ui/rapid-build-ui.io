@@ -2,5 +2,21 @@
  * SECTIONS
  ***********/
 section {
-	margin-bottom: remy(15);
+	margin-bottom: remy(40);
+
+	/* Sections
+	 ***********/
+	&.grid,
+	&.buttons {
+		margin-bottom: remy(15);
+	}
+
+	/* Options
+	 **********/
+	&.separated {
+		margin-bottom: remy(32);
+		padding-bottom: remy(33);
+		border-bottom: 1px dashed #ddd;
+		@include removeLastChildBottomSpacing();
+	}
 }
