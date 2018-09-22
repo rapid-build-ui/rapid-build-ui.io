@@ -4,6 +4,7 @@ const fs   = require('fs');
 const fse  = require('fs-extra');
 const util = require('util');
 const path = require('path');
+const ora  = require('ora');
 const clog = require('./component-log');
 const CWD  = process.cwd();
 const { execSync, exec: execAsync } = require('child_process');
@@ -152,6 +153,8 @@ class RbComponents {
 		const cmd       = 'git pull';
 		const projPaths = this.projectPaths;
 		const promises  = [];
+		const spinner   = ora();
+		spinner.start('Pulling Components'.attn);
 		for (const projPath of projPaths) {
 			const name    = projPath.substr(projPath.lastIndexOf(path.sep) + 1);
 			const opts    = { cwd: projPath };
@@ -161,23 +164,29 @@ class RbComponents {
 			promises.push(promise);
 		}
 		return Promise.all(promises).then(results => {
+			console.log('\n');
 			for (const result of results) {
 				clog.pullComponent(result.name, result.cmd, { bumper: false });
 				if (result.err) {
+					spinner.stop();
 					console.error('ERROR:'.error, result.err.stderr.error);
 					process.exit(1);
 					break;
 				}
-				console.info(result.res.stdout.minor, '');
+				console.info(result.res.stdout.minor);
 			}
+			spinner.succeed('Pulled Components\n'.success);
 			return results;
 		});
 	}
 
 	runSetup() { // :Promise[{}] (runs async)
+		// const cmd       = 'npm run error';
 		const cmd       = 'npm run setup';
 		const projPaths = this.projectPaths;
 		const promises  = [];
+		const spinner   = ora();
+		spinner.start('Setting Up Components'.attn);
 		for (const projPath of projPaths) {
 			const name    = projPath.substr(projPath.lastIndexOf(path.sep) + 1);
 			const opts    = { cwd: projPath };
@@ -187,26 +196,40 @@ class RbComponents {
 			promises.push(promise);
 		}
 		return Promise.all(promises).then(results => {
+			console.log('\n');
 			for (const result of results) {
 				clog.setupComponent(result.name, result.cmd, { bumper: false });
 				if (result.err) {
+					spinner.stop();
 					console.error('ERROR:'.error, result.err.stderr.error);
 					process.exit(1);
 					break;
 				}
-				console.info(result.res.stdout.minor, '');
+				console.info(result.res.stdout.minor);
 			}
+			spinner.succeed('Setup Components\n'.success);
 			return results;
 		});
 	}
 
-	yarnLink() { // :void
-		let pkgNames = this.pkgNames;
-		let gPaths   = this.globalPaths; // for validation
-		let cmd      = `yarn link ${this.pkgNames.join(' ')}`;
-		let opts     = { cwd: this.showcaseClientPath };
-		let result   = execSync(cmd, opts).toString();
-		console.info(result.minor);
+	yarnLink() { // :Promise{}
+		const pkgNames = this.pkgNames;
+		const gPaths   = this.globalPaths; // for validation
+		const cmd      = `yarn link ${this.pkgNames.join(' ')}`;
+		const opts     = { cwd: this.showcaseClientPath };
+		const spinner  = ora();
+		spinner.start('Linking Components'.attn);
+		return exec(cmd, opts).then(res => {
+			console.log('\n');
+			console.info(res.stdout.minor);
+			spinner.succeed('Linked Components\n'.success);
+			return res;
+		}).catch(err => {
+			spinner.fail('Linking Components\n'.error);
+			console.error('ERROR:'.error, err.message.error);
+			process.exit(1);
+			return err;
+		});
 	}
 }
 
