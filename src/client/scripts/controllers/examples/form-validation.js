@@ -12,7 +12,7 @@ angular.module('rapid-build').controller('formValidationController', ['$scope', 
 	<rb-radios
 		toggle
 		name="heroes"
-		label-prop="name"
+		label-key="name"
 		label="Superheroes"
 		validation='["required"]'
 		data='[

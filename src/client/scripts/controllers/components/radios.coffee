@@ -17,7 +17,7 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 			attrs += "#{s}toggle" if $scope.a.toggle
 			attrs += "#{s}stacked" if $scope.a.stacked
 			attrs += "#{s}data='#{buldDataMarkup()}'" if $scope.a.data?.length
-			attrs += "#{s}label-prop='#{$scope.a.labelProp}'" if $scope.a.labelProp
+			attrs += "#{s}label-key='#{$scope.a.labelKey}'" if $scope.a.labelKey
 			"<rb-radios#{attrs}></rb-radios>"
 
 		# Props
@@ -34,7 +34,7 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 			'array of strings',
 			'array of objects'
 		]
-		$scope.labelProps = ['name', 'id']
+		$scope.labelKeys = ['name', 'id']
 		$scope.validationLabels = [
 			'required'
 		]
