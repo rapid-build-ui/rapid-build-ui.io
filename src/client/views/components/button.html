@@ -35,7 +35,7 @@
 		<rb-radios horizontal label="type" value="a.type" data="{{types}}" toggle></rb-radios>
 
 		<!-- ICON OPTIONS -->
-		<rb-radios horizontal label="icon" value="a.icon" data="{{icons}}" toggle></rb-radios>
+		<rb-radios horizontal label="icon-kind" value="a.iconKind" data="{{iconKinds}}" toggle></rb-radios>
 		<rb-radios horizontal label="icon-source" value="a.iconSource" data="{{iconSources}}" toggle></rb-radios>
 		<rb-input type="number" label="icon-size" value="a.iconSize"></rb-input>
 		<rba-checkbox caption="icon-position" model="a.iconPosition" value="iconPosition" sub-caption="{{iconPosition}}"></rba-checkbox>
@@ -45,7 +45,7 @@
 		<section class="buttons">
 			<rb-button
 				data-reset
-				icon="sync"
+				icon-kind="sync"
 				icon-source="solid"
 				icon-position="left">
 				Reset
