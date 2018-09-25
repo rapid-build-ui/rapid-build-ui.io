@@ -5,7 +5,7 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 	type: null
 	required: false
 ,
-	attribute: 'icon'
+	attribute: 'icon-kind'
 	description: 'Adds icon to component.'
 	options: '<a target= "_blank" href="/components/rb-icon">rb-icon kind</a>'
 	type: 'string'
