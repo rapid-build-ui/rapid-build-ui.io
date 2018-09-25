@@ -1,15 +1,16 @@
-<!-- WORK IN PROGRESS -->
 <rb-nav
 	vertical
 	dividers
 	responsive
-	active="path">
+	active="path"
+	ng-controller="componentsNavController">
+
 	<h3>Components</h3>
 	<a href="/components/rb-alert">alert</a>
 	<a href="/components/rb-button">button</a>
 	<a href="/components/rb-icon">icon</a>
 	<a href="/components/rb-input">input</a>
-	<a href="/components/rb-modal">modal</a>
+	<a href="/components/rb-modal" ng-if="env.is.dev">modal</a>
 	<a href="/components/rb-nav">nav</a>
 	<a href="/components/rb-popover">popover</a>
 	<a href="/components/rb-radios">radios</a>
@@ -36,7 +37,6 @@
 	<a href="/components/rb-dropdown">dropdown</a>
 	<a href="/components/rb-label">label</a>
 	<a href="/components/rb-password">password</a>
-	<a href="/components/rb-radio">radio</a>
 	<a href="/components/rb-search">search</a>
 	<a href="/components/rb-textarea">textarea</a> -->
 </rb-nav>
