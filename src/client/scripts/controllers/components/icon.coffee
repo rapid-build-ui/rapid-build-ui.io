@@ -9,6 +9,7 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}source=\"#{$scope.a.source}\"" if $scope.a.source
 			attrs += "#{s}size=\"#{$scope.a.size}\"" if $scope.a.size
+			attrs += "#{s}v-align=\"#{$scope.a.vAlign}\"" if $scope.a.vAlign
 
 			"<rb-icon#{attrs}></rb-icon>"
 
@@ -16,6 +17,7 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 		# =====
 		$scope.kinds   = ['heart','user','github']
 		$scope.sources = ['solid','brands']
+		$scope.vAligns = ['bottom','middle','top']
 
 		# Methods
 		# =======
