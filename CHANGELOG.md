@@ -1,3 +1,20 @@
+## [0.0.13](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.12...v0.0.13) (2018-09-26)
+
+
+### Features
+
+* **changelog:** add a changelog section on every component page ([019e8da](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/019e8da))
+* **rb-icon:** add vertical option ([bb7b406](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/bb7b406))
+* **rb-modal:** add header and footer options ([9d5735b](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/9d5735b))
+* **rb-radios:** add validation option ([f514358](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/f514358))
+
+
+### Dependencies
+
+* **bump:** deps all rb components ([646291d](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/646291d))
+
+
+
 ## [0.0.12](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.11...v0.0.12) (2018-09-14)
 
 
