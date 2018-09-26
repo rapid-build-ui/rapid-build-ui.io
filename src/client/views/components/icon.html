@@ -39,12 +39,13 @@
 			<rb-input value="a.kind" placeholder="any font awesome icon" toggle inline></rb-input>
 		</div>
 		<rb-radios horizontal label="source" value="a.source" data="{{sources}}" toggle></rb-radios>
+		<rb-radios horizontal label="vertical" value="a.vertical" data="{{verticals}}" toggle></rb-radios>
 		<rb-input label="size" value="a.size" type="number"></rb-input>
 
 		<section class="buttons">
 			<rb-button
 				data-reset
-				icon="sync"
+				icon-kind="sync"
 				icon-source="solid"
 				icon-position="left">
 				Reset
@@ -53,6 +54,11 @@
 	</form>
 
 	<!-- API -->
-	<h5 rba-text-curve>API</h5>
-	<rba-table source="RB_ICON_API" inject></rba-table>
+	<section>
+		<h5 rba-text-curve>API</h5>
+		<rba-table source="RB_ICON_API" inject></rba-table>
+	</section>
+
+	<!-- CHANGELOG -->
+	<rba-changelog source="rb-icon"></rba-changelog>
 </div>

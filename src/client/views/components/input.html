@@ -36,7 +36,7 @@
 		<rb-input label="subtext" value="a.subtext"></rb-input>
 
 		<!-- ICON OPTIONS -->
-		<rb-radios horizontal label="icon" value="a.icon" data="{{icons}}" toggle></rb-radios>
+		<rb-radios horizontal label="icon-kind" value="a.iconKind" data="{{iconKinds}}" toggle></rb-radios>
 		<rb-radios horizontal label="icon-source" value="a.iconSource" data="{{iconSources}}" toggle></rb-radios>
 		<rba-checkbox caption="icon-position" model="a.iconPosition" value="iconPosition" sub-caption="{{iconPosition}}"></rba-checkbox>
 
@@ -49,7 +49,7 @@
 		<section class="buttons">
 			<rb-button
 				data-reset
-				icon="sync"
+				icon-kind="sync"
 				icon-source="solid"
 				icon-position="left">
 				Reset
@@ -58,6 +58,11 @@
 	</form>
 
 	<!-- API -->
-	<h5 rba-text-curve>API</h5>
-	<rba-table source="RB_INPUT_API" inject></rba-table>
+	<section>
+		<h5 rba-text-curve>API</h5>
+		<rba-table source="RB_INPUT_API" inject></rba-table>
+	</section>
+
+	<!-- CHANGELOG -->
+	<rba-changelog source="rb-input"></rba-changelog>
 </div>

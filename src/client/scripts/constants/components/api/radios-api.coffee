@@ -5,7 +5,7 @@ angular.module('rapid-build').constant 'RB_RADIOS_API', [
 		<a target="_blank" href="https://goo.gl/d9wizE">primitive</a>
 		values and an array of
 		<a target="_blank" href="https://goo.gl/X5D796">objects</a>.<br>
-		<b class="sub">(array of objects, see label-prop)</b>
+		<b class="sub">(array of objects, see label-key)</b>
 	'
 	options: null
 	type: 'array'
@@ -35,7 +35,7 @@ angular.module('rapid-build').constant 'RB_RADIOS_API', [
 	type: 'string'
 	required: false
 ,
-	attribute: 'label-prop'
+	attribute: 'label-key'
 	description: '
 		Property name used for radio labels.
 		<b class="sub">(data must be array of objects)</b>
@@ -77,7 +77,7 @@ angular.module('rapid-build').constant 'RB_RADIOS_API', [
 ,
 	attribute: 'validation'
 	description: """
-		Coming soon, will most likely be the same as
+		See
 		<a target= "_blank" href="/components/rb-input">rb-input validation</a>.
 	"""
 	options: null

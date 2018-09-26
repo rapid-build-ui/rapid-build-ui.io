@@ -15,7 +15,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			attrs += "#{s}right" if $scope.a.right
 			attrs += "#{s}inline" if $scope.a.inline
 			attrs += "#{s}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
-			attrs += "#{s}icon=\"#{$scope.a.icon}\"" if $scope.a.icon
+			attrs += "#{s}icon-kind=\"#{$scope.a.iconKind}\"" if $scope.a.iconKind
 			attrs += "#{s}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
 			attrs += "#{s}icon-position=\"#{$scope.a.iconPosition}\"" if $scope.a.iconPosition
 			"<rb-input#{attrs}></rb-input>"
@@ -61,7 +61,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 
 		# Props
 		# =======
-		$scope.icons        = ['heart','user','github']
+		$scope.iconKinds    = ['heart','user','github']
 		$scope.iconSources  = ['solid','brands']
 		$scope.iconPosition = 'left'
 		$scope.validationLabels = [

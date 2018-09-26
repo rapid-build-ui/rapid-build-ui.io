@@ -15,8 +15,9 @@ const RbComponents = require('../helpers/components');
 /* Class
  ********/
 class RbCreateComponent extends RbComponents {
-	constructor(name) {
+	constructor(name, opts={}) {
 		super();
+		this.type = opts.type;
 		this.name = name;
 	}
 
@@ -94,12 +95,27 @@ class RbCreateComponent extends RbComponents {
 		return `${this.componentsPath}/.temp`;
 	}
 
+	get type() { // :string (component || mixin)
+		return this._type;
+	}
+
+	get types() { // :string[]
+		return ['component', 'mixin'];
+	}
+
 	/* setters
 	 **********/
 	set name(name) {
-		name = this.formatName(name); // validation (must be unique component)
+		const isMixin = this.type === 'mixin';
+		name = this.formatName(name, isMixin); // validation (must be unique component or mixin)
 		this.names.includes(name) && clog.componentExist(name, {exit:true});
 		this._name = name;
+	}
+
+	set type(type) { // component || mixin
+		type = typeof type === 'string' ? type.toLowerCase() : 'component';
+		!this.types.includes(type) && clog.invalidType(type, {exit:true}); // validation
+		this._type = type;
 	}
 
 	/* private
@@ -130,7 +146,9 @@ class RbCreateComponent extends RbComponents {
 		const cmd  = `
 			git add . &&
 			git commit -am "feat(${this.name}): init" &&
-			git push
+			git push &&
+			git checkout -b continuous &&
+			git push -u origin continuous
 		`.trim().replace(/\t/g,'').replace(/\n/g,' ');
 		try {
 			clog.pushComponent(this.name, cmd);
@@ -172,7 +190,13 @@ class RbCreateComponent extends RbComponents {
 
 	_renameTplFiles(file, scaffolding) { // :void (in temp dir)
 		if (!file.includes(scaffolding.tplFileSuffix)) return;
-		let newFile = file.replace(scaffolding.tplFileSuffix, scaffolding.tplFileReplace);
+		const isMixin = this.type === 'mixin';
+		// component names are prefixed with 'rb-', mixins are not
+		// file = scripts/components/.temp/src/client/scripts/rb-tpl.js
+		const base          = path.basename(file); // rb-tpl.js
+		const replaceString = isMixin ? base.slice(0, base.lastIndexOf('.')) : scaffolding.tplFileSuffix; // rb-tpl || -tpl
+		const newString     = isMixin ? this.name : scaffolding.tplFileReplace; // awesome || -awesome
+		const newFile       = file.replace(replaceString, newString); // awesome.js || rb-awesome.js
 		fs.renameSync(file, newFile);
 	}
 
@@ -210,7 +234,7 @@ class RbCreateComponent extends RbComponents {
 				this._moveTempToTempClonedRepo();
 				this._moveTempClonedRepoToClonedRepodDest();
 				this._setupClonedRepo();
-				const pushed = this._gitCommitAndPush();
+				const pushed = this._gitCommitAndPush(); // also creates continuous branch
 				resolve(pushed);
 			});
 		});

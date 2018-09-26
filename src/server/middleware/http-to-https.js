@@ -1,9 +1,9 @@
-/******************************
- * REDIRECT HTTP TO HTTPS
+/****************************************
+ * REDIRECT HTTP TO HTTPS (301 redirect)
  * opts:
  *   ignoreHostnames :string[]
  *   ignoreRoutes    :string[]
- ******************************/
+ ****************************************/
 const isHttps = req => {
 	if (req.secure) return true;
 	return (req.headers['x-forwarded-proto'] || '').substring(0, 5) === 'https';

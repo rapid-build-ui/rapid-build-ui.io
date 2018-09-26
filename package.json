@@ -36,6 +36,7 @@
     "build-release": "node node_modules/@rapid-build-ui/utils/ci showcase release",
     "bump": "node node_modules/@rapid-build-ui/utils/bump showcase patch",
     "create-component": "node scripts/api/create-component",
+    "create-mixin": "node scripts/api/create-mixin",
     "install-client": "cd src/client/ && yarn install --ignore-engines",
     "install-server": "cd src/server/ && npm install",
     "presetup": "node scripts/api/link-components",
@@ -44,12 +45,13 @@
   },
   "dependencies": {
     "@rapid-build-ui/utils": "~0.0.9",
-    "colors": "^1.2.1",
+    "colors": "^1.3.2",
     "del": "^3.0.0",
-    "fs-extra": "^6.0.0",
-    "glob": "^7.1.2",
-    "mustache": "^2.3.0",
-    "request": "^2.85.0",
+    "fs-extra": "^7.0.0",
+    "glob": "^7.1.3",
+    "mustache": "^2.3.2",
+    "ora": "^3.0.0",
+    "request": "^2.88.0",
     "strip-ansi": "^4.0.0"
   }
 }

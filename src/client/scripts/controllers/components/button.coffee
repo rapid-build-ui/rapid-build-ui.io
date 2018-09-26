@@ -9,7 +9,7 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}size=\"#{$scope.a.size}\"" if $scope.a.size
 			attrs += "#{s}type=\"#{$scope.a.type}\"" if $scope.a.type
-			attrs += "#{s}icon=\"#{$scope.a.icon}\"" if $scope.a.icon
+			attrs += "#{s}icon-kind=\"#{$scope.a.iconKind}\"" if $scope.a.iconKind
 			attrs += "#{s}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
 			attrs += "#{s}icon-size=\"#{$scope.a.iconSize}\"" if $scope.a.iconSize
 			attrs += "#{s}icon-position=\"#{$scope.a.iconPosition}\"" if $scope.a.iconPosition
@@ -19,7 +19,7 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 
 		# Props
 		# =====
-		$scope.icons        = ['heart','user','github']
+		$scope.iconKinds    = ['heart','user','github']
 		$scope.iconSources  = ['solid','brands']
 		$scope.kinds        = ['success','danger','warning','info','text']
 		$scope.sizes        = ['small','big']

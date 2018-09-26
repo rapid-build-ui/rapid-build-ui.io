@@ -11,28 +11,30 @@ const message      = 'rb-components setup';
  **************/
 clog.setupBegin(rbComponents.names, message);
 
-/* TESTING
- **********/
-// let result;
-// result = rbComponents.globalPath;
-// result = rbComponents.globalPaths;
-// result = rbComponents.names;
-// result = rbComponents.pkgNames;
-// result = rbComponents.pkgNamesAll;
-// result = rbComponents.prefix;
-// result = rbComponents.projectPaths;
-// result = rbComponents.realPaths;
-// result = rbComponents.scopedName;
-// result = rbComponents.scopedNameFull;
-// result = rbComponents.showcaseClientPath;
-// result = rbComponents.showcasePkg;
-// console.log(result);
+!async function() { // :Promise<any>
+	/* TESTING
+	 **********/
+	// let result;
+	// result = rbComponents.globalPath;
+	// result = rbComponents.globalPaths;
+	// result = rbComponents.names;
+	// result = rbComponents.pkgNames;
+	// result = rbComponents.pkgNamesAll;
+	// result = rbComponents.prefix;
+	// result = rbComponents.projectPaths;
+	// result = rbComponents.realPaths;
+	// result = rbComponents.scopedName;
+	// result = rbComponents.scopedNameFull;
+	// result = rbComponents.showcaseClientPath;
+	// result = rbComponents.showcasePkg;
+	// console.log(result);
 
-/* GIT PULL AND NPM RUN SETUP
- *****************************/
-rbComponents.gitPull();
-rbComponents.runSetup();
+	/* GIT PULL AND NPM RUN SETUP
+	 *****************************/
+	await rbComponents.gitPull();
+	await rbComponents.runSetup();
 
-/* SETUP COMPLETE
- *****************/
-clog.setupComplete(rbComponents.names, message);
+	/* SETUP COMPLETE
+	 *****************/
+	clog.setupComplete(rbComponents.names, message);
+}();

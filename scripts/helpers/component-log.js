@@ -76,6 +76,16 @@ const Log = {
 		opts.exit && process.exit();
 	},
 
+	invalidType(type, opts={}) {
+		error(template.unindent`
+			${template.separate`
+				failed: invalid component type
+			`.toUpperCase()}
+			Must be either component or mixin not ${type}.
+		`.error, '\n');
+		opts.exit && process.exit();
+	},
+
 	componentExist(name, opts={}) {
 		error(template.unindent`
 			${template.separate`
@@ -94,9 +104,10 @@ const Log = {
 	},
 
 	pullComponent(name, cmd, opts={}) {
+		const bumper = opts.bumper === false ? '' : '\n';
 		info(template.separate`
 			${`${name} running`.toUpperCase()}: ${cmd}
-		`.alert, '\n');
+		`.alert, bumper);
 	},
 
 	pushComponent(name, cmd, opts={}) {
@@ -115,9 +126,10 @@ const Log = {
 	},
 
 	setupComponent(name, cmd, opts={}) {
+		const bumper = opts.bumper === false ? '' : '\n';
 		info(template.separate`
 			${`${name} running`.toUpperCase()}: ${cmd}
-		`.alert, '\n');
+		`.alert, bumper);
 	},
 
 	setupBegin(names, message, opts={}) { // names: string[] | string

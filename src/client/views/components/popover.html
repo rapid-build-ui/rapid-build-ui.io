@@ -33,7 +33,7 @@
 		<rb-radios horizontal label="position" value="a.position" data="{{positions}}" toggle></rb-radios>
 
 		<!-- ICON OPTIONS -->
-		<rb-radios horizontal label="icon" value="a.icon" data="{{icons}}" toggle></rb-radios>
+		<rb-radios horizontal label="icon-kind" value="a.iconKind" data="{{iconKinds}}" toggle></rb-radios>
 		<rb-radios horizontal label="icon-source" value="a.iconSource" data="{{iconSources}}" toggle></rb-radios>
 		<rb-input type="number" label="icon-size" value="a.iconSize"></rb-input>
 
@@ -51,7 +51,7 @@
 		<section class="buttons">
 			<rb-button
 				data-reset
-				icon="sync"
+				icon-kind="sync"
 				icon-source="solid"
 				icon-position="left">
 				Reset
@@ -60,6 +60,11 @@
 	</form>
 
 	<!-- API -->
-	<h5 rba-text-curve>API</h5>
-	<rba-table source="RB_POPOVER_API" inject></rba-table>
+	<section>
+		<h5 rba-text-curve>API</h5>
+		<rba-table source="RB_POPOVER_API" inject></rba-table>
+	</section>
+
+	<!-- CHANGELOG -->
+	<rba-changelog source="rb-popover"></rba-changelog>
 </div>

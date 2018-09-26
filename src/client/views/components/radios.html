@@ -29,7 +29,8 @@
 				scroll
 				bind="markup"
 				actions="copy"
-				caption="html">
+				caption="html"
+				height="xxxxxxtall">
 			</rba-code>
 		</div>
 	</section>
@@ -41,7 +42,8 @@
 		<rb-input label="value" value="a.value"></rb-input>
 		<rb-input label="subtext" value="a.subtext"></rb-input>
 		<rb-radios horizontal label="data" value="a.data" data="{{dataLabels}}"></rb-radios>
-		<rb-radios horizontal label="label-prop" value="a.labelProp" data="{{labelProps}}" toggle></rb-radios>
+		<rb-radios horizontal label="label-key" value="a.labelKey" data="{{labelKeys}}" toggle></rb-radios>
+		<rba-checkboxes caption="validation" model="a.validation" data="validationLabels"></rba-checkboxes>
 		<rba-checkbox inline caption="disabled" model="a.disabled"></rba-checkbox>
 		<rba-checkbox inline caption="toggle" model="a.toggle"></rba-checkbox><br>
 		<rba-checkbox inline caption="horizontal" model="a.horizontal"></rba-checkbox>
@@ -52,7 +54,7 @@
 		<section class="buttons">
 			<rb-button
 				data-reset
-				icon="sync"
+				icon-kind="sync"
 				icon-source="solid"
 				icon-position="left">
 				Reset
@@ -61,6 +63,11 @@
 	</form>
 
 	<!-- API -->
-	<h5 rba-text-curve>API</h5>
-	<rba-table source="RB_RADIOS_API" inject></rba-table>
+	<section>
+		<h5 rba-text-curve>API</h5>
+		<rba-table source="RB_RADIOS_API" inject></rba-table>
+	</section>
+
+	<!-- CHANGELOG -->
+	<rba-changelog source="rb-radios"></rba-changelog>
 </div>

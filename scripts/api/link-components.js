@@ -13,10 +13,12 @@ clog.setupBegin(rbComponents.names, message, {
 	prepend: `Yarn link rb-components in src/client/`
 });
 
-/* YARN LINK COMPONENTS
- ***********************/
-rbComponents.yarnLink();
+!async function() { // :Promise<any>
+	/* YARN LINK COMPONENTS
+	 ***********************/
+	await rbComponents.yarnLink();
 
-/* PRESETUP COMPLETE
- ********************/
-clog.setupComplete(rbComponents.names, message);
+	/* PRESETUP COMPLETE
+	 ********************/
+	clog.setupComplete(rbComponents.names, message);
+}();

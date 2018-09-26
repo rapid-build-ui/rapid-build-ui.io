@@ -37,7 +37,7 @@
 		<section class="buttons">
 			<rb-button
 				data-reset
-				icon="sync"
+				icon-kind="sync"
 				icon-source="solid"
 				icon-position="left">
 				Reset
@@ -46,6 +46,11 @@
 	</form>
 
 	<!-- API -->
-	<h5 rba-text-curve>API</h5>
-	<rba-table source="RB_ALERT_API" inject></rba-table>
+	<section>
+		<h5 rba-text-curve>API</h5>
+		<rba-table source="RB_ALERT_API" inject></rba-table>
+	</section>
+
+	<!-- CHANGELOG -->
+	<rba-changelog source="rb-alert"></rba-changelog>
 </div>

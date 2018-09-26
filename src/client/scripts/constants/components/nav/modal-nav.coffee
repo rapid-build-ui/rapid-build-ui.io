@@ -1,7 +1,4 @@
 angular.module('rapid-build').constant 'RB_MODAL_NAV', [
-	type: 'github'
-	url:  'https://github.com/rapid-build-ui/rb-modal'
-,
 	type: 'js'
 	url:  'https://github.com/rapid-build-ui/rb-modal/blob/master/src/client/scripts/rb-modal.js'
 ,

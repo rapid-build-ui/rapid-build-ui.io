@@ -2,15 +2,23 @@
  *****************************************/
 const fs   = require('fs');
 const fse  = require('fs-extra');
+const util = require('util');
 const path = require('path');
+const ora  = require('ora');
 const clog = require('./component-log');
 const CWD  = process.cwd();
-const { execSync } = require('child_process');
+const { execSync, exec: execAsync } = require('child_process');
+const exec = util.promisify(execAsync);
 
 /* Class
  ********/
 class RbComponents {
 	constructor(names=[]) {
+		// Names can be provided when calling api:
+		// link-components.js or setup-components.js
+		// Currently can't provide a mixin name
+		// because of this.prefix validation in:
+		// set names -> this.formatName(name);
 		this.names = names;
 	}
 
@@ -129,48 +137,99 @@ class RbComponents {
 
 	/* helpers
 	 **********/
-	formatName(name) { // :string
+	formatName(name, isMixin = false) { // :string
 		!name && clog.componentRequired({exit:true}); // validation
 		name = name.toLowerCase();
+		if (isMixin) return name; // mixins are not prefix with rb-
 		if (!name.indexOf(this.prefix)) return name;
 		return `${this.prefix}${name}`
 	}
 
 	/* methods
 	 **********/
-	gitPull() { // :void
-		// let cmd       = 'git status'
-		// let cmd       = 'git error'
-		let cmd       = 'git pull'
-		let projPaths = this.projectPaths;
+	gitPull() { // :Promise[{}] (runs async)
+		// const cmd       = 'git status';
+		// const cmd       = 'git error';
+		const cmd       = 'git pull';
+		const projPaths = this.projectPaths;
+		const promises  = [];
+		const spinner   = ora();
+		spinner.start('Pulling Components'.attn);
 		for (const projPath of projPaths) {
-			let name = projPath.substr(projPath.lastIndexOf(path.sep) + 1);
-			clog.pullComponent(name, cmd);
-			let opts   = { cwd: projPath };
-			let result = execSync(cmd, opts).toString();
-			console.info(result.minor);
+			const name    = projPath.substr(projPath.lastIndexOf(path.sep) + 1);
+			const opts    = { cwd: projPath };
+			const promise = exec(cmd, opts)
+				.then(res  => { return { cmd, name, res } })
+				.catch(err => { return { cmd, name, err } });
+			promises.push(promise);
 		}
+		return Promise.all(promises).then(results => {
+			console.log('\n');
+			for (const result of results) {
+				clog.pullComponent(result.name, result.cmd, { bumper: false });
+				if (result.err) {
+					spinner.stop();
+					console.error('ERROR:'.error, result.err.stderr.error);
+					process.exit(1);
+					break;
+				}
+				console.info(result.res.stdout.minor);
+			}
+			spinner.succeed('Pulled Components\n'.success);
+			return results;
+		});
 	}
 
-	runSetup() { // :void
-		let cmd       = 'npm run setup'
-		let projPaths = this.projectPaths;
+	runSetup() { // :Promise[{}] (runs async)
+		// const cmd       = 'npm run error';
+		const cmd       = 'npm run setup';
+		const projPaths = this.projectPaths;
+		const promises  = [];
+		const spinner   = ora();
+		spinner.start('Setting Up Components'.attn);
 		for (const projPath of projPaths) {
-			let name = projPath.substr(projPath.lastIndexOf(path.sep) + 1);
-			clog.setupComponent(name, cmd);
-			let opts   = { cwd: projPath };
-			let result = execSync(cmd, opts).toString();
-			console.info(result.minor);
+			const name    = projPath.substr(projPath.lastIndexOf(path.sep) + 1);
+			const opts    = { cwd: projPath };
+			const promise = exec(cmd, opts)
+				.then(res  => { return { cmd, name, res } })
+				.catch(err => { return { cmd, name, err } });
+			promises.push(promise);
 		}
+		return Promise.all(promises).then(results => {
+			console.log('\n');
+			for (const result of results) {
+				clog.setupComponent(result.name, result.cmd, { bumper: false });
+				if (result.err) {
+					spinner.stop();
+					console.error('ERROR:'.error, result.err.stderr.error);
+					process.exit(1);
+					break;
+				}
+				console.info(result.res.stdout.minor);
+			}
+			spinner.succeed('Setup Components\n'.success);
+			return results;
+		});
 	}
 
-	yarnLink() { // :void
-		let pkgNames = this.pkgNames;
-		let gPaths   = this.globalPaths; // for validation
-		let cmd      = `yarn link ${this.pkgNames.join(' ')}`;
-		let opts     = { cwd: this.showcaseClientPath };
-		let result   = execSync(cmd, opts).toString();
-		console.info(result.minor);
+	yarnLink() { // :Promise{}
+		const pkgNames = this.pkgNames;
+		const gPaths   = this.globalPaths; // for validation
+		const cmd      = `yarn link ${this.pkgNames.join(' ')}`;
+		const opts     = { cwd: this.showcaseClientPath };
+		const spinner  = ora();
+		spinner.start('Linking Components'.attn);
+		return exec(cmd, opts).then(res => {
+			console.log('\n');
+			console.info(res.stdout.minor);
+			spinner.succeed('Linked Components\n'.success);
+			return res;
+		}).catch(err => {
+			spinner.fail('Linking Components\n'.error);
+			console.error('ERROR:'.error, err.message.error);
+			process.exit(1);
+			return err;
+		});
 	}
 }
 

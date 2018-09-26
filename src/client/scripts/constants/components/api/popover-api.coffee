@@ -45,7 +45,7 @@ angular.module('rapid-build').constant 'RB_POPOVER_API', [
 	type: 'string'
 	required: false
 ,
-	attribute: 'icon'
+	attribute: 'icon-kind'
 	description: '
 		<em class="default-val">defaults to <b>info-circle</b></em>
 		Popover trigger.

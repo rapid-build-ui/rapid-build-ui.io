@@ -1,16 +1,16 @@
 <rb-popover
 	unstyled
 	fit-content
-	icon="download"
 	class="rb-copy"
 	caption="Install"
 	icon-source="solid"
+	icon-kind="download"
 	icon-size="{{iconSize}}">
 	<rb-popover
 		unstyled
-		icon="copy"
-		position="top"
 		ngclipboard
+		position="top"
+		icon-kind="copy"
 		ngclipboard-success="copied(e)"
 		data-clipboard-target="#rb-copy-{{$id}}">
 		Copied! <rb-icon kind="thumbs-up"></rb-icon>
