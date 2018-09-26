@@ -1,12 +1,12 @@
 # PUBLISHING ORDER
 # ================
-✔ v0.0.x - base
-✔ v0.0.x - form-control
-✔ v0.0.x - icon
-✔ v0.0.x - button
-✔ v0.0.x - popover
-✔ v0.0.x - input
-✔ v0.0.x - radios
-✔ v0.0.x - nav
-✔ v0.0.x - alert
-✔ v0.0.x - modal
+1.  base:         0.0.3
+2.  form-control: 0.0.2
+3.  icon:         0.0.8
+4.  button:       0.0.10
+5.  popover:      0.0.10
+6.  input:        0.0.9
+7.  radios:       0.0.5
+8.  nav:          0.0.8
+9.  alert:        0.0.14
+10. modal:        0.0.2
