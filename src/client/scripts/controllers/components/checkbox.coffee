@@ -5,9 +5,12 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
-			attrs += "#{nt}disabled" if $scope.a.disabled
 			attrs += "#{nt}value=\"#{$scope.a.value}\"" if $scope.a.value
 			attrs += "#{nt}label=\"#{$scope.a.label}\"" if $scope.a.label
+			attrs += "#{nt}disabled" if $scope.a.disabled
+			attrs += "#{nt}inline" if $scope.a.inline
+			attrs += "#{nt}horizontal" if $scope.a.horizontal
+			attrs += "#{nt}right" if $scope.a.right
 			attrs += "#{nt}subtext=\"#{$scope.a.subtext}\"" if $scope.a.subtext
 			attrs += "#{nt}sublabel=\"#{$scope.a.sublabel}\"" if $scope.a.sublabel
 			"<rb-checkbox#{attrs}>#{n}</rb-checkbox>"
@@ -33,7 +36,7 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 		# ===========
 		rbEvents.addListeners $element, 'rb-input', 'value-changed'
 		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
-		# rbEvents.addListeners $element, 'rb-checkbox', 'value-changed'
+		rbEvents.addListeners $element, 'rb-checkbox', 'value-changed'
 
 		# Event Handlers
 		# ==============

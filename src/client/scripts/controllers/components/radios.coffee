@@ -6,7 +6,6 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 			attrs += "#{s}label=\"#{$scope.a.label}\"" if $scope.a.label
-			# attrs += "#{s}value='#{$scope.a.value}'" if $scope.a.value
 			attrs += "#{s}value='#{$scope.a.value}'" if $scope.a.value
 			attrs += "#{s}subtext=\"#{$scope.a.subtext}\"" if $scope.a.subtext
 			attrs += "#{s}disabled" if $scope.a.disabled
@@ -15,7 +14,6 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 			attrs += "#{s}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
 			attrs += "#{s}horizontal" if $scope.a.horizontal
 			attrs += "#{s}toggle" if $scope.a.toggle
-			attrs += "#{s}stacked" if $scope.a.stacked
 			attrs += "#{s}data='#{buldDataMarkup()}'" if $scope.a.data?.length
 			attrs += "#{s}label-key='#{$scope.a.labelKey}'" if $scope.a.labelKey
 			"<rb-radios#{attrs}></rb-radios>"
