@@ -97,11 +97,10 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 	'
 	'full support': '
 		<rb-icon
-			size="1.65"
+			size="2"
 			kind="check"
 			source="solid"
-			class="full-support"
-			title="Supported Behind Flag">
+			class="full-support">
 		</rb-icon>
 	'
 	'no support': null
