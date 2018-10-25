@@ -5,7 +5,8 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
-			attrs += "#{nt}value=\"#{$scope.a.value}\"" if $scope.a.value
+			attrs += "#{s}value=#{buldValueMarkup()}" if $scope.a.value  isnt 'object'
+			attrs += "#{s}value='#{buldValueMarkup()}'" if $scope.a.value  is 'object'
 			attrs += "#{nt}label=\"#{$scope.a.label}\"" if $scope.a.label
 			attrs += "#{nt}disabled" if $scope.a.disabled
 			attrs += "#{nt}inline" if $scope.a.inline
@@ -15,6 +16,31 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 			attrs += "#{nt}sublabel=\"#{$scope.a.sublabel}\"" if $scope.a.sublabel
 			"<rb-checkbox#{attrs}>#{n}</rb-checkbox>"
 
+
+		# Props
+		# =====
+		$scope.values = [
+			false,
+			'superman',
+			10,
+			{id: 2, name: 'superman'}
+		]
+
+		$scope.valueLabels = [
+			'boolean',
+			'string',
+			'number',
+			'object'
+		]
+
+		# Helpers
+		# =======
+		stringifyModifier = (key, val) ->
+			val = angular.copy val
+			return val unless type.is.function val
+			val.toString()
+
+
 		# Methods
 		# =======
 		$scope.reset = ->
@@ -22,9 +48,29 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 			$scope.a =
 				label:    'Superman'
 				sublabel: 'Is Awesome?'
+				value: 'boolean'
 				# subtext:  'optional'
 				# value:    true
 				# disabled: true
+
+		buldValueMarkup = () ->
+			switch $scope.a.value
+				when 'boolean'
+					value = $scope.values[0]
+				when 'string'
+					value = $scope.values[1]
+				when 'number'
+					value = $scope.values[2]
+				when 'object'
+					value = $scope.values[3]
+
+			return "\"#{value}\"" unless $scope.a.value is 'object'
+			JSON.stringify(value, stringifyModifier, '\t')
+				.replace(/\\n/g, '\n')
+				.replace(/\\"/g, '"')
+				.replace(/"function\s*\((.*)\)/g, 'function($1)')
+				.replace(/\}"/g, '}')
+
 
 		# Watches
 		# =======
