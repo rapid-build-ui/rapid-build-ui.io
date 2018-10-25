@@ -61,10 +61,9 @@ common:
 					/\s?<rba-copy[^]*?rba-copy>\s?/gi
 				]
 
-	order: # build will merge this with dev or prod
+	order:
 		scripts:
 			first: [
-				'scripts/polyfills/*.*'
 				'node_modules/clipboard/dist/clipboard.min.js'
 				'node_modules/ngclipboard/dist/ngclipboard.min.js'
 			]

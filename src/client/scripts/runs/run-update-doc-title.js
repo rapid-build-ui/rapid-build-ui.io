@@ -5,10 +5,14 @@ angular.module('rapid-build').run(['$rootScope', '$location', 'typeService', ($r
 	const SEPARATOR_INDEX = DOC_TITLE.indexOf(SEPARATOR) + 2;
 	const COMMON_TITLE    = DOC_TITLE.slice(0, SEPARATOR_INDEX);
 	const FORMAT_MAP = {
-		nodashes(v) { return v.replace(/-/g, ' ') },
 		lowercase: 'toLowerCase',
-		titlecase: 'toTitleCase',
-		uppercase: 'toUpperCase'
+		uppercase: 'toUpperCase',
+		nodashes(v)  { return v.replace(/-/g, ' ') },
+		titlecase(v) {
+			return v.replace(/\w\S*/g, v =>
+				v.charAt(0).toUpperCase() + v.substr(1).toLowerCase()
+			);
+		}
 	}
 
 	var setTitle = title => { // :void
