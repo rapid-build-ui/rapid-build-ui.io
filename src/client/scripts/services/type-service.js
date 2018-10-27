@@ -58,5 +58,4 @@ angular.module('rapid-build').service('typeService', [function() {
 			return v === void 0;
 		}
 	};
-	return this;
 }]);

@@ -40,5 +40,5 @@ angular.module('rapid-build').service 'rbEventService', ['$filter', '$parse', ($
 			for rbElm in rbElms
 				rbElm.removeEventListener rbEvtName, eventHandler
 
-	@
+	return
 ]

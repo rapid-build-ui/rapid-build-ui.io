@@ -1,73 +1,63 @@
-angular.module('rapid-build').directive('rbaBuilder', [
-	'$compile', 'idService', '$document', '$timeout',
-	function($compile, idService, $document, $timeout) {
-		var doc, link;
-		doc = $document[0];
-		link = function(scope, iElement, iAttrs, controller) {
-			var buildStr, builderWatch, canDestroy, id, oldScope, timer;
-			buildStr = iAttrs.rbaBuilder;
-			if (!buildStr) {
-				return;
-			}
-			id = 'built___' + idService.next();
-			oldScope = null;
-			timer = null;
-			canDestroy = false;
-			builderWatch = scope.$watch(buildStr, function(newVal, oldVal) {
-				var compileScope, elmBuilt, elmChild, elmChildren, elmTemplate, isFlexsetOrTable, isValid, quotationMarks, template;
-				if (newVal === void 0) {
-					return;
-				}
-				elmBuilt = doc.getElementById(id);
-				if (elmBuilt) {
-					angular.element(elmBuilt).replaceWith(iElement);
-				}
-				template = newVal.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
-				template = '<div id="' + id + '">' + template + '</div>';
-				elmTemplate = angular.element(template);
-				elmChild = elmTemplate.children().eq(0);
-				elmChildren = elmTemplate[0].childNodes;
-				if (elmChildren.length === 1 && elmChildren[0].nodeType === 1) {
+angular.module('rapid-build').directive('rbaBuilder', ['$compile', 'idService', '$timeout',
+	($compile, idService, $timeout) => {
+		/* LINK
+		 *******/
+		const Link = (scope, iElement, iAttrs, controller) => {
+			const buildStr = iAttrs.rbaBuilder;
+			if (!buildStr) return;
+
+			const id = `built___${idService.next()}`;
+			let timer      = null;
+			let oldScope   = null;
+			let canDestroy = false;
+
+			const builderWatch = scope.$watch(buildStr, (newVal, oldVal) => {
+				if (newVal === void 0) return;
+
+				let elmBuilt = document.getElementById(id);
+				if (elmBuilt) angular.element(elmBuilt).replaceWith(iElement);
+
+				let template = newVal.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+					template = `<div id="${id}">${template}</div>`;
+
+				let elmTemplate = angular.element(template);
+				let elmChild    = elmTemplate.children().eq(0);
+				let elmChildren = elmTemplate[0].childNodes;
+				if (elmChildren.length === 1 && elmChildren[0].nodeType === 1)
 					elmChild.attr('id', id);
-					isFlexsetOrTable = elmChild[0].nodeName && elmChild[0].nodeName.toLowerCase().indexOf('flexset') !== -1 || elmChild[0].nodeName.toLowerCase().indexOf('table') !== -1;
-					if (!isFlexsetOrTable) {
-						template = elmChild[0].outerHTML;
-					}
-				}
-				quotationMarks = template.match(/"/g);
-				isValid = quotationMarks && quotationMarks.length % 2 === 0;
-				if (isValid === false) {
-					return;
-				}
-				compileScope = !angular.isUndefined(iAttrs.newScope) ? scope.$new() : scope;
-				$compile(template)(compileScope, function(elm) {
-					if (iElement.children().eq(0)) {
-						iElement.children().eq(0).remove();
-					}
+
+				const quotationMarks = template.match(/"/g);
+				const isValid        = !!quotationMarks && quotationMarks.length % 2 === 0;
+				if (isValid === false) return;
+
+				const compileScope = !angular.isUndefined(iAttrs.newScope) ? scope.$new() : scope;
+				$compile(template)(compileScope, elm => {
+					if (iElement.children().eq(0)) iElement.children().eq(0).remove();
 					iElement.replaceWith(elm);
 					if (oldScope && oldScope.$destroy && canDestroy) {
 						oldScope.$destroy();
 						oldScope = null;
 					}
-					return timer = $timeout(function() {
-						oldScope = isFlexsetOrTable ? elm.children().eq(0).isolateScope() : elm.isolateScope();
-						if (!oldScope) {
-							oldScope = elm.scope();
-						}
-						return canDestroy = oldScope && scope.$id !== oldScope.$id;
-					}, 0);
+					timer = $timeout(() => {
+						oldScope   = elm.isolateScope() || elm.scope();
+						canDestroy = oldScope && scope.$id !== oldScope.$id;
+					});
 				});
-				return elmBuilt = elmTemplate = elmChild = elmChildren = null;
+
+				elmBuilt = elmTemplate = elmChild = elmChildren = null;
 			});
-			scope.$on('$destroy', function() {
-				if (timer) {
-					$timeout.cancel(timer);
-				}
-				return builderWatch();
+
+			const destroy = scope.$on('$destroy', () => {
+				if (timer) $timeout.cancel(timer);
+				builderWatch();
+				destroy();
 			});
 		};
+
+		/* API
+		 ******/
 		return {
-			link: link,
+			link: Link,
 			restrict: 'A'
 		};
 	}

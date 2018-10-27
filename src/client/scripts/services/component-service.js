@@ -16,7 +16,5 @@ angular.module('rapid-build').service('componentService', ['$injector',
 			name = this.getConstantName(name, prefix, suffix);
 			return $injector.get(name);
 		};
-
-		return this;
 	}
 ]);
