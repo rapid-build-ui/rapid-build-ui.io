@@ -23,8 +23,10 @@ angular.module('rapid-build').directive('rbaBuilder', ['$compile', 'idService', 
 				let elmTemplate = angular.element(template);
 				let elmChild    = elmTemplate.children().eq(0);
 				let elmChildren = elmTemplate[0].childNodes;
-				if (elmChildren.length === 1 && elmChildren[0].nodeType === 1)
+				if (elmChildren.length === 1 && elmChildren[0].nodeType === 1) {
 					elmChild.attr('id', id);
+					template = elmChild[0].outerHTML;
+				}
 
 				const quotationMarks = template.match(/"/g);
 				const isValid        = !!quotationMarks && quotationMarks.length % 2 === 0;
