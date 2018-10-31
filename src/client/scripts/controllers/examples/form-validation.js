@@ -23,6 +23,7 @@ angular.module('rapid-build').controller('formValidationController', ['$scope', 
 	</rb-radios>
 	<rb-checkbox
 		label="Superman"
+		name="isAwesome"
 		validation='["required"]'
 		sublabel="Is Awesome?">
 	</rb-checkbox>
