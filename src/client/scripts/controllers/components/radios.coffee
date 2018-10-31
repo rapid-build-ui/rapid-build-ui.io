@@ -100,6 +100,7 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 		# ===========
 		rbEvents.addListeners $element, 'rb-input', 'value-changed'
 		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
+		rbEvents.addListeners $element, 'rb-checkbox', 'value-changed'
 
 		# Event Handlers
 		# ==============

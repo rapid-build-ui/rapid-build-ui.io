@@ -49,7 +49,7 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 		# ===========
 		rbEvents.addListeners $element, 'rb-input', 'value-changed'
 		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
-
+		rbEvents.addListeners $element, 'rb-checkbox', 'value-changed'
 
 		# Event Handlers
 		# ==============

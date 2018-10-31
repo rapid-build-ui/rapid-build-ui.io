@@ -38,8 +38,8 @@
 		<rb-radios horizontal label="icon-kind" value="a.iconKind" data="{{iconKinds}}" toggle></rb-radios>
 		<rb-radios horizontal label="icon-source" value="a.iconSource" data="{{iconSources}}" toggle></rb-radios>
 		<rb-input type="number" label="icon-size" value="a.iconSize"></rb-input>
-		<rba-checkbox caption="icon-position" model="a.iconPosition" value="iconPosition" sub-caption="{{iconPosition}}"></rba-checkbox>
-		<rba-checkbox caption="disabled" model="a.disabled"></rba-checkbox>
+		<rb-checkbox label="icon-position" value="a.iconPosition" sublabel="{{iconPosition}}" horizontal></rb-checkbox>
+		<rb-checkbox sublabel="disabled" value="a.disabled"></rb-checkbox>
 
 		<!-- FORM CONTROLS -->
 		<section class="buttons">

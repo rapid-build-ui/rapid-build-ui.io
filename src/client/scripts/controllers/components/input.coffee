@@ -8,7 +8,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 
 			attrs += "#{s}label=\"#{$scope.a.label}\"" if $scope.a.label
 			attrs += "#{s}value=\"#{$scope.a.value}\"" if $scope.a.value
-			attrs += "#{s}type=\"#{$scope.a.type}\"" if $scope.a.type?.length
+			attrs += "#{s}type=\"number\"" if $scope.a.type
 			attrs += "#{s}subtext=\"#{$scope.a.subtext}\"" if $scope.a.subtext
 			attrs += "#{s}placeholder=\"#{$scope.a.placeholder}\"" if $scope.a.placeholder
 			attrs += "#{s}disabled" if $scope.a.disabled
@@ -17,7 +17,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			attrs += "#{s}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
 			attrs += "#{s}icon-kind=\"#{$scope.a.iconKind}\"" if $scope.a.iconKind
 			attrs += "#{s}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
-			attrs += "#{s}icon-position=\"#{$scope.a.iconPosition}\"" if $scope.a.iconPosition
+			attrs += "#{s}icon-position=\"left\"" if $scope.a.iconPosition
 			"<rb-input#{attrs}></rb-input>"
 
 		# Helpers
@@ -64,13 +64,13 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 		$scope.iconKinds    = ['heart','user','github']
 		$scope.iconSources  = ['solid','brands']
 		$scope.iconPosition = 'left'
+		$scope.type 		= 'number'
 		$scope.validationLabels = [
 			'required'
 			'minLength'
 			'minMaxLength'
 			'custom'
 		]
-		$scope.types = ['number']
 
 		$scope.validations = [
 			'required'
@@ -95,6 +95,8 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 		# ===========
 		rbEvents.addListeners $element, 'rb-input', 'value-changed'
 		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
+		rbEvents.addListeners $element, 'rb-checkbox', 'value-changed'
+
 
 		# Event Handlers
 		# ==============

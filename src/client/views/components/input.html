@@ -38,13 +38,12 @@
 		<!-- ICON OPTIONS -->
 		<rb-radios horizontal label="icon-kind" value="a.iconKind" data="{{iconKinds}}" toggle></rb-radios>
 		<rb-radios horizontal label="icon-source" value="a.iconSource" data="{{iconSources}}" toggle></rb-radios>
-		<rba-checkbox caption="icon-position" model="a.iconPosition" value="iconPosition" sub-caption="{{iconPosition}}"></rba-checkbox>
-
+		<rb-checkbox label="icon-position" value="a.iconPosition" sublabel="{{iconPosition}}" horizontal></rb-checkbox>
+		<rb-checkbox label="type" value="a.type" sublabel="{{type}}" horizontal></rb-checkbox>
+		<rb-checkbox sublabel="disabled" value="a.disabled"></rb-checkbox>
+		<rb-checkbox sublabel="right" value="a.right"></rb-checkbox>
+		<rb-checkbox sublabel="inline" value="a.inline"></rb-checkbox>
 		<rba-checkboxes caption="validation" model="a.validation" data="validationLabels"></rba-checkboxes>
-		<rba-checkboxes caption="type" model="a.type" data="types"></rba-checkboxes>
-		<rba-checkbox caption="disabled" model="a.disabled"></rba-checkbox>
-		<rba-checkbox caption="right" model="a.right"></rba-checkbox>
-		<rba-checkbox caption="inline" model="a.inline"></rba-checkbox>
 
 		<section class="buttons">
 			<rb-button
