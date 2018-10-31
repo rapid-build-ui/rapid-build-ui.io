@@ -29,9 +29,15 @@ common:
 			client: [
 				'node_modules/**'
 			]
+			server: [
+				'data/**'
+			]
 		watch:
 			client: [
 				'node_modules/@rapid-build-ui/'
+			]
+			server: [
+				'data/**'
 			]
 
 	exclude:
@@ -53,6 +59,8 @@ common:
 		server:
 			js:
 				es6: true
+			json:
+				enable: false
 		html:
 			options:
 				ignoreCustomFragments: [

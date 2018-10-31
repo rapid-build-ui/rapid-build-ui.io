@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"name": "Superman",
+		"favorite": false,
+		"weakness": "Kryptonite"
+	},
+	{
+		"id": 2,
+		"name": "Thor",
+		"favorite": false,
+		"weakness": "Mjolnir"
+	},
+	{
+		"id": 3,
+		"name": "Wolverine",
+		"favorite": true,
+		"weakness": "Magneto"
+	}
+]
