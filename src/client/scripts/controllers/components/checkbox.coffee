@@ -5,8 +5,9 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
-			attrs += "#{s}value=#{buldValueMarkup()}" if $scope.a.value  isnt 'object'
-			attrs += "#{s}value='#{buldValueMarkup()}'" if $scope.a.value  is 'object'
+			# attrs += "#{s}value=#{buldValueMarkup()}" if $scope.a.value  isnt 'object'
+			attrs += "#{s}value='#{buldValueMarkup()}'" if $scope.a.value  isnt undefined
+			attrs += "#{s}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
 			attrs += "#{nt}label=\"#{$scope.a.label}\"" if $scope.a.label
 			attrs += "#{nt}disabled" if $scope.a.disabled
 			attrs += "#{nt}inline" if $scope.a.inline
@@ -33,6 +34,13 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 			'object'
 		]
 
+		$scope.validationLabels = [
+			'required'
+		]
+		$scope.validations = [
+			'required'
+		]
+
 		# Helpers
 		# =======
 		stringifyModifier = (key, val) ->
@@ -48,7 +56,7 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 			$scope.a =
 				label:    'Superman'
 				sublabel: 'Is Awesome?'
-				value: 'boolean'
+				value:    undefined
 				# subtext:  'optional'
 				# value:    true
 				# disabled: true
@@ -66,6 +74,25 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 
 			return "\"#{value}\"" unless $scope.a.value is 'object'
 			JSON.stringify(value, stringifyModifier, '\t')
+				.replace(/\\n/g, '\n')
+				.replace(/\\"/g, '"')
+				.replace(/"function\s*\((.*)\)/g, 'function($1)')
+				.replace(/\}"/g, '}')
+
+		buldValidationMarkup = () ->
+			validators = []
+			for validator, i in $scope.a.validation
+				switch validator
+					when 'required'
+						validators.push $scope.validations[0]
+					when 'minLength'
+						validators.push $scope.validations[1]
+					when 'minMaxLength'
+						validators.push $scope.validations[2]
+					when 'custom'
+						validators.push $scope.validations[3]
+
+			JSON.stringify(validators, stringifyModifier, '\t')
 				.replace(/\\n/g, '\n')
 				.replace(/\\"/g, '"')
 				.replace(/"function\s*\((.*)\)/g, 'function($1)')
