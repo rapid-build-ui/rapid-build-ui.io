@@ -5,7 +5,6 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
-			# attrs += "#{s}value=#{buldValueMarkup()}" if $scope.a.value  isnt 'object'
 			attrs += "#{s}value='#{buldValueMarkup()}'" if $scope.a.value  isnt undefined
 			attrs += "#{s}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
 			attrs += "#{nt}label=\"#{$scope.a.label}\"" if $scope.a.label
