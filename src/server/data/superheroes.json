@@ -2,19 +2,351 @@
 	{
 		"id": 1,
 		"name": "Superman",
-		"favorite": false,
-		"weakness": "Kryptonite"
+		"identity": "Clark Kent",
+		"initials": "CK",
+		"username": "superman",
+		"dob": "8/23/1979",
+		"age": 34,
+		"gender": "Male",
+		"address": "1938 Sullivan Lane",
+		"city": "Metropolis",
+		"state": "IL",
+		"zip": 60004,
+		"fav": true,
+		"theBest": true,
+		"hasSuperPowers": true,
+		"weakness": "Kryptonite",
+		"website": "http://www.dccomics.com/superman",
+		"friends": ["Batman", "Green Lantern", "The Flash", "Wonder Woman"],
+		"description": "Superman is also known as the Man of Steel and is one of the most powerful superheroes of all.",
+		"powers": [
+			{
+				"label": "flight",
+				"description": "He can fly faster then the speed of light."
+			},
+			{
+				"label": "invulnerability",
+				"description": "Fire can't burn him, knives can't cut him and bullets can't hurt him."
+			},
+			{
+				"label": "super strength",
+				"description": "He has titanic strength with the ability to raise tremendous weights."
+			}
+		]
 	},
 	{
 		"id": 2,
-		"name": "Thor",
-		"favorite": false,
-		"weakness": "Mjolnir"
+		"name": "Hulk",
+		"identity": "Bruce Banner",
+		"initials": "BB",
+		"username": "hulk",
+		"dob": "3/15/1962",
+		"age": 51,
+		"gender": "Male",
+		"address": "1000 Superhero Dr",
+		"city": "Dayton",
+		"state": "OH",
+		"zip": 45402,
+		"fav": false,
+		"theBest": false,
+		"hasSuperPowers": true,
+		"weakness": "Adamantium",
+		"website": "http://marvel.com/universe/Hulk_(Bruce_Banner)",
+		"friends": ["Black Widow", "Captain America", "Iron Man", "Thor"],
+		"description": "Hulk possesses an incredible level of superhuman physical ability, his capacity for physical strength is potentially limitless.",
+		"powers": [
+			{
+				"label": "leaping",
+				"description": "In a single leap, he can cover hundreds of miles."
+			},
+			{
+				"label": "shock wave",
+				"description": "Slams his hands together creating a shock wave comparable to hurricanes and sonic booms."
+			},
+			{
+				"label": "strength",
+				"description": "Potentially limitless his strength increases proportionally with his level stress, anger in particular."
+			}
+		]
 	},
 	{
 		"id": 3,
 		"name": "Wolverine",
-		"favorite": true,
-		"weakness": "Magneto"
+		"identity": "James Howlett",
+		"initials": "JH",
+		"username": "wolverine",
+		"dob": "2/15/1802",
+		"age": 211,
+		"gender": "Male",
+		"address": "Greymalkin Ln",
+		"city": "North Salem",
+		"state": "NY",
+		"zip": 31204,
+		"fav": true,
+		"theBest": false,
+		"hasSuperPowers": true,
+		"weakness": "Magneto",
+		"website": "http://marvel.com/universe/Wolverine_(James_Howlett)",
+		"friends": ["Beast", "Jean Grey", "Rogue", "Storm"],
+		"description": "Wolverine has a tough-guy attitude, unbreakable adamantium skeleton, retractable claws and self healing ability.",
+		"powers": [
+			{
+				"label": "claws",
+				"description": "Has razor sharp adamantium claws."
+			},
+			{
+				"label": "healing",
+				"description": "Can heal himself no matter the damage in seconds."
+			},
+			{
+				"label": "indestructible",
+				"description": "Has metal adamantium bonded to his skeleton."
+			}
+		]
+	},
+	{
+		"id": 4,
+		"name": "Thor",
+		"identity": "Thor Odinson",
+		"initials": "TO",
+		"username": "thor",
+		"dob": "8/7/1951",
+		"age": 62,
+		"gender": "Male",
+		"address": "2000 Superhero Dr",
+		"city": "Cave",
+		"state": "Norway",
+		"zip": 40509,
+		"fav": false,
+		"theBest": false,
+		"hasSuperPowers": true,
+		"weakness": "Not having his mjolnir/hammer.",
+		"website": "http://marvel.wikia.com/Thor_(Thor_Odinson)",
+		"friends": ["Black Widow", "Hawkeye", "Hulk", "Spider-Man"],
+		"description": "Thor is one of several powerful ancient beings who dwell in a magical realm called Asgard.",
+		"powers": [
+			{
+				"label": "mjolnir",
+				"description": "His hammer, allows him to command the powers of the storm, causing rain, thunder and lightning."
+			},
+			{
+				"label": "odinforce",
+				"description": "Enables him to tap into cosmic and mystical energies, enhancing all of his abilities."
+			},
+			{
+				"label": "strength",
+				"description": "Greater than the vast majority of his superhuman race."
+			}
+		]
+	},
+	{
+		"id": 5,
+		"name": "Batman",
+		"identity": "Bruce Wayne",
+		"initials": "BW",
+		"username": "batman",
+		"dob": "1/5/1959",
+		"age": 54,
+		"gender": "Male",
+		"address": "1007 Mountain Drive",
+		"city": "Gotham",
+		"state": "NY",
+		"zip": 31204,
+		"fav": false,
+		"theBest": false,
+		"hasSuperPowers": false,
+		"weakness": "No Armour",
+		"website": "http://www.dccomics.com/batman",
+		"friends": ["Green Lantern", "The Flash", "Superman", "Wonder Woman"],
+		"description": "Batman is the superhero protector of Gotham City, who fights against evil and strikes terror into the hearts of criminals everywhere.",
+		"powers": [
+			{
+				"label": "fearless",
+				"description": "Able to face and deal with danger or fear without flinching."
+			},
+			{
+				"label": "gadgets",
+				"description": "He has the most advanced gadgets in the world."
+			},
+			{
+				"label": "stealth",
+				"description": "Can avoid danger and creep up on villains."
+			}
+		]
+	},
+	{
+		"id": 6,
+		"name": "Iron Man",
+		"identity": "Tony Stark",
+		"initials": "TS",
+		"username": "ironman",
+		"dob": "2/4/1945",
+		"age": 67,
+		"gender": "Male",
+		"address": "10880 Malibu Point",
+		"city": "Malibu",
+		"state": "CA",
+		"zip": 60015,
+		"fav": true,
+		"theBest": false,
+		"hasSuperPowers": false,
+		"weakness": "His Heart",
+		"website": "http://marvel.com/universe/Iron_Man_(Anthony_Stark)",
+		"friends": ["Black Widow", "Hawkeye", "Hulk", "Spider-Man"],
+		"description": "Iron Man fights for justice as a modern day knight in high-tech armor and weapons.",
+		"powers": [
+			{
+				"label": "durability",
+				"description": "He is like a human tank."
+			},
+			{
+				"label": "flight",
+				"description": "Can fly faster then a jet."
+			},
+			{
+				"label": "weaponry",
+				"description": "Has weapons such as repulsor rays, the uni-beam, rockets and turrets."
+			}
+		]
+	},
+	{
+		"id": 7,
+		"name": "Captain America",
+		"identity": "Steve Rogers",
+		"initials": "SR",
+		"username": "captain-america",
+		"dob": "12/12/1878",
+		"age": 134,
+		"gender": "Male",
+		"address": "3000 Superhero Dr",
+		"city": "New York",
+		"state": "NY",
+		"zip": 60124,
+		"fav": false,
+		"theBest": false,
+		"hasSuperPowers": false,
+		"weakness": "Bullets",
+		"website": "http://marvel.wikia.com/Captain_America_(Steven_Rogers)",
+		"friends": ["Hawkeye", "Hulk", "Spider-Man", "Thor"],
+		"description": "Captain America defends the U.S. and the world from evil threats and is armed with an indestructible shield.",
+		"powers": [
+			{
+				"label": "healing",
+				"description": "Can heal broken bones and torn muscles in a day."
+			},
+			{
+				"label": "martial art",
+				"description": "Mastered american-style boxing and judo."
+			},
+			{
+				"label": "strength",
+				"description": "Stronger then any human and can lift 2 to 4 tons."
+			}
+		]
+	},
+	{
+		"id": 8,
+		"name": "Wonder Woman",
+		"identity": "Diana Prince",
+		"initials": "DP",
+		"username": "wonder-woman",
+		"dob": "6/5/1980",
+		"age": 33,
+		"gender": "Female",
+		"address": "4000 Superhero Dr",
+		"city": "Themyscira",
+		"state": "IL",
+		"zip": 41175,
+		"fav": false,
+		"theBest": false,
+		"hasSuperPowers": true,
+		"weakness": "Bind her Bracelets",
+		"website": "http://www.dccomics.com/characters/wonder-woman",
+		"friends": ["Batman", "Green Lantern", "The Flash", "Superman"],
+		"description": "Wonder Woman is gifted with a wide range of superhuman powers and superior combat and battle skills.",
+		"powers": [
+			{
+				"label": "flight",
+				"description": "Can fly at sub light speed"
+			},
+			{
+				"label": "invulnerability",
+				"description": "Can withstand bullets and resistant fire and magic."
+			},
+			{
+				"label": "lasso of truth",
+				"description": "Lasso that is strong enough to confine superman and it makes you tell the truth."
+			}
+		]
+	},
+	{
+		"id": 9,
+		"name": "Storm",
+		"identity": "Ororo Monroe",
+		"initials": "OM",
+		"username": "storm",
+		"dob": "6/14/1975",
+		"age": 39,
+		"gender": "Female",
+		"address": "Greymalkin Ln",
+		"city": "North Salem",
+		"state": "NY",
+		"zip": 31204,
+		"fav": false,
+		"theBest": false,
+		"hasSuperPowers": true,
+		"weakness": "Claustrophobia",
+		"website": "http://marvel.com/universe/Storm",
+		"friends": ["Cyclops", "Nightcrawler", "Professor X", "Wolverine"],
+		"description": "Storm is the descendant of an ancient line of African priestesses and can control the weather.",
+		"powers": [
+			{
+				"label": "control weather",
+				"description": "Can control and manipulate the weather."
+			},
+			{
+				"label": "flight",
+				"description": "Can fly by creating winds strong enough to support her weight."
+			},
+			{
+				"label": "temperature immunity",
+				"description": "Immune to extreme cold and hot temperatures."
+			}
+		]
+	},
+	{
+		"id": 10,
+		"name": "Beast",
+		"identity": "Henry McCoy",
+		"initials": "HM",
+		"username": "beast",
+		"dob": "10/17/1963",
+		"age": 51,
+		"gender": "Male",
+		"address": "Greymalkin Ln",
+		"city": "North Salem",
+		"state": "NY",
+		"zip": 31204,
+		"fav": false,
+		"theBest": false,
+		"hasSuperPowers": true,
+		"weakness": "Animal Instincts",
+		"website": "http://marvel.com/universe/Beast",
+		"friends": ["Professor X", "Rogue", "Storm", "Wolverine"],
+		"description": "Beast possesses superhuman strength, agility, endurance and speed, despite his bulk.",
+		"powers": [
+			{
+				"label": "agility",
+				"description": "Able to crawl up brick walls."
+			},
+			{
+				"label": "speed",
+				"description": "Can run on all fours at approximately 40 miles per hour."
+			},
+			{
+				"label": "strength",
+				"description": "His legs are so powerful he can jump around 25 feet in the air. "
+			}
+		]
 	}
 ]
