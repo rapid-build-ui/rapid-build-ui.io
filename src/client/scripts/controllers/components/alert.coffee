@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$element', 'rbEventService',
-	($scope, $element, rbEvents) ->
+angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$element',
+	($scope, $element) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -43,12 +43,6 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
 		, true
-
-		# Rb Eventing
-		# ===========
-		rbEvents.addListeners $element, 'rb-input', 'value-changed'
-		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
-		rbEvents.addListeners $element, 'rb-checkbox', 'value-changed'
 
 		# Event Handlers
 		# ==============

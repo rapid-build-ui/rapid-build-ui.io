@@ -29,11 +29,26 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rb-radios horizontal label="kind" value="a.kind" data="{{kinds}}" toggle></rb-radios>
- 		<rb-checkbox sublabel="removable" horizontal value="a.removable"></rb-checkbox>
-		<rba-textarea caption="content" model="a.content"></rba-textarea>
+		<rb-radios
+			toggle
+			rb-ng-bind
+			horizontal
+			label="kind"
+			value="a.kind"
+			data="{{kinds}}">
+		</rb-radios>
+		<rb-checkbox
+			horizontal
+			rb-ng-bind
+			value="a.removable"
+			sublabel="removable">
+		</rb-checkbox>
+		<rba-textarea
+			model="a.content"
+			caption="content">
+		</rba-textarea>
 
-		<!-- FORM CONTROLS -->
+		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button
 				data-reset

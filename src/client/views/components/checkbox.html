@@ -21,7 +21,7 @@
 				bind="markup"
 				actions="copy"
 				caption="html"
-				height="tall">
+				height="xtall">
 			</rba-code>
 		</div>
 	</section>
@@ -29,17 +29,57 @@
 	<!-- DEMO -->
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
-		<rb-input label="label" value="a.label"></rb-input>
-		<rb-input label="sublabel" value="a.sublabel"></rb-input>
-		<rb-radios toggle horizontal label="value" value="a.value" data="{{valueLabels}}"></rb-radios>
-		<rb-input label="subtext" value="a.subtext"></rb-input>
-		<rb-checkbox sublabel="disabled" value="a.disabled"></rb-checkbox>
-		<rb-checkbox sublabel="inline" value="a.inline"></rb-checkbox>
-		<rb-checkbox sublabel="horizontal" value="a.horizontal"></rb-checkbox>
-		<rb-checkbox sublabel="right" value="a.right"></rb-checkbox>
-		<rba-checkboxes caption="validation" model="a.validation" data="validationLabels"></rba-checkboxes>
 
-		<!-- FORM CONTROLS -->
+		<rb-input
+			rb-ng-bind
+			label="label"
+			value="a.label">
+		</rb-input>
+		<rb-input
+			rb-ng-bind
+			label="sublabel"
+			value="a.sublabel">
+		</rb-input>
+		<rb-input
+			rb-ng-bind
+			label="subtext"
+			value="a.subtext">
+		</rb-input>
+		<rb-radios
+			toggle
+			horizontal
+			rb-ng-bind
+			label="value"
+			value="a.value"
+			data="{{valueLabels}}">
+		</rb-radios>
+		<rb-checkbox
+			rb-ng-bind
+			value="a.disabled"
+			sublabel="disabled">
+		</rb-checkbox>
+		<rb-checkbox
+			rb-ng-bind
+			value="a.inline"
+			sublabel="inline">
+		</rb-checkbox>
+		<rb-checkbox
+			rb-ng-bind
+			value="a.horizontal"
+			sublabel="horizontal">
+		</rb-checkbox>
+		<rb-checkbox
+			rb-ng-bind
+			value="a.right"
+			sublabel="right">
+		</rb-checkbox>
+		<rba-checkboxes
+			model="a.validation"
+			caption="validation"
+			data="validationLabels">
+		</rba-checkboxes>
+
+		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button
 				data-reset

@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$element', 'typeService', 'rbEventService',
-	($scope, $element, type, rbEvents) ->
+angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$element', 'typeService',
+	($scope, $element, type) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -95,12 +95,6 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
 		, true
-
-		# Rb Eventing
-		# ===========
-		rbEvents.addListeners $element, 'rb-input', 'value-changed'
-		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
-		rbEvents.addListeners $element, 'rb-checkbox', 'value-changed'
 
 		# Event Handlers
 		# ==============

@@ -22,7 +22,7 @@ angular.module('rapid-build').directive('rbaBuilder', ['$compile', 'idService', 
 				clearDebounce();
 				let elmBuilt = document.getElementById(id);
 				if (elmBuilt) angular.element(elmBuilt).replaceWith(iElement);
-				
+
 				let template = newVal.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 					template = `<div id="${id}">${template}</div>`;
 				let elmTemplate = angular.element(template);

@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element', '$timeout', 'rbEventService',
-	($scope, $element, $timeout, rbEvents) ->
+angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element', '$timeout',
+	($scope, $element, $timeout) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -44,12 +44,6 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 				# avoids closing popover on window click
 				$timeout -> $scope.markup = createMarkup()
 		, true
-
-		# Rb Eventing
-		# ===========
-		rbEvents.addListeners $element, 'rb-input', 'value-changed'
-		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
-		rbEvents.addListeners $element, 'rb-checkbox', 'value-changed'
 
 		# Event Handlers
 		# ==============

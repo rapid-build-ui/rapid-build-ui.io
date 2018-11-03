@@ -30,21 +30,80 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rb-input label="label" value="a.label"></rb-input>
-		<rb-input label="value" value="a.value"></rb-input>
-		<rb-input label="placeholder" value="a.placeholder"></rb-input>
-		<rb-input label="subtext" value="a.subtext"></rb-input>
+		<rb-input
+			rb-ng-bind
+			label="label"
+			value="a.label">
+		</rb-input>
+		<rb-input
+			rb-ng-bind
+			label="value"
+			value="a.value">
+		</rb-input>
+		<rb-input
+			rb-ng-bind
+			label="placeholder"
+			value="a.placeholder">
+		</rb-input>
+		<rb-input
+			rb-ng-bind
+			label="subtext"
+			value="a.subtext">
+		</rb-input>
 
 		<!-- ICON OPTIONS -->
-		<rb-radios horizontal label="icon-kind" value="a.iconKind" data="{{iconKinds}}" toggle></rb-radios>
-		<rb-radios horizontal label="icon-source" value="a.iconSource" data="{{iconSources}}" toggle></rb-radios>
-		<rb-checkbox label="icon-position" value="a.iconPosition" sublabel="{{iconPosition}}" horizontal></rb-checkbox>
-		<rb-checkbox label="type" value="a.type" sublabel="{{type}}" horizontal></rb-checkbox>
-		<rb-checkbox sublabel="disabled" value="a.disabled"></rb-checkbox>
-		<rb-checkbox sublabel="right" value="a.right"></rb-checkbox>
-		<rb-checkbox sublabel="inline" value="a.inline"></rb-checkbox>
-		<rba-checkboxes caption="validation" model="a.validation" data="validationLabels"></rba-checkboxes>
+		<rb-radios
+			toggle
+			horizontal
+			rb-ng-bind
+			label="icon-kind"
+			value="a.iconKind"
+			data="{{iconKinds}}">
+		</rb-radios>
+		<rb-radios
+			toggle
+			horizontal
+			rb-ng-bind
+			label="icon-source"
+			value="a.iconSource"
+			data="{{iconSources}}">
+		</rb-radios>
+		<rb-checkbox
+			horizontal
+			rb-ng-bind
+			label="icon-position"
+			value="a.iconPosition"
+			sublabel="{{iconPosition}}">
+		</rb-checkbox>
+		<rb-checkbox
+			horizontal
+			rb-ng-bind
+			label="type"
+			value="a.type"
+			sublabel="{{type}}">
+		</rb-checkbox>
+		<rb-checkbox
+			rb-ng-bind
+			value="a.disabled"
+			sublabel="disabled">
+		</rb-checkbox>
+		<rb-checkbox
+			rb-ng-bind
+			value="a.right"
+			sublabel="right">
+		</rb-checkbox>
+		<rb-checkbox
+			rb-ng-bind
+			value="a.inline"
+			sublabel="inline">
+		</rb-checkbox>
+		<rba-checkboxes
+			model="a.validation"
+			caption="validation"
+			data="validationLabels">
+		</rba-checkboxes>
 
+		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button
 				data-reset

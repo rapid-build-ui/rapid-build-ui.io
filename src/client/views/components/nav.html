@@ -86,21 +86,59 @@
 
 		<div class="grid-noBottom">
 			<div class="col-8">
-				<rb-radios horizontal label="kind" value="a.kind" data="{{kinds}}" toggle></rb-radios>
-				<rb-radios label="active" value="a.active" data="{{actives}}" toggle></rb-radios>
+				<rb-radios
+					toggle
+					horizontal
+					rb-ng-bind
+					label="kind"
+					value="a.kind"
+					data="{{kinds}}">
+				</rb-radios>
+				<rb-radios
+					toggle
+					rb-ng-bind
+					label="active"
+					value="a.active"
+					data="{{actives}}">
+				</rb-radios>
 			</div>
 			<div class="col">
-				<rb-checkbox sublabel="inline" value="a.inline"></rb-checkbox>
-				<rb-checkbox sublabel="inverse" value="a.inverse"></rb-checkbox>
-				<rb-checkbox sublabel="dividers" value="a.dividers"></rb-checkbox>
-				<rb-checkbox sublabel="vertical" value="a.vertical"></rb-checkbox>
-				<rb-checkbox sublabel="responsive" value="a.responsive"></rb-checkbox>
+				<rb-checkbox
+					rb-ng-bind
+					value="a.inline"
+					sublabel="inline">
+				</rb-checkbox>
+				<rb-checkbox
+					rb-ng-bind
+					value="a.inverse"
+					sublabel="inverse">
+				</rb-checkbox>
+				<rb-checkbox
+					rb-ng-bind
+					value="a.dividers"
+					sublabel="dividers">
+				</rb-checkbox>
+				<rb-checkbox
+					rb-ng-bind
+					value="a.vertical"
+					sublabel="vertical">
+				</rb-checkbox>
+				<rb-checkbox
+					rb-ng-bind
+					value="a.responsive"
+					sublabel="responsive">
+				</rb-checkbox>
 			</div>
 			<div class="col">
-				<rba-textarea caption="content" model="a.content" width="xxwide"></rba-textarea>
+				<rba-textarea
+					width="xxwide"
+					model="a.content"
+					caption="content">
+				</rba-textarea>
 			</div>
 		</div>
 
+		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button
 				data-reset

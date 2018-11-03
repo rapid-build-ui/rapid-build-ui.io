@@ -30,14 +30,46 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rb-checkbox sublabel="show" value="a.show"></rb-checkbox>
-		<rb-checkbox sublabel="center" value="a.center"></rb-checkbox>
-		<rb-checkbox sublabel="unclosable" value="a.unclosable"></rb-checkbox>
-		<!-- <rb-radios toggle horizontal label="kind" value="a.kind" data="{{kinds}}"></rb-radios> -->
-		<rba-textarea height="short" caption="content" model="a.content"></rba-textarea>
-		<rba-textarea height="short" caption="header" model="a.header"></rba-textarea>
-		<rba-textarea height="short" caption="footer" model="a.footer"></rba-textarea>
+		<rb-checkbox
+			rb-ng-bind
+			value="a.show"
+			sublabel="show">
+		</rb-checkbox>
+		<rb-checkbox
+			rb-ng-bind
+			value="a.center"
+			sublabel="center">
+		</rb-checkbox>
+		<rb-checkbox
+			rb-ng-bind
+			value="a.unclosable"
+			sublabel="unclosable">
+		</rb-checkbox>
+		<!-- <rb-radios
+			toggle
+			horizontal
+			rb-ng-bind
+			label="kind"
+			value="a.kind"
+			data="{{kinds}}">
+		</rb-radios> -->
+		<rba-textarea
+			height="short"
+			model="a.content"
+			caption="content">
+		</rba-textarea>
+		<rba-textarea
+			height="short"
+			model="a.header"
+			caption="header">
+		</rba-textarea>
+		<rba-textarea
+			height="short"
+			model="a.footer"
+			caption="footer">
+		</rba-textarea>
 
+		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button
 				data-reset

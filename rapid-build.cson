@@ -47,7 +47,7 @@ common:
 			]
 			spaFile:
 				scripts: [
-					'scripts/rapid.js'
+					'scripts/es-modules/**'
 				]
 
 	minify:

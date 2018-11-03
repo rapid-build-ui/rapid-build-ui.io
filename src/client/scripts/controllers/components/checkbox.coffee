@@ -1,20 +1,20 @@
-angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$element', 'typeService', 'rbEventService',
-	($scope, $element, type, rbEvents) ->
+angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$element', 'typeService',
+	($scope, $element, type) ->
 		# Builder
 		# =======
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
-			attrs += "#{s}value='#{buldValueMarkup()}'" if $scope.a.value isnt undefined and $scope.a.value is 'object'
-			attrs += "#{s}value=#{buldValueMarkup()}" if $scope.a.value isnt undefined and $scope.a.value isnt 'object'
-			attrs += "#{s}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
-			attrs += "#{nt}label=\"#{$scope.a.label}\"" if $scope.a.label
-			attrs += "#{nt}disabled" if $scope.a.disabled
-			attrs += "#{nt}inline" if $scope.a.inline
-			attrs += "#{nt}horizontal" if $scope.a.horizontal
 			attrs += "#{nt}right" if $scope.a.right
+			attrs += "#{nt}inline" if $scope.a.inline
+			attrs += "#{nt}disabled" if $scope.a.disabled
+			attrs += "#{nt}horizontal" if $scope.a.horizontal
+			attrs += "#{nt}value='#{buldValueMarkup()}'" if $scope.a.value isnt undefined and $scope.a.value is 'object'
+			attrs += "#{nt}value=#{buldValueMarkup()}" if $scope.a.value isnt undefined and $scope.a.value isnt 'object'
+			attrs += "#{nt}label=\"#{$scope.a.label}\"" if $scope.a.label
 			attrs += "#{nt}subtext=\"#{$scope.a.subtext}\"" if $scope.a.subtext
 			attrs += "#{nt}sublabel=\"#{$scope.a.sublabel}\"" if $scope.a.sublabel
+			attrs += "#{nt}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
 			"<rb-checkbox#{attrs}>#{n}</rb-checkbox>"
 
 
@@ -104,12 +104,6 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
 		, true
-
-		# Rb Eventing
-		# ===========
-		rbEvents.addListeners $element, 'rb-input', 'value-changed'
-		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
-		rbEvents.addListeners $element, 'rb-checkbox', 'value-changed'
 
 		# Event Handlers
 		# ==============

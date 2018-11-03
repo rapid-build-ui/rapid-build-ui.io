@@ -29,19 +29,54 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rb-radios horizontal label="kind" value="a.kind" data="{{kinds}}" style="margin-right: -20px" toggle inline></rb-radios>
+		<rb-radios
+			inline
+			toggle
+			horizontal
+			rb-ng-bind
+			label="kind"
+			value="a.kind"
+			data="{{kinds}}"
+			style="margin-right: -20px">
+		</rb-radios>
 		<div class="inline-block">
 			<rb-popover position="top" class="bumper-right-mini">
 				Name of any free
 				<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
 				Font awesome icon style must match icon source.
 			</rb-popover>
-			<rb-input value="a.kind" placeholder="any font awesome icon" toggle inline></rb-input>
+			<rb-input
+				inline
+				toggle
+				rb-ng-bind
+				value="a.kind"
+				placeholder="any font awesome icon">
+			</rb-input>
 		</div>
-		<rb-radios horizontal label="source" value="a.source" data="{{sources}}" toggle></rb-radios>
-		<rb-radios horizontal label="vertical" value="a.vertical" data="{{verticals}}" toggle></rb-radios>
-		<rb-input label="size" value="a.size" type="number"></rb-input>
+		<rb-radios
+			toggle
+			horizontal
+			rb-ng-bind
+			label="source"
+			value="a.source"
+			data="{{sources}}">
+		</rb-radios>
+		<rb-radios
+			toggle
+			horizontal
+			rb-ng-bind
+			label="vertical"
+			value="a.vertical"
+			data="{{verticals}}">
+		</rb-radios>
+		<rb-input
+			rb-ng-bind
+			label="size"
+			type="number"
+			value="a.size">
+		</rb-input>
 
+		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button
 				data-reset
