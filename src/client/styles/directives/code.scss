@@ -123,10 +123,14 @@
 
 	/* Size Option
 	 **************/
-	&.mini-size,
-	&.small-size {
+	&.mini-size {
 		pre, textarea {
 			line-height: 14px;
+		}
+	}
+	&.small-size {
+		pre, textarea {
+			line-height: 15px;
 		}
 	}
 	&.mini-size {
@@ -166,6 +170,7 @@
 	&.xxgiant-height    { @include codeHeight(367px, 22); }
 	&.xxxgiant-height   { @include codeHeight(395px, 22); }
 	&.jumbo-height      { @include codeHeight(480px, 30); }
+	&.xjumbo-height     { @include codeHeight(580px, 30); }
 
 }
 
