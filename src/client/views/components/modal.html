@@ -30,20 +30,27 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
+		<!-- VALUELESS -->
 		<rb-checkbox
+			inline
 			rb-ng-bind
 			value="a.show"
-			sublabel="show">
+			sublabel="show"
+			class="bumper-right">
 		</rb-checkbox>
 		<rb-checkbox
+			inline
 			rb-ng-bind
 			value="a.center"
-			sublabel="center">
+			sublabel="center"
+			class="bumper-right">
 		</rb-checkbox>
 		<rb-checkbox
+			inline
 			rb-ng-bind
 			value="a.unclosable"
-			sublabel="unclosable">
+			sublabel="unclosable"
+			class="bumper-right">
 		</rb-checkbox>
 		<!-- <rb-radios
 			toggle
@@ -53,6 +60,8 @@
 			value="a.kind"
 			data="{{kinds}}">
 		</rb-radios> -->
+
+		<!-- CONTENT -->
 		<rba-textarea
 			height="short"
 			model="a.content"
