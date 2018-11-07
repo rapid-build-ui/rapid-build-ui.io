@@ -31,7 +31,7 @@ angular.module('rapid-build').service('rbEventService', ['$filter', '$parse', 't
 				if (newVal === oldVal) return;
 				setElmAttr.bind(this, attr, newVal)();
 			});
-			scope.$on('$destroy', () => {
+			angular.element(this).on('$destroy', () => {
 				scopePropWatch();
 			});
 		}
@@ -47,7 +47,7 @@ angular.module('rapid-build').service('rbEventService', ['$filter', '$parse', 't
 		const manageEvents = (rbElms, rbEvtName) => { // :void
 			for (const rbElm of rbElms) {
 				rbElm.addEventListener(rbEvtName, eventHandler);
-				angular.element(rbElm).scope().$on('$destroy', () => {
+				angular.element(rbElm).on('$destroy', () => {
 					rbElm.removeEventListener(rbEvtName, eventHandler);
 				});
 			}
