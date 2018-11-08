@@ -35,7 +35,7 @@
 		<!-- CRUD FORM -->
 		<div class="col" data-push-left="off-1">
 			<h5>
-				{{ superhero.id ? 'Update' : 'Create' }} Superhero
+				{{ !superhero.id ? 'Create' : 'Update' }} Superhero
 			</h5>
 			<form name="myForm" ng-submit="save($event)">
 				<rb-input
