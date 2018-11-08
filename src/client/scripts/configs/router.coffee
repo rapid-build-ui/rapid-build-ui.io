@@ -33,7 +33,7 @@ angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 				"/views/examples/#{view}.html"
 
 		.when '/examples/',
-			redirectTo: '/examples/form-validation'
+			redirectTo: '/examples/crud'
 
 		.otherwise
 			redirectTo: '/'

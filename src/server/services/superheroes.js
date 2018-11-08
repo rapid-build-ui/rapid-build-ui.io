@@ -44,7 +44,7 @@ module.exports = {
 	delete(val, key='id') { // :object | null
 		const index = _.getIndex(val, key, this.superheroes);
 		if (index === -1) return null;
-		return this.superheroes.splice(index, 1);
+		return this.superheroes.splice(index, 1)[0];
 	},
 
 	update(id, superhero) { // :object | null

@@ -1,0 +1,83 @@
+<div ng-controller="crudController">
+	<header class="page-header">
+		<h1>
+			C<sub>reate</sub>
+			R<sub>ead</sub>
+			U<sub>pdate</sub>
+			D<sub>elete</sub>
+		</h1>
+	</header>
+
+	<!-- EXAMPLE -->
+	<section class="grid">
+		<!-- SUPERHEROES -->
+		<div class="col-3_md-4 nowrap">
+			<h5>
+				<rb-button
+					kind="text"
+					icon-size=".85"
+					icon-source="solid"
+					icon-kind="plus-circle"
+					title="Create Superhero"
+					ng-click="newHero()">
+				</rb-button>
+				Superheroes
+			</h5>
+			<rb-nav dividers vertical>
+				<a
+					ng-click="crud.read(superhero.id)"
+					ng-repeat="superhero in superheroes">
+					{{superhero.name}}
+				</a>
+			</rb-nav>
+		</div>
+
+		<!-- CRUD FORM -->
+		<div class="col" data-push-left="off-1">
+			<h5>
+				{{ superhero.id ? 'Update' : 'Create' }} Superhero
+			</h5>
+			<form name="myForm" ng-submit="save($event)">
+				<rb-input
+					rb-ng-bind
+					label="Name"
+					value="superhero.name"
+					validation='["required"]'>
+				</rb-input>
+				<rb-radios
+					toggle
+					rb-ng-bind
+					label="Gender"
+					data="{{genders}}"
+					value="superhero.gender"
+					validation='["required"]'>
+				</rb-radios>
+				<rb-checkbox
+					rb-ng-bind
+					value="superhero.fav"
+					sublabel="My Favorite">
+				</rb-checkbox>
+
+				<!-- BUTTONS -->
+				<section class="buttons">
+					<rb-button
+						icon-size=".97"
+						icon-kind="save"
+						icon-position="left"
+						type="submit">
+						Save
+					</rb-button>
+					<rb-button
+						kind="danger"
+						icon-size=".95"
+						icon-position="left"
+						icon-kind="trash-alt"
+						ng-if="!!superhero.id"
+						ng-click="crud.delete()">
+						Delete
+					</rb-button>
+				</section>
+			</form>
+		</div>
+	</section>
+</div>
