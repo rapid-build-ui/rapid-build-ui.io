@@ -4,6 +4,7 @@
 // Sassy Goodness
 @import 'sass/functions.scss';
 @import 'sass/grid-vars.scss';
+@import 'sass/spacers.scss';
 @import 'sass/variables.scss';
 @import 'sass/mixins.scss';
 
@@ -68,5 +69,6 @@
 
 	// Utilities
 	@import 'utilities/bumpers.scss';
+	@import 'utilities/pushers.scss';
 	@import 'utilities/utils.scss';
 }
