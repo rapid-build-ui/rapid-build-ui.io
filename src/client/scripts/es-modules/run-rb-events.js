@@ -5,7 +5,7 @@ angular.module('rapid-build').run(['rbEventService', rbEvents => {
 		if (err) return;
 		rbEvents.addListeners(elms, 'value-changed');
 	}
-	const BIND = '[rb-ng-bind]';
+	const BIND = '[rb-bind]';
 	awaitSelector(`rb-input${BIND}`,    callback);
 	awaitSelector(`rb-radios${BIND}`,   callback);
 	awaitSelector(`rb-checkbox${BIND}`, callback);

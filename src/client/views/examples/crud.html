@@ -39,21 +39,21 @@
 			</h5>
 			<form name="myForm" ng-submit="save($event)">
 				<rb-input
-					rb-ng-bind
+					rb-bind
 					label="Name"
 					value="superhero.name"
 					validation='["required"]'>
 				</rb-input>
 				<rb-radios
 					toggle
-					rb-ng-bind
+					rb-bind
 					label="Gender"
 					data="{{genders}}"
 					value="superhero.gender"
 					validation='["required"]'>
 				</rb-radios>
 				<rb-checkbox
-					rb-ng-bind
+					rb-bind
 					value="superhero.fav"
 					sublabel="My Favorite">
 				</rb-checkbox>

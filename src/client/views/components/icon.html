@@ -32,8 +32,8 @@
 		<rb-radios
 			inline
 			toggle
+			rb-bind
 			horizontal
-			rb-ng-bind
 			label="kind"
 			value="a.kind"
 			data="{{kinds}}"
@@ -48,29 +48,29 @@
 			<rb-input
 				inline
 				toggle
-				rb-ng-bind
+				rb-bind
 				value="a.kind"
 				placeholder="any font awesome icon">
 			</rb-input>
 		</div>
 		<rb-radios
 			toggle
+			rb-bind
 			horizontal
-			rb-ng-bind
 			label="source"
 			value="a.source"
 			data="{{sources}}">
 		</rb-radios>
 		<rb-radios
 			toggle
+			rb-bind
 			horizontal
-			rb-ng-bind
 			label="vertical"
 			value="a.vertical"
 			data="{{verticals}}">
 		</rb-radios>
 		<rb-input
-			rb-ng-bind
+			rb-bind
 			label="size"
 			type="number"
 			value="a.size">
