@@ -55,7 +55,6 @@ module.exports = {
 	},
 
 	create(superhero) { // :object | null
-		console.log(this.superheroes.length);
 		const id = this.superheroes[this.superheroes.length - 1].id + 1;
 		superhero = Object.assign({ id }, superhero);
 		this.superheroes.push(superhero);
