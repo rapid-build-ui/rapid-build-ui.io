@@ -28,6 +28,7 @@ $textColors: (
 	/* Body Formatting
 	 ******************/
 	.td- {
+		&name, // css vars table
 		&attribute { font-weight: 600; }
 		&type,
 		&options,
@@ -38,6 +39,8 @@ $textColors: (
 	 ***********************/
 	.th-,
 	.td- {
+		&value,   // css vars table
+		&default, // css vars table
 		&browser { text-align: center; }
 	}
 	.th- {
