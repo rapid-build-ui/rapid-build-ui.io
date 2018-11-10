@@ -7,20 +7,17 @@ header.page-header {
 	justify-content: space-between;
 
 	h1 {
-		display: flex;
 		line-height: remy(48);
 		font-variant: all-petite-caps;
-		align-items: baseline;
 		rba-install {
 			position: relative;
 			top: -1px;
-			margin-right: remy(7.5);
 		}
 		> sub { // see crud.html
 			font-size: .5em;
-			margin-right: remy(6);
 			font-variant: none;
 			line-height: normal;
+			vertical-align: baseline;
 		}
 	}
 

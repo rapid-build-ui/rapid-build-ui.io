@@ -64,9 +64,12 @@ common:
 		html:
 			options:
 				ignoreCustomFragments: [
+					/\s<rb-icon|<\/rb-icon>\s/gi
+					/\s<rb-button|<\/rb-button>\s/gi
+					/\s<rb-popover|<\/rb-popover>\s/gi
 					/<rba-code(\s*?.*?)*?rba-code>/gi
-					/\s?<rb-icon\s|<\/rb-icon>\s?/gi
-					/\s?<rba-copy[^]*?rba-copy>\s?/gi
+					/\s<rba-copy|<\/rba-copy>\s/gi
+					/\s<rba-install|<\/rba-install>\s/gi
 				]
 
 	order:
