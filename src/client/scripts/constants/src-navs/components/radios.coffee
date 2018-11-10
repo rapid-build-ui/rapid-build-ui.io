@@ -1,4 +1,4 @@
-angular.module('rapid-build').constant 'RB_RADIOS_NAV', [
+angular.module('rapid-build').constant 'RB_RADIOS_SRC_NAV', [
 	type: 'js'
 	url:  'https://github.com/rapid-build-ui/rb-radios/blob/master/src/client/scripts/rb-radios.js'
 ,

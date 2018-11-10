@@ -6,6 +6,7 @@
 			U<sub>pdate</sub>
 			D<sub>elete</sub>
 		</h1>
+		<rba-source-nav source="CRUD_EXAMPLE_SRC_NAV" inject></rba-source-nav>
 	</header>
 
 	<!-- EXAMPLE -->
@@ -25,9 +26,10 @@
 			</h5>
 			<rb-nav dividers vertical>
 				<a
-					ng-click="crud.read(superhero.id)"
-					ng-repeat="superhero in superheroes">
-					{{superhero.name}}
+					ng-click="crud.read(hero.id)"
+					ng-repeat="hero in superheroes"
+					ng-class="{ active: hero.id === superhero.id }">
+					{{hero.name}}
 				</a>
 			</rb-nav>
 		</div>
@@ -61,7 +63,7 @@
 				<!-- BUTTONS -->
 				<section class="buttons">
 					<rb-button
-						icon-size=".97"
+						icon-size=".96"
 						icon-kind="save"
 						icon-position="left"
 						type="submit">

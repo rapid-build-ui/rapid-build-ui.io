@@ -28,7 +28,7 @@ angular.module('rapid-build').controller('crudController', ['$scope', '$element'
 					$scope.superheroes[index] = angular.copy(hero);
 				});
 			},
-			read(id) {
+			read(id) { // :void
 				$scope.superhero = Superhero.get({ id });
 				form.rb.setPristine();
 			}
