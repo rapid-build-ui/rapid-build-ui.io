@@ -41,6 +41,15 @@
     "@rapid-build-ui/form-control" "^0.0.4"
     "@rapid-build-ui/rb-base" "^0.0.5"
 
+"@rapid-build-ui/rb-checkboxes@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-checkboxes/-/rb-checkboxes-0.0.0.tgz#89c37e49091a76134d323df89a49ba5b46bcca4b"
+  integrity sha512-mYuetY87LN9U1vhDw9E95GaAtaOT/nJHNS4x66HrM5X4aNfGUT4pzy8WFRxFawaSMHeyxJi3qA60QMp8couXlw==
+  dependencies:
+    "@rapid-build-ui/form-control" "^0.0.4"
+    "@rapid-build-ui/rb-base" "^0.0.5"
+    "@rapid-build-ui/rb-checkbox" "^0.0.2"
+
 "@rapid-build-ui/rb-icon@^0.0.10":
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-icon/-/rb-icon-0.0.10.tgz#c53b5d969a314e40033aeae31a34e61fcb7a207f"

@@ -35,6 +35,7 @@
     "@rapid-build-ui/rb-base": "^0.0.5",
     "@rapid-build-ui/rb-button": "^0.0.12",
     "@rapid-build-ui/rb-checkbox": "^0.0.2",
+    "@rapid-build-ui/rb-checkboxes": "^0.0.0",
     "@rapid-build-ui/rb-icon": "^0.0.10",
     "@rapid-build-ui/rb-input": "^0.0.11",
     "@rapid-build-ui/rb-modal": "^0.0.4",

@@ -4,6 +4,7 @@
 import '/node_modules/@rapid-build-ui/rb-alert/scripts/rb-alert.js';
 import '/node_modules/@rapid-build-ui/rb-button/scripts/rb-button.js';
 import '/node_modules/@rapid-build-ui/rb-checkbox/scripts/rb-checkbox.js';
+import '/node_modules/@rapid-build-ui/rb-checkboxes/scripts/rb-checkboxes.js';
 import '/node_modules/@rapid-build-ui/rb-icon/scripts/rb-icon.js';
 import '/node_modules/@rapid-build-ui/rb-input/scripts/rb-input.js';
 import '/node_modules/@rapid-build-ui/rb-modal/scripts/rb-modal.js';
