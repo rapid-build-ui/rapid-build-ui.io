@@ -4,7 +4,7 @@
   "description": "Rapid Build UI - Project",
   "license": "MIT",
   "engines": {
-    "node": "8.x",
+    "node": "10.x",
     "npm": "6.x"
   },
   "contributors": [
