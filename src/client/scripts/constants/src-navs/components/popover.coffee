@@ -1,4 +1,4 @@
-angular.module('rapid-build').constant 'RB_POPOVER_NAV', [
+angular.module('rapid-build').constant 'RB_POPOVER_SRC_NAV', [
 	type: 'js'
 	url:  'https://github.com/rapid-build-ui/rb-popover/blob/master/src/client/scripts/rb-popover.js'
 ,

@@ -45,5 +45,5 @@ angular.module('rapid-build').service 'preService', [->
 				content = @get.text content
 				"#{open}#{content}#{close}"
 
-	@
+	return
 ]

@@ -1,11 +1,7 @@
 /**************
  * SUPERHEROES
  **************/
-const Superheroes = [
-	{ id: 1, name: 'Superman' },
-	{ id: 2, name: 'Wolverine' },
-	{ id: 3, name: 'Wonder Woman' }
-]
+const Superheroes = require('./../data/superheroes');
 
 /* Private
  **********/
@@ -48,7 +44,21 @@ module.exports = {
 	delete(val, key='id') { // :object | null
 		const index = _.getIndex(val, key, this.superheroes);
 		if (index === -1) return null;
-		return this.superheroes.splice(index, 1);
+		return this.superheroes.splice(index, 1)[0];
+	},
+
+	update(id, superhero) { // :object | null
+		const index = _.getIndex(id, 'id', this.superheroes);
+		if (index === -1) return null;
+		Object.assign(this.superheroes[index], superhero);
+		return this.superheroes[index];
+	},
+
+	create(superhero) { // :object | null
+		const id = this.superheroes[this.superheroes.length - 1].id + 1;
+		superhero = Object.assign({ id }, superhero);
+		this.superheroes.push(superhero);
+		return superhero;
 	},
 
 	restore() { // :void

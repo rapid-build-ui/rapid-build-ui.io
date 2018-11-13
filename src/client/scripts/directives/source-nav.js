@@ -1,5 +1,5 @@
-angular.module('rapid-build').directive('rbaSourceNav', ['componentService', 'ENV',
-	(componentService, ENV) => {
+angular.module('rapid-build').directive('rbaSourceNav', ['$injector', 'ENV',
+	($injector, ENV) => {
 		/* COMPILE
 		 **********/
 		const Compile = function(tElement, tAttrs, transclude) {
@@ -22,14 +22,12 @@ angular.module('rapid-build').directive('rbaSourceNav', ['componentService', 'EN
 		/* LINK
 		 *******/
 		const Link = (scope, iElement, iAttrs) => {
-			const source = angular.copy( // creates deep copy
-				componentService.getConstant(scope.src, 'rb', 'nav')
-			);
+			const inject = typeof iAttrs.inject === 'string';
+			let source = inject ? $injector.get(iAttrs.source) : scope.src;
+			source = angular.copy(source); // copy to not modify constant
 
-			/* Prep Source Urls for Environment
-			 ***********************************/
 			if (ENV.is.dev)
-				Helpers.updateDevUrls(source);
+				Helpers.updateDevUrls(source); // prep source urls for environment
 
 			/* Props
 			 ********/
@@ -43,7 +41,10 @@ angular.module('rapid-build').directive('rbaSourceNav', ['componentService', 'EN
 			restrict: 'E',
 			templateUrl: '/views/directives/source-nav.html',
 			scope: {
-				src: '@source'
+				src: '<source',
+				/* VALUELESS
+				 ************/
+				// inject: '@?'
 			}
 		};
 	}

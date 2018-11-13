@@ -7,7 +7,7 @@
 			</rba-install>
 			rb-popover
 		</h1>
-		<rba-source-nav source="popover"></rba-source-nav>
+		<rba-source-nav source="RB_POPOVER_SRC_NAV" inject></rba-source-nav>
 	</header>
 
 	<!-- COMPONENT -->
@@ -29,25 +29,89 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rb-radios horizontal label="kind" value="a.kind" data="{{kinds}}" toggle></rb-radios>
-		<rb-radios horizontal label="position" value="a.position" data="{{positions}}" toggle></rb-radios>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="kind"
+			value="a.kind"
+			data="{{kinds}}">
+		</rb-radios>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="position"
+			value="a.position"
+			data="{{positions}}">
+		</rb-radios>
 
 		<!-- ICON OPTIONS -->
-		<rb-radios horizontal label="icon-kind" value="a.iconKind" data="{{iconKinds}}" toggle></rb-radios>
-		<rb-radios horizontal label="icon-source" value="a.iconSource" data="{{iconSources}}" toggle></rb-radios>
-		<rb-input type="number" label="icon-size" value="a.iconSize"></rb-input>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="icon-kind"
+			value="a.iconKind"
+			data="{{iconKinds}}">
+		</rb-radios>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="icon-source"
+			value="a.iconSource"
+			data="{{iconSources}}">
+		</rb-radios>
+		<rb-input
+			rb-bind
+			type="number"
+			label="icon-size"
+			value="a.iconSize">
+		</rb-input>
 
 		<!-- VALUELESS -->
-		<rba-checkbox inline caption="fit-content" model="a.fitContent"></rba-checkbox>
-		<rba-checkbox inline caption="hover" model="a.hover"></rba-checkbox>
-		<br>
-		<rba-checkbox inline caption="show-popover" model="a.showPopover"></rba-checkbox>
-		<rba-checkbox inline caption="unstyled" model="a.unstyled"></rba-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.fitContent"
+			class="right-bumper"
+			sublabel="fit-content">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.hover"
+			sublabel="hover"
+			class="right-bumper">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			class="right-bumper"
+			value="a.showPopover"
+			sublabel="show-popover">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.unstyled"
+			sublabel="unstyled"
+			class="right-bumper">
+		</rb-checkbox>
 
 		<!-- INPUT CONTROLS -->
-		<rb-input label="caption" value="a.caption"></rb-input>
-		<rba-textarea caption="content" model="a.content"></rba-textarea>
+		<rb-input
+			rb-bind
+			label="caption"
+			value="a.caption">
+		</rb-input>
+		<rba-textarea
+			model="a.content"
+			caption="content">
+		</rba-textarea>
 
+		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button
 				data-reset

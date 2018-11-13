@@ -1,4 +1,4 @@
-angular.module('rapid-build').constant 'RB_MODAL_NAV', [
+angular.module('rapid-build').constant 'RB_MODAL_SRC_NAV', [
 	type: 'js'
 	url:  'https://github.com/rapid-build-ui/rb-modal/blob/master/src/client/scripts/rb-modal.js'
 ,

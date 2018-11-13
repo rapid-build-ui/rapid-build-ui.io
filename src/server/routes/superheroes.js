@@ -1,7 +1,7 @@
 /*******************
  * SUPERHERO ROUTES
  *******************/
-const Superheroes = require('./../data/superheroes');
+const Superheroes = require('./../services/superheroes');
 
 /* Routes (crud)
  ****************/
@@ -22,6 +22,17 @@ const Routes = app => {
 	app.delete('/api/superheroes/:id', (req, res) => {
 		const id = req.params.id;
 		const superhero = Superheroes.delete(id);
+		res.json(superhero);
+	});
+
+	app.put('/api/superheroes/:id', (req, res) => {
+		const id = req.params.id;
+		const superhero = Superheroes.update(id, req.body);
+		res.json(superhero);
+	});
+
+	app.post('/api/superheroes', (req, res) => {
+		const superhero = Superheroes.create(req.body);
 		res.json(superhero);
 	});
 }

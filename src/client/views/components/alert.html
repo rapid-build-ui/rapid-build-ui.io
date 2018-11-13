@@ -7,7 +7,7 @@
 			</rba-install>
 			rb-alert
 		</h1>
-		<rba-source-nav source="alert"></rba-source-nav>
+		<rba-source-nav source="RB_ALERT_SRC_NAV" inject></rba-source-nav>
 	</header>
 
 	<!-- COMPONENT -->
@@ -29,11 +29,26 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rb-radios horizontal label="kind" value="a.kind" data="{{kinds}}" toggle></rb-radios>
- 		<rba-checkbox caption="removable" model="a.removable"></rba-checkbox>
-		<rba-textarea caption="content" model="a.content"></rba-textarea>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="kind"
+			value="a.kind"
+			data="{{kinds}}">
+		</rb-radios>
+		<rb-checkbox
+			rb-bind
+			horizontal
+			value="a.removable"
+			sublabel="removable">
+		</rb-checkbox>
+		<rba-textarea
+			model="a.content"
+			caption="content">
+		</rba-textarea>
 
-		<!-- FORM CONTROLS -->
+		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button
 				data-reset
@@ -49,6 +64,12 @@
 	<section>
 		<h5 rba-text-curve>API</h5>
 		<rba-table source="RB_ALERT_API" inject></rba-table>
+	</section>
+
+	<!-- CSS Variables -->
+	<section>
+		<h5 rba-text-curve>CSS Variables</h5>
+		<rba-table source="RB_ALERT_THEME" inject></rba-table>
 	</section>
 
 	<!-- CHANGELOG -->

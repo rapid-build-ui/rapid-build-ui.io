@@ -7,7 +7,7 @@
 			</rba-install>
 			rb-nav
 		</h1>
-		<rba-source-nav source="nav"></rba-source-nav>
+		<rba-source-nav source="RB_NAV_SRC_NAV" inject></rba-source-nav>
 	</header>
 
 	<!-- COMPONENT -->
@@ -86,21 +86,59 @@
 
 		<div class="grid-noBottom">
 			<div class="col-8">
-				<rb-radios horizontal label="kind" value="a.kind" data="{{kinds}}" toggle></rb-radios>
-				<rb-radios label="active" value="a.active" data="{{actives}}" toggle></rb-radios>
+				<rb-radios
+					toggle
+					rb-bind
+					horizontal
+					label="kind"
+					value="a.kind"
+					data="{{kinds}}">
+				</rb-radios>
+				<rb-radios
+					toggle
+					rb-bind
+					label="active"
+					value="a.active"
+					data="{{actives}}">
+				</rb-radios>
 			</div>
 			<div class="col">
-				<rba-checkbox caption="inline" model="a.inline"></rba-checkbox>
-				<rba-checkbox caption="inverse" model="a.inverse"></rba-checkbox>
-				<rba-checkbox caption="dividers" model="a.dividers"></rba-checkbox>
-				<rba-checkbox caption="vertical" model="a.vertical"></rba-checkbox>
-				<rba-checkbox caption="responsive" model="a.responsive"></rba-checkbox>
+				<rb-checkbox
+					rb-bind
+					value="a.inline"
+					sublabel="inline">
+				</rb-checkbox>
+				<rb-checkbox
+					rb-bind
+					value="a.inverse"
+					sublabel="inverse">
+				</rb-checkbox>
+				<rb-checkbox
+					rb-bind
+					value="a.dividers"
+					sublabel="dividers">
+				</rb-checkbox>
+				<rb-checkbox
+					rb-bind
+					value="a.vertical"
+					sublabel="vertical">
+				</rb-checkbox>
+				<rb-checkbox
+					rb-bind
+					value="a.responsive"
+					sublabel="responsive">
+				</rb-checkbox>
 			</div>
 			<div class="col">
-				<rba-textarea caption="content" model="a.content" width="xxwide"></rba-textarea>
+				<rba-textarea
+					width="xxwide"
+					model="a.content"
+					caption="content">
+				</rba-textarea>
 			</div>
 		</div>
 
+		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button
 				data-reset

@@ -7,7 +7,7 @@
 			</rba-install>
 			rb-button
 		</h1>
-		<rba-source-nav source="button"></rba-source-nav>
+		<rba-source-nav source="RB_BUTTON_SRC_NAV" inject></rba-source-nav>
 	</header>
 
 	<!-- COMPONENT -->
@@ -29,19 +29,73 @@
 	<form name="demoForm" ng-submit="save($event)">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rb-input label="content" value="a.content"></rb-input>
-		<rb-radios horizontal label="kind" value="a.kind" data="{{kinds}}" toggle></rb-radios>
-		<rb-radios horizontal label="size" value="a.size" data="{{sizes}}" toggle></rb-radios>
-		<rb-radios horizontal label="type" value="a.type" data="{{types}}" toggle></rb-radios>
+		<rb-input
+			rb-bind
+			label="content"
+			value="a.content">
+		</rb-input>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="kind"
+			value="a.kind"
+			data="{{kinds}}">
+		</rb-radios>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="size"
+			value="a.size"
+			data="{{sizes}}">
+		</rb-radios>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="type"
+			value="a.type"
+			data="{{types}}">
+		</rb-radios>
 
 		<!-- ICON OPTIONS -->
-		<rb-radios horizontal label="icon-kind" value="a.iconKind" data="{{iconKinds}}" toggle></rb-radios>
-		<rb-radios horizontal label="icon-source" value="a.iconSource" data="{{iconSources}}" toggle></rb-radios>
-		<rb-input type="number" label="icon-size" value="a.iconSize"></rb-input>
-		<rba-checkbox caption="icon-position" model="a.iconPosition" value="iconPosition" sub-caption="{{iconPosition}}"></rba-checkbox>
-		<rba-checkbox caption="disabled" model="a.disabled"></rba-checkbox>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="icon-kind"
+			value="a.iconKind"
+			data="{{iconKinds}}">
+		</rb-radios>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="icon-source"
+			value="a.iconSource"
+			data="{{iconSources}}">
+		</rb-radios>
+		<rb-input
+			rb-bind
+			type="number"
+			label="icon-size"
+			value="a.iconSize">
+		</rb-input>
+		<rb-checkbox
+			rb-bind
+			horizontal
+			label="icon-position"
+			value="a.iconPosition"
+			sublabel="{{iconPosition}}">
+		</rb-checkbox>
+		<rb-checkbox
+			rb-bind
+			value="a.disabled"
+			sublabel="disabled">
+		</rb-checkbox>
 
-		<!-- FORM CONTROLS -->
+		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button
 				data-reset

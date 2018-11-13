@@ -1,4 +1,4 @@
-angular.module('rapid-build').controller('layoutController', ['$scope', 'LAYOUTS', ($scope, LAYOUTS) => {
+angular.module('rapid-build').controller('layoutController', ['$anchorScroll', '$scope', 'LAYOUTS', ($anchorScroll, $scope, LAYOUTS) => {
 	$scope.$on('$routeChangeSuccess', (event, current, previous) => {
 		var layout    = current.$$route.layout || 'superman',
 			main      = current.loadedTemplateUrl,
@@ -13,5 +13,7 @@ angular.module('rapid-build').controller('layoutController', ['$scope', 'LAYOUTS
 			main,
 			views
 		};
+
+		$anchorScroll();
 	});
 }]);

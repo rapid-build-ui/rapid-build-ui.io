@@ -35,7 +35,5 @@ angular.module('rapid-build').service('idService', ['$log',
 			if (isUnique) return newId;
 			return this.getElmId(id);
 		}
-
-		return this;
 	}
 ]);

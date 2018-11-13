@@ -3,6 +3,7 @@
  ******************/
 section.buttons {
 	display: flex;
+	flex-wrap: wrap;
 	padding: remy(15) 0;
 	border-top: 1px dashed #eee;
 	rb-button {

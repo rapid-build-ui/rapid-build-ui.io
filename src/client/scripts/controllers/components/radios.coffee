@@ -1,12 +1,11 @@
-angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$element', 'typeService', 'rbEventService',
-	($scope, $element, type, rbEvents) ->
+angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$element', 'typeService',
+	($scope, $element, type) ->
 		# Builder
 		# =======
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 			attrs += "#{s}label=\"#{$scope.a.label}\"" if $scope.a.label
-			# attrs += "#{s}value='#{$scope.a.value}'" if $scope.a.value
 			attrs += "#{s}value='#{$scope.a.value}'" if $scope.a.value
 			attrs += "#{s}subtext=\"#{$scope.a.subtext}\"" if $scope.a.subtext
 			attrs += "#{s}disabled" if $scope.a.disabled
@@ -15,7 +14,6 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 			attrs += "#{s}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
 			attrs += "#{s}horizontal" if $scope.a.horizontal
 			attrs += "#{s}toggle" if $scope.a.toggle
-			attrs += "#{s}stacked" if $scope.a.stacked
 			attrs += "#{s}data='#{buldDataMarkup()}'" if $scope.a.data?.length
 			attrs += "#{s}label-key='#{$scope.a.labelKey}'" if $scope.a.labelKey
 			"<rb-radios#{attrs}></rb-radios>"
@@ -97,11 +95,6 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
 		, true
-
-		# Rb Eventing
-		# ===========
-		rbEvents.addListeners $element, 'rb-input', 'value-changed'
-		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
 
 		# Event Handlers
 		# ==============

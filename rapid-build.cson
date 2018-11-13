@@ -29,9 +29,15 @@ common:
 			client: [
 				'node_modules/**'
 			]
+			server: [
+				'data/**'
+			]
 		watch:
 			client: [
 				'node_modules/@rapid-build-ui/'
+			]
+			server: [
+				'data/**'
 			]
 
 	exclude:
@@ -41,7 +47,7 @@ common:
 			]
 			spaFile:
 				scripts: [
-					'scripts/rapid.js'
+					'scripts/es-modules/**'
 				]
 
 	minify:
@@ -53,18 +59,22 @@ common:
 		server:
 			js:
 				es6: true
+			json:
+				enable: false
 		html:
 			options:
 				ignoreCustomFragments: [
+					/\s<rb-icon|<\/rb-icon>\s/gi
+					/\s<rb-button|<\/rb-button>\s/gi
+					/\s<rb-popover|<\/rb-popover>\s/gi
 					/<rba-code(\s*?.*?)*?rba-code>/gi
-					/\s?<rb-icon\s|<\/rb-icon>\s?/gi
-					/\s?<rba-copy[^]*?rba-copy>\s?/gi
+					/\s<rba-copy|<\/rba-copy>\s/gi
+					/\s<rba-install|<\/rba-install>\s/gi
 				]
 
-	order: # build will merge this with dev or prod
+	order:
 		scripts:
 			first: [
-				'scripts/polyfills/*.*'
 				'node_modules/clipboard/dist/clipboard.min.js'
 				'node_modules/ngclipboard/dist/ngclipboard.min.js'
 			]

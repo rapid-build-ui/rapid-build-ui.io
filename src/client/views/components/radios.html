@@ -7,7 +7,7 @@
 			</rba-install>
 			rb-radios
 		</h1>
-		<rba-source-nav source="radios"></rba-source-nav>
+		<rba-source-nav source="RB_RADIOS_SRC_NAV" inject></rba-source-nav>
 	</header>
 
 	<!-- COMPONENT -->
@@ -15,6 +15,7 @@
 		<div class="col">
 			<div rba-builder="markup"></div>
 			<!-- <rb-radios
+				rb-bind
 				label="Superheroes"
 				value="superhero"
 				data='[
@@ -38,19 +39,79 @@
 	<!-- DEMO -->
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
-		<rb-input label="label" value="a.label"></rb-input>
-		<rb-input label="value" value="a.value"></rb-input>
-		<rb-input label="subtext" value="a.subtext"></rb-input>
-		<rb-radios horizontal label="data" value="a.data" data="{{dataLabels}}"></rb-radios>
-		<rb-radios horizontal label="label-key" value="a.labelKey" data="{{labelKeys}}" toggle></rb-radios>
-		<rba-checkboxes caption="validation" model="a.validation" data="validationLabels"></rba-checkboxes>
-		<rba-checkbox inline caption="disabled" model="a.disabled"></rba-checkbox>
-		<rba-checkbox inline caption="toggle" model="a.toggle"></rba-checkbox><br>
-		<rba-checkbox inline caption="horizontal" model="a.horizontal"></rba-checkbox>
-		<rba-checkbox inline caption="inline" model="a.inline"></rba-checkbox><br>
-		<rba-checkbox inline caption="right" model="a.right"></rba-checkbox>
 
-		<!-- FORM CONTROLS -->
+		<rb-input
+			rb-bind
+			label="label"
+			value="a.label">
+		</rb-input>
+		<rb-input
+			rb-bind
+			label="value"
+			value="a.value">
+		</rb-input>
+		<rb-input
+			rb-bind
+			label="subtext"
+			value="a.subtext">
+		</rb-input>
+		<rb-radios
+			rb-bind
+			horizontal
+			label="data"
+			value="a.data"
+			data="{{dataLabels}}">
+		</rb-radios>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="label-key"
+			value="a.labelKey"
+			data="{{labelKeys}}">
+		</rb-radios>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.disabled"
+			sublabel="disabled"
+			class="right-bumper">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.toggle"
+			sublabel="toggle"
+			class="right-bumper">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.horizontal"
+			sublabel="horizontal"
+			class="right-bumper">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.inline"
+			sublabel="inline"
+			class="right-bumper">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.right"
+			sublabel="right"
+			class="right-bumper">
+		</rb-checkbox>
+		<rba-checkboxes
+			model="a.validation"
+			caption="validation"
+			data="validationLabels">
+		</rba-checkboxes>
+
+		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button
 				data-reset

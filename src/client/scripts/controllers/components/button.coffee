@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$element', 'rbEventService',
-	($scope, $element, rbEvents) ->
+angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$element',
+	($scope, $element) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -12,7 +12,7 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 			attrs += "#{s}icon-kind=\"#{$scope.a.iconKind}\"" if $scope.a.iconKind
 			attrs += "#{s}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
 			attrs += "#{s}icon-size=\"#{$scope.a.iconSize}\"" if $scope.a.iconSize
-			attrs += "#{s}icon-position=\"#{$scope.a.iconPosition}\"" if $scope.a.iconPosition
+			attrs += "#{s}icon-position=\"left\"" if $scope.a.iconPosition
 			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
 
 			"<rb-button#{attrs}>#{content}</rb-button>"
@@ -40,12 +40,6 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
 		, true
-
-		# Rb Eventing
-		# ===========
-		rbEvents.addListeners $element, 'rb-input', 'value-changed'
-		rbEvents.addListeners $element, 'rb-radios', 'value-changed'
-
 
 		# Event Handlers
 		# ==============

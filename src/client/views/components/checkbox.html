@@ -1,0 +1,114 @@
+<div ng-controller="rbCheckboxController">
+	<header class="page-header">
+		<h1>
+			<rba-install
+				source="checkbox"
+				icon-size=".55">
+			</rba-install>
+			rb-checkbox
+		</h1>
+		<rba-source-nav source="RB_CHECKBOX_SRC_NAV" inject></rba-source-nav>
+	</header>
+
+	<!-- COMPONENT -->
+	<section class="grid">
+		<div class="col">
+			<div rba-builder="markup"></div>
+		</div>
+		<div class="col-6">
+			<rba-code
+				scroll
+				bind="markup"
+				actions="copy"
+				caption="html"
+				height="xtall">
+			</rba-code>
+		</div>
+	</section>
+
+	<!-- DEMO -->
+	<form name="demoForm">
+		<h5 rba-text-curve>Demo</h5>
+
+		<rb-input
+			rb-bind
+			label="label"
+			value="a.label">
+		</rb-input>
+		<rb-input
+			rb-bind
+			label="sublabel"
+			value="a.sublabel">
+		</rb-input>
+		<rb-input
+			rb-bind
+			label="subtext"
+			value="a.subtext">
+		</rb-input>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="value"
+			value="a.value"
+			data="{{valueLabels}}">
+		</rb-radios>
+
+		<!-- VALUELESS -->
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.disabled"
+			sublabel="disabled"
+			class="right-bumper">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.inline"
+			sublabel="inline"
+			class="right-bumper">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.horizontal"
+			sublabel="horizontal"
+			class="right-bumper">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.right"
+			sublabel="right"
+			class="right-bumper">
+		</rb-checkbox>
+
+		<!-- VALIDATION -->
+		<rba-checkboxes
+			model="a.validation"
+			caption="validation"
+			data="validationLabels">
+		</rba-checkboxes>
+
+		<!-- BUTTONS -->
+		<section class="buttons">
+			<rb-button
+				data-reset
+				icon-kind="sync"
+				icon-source="solid"
+				icon-position="left">
+				Reset
+			</rb-button>
+		</section>
+	</form>
+
+	<!-- API -->
+	<section>
+		<h5 rba-text-curve>API</h5>
+		<rba-table source="RB_CHECKBOX_API" inject></rba-table>
+	</section>
+
+	<!-- CHANGELOG -->
+	<rba-changelog source="rb-checkbox"></rba-changelog>
+</div>

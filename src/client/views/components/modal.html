@@ -7,7 +7,7 @@
 			</rba-install>
 			rb-modal
 		</h1>
-		<rba-source-nav source="modal"></rba-source-nav>
+		<rba-source-nav source="RB_MODAL_SRC_NAV" inject></rba-source-nav>
 	</header>
 
 	<!-- COMPONENT -->
@@ -30,14 +30,55 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<rba-checkbox caption="show" model="a.show"></rba-checkbox>
-		<rba-checkbox caption="center" model="a.center"></rba-checkbox>
-		<rba-checkbox caption="unclosable" model="a.unclosable"></rba-checkbox>
-		<!-- <rb-radios toggle horizontal label="kind" value="a.kind" data="{{kinds}}"></rb-radios> -->
-		<rba-textarea height="short" caption="content" model="a.content"></rba-textarea>
-		<rba-textarea height="short" caption="header" model="a.header"></rba-textarea>
-		<rba-textarea height="short" caption="footer" model="a.footer"></rba-textarea>
+		<!-- VALUELESS -->
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.show"
+			sublabel="show"
+			class="right-bumper">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.center"
+			sublabel="center"
+			class="right-bumper">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.unclosable"
+			sublabel="unclosable"
+			class="right-bumper">
+		</rb-checkbox>
+		<!-- <rb-radios
+			toggle
+			horizontal
+			rb-bind
+			label="kind"
+			value="a.kind"
+			data="{{kinds}}">
+		</rb-radios> -->
 
+		<!-- CONTENT -->
+		<rba-textarea
+			height="short"
+			model="a.content"
+			caption="content">
+		</rba-textarea>
+		<rba-textarea
+			height="short"
+			model="a.header"
+			caption="header">
+		</rba-textarea>
+		<rba-textarea
+			height="short"
+			model="a.footer"
+			caption="footer">
+		</rba-textarea>
+
+		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button
 				data-reset

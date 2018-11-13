@@ -13,13 +13,14 @@
 language: node_js
 
 node_js:
-  - '8'
+  - '10'
 
 env:
   global:
     # Versions
-    - NPM_VERSION="6.0.1"
-    - YARN_VERSION="1.6.0"
+    - NPM_VERSION="6.4.1"
+    - YARN_VERSION="1.12.3"
+    - RB_CLI_VERSION="6"
     - RB_REPO_SLUG="$TRAVIS_REPO_SLUG"
     - RB_PROJECT_PATH="$TRAVIS_BUILD_DIR"
     - YARN_LINK_PATH="$(yarn global dir)/../link"
@@ -37,7 +38,7 @@ cache:
 before_install:
   - if [[ $(npm -v) != $NPM_VERSION ]]; then npm install -g npm@${NPM_VERSION}; fi     # version check
   - if [[ $(yarn -v) != $YARN_VERSION ]]; then npm install -g yarn@${YARN_VERSION}; fi # version check
-  - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@5; fi       # if not installed
+  - if [[ -z $(command -v rapid-build) ]]; then npm install -g rapid-build@${RB_CLI_VERSION}; fi # if not installed
 
 # ===================================
 # SPECIFIC JOBS

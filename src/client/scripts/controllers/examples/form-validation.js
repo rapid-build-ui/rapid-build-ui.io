@@ -1,8 +1,7 @@
-angular.module('rapid-build').controller('formValidationController', ['$scope', '$element', 'rbEventService',
-	($scope, $element, rbEvents) => {
-		// Builder
-		// =======
-		$scope.markup = `
+angular.module('rapid-build').controller('formValidationController', ['$scope', $scope => {
+	/* Builder
+	 **********/
+	$scope.markup = `
 <form action>
 	<rb-input
 		name="name"
@@ -21,6 +20,12 @@ angular.module('rapid-build').controller('formValidationController', ['$scope', 
 			{ "id": 3, "name": "wolverine" }
 		]'>
 	</rb-radios>
+	<rb-checkbox
+		name="isAwesome"
+		label="Superman"
+		sublabel="Is Awesome?"
+		validation='["required"]'>
+	</rb-checkbox>
 	<rb-button type="submit">
 		Submit
 	</rb-button>
