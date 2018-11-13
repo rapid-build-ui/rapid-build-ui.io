@@ -13,13 +13,13 @@
 language: node_js
 
 node_js:
-  - '8'
+  - '10'
 
 env:
   global:
     # Versions
-    - NPM_VERSION="6.0.1"
-    - YARN_VERSION="1.6.0"
+    - NPM_VERSION="6.4.1"
+    - YARN_VERSION="1.12.3"
     - RB_CLI_VERSION="6"
     - RB_REPO_SLUG="$TRAVIS_REPO_SLUG"
     - RB_PROJECT_PATH="$TRAVIS_BUILD_DIR"
