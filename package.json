@@ -44,7 +44,7 @@
     "setup-components": "node scripts/api/setup-components"
   },
   "dependencies": {
-    "@rapid-build-ui/utils": "~0.0.9",
+    "@rapid-build-ui/utils": "~0.0.10",
     "colors": "^1.3.2",
     "del": "^3.0.0",
     "fs-extra": "^7.0.0",
