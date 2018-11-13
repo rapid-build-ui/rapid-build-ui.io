@@ -1,13 +1,14 @@
 # PUBLISHING ORDER
 # ================
-1.  base:         0.0.4
-2.  form-control: 0.0.3
-3.  icon:         0.0.9
-4.  button:       0.0.11
-5.  popover:      0.0.11
-6.  input:        0.0.10
-7.  checkbox:     0.0.1
-8.  radios:       0.0.6
-9.  nav:          0.0.9
-10. alert:        0.0.15
-11. modal:        0.0.3
+1.  base:         0.0.5
+2.  form-control: 0.0.4
+3.  icon:         0.0.10
+4.  button:       0.0.12
+5.  popover:      0.0.12
+6.  input:        0.0.11
+7.  checkbox:     0.0.2
+8.  checkboxes:   0.0.0
+9.  radios:       0.0.7
+10. nav:          0.0.10
+11. alert:        0.0.16
+12. modal:        0.0.4
