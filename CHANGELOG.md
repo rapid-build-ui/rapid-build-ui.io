@@ -1,3 +1,39 @@
+## [0.0.14](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.13...v0.0.14) (2018-11-13)
+
+
+### Bug Fixes
+
+* **builder:** remove extra quotes on rb-checkbox when value is a js primitive ([ec18f8c](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/ec18f8c))
+* **form validation example:** add name property to rb-checkbox for form submission ([678e6e9](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/678e6e9))
+* **icon spacing:** when beside text ([b1859dc](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/b1859dc))
+* **navigation:** on route change set window scroll position to top ([76d9804](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/76d9804))
+* **rb event service:** from not removing event listeners ([f52aaab](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/f52aaab))
+* **rb-checkbox:** add bumper for inline option ([af4a819](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/af4a819))
+* **resetting checkbox:** when clicking the reset button on the demo forms ([6846d9a](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/6846d9a))
+* **windows:** main nav from dropping to the next line ([9283c7c](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/9283c7c))
+
+
+### Features
+
+* **automation:** automatically create two way binding with angular and rb form control's when they are inserted into the dom ([b9258d5](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/b9258d5))
+* **rb-checkbox:** add support for boolean, string, number and object types for value ([94b20c6](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/94b20c6))
+* **crud example:** add it ([a589a39](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/a589a39))
+* **rb-alert:** add documentation for rb-alert's css variables ([d4b5d25](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/d4b5d25))
+* **rb-checkbox:** add it to the showcase ([fa37007](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/fa37007))
+* **rb-checkbox:** add options inline, horizontal and right and swap in rb-checkbox throughout the showcase ([1c62c9d](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/1c62c9d))
+
+
+### Performance Improvements
+
+* **builder:** add a debounce for better performance ([d8b5a25](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/d8b5a25))
+
+
+### Dependencies
+
+* **bump:** deps all rb components ([5b4eb34](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/5b4eb34))
+
+
+
 ## [0.0.13](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.12...v0.0.13) (2018-09-26)
 
 
