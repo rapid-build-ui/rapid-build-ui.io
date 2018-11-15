@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbModalController', ['$scope', '$element',
-	($scope, $element) ->
+angular.module('rapid-build').controller 'rbModalController', ['$scope', '$element', '$timeout',
+	($scope, $element, $timeout) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -34,7 +34,25 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		# =======
 		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
+			showHelper newVal.show
 		, true
+
+		# Show Helper
+		# ===========
+		showHelper = (show) -> # needed for builder
+			return unless show
+			# console.log 'SHOW:', show
+
+			updateShow = (evt) ->
+				$scope.a.show = evt.detail.show
+				$scope.$apply()
+				$timeout.cancel timer
+				@removeEventListener 'show-changed', updateShow
+
+			timer = $timeout ->
+				modal = $element[0].querySelector 'rb-modal[id^="built"]'
+				modal.addEventListener 'show-changed', updateShow
+			, 75
 
 		# Event Handlers
 		# ==============
