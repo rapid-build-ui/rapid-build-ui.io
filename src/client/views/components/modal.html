@@ -12,16 +12,21 @@
 
 	<!-- COMPONENT -->
 	<section class="grid">
-		<div class="col">
+		<div class="col-8_md-11_xs-12">
 			<div rba-builder="markup"></div>
-		</div>
-		<div class="col-7">
+			<!-- <rb-modal show="{{a.show}}">
+				<a ng-href="#{{link.href}}" ng-repeat="link in links" ng-bind-html="link.content | trustHtml"></a>
+				<a ng-href="#{{link.href}}" ng-repeat="link in links" ng-bind-html="link.content | trustHtml" slot="header"></a>
+				<a ng-href="#{{link.href}}" ng-repeat="link in links" ng-bind-html="link.content | trustHtml" slot="footer"></a>
+			</rb-modal>
+			<rb-button size="small" ng-click="addLink()">add</rb-button>
+			<rb-button size="small" ng-click="removeLink()">remove</rb-button> -->
 			<rba-code
 				scroll
 				bind="markup"
 				actions="copy"
 				caption="html"
-				height="xtall">
+				height="tall">
 			</rba-code>
 		</div>
 	</section>

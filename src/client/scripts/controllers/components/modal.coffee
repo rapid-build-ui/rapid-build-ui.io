@@ -4,20 +4,38 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		# =======
 		createMarkup = ->
 			attrs   = ''
-			header  = ''; content = ''; footer  = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t'; ntt = '\n\t\t';
 
 			attrs  += "#{s}center" if $scope.a.center
+			attrs  += "#{s}unclosable" if $scope.a.unclosable
 			attrs  += "#{s}show=\"#{$scope.a.show}\"" if $scope.a.show
 			# attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
-			attrs  += "#{s}unclosable" if $scope.a.unclosable
-			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
-			header  = "#{n}" if $scope.a.header and !$scope.a.content
-			footer  = "#{n}" if $scope.a.footer and !$scope.a.content and !$scope.a.header
-			header  += "#{t}<div slot=\"header\">#{ntt}#{$scope.a.header}#{nt}</div>#{n}" if $scope.a.header
-			footer  += "#{t}<div slot=\"footer\">#{ntt}#{$scope.a.footer}#{nt}</div>#{n}" if $scope.a.footer
+			header  = "#{nt}#{$scope.a.header}"  if $scope.a.header
+			content = "#{nt}#{$scope.a.content}" if $scope.a.content
+			footer  = "#{nt}#{$scope.a.footer}"  if $scope.a.footer
 
-			"<rb-modal#{attrs}>#{content}#{header}#{footer}</rb-modal>"
+			"<rb-modal#{attrs}>#{content}#{header}#{footer}#{n}</rb-modal>"
+
+		# Test Without Builder
+		# ====================
+		# linkCnt = 1
+		# $scope.links = [
+		# 	href:    'home'
+		# 	content: 'home'
+		# ,
+		# 	href:    'about'
+		# 	content: 'about'
+		# ,
+		# 	href:    'contact'
+		# 	content: 'contact <rb-icon kind="heart"></rb-icon></a>'
+		# ]
+		# $scope.addLink = ->
+		# 	newLink = "link#{linkCnt++}"
+		# 	newLink = href: newLink, content: newLink
+		# 	$scope.links.push newLink
+		# $scope.removeLink = ->
+		# 	$scope.links.pop()
+		# 	linkCnt--
 
 		# Props
 		# =====
@@ -28,7 +46,9 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		$scope.reset = ->
 			$scope.a =
 				show: false
-				content: 'Modal Content'
+				content: 'Easy peasy modal content!'
+				header:  '<h4 slot="header">Modal Header</h4>'
+				footer:  '<em slot="footer">Modal Footer</em>'
 
 		# Watches
 		# =======
@@ -41,16 +61,13 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		# ===========
 		showHelper = (show) -> # needed for builder
 			return unless show
-			# console.log 'SHOW:', show
-
 			updateShow = (evt) ->
 				$scope.a.show = evt.detail.show
 				$scope.$apply()
-				$timeout.cancel timer
 				@removeEventListener 'show-changed', updateShow
-
 			timer = $timeout ->
-				modal = $element[0].querySelector 'rb-modal[id^="built"]'
+				$timeout.cancel timer
+				modal = $element[0].querySelector 'rb-modal'
 				modal.addEventListener 'show-changed', updateShow
 			, 75
 
