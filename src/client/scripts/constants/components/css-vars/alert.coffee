@@ -31,26 +31,6 @@ angular.module('rapid-build').constant 'RB_ALERT_CSS_VARS', [
 	description: 'Background color for warning kind.'
 	value: '#fff3cd'
 ,
-	name: '--rb-alert-default-color'
-	description: 'Font color for default kind.'
-	value: '#004085'
-,
-	name: '--rb-alert-danger-color'
-	description: 'Font color for danger kind.'
-	value: '#721c24'
-,
-	name: '--rb-alert-info-color'
-	description: 'Font color for info kind.'
-	value: '#0c5460'
-,
-	name: '--rb-alert-success-color'
-	description: 'Font color for success kind.'
-	value: '#155724'
-,
-	name: '--rb-alert-warning-color'
-	description: 'Font color for warning kind.'
-	value: '#856404'
-,
 	name: '--rb-alert-default-border-color'
 	description: 'Border color for default kind.'
 	value: '#b8daff'
@@ -70,4 +50,24 @@ angular.module('rapid-build').constant 'RB_ALERT_CSS_VARS', [
 	name: '--rb-alert-warning-border-color'
 	description: 'Border color for warning kind.'
 	value: '#ffeeba'
+,
+	name: '--rb-alert-default-color'
+	description: 'Font color for default kind.'
+	value: '#004085'
+,
+	name: '--rb-alert-danger-color'
+	description: 'Font color for danger kind.'
+	value: '#721c24'
+,
+	name: '--rb-alert-info-color'
+	description: 'Font color for info kind.'
+	value: '#0c5460'
+,
+	name: '--rb-alert-success-color'
+	description: 'Font color for success kind.'
+	value: '#155724'
+,
+	name: '--rb-alert-warning-color'
+	description: 'Font color for warning kind.'
+	value: '#856404'
 ]
