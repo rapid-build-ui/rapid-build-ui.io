@@ -1,4 +1,4 @@
-angular.module('rapid-build').constant 'RB_POPOVER_THEME', [
+angular.module('rapid-build').constant 'RB_POPOVER_CSS_VARS', [
 	name: '--rb-popover-border-radius'
 	description: 'Border radius.'
 	value: '.3rem'

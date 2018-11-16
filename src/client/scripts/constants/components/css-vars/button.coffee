@@ -1,4 +1,4 @@
-angular.module('rapid-build').constant 'RB_BUTTON_THEME', [
+angular.module('rapid-build').constant 'RB_BUTTON_CSS_VARS', [
 	name: '--rb-button-border-radius'
 	description: 'Border radius.'
 	value: '4px'

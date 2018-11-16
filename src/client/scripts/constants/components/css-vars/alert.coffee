@@ -1,4 +1,4 @@
-angular.module('rapid-build').constant 'RB_ALERT_THEME', [
+angular.module('rapid-build').constant 'RB_ALERT_CSS_VARS', [
 	name: '--rb-alert-border-radius'
 	description: 'Border radius.'
 	value: '4px'
