@@ -1,0 +1,9 @@
+/********************************
+ * TESTING THEME: RAPID BUILD UI
+ ********************************/
+// :root { // for testing
+:root .testing-theme {
+	@import 'testing/alert.scss';
+	@import 'testing/button.scss';
+	@import 'testing/popover.scss';
+}

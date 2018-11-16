@@ -3,13 +3,13 @@ angular.module('rapid-build').constant 'RB_ALERT_THEME', [
 	description: 'Border radius.'
 	value: '4px'
 ,
+	name: '--rb-alert-border-type'
+	description: 'Border style.'
+	value: 'solid'
+,
 	name: '--rb-alert-border-width'
 	description: 'Border width.'
 	value: '1px'
-,
-	name: '--rb-alert-border-style'
-	description: 'Border style.'
-	value: 'solid'
 ,
 	name: '--rb-alert-default-bg-color'
 	description: 'Background color for default kind.'
