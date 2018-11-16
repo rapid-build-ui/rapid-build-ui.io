@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element', '$timeout',
-	($scope, $element, $timeout) ->
+angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element',
+	($scope, $element) ->
 		# Builder
 		# =======
 		createMarkup = ->
@@ -37,12 +37,7 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 		# Watches
 		# =======
 		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
-			if not newVal.showPopover
-				$scope.markup = createMarkup()
-			else
-				# needed to show example of show-popover
-				# avoids closing popover on window click
-				$timeout -> $scope.markup = createMarkup()
+			$scope.markup = createMarkup()
 		, true
 
 		# Event Handlers
