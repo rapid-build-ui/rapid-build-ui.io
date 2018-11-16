@@ -84,59 +84,66 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Demo</h5>
 
-		<div class="grid-noBottom">
-			<div class="col-8">
-				<rb-radios
-					toggle
-					rb-bind
-					horizontal
-					label="kind"
-					value="a.kind"
-					data="{{kinds}}">
-				</rb-radios>
-				<rb-radios
-					toggle
-					rb-bind
-					label="active"
-					value="a.active"
-					data="{{actives}}">
-				</rb-radios>
-			</div>
-			<div class="col">
-				<rb-checkbox
-					rb-bind
-					value="a.inline"
-					sublabel="inline">
-				</rb-checkbox>
-				<rb-checkbox
-					rb-bind
-					value="a.inverse"
-					sublabel="inverse">
-				</rb-checkbox>
-				<rb-checkbox
-					rb-bind
-					value="a.dividers"
-					sublabel="dividers">
-				</rb-checkbox>
-				<rb-checkbox
-					rb-bind
-					value="a.vertical"
-					sublabel="vertical">
-				</rb-checkbox>
-				<rb-checkbox
-					rb-bind
-					value="a.responsive"
-					sublabel="responsive">
-				</rb-checkbox>
-			</div>
-			<div class="col">
-				<rba-textarea
-					width="xxwide"
-					model="a.content"
-					caption="content">
-				</rba-textarea>
-			</div>
-		</div>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="kind"
+			value="a.kind"
+			data="{{kinds}}">
+		</rb-radios>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="active"
+			value="a.active"
+			data="{{actives}}">
+		</rb-radios>
+
+		<!-- VALUELESS -->
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.inline"
+			sublabel="inline"
+			class="right-bumper">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.inverse"
+			sublabel="inverse"
+			class="right-bumper">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.dividers"
+			sublabel="dividers"
+			class="right-bumper">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.vertical"
+			sublabel="vertical"
+			class="right-bumper">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.responsive"
+			sublabel="responsive"
+			class="right-bumper">
+		</rb-checkbox>
+
+		<!-- CONTENT -->
+		<rba-textarea
+			width="xxwide"
+			model="a.content"
+			caption="content">
+		</rba-textarea>
 
 		<!-- BUTTONS -->
 		<section class="buttons">
