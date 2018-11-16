@@ -1,25 +1,25 @@
-/*****************************
- * RB-POPOVER - TESTING THEME
- *****************************/
+/****************************
+ * TESTING THEME: RB-POPOVER
+ ****************************/
 & {
-	// common
+	// Common
 	--rb-popover-border-radius: 20px;
 
-	// popover bg color
+	// Popover BG Color
 	--rb-popover-default-bg-color: pink;
 	--rb-popover-danger-bg-color:  red;
 	--rb-popover-info-bg-color:    lightblue;
 	--rb-popover-success-bg-color: green;
 	--rb-popover-warning-bg-color: orange;
 
-	// popover color
+	// Popover Color
 	--rb-popover-default-color: darkblue;
 	--rb-popover-danger-color:  green;
 	--rb-popover-info-color:    grey;
 	--rb-popover-success-color: black;
 	--rb-popover-warning-color: darkblue;
 
-	// trigger color
+	// Trigger Color
 	--rb-popover-default-trigger-color: orange;
 	--rb-popover-danger-trigger-color:  yellow;
 	--rb-popover-info-trigger-color:    darkblue;

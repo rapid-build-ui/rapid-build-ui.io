@@ -1,0 +1,9 @@
+/******************************
+ * ALINA THEME: RAPID BUILD UI
+ ******************************/
+// :root { // for testing
+:root .alina-theme {
+	@import 'alina/alert.scss';
+	@import 'alina/button.scss';
+	@import 'alina/popover.scss';
+}

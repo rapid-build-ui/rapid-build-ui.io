@@ -1,27 +1,27 @@
-/***************************
- * RB-ALERT - TESTING THEME
- ***************************/
+/**************************
+ * TESTING THEME: RB-ALERT
+ **************************/
 & {
-	// common
+	// Common
 	--rb-alert-border-radius: 20px;
 	--rb-alert-border-type:   dashed;
 	--rb-alert-border-width:  10px;
 
-	// bg color
+	// BG Color
 	--rb-alert-default-bg-color: pink;
 	--rb-alert-danger-bg-color:  red;
 	--rb-alert-info-bg-color:    yellow;
 	--rb-alert-success-bg-color: green;
 	--rb-alert-warning-bg-color: blue;
 
-	// border color
+	// Border Color
 	--rb-alert-default-border-color: hotpink;
 	--rb-alert-danger-border-color:  red;
 	--rb-alert-info-border-color:    yellow;
 	--rb-alert-success-border-color: green;
 	--rb-alert-warning-border-color: blue;
 
-	// color
+	// Color
 	--rb-alert-default-color: red;
 	--rb-alert-danger-color:  darkred;
 	--rb-alert-info-color:    brown;
