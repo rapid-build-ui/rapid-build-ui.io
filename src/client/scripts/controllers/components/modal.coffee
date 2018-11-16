@@ -47,7 +47,7 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 			$scope.a =
 				show: false
 				content: 'Easy peasy modal content!'
-				header:  '<h4 slot="header">Modal Header</h4>'
+				header:  '<h5 slot="header">Modal Header</h5>'
 				footer:  '<em slot="footer">Modal Footer</em>'
 
 		# Watches
