@@ -3,28 +3,28 @@
  ************************/
 & {
 	// Common
-	// --rb-alert-border-radius: 20px;
-	// --rb-alert-border-type:   dashed;
-	// --rb-alert-border-width:  10px;
+	--rb-alert-border-radius: 5px;
+	--rb-alert-border-type:   solid;
+	--rb-alert-border-width:  1px;
 
 	// BG Color
-	// --rb-alert-default-bg-color: pink;
-	// --rb-alert-danger-bg-color:  red;
-	// --rb-alert-info-bg-color:    yellow;
-	// --rb-alert-success-bg-color: green;
-	// --rb-alert-warning-bg-color: blue;
+	--rb-alert-default-bg-color: #f0ebfa;
+	--rb-alert-danger-bg-color:  #ffb3b3;
+	--rb-alert-info-bg-color:  #cce6ff;
+	--rb-alert-success-bg-color: #e6fff7;
+	--rb-alert-warning-bg-color: #ffdacc;
 
 	// Border Color
-	// --rb-alert-default-border-color: hotpink;
-	// --rb-alert-danger-border-color:  red;
-	// --rb-alert-info-border-color:    yellow;
-	// --rb-alert-success-border-color: green;
-	// --rb-alert-warning-border-color: blue;
+	--rb-alert-default-border-color: #e0d6f5;
+	--rb-alert-danger-border-color:  #ff9999;
+	--rb-alert-info-border-color: #b3d9ff;
+	--rb-alert-success-border-color: #b3ffeffc;
+	--rb-alert-warning-border-color: #ffc8b3;
 
 	// Color
-	// --rb-alert-default-color: red;
-	// --rb-alert-danger-color:  darkred;
-	// --rb-alert-info-color:    brown;
-	// --rb-alert-success-color: darkgreen;
-	// --rb-alert-warning-color: darkblue;
+	--rb-alert-default-color: #291452;
+	--rb-alert-danger-color:  #800000;
+	--rb-alert-info-color: #00264d;
+	--rb-alert-success-color: #006644;
+	--rb-alert-warning-color: #661b00;
 }
