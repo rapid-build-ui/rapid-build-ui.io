@@ -19,7 +19,7 @@ angular.module('rapid-build').constant 'RB_BUTTON_API', [
 		Varies look of display.<br>
 		(kind \'text\' unstyles button)
 	'
-	options: 'info | danger | success | warning | text'
+	options: 'info | danger | secondary | success | warning | text'
 	type: 'string'
 	required: false
 ,
