@@ -21,7 +21,7 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 		# =====
 		$scope.iconKinds    = ['heart','user','github']
 		$scope.iconSources  = ['solid','brands']
-		$scope.kinds        = ['secondary','success','danger','warning','info','text']
+		$scope.kinds        = ['success','danger','warning','info','secondary','text']
 		$scope.sizes        = ['small','big']
 		$scope.types        = ['reset','submit']
 		$scope.iconPosition = 'left'
