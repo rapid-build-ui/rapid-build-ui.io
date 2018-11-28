@@ -23,6 +23,10 @@ angular.module('rapid-build').constant 'RB_ALERT_CSS_VARS', [
 	description: 'Background color for info kind.'
 	value: '#d1ecf1'
 ,
+	name: '--rb-alert-secondary-bg-color'
+	description: 'Background color for secondary kind.'
+	value: '#e2e3e5'
+,
 	name: '--rb-alert-success-bg-color'
 	description: 'Background color for success kind.'
 	value: '#d4edda'
@@ -43,6 +47,10 @@ angular.module('rapid-build').constant 'RB_ALERT_CSS_VARS', [
 	description: 'Border color for info kind.'
 	value: '#bee5eb'
 ,
+	name: '--rb-alert-secondary-border-color'
+	description: 'Border color for secondary kind.'
+	value: '#d6d8db'
+,
 	name: '--rb-alert-success-border-color'
 	description: 'Border color for success kind.'
 	value: '#c3e6cb'
@@ -62,6 +70,10 @@ angular.module('rapid-build').constant 'RB_ALERT_CSS_VARS', [
 	name: '--rb-alert-info-color'
 	description: 'Font color for info kind.'
 	value: '#0c5460'
+,
+	name: '--rb-alert-secondary-color'
+	description: 'Font color for secondary kind.'
+	value: '#383d41'
 ,
 	name: '--rb-alert-success-color'
 	description: 'Font color for success kind.'
