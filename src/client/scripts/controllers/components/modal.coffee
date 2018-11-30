@@ -7,6 +7,7 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t'; ntt = '\n\t\t';
 
 			attrs  += "#{s}center" if $scope.a.center
+			attrs  += "#{s}no-backdrop" if $scope.a.noBackdrop
 			attrs  += "#{s}unclosable" if $scope.a.unclosable
 			attrs  += "#{s}show=\"#{$scope.a.show}\"" if $scope.a.show
 			# attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
