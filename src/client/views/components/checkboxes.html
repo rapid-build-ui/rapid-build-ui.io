@@ -64,35 +64,33 @@
 			inline
 			rb-bind
 			value="a.disabled"
-			sublabel="disabled"
-			class="right-bumper">
+			sublabel="disabled">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
 			rb-bind
 			value="a.horizontal"
-			sublabel="horizontal"
-			class="right-bumper">
+			sublabel="horizontal">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
 			rb-bind
 			value="a.inline"
-			sublabel="inline"
-			class="right-bumper">
+			sublabel="inline">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
 			rb-bind
 			value="a.right"
-			sublabel="right"
-			class="right-bumper">
+			sublabel="right">
 		</rb-checkbox>
-		<rba-checkboxes
-			model="a.validation"
-			caption="validation"
-			data="validationLabels">
-		</rba-checkboxes>
+		<rb-checkboxes
+			rb-bind
+			horizontal
+			value="a.validation"
+			label="validation"
+			data="{{validationLabels}}">
+		</rb-checkboxes>
 
 		<!-- BUTTONS -->
 		<section class="buttons">
