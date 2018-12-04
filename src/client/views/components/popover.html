@@ -64,44 +64,49 @@
 			data="{{iconSources}}">
 		</rb-radios>
 		<rb-input
+			inline
 			rb-bind
 			type="number"
 			label="icon-size"
 			value="a.iconSize">
 		</rb-input>
-
-		<!-- VALUELESS -->
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.fitContent"
-			sublabel="fit-content">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.hover"
-			sublabel="hover">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.showPopover"
-			sublabel="show-popover">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.unstyled"
-			sublabel="unstyled">
-		</rb-checkbox>
-
-		<!-- INPUT CONTROLS -->
 		<rb-input
+			inline
 			rb-bind
 			label="caption"
 			value="a.caption">
 		</rb-input>
+
+		<!-- VALUELESS -->
+		<div>
+			<rb-checkbox
+				inline
+				rb-bind
+				value="a.fitContent"
+				sublabel="fit-content">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind
+				value="a.hover"
+				sublabel="hover">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind
+				value="a.showPopover"
+				sublabel="show-popover">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind
+				value="a.unstyled"
+				sublabel="unstyled">
+			</rb-checkbox>
+		</div>
+
+		<!-- INPUT CONTROLS -->
+
 		<rba-textarea
 			model="a.content"
 			caption="content">

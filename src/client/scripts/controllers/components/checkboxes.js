@@ -49,7 +49,7 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 		$scope.reset = () => {
 			$scope.a = {
 				label: 'Superheroes',
-				value: ['batman', 'superman'],
+				value: ['batman'],
 				data: 'array of strings',
 				// validation: $scope.validations
 			};

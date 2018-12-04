@@ -31,7 +31,7 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 		# =======
 		$scope.reset = ->
 			$scope.a =
-				caption: 'Caption'
+				caption: 'hello world'
 				content: 'Now that\'s poppin!'
 
 		# Watches

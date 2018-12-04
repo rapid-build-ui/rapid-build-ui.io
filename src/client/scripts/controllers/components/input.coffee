@@ -83,6 +83,9 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			$scope.a =
 				label: 'Name'
 				validation: []
+				# value: 'Superman'
+				# placeholder: 'full name'
+				# subtext: 'you favorite hero'
 
 		# Watches
 		# =======

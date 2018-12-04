@@ -30,29 +30,26 @@
 		<h5 rba-text-curve>Demo</h5>
 
 		<rb-radios
-			inline
 			toggle
 			rb-bind
 			horizontal
 			label="kind"
 			value="a.kind"
-			data="{{kinds}}"
-			style="margin-right: -20px">
+			data="{{kinds}}">
 		</rb-radios>
-		<div class="inline-block">
-			<rb-popover position="top">
-				Name of any free
-				<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
-				Font awesome icon style must match icon source.
-			</rb-popover>
-			<rb-input
-				inline
-				toggle
-				rb-bind
-				value="a.kind"
-				placeholder="any font awesome icon">
-			</rb-input>
-		</div>
+		<rb-input
+			inline
+			toggle
+			rb-bind
+			value="a.kind"
+			class="no-right-bumper"
+			placeholder="any font awesome icon">
+		</rb-input>
+		<rb-popover position="top">
+			Name of any free
+			<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
+			Font awesome icon style must match icon source.
+		</rb-popover>
 		<rb-radios
 			toggle
 			rb-bind
