@@ -1,3 +1,38 @@
+## [0.0.15](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.14...v0.0.15) (2018-12-05)
+
+
+### Bug Fixes
+
+* **modal:** from showing undefined when slot is empty ([a0ada3a](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/a0ada3a))
+* **rb-modal:** set scope.a.show to false when the modal closes ([4bab171](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/4bab171))
+
+
+### Features
+
+* **alina theme:** create it ([8fb3f3b](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/8fb3f3b))
+* **testing-theme:** create it ([b732a71](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/b732a71))
+* **dog food:** swap in rb-checkboxes ([6190d4a](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/6190d4a))
+* **rb-alert:** document new css variables radius, width and style ([c132cbf](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/c132cbf))
+* **rb-alert:** document secondary kind ([411dac8](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/411dac8))
+* **rb-button:** add secondary css variables ([b5d9666](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/b5d9666))
+* **rb-button:** document its css variables ([4685f21](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/4685f21))
+* **rb-button:** document secondary kind ([bffe6a8](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/bffe6a8))
+* **rb-checkboxes:** add it and create showcase it's pages ([b1e7176](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/b1e7176))
+* **rb-checkboxes:** add api for validation and multiple value types ([6c57824](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/6c57824))
+* **rb-checkboxes:** make it available to the world ([e4bd02e](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/e4bd02e))
+* **rb-modal:** add documentation for no-backdrop ([be1e55f](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/be1e55f))
+* **rb-modal:** make it available to the world ([c975562](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/c975562))
+* **rb-modal:** update showcase page with better example content ([6e1a245](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/6e1a245))
+* **rb-popover:** document its css variables ([74ed1df](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/74ed1df))
+* **validation example:** add rb-checkboxes ([3d07fc7](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/3d07fc7))
+
+
+### Dependencies
+
+* **bump:** deps all rb components ([23521b7](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/23521b7))
+
+
+
 ## [0.0.14](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.13...v0.0.14) (2018-11-13)
 
 
