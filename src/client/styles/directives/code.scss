@@ -171,6 +171,7 @@
 	&.xxxgiant-height   { @include codeHeight(395px, 22); }
 	&.jumbo-height      { @include codeHeight(480px, 30); }
 	&.xjumbo-height     { @include codeHeight(580px, 30); }
+	&.xxjumbo-height    { @include codeHeight(680px, 30); }
 
 }
 

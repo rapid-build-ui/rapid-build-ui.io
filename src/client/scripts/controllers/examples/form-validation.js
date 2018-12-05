@@ -4,15 +4,27 @@ angular.module('rapid-build').controller('formValidationController', ['$scope', 
 	$scope.markup = `
 <form action>
 	<rb-input
-		name="name"
-		label="Name"
+		name="hero"
+		label="Superhero"
 		validation='["required"]'>
 	</rb-input>
+	<rb-checkbox
+		name="awesome"
+		label="Superman"
+		sublabel="is awesome"
+		validation='["required"]'>
+	</rb-checkbox>
+	<rb-checkboxes
+		name="favs"
+		label="Your Favs"
+		validation='["required"]'
+		data='["batman","superman","wolverine"]'>
+	</rb-checkboxes>
 	<rb-radios
 		toggle
-		name="heroes"
+		name="best"
 		label-key="name"
-		label="Superheroes"
+		label="The Best"
 		validation='["required"]'
 		data='[
 			{ "id": 1, "name": "batman" },
@@ -20,12 +32,6 @@ angular.module('rapid-build').controller('formValidationController', ['$scope', 
 			{ "id": 3, "name": "wolverine" }
 		]'>
 	</rb-radios>
-	<rb-checkbox
-		name="isAwesome"
-		label="Superman"
-		sublabel="Is Awesome?"
-		validation='["required"]'>
-	</rb-checkbox>
 	<rb-button type="submit">
 		Submit
 	</rb-button>
