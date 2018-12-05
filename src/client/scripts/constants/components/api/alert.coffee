@@ -10,7 +10,7 @@ angular.module('rapid-build').constant 'RB_ALERT_API', [
 ,
 	attribute: 'kind'
 	description: 'Varies look of display.'
-	options: 'info | danger | success | warning'
+	options: 'danger | info | success | secondary | warning'
 	type: 'string'
 	required: false
 ,

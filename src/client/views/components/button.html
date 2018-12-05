@@ -76,12 +76,6 @@
 			value="a.iconSource"
 			data="{{iconSources}}">
 		</rb-radios>
-		<rb-input
-			rb-bind
-			type="number"
-			label="icon-size"
-			value="a.iconSize">
-		</rb-input>
 		<rb-checkbox
 			rb-bind
 			horizontal
@@ -89,6 +83,12 @@
 			value="a.iconPosition"
 			sublabel="{{iconPosition}}">
 		</rb-checkbox>
+		<rb-input
+			rb-bind
+			type="number"
+			label="icon-size"
+			value="a.iconSize">
+		</rb-input>
 		<rb-checkbox
 			rb-bind
 			value="a.disabled"
@@ -111,6 +111,12 @@
 	<section>
 		<h5 rba-text-curve>API</h5>
 		<rba-table source="RB_BUTTON_API" inject></rba-table>
+	</section>
+
+	<!-- CSS Variables -->
+	<section>
+		<h5 rba-text-curve>CSS Variables</h5>
+		<rba-table source="RB_BUTTON_CSS_VARS" inject></rba-table>
 	</section>
 
 	<!-- CHANGELOG -->

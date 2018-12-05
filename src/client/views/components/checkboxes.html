@@ -1,27 +1,27 @@
-<div ng-controller="rbInputController">
+<div ng-controller="rbCheckboxesController">
 	<header class="page-header">
 		<h1>
 			<rba-install
-				source="input"
-				icon-size=".55">
+				icon-size=".55"
+				source="checkboxes">
 			</rba-install>
-			rb-input
+			rb-checkboxes
 		</h1>
-		<rba-source-nav source="RB_INPUT_SRC_NAV" inject></rba-source-nav>
+		<rba-source-nav source="RB_CHECKBOXES_SRC_NAV" inject></rba-source-nav>
 	</header>
 
 	<!-- COMPONENT -->
 	<section class="grid">
-		<div class="col" id="markup">
+		<div class="col">
 			<div rba-builder="markup"></div>
 		</div>
-		<div class="col-7">
+		<div class="col-5">
 			<rba-code
 				scroll
 				bind="markup"
 				actions="copy"
 				caption="html"
-				height="xxxxxtall">
+				height="xxxxxxtall">
 			</rba-code>
 		</div>
 	</section>
@@ -45,47 +45,24 @@
 		<rb-input
 			inline
 			rb-bind
-			label="placeholder"
-			value="a.placeholder">
-		</rb-input>
-		<rb-input
-			inline
-			rb-bind
 			label="subtext"
 			value="a.subtext">
 		</rb-input>
-
-		<!-- ICON OPTIONS -->
 		<rb-radios
-			toggle
 			rb-bind
 			horizontal
-			label="icon-kind"
-			value="a.iconKind"
-			data="{{iconKinds}}">
+			label="data"
+			value="a.data"
+			data="{{dataLabels}}">
 		</rb-radios>
 		<rb-radios
 			toggle
 			rb-bind
 			horizontal
-			label="icon-source"
-			value="a.iconSource"
-			data="{{iconSources}}">
+			label="label-key"
+			value="a.labelKey"
+			data="{{labelKeys}}">
 		</rb-radios>
-		<rb-checkbox
-			rb-bind
-			horizontal
-			label="icon-position"
-			value="a.iconPosition"
-			sublabel="{{iconPosition}}">
-		</rb-checkbox>
-		<rb-checkbox
-			rb-bind
-			horizontal
-			label="type"
-			value="a.type"
-			sublabel="{{type}}">
-		</rb-checkbox>
 
 		<!-- VALUELESS -->
 		<rb-checkbox
@@ -97,14 +74,20 @@
 		<rb-checkbox
 			inline
 			rb-bind
-			value="a.right"
-			sublabel="right">
+			value="a.horizontal"
+			sublabel="horizontal">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
 			rb-bind
 			value="a.inline"
 			sublabel="inline">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.right"
+			sublabel="right">
 		</rb-checkbox>
 
 		<!-- VALIDATION -->
@@ -131,9 +114,9 @@
 	<!-- API -->
 	<section>
 		<h5 rba-text-curve>API</h5>
-		<rba-table source="RB_INPUT_API" inject></rba-table>
+		<rba-table source="RB_CHECKBOXES_API" inject></rba-table>
 	</section>
 
 	<!-- CHANGELOG -->
-	<rba-changelog source="rb-input"></rba-changelog>
+	<rba-changelog source="rb-checkboxes"></rba-changelog>
 </div>

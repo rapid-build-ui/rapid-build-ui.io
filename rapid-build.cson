@@ -45,6 +45,10 @@ common:
 			cacheBust: [
 				'node_modules/**'
 			]
+			minFile:
+				styles: [
+					'styles/themes/**'
+				]
 			spaFile:
 				scripts: [
 					'scripts/es-modules/**'

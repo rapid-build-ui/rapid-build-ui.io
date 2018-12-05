@@ -14,7 +14,7 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 
 		# Props
 		# =====
-		$scope.kinds = ['success','danger','warning','info']
+		$scope.kinds = ['success','danger','warning','info','secondary']
 
 		# Content
 		# =======

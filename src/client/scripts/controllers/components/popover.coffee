@@ -1,14 +1,14 @@
-angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element', '$timeout',
-	($scope, $element, $timeout) ->
+angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$element',
+	($scope, $element) ->
 		# Builder
 		# =======
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
-			attrs += "#{s}fit-content" if $scope.a.fitContent
 			attrs += "#{s}hover" if $scope.a.hover
 			attrs += "#{s}unstyled" if $scope.a.unstyled
+			attrs += "#{s}fit-content" if $scope.a.fitContent
 			attrs += "#{s}caption=\"#{$scope.a.caption}\"" if $scope.a.caption
 			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{s}position=\"#{$scope.a.position}\"" if $scope.a.position
@@ -31,18 +31,13 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 		# =======
 		$scope.reset = ->
 			$scope.a =
-				caption: 'Caption'
+				caption: 'hello world'
 				content: 'Now that\'s poppin!'
 
 		# Watches
 		# =======
 		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
-			if not newVal.showPopover
-				$scope.markup = createMarkup()
-			else
-				# needed to show example of show-popover
-				# avoids closing popover on window click
-				$timeout -> $scope.markup = createMarkup()
+			$scope.markup = createMarkup()
 		, true
 
 		# Event Handlers

@@ -55,8 +55,8 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 			# $scope.a = {}
 			$scope.a =
 				label:    'Superman'
-				sublabel: 'Is Awesome?'
-				value:    undefined
+				sublabel: 'is awesome'
+				# value:    undefined
 				# subtext:  'optional'
 				# value:    true
 				# disabled: true

@@ -5,18 +5,18 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
-			attrs += "#{s}label=\"#{$scope.a.label}\"" if $scope.a.label
-			attrs += "#{s}value='#{$scope.a.value}'" if $scope.a.value
-			attrs += "#{s}subtext=\"#{$scope.a.subtext}\"" if $scope.a.subtext
-			attrs += "#{s}disabled" if $scope.a.disabled
-			attrs += "#{s}right" if $scope.a.right
-			attrs += "#{s}inline" if $scope.a.inline
-			attrs += "#{s}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
-			attrs += "#{s}horizontal" if $scope.a.horizontal
-			attrs += "#{s}toggle" if $scope.a.toggle
-			attrs += "#{s}data='#{buldDataMarkup()}'" if $scope.a.data?.length
-			attrs += "#{s}label-key='#{$scope.a.labelKey}'" if $scope.a.labelKey
-			"<rb-radios#{attrs}></rb-radios>"
+			attrs += "#{nt}right" if $scope.a.right
+			attrs += "#{nt}inline" if $scope.a.inline
+			attrs += "#{nt}toggle" if $scope.a.toggle
+			attrs += "#{nt}disabled" if $scope.a.disabled
+			attrs += "#{nt}horizontal" if $scope.a.horizontal
+			attrs += "#{nt}label=\"#{$scope.a.label}\"" if $scope.a.label
+			attrs += "#{nt}value='#{$scope.a.value}'" if $scope.a.value
+			attrs += "#{nt}subtext=\"#{$scope.a.subtext}\"" if $scope.a.subtext
+			attrs += "#{nt}label-key='#{$scope.a.labelKey}'" if $scope.a.labelKey
+			attrs += "#{nt}data='#{buldDataMarkup()}'" if $scope.a.data?.length
+			attrs += "#{nt}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
+			"<rb-radios#{attrs}>#{n}</rb-radios>"
 
 		# Props
 		# =====

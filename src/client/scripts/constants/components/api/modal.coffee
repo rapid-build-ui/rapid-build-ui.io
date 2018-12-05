@@ -46,8 +46,14 @@ angular.module('rapid-build').constant 'RB_MODAL_API', [
 	type: 'boolean'
 	required: false
 ,
+	attribute: 'no-backdrop'
+	description: 'Displais modal without backdrop.'
+	option: null
+	type: null
+	required: false
+,
 	attribute: 'unclosable'
-	description: 'It prevents the modal from being closed'
+	description: 'It prevents the modal from being closed.'
 	option: null
 	type: null
 	required: false

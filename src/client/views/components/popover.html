@@ -64,48 +64,49 @@
 			data="{{iconSources}}">
 		</rb-radios>
 		<rb-input
+			inline
 			rb-bind
 			type="number"
 			label="icon-size"
 			value="a.iconSize">
 		</rb-input>
-
-		<!-- VALUELESS -->
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.fitContent"
-			class="right-bumper"
-			sublabel="fit-content">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.hover"
-			sublabel="hover"
-			class="right-bumper">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			class="right-bumper"
-			value="a.showPopover"
-			sublabel="show-popover">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.unstyled"
-			sublabel="unstyled"
-			class="right-bumper">
-		</rb-checkbox>
-
-		<!-- INPUT CONTROLS -->
 		<rb-input
+			inline
 			rb-bind
 			label="caption"
 			value="a.caption">
 		</rb-input>
+
+		<!-- VALUELESS -->
+		<div>
+			<rb-checkbox
+				inline
+				rb-bind
+				value="a.fitContent"
+				sublabel="fit-content">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind
+				value="a.hover"
+				sublabel="hover">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind
+				value="a.showPopover"
+				sublabel="show-popover">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind
+				value="a.unstyled"
+				sublabel="unstyled">
+			</rb-checkbox>
+		</div>
+
+		<!-- INPUT CONTROLS -->
+
 		<rba-textarea
 			model="a.content"
 			caption="content">
@@ -127,6 +128,12 @@
 	<section>
 		<h5 rba-text-curve>API</h5>
 		<rba-table source="RB_POPOVER_API" inject></rba-table>
+	</section>
+
+	<!-- CSS Variables -->
+	<section>
+		<h5 rba-text-curve>CSS Variables</h5>
+		<rba-table source="RB_POPOVER_CSS_VARS" inject></rba-table>
 	</section>
 
 	<!-- CHANGELOG -->
