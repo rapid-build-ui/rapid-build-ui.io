@@ -3,7 +3,7 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		# Builder
 		# =======
 		createMarkup = ->
-			attrs   = ''
+			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t'; ntt = '\n\t\t';
 
 			attrs  += "#{s}center" if $scope.a.center
@@ -11,11 +11,11 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 			attrs  += "#{s}unclosable" if $scope.a.unclosable
 			attrs  += "#{s}show=\"#{$scope.a.show}\"" if $scope.a.show
 			# attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
-			header  = "#{nt}#{$scope.a.header}"  if $scope.a.header
-			content = "#{nt}#{$scope.a.content}" if $scope.a.content
-			footer  = "#{nt}#{$scope.a.footer}"  if $scope.a.footer
+			content += "#{nt}#{$scope.a.content}" if $scope.a.content
+			content += "#{nt}#{$scope.a.header}"  if $scope.a.header
+			content += "#{nt}#{$scope.a.footer}"  if $scope.a.footer
 
-			"<rb-modal#{attrs}>#{content}#{header}#{footer}#{n}</rb-modal>"
+			"<rb-modal#{attrs}>#{content}#{n}</rb-modal>"
 
 		# Test Without Builder
 		# ====================
