@@ -6,19 +6,19 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
-			attrs += "#{s}label=\"#{$scope.a.label}\"" if $scope.a.label
-			attrs += "#{s}value=\"#{$scope.a.value}\"" if $scope.a.value
-			attrs += "#{s}type=\"number\"" if $scope.a.type
-			attrs += "#{s}subtext=\"#{$scope.a.subtext}\"" if $scope.a.subtext
-			attrs += "#{s}placeholder=\"#{$scope.a.placeholder}\"" if $scope.a.placeholder
-			attrs += "#{s}disabled" if $scope.a.disabled
-			attrs += "#{s}right" if $scope.a.right
-			attrs += "#{s}inline" if $scope.a.inline
-			attrs += "#{s}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
-			attrs += "#{s}icon-kind=\"#{$scope.a.iconKind}\"" if $scope.a.iconKind
-			attrs += "#{s}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
-			attrs += "#{s}icon-position=\"left\"" if $scope.a.iconPosition
-			"<rb-input#{attrs}></rb-input>"
+			attrs += "#{nt}right" if $scope.a.right
+			attrs += "#{nt}inline" if $scope.a.inline
+			attrs += "#{nt}disabled" if $scope.a.disabled
+			attrs += "#{nt}label=\"#{$scope.a.label}\"" if $scope.a.label
+			attrs += "#{nt}type=\"number\"" if $scope.a.type
+			attrs += "#{nt}value=\"#{$scope.a.value}\"" if $scope.a.value
+			attrs += "#{nt}subtext=\"#{$scope.a.subtext}\"" if $scope.a.subtext
+			attrs += "#{nt}placeholder=\"#{$scope.a.placeholder}\"" if $scope.a.placeholder
+			attrs += "#{nt}icon-kind=\"#{$scope.a.iconKind}\"" if $scope.a.iconKind
+			attrs += "#{nt}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
+			attrs += "#{nt}icon-position=\"left\"" if $scope.a.iconPosition
+			attrs += "#{nt}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
+			"<rb-input#{attrs}>#{n}</rb-input>"
 
 		# Helpers
 		# =======

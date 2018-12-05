@@ -5,23 +5,22 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 		const createMarkup = () => { // :string
 			let attrs = '';
 			const s = ' ', t = '\t', n = '\n', nt = '\n\t';
-			// const { is } = type;
 			const { data } = $scope;
 			const { disabled, horizontal, inline, label, labelKey, right, subtext, validation, value } = $scope.a;
 
 			// attrs += `${s}rb-bind`;
-			if (disabled)   attrs += `${s}disabled`;
-			if (horizontal) attrs += `${s}horizontal`;
-			if (inline)     attrs += `${s}inline`;
-			if (right)      attrs += `${s}right`;
-			if (label)      attrs += `${s}label="${label}"`;
-			if (subtext)    attrs += `${s}subtext="${subtext}"`;
-			if (value)      attrs += `${s}value='${JSON.stringify(value)}'`;
-			if (data)       attrs += `${n}data='${buldDataMarkup()}'`;
-			if (validation && validation.length) attrs += `${n}validation='${buldValidationMarkup()}'`;
-			if (labelKey)   attrs += `${n}label-key="${labelKey}"`;
+			if (right)      attrs += `${nt}right`;
+			if (inline)     attrs += `${nt}inline`;
+			if (disabled)   attrs += `${nt}disabled`;
+			if (horizontal) attrs += `${nt}horizontal`;
+			if (label)      attrs += `${nt}label="${label}"`;
+			if (subtext)    attrs += `${nt}subtext="${subtext}"`;
+			if (labelKey)   attrs += `${nt}label-key="${labelKey}"`;
+			if (value)      attrs += `${nt}value='${JSON.stringify(value)}'`;
+			if (data)       attrs += `${nt}data='${buldDataMarkup()}'`;
+			if (validation && validation.length) attrs += `${nt}validation='${buldValidationMarkup()}'`;
 
-			return `<rb-checkboxes${attrs}></rb-checkboxes>`;
+			return `<rb-checkboxes${attrs}>${n}</rb-checkboxes>`;
 		};
 
 		/* Public Props
