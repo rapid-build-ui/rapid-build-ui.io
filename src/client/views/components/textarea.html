@@ -1,0 +1,105 @@
+<div ng-controller="rbTextareaController">
+	<header class="page-header">
+		<h1>
+			<rba-install
+				source="input"
+				icon-size=".55">
+			</rba-install>
+			rb-textarea
+		</h1>
+		<rba-source-nav source="RB_TEXTAREA_SRC_NAV" inject></rba-source-nav>
+	</header>
+
+	<!-- COMPONENT -->
+	<section class="grid">
+		<div class="col" id="markup">
+			<div rba-builder="markup"></div>
+		</div>
+		<div class="col-7">
+			<rba-code
+				scroll
+				bind="markup"
+				actions="copy"
+				caption="html"
+				height="xxxxxtall">
+			</rba-code>
+		</div>
+	</section>
+
+	<!-- DEMO -->
+	<form name="demoForm">
+		<h5 rba-text-curve>Demo</h5>
+
+		<rb-input
+			inline
+			rb-bind
+			label="label"
+			value="a.label">
+		</rb-input>
+		<rb-input
+			inline
+			rb-bind
+			label="value"
+			value="a.value">
+		</rb-input>
+		<rb-input
+			inline
+			rb-bind
+			label="placeholder"
+			value="a.placeholder">
+		</rb-input>
+		<rb-input
+			inline
+			rb-bind
+			label="subtext"
+			value="a.subtext">
+		</rb-input>
+
+		<!-- VALUELESS -->
+		<rb-checkbox
+			rb-bind
+			value="a.disabled"
+			sublabel="disabled">
+		</rb-checkbox>
+		<rb-checkbox
+			rb-bind
+			value="a.right"
+			sublabel="right">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.inline"
+			sublabel="inline">
+		</rb-checkbox>
+
+		<!-- VALIDATION -->
+		<rb-checkboxes
+			rb-bind
+			horizontal
+			value="a.validation"
+			label="validation"
+			data="{{validationLabels}}">
+		</rb-checkboxes>
+
+		<!-- BUTTONS -->
+		<section class="buttons">
+			<rb-button
+				data-reset
+				icon-kind="sync"
+				icon-source="solid"
+				icon-position="left">
+				Reset
+			</rb-button>
+		</section>
+	</form>
+
+	<!-- API -->
+	<section>
+		<h5 rba-text-curve>API</h5>
+		<rba-table source="RB_TEXTAREA_API" inject></rba-table>
+	</section>
+
+	<!-- CHANGELOG -->
+	<rba-changelog source="rb-input"></rba-changelog>
+</div>
