@@ -42,6 +42,7 @@
     "@rapid-build-ui/rb-nav": "^0.0.11",
     "@rapid-build-ui/rb-popover": "^0.0.13",
     "@rapid-build-ui/rb-radios": "^0.0.8",
+    "@rapid-build-ui/rb-textarea": "^0.0.0",
     "gridlex": "2.7.1",
     "ngclipboard": "^2.0.0"
   }
