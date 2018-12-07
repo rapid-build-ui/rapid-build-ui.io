@@ -6,15 +6,16 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 			let attrs = '';
 			const s = ' ', t = '\t', n = '\n', nt = '\n\t';
 			const { data } = $scope;
-			const { disabled, horizontal, inline, label, labelKey, right, subtext, validation, value } = $scope.a;
+			const { disabled, horizontal, inline, label, labelKey, placeholder, right, subtext, validation, value } = $scope.a;
 
 			// attrs += `${s}rb-bind`;
-			if (right)      attrs += `${nt}right`;
-			if (inline)     attrs += `${nt}inline`;
-			if (disabled)   attrs += `${nt}disabled`;
-			if (label)      attrs += `${nt}label="${label}"`;
-			if (subtext)    attrs += `${nt}subtext="${subtext}"`;
-			if (value)      attrs += `${nt}value='${JSON.stringify(value)}'`;
+			if (right)       attrs += `${nt}right`;
+			if (inline)      attrs += `${nt}inline`;
+			if (disabled)    attrs += `${nt}disabled`;
+			if (label)       attrs += `${nt}label="${label}"`;
+			if (placeholder) attrs += `${nt}placeholder="${placeholder}"`;
+			if (subtext)     attrs += `${nt}subtext="${subtext}"`;
+			if (value)       attrs += `${nt}value='${value}'`;
 			if (validation && validation.length) attrs += `${nt}validation='${buldValidationMarkup()}'`;
 
 			return `<rb-textarea${attrs}>${n}</rb-textarea>`;
