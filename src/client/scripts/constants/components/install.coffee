@@ -9,3 +9,4 @@ angular.module('rapid-build').constant 'INSTALL_COMPONENTS',
 	nav:        'yarn add @rapid-build-ui/rb-nav'
 	popover:    'yarn add @rapid-build-ui/rb-popover'
 	radios:     'yarn add @rapid-build-ui/rb-radios'
+	textarea:   'yarn add @rapid-build-ui/rb-textarea'
