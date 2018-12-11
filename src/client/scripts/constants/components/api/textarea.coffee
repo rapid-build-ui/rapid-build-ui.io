@@ -5,27 +5,6 @@ angular.module('rapid-build').constant 'RB_TEXTAREA_API', [
 	type: null
 	required: false
 ,
-	attribute: 'icon-kind'
-	description: 'Adds icon to component.'
-	options: '<a target= "_blank" href="/components/rb-icon">rb-icon kind</a>'
-	type: 'string'
-	required: false
-,
-	attribute: 'icon-position'
-	description: '
-		<em class="default-val">defaults to <b>right</b></em>
-		Icon position.
-	'
-	options: 'left'
-	type: 'string'
-	required: false
-,
-	attribute: 'icon-source'
-	description: 'Refer to options.'
-	options: '<a target= "_blank" href="/components/rb-icon">rb-icon source</a>'
-	type: 'string'
-	required: false
-,
 	attribute: 'inline'
 	description: 'Displays component inline.'
 	options: null
@@ -58,17 +37,8 @@ angular.module('rapid-build').constant 'RB_TEXTAREA_API', [
 	type: 'string'
 	required: false
 ,
-	attribute: 'type'
-	description: '
-		<em class="default-val">defaults to <b>text</b></em>
-		Input type attribute.
-	'
-	options: 'number'
-	type: 'string'
-	required: false
-,
 	attribute: 'value'
-	description: 'Input value.'
+	description: 'Textarea content.'
 	options: null
 	type: 'string'
 	required: false
@@ -98,7 +68,7 @@ angular.module('rapid-build').constant 'RB_TEXTAREA_API', [
 				<pre>
 				{
 					key: {
-						key: value[, key: value]
+						{key: value}
 					}
 				}
 				</pre>

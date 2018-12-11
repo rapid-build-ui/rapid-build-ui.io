@@ -33,11 +33,12 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 		/* Methods
 		 *********/
 
-		const customValidation = val =>
-		({
-			valid: val === "rapid",
-			message: "must be rapid"
-		});
+		const customValidation = function(val) {
+			return {
+				valid: val === "rapid",
+				message: "must be rapid"
+			};
+		}
 
 		const stringifyModifier = function(key, val) {
 			val = angular.copy(val);
