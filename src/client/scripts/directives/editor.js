@@ -39,7 +39,7 @@ angular.module('rapid-build').directive('rbaEditor', ['$timeout', 'preService',
 				placeholder:    scope.placeholder,
 				lineNumbers:    scope.lineNumbers !== undefined,
 				lineWrapping:   scope.lineNowrap  === undefined,
-				readOnly:       scope.readonly    !== undefined && 'nocursor',
+				readOnly:       scope.readonly    !== undefined && true,
 				mode:           Modes[scope.mode] || Modes.html,
 				theme:          scope.theme || 'one-dark',
 				onLoad(editor) { // :void
