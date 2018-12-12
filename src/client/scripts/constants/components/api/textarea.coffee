@@ -1,12 +1,12 @@
 angular.module('rapid-build').constant 'RB_TEXTAREA_API', [
-	attribute: 'disabled'
-	description: 'Disables component.'
+	attribute: 'auto-height'
+	description: 'Height is set based on the content.'
 	options: null
 	type: null
 	required: false
 ,
-	attribute: 'fixed-height'
-	description: 'Sets fixed height. Default height is dynamic, based on the content'
+	attribute: 'disabled'
+	description: 'Disables component.'
 	options: null
 	type: null
 	required: false
