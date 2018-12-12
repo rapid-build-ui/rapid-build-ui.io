@@ -15,19 +15,22 @@
 		<div class="col">
 			<div rba-builder="markup"></div>
 		</div>
-		<div class="col-7">
-			<rba-code
+		<div class="col-6">
+			<textarea
 				scroll
-				bind="markup"
+				readonly
+				rba-editor
+				height="xxtall"
+				model="markup"
 				actions="copy"
 				caption="html">
-			</rba-code>
+			</textarea>
 		</div>
 	</section>
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Demo</h5>
+		<h5 rba-text-curve>Configure</h5>
 
 		<rb-radios
 			toggle

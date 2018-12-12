@@ -1,0 +1,29 @@
+<div ng-show="show === undefined ? true : show"
+	 ng-class="['rb-editor', kind,
+				!!height ? height+'-height' : '',
+				scroll !== undefined ? 'scroll' : '',
+				readonly !== undefined ? 'readonly' : ''
+			   ].join(' ')">
+	<h5 ng-show="!!caption || !!actions">
+		{{ caption }}
+		<div class="actions">
+			<!-- <a href tabindex="0" ng-click="clear()">clear</a> -->
+			<!-- <a href tabindex="0" ng-click="addAction()">add</a> -->
+			<!-- <a href tabindex="0" ng-click="compress()">compress</a> -->
+			<!-- <a href tabindex="0" ng-click="edit()">edit</a> -->
+			<rb-popover
+				unstyled
+				ngclipboard
+				position="top"
+				icon-kind="copy"
+				ngclipboard-success="copied(e)"
+				data-clipboard-target="textarea">
+				Copied! <rb-icon kind="thumbs-up"></rb-icon>
+			</rb-popover>
+		</div>
+	</h5>
+	<textarea
+		tabindex="-1"
+		ng-model="model"
+		ui-codemirror="editorOpts"></textarea>
+</div>

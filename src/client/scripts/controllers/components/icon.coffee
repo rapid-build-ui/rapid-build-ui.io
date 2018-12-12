@@ -6,12 +6,12 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
-			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
-			attrs += "#{s}source=\"#{$scope.a.source}\"" if $scope.a.source
-			attrs += "#{s}size=\"#{$scope.a.size}\"" if $scope.a.size
-			attrs += "#{s}vertical=\"#{$scope.a.vertical}\"" if $scope.a.vertical
+			attrs += "#{nt}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
+			attrs += "#{nt}source=\"#{$scope.a.source}\"" if $scope.a.source
+			attrs += "#{nt}size=\"#{$scope.a.size}\"" if $scope.a.size
+			attrs += "#{nt}vertical=\"#{$scope.a.vertical}\"" if $scope.a.vertical
 
-			"<rb-icon#{attrs}></rb-icon>"
+			"<rb-icon#{attrs}>#{n}</rb-icon>"
 
 		# Props
 		# =====

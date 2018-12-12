@@ -5,14 +5,14 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
-			attrs += "#{s}disabled" if $scope.a.disabled
-			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
-			attrs += "#{s}size=\"#{$scope.a.size}\"" if $scope.a.size
-			attrs += "#{s}type=\"#{$scope.a.type}\"" if $scope.a.type
-			attrs += "#{s}icon-kind=\"#{$scope.a.iconKind}\"" if $scope.a.iconKind
-			attrs += "#{s}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
-			attrs += "#{s}icon-size=\"#{$scope.a.iconSize}\"" if $scope.a.iconSize
-			attrs += "#{s}icon-position=\"left\"" if $scope.a.iconPosition
+			attrs += "#{nt}disabled" if $scope.a.disabled
+			attrs += "#{nt}size=\"#{$scope.a.size}\"" if $scope.a.size
+			attrs += "#{nt}type=\"#{$scope.a.type}\"" if $scope.a.type
+			attrs += "#{nt}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
+			attrs += "#{nt}icon-size=\"#{$scope.a.iconSize}\"" if $scope.a.iconSize
+			attrs += "#{nt}icon-kind=\"#{$scope.a.iconKind}\"" if $scope.a.iconKind
+			attrs += "#{nt}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
+			attrs += "#{nt}icon-position=\"left\"" if $scope.a.iconPosition
 			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
 
 			"<rb-button#{attrs}>#{content}</rb-button>"

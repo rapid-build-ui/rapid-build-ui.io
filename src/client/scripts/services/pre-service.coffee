@@ -35,8 +35,9 @@ angular.module('rapid-build').service 'preService', [->
 			text
 
 		text: (text) =>
+			return text if typeof text isnt 'string'
 			text = text.trimRight()
-			return text unless @has.newLines(text) and @has.tabs text
+			return text.trim() unless @has.newLines(text) and @has.tabs text
 			text = @get.formattedText text
 
 		pre: (text) => # formatted

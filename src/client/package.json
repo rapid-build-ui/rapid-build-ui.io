@@ -43,6 +43,9 @@
     "@rapid-build-ui/rb-popover": "^0.0.13",
     "@rapid-build-ui/rb-radios": "^0.0.8",
     "@rapid-build-ui/rb-textarea": "^0.0.0",
+    "angular-ui-codemirror": "^0.3.0",
+    "codemirror": "^5.42.0",
+    "codemirror-one-dark-theme": "^1.1.1",
     "gridlex": "2.7.1",
     "ngclipboard": "^2.0.0"
   }

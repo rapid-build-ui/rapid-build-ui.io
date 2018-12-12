@@ -71,18 +71,21 @@
 			</section>
 		</div>
 		<div class="col-6">
-			<rba-code
+			<textarea
 				scroll
-				bind="markup"
+				readonly
+				rba-editor
+				height="xtall"
+				model="markup"
 				actions="copy"
 				caption="html">
-			</rba-code>
+			</textarea>
 		</div>
 	</section>
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Demo</h5>
+		<h5 rba-text-curve>Configure</h5>
 
 		<rb-radios
 			toggle

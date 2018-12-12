@@ -15,20 +15,22 @@
 		<div class="col">
 			<div rba-builder="markup"></div>
 		</div>
-		<div class="col-5">
-			<rba-code
+		<div class="col-6">
+			<textarea
 				scroll
-				bind="markup"
+				readonly
+				rba-editor
+				height="xxxxxtall"
+				model="markup"
 				actions="copy"
-				caption="html"
-				height="xxxxxxtall">
-			</rba-code>
+				caption="html">
+			</textarea>
 		</div>
 	</section>
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Demo</h5>
+		<h5 rba-text-curve>Configure</h5>
 
 		<rb-input
 			inline

@@ -21,19 +21,21 @@
 			</rb-modal>
 			<rb-button size="small" ng-click="addLink()">add</rb-button>
 			<rb-button size="small" ng-click="removeLink()">remove</rb-button> -->
-			<rba-code
+			<textarea
 				scroll
-				bind="markup"
+				readonly
+				rba-editor
+				height="tall"
+				model="markup"
 				actions="copy"
-				caption="html"
-				height="tall">
-			</rba-code>
+				caption="html">
+			</textarea>
 		</div>
 	</section>
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Demo</h5>
+		<h5 rba-text-curve>Configure</h5>
 
 		<!-- VALUELESS -->
 		<rb-checkbox

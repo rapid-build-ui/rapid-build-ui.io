@@ -105,6 +105,11 @@
     "@rapid-build-ui/form-control" "^0.0.5"
     "@rapid-build-ui/rb-base" "^0.0.6"
 
+angular-ui-codemirror@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/angular-ui-codemirror/-/angular-ui-codemirror-0.3.0.tgz#e4286fc50f393f2a6e697c1bf3170424e12cbb60"
+  integrity sha1-5ChvxQ85PypuaXwb8xcEJOEsu2A=
+
 clipboard@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.4.tgz#836dafd66cf0fea5d71ce5d5b0bf6e958009112d"
@@ -113,6 +118,16 @@ clipboard@^2.0.0:
     good-listener "^1.2.2"
     select "^1.1.2"
     tiny-emitter "^2.0.0"
+
+codemirror-one-dark-theme@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/codemirror-one-dark-theme/-/codemirror-one-dark-theme-1.1.1.tgz#e7f2b9e57e9945bed1720c61aa953a95ab96715c"
+  integrity sha512-SuGz+mjIhWZcU59PQT1KQL8YDdCZOB7zWyPSKC9T8KCjiFCsNaRnaOpI9LDamHUx8X+a7tEfiogemx6L/WDZCg==
+
+codemirror@^5.42.0:
+  version "5.42.0"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.42.0.tgz#2d5b640ed009e89dee9ed8a2a778e2a25b65f9eb"
+  integrity sha512-pbApC8zDzItP3HRphD6kQVwS976qB5Qi0hU3MZMixLk+AyugOW1RF+8XJEjeyl5yWsHNe88tDUxzeRh5AOxPRw==
 
 delegate@^3.1.2:
   version "3.2.0"
