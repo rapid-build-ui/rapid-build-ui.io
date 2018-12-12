@@ -6,12 +6,13 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 			let attrs = '';
 			const s = ' ', t = '\t', n = '\n', nt = '\n\t';
 			const { data } = $scope;
-			const { disabled, horizontal, inline, label, labelKey, placeholder, right, subtext, validation, value } = $scope.a;
+			const { fixedHeight, disabled, horizontal, inline, label, labelKey, placeholder, right, subtext, validation, value } = $scope.a;
 
 			// attrs += `${s}rb-bind`;
 			if (right)       attrs += `${nt}right`;
 			if (inline)      attrs += `${nt}inline`;
 			if (disabled)    attrs += `${nt}disabled`;
+			if (fixedHeight) attrs += `${nt}fixed-height`;
 			if (label)       attrs += `${nt}label="${label}"`;
 			if (placeholder) attrs += `${nt}placeholder="${placeholder}"`;
 			if (subtext)     attrs += `${nt}subtext="${subtext}"`;

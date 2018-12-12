@@ -5,6 +5,12 @@ angular.module('rapid-build').constant 'RB_TEXTAREA_API', [
 	type: null
 	required: false
 ,
+	attribute: 'fixed-height'
+	description: 'Sets fixed height. Default height is dynamic, based on the content'
+	options: null
+	type: null
+	required: false
+,
 	attribute: 'inline'
 	description: 'Displays component inline.'
 	options: null
