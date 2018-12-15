@@ -45,6 +45,46 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 	'
 	'no support': null
 ,
+	# FIREFOX
+	# =======
+	browser: '
+		<rb-icon
+			size="2.5"
+			kind="firefox"
+			title="Firefox"
+			source="brands">
+		</rb-icon>
+	'
+	notes: '
+		Firefox fully supported.
+		<rb-popover fit-content icon-size="1.1">
+			Firefox fully supported starting at
+			<a target="_blank" href="https://goo.gl/eckZud">version 63</a>.<br>
+			For versions less than 63 do the following:
+			<ol>
+				<li>
+					Open its <a target="_blank" href="https://goo.gl/cmG8fk">configuration editor</a>.
+				</li>
+				<li>
+					Set the following <strong>preferences to true</strong>:
+					<ul>
+						<li>dom.webcomponents.customelements.enabled</li>
+						<li>dom.webcomponents.shadowdom.enabled</li>
+					</ul>
+				</li>
+			</ol>
+		</rb-popover>
+	'
+	'full support': '
+		<rb-icon
+			size="2"
+			kind="check"
+			source="solid"
+			class="full-support">
+		</rb-icon>
+	'
+	'no support': null
+,
 	# OPERA
 	# =====
 	browser: '
@@ -57,43 +97,6 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 	'
 	notes: '
 		Opera fully supported.
-	'
-	'full support': '
-		<rb-icon
-			size="2"
-			kind="check"
-			source="solid"
-			class="full-support">
-		</rb-icon>
-	'
-	'no support': null
-,
-	# FIREFOX
-	# =======
-	browser: '
-		<rb-icon
-			size="2.5"
-			kind="firefox"
-			title="Firefox"
-			source="brands">
-		</rb-icon>
-	'
-	notes: '
-		Firefox fully supported starting at
-		<a target="_blank" href="https://goo.gl/eckZud">version 63</a>.<br>
-		For versions less than 63 do the following:
-		<ol>
-			<li>
-				Open its <a target="_blank" href="https://goo.gl/cmG8fk">configuration editor</a>.
-			</li>
-			<li>
-				Set the following <strong>preferences to true</strong>:
-				<ul>
-					<li>dom.webcomponents.customelements.enabled</li>
-					<li>dom.webcomponents.shadowdom.enabled</li>
-				</ul>
-			</li>
-		</ol>
 	'
 	'full support': '
 		<rb-icon
