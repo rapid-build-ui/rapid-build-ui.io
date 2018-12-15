@@ -80,6 +80,7 @@
 			position: absolute;
 			top: -1px;
 			right: 4px;
+			z-index: 2;
 			opacity: 0;
 			font-size: 12px;
 			font-weight: normal;
@@ -89,7 +90,7 @@
 			content: 'readonly';
 		}
 		&:hover::before {
-			opacity: .6;
+			opacity: .8;
 		};
 	}
 
