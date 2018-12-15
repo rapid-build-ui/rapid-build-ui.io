@@ -1,8 +1,8 @@
 /*****************
  * CODE DIRECTIVE
  *****************/
-angular.module('rapid-build').directive('rbaEditor', ['$timeout', 'preService',
-	($timeout, preService) => {
+angular.module('rapid-build').directive('rbaEditor', ['$timeout', 'preService', 'Editor',
+	($timeout, preService, Editor) => {
 	/* COMPILE
 	 **********/
 	const Compile = function(tElement, tAttrs) {
@@ -15,41 +15,10 @@ angular.module('rapid-build').directive('rbaEditor', ['$timeout', 'preService',
 	/* LINK
 	 *******/
 	const Link = (scope, iElement, iAttrs, controller, transclude) => {
-		let Editor; // set in scope.editorOpts.onLoad()
+		const readonly = !!scope.readonly;
 		const textarea = iElement[0].querySelector('textarea');
 		const popover  = iElement[0].querySelector('rb-popover');
-
-		/* Editor Options
-		 *****************/
-		const Modes = {
-			bash:       'shell',
-			shell:      'shell',
-			css:        'css',
-			sass:       'text/x-scss',
-			js:         'text/javascript',
-			json:       'text/javascript',
-			javascript: 'javascript',
-			html:       'text/html'
-		};
-		const setEditorOpts = () => { // :void
-			scope.editorOpts = {
-				smartIndent:    false,
-				indentWithTabs: true,
-				viewportMargin: Infinity, // monitor performance (maybe 50)
-				placeholder:    scope.placeholder,
-				lineNumbers:    scope.lineNumbers !== undefined,
-				lineWrapping:   scope.lineNowrap  === undefined,
-				readOnly:       scope.readonly    !== undefined && true,
-				mode:           Modes[scope.mode] || Modes.html,
-				theme:          scope.theme || 'one-dark',
-				onLoad(editor) { // :void
-					Editor = editor;
-					$timeout(() => {
-						Editor.refresh(); // ensures accurate display
-					})
-				}
-			};
-		}
+		const editor   = new Editor(scope);
 
 		/* Helpers
 		 **********/
@@ -78,7 +47,7 @@ angular.module('rapid-build').directive('rbaEditor', ['$timeout', 'preService',
 				}, delay);
 			},
 			updateTextarea(evt) {
-				Editor.save(); // needed with model option
+				editor.code.save(); // needed with model option
 			},
 			addEvents() {
 				if (!popover) return;
@@ -111,14 +80,14 @@ angular.module('rapid-build').directive('rbaEditor', ['$timeout', 'preService',
 
 		/* Init
 		 *******/
-		setEditorOpts();
+		scope.editorOpts = editor.opts;
 		copiedMsg.addEvents();
 		formatTransclude(transclude);
 
 		/* Destroy
 		 **********/
 		const destroy = scope.$on('$destroy', () => {
-			Editor = null;
+			editor.destroy();
 			copiedMsg.removeEvents();
 			if (modelWatch) modelWatch();
 			destroy();

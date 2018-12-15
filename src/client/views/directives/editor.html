@@ -1,8 +1,8 @@
 <div ng-show="show === undefined ? true : show"
 	 ng-class="['rb-editor', kind,
+	 			!!readonly ? 'readonly' : '',
 				!!height ? height+'-height' : '',
-				scroll !== undefined ? 'scroll' : '',
-				readonly !== undefined ? 'readonly' : ''
+				scroll !== undefined ? 'scroll' : ''
 			   ].join(' ')">
 	<h5 ng-show="!!caption || !!actions">
 		{{ caption }}
