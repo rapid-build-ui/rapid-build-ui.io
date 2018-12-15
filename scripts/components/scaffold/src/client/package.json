@@ -37,6 +37,6 @@
   },
   "flat": true,
   "dependencies": {
-    "@rapid-build-ui/rb-base": "^0.0.4"
+    "@rapid-build-ui/rb-base": "^0.0.6"
   }
 }
