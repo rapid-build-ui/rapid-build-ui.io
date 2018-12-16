@@ -126,3 +126,11 @@ $textColors: (
 		&::after  { content: ')'; }
 	}
 }
+
+/* Browser Support Page
+ ***********************/
+.browser-support {
+	.responsive-table {
+		overflow-x: visible; // needed because auto cuts off popover
+	}
+}

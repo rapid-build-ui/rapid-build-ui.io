@@ -10,7 +10,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Chrome fully supported.
+		Chrome full support.
 	'
 	'full support': '
 		<rb-icon
@@ -33,7 +33,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Safari fully supported.
+		Safari full support.
 	'
 	'full support': '
 		<rb-icon
@@ -56,9 +56,9 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Firefox fully supported.
+		Firefox full support.
 		<rb-popover fit-content icon-size="1.1">
-			Firefox fully supported starting at
+			Firefox full support starting at
 			<a target="_blank" href="https://goo.gl/eckZud">version 63</a>.<br>
 			For versions less than 63 do the following:
 			<ol>
@@ -96,7 +96,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Opera fully supported.
+		Opera full support.
 	'
 	'full support': '
 		<rb-icon
@@ -128,8 +128,8 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 	'full support': null
 	'no support': '
 		<rb-icon
-			size="2"
-			kind="check"
+			size="2.07"
+			kind="times"
 			source="solid"
 			class="no-support">
 		</rb-icon>
@@ -151,8 +151,8 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 	'full support': null
 	'no support': '
 		<rb-icon
-			size="2"
-			kind="check"
+			size="2.07"
+			kind="times"
 			source="solid"
 			class="no-support">
 		</rb-icon>
