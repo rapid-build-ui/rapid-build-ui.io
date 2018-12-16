@@ -14,4 +14,5 @@ module.exports = server => {
 	 *********/
 	routes.changelog(app);
 	routes.superheroes(app);
+	routes.staticRoutes(app, { paths: server.paths });
 };

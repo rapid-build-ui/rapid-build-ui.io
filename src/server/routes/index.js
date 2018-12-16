@@ -1,12 +1,14 @@
 /*********************
  * APPLICATION ROUTES
  *********************/
-const changelog   = require('./changelog');
-const superheroes = require('./superheroes');
+const changelog    = require('./changelog');
+const superheroes  = require('./superheroes');
+const staticRoutes = require('./static');
 
 const Routes = {
 	changelog,
-	superheroes
+	superheroes,
+	staticRoutes
 }
 
 /* Export it!

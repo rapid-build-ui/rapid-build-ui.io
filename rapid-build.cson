@@ -27,6 +27,7 @@ common:
 	extra:
 		copy:
 			client: [
+				'bare-bones.html'
 				'node_modules/**'
 			]
 			server: [
@@ -34,6 +35,7 @@ common:
 			]
 		watch:
 			client: [
+				'bare-bones.html'
 				'node_modules/@rapid-build-ui/'
 			]
 			server: [
