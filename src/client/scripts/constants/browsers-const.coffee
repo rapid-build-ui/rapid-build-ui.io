@@ -58,8 +58,9 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 	notes: '
 		Firefox full support.
 		<rb-popover fit-content icon-size="1.1">
-			Firefox full support starting at
-			<a target="_blank" href="https://goo.gl/eckZud">version 63</a>.<br>
+			Firefox fully supported starting at
+			<a target="_blank" href="https://goo.gl/eckZud">version 63</a>.
+			<hr class="mini-top-bumper mini-bottom-bumper">
 			For versions less than 63 do the following:
 			<ol>
 				<li>
