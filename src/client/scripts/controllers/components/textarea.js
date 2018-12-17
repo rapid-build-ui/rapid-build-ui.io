@@ -26,7 +26,7 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 		 *****************/
 		$scope.reset = () => {
 			$scope.a = {
-				label: 'Name',
+				label: 'Message',
 				validation: []
 			};
 		};
