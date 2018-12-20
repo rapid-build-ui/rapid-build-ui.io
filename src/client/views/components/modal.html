@@ -73,21 +73,24 @@
 		</rb-radios> -->
 
 		<!-- CONTENT -->
-		<rba-textarea
-			height="short"
-			model="a.content"
-			caption="content">
-		</rba-textarea>
-		<rba-textarea
-			height="short"
-			model="a.header"
-			caption="header">
-		</rba-textarea>
-		<rba-textarea
-			height="short"
-			model="a.footer"
-			caption="footer">
-		</rba-textarea>
+		<rb-textarea
+			rb-bind
+			rows="3"
+			value="a.content"
+			label="content">
+		</rb-textarea>
+		<rb-textarea
+			rb-bind
+			rows="3"
+			value="a.header"
+			label="header">
+		</rb-textarea>
+		<rb-textarea
+			rb-bind
+			rows="3"
+			value="a.footer"
+			label="footer">
+		</rb-textarea>
 
 		<!-- BUTTONS -->
 		<section class="buttons">
