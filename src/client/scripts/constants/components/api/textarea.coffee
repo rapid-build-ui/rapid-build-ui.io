@@ -35,6 +35,14 @@ angular.module('rapid-build').constant 'RB_TEXTAREA_API', [
 	type: null
 	required: false
 ,
+	attribute: 'rows'
+	description: '
+		<em class="default-val">defaults to 5</em>
+		Sets textearea rows attribute'
+	options: null
+	type: 'number'
+	required: false
+,
 	attribute: 'subtext'
 	description: '
 		Additional information.
