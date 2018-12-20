@@ -45,11 +45,6 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Configure</h5>
 
-		<rb-input
-			rb-bind
-			label="label"
-			value="a.label">
-		</rb-input>
 		<rb-textarea
 			rb-bind
 			label="value"
@@ -58,9 +53,16 @@
 		<rb-input
 			inline
 			rb-bind
+			label="label"
+			value="a.label">
+		</rb-input>
+		<rb-input
+			inline
+			rb-bind
 			label="placeholder"
 			value="a.placeholder">
 		</rb-input>
+		<br>
 		<rb-input
 			inline
 			rb-bind
@@ -68,11 +70,13 @@
 			value="a.subtext">
 		</rb-input>
 		<rb-input
+			inline
 			rb-bind
 			label="rows"
 			type="number"
 			value="a.rows">
 		</rb-input>
+
 		<!-- VALUELESS -->
 		<br>
 		<rb-checkbox
