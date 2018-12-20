@@ -5,10 +5,9 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 		const createMarkup = () => { // :string
 			let attrs = '';
 			const s = ' ', t = '\t', n = '\n', nt = '\n\t';
-			const { data } = $scope;
-			const { autoHeight, disabled, horizontal, inline, label, labelKey, placeholder, right, subtext, validation, value } = $scope.a;
+			let { value } = $scope.a;
+			const { autoHeight, disabled, horizontal, inline, label, labelKey, placeholder, right, subtext, validation } = $scope.a;
 
-			// attrs += `${s}rb-bind`;
 			if (right)       attrs += `${nt}right`;
 			if (inline)      attrs += `${nt}inline`;
 			if (disabled)    attrs += `${nt}disabled`;
@@ -16,10 +15,11 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 			if (label)       attrs += `${nt}label="${label}"`;
 			if (placeholder) attrs += `${nt}placeholder="${placeholder}"`;
 			if (subtext)     attrs += `${nt}subtext="${subtext}"`;
-			if (value)       attrs += `${nt}value='${value}'`;
+			// if (value)       attrs += `${nt}value='${value}'`;
+			value = value == undefined ? '' : value;
 			if (validation && validation.length) attrs += `${nt}validation='${buldValidationMarkup()}'`;
 
-			return `<rb-textarea${attrs}>${n}</rb-textarea>`;
+			return `<rb-textarea${attrs}>${value}</rb-textarea>`;
 		};
 
 		/* Public Methods
@@ -27,6 +27,7 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 		$scope.reset = () => {
 			$scope.a = {
 				label: 'Message',
+				value: '', // currently needed for rb-bind on rb-textarea
 				validation: []
 			};
 		};
@@ -73,25 +74,6 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 				.replace(/"function\s*\((.*)\)/g, 'function($1)')
 				.replace(/\}"/g, '}');
 		};
-
-		const buldDataMarkup = function() {
-			let _data = [];
-			switch ($scope.a.data) {
-				case 'array of strings':
-					_data = $scope.data[0];
-					break;
-				case 'array of objects':
-					_data = $scope.data[1];
-					break;
-			}
-
-			return JSON.stringify(_data, stringifyModifier, '\t')
-				.replace(/\\n/g, '\n')
-				.replace(/\\"/g, '"')
-				.replace(/"function\s*\((.*)\)/g, 'function($1)')
-				.replace(/\}"/g, '}');
-		};
-
 
 		/* Props
 		 *******/

@@ -10,4 +10,5 @@ angular.module('rapid-build').run(['rbEventService', rbEvents => {
 	awaitSelector(`rb-radios${BIND}`,     callback);
 	awaitSelector(`rb-checkbox${BIND}`,   callback);
 	awaitSelector(`rb-checkboxes${BIND}`, callback);
+	awaitSelector(`rb-textarea${BIND}`,   callback);
 }]);
