@@ -16,7 +16,7 @@
 
 	<section class="separated">
 		<h3>
-			<rb-icon kind="exclamation-triangle" source="solid" size=".8"></rb-icon>
+			<rb-icon kind="check-circle" source="solid" size=".8"></rb-icon>
 			Prerequisites
 			<small class="sub">(these must be installed first)</small>
 		</h3>
@@ -32,7 +32,7 @@
 				</a>
 				<ul>
 					<li>
-						You can use npm instead, just
+						You can use <strong>npm instead</strong> just
 						make sure the components are
 						<a target="_blank" href="https://goo.gl/5zwDfb">installed flat</a>.
 					</li>
@@ -51,46 +51,43 @@
 
 	<section>
 		<h3>
-			<rb-icon kind="exclamation-circle" source="solid" size=".8"></rb-icon>
+			<rb-icon kind="check-circle" source="solid" size=".8"></rb-icon>
 			How to Use <small class="sub">(each component is it's own package)</small>
 		</h3>
 		<ol>
 			<li>
-				Click on the install icon
-				on any of the <a href="/components/">component pages</a>.
-				<ul>
-					<li>
-						Example:
-						<rba-install source="alert"></rba-install>
-					</li>
-				</ul>
+				Click on the install icon on any of the
+				<a href="/components/">component pages</a> and run command.
+				<br>
+				Example:
+				<rba-install source="alert"></rba-install>
 			</li>
 			<li>
-				Once installed place the component script tag in your html.
-				<ul>
-					<li>
-						Example:
-						<rba-code height="tiny">
-							&lt;script
-								type="module"
-								src="/node_modules/@rapid-build-ui/rb-alert/scripts/rb-alert.js"&gt;
-							&lt;/script&gt;
-						</rba-code>
-					</li>
-				</ul>
-			</li>
-			<li>
-				The component is ready! Use it anywhere in your html.
-				<ul>
-					<li>
-						Example:
-						<rba-code height="teeny">
-							&lt;rb-alert&gt;
-								Hello Gorgeous!
-							&lt;/rb-alert&gt;
-						</rba-code>
-					</li>
-				</ul>
+				Once installed components can be
+				loaded 2 ways, <strong>choose one</strong>.
+				<br>
+				Example <em class="sub">(type="module" required)</em>:
+				<textarea readonly rba-editor class="small-top-bumper">
+					<!doctype html>
+					<html>
+					<head>
+						<!-- Load via script tag: -->
+						<script
+							type="module"
+							src="/node_modules/@rapid-build-ui/rb-alert/scripts/rb-alert.js">
+						</script>
+						<!-- OR -->
+						<!-- Load via javascript import: -->
+						<script type="module">
+							import '/node_modules/@rapid-build-ui/rb-alert/scripts/rb-alert.js';
+						</script>
+					</head>
+					<body>
+						<!-- Use component anywhere in your html: -->
+						<rb-alert>Hello Gorgeous!</rb-alert>
+					</body>
+					</html>
+				</textarea>
 			</li>
 		</ol>
 	</section>
