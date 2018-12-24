@@ -26,7 +26,7 @@ angular.module('rapid-build').constant 'RB_ICON_API', [
 	type: 'string'
 	required: false
 ,
-	attribute: 'vertical'
+	attribute: 'valign'
 	description: '
 		<em class="default-val">defaults to <b>baseline</b></em>
 		Vertically aligns icon.

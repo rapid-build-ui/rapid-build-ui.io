@@ -9,15 +9,15 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 			attrs += "#{nt}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{nt}source=\"#{$scope.a.source}\"" if $scope.a.source
 			attrs += "#{nt}size=\"#{$scope.a.size}\"" if $scope.a.size
-			attrs += "#{nt}vertical=\"#{$scope.a.vertical}\"" if $scope.a.vertical
+			attrs += "#{nt}valign=\"#{$scope.a.valign}\"" if $scope.a.valign
 
 			"<rb-icon#{attrs}>#{n}</rb-icon>"
 
 		# Props
 		# =====
-		$scope.kinds     = ['heart','user','github']
-		$scope.sources   = ['solid','brands']
-		$scope.verticals = ['bottom','middle','top']
+		$scope.kinds   = ['heart','user','github']
+		$scope.sources = ['solid','brands']
+		$scope.valigns = ['bottom','middle','top']
 
 		# Methods
 		# =======
