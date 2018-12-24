@@ -13,6 +13,6 @@ module.exports = server => {
 	/* Routes
 	 *********/
 	routes.changelog(app);
+	routes.examples(app, { paths: server.paths });
 	routes.superheroes(app);
-	routes.staticRoutes(app, { paths: server.paths });
 };
