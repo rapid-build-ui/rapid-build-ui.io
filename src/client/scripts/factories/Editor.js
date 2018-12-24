@@ -7,14 +7,16 @@ angular.module('rapid-build').factory('Editor', [function() {
 					  navigator.userAgent.indexOf('IEMobile') !== -1;
 
 	const Modes = { // convenience map
-		bash:       'shell',
-		shell:      'shell',
-		css:        'css',
-		sass:       'text/x-scss',
-		js:         'text/javascript',
-		json:       'text/javascript',
-		javascript: 'javascript',
-		html:       'text/html'
+		bash:       { name: 'shell' },
+		shell:      { name: 'shell' },
+		css:        { name: 'css' },
+		less:       { name: 'text/x-less' },
+		sass:       { name: 'text/x-scss' },
+		htmlmixed:  { name: 'htmlmixed' },
+		html:       { name: 'xml', htmlMode: true }, // default
+		javascript: { name: 'javascript' },
+		js:         { name: 'javascript' },
+		json:       { name: 'javascript', json: true }
 	};
 
 	const getPrivates = () => {
