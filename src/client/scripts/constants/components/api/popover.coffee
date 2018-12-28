@@ -35,16 +35,6 @@ angular.module('rapid-build').constant 'RB_POPOVER_API', [
 	type: 'string'
 	required: false
 ,
-	attribute: 'position'
-	description: '
-		<em class="default-val">defaults to <b>right</b></em>
-		Position where popover opens. Will adjust if not in
-		<a target="_blank" href="https://goo.gl/DwJ1ke">viewport</a>.
-	'
-	options: 'bottom | left | top'
-	type: 'string'
-	required: false
-,
 	attribute: 'icon-kind'
 	description: '
 		<em class="default-val">defaults to <b>info-circle</b></em>
@@ -63,6 +53,24 @@ angular.module('rapid-build').constant 'RB_POPOVER_API', [
 	attribute: 'icon-source'
 	description: 'Refer to options.'
 	options: '<a target= "_blank" href="/components/rb-icon">rb-icon source</a>'
+	type: 'string'
+	required: false
+,
+	attribute: 'pin'
+	description: '
+		Popover only closes by clicking the trigger.
+	'
+	options: null
+	type: null
+	required: false
+,
+	attribute: 'position'
+	description: '
+		<em class="default-val">defaults to <b>right</b></em>
+		Position where popover opens. Will adjust if not in
+		<a target="_blank" href="https://goo.gl/DwJ1ke">viewport</a>.
+	'
+	options: 'bottom | left | top'
 	type: 'string'
 	required: false
 ,
