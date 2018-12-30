@@ -1,12 +1,22 @@
 /******************
  * UTILITY CLASSES
  ******************/
-// Displays
+/* Displays
+ ***********/
 .block {
 	display: block !important;
 }
 .inline-block {
 	display: inline-block !important;
+}
+
+/* Positioning
+ **************/
+.absolute {
+	position: absolute !important;
+}
+.relative {
+	position: relative !important;
 }
 
 /* Flexbox
