@@ -9,10 +9,6 @@ header.page-header {
 	h1 {
 		line-height: remy(48);
 		font-variant: all-petite-caps;
-		rba-install {
-			position: relative;
-			top: -1px;
-		}
 		> sub { // see crud.html
 			font-size: .5em;
 			font-variant: none;
