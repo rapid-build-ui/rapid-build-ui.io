@@ -7,7 +7,7 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 ,
 	attribute: 'icon-kind'
 	description: 'Adds icon to component.'
-	options: '<a target= "_blank" href="/components/rb-icon">rb-icon kind</a>'
+	options: '<a href="/components/rb-icon">rb-icon kind</a>'
 	type: 'string'
 	required: false
 ,
@@ -22,7 +22,7 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 ,
 	attribute: 'icon-source'
 	description: 'Refer to options.'
-	options: '<a target= "_blank" href="/components/rb-icon">rb-icon source</a>'
+	options: '<a href="/components/rb-icon">rb-icon source</a>'
 	type: 'string'
 	required: false
 ,

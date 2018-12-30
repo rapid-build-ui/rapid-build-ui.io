@@ -78,7 +78,7 @@ angular.module('rapid-build').constant 'RB_RADIOS_API', [
 	attribute: 'validation'
 	description: """
 		See
-		<a target= "_blank" href="/components/rb-input">rb-input validation</a>.
+		<a href="/components/rb-input">rb-input validation</a>.
 	"""
 	options: null
 	type: 'array'

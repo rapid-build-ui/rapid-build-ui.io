@@ -40,19 +40,27 @@ angular.module('rapid-build').constant 'RB_POPOVER_API', [
 		<em class="default-val">defaults to <b>info-circle</b></em>
 		Popover trigger.
 	'
-	options: '<a target= "_blank" href="/components/rb-icon">rb-icon kind</a>'
+	options: '<a href="/components/rb-icon">rb-icon kind</a>'
 	type: 'string'
 	required: false
 ,
 	attribute: 'icon-size'
 	description: 'Refer to options.'
-	options: '<a target= "_blank" href="/components/rb-icon">rb-icon size</a>'
+	options: '<a href="/components/rb-icon">rb-icon size</a>'
 	type: 'number'
 	required: false
 ,
 	attribute: 'icon-source'
 	description: 'Refer to options.'
-	options: '<a target= "_blank" href="/components/rb-icon">rb-icon source</a>'
+	options: '<a href="/components/rb-icon">rb-icon source</a>'
+	type: 'string'
+	required: false
+,
+	attribute: 'icon-valign'
+	description: '
+		Vertically aligns icon.
+	'
+	options: '<a href="/components/rb-icon">rb-icon valign</a>'
 	type: 'string'
 	required: false
 ,
