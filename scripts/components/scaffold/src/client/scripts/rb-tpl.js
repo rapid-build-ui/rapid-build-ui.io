@@ -1,8 +1,8 @@
 /***********
  * {{upName}}
  ***********/
-import { props, html, RbBase } from '../../rb-base/scripts/rb-base.js';
-import template from '../views/{{name}}.html';
+import { RbBase, props, html } from '../../rb-base/scripts/rb-base.js';
+import template                from '../views/{{name}}.html';
 
 export class {{className}} extends RbBase() {
 	/* Properties
@@ -15,7 +15,7 @@ export class {{className}} extends RbBase() {
 
 	/* Template
 	 ***********/
-	render({ props }) { // :string
+	render({ props, state }) { // :string
 		return html template;
 	}
 }

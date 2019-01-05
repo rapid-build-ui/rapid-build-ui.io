@@ -6,9 +6,11 @@
 4.  button:       0.0.13
 5.  popover:      0.0.13
 6.  input:        0.0.12
-7.  checkbox:     0.0.3
-8.  checkboxes:   0.0.1
-9.  radios:       0.0.8
-10. nav:          0.0.11
-11. alert:        0.0.17
-12. modal:        0.0.5
+7.  dropdown:     0.0.0
+8.  checkbox:     0.0.3
+9.  checkboxes:   0.0.1
+10. radios:       0.0.8
+11. textarea:     0.0.0
+12. nav:          0.0.11
+13. alert:        0.0.17
+14. modal:        0.0.5

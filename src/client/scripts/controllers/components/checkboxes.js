@@ -16,51 +16,37 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 			if (label)      attrs += `${nt}label="${label}"`;
 			if (subtext)    attrs += `${nt}subtext="${subtext}"`;
 			if (labelKey)   attrs += `${nt}label-key="${labelKey}"`;
-			if (value)      attrs += `${nt}value='${JSON.stringify(value)}'`;
+			if (value)      attrs += `${nt}value='${getValue(value)}'`;
 			if (data)       attrs += `${nt}data='${buldDataMarkup()}'`;
 			if (validation && validation.length) attrs += `${nt}validation='${buldValidationMarkup()}'`;
 
 			return `<rb-checkboxes${attrs}>${n}</rb-checkboxes>`;
 		};
 
-		/* Public Props
-		 ***************/
-		$scope.data = [
-			['batman', 'superman', 'wolverine'],
-			[
-				{id: 1, name: 'batman'},
-				{id: 2, name: 'superman'},
-				{id: 3, name: 'wolverine'}
-			]
-		]
-		$scope.dataLabels = [
-			'array of strings',
-			'array of objects'
-		]
-		$scope.labelKeys = ['name', 'id'];
-		$scope.validationLabels = ['required'];
-		$scope.validations = [
-			'required'
-		]
-
-		/* Public Methods
-		 *****************/
-		$scope.reset = () => {
-			$scope.a = {
-				label: 'Superheroes',
-				value: ['batman'],
-				data: 'array of strings',
-				// validation: $scope.validations
-			};
-		};
-
-		/* Methods
-		 *********/
+		/* Helpers
+		 **********/
 		const stringifyModifier = function(key, val) {
 			val = angular.copy(val);
 			if (!type.is.function(val)) { return val; }
 			return val.toString();
 		};
+
+		const getValue = val => { // TODO: fix!
+			try {
+				val = val
+					.replace(/"\[/g, '[')
+					.replace(/\\n/g, '\n')
+					.replace(/\\'/g, `"`)
+					.replace(/'/g, `"`)
+					.replace(/\\"/g, `"`)
+					.replace(/\]"/g, ']');
+				val = JSON.parse(val);
+				val = JSON.stringify(val, stringifyModifier, '\t');
+			} catch(err) {
+				val = JSON.stringify([]);
+			}
+			return val;
+		}
 
 		const buldValidationMarkup = function() {
 			const validators = [];
@@ -105,6 +91,37 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 				.replace(/\\"/g, '"')
 				.replace(/"function\s*\((.*)\)/g, 'function($1)')
 				.replace(/\}"/g, '}');
+		};
+
+		/* Public Props
+		 ***************/
+		$scope.data = [
+			['batman', 'superman', 'wolverine'],
+			[
+				{id: 1, name: 'batman'},
+				{id: 2, name: 'superman'},
+				{id: 3, name: 'wolverine'}
+			]
+		]
+		$scope.dataLabels = [
+			'array of strings',
+			'array of objects'
+		]
+		$scope.labelKeys = ['name', 'id'];
+		$scope.validationLabels = ['required'];
+		$scope.validations = [
+			'required'
+		]
+
+		/* Public Methods
+		 *****************/
+		$scope.reset = () => {
+			$scope.a = {
+				label: 'Superheroes',
+				data: 'array of strings',
+				// value: ['batman'],
+				// validation: $scope.validations
+			};
 		};
 
 		/* Watches

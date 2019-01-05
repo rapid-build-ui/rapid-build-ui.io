@@ -41,18 +41,16 @@
 			data="{{kinds}}">
 		</rb-radios>
 		<rb-input
-			inline
 			toggle
 			rb-bind
 			value="a.kind"
-			class="no-right-bumper"
 			placeholder="any font awesome icon">
+			<rb-popover position="top" slot="popover">
+				Name of any free
+				<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
+				Font awesome icon style must match icon source.
+			</rb-popover>
 		</rb-input>
-		<rb-popover position="top" class="valign-top">
-			Name of any free
-			<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
-			Font awesome icon style must match icon source.
-		</rb-popover>
 		<rb-radios
 			toggle
 			rb-bind
