@@ -14,19 +14,6 @@
 	<section class="grid">
 		<div class="col" id="markup">
 			<div rba-builder="markup"></div>
-
-			<!-- <rb-textarea
-				auto-height
-				value="{{a.value}}"
-				label="Message"></rb-textarea> -->
-
-			<!-- <rb-textarea
-				auto-height
-				label="Message">{{a.value}}</rb-textarea> -->
-
-			<!-- <rb-textarea
-				auto-height
-				label="Message">Yev and Judd</rb-textarea> -->
 		</div>
 		<div class="col-6">
 			<textarea
@@ -45,6 +32,7 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Configure</h5>
 
+		<!-- INPUTS -->
 		<rb-textarea
 			rb-bind
 			label="value"
@@ -78,8 +66,16 @@
 			value="a.rows">
 		</rb-input>
 
+		<!-- VALIDATION -->
+		<rb-checkboxes
+			rb-bind
+			horizontal
+			value="a.validation"
+			label="validation"
+			data="{{validationLabels}}">
+		</rb-checkboxes>
+
 		<!-- VALUELESS -->
-		<br>
 		<rb-checkbox
 			inline
 			rb-bind
@@ -95,24 +91,22 @@
 		<rb-checkbox
 			inline
 			rb-bind
-			value="a.right"
-			sublabel="right">
+			value="a.inline"
+			sublabel="inline">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
 			rb-bind
-			value="a.inline"
-			sublabel="inline">
+			value="a.popover"
+			sublabel="popover">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.right"
+			sublabel="right">
 		</rb-checkbox>
 
-		<!-- VALIDATION -->
-		<rb-checkboxes
-			rb-bind
-			horizontal
-			value="a.validation"
-			label="validation"
-			data="{{validationLabels}}">
-		</rb-checkboxes>
 
 		<!-- BUTTONS -->
 		<section class="buttons">

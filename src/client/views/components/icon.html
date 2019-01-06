@@ -32,14 +32,6 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Configure</h5>
 
-		<rb-radios
-			toggle
-			rb-bind
-			horizontal
-			label="kind"
-			value="a.kind"
-			data="{{kinds}}">
-		</rb-radios>
 		<rb-input
 			toggle
 			rb-bind
@@ -51,6 +43,14 @@
 				Font awesome icon style must match icon source.
 			</rb-popover>
 		</rb-input>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="kind"
+			value="a.kind"
+			data="{{kinds}}">
+		</rb-radios>
 		<rb-radios
 			toggle
 			rb-bind

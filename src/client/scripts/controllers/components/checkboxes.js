@@ -3,12 +3,11 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 		/* Builder
 		 **********/
 		const createMarkup = () => { // :string
-			let attrs = '';
+			let attrs = ''; let content = '';
 			const s = ' ', t = '\t', n = '\n', nt = '\n\t';
 			const { data } = $scope;
-			const { disabled, horizontal, inline, label, labelKey, right, subtext, validation, value } = $scope.a;
+			const { disabled, horizontal, inline, label, labelKey, popover, right, subtext, validation, value } = $scope.a;
 
-			// attrs += `${s}rb-bind`;
 			if (right)      attrs += `${nt}right`;
 			if (inline)     attrs += `${nt}inline`;
 			if (disabled)   attrs += `${nt}disabled`;
@@ -19,17 +18,17 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 			if (value)      attrs += `${nt}value='${getValue(value)}'`;
 			if (data)       attrs += `${nt}data='${buldDataMarkup()}'`;
 			if (validation && validation.length) attrs += `${nt}validation='${buldValidationMarkup()}'`;
+			if (popover)  content += getPopoverSlot();
+			if (!content) content = n;
 
-			return `<rb-checkboxes${attrs}>${n}</rb-checkboxes>`;
+			return `<rb-checkboxes${attrs}>${content}</rb-checkboxes>`;
 		};
 
 		/* Helpers
 		 **********/
-		const stringifyModifier = function(key, val) {
-			val = angular.copy(val);
-			if (!type.is.function(val)) { return val; }
-			return val.toString();
-		};
+		const getPopoverSlot = () => {
+			return '\n\t<rb-popover slot="popover">\n\t\tmore info\n\t</rb-popover>\n';
+		}
 
 		const getValue = val => { // TODO: fix!
 			try {
@@ -48,25 +47,18 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 			return val;
 		}
 
-		const buldValidationMarkup = function() {
+		const stringifyModifier = (key, val) => {
+			val = angular.copy(val);
+			if (!type.is.function(val)) { return val; }
+			val = val.toString().replace(/\t/g, '  ');
+			return val;
+		}
+
+		const buldValidationMarkup = () => {
 			const validators = [];
-			for (let i = 0; i < $scope.a.validation.length; i++) {
-				const validator = $scope.a.validation[i];
-				switch (validator) {
-					case 'required':
-						validators.push($scope.validations[0]);
-						break;
-					case 'minLength':
-						validators.push($scope.validations[1]);
-						break;
-					case 'minMaxLength':
-						validators.push($scope.validations[2]);
-						break;
-					case 'custom':
-						validators.push($scope.validations[3]);
-						break;
-				}
-			}
+
+			for (validator of $scope.a.validation)
+				validators.push(validations[validator]);
 
 			return JSON.stringify(validators, stringifyModifier, '\t')
 				.replace(/\\n/g, '\n')
@@ -75,7 +67,7 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 				.replace(/\}"/g, '}');
 		};
 
-		const buldDataMarkup = function() {
+		const buldDataMarkup = () => {
 			let _data = [];
 			switch ($scope.a.data) {
 				case 'array of strings':
@@ -85,7 +77,6 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 					_data = $scope.data[1];
 					break;
 			}
-
 			return JSON.stringify(_data, stringifyModifier, '\t')
 				.replace(/\\n/g, '\n')
 				.replace(/\\"/g, '"')
@@ -93,8 +84,19 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 				.replace(/\}"/g, '}');
 		};
 
-		/* Public Props
-		 ***************/
+		/* Validations
+		 **************/
+		const validations = {
+			required:     'required',
+			// minLength:    { minLength: 2 },
+			// minMaxLength: { minMaxLength: { min: 2, max: 5 } },
+			// custom:       customValidation
+		};
+
+		/* Props
+		 ********/
+		$scope.labelKeys = ['name', 'id'];
+		$scope.validationLabels = Object.keys(validations);
 		$scope.data = [
 			['batman', 'superman', 'wolverine'],
 			[
@@ -107,20 +109,13 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 			'array of strings',
 			'array of objects'
 		]
-		$scope.labelKeys = ['name', 'id'];
-		$scope.validationLabels = ['required'];
-		$scope.validations = [
-			'required'
-		]
 
-		/* Public Methods
-		 *****************/
+		/* Methods
+		 **********/
 		$scope.reset = () => {
 			$scope.a = {
 				label: 'Superheroes',
-				data: 'array of strings',
-				// value: ['batman'],
-				// validation: $scope.validations
+				data: 'array of strings'
 			};
 		};
 

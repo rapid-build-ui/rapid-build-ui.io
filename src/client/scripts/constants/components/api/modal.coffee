@@ -10,6 +10,7 @@ angular.module('rapid-build').constant 'RB_MODAL_API', [
 ,
 	attribute: 'header'
 	description: '
+		<em class="not-attr">not attribute</em>
 		Add content in the header using slot attribute equals header.
 	'
 	options: null
@@ -18,6 +19,7 @@ angular.module('rapid-build').constant 'RB_MODAL_API', [
 ,
 	attribute: 'footer'
 	description: '
+		<em class="not-attr">not attribute</em>
 		Add content in the footer using slot attribute equals footer.
 	'
 	options: null

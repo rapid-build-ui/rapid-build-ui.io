@@ -3,10 +3,9 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 		/* Builder
 		 **********/
 		const createMarkup = () => { // :string
-			let attrs = '';
+			let attrs = ''; let content = '';
 			const s = ' ', t = '\t', n = '\n', nt = '\n\t';
-			let { value } = $scope.a;
-			const { autoHeight, disabled, horizontal, inline, label, labelKey, placeholder, right, rows,subtext, validation } = $scope.a;
+			const { autoHeight, disabled, horizontal, inline, label, labelKey, placeholder, popover, right, rows, subtext, validation, value } = $scope.a;
 
 			if (right)       attrs += `${nt}right`;
 			if (inline)      attrs += `${nt}inline`;
@@ -16,58 +15,31 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 			if (label)       attrs += `${nt}label="${label}"`;
 			if (placeholder) attrs += `${nt}placeholder="${placeholder}"`;
 			if (subtext)     attrs += `${nt}subtext="${subtext}"`;
-			// if (value)       attrs += `${nt}value='${value}'`;
-			value = value == undefined ? '' : value;
 			if (validation && validation.length) attrs += `${nt}validation='${buldValidationMarkup()}'`;
+			if (value !== undefined) content += value;
+			if (popover) content += getPopoverSlot(); // TODO: fix, must be after value
 
-			return `<rb-textarea${attrs}>${value}</rb-textarea>`;
+			return `<rb-textarea${attrs}>${content}</rb-textarea>`;
 		};
 
-		/* Public Methods
-		 *****************/
-		$scope.reset = () => {
-			$scope.a = {
-				label: 'Message',
-				value: '', // currently needed for rb-bind on rb-textarea
-				validation: []
-			};
-		};
-
-		/* Methods
-		 *********/
-
-		const customValidation = function(val) {
-			return {
-				valid: val === "rapid",
-				message: "must be rapid"
-			};
+		/* Helpers
+		 **********/
+		const getPopoverSlot = () => {
+			return ' <rb-popover slot="popover">more info</rb-popover>';
 		}
 
-		const stringifyModifier = function(key, val) {
+		const stringifyModifier = (key, val) => {
 			val = angular.copy(val);
 			if (!type.is.function(val)) { return val; }
-			return val.toString();
-		};
+			val = val.toString().replace(/\t/g, '  ');
+			return val;
+		}
 
-		const buldValidationMarkup = function() {
+		const buldValidationMarkup = () => {
 			const validators = [];
-			for (let i = 0; i < $scope.a.validation.length; i++) {
-				const validator = $scope.a.validation[i];
-				switch (validator) {
-					case 'required':
-						validators.push($scope.validations[0]);
-						break;
-					case 'minLength':
-						validators.push($scope.validations[1]);
-						break;
-					case 'minMaxLength':
-						validators.push($scope.validations[2]);
-						break;
-					case 'custom':
-						validators.push($scope.validations[3]);
-						break;
-				}
-			}
+
+			for (validator of $scope.a.validation)
+				validators.push(validations[validator]);
 
 			return JSON.stringify(validators, stringifyModifier, '\t')
 				.replace(/\\n/g, '\n')
@@ -76,22 +48,34 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 				.replace(/\}"/g, '}');
 		};
 
+		/* Validations
+		 **************/
+		const customValidation = function(val) {
+			return {
+				valid: val === "rapid",
+				message: "must be rapid"
+			};
+		}
+		const validations = {
+			required:     'required',
+			minLength:    { minLength: 2 },
+			minMaxLength: { minMaxLength: { min: 2, max: 5 } },
+			custom:       customValidation
+		};
+
 		/* Props
-		 *******/
-		$scope.validationLabels = [
-			'required',
-			'minLength',
-			'minMaxLength',
-			'custom'
-		];
+		 ********/
+		$scope.validationLabels = Object.keys(validations);
 
-
-		$scope.validations = [
-			'required',
-			{minLength: 2},
-			{ minMaxLength: {min: 2, max: 5}},
-			customValidation
-		];
+		/* Methods
+		 **********/
+		$scope.reset = () => {
+			$scope.a = {
+				label: 'Message',
+				value: '', // currently needed for rb-bind on rb-textarea
+				validation: []
+			};
+		};
 
 		/* Watches
 		 **********/
@@ -104,6 +88,7 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 		const resetFrm = () => {
 			$scope.$apply($scope.reset);
 		};
+
 		const resetBtn = $element[0].querySelector('[data-reset]');
 		resetBtn.addEventListener('clicked', resetFrm);
 

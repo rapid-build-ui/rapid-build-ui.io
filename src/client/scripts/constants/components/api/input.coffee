@@ -44,6 +44,16 @@ angular.module('rapid-build').constant 'RB_INPUT_API', [
 	type: 'string'
 	required: false
 ,
+	attribute: 'popover'
+	description: '
+		<em class="not-attr">not attribute</em>
+		Add <a href="/components/rb-popover">rb-popover</a>
+		with slot attribute equals popover.
+	'
+	options: null
+	type: 'html'
+	required: false
+,
 	attribute: 'right'
 	description: 'Align\'s component right.'
 	options: null

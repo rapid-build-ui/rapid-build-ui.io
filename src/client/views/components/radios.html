@@ -14,16 +14,6 @@
 	<section class="grid">
 		<div class="col">
 			<div rba-builder="markup"></div>
-			<!-- <rb-radios
-				rb-bind
-				label="Superheroes"
-				value="superhero"
-				data='[
-					"superman",
-					"wolverine",
-					"wonder woman"
-				]'>
-			</rb-radios> -->
 		</div>
 		<div class="col-6">
 			<textarea
@@ -42,6 +32,7 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Configure</h5>
 
+		<!-- INPUTS -->
 		<rb-input
 			inline
 			rb-bind
@@ -61,6 +52,8 @@
 			label="subtext"
 			value="a.subtext">
 		</rb-input>
+
+		<!-- RADIOS -->
 		<rb-radios
 			rb-bind
 			horizontal
@@ -76,17 +69,22 @@
 			value="a.labelKey"
 			data="{{labelKeys}}">
 		</rb-radios>
+
+		<!-- VALIDATION -->
+		<rb-checkboxes
+			rb-bind
+			horizontal
+			value="a.validation"
+			label="validation"
+			data="{{validationLabels}}">
+		</rb-checkboxes>
+
+		<!-- VALUELESS -->
 		<rb-checkbox
 			inline
 			rb-bind
 			value="a.disabled"
 			sublabel="disabled">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.toggle"
-			sublabel="toggle">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
@@ -103,16 +101,21 @@
 		<rb-checkbox
 			inline
 			rb-bind
+			value="a.popover"
+			sublabel="popover">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
 			value="a.right"
 			sublabel="right">
 		</rb-checkbox>
-		<rb-checkboxes
+		<rb-checkbox
+			inline
 			rb-bind
-			horizontal
-			value="a.validation"
-			label="validation"
-			data="{{validationLabels}}">
-		</rb-checkboxes>
+			value="a.toggle"
+			sublabel="toggle">
+		</rb-checkbox>
 
 		<!-- BUTTONS -->
 		<section class="buttons">

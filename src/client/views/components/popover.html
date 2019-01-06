@@ -32,6 +32,27 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Configure</h5>
 
+		<!-- INPUT CONTROLS -->
+		<rb-textarea
+			rb-bind
+			value="a.content"
+			label="content">
+		</rb-textarea>
+		<rb-input
+			inline
+			rb-bind
+			label="caption"
+			value="a.caption">
+		</rb-input>
+		<rb-input
+			inline
+			rb-bind
+			type="number"
+			label="icon-size"
+			value="a.iconSize">
+		</rb-input>
+
+		<!-- RADIOS -->
 		<rb-radios
 			toggle
 			rb-bind
@@ -48,8 +69,6 @@
 			value="a.position"
 			data="{{positions}}">
 		</rb-radios>
-
-		<!-- ICON OPTIONS -->
 		<rb-radios
 			toggle
 			rb-bind
@@ -66,60 +85,39 @@
 			value="a.iconSource"
 			data="{{iconSources}}">
 		</rb-radios>
-		<rb-input
-			inline
-			rb-bind
-			label="caption"
-			value="a.caption">
-		</rb-input>
-		<rb-input
-			inline
-			rb-bind
-			type="number"
-			label="icon-size"
-			value="a.iconSize">
-		</rb-input>
 
 		<!-- VALUELESS -->
-		<div>
-			<rb-checkbox
-				inline
-				rb-bind
-				value="a.fitContent"
-				sublabel="fit-content">
-			</rb-checkbox>
-			<rb-checkbox
-				inline
-				rb-bind
-				value="a.hover"
-				sublabel="hover">
-			</rb-checkbox>
-			<rb-checkbox
-				inline
-				rb-bind
-				value="a.pin"
-				sublabel="pin">
-			</rb-checkbox>
-			<rb-checkbox
-				inline
-				rb-bind
-				value="a.showPopover"
-				sublabel="show-popover">
-			</rb-checkbox>
-			<rb-checkbox
-				inline
-				rb-bind
-				value="a.unstyled"
-				sublabel="unstyled">
-			</rb-checkbox>
-		</div>
-
-		<!-- INPUT CONTROLS -->
-		<rb-textarea
+		<rb-checkbox
+			inline
 			rb-bind
-			value="a.content"
-			label="content">
-		</rb-textarea>
+			value="a.fitContent"
+			sublabel="fit-content">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.hover"
+			sublabel="hover">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.pin"
+			sublabel="pin">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.showPopover"
+			sublabel="show-popover">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.unstyled"
+			sublabel="unstyled">
+		</rb-checkbox>
+
 		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button

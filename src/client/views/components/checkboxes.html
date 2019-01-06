@@ -32,6 +32,7 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Configure</h5>
 
+		<!-- INPUTS -->
 		<rb-input
 			inline
 			rb-bind
@@ -53,6 +54,8 @@
 			label="subtext"
 			value="a.subtext">
 		</rb-input>
+
+		<!-- RADIOS -->
 		<rb-radios
 			rb-bind
 			horizontal
@@ -68,6 +71,15 @@
 			value="a.labelKey"
 			data="{{labelKeys}}">
 		</rb-radios>
+
+		<!-- VALIDATION -->
+		<rb-checkboxes
+			rb-bind
+			horizontal
+			value="a.validation"
+			label="validation"
+			data="{{validationLabels}}">
+		</rb-checkboxes>
 
 		<!-- VALUELESS -->
 		<rb-checkbox
@@ -91,18 +103,15 @@
 		<rb-checkbox
 			inline
 			rb-bind
+			value="a.popover"
+			sublabel="popover">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
 			value="a.right"
 			sublabel="right">
 		</rb-checkbox>
-
-		<!-- VALIDATION -->
-		<rb-checkboxes
-			rb-bind
-			horizontal
-			value="a.validation"
-			label="validation"
-			data="{{validationLabels}}">
-		</rb-checkboxes>
 
 		<!-- BUTTONS -->
 		<section class="buttons">
