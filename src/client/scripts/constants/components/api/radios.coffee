@@ -44,6 +44,15 @@ angular.module('rapid-build').constant 'RB_RADIOS_API', [
 	type: 'string'
 	required: false
 ,
+	attribute: 'name'
+	description: '
+		Required when doing a native browser
+		form submit to submit the value.
+	'
+	options: null
+	type: 'string'
+	required: false
+,
 	attribute: 'popover'
 	description: '
 		<em class="not-attr">not attribute</em>
