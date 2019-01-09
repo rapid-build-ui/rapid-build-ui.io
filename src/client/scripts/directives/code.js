@@ -1,7 +1,10 @@
-/*****************
+/**********************************
  * CODE DIRECTIVE
- *****************/
-angular.module('rapid-build').directive('rbaEditor', ['$timeout', 'preService', 'Editor',
+ * -------------------------------
+ * For editing or displaying code.
+ * TODO: add local storage support
+ **********************************/
+angular.module('rapid-build').directive('rbaCode', ['$timeout', 'preService', 'Editor',
 	($timeout, preService, Editor) => {
 	/* COMPILE
 	 **********/
@@ -102,7 +105,7 @@ angular.module('rapid-build').directive('rbaEditor', ['$timeout', 'preService', 
 		replace: true,
 		transclude: true,
 		restrict: 'A',
-		templateUrl: '/views/directives/editor.html',
+		templateUrl: '/views/directives/code.html',
 		scope: {
 			model:        '=?', // !!model.attr ? ng-model : ng-transclude
 			show:         '=?',

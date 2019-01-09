@@ -2,92 +2,62 @@
  * CODE
  *******/
 .rb-code {
-	/* Common
-	 *********/
-	pre, textarea {
-		position: relative;
-		width: 95%;
-		height: auto;
-		min-height: 0;
+	position: relative;
+
+	/* Hidden Textarea
+	 * trick to copy hidden textarea
+	 ********************************/
+	textarea {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 0;
+		height: 0;
 		margin: 0;
-		padding: 4px 6px;
-		color: $greyCharcoal;
-		font-size: 11px;
-		font-family: $monoFont;
-		line-height: 16px;
-		cursor: auto;
-		background-color: $whiteLight;
-		border: 1px dashed $xxxGreyLight;
-		border-radius: 10px;
-		@include tabSize(2);
-		&:focus {
-			outline: none;
-			border-color: $greyDark;
-		}
+		padding: 0;
+		opacity: 0;
+		border-color: transparent; // can't copy with border none
+		display: block !important;
+		// height: 200px;
 	}
 
-	/* Pre
-	 ******/
-	pre {
-		// word-break: break-all;
-		white-space: pre-wrap;
+	/* Code
+	 *******/
+	.CodeMirror {
+		height: auto;
+		border-radius: 5px;
+		line-height: 18px;
+		text-align: left;
+		font-size: 11.5px;
+		font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
+		// to make it look good on mac and windows
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		font-weight: 600;
 	}
+
+	/* One Dark Theme (if we want it darker)
+	 *****************/
+	// .cm-s-one-dark,
+	// .cm-s-one-dark .CodeMirror-gutter,
+	// .cm-s-one-dark .CodeMirror-gutters {
+	// 	background-color: #141414;
+	// }
 
 	/* Caption
 	 **********/
 	h5 {
 		display: flex;
+		align-items: baseline;
 		padding: 0 4.5% 0 6px;
-		margin-bottom: 10px;
-	}
-
-	/* Optional
-	 ***********/
-	.optional {
-		position: relative;
-		top: 1px;
-		color: $xxxGreyLight;
-		font-style: italic;
-		font-weight: normal;
-		text-transform: none;
-		font-size: 12px;
-	}
-
-	/* Content (wrapper for actions and code)
-	 *****************************************/
-	.content {
-		position: relative;
+		margin-bottom: 6px;
 	}
 
 	/* Actions
 	 **********/
-	// .actions {
-	// 	position: absolute;
-	// 	top: -29px;
-	// 	right: 4.5%;
-	// 	padding: 5px 10px;
-	// 	background-color: $whiteLight;
-	// 	border: 1px dashed $xxxGreyLight;
-	// 	border-bottom: none;
-	// 	border-radius: 10px 10px 0 0;
-	// 	> a {
-	// 		padding: 0;
-	// 		margin-left: 5px;
-	// 		&:first-child {
-	// 			margin-left: 0;
-	// 		}
-	// 	}
-	// 	rb-popover {
-	// 		color: $grey;
-	// 		&:hover,
-	// 		&:focus {
-	// 			color: $greyLightest;
-	// 		}
-	// 	}
-	// }
-
 	.actions {
-		margin: 0 0 0 remy(10);
+		margin: 0 0 0 8px;
 		text-transform: none;
 		font-size: .9em;
 		rb-popover {
@@ -98,82 +68,59 @@
 		}
 	}
 
-	/* Kinds
-	 ********/
-	&.minor {
-		pre {
-			padding: 8px 12px;
-		}
+	/* Placeholder
+	 **************/
+	.CodeMirror-placeholder {
+		filter: brightness(50%);
 	}
 
-	&.secondary {
-		h5 {
-			padding: 0;
-			color: $greyDark;
-			font-size: 13px;
+	/* Readonly
+	 ***********/
+	&.readonly .CodeMirror {
+		&::before {
+			position: absolute;
+			top: -1px;
+			right: 4px;
+			z-index: 2;
+			opacity: 0;
+			font-size: 12px;
 			font-weight: normal;
-			text-transform: none;
+			font-family: $generalFont;
+			letter-spacing: .1px;
+			transition: opacity .8s;
+			content: 'readonly';
 		}
-	}
-
-	/* Pre Options
-	 **************/
-	&.scroll pre { overflow-y: auto; }
-	&.pre-nowrap pre { white-space: pre; }
-
-	/* Size Option
-	 **************/
-	&.mini-size {
-		pre, textarea {
-			line-height: 14px;
-		}
-	}
-	&.small-size {
-		pre, textarea {
-			line-height: 15px;
-		}
-	}
-	&.mini-size {
-		pre, textarea { font-size: 10px; }
+		&:hover::before {
+			opacity: .8;
+		};
 	}
 
 	/* Mixins
 	 *********/
-	@mixin codeHeight($ht, $x: 0) {
-		pre, textarea { min-height: $ht; }
-		&.scroll pre  { height: $ht; } // textarea scrolls after surpassing min-height
-		&.mini-size,
-		&.small-size {
-			$htSmall: $ht - ($x * 2);
-			pre, textarea { min-height: $htSmall; }
-			&.scroll pre  { height: $htSmall; }
-		}
+	@mixin codeHeight($ht) {
+		$ht: #{$ht}#{'px'};
+		.CodeMirror { min-height: $ht; }
+		&.scroll .CodeMirror { height: $ht; } // code scrolls after surpassing min-height
 	}
 
 	/* Height Option
 	 ****************/
-	// increments of 16, small = total-(lines*2)
-	@include codeHeight(112px, 7);
-	&.teeny-height      { @include codeHeight(48px,  3);  }
-	&.tiny-height       { @include codeHeight(64px,  4);  }
-	&.mini-height       { @include codeHeight(80px,  5);  }
-	&.short-height      { @include codeHeight(96px,  6);  }
-	&.tall-height       { @include codeHeight(128px, 8);  }
-	&.xtall-height      { @include codeHeight(144px, 9);  }
-	&.xxtall-height     { @include codeHeight(160px, 10); }
-	&.xxxtall-height    { @include codeHeight(176px, 11); }
-	&.xxxxtall-height   { @include codeHeight(192px, 12); }
-	&.xxxxxtall-height  { @include codeHeight(208px, 13); }
-	&.xxxxxxtall-height { @include codeHeight(235px, 13); }
-	&.giant-height      { @include codeHeight(320px, 20); }
-	&.xgiant-height     { @include codeHeight(352px, 22); }
-	&.xxgiant-height    { @include codeHeight(367px, 22); }
-	&.xxxgiant-height   { @include codeHeight(395px, 22); }
-	&.jumbo-height      { @include codeHeight(480px, 30); }
-	&.xjumbo-height     { @include codeHeight(580px, 30); }
-	&.xxjumbo-height    { @include codeHeight(680px, 30); }
-
+	&.teeny-height      { @include codeHeight(44);  }
+	&.tiny-height       { @include codeHeight(62);  }
+	&.mini-height       { @include codeHeight(80);  }
+	&.short-height      { @include codeHeight(98);  }
+	&.tall-height       { @include codeHeight(134); }
+	&.xtall-height      { @include codeHeight(152); }
+	&.xxtall-height     { @include codeHeight(170); }
+	&.xxxtall-height    { @include codeHeight(187); }
+	&.xxxxtall-height   { @include codeHeight(206); }
+	&.xxxxxtall-height  { @include codeHeight(224); }
+	&.xxxxxxtall-height { @include codeHeight(242); }
+	&.giant-height      { @include codeHeight(332); }
+	&.xgiant-height     { @include codeHeight(350); }
+	&.xxgiant-height    { @include codeHeight(368); }
+	&.xxxgiant-height   { @include codeHeight(404); }
+	&.jumbo-height      { @include codeHeight(493); }
+	&.xjumbo-height     { @include codeHeight(584); }
+	&.xxjumbo-height    { @include codeHeight(656); }
 }
-
-
-
