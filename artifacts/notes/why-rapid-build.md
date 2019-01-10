@@ -1,6 +1,7 @@
 # WHY USE RAPID BUILD UI
 
 * Rapid Development
+* Ease of Use
 * Framework Agnostic
 * Customizable
 * Responsive
