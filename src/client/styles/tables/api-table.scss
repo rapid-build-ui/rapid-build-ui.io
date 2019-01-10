@@ -44,12 +44,12 @@ $textColors: (
 		&browser { text-align: center; }
 	}
 	.th- {
-		&notes { width: 33%; }
+		&notes { width: 39%; }
 	}
 	.td- {
-		&browser { font-weight: 600; vertical-align: middle; }
+		&browser { font-weight: 600; }
 	}
-	.support { text-align: center; vertical-align: middle; }
+	.support { text-align: center; }
 
 	// icon colors
 	.full-support    { color: #28a745; }

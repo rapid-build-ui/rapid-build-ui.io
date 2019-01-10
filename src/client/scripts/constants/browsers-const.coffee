@@ -10,7 +10,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Chrome full support.
+		Chrome fully supported.
 	'
 	'full support': '
 		<rb-icon
@@ -33,7 +33,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Safari full support.
+		Safari fully supported.
 	'
 	'full support': '
 		<rb-icon
@@ -56,25 +56,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Firefox full support.
-		<rb-popover fit-content icon-size="1.1">
-			Firefox fully supported starting at
-			<a target="_blank" href="https://goo.gl/eckZud">version 63</a>.
-			<hr class="mini-top-bumper mini-bottom-bumper">
-			For versions less than 63 do the following:
-			<ol>
-				<li>
-					Open its <a target="_blank" href="https://goo.gl/cmG8fk">configuration editor</a>.
-				</li>
-				<li>
-					Set the following <strong>preferences to true</strong>:
-					<ul>
-						<li>dom.webcomponents.customelements.enabled</li>
-						<li>dom.webcomponents.shadowdom.enabled</li>
-					</ul>
-				</li>
-			</ol>
-		</rb-popover>
+		Firefox fully supported.
 	'
 	'full support': '
 		<rb-icon
@@ -97,7 +79,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Opera full support.
+		Opera fully supported.
 	'
 	'full support': '
 		<rb-icon
