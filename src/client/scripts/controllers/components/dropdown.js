@@ -12,6 +12,7 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 			if ($scope.a.label)    attrs += `${nt}label=\"${$scope.a.label}\"`;
 			if ($scope.a.value)    attrs += `${nt}value='${$scope.a.value}'`;
 			if ($scope.a.subtext)  attrs += `${nt}subtext=\"${$scope.a.subtext}\"`;
+			if ($scope.a.placeholder)  attrs += `${nt}placeholder=\"${$scope.a.placeholder}\"`;
 			if ($scope.a.labelKey) attrs += `${nt}label-key='${$scope.a.labelKey}'`;
 			if ($scope.a.data)     attrs += `${nt}data='${buldDataMarkup()}'`;
 			if ($scope.a.validation && $scope.a.validation.length) attrs += `${nt}validation='${buldValidationMarkup()}'`;
