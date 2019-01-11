@@ -1,18 +1,18 @@
-<div ng-controller="rbInputController">
+<div ng-controller="rbDropdownController">
 	<header class="page-header with-source-nav">
 		<h1>
 			<rba-install
-				source="input"
+				source="dropdown"
 				icon-size=".55">
 			</rba-install>
-			rb-input
+			rb-dropdown
 		</h1>
-		<rba-source-nav source="RB_INPUT_SRC_NAV" inject></rba-source-nav>
+		<rba-source-nav source="RB_DROPDOWN_SRC_NAV" inject></rba-source-nav>
 	</header>
 
 	<!-- COMPONENT -->
 	<section class="grid">
-		<div class="col" id="markup">
+		<div class="col">
 			<div rba-builder="markup"></div>
 		</div>
 		<div class="col-6">
@@ -20,10 +20,10 @@
 				scroll
 				readonly
 				rba-code
+				height="xxxxxtall"
 				model="markup"
 				actions="copy"
-				caption="html"
-				height="xxtall">
+				caption="html">
 			</textarea>
 		</div>
 	</section>
@@ -32,7 +32,6 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Configure</h5>
 
-		<!-- INPUTS -->
 		<rb-input
 			inline
 			rb-bind
@@ -46,53 +45,27 @@
 			value="a.value">
 			<rba-popover-value></rba-popover-value>
 		</rb-input>
-		<br>
-		<rb-input
-			inline
-			rb-bind
-			label="placeholder"
-			value="a.placeholder">
-		</rb-input>
 		<rb-input
 			inline
 			rb-bind
 			label="subtext"
 			value="a.subtext">
 		</rb-input>
-
-		<!-- OPTIONS -->
 		<rb-radios
-			toggle
 			rb-bind
 			horizontal
-			label="icon-kind"
-			value="a.iconKind"
-			data="{{iconKinds}}">
+			label="data"
+			value="a.data"
+			data="{{dataLabels}}">
 		</rb-radios>
 		<rb-radios
 			toggle
 			rb-bind
 			horizontal
-			label="icon-source"
-			value="a.iconSource"
-			data="{{iconSources}}">
+			label="label-key"
+			value="a.labelKey"
+			data="{{labelKeys}}">
 		</rb-radios>
-		<rb-checkbox
-			rb-bind
-			horizontal
-			label="icon-position"
-			value="a.iconPosition"
-			sublabel="{{iconPosition}}">
-		</rb-checkbox>
-		<rb-checkbox
-			rb-bind
-			horizontal
-			label="type"
-			value="a.type"
-			sublabel="{{type}}">
-		</rb-checkbox>
-
-		<!-- VALIDATION -->
 		<rb-checkboxes
 			rb-bind
 			horizontal
@@ -100,8 +73,6 @@
 			label="validation"
 			data="{{validationLabels}}">
 		</rb-checkboxes>
-
-		<!-- VALUELESS -->
 		<rb-checkbox
 			inline
 			rb-bind
@@ -113,18 +84,6 @@
 			rb-bind
 			value="a.inline"
 			sublabel="inline">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.popover"
-			sublabel="popover">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.readonly"
-			sublabel="readonly">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
@@ -148,9 +107,9 @@
 	<!-- API -->
 	<section>
 		<h5 rba-text-curve>API</h5>
-		<rba-table source="RB_INPUT_API" inject></rba-table>
+		<rba-table source="RB_DROPDOWN_API" inject></rba-table>
 	</section>
 
 	<!-- CHANGELOG -->
-	<rba-changelog source="rb-input"></rba-changelog>
+	<rba-changelog source="rb-dropdown"></rba-changelog>
 </div>

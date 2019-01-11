@@ -3,6 +3,7 @@ angular.module('rapid-build').constant 'INSTALL_COMPONENTS',
 	button:     'yarn add @rapid-build-ui/rb-button'
 	checkbox:   'yarn add @rapid-build-ui/rb-checkbox'
 	checkboxes: 'yarn add @rapid-build-ui/rb-checkboxes'
+	dropdown:   'yarn add @rapid-build-ui/rb-dropdown'
 	icon:       'yarn add @rapid-build-ui/rb-icon'
 	input:      'yarn add @rapid-build-ui/rb-input'
 	modal:      'yarn add @rapid-build-ui/rb-modal'

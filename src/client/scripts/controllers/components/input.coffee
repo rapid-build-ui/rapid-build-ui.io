@@ -9,6 +9,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			attrs += "#{nt}right" if $scope.a.right
 			attrs += "#{nt}inline" if $scope.a.inline
 			attrs += "#{nt}disabled" if $scope.a.disabled
+			attrs += "#{nt}readonly" if $scope.a.readonly
 			attrs += "#{nt}label=\"#{$scope.a.label}\"" if $scope.a.label
 			attrs += "#{nt}type=\"number\"" if $scope.a.type
 			attrs += "#{nt}value=\"#{$scope.a.value}\"" if $scope.a.value
