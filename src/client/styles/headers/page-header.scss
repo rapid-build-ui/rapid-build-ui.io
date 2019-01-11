@@ -5,9 +5,14 @@ header.page-header {
 	display: flex;
 	align-items: baseline;
 	justify-content: space-between;
+	padding: 0 0 remy(23);
+
+	&.with-source-nav {
+		padding-bottom: remy(19);
+	}
 
 	h1 {
-		line-height: remy(48);
+		line-height: remy(34);
 		font-variant: all-petite-caps;
 		> sub { // see crud.html
 			font-size: .5em;
@@ -24,7 +29,22 @@ header.page-header {
 			position: relative;
 			right: remy(58);
 			z-index: 1;
-			// margin-right: remy(58);
+		}
+	}
+	/* Prevent Heading (from overlapping source nav)
+	 ******************/
+	@media (max-width: mapGet($gl-mq-list, xxs)) {
+		&.with-source-nav {
+			h1 {
+				flex-basis: 62%;
+			}
+		}
+	}
+	@media (max-width: mapGet($gl-mq-list, xxxs)) {
+		&.with-source-nav {
+			h1 {
+				flex-basis: 58%;
+			}
 		}
 	}
 }
