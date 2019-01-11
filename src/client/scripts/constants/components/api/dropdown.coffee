@@ -17,12 +17,6 @@ angular.module('rapid-build').constant 'RB_DROPDOWN_API', [
 	type: null
 	required: false
 ,
-	attribute: 'horizontal'
-	description: 'Displays radios horizontally.'
-	options: null
-	type: null
-	required: false
-,
 	attribute: 'inline'
 	description: 'Displays component inline.'
 	options: null
@@ -37,11 +31,36 @@ angular.module('rapid-build').constant 'RB_DROPDOWN_API', [
 ,
 	attribute: 'label-key'
 	description: '
-		Property name used for radio labels.
+		Property name used for dropdown labels.
 		<b class="sub">(data must be array of objects)</b>
 	'
 	options: null
 	type: 'string'
+	required: false
+,
+	attribute: 'name'
+	description: '
+		Required when doing a native browser
+		form submit to submit the value.
+	'
+	options: null
+	type: 'string'
+	required: false
+,
+	attribute: 'placeholder'
+	description: 'Placeholder text.'
+	options: null
+	type: 'string'
+	required: false
+,
+	attribute: 'popover'
+	description: '
+		<em class="not-attr">not attribute</em>
+		Add <a href="/components/rb-popover">rb-popover</a>
+		with slot attribute equals popover.
+	'
+	options: null
+	type: 'html'
 	required: false
 ,
 	attribute: 'right'
@@ -58,15 +77,9 @@ angular.module('rapid-build').constant 'RB_DROPDOWN_API', [
 	type: 'string'
 	required: false
 ,
-	attribute: 'toggle'
-	description: 'Adds ability to deselect a radio.'
-	options: null
-	type: null
-	required: false
-,
 	attribute: 'value'
 	description: '
-		Radios value supports
+		Dropdown value supports
 		<a target="_blank" href="https://goo.gl/d9wizE">primitive</a>
 		values and
 		<a target="_blank" href="https://goo.gl/X5D796">objects</a>.

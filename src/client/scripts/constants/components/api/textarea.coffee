@@ -33,7 +33,7 @@ angular.module('rapid-build').constant 'RB_TEXTAREA_API', [
 	required: false
 ,
 	attribute: 'placeholder'
-	description: 'Input placeholder.'
+	description: 'Placeholder text.'
 	options: null
 	type: 'string'
 	required: false
