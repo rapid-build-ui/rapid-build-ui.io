@@ -21,9 +21,8 @@ angular.module('rapid-build').directive('rbaPopoverValue', ['AwaitSelector',
 			/* Prep Work
 			 ************/
 			const selector = scope.selector || '[id^="built"]';
-			const awaiterOpts = {
-				root: document.querySelector('[rba-builder]').parentElement
-			};
+			const builder  = document.querySelector('[rba-builder]');
+			if (!builder) return;
 
 			/* Event Handlers (rb-component is this)
 			 ****************/
@@ -41,6 +40,10 @@ angular.module('rapid-build').directive('rbaPopoverValue', ['AwaitSelector',
 
 			/* Awaiter
 			 **********/
+			const awaiterOpts = {
+				root: builder.parentElement
+			};
+
 			const Awaiter = AwaitSelector(`${selector}`, (err, elms) => { // :void
 				const component = elms[0];
 
