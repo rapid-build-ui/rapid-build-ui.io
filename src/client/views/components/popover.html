@@ -13,7 +13,9 @@
 	<!-- COMPONENT -->
 	<section class="grid">
 		<div class="col">
-			<div rba-builder="markup"></div>
+			<section class="demo-component" ng-class="a.dark && 'dark'">
+				<div rba-builder="markup"></div>
+			</section>
 		</div>
 		<div class="col-6">
 			<textarea
@@ -32,7 +34,7 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Configure</h5>
 
-		<!-- INPUT CONTROLS -->
+		<!-- INPUTS -->
 		<rb-textarea
 			rb-bind
 			value="a.content"
@@ -87,6 +89,13 @@
 		</rb-radios>
 
 		<!-- VALUELESS -->
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.dark"
+			sublabel="dark"
+			ng-if="env.is.dev">
+		</rb-checkbox>
 		<rb-checkbox
 			inline
 			rb-bind

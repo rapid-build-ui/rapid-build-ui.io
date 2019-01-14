@@ -5,6 +5,8 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
+
+			attrs += "#{nt}dark" if $scope.a.dark # TODO
 			attrs += "#{nt}disabled" if $scope.a.disabled
 			attrs += "#{nt}size=\"#{$scope.a.size}\"" if $scope.a.size
 			attrs += "#{nt}type=\"#{$scope.a.type}\"" if $scope.a.type

@@ -6,9 +6,10 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
+			attrs += "#{nt}dark" if $scope.a.dark # TODO
+			attrs += "#{nt}size=\"#{$scope.a.size}\"" if $scope.a.size
 			attrs += "#{nt}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{nt}source=\"#{$scope.a.source}\"" if $scope.a.source
-			attrs += "#{nt}size=\"#{$scope.a.size}\"" if $scope.a.size
 			attrs += "#{nt}valign=\"#{$scope.a.valign}\"" if $scope.a.valign
 
 			"<rb-icon#{attrs}>#{n}</rb-icon>"

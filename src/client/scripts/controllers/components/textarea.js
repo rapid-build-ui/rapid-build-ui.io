@@ -5,19 +5,19 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 		const createMarkup = () => { // :string
 			let attrs = ''; let content = '';
 			const s = ' ', t = '\t', n = '\n', nt = '\n\t';
-			const { autoHeight, disabled, horizontal, inline, label, labelKey, placeholder, popover, right, rows, subtext, validation, value } = $scope.a;
 
-			if (right)       attrs += `${nt}right`;
-			if (inline)      attrs += `${nt}inline`;
-			if (disabled)    attrs += `${nt}disabled`;
-			if (autoHeight)  attrs += `${nt}auto-height`;
-			if (rows)        attrs += `${nt}rows="${rows}"`;
-			if (label)       attrs += `${nt}label="${label}"`;
-			if (placeholder) attrs += `${nt}placeholder="${placeholder}"`;
-			if (subtext)     attrs += `${nt}subtext="${subtext}"`;
-			if (validation && validation.length) attrs += `${nt}validation='${buldValidationMarkup()}'`;
-			if (value !== undefined) content += value;
-			if (popover) content += getPopoverSlot(); // TODO: fix, must be after value
+			if ($scope.a.dark)        attrs += `${nt}dark`; // TODO
+			if ($scope.a.right)       attrs += `${nt}right`;
+			if ($scope.a.inline)      attrs += `${nt}inline`;
+			if ($scope.a.disabled)    attrs += `${nt}disabled`;
+			if ($scope.a.autoHeight)  attrs += `${nt}auto-height`;
+			if ($scope.a.rows)        attrs += `${nt}rows="${$scope.a.rows}"`;
+			if ($scope.a.label)       attrs += `${nt}label="${$scope.a.label}"`;
+			if ($scope.a.subtext)     attrs += `${nt}subtext="${$scope.a.subtext}"`;
+			if ($scope.a.placeholder) attrs += `${nt}placeholder="${$scope.a.placeholder}"`;
+			if ($scope.a.validation && $scope.a.validation.length) attrs += `${nt}validation='${buldValidationMarkup()}'`;
+			if ($scope.a.value !== undefined) content += $scope.a.value;
+			if ($scope.a.popover) content += getPopoverSlot(); // TODO: fix, must be after value
 
 			return `<rb-textarea${attrs}>${content}</rb-textarea>`;
 		};

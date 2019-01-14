@@ -6,6 +6,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
+			attrs += "#{nt}dark" if $scope.a.dark # TODO
 			attrs += "#{nt}right" if $scope.a.right
 			attrs += "#{nt}inline" if $scope.a.inline
 			attrs += "#{nt}disabled" if $scope.a.disabled

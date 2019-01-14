@@ -56,8 +56,10 @@
 
 	// Sections
 	@import 'sections/buttons.scss';
-	@import 'sections/component.scss';
 	@import 'sections/headlines.scss';
+
+	// Demo Sections
+	@import 'demos/component.scss';
 
 	// Tables
 	@import 'tables/api-table.scss';

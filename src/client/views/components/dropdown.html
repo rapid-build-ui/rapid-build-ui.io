@@ -13,11 +13,13 @@
 	<!-- COMPONENT -->
 	<section class="grid">
 		<div class="col">
-			<!-- <div rba-builder="markup"></div> -->
+			<section class="demo-component" ng-class="a.dark && 'dark'">
+				<!-- <div rba-builder="markup"></div> -->
 
-			<!-- COMING SOON -->
-			<rb-icon kind="hammer" source="solid" size="1.5"></rb-icon>
-			Coming soon...
+				<!-- COMING SOON -->
+				<rb-icon kind="hammer" source="solid" size="1.5"></rb-icon>
+				Coming soon...
+			</section>
 		</div>
 		<div class="col-6">
 			<textarea
@@ -36,6 +38,7 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Configure</h5>
 
+		<!-- INPUTS -->
 		<rb-input
 			inline
 			rb-bind
@@ -89,6 +92,13 @@
 		</rb-checkboxes>
 
 		<!-- VALUELESS -->
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.dark"
+			sublabel="dark"
+			ng-if="env.is.dev">
+		</rb-checkbox>
 		<rb-checkbox
 			inline
 			rb-bind

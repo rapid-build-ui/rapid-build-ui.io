@@ -1,11 +1,12 @@
 angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$element', 'typeService',
 	function($scope, $element, type) {
-		// Builder
-		// =======
+		/* Builder
+		 **********/
 		const createMarkup = function() {
 			let attrs = ''; let content = '';
 			const s = ' ', t = '\t', n = '\n', nt = '\n\t';
 
+			if ($scope.a.dark)     attrs += `${nt}dark`; // TODO
 			if ($scope.a.right)    attrs += `${nt}right`;
 			if ($scope.a.inline)   attrs += `${nt}inline`;
 			if ($scope.a.disabled) attrs += `${nt}disabled`;

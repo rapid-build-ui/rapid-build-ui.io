@@ -13,7 +13,9 @@
 	<!-- COMPONENT -->
 	<section class="grid">
 		<div class="col">
-			<div rba-builder="markup"></div>
+			<section class="demo-component" ng-class="a.dark && 'dark'">
+				<div rba-builder="markup"></div>
+			</section>
 		</div>
 		<div class="col-6">
 			<textarea
@@ -43,6 +45,8 @@
 				Font awesome icon style must match icon source.
 			</rb-popover>
 		</rb-input>
+
+		<!-- RADIOS -->
 		<rb-radios
 			toggle
 			rb-bind
@@ -73,6 +77,15 @@
 			type="number"
 			value="a.size">
 		</rb-input>
+
+		<!-- VALUELESS -->
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.dark"
+			sublabel="dark"
+			ng-if="env.is.dev">
+		</rb-checkbox>
 
 		<!-- BUTTONS -->
 		<section class="buttons">

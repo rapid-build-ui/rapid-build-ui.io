@@ -2,9 +2,11 @@
  * COMPONENT API TABLE
  **********************/
 $textColors: (
-	general:  #3a87ad, // set in tables.scss
-	required: #7c8895,
-	sub:      #c3c8ce
+	general:     #3a87ad, // set in tables.scss
+	required:    #7c8895,
+	sub:         #c3c8ce,
+	infoSub:     #92a2b2,
+	infoHeading: #c3c8ce
 );
 
 .api-table {
@@ -77,7 +79,7 @@ $textColors: (
 	/* Headings
 	 ***********/
 	h6 {
-		margin: 0;
+		margin: 4px 0 3px;
 		padding: 0;
 		color: inherit;
 		font-weight: 600;
@@ -104,24 +106,22 @@ $textColors: (
 	/* Misc
 	 *******/
 	.tag {
+		font-style: normal;
 		&::before { content: '<'; }
 		&::after  { content: '>'; }
 	}
-	.not-attr {
-		display: block;
-		color: mapGet($textColors, sub);
+
+	.info-sub,
+	.info-sub-inline { color: mapGet($textColors, infoSub); }
+	.info-heading    { color: mapGet($textColors, infoHeading); }
+
+	.info-sub,
+	.info-heading { display: block; }
+
+	.info-sub,
+	.info-heading,
+	.info-sub-inline {
 		font-style: normal;
-		&::before { content: '('; }
-		&::after  { content: ')'; }
-	}
-	.default-val {
-		display: block;
-		color: mapGet($textColors, sub);
-		font-style: normal;
-		b {
-			&::before { content: '\''; }
-			&::after  { content: '\''; }
-		}
 		&::before { content: '('; }
 		&::after  { content: ')'; }
 	}

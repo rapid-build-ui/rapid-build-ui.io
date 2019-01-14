@@ -5,20 +5,19 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 		const createMarkup = () => { // :string
 			let attrs = ''; let content = '';
 			const s = ' ', t = '\t', n = '\n', nt = '\n\t';
-			const { data } = $scope;
-			const { disabled, horizontal, inline, label, labelKey, popover, right, subtext, validation, value } = $scope.a;
 
-			if (right)      attrs += `${nt}right`;
-			if (inline)     attrs += `${nt}inline`;
-			if (disabled)   attrs += `${nt}disabled`;
-			if (horizontal) attrs += `${nt}horizontal`;
-			if (label)      attrs += `${nt}label="${label}"`;
-			if (subtext)    attrs += `${nt}subtext="${subtext}"`;
-			if (labelKey)   attrs += `${nt}label-key="${labelKey}"`;
-			if (value)      attrs += `${nt}value='${getValue(value)}'`;
-			if (data)       attrs += `${nt}data='${buldDataMarkup()}'`;
-			if (validation && validation.length) attrs += `${nt}validation='${buldValidationMarkup()}'`;
-			if (popover)  content += getPopoverSlot();
+			if ($scope.a.dark)       attrs += `${nt}dark`; // TODO
+			if ($scope.a.right)      attrs += `${nt}right`;
+			if ($scope.a.inline)     attrs += `${nt}inline`;
+			if ($scope.a.disabled)   attrs += `${nt}disabled`;
+			if ($scope.a.horizontal) attrs += `${nt}horizontal`;
+			if ($scope.a.label)      attrs += `${nt}label="${$scope.a.label}"`;
+			if ($scope.a.subtext)    attrs += `${nt}subtext="${$scope.a.subtext}"`;
+			if ($scope.a.labelKey)   attrs += `${nt}label-key="${$scope.a.labelKey}"`;
+			if ($scope.a.value)      attrs += `${nt}value='${getValue(value)}'`;
+			if ($scope.a.data)       attrs += `${nt}data='${buldDataMarkup()}'`;
+			if ($scope.a.validation && $scope.a.validation.length) attrs += `${nt}validation='${buldValidationMarkup()}'`;
+			if ($scope.a.popover) content += getPopoverSlot();
 			if (!content) content = n;
 
 			return `<rb-checkboxes${attrs}>${content}</rb-checkboxes>`;

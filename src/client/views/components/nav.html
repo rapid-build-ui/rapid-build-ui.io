@@ -12,14 +12,8 @@
 
 	<!-- COMPONENT -->
 	<section class="grid">
-		<div class="col flex">
-			<section
-				class="component"
-				ng-class="[
-					a.inline ? 'inline' : '',
-					a.inverse ? 'inverse' : ''
-				].join(' ')">
-
+		<div class="col">
+			<section class="demo-component" ng-class="a.dark && 'dark'">
 				<div rba-builder="markup"></div>
 				<!-- <hr> -->
 
@@ -108,6 +102,12 @@
 		<rb-checkbox
 			inline
 			rb-bind
+			value="a.dark"
+			sublabel="dark">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
 			value="a.dividers"
 			sublabel="dividers">
 		</rb-checkbox>
@@ -116,12 +116,6 @@
 			rb-bind
 			value="a.inline"
 			sublabel="inline">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.inverse"
-			sublabel="inverse">
 		</rb-checkbox>
 		<rb-checkbox
 			inline

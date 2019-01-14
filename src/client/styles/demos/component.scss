@@ -1,0 +1,15 @@
+/*************************
+ * DEMO COMPONENT SECTION
+ *************************/
+.demo-component {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	&.dark {
+		padding: 15px;
+		border-radius: 5px;
+		background-color: #282c34; // same as rb-code
+	}
+}
