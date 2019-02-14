@@ -10,10 +10,11 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			attrs += "#{nt}inline" if $scope.a.inline
 			attrs += "#{nt}vertical" if $scope.a.vertical
 			attrs += "#{nt}dividers" if $scope.a.dividers
-			attrs += "#{nt}responsive" if $scope.a.responsive
+			attrs += "#{nt}responsive" if $scope.a.responsive is $scope.responsives[0]
 			attrs += "#{nt}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{nt}active=\"#{$scope.a.active}\"" if $scope.a.active? and !($scope.a.active.param or $scope.a.active.segment)
 			attrs += "#{nt}active='#{angular.toJson($scope.a.active)}'" if $scope.a.active and ($scope.a.active.param or $scope.a.active.segment)
+			attrs += "#{nt}responsive='#{JSON.stringify(responsiveOpts, null, '\t')}'" if $scope.a.responsive is $scope.responsives[1]
 			content = "#{nt}#{formatContent($scope.a.content)}#{n}" if $scope.a.content
 
 			"<rb-nav#{attrs}>#{content}</rb-nav>"
@@ -23,17 +24,20 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			<a href="#about">about</a>
 			<a href="#contact">contact</a>
 		"""
-		# <a href="#contact">contact <rb-icon kind="heart"></rb-icon></a>
 
 		# links = """
-		# 	<h3>Components</h3>
+		# 	<h3>Controls</h3>
 		# 	<a href="#home">home</a>
 		# 	<a href="#about">about</a>
 		# 	<a href="#contact">contact</a>
 		# """
 
 		# links = """
-		# 	<h3>Rapid</h3>
+		# 	<h3>Components</h3>
+		# 	<a href="#home">home</a>
+		# 	<a href="#about">about</a>
+		# 	<a href="#contact">contact</a>
+		# 	<h3>Form Controls</h3>
 		# 	<a href="#home">home</a>
 		# 	<a href="#about">about</a>
 		# 	<a href="#contact">contact</a>
@@ -89,6 +93,15 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			return '' unless content
 			content.replace /\n/g, '\n\t'
 
+		# Responsive Options
+		# ==================
+		responsiveOpts =
+			# at: 960
+			at: 775
+			show: true
+			dividers: true
+			closeOnClick: false
+
 		# Props
 		# =====
 		$scope.kinds = ['primary']
@@ -98,6 +111,10 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			'path'
 			{ param: 'name' }
 			{ segment: 2 }
+		]
+		$scope.responsives = [
+			'enable'
+			'with options'
 		]
 
 		# Methods
@@ -109,12 +126,12 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 				# active: false
 				# active: 'hash'
 				# active: 'path'
-				# kind:       'primary'
 				# dark:       true
+				# kind:       'primary'
 				# dividers:   true
 				# vertical:   true
-				# responsive: true
-
+				# responsive: $scope.responsives[0]
+				# responsive: $scope.responsives[1]
 
 		# Watches
 		# =======

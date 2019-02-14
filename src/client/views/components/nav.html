@@ -72,7 +72,7 @@
 				model="markup"
 				actions="copy"
 				caption="html"
-				height="xtall">
+				height="xxtall">
 			</textarea>
 		</div>
 	</section>
@@ -97,6 +97,17 @@
 			value="a.active"
 			data="{{actives}}">
 		</rb-radios>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="responsive"
+			value="a.responsive"
+			data="{{responsives}}">
+			<rb-popover slot="popover" position="top">
+				See api for more info.
+			</rb-popover>
+		</rb-radios>
 
 		<!-- VALUELESS -->
 		<rb-checkbox
@@ -116,12 +127,6 @@
 			rb-bind
 			value="a.inline"
 			sublabel="inline">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.responsive"
-			sublabel="responsive">
 		</rb-checkbox>
 		<rb-checkbox
 			inline

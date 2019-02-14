@@ -64,7 +64,7 @@ p.constant('RB_POPOVER_API',
 			Programmatically show or hide the popover.
 		`,
 		options: 'true',
-		type: 'boolean',
+		type: 'bool',
 		required: false
 	},
 	{

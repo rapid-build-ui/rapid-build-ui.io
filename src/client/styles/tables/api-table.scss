@@ -4,6 +4,7 @@
 $textColors: (
 	general:     #3a87ad, // set in tables.scss
 	required:    #7c8895,
+	options:     #7c8895,
 	sub:         #c3c8ce,
 	infoSub:     #92a2b2,
 	infoHeading: #c3c8ce
@@ -32,8 +33,8 @@ $textColors: (
 	.td- {
 		&name, // css vars table
 		&attribute { font-weight: 600; }
+		&options { color: mapGet($textColors, options); }
 		&type,
-		&options,
 		&required { color: mapGet($textColors, required); }
 	}
 
@@ -73,6 +74,7 @@ $textColors: (
 			margin: 0 4px;
 			font-size: .75em;
 			content: '|';
+			color: mapGet($textColors, options);
 		}
 	}
 
@@ -124,6 +126,10 @@ $textColors: (
 		font-style: normal;
 		&::before { content: '('; }
 		&::after  { content: ')'; }
+	}
+	.no-parens {
+		&::before { content: normal; }
+		&::after  { content: normal; }
 	}
 }
 

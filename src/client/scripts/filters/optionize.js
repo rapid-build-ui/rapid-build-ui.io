@@ -7,7 +7,9 @@ angular.module('rapid-build').filter('optionize', () => {
 		if (typeof val !== 'string') return val;
 		if (val.indexOf('|') === -1) return val;
 		val = val.trim().split('|').map(item => {
-			return `<b>${item.trim()}</b>`;
+			item = item.trim();
+			const cssClass = item === 'n/a' ? ' class="na"' : '';
+			return `<b${cssClass}>${item}</b>`;
 		}).join(' ');
 		val = `<b class="optionize">${val}</b>`;
 		return val;

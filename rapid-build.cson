@@ -71,6 +71,9 @@ common:
 				scripts: [
 					'scripts/es-modules/**'
 				]
+				styles: [
+					'styles/themes/*/*'
+				]
 
 	minify:
 		spa:

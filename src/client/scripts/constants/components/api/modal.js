@@ -44,7 +44,7 @@ p.constant('RB_MODAL_API',
 			Shows or hides the modal.
 		`,
 		options: 'true',
-		type: 'boolean',
+		type: 'bool',
 		required: false
 	},
 	{
