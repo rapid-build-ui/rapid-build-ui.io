@@ -83,21 +83,22 @@
 	@return $result;
 }
 
-/* Get Css Vars Map (technique for theming)
+/* Get Css Variables Map (technique for theming)
  * Example:
-	$prefix: '--rb-nav-';
-	$darkSuffix: '-dark';
+	$component: 'rb-nav'; // component name
 	$vars: (
-		common: getCssVarsMap($commonCssVars, $prefix),
-		light:  getCssVarsMap($lightCssVars, $prefix),
-		dark:   getCssVarsMap($darkCssVars, $prefix, $darkSuffix)
+		common: getCssVarsMap($component, $commonCssVars),
+		light:  getCssVarsMap($component, $lightCssVars, 'light'),
+		dark:   getCssVarsMap($component, $darkCssVars, 'dark')
 	);
- *****************************************************************/
-@function getCssVarsMap($cssVarsMap, $varPrefix: null, $varSuffix: null) {
-	$varPrefix: if($varPrefix, $varPrefix, '--');
+ ******************************************************************/
+@function getCssVarsMap($component, $cssVarsMap, $theme: null) {
+	$theme: if($theme, #{$theme}-, $theme);                  // ex: light-
+	$component: --#{$component}-;                            // ex: --rb-nav-
+	$component: if($theme, $component + $theme, $component); // ex: --rb-nav-light-
 	$map: ();
 	@each $key, $val in $cssVarsMap {
-		$val: var(#{$varPrefix}#{$key}#{$varSuffix}, $val) !important;
+		$val: var(#{$component}#{$key}, $val) !important; // ex: --rb-nav-default-link-font-size
 		$map: map-merge($map, ($key: $val));
 	}
 	@return $map;
