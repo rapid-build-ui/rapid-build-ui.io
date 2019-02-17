@@ -42,8 +42,6 @@ $textColors: (
 	 ***********************/
 	.th-,
 	.td- {
-		&value,   // css vars table
-		&default, // css vars table
 		&browser { text-align: center; }
 	}
 	.th- {
