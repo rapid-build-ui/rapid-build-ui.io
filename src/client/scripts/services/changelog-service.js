@@ -7,9 +7,11 @@ angular.module('rapid-build').service('changelogService', ['$http', 'ENV',
 		this.get = component => { // :promise
 			const config = {
 				method: 'GET',
-				cache: true,
-				url: `/api/${component}/changelog`
+				url: `/api/changelogs/${component}`
 			}
+
+			if (!ENV.is.local)
+				config.cache = true;
 
 			if (ENV.is.dev)
 				config.params = { branch: 'continuous' };

@@ -17,7 +17,7 @@ renderer.link = (href, title, text) => { // :string (add to all links: target="_
 /* Routes
  *********/
 const Routes = (app, opts={}) => {
-	app.get('/api/:component/changelog', async (req, res) => {
+	app.get('/api/changelogs/:component', async (req, res) => {
 		const component = req.params.component;
 		const branch    = req.query.branch || 'master';
 		const config = {
