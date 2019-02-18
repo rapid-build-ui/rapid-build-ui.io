@@ -28,7 +28,7 @@ angular.module('rapid-build').directive('rbaChangelog', ['changelogService',
 			restrict: 'E',
 			templateUrl: '/views/directives/changelog.html',
 			scope: {
-				src: '@source'
+				component: '@'
 			}
 		};
 	}
