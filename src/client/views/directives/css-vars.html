@@ -3,7 +3,7 @@
 	caption="{{caption}}"
 	popover="{{popover}}"
 	action="getCssVars(component, theme)">
-	<div class="responsive-table">
+	<div ng-if="!error" class="responsive-table">
 		<table class="api-table">
 			<thead>
 				<tr>
@@ -19,4 +19,5 @@
 			</tbody>
 		</table>
 	</div>
+	<span ng-if="error" class="error-text">{{error}}</span>
 </rba-toggle>

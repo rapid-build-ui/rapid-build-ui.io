@@ -36,6 +36,8 @@ angular.module('rapid-build').directive('rbaCssVars', ['cssVarsService',
 			scope.getCssVars = (component, theme) => { // :void
 				return cssVarsService.get(component, theme).then(cssVars => {
 					scope.cssVars = cssVars;
+				}).catch(error => {
+					scope.error = error.data.message;
 				});
 			};
 		}

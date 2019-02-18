@@ -16,8 +16,6 @@ angular.module('rapid-build').service('cssVarsService', ['$http', 'ENV',
 
 			return $http(config).then(res => {
 				return res.data; // css variables
-			}).catch(error => {
-				return error.data.message;
 			});
 		};
 
