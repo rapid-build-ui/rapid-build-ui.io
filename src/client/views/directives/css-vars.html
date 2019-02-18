@@ -1,0 +1,22 @@
+<rba-toggle
+	text-curve
+	caption="{{caption}}"
+	popover="{{popover}}"
+	action="getCssVars(component, theme)">
+	<div class="responsive-table">
+		<table class="api-table">
+			<thead>
+				<tr>
+					<th ng-class="th-name">name</th>
+					<th ng-class="th-value">value</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="(key, value) in ::cssVars">
+					<td class="td-name">{{key}}</td>
+					<td class="td-value">{{value}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</rba-toggle>
