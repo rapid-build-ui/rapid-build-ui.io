@@ -30,6 +30,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "marked": "^0.5.0"
+    "marked": "^0.6.1"
   }
 }
