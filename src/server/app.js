@@ -13,6 +13,7 @@ module.exports = server => {
 	/* Routes
 	 *********/
 	routes.changelog(app);
+	routes.cssVars(app, { paths: server.paths });
 	routes.examples(app, { paths: server.paths });
 	routes.superheroes(app);
 };
