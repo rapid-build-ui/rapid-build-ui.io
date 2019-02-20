@@ -1,8 +1,10 @@
 /*********************************
  * SHOWCASE THEME: RAPID BUILD UI
  *********************************/
-aside.main {
-	rb-nav {
-		--rb-nav-light-default-vertical-dividers-nav-border-top: none;
+.showcase-theme {
+	aside.main {
+		rb-nav {
+			--rb-nav-light-default-vertical-dividers-nav-border-top: none;
+		}
 	}
 }
