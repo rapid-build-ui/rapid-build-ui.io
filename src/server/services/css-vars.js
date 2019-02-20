@@ -59,7 +59,7 @@ const getCssVarsFromJsFile = async (clientPath, component) => { // :{}
 		const regex = type === 'light' ? /--rb.+-light.+/g
 					: type === 'dark' ? /--rb.+-dark.+/g
 					: /--rb-(?!.+(-light|-dark)).+/g;
-		const vars = css.match(regex); // get all theme variables
+		const vars = css.match(regex) || []; // :[] | null (get all theme variables)
 		for (const _var of vars) {
 			const name = _var.match(/.+(?=:)/g)[0]; // variable name, ex: --rb-nav-link-color
 			const val  = _var.match(/(?<=:\s*)\S+.+(?=;)/g)[0]; // variable value, ex: blue
@@ -84,11 +84,6 @@ const writeCssVarsFile = async (clientPath, component) => { // :void
 
 const getCssVars = async (clientPath, component) => { // :{}
 	const cssVarsPath = getServerCssVarsPath(component);
-
-	// always recreate file if in development
-	if (process.env.NODE_ENV !== 'production')
-		await writeCssVarsFile(clientPath, component);
-
 	// catch if file doesn't exist
 	// technique to only write file once
 	try {
