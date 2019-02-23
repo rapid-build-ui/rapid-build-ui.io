@@ -61,6 +61,7 @@ angular.module('rapid-build').factory('Editor', [function() {
 							this._updateReadonlyOpts();
 
 						setTimeout(() => {
+							if (!this._code) return;
 							this._code.refresh(); // ensures accurate display
 						});
 					}
