@@ -3,21 +3,21 @@
  ****************************/
 rb-popover {
 	// Common
-	--rb-popover-border-radius: 20px;
+	--rb-popover-border-radius: 15px;
 
 	// Popover BG Color
-	--rb-popover-default-bg-color: pink;
-	--rb-popover-danger-bg-color:  red;
-	--rb-popover-info-bg-color:    lightblue;
-	--rb-popover-success-bg-color: green;
-	--rb-popover-warning-bg-color: orange;
+	--rb-popover-default-caption-bg: pink;
+	--rb-popover-danger-caption-bg:  red;
+	--rb-popover-info-caption-bg:    lightblue;
+	--rb-popover-success-caption-bg: green;
+	--rb-popover-warning-caption-bg: orange;
 
 	// Popover Color
-	--rb-popover-default-color: darkblue;
-	--rb-popover-danger-color:  green;
-	--rb-popover-info-color:    grey;
-	--rb-popover-success-color: black;
-	--rb-popover-warning-color: darkblue;
+	--rb-popover-default-text-color: darkblue;
+	--rb-popover-danger-text-color:  green;
+	--rb-popover-info-text-color:    grey;
+	--rb-popover-success-text-color: black;
+	--rb-popover-warning-text-color: darkblue;
 
 	// Trigger Color
 	--rb-popover-default-trigger-color: orange;
