@@ -8,6 +8,7 @@ module.exports = server => {
 
 	/* Middleware
 	 *************/
+	middleware.compression(app);
 	middleware.httpToHttps(app);
 
 	/* Routes
