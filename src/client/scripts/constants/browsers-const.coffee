@@ -45,6 +45,29 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 	'
 	'no support': null
 ,
+	# FIREFOX
+	# =======
+	browser: '
+		<rb-icon
+			size="2.5"
+			kind="firefox"
+			title="Firefox"
+			source="brands">
+		</rb-icon>
+	'
+	notes: '
+		Firefox fully supported.
+	'
+	'full support': '
+		<rb-icon
+			size="2"
+			kind="check"
+			source="solid"
+			class="full-support">
+		</rb-icon>
+	'
+	'no support': null
+,
 	# OPERA
 	# =====
 	browser: '
@@ -57,43 +80,6 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 	'
 	notes: '
 		Opera fully supported.
-	'
-	'full support': '
-		<rb-icon
-			size="2"
-			kind="check"
-			source="solid"
-			class="full-support">
-		</rb-icon>
-	'
-	'no support': null
-,
-	# FIREFOX
-	# =======
-	browser: '
-		<rb-icon
-			size="2.5"
-			kind="firefox"
-			title="Firefox"
-			source="brands">
-		</rb-icon>
-	'
-	notes: '
-		Firefox fully supported starting at
-		<a target="_blank" href="https://goo.gl/eckZud">version 63</a>.<br>
-		For versions less than 63 do the following:
-		<ol>
-			<li>
-				Open its <a target="_blank" href="https://goo.gl/cmG8fk">configuration editor</a>.
-			</li>
-			<li>
-				Set the following <strong>preferences to true</strong>:
-				<ul>
-					<li>dom.webcomponents.customelements.enabled</li>
-					<li>dom.webcomponents.shadowdom.enabled</li>
-				</ul>
-			</li>
-		</ol>
 	'
 	'full support': '
 		<rb-icon
@@ -125,8 +111,8 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 	'full support': null
 	'no support': '
 		<rb-icon
-			size="2"
-			kind="check"
+			size="2.07"
+			kind="times"
 			source="solid"
 			class="no-support">
 		</rb-icon>
@@ -148,8 +134,8 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 	'full support': null
 	'no support': '
 		<rb-icon
-			size="2"
-			kind="check"
+			size="2.07"
+			kind="times"
 			source="solid"
 			class="no-support">
 		</rb-icon>

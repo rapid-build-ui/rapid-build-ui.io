@@ -1,0 +1,145 @@
+<div ng-controller="rbDropdownController">
+	<header class="page-header with-source-nav">
+		<h1>
+			<rba-install
+				source="dropdown"
+				icon-size=".55">
+			</rba-install>
+			rb-dropdown
+		</h1>
+		<rba-source-nav source="RB_DROPDOWN_SRC_NAV" inject></rba-source-nav>
+	</header>
+
+	<!-- COMPONENT -->
+	<section class="grid">
+		<div class="col">
+			<section class="demo-component" ng-class="a.dark && 'dark'">
+				<div rba-builder="markup"></div>
+			</section>
+		</div>
+		<div class="col-6">
+			<textarea
+				scroll
+				readonly
+				rba-code
+				height="xxxxxtall"
+				model="markup"
+				actions="copy"
+				caption="html">
+			</textarea>
+		</div>
+	</section>
+
+	<!-- DEMO -->
+	<form name="demoForm">
+		<h5 rba-text-curve>Configure</h5>
+
+		<!-- INPUTS -->
+		<rb-input
+			inline
+			rb-bind
+			label="label"
+			value="a.label">
+		</rb-input>
+		<rb-input
+			inline
+			rb-bind
+			label="value"
+			value="a.value">
+			<rba-popover-value></rba-popover-value>
+		</rb-input>
+		<rb-input
+			inline
+			rb-bind
+			label="subtext"
+			value="a.subtext">
+		</rb-input>
+		<rb-input
+			inline
+			rb-bind
+			label="placeholder"
+			value="a.placeholder">
+		</rb-input>
+
+		<!-- RADIOS -->
+		<rb-radios
+			rb-bind
+			horizontal
+			label="data"
+			value="a.data"
+			data="{{dataLabels}}">
+		</rb-radios>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="label-key"
+			value="a.labelKey"
+			data="{{labelKeys}}">
+		</rb-radios>
+
+		<!-- VALIDATION -->
+		<rb-checkboxes
+			rb-bind
+			horizontal
+			value="a.validation"
+			label="validation"
+			data="{{validationLabels}}">
+		</rb-checkboxes>
+
+		<!-- VALUELESS -->
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.dark"
+			sublabel="dark"
+			ng-if="env.is.dev">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.disabled"
+			sublabel="disabled">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.inline"
+			sublabel="inline">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.popover"
+			sublabel="popover">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.right"
+			sublabel="right">
+		</rb-checkbox>
+
+		<!-- BUTTONS -->
+		<section class="buttons">
+			<rb-button
+				data-reset
+				icon-kind="sync"
+				icon-source="solid"
+				icon-position="left">
+				Reset
+			</rb-button>
+		</section>
+	</form>
+
+	<!-- API -->
+	<rba-toggle
+		text-curve
+		show="true"
+		caption="API">
+		<rba-table source="RB_DROPDOWN_API" inject></rba-table>
+	</rba-toggle>
+
+	<!-- CHANGELOG -->
+	<rba-changelog component="rb-dropdown"></rba-changelog>
+</div>

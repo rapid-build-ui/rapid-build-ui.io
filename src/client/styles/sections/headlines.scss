@@ -10,14 +10,12 @@
 		@include removeLastChildBottomSpacing();
 
 		p {
-			@extend .sub;
 			font-size: remy(18);
 		}
 
 		&:first-child {
 			margin-top: remy(30);
 			padding-bottom: remy(55);
-			// font-style: italic;
 		}
 
 		&:last-child {

@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+	<title>Rapid Build UI · Components on Bare Bones Page</title>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Rapid Build UI · Web Components · Page for viewing and testing rb-components on a page with no css or javascript.">
+	<meta name="Author" content="The Rapid Build UI Team!">
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/logos/rapid-build-ui-icon-16x16.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/images/logos/rapid-build-ui-icon-32x32.png">
+</head>
+<body>
+	<h1>
+		<a href="/" title="Home"><rb-icon kind="home" source="solid" valign="top"></rb-icon></a>
+		Bare Bones <small>(page with no css or javascript)</small>
+	</h1>
+	<p>
+		Loading and showing all rb components.
+	</p>
+
+	<!-- RB COMPONENTS -->
+	<rb-alert>Hello Gorgeous!</rb-alert>
+
+	<rb-button onclick="showModal(event)">Show Modal</rb-button>
+
+	<rb-icon kind="thumbs-up"></rb-icon>
+
+	<rb-popover caption="wicked cool">
+		Now that's poppin!
+	</rb-popover>
+
+	<rb-modal>
+		Easy peasy modal content!
+		<h5 slot="header">Modal Header</h5>
+		<em slot="footer">Modal Footer</em>
+	</rb-modal>
+
+	<rb-nav active="hash">
+		<a href="#home">home</a>
+		<a href="#components">components</a>
+		<a href="#examples">examples</a>
+	</rb-nav>
+
+	<form action>
+		<rb-input
+			name="hero"
+			label="Superhero"
+			validation='["required"]'>
+		</rb-input>
+		<rb-checkbox
+			name="awesome"
+			label="Superman"
+			sublabel="is awesome"
+			validation='["required"]'>
+		</rb-checkbox>
+		<rb-checkboxes
+			name="favs"
+			label="Your Favs"
+			validation='["required"]'
+			data='["batman","superman","wolverine"]'>
+		</rb-checkboxes>
+		<rb-radios
+			toggle
+			name="best"
+			label-key="name"
+			label="The Best"
+			validation='["required"]'
+			data='[
+				{ "id": 1, "name": "batman" },
+				{ "id": 2, "name": "superman" },
+				{ "id": 3, "name": "wolverine" }
+			]'>
+		</rb-radios>
+		<rb-textarea
+			name="message"
+			label="Message"
+			validation='[
+				"required"
+		]'></rb-textarea>
+		<rb-button type="submit">
+			Submit
+		</rb-button>
+	</form>
+
+	<!-- RB COMPONENTS -->
+	<script>
+		function showModal(evt) { // :void
+			const modal = document.querySelector('rb-modal');
+			modal.show = true;
+		}
+	</script>
+	<script src="/scripts/es-modules/rapid-build-ui.js" type="module"></script>
+</body>
+</html>

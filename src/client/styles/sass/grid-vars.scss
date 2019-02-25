@@ -15,8 +15,10 @@
  ***********************************************************/
 $gl-gutter: 2rem;
 $gl-mq-list: (
-	lg: 80em,
-	md: 64em,
-	sm: 48em,
-	xs: 36em
+	lg:   80em, // 1280px
+	md:   64em, // 1024px
+	sm:   48em, // 768px
+	xs:   36em, // 576px
+	xxs:  29em, // 464px (xxs not part of gridlex)
+	xxxs: 26em  // 416px (xxxs not part of gridlex)
 );

@@ -6,8 +6,9 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
-			attrs += "#{s}removable" if $scope.a.removable
-			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
+			attrs += "#{nt}dark" if $scope.a.dark # TODO
+			attrs += "#{nt}removable" if $scope.a.removable
+			attrs += "#{nt}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
 
 			"<rb-alert#{attrs}>#{content}</rb-alert>"
@@ -21,12 +22,6 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 		content = """
 			Hello Gorgeous!
 		"""
-
-		# content = """
-		# 	Alert
-		# 	<hr>
-		# 	Alina
-		# """
 
 		# Methods
 		# =======

@@ -40,7 +40,7 @@ table {
 		&:last-child::after {
 			position: absolute;
 			top: 0;
-			width: $capWidth;
+			width: $capWidth + 1px; 
 			height: 100%;
 			content: '';
 		}

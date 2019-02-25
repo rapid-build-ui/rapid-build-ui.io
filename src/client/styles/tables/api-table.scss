@@ -2,9 +2,12 @@
  * COMPONENT API TABLE
  **********************/
 $textColors: (
-	general:  #3a87ad, // set in tables.scss
-	required: #7c8895,
-	sub:      #c3c8ce
+	general:     #3a87ad, // set in tables.scss
+	required:    #7c8895,
+	options:     #7c8895,
+	sub:         #c3c8ce,
+	infoSub:     #92a2b2,
+	infoHeading: #c3c8ce
 );
 
 .api-table {
@@ -30,8 +33,8 @@ $textColors: (
 	.td- {
 		&name, // css vars table
 		&attribute { font-weight: 600; }
+		&options { color: mapGet($textColors, options); }
 		&type,
-		&options,
 		&required { color: mapGet($textColors, required); }
 	}
 
@@ -39,17 +42,15 @@ $textColors: (
 	 ***********************/
 	.th-,
 	.td- {
-		&value,   // css vars table
-		&default, // css vars table
 		&browser { text-align: center; }
 	}
 	.th- {
-		&notes { width: 33%; }
+		&notes { width: 39%; }
 	}
 	.td- {
-		&browser { font-weight: 600; vertical-align: middle; }
+		&browser { font-weight: 600; }
 	}
-	.support { text-align: center; vertical-align: middle; }
+	.support { text-align: center; }
 
 	// icon colors
 	.full-support    { color: #28a745; }
@@ -71,13 +72,14 @@ $textColors: (
 			margin: 0 4px;
 			font-size: .75em;
 			content: '|';
+			color: mapGet($textColors, options);
 		}
 	}
 
 	/* Headings
 	 ***********/
 	h6 {
-		margin: 0;
+		margin: 4px 0 3px;
 		padding: 0;
 		color: inherit;
 		font-weight: 600;
@@ -104,25 +106,35 @@ $textColors: (
 	/* Misc
 	 *******/
 	.tag {
+		font-style: normal;
 		&::before { content: '<'; }
 		&::after  { content: '>'; }
 	}
-	.not-attr {
-		display: block;
-		color: mapGet($textColors, sub);
+
+	.info-sub,
+	.info-sub-inline { color: mapGet($textColors, infoSub); }
+	.info-heading    { color: mapGet($textColors, infoHeading); }
+
+	.info-sub,
+	.info-heading { display: block; }
+
+	.info-sub,
+	.info-heading,
+	.info-sub-inline {
 		font-style: normal;
 		&::before { content: '('; }
 		&::after  { content: ')'; }
 	}
-	.default-val {
-		display: block;
-		color: mapGet($textColors, sub);
-		font-style: normal;
-		b {
-			&::before { content: '\''; }
-			&::after  { content: '\''; }
-		}
-		&::before { content: '('; }
-		&::after  { content: ')'; }
+	.no-parens {
+		&::before { content: normal; }
+		&::after  { content: normal; }
+	}
+}
+
+/* Browser Support Page
+ ***********************/
+.browser-support {
+	.responsive-table {
+		overflow-x: visible; // needed because auto cuts off popover
 	}
 }

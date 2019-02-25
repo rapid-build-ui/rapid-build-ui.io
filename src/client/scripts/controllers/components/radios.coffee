@@ -5,6 +5,8 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 		createMarkup = ->
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
+
+			attrs += "#{nt}dark" if $scope.a.dark # TODO
 			attrs += "#{nt}right" if $scope.a.right
 			attrs += "#{nt}inline" if $scope.a.inline
 			attrs += "#{nt}toggle" if $scope.a.toggle
@@ -16,44 +18,20 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 			attrs += "#{nt}label-key='#{$scope.a.labelKey}'" if $scope.a.labelKey
 			attrs += "#{nt}data='#{buldDataMarkup()}'" if $scope.a.data?.length
 			attrs += "#{nt}validation='#{buldValidationMarkup()}'" if $scope.a.validation?.length
-			"<rb-radios#{attrs}>#{n}</rb-radios>"
+			content = getPopoverSlot() if $scope.a.popover
+			content = content or n
 
-		# Props
-		# =====
-		$scope.data = [
-			['batman', 'superman', 'wolverine']
-			[
-				{id: 1, name: 'batman'}
-				{id: 2, name: 'superman'}
-				{id: 3, name: 'wolverine'}
-			]
-		]
-		$scope.dataLabels = [
-			'array of strings',
-			'array of objects'
-		]
-		$scope.labelKeys = ['name', 'id']
-		$scope.validationLabels = [
-			'required'
-		]
-		$scope.validations = [
-			'required'
-		]
+			"<rb-radios#{attrs}>#{content}</rb-radios>"
 
 		# Helpers
 		# =======
+		getPopoverSlot = -> # :html
+			'\n\t<rb-popover\n\t\tslot="popover"\n\t\tposition="top">\n\t\tmore info...\n\t</rb-popover>\n'
+
 		stringifyModifier = (key, val) ->
 			val = angular.copy val
 			return val unless type.is.function val
 			val.toString()
-
-
-		# Methods
-		# =======
-		$scope.reset = ->
-			$scope.a =
-				label: 'Superheroes'
-				data: 'array of strings'
 
 		buldDataMarkup = () ->
 			_data = []
@@ -89,6 +67,34 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 				.replace(/"function\s*\((.*)\)/g, 'function($1)')
 				.replace(/\}"/g, '}')
 
+		# Props
+		# =====
+		$scope.data = [
+			['batman', 'superman', 'wolverine']
+			[
+				{ id: 1, name: 'batman' }
+				{ id: 2, name: 'superman' }
+				{ id: 3, name: 'wolverine' }
+			]
+		]
+		$scope.dataLabels = [
+			'array of strings',
+			'array of objects'
+		]
+		$scope.labelKeys = ['name', 'id']
+		$scope.validationLabels = [
+			'required'
+		]
+		$scope.validations = [
+			'required'
+		]
+
+		# Methods
+		# =======
+		$scope.reset = ->
+			$scope.a =
+				label: 'Superheroes'
+				data: 'array of strings'
 
 		# Watches
 		# =======

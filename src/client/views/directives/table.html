@@ -17,7 +17,7 @@
 						headings[$index] === 'type'     ? !api[heading]  ? 'na'  : ''   : '',
 						headings[$index] === 'required' ? !!api[heading] ? 'yes' : 'no' : ''
 					]"
-					ng-bind-html="getHtml(headings[$index], api[heading])"">
+					ng-bind-html="getHtml(headings[$index], api[heading])">
 				</td>
 			</tr>
 		</tbody>

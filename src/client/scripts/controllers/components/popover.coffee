@@ -6,16 +6,18 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 			attrs = ''; content = '';
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
-			attrs += "#{s}hover" if $scope.a.hover
-			attrs += "#{s}unstyled" if $scope.a.unstyled
-			attrs += "#{s}fit-content" if $scope.a.fitContent
-			attrs += "#{s}caption=\"#{$scope.a.caption}\"" if $scope.a.caption
-			attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
-			attrs += "#{s}position=\"#{$scope.a.position}\"" if $scope.a.position
-			attrs += "#{s}show-popover=\"#{$scope.a.showPopover}\"" if $scope.a.showPopover
-			attrs += "#{s}icon-kind=\"#{$scope.a.iconKind}\"" if $scope.a.iconKind
-			attrs += "#{s}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
-			attrs += "#{s}icon-size=\"#{$scope.a.iconSize}\"" if $scope.a.iconSize
+			attrs += "#{nt}pin" if $scope.a.pin
+			attrs += "#{nt}dark" if $scope.a.dark # TODO
+			attrs += "#{nt}hover" if $scope.a.hover
+			attrs += "#{nt}unstyled" if $scope.a.unstyled
+			attrs += "#{nt}fit-content" if $scope.a.fitContent
+			attrs += "#{nt}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
+			attrs += "#{nt}position=\"#{$scope.a.position}\"" if $scope.a.position
+			attrs += "#{nt}show-popover=\"#{$scope.a.showPopover}\"" if $scope.a.showPopover
+			attrs += "#{nt}icon-size=\"#{$scope.a.iconSize}\"" if $scope.a.iconSize
+			attrs += "#{nt}icon-kind=\"#{$scope.a.iconKind}\"" if $scope.a.iconKind
+			attrs += "#{nt}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
+			attrs += "#{nt}caption=\"#{$scope.a.caption}\"" if $scope.a.caption
 			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
 
 			"<rb-popover#{attrs}>#{content}</rb-popover>"

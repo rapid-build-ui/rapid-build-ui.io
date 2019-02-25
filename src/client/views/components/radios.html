@@ -1,5 +1,5 @@
 <div ng-controller="rbRadiosController">
-	<header class="page-header">
+	<header class="page-header with-source-nav">
 		<h1>
 			<rba-install
 				source="radios"
@@ -13,33 +13,28 @@
 	<!-- COMPONENT -->
 	<section class="grid">
 		<div class="col">
-			<div rba-builder="markup"></div>
-			<!-- <rb-radios
-				rb-bind
-				label="Superheroes"
-				value="superhero"
-				data='[
-					"superman",
-					"wolverine",
-					"wonder woman"
-				]'>
-			</rb-radios> -->
+			<section class="demo-component" ng-class="a.dark && 'dark'">
+				<div rba-builder="markup"></div>
+			</section>
 		</div>
-		<div class="col-5">
-			<rba-code
+		<div class="col-6">
+			<textarea
 				scroll
-				bind="markup"
+				readonly
+				rba-code
+				model="markup"
 				actions="copy"
 				caption="html"
-				height="xxxxxxtall">
-			</rba-code>
+				height="xxxxxtall">
+			</textarea>
 		</div>
 	</section>
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Demo</h5>
+		<h5 rba-text-curve>Configure</h5>
 
+		<!-- INPUTS -->
 		<rb-input
 			inline
 			rb-bind
@@ -51,6 +46,7 @@
 			rb-bind
 			label="value"
 			value="a.value">
+			<rba-popover-value></rba-popover-value>
 		</rb-input>
 		<rb-input
 			inline
@@ -58,6 +54,8 @@
 			label="subtext"
 			value="a.subtext">
 		</rb-input>
+
+		<!-- RADIOS -->
 		<rb-radios
 			rb-bind
 			horizontal
@@ -73,17 +71,29 @@
 			value="a.labelKey"
 			data="{{labelKeys}}">
 		</rb-radios>
+
+		<!-- VALIDATION -->
+		<rb-checkboxes
+			rb-bind
+			horizontal
+			value="a.validation"
+			label="validation"
+			data="{{validationLabels}}">
+		</rb-checkboxes>
+
+		<!-- VALUELESS -->
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.dark"
+			sublabel="dark"
+			ng-if="env.is.dev">
+		</rb-checkbox>
 		<rb-checkbox
 			inline
 			rb-bind
 			value="a.disabled"
 			sublabel="disabled">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.toggle"
-			sublabel="toggle">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
@@ -100,16 +110,21 @@
 		<rb-checkbox
 			inline
 			rb-bind
+			value="a.popover"
+			sublabel="popover">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
 			value="a.right"
 			sublabel="right">
 		</rb-checkbox>
-		<rb-checkboxes
+		<rb-checkbox
+			inline
 			rb-bind
-			horizontal
-			value="a.validation"
-			label="validation"
-			data="{{validationLabels}}">
-		</rb-checkboxes>
+			value="a.toggle"
+			sublabel="toggle">
+		</rb-checkbox>
 
 		<!-- BUTTONS -->
 		<section class="buttons">
@@ -124,11 +139,13 @@
 	</form>
 
 	<!-- API -->
-	<section>
-		<h5 rba-text-curve>API</h5>
+	<rba-toggle
+		text-curve
+		show="true"
+		caption="API">
 		<rba-table source="RB_RADIOS_API" inject></rba-table>
-	</section>
+	</rba-toggle>
 
 	<!-- CHANGELOG -->
-	<rba-changelog source="rb-radios"></rba-changelog>
+	<rba-changelog component="rb-radios"></rba-changelog>
 </div>

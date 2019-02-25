@@ -1,12 +1,22 @@
 /******************
  * UTILITY CLASSES
  ******************/
-// Displays
+/* Displays
+ ***********/
 .block {
 	display: block !important;
 }
 .inline-block {
 	display: inline-block !important;
+}
+
+/* Positioning
+ **************/
+.absolute {
+	position: absolute !important;
+}
+.relative {
+	position: relative !important;
 }
 
 /* Flexbox
@@ -21,6 +31,12 @@
 	flex-direction: row-reverse !important;
 }
 
+/* State Texts
+ **************/
+.error-text {
+	color: #db3a4d !important;
+}
+
 /* Text Align
  *************/
 .text-left {
@@ -31,4 +47,19 @@
 }
 .text-right {
 	text-align: right !important;
+}
+
+/* Vertical Align
+ *****************/
+.valign-baseline {
+	vertical-align: baseline !important;
+}
+.valign-bottom {
+	vertical-align: bottom !important;
+}
+.valign-middle {
+	vertical-align: middle !important;
+}
+.valign-top {
+	vertical-align: top !important;
 }

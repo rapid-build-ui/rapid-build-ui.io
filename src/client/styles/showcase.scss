@@ -27,15 +27,13 @@
 	@import 'tags/sections.scss';
 	@import 'tags/tables.scss';
 
-	// Forms
-	@import 'forms/controls.scss';
-
 	// Directives
-	@import 'directives/changelog.scss';
 	@import 'directives/code.scss';
 	@import 'directives/copy.scss';
+	@import 'directives/popover-value.scss';
 	@import 'directives/source-nav.scss';
 	@import 'directives/text-curve.scss';
+	@import 'directives/toggle.scss';
 
 	// Misc
 	@import 'misc/logos.scss';
@@ -58,8 +56,11 @@
 
 	// Sections
 	@import 'sections/buttons.scss';
-	@import 'sections/component.scss';
+	@import 'sections/changelog.scss';
 	@import 'sections/headlines.scss';
+
+	// Demo Sections
+	@import 'demos/component.scss';
 
 	// Tables
 	@import 'tables/api-table.scss';

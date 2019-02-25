@@ -12,21 +12,11 @@ angular.module('rapid-build').directive('rbaChangelog', ['changelogService',
 		/* LINK
 		 *******/
 		const Link = (scope, iElement, iAttrs) => {
-			/* Props
-			 ********/
-			scope.toggle = 'closed';
-
 			/* Methods
 			 **********/
-			scope.setChangelog = component => { // :void
-				if (scope.changelog) {
-					scope.toggle    = 'closed'
-					scope.changelog = null;
-					return;
-				}
-				changelogService.get(component).then(changelog => {
-					scope.toggle    = 'open';
-					scope.changelog = changelog;
+			scope.getChangelog = component => { // :void
+				return changelogService.get(component).then(changelog => {
+					return changelog;
 				});
 			};
 		}
@@ -38,7 +28,7 @@ angular.module('rapid-build').directive('rbaChangelog', ['changelogService',
 			restrict: 'E',
 			templateUrl: '/views/directives/changelog.html',
 			scope: {
-				src: '@source'
+				component: '@'
 			}
 		};
 	}

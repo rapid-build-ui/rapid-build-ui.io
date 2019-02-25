@@ -5,7 +5,7 @@ const Superheroes = require('./../services/superheroes');
 
 /* Routes (crud)
  ****************/
-const Routes = app => {
+const Routes = (app, opts={}) => {
 	app.get('/api/superheroes', (req, res) => {
 		const restore = req.query.restore !== undefined;
 		if (restore) Superheroes.restore();

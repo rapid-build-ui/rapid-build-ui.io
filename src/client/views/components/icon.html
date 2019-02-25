@@ -1,5 +1,5 @@
 <div ng-controller="rbIconController">
-	<header class="page-header">
+	<header class="page-header with-source-nav">
 		<h1>
 			<rba-install
 				source="icon"
@@ -13,22 +13,40 @@
 	<!-- COMPONENT -->
 	<section class="grid">
 		<div class="col">
-			<div rba-builder="markup"></div>
+			<section class="demo-component" ng-class="a.dark && 'dark'">
+				<div rba-builder="markup"></div>
+			</section>
 		</div>
-		<div class="col-7">
-			<rba-code
+		<div class="col-6">
+			<textarea
 				scroll
-				bind="markup"
+				readonly
+				rba-code
+				model="markup"
 				actions="copy"
-				caption="html">
-			</rba-code>
+				caption="html"
+				height="tall">
+			</textarea>
 		</div>
 	</section>
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Demo</h5>
+		<h5 rba-text-curve>Configure</h5>
 
+		<rb-input
+			toggle
+			rb-bind
+			value="a.kind"
+			placeholder="any font awesome icon">
+			<rb-popover position="top" slot="popover">
+				Name of any free
+				<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
+				Font awesome icon style must match icon source.
+			</rb-popover>
+		</rb-input>
+
+		<!-- RADIOS -->
 		<rb-radios
 			toggle
 			rb-bind
@@ -37,19 +55,6 @@
 			value="a.kind"
 			data="{{kinds}}">
 		</rb-radios>
-		<rb-input
-			inline
-			toggle
-			rb-bind
-			value="a.kind"
-			class="no-right-bumper"
-			placeholder="any font awesome icon">
-		</rb-input>
-		<rb-popover position="top">
-			Name of any free
-			<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
-			Font awesome icon style must match icon source.
-		</rb-popover>
 		<rb-radios
 			toggle
 			rb-bind
@@ -62,9 +67,9 @@
 			toggle
 			rb-bind
 			horizontal
-			label="vertical"
-			value="a.vertical"
-			data="{{verticals}}">
+			label="valign"
+			value="a.valign"
+			data="{{valigns}}">
 		</rb-radios>
 		<rb-input
 			rb-bind
@@ -72,6 +77,15 @@
 			type="number"
 			value="a.size">
 		</rb-input>
+
+		<!-- VALUELESS -->
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.dark"
+			sublabel="dark"
+			ng-if="env.is.dev">
+		</rb-checkbox>
 
 		<!-- BUTTONS -->
 		<section class="buttons">
@@ -86,11 +100,13 @@
 	</form>
 
 	<!-- API -->
-	<section>
-		<h5 rba-text-curve>API</h5>
+	<rba-toggle
+		text-curve
+		show="true"
+		caption="API">
 		<rba-table source="RB_ICON_API" inject></rba-table>
-	</section>
+	</rba-toggle>
 
 	<!-- CHANGELOG -->
-	<rba-changelog source="rb-icon"></rba-changelog>
+	<rba-changelog component="rb-icon"></rba-changelog>
 </div>

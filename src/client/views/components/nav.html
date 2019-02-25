@@ -1,5 +1,5 @@
 <div ng-controller="rbNavController">
-	<header class="page-header">
+	<header class="page-header with-source-nav">
 		<h1>
 			<rba-install
 				source="nav"
@@ -12,14 +12,8 @@
 
 	<!-- COMPONENT -->
 	<section class="grid">
-		<div class="col flex">
-			<section
-				class="component"
-				ng-class="[
-					a.inline ? 'inline' : '',
-					a.inverse ? 'inverse' : ''
-				].join(' ')">
-
+		<div class="col">
+			<section class="demo-component" ng-class="a.dark && 'dark'">
 				<div rba-builder="markup"></div>
 				<!-- <hr> -->
 
@@ -71,18 +65,21 @@
 			</section>
 		</div>
 		<div class="col-6">
-			<rba-code
+			<textarea
 				scroll
-				bind="markup"
+				readonly
+				rba-code
+				model="markup"
 				actions="copy"
-				caption="html">
-			</rba-code>
+				caption="html"
+				height="xxtall">
+			</textarea>
 		</div>
 	</section>
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Demo</h5>
+		<h5 rba-text-curve>Configure</h5>
 
 		<rb-radios
 			toggle
@@ -100,19 +97,24 @@
 			value="a.active"
 			data="{{actives}}">
 		</rb-radios>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="responsive"
+			value="a.responsive"
+			data="{{responsives}}">
+			<rb-popover slot="popover" position="top">
+				See api for more info.
+			</rb-popover>
+		</rb-radios>
 
 		<!-- VALUELESS -->
 		<rb-checkbox
 			inline
 			rb-bind
-			value="a.inline"
-			sublabel="inline">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.inverse"
-			sublabel="inverse">
+			value="a.dark"
+			sublabel="dark">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
@@ -123,22 +125,22 @@
 		<rb-checkbox
 			inline
 			rb-bind
-			value="a.vertical"
-			sublabel="vertical">
+			value="a.inline"
+			sublabel="inline">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
 			rb-bind
-			value="a.responsive"
-			sublabel="responsive">
+			value="a.vertical"
+			sublabel="vertical">
 		</rb-checkbox>
 
 		<!-- CONTENT -->
-		<rba-textarea
-			width="xxwide"
-			model="a.content"
-			caption="content">
-		</rba-textarea>
+		<rb-textarea
+			rb-bind
+			value="a.content"
+			label="content">
+		</rb-textarea>
 
 		<!-- BUTTONS -->
 		<section class="buttons">
@@ -153,11 +155,18 @@
 	</form>
 
 	<!-- API -->
-	<section>
-		<h5 rba-text-curve>API</h5>
+	<rba-toggle
+		text-curve
+		show="true"
+		caption="API">
 		<rba-table source="RB_NAV_API" inject></rba-table>
-	</section>
+	</rba-toggle>
+
+	<!-- CSS VARIABLES -->
+	<rba-css-vars component="rb-nav" theme="common"></rba-css-vars>
+	<rba-css-vars component="rb-nav" theme="light"></rba-css-vars>
+	<rba-css-vars component="rb-nav" theme="dark"></rba-css-vars>
 
 	<!-- CHANGELOG -->
-	<rba-changelog source="rb-nav"></rba-changelog>
+	<rba-changelog component="rb-nav"></rba-changelog>
 </div>

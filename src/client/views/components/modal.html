@@ -1,5 +1,5 @@
 <div ng-controller="rbModalController">
-	<header class="page-header">
+	<header class="page-header with-source-nav">
 		<h1>
 			<rba-install
 				source="modal"
@@ -21,19 +21,21 @@
 			</rb-modal>
 			<rb-button size="small" ng-click="addLink()">add</rb-button>
 			<rb-button size="small" ng-click="removeLink()">remove</rb-button> -->
-			<rba-code
+			<textarea
 				scroll
-				bind="markup"
+				readonly
+				rba-code
+				model="markup"
 				actions="copy"
 				caption="html"
 				height="tall">
-			</rba-code>
+			</textarea>
 		</div>
 	</section>
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Demo</h5>
+		<h5 rba-text-curve>Configure</h5>
 
 		<!-- VALUELESS -->
 		<rb-checkbox
@@ -71,21 +73,24 @@
 		</rb-radios> -->
 
 		<!-- CONTENT -->
-		<rba-textarea
-			height="short"
-			model="a.content"
-			caption="content">
-		</rba-textarea>
-		<rba-textarea
-			height="short"
-			model="a.header"
-			caption="header">
-		</rba-textarea>
-		<rba-textarea
-			height="short"
-			model="a.footer"
-			caption="footer">
-		</rba-textarea>
+		<rb-textarea
+			rb-bind
+			rows="3"
+			value="a.content"
+			label="content">
+		</rb-textarea>
+		<rb-textarea
+			rb-bind
+			rows="3"
+			value="a.header"
+			label="header">
+		</rb-textarea>
+		<rb-textarea
+			rb-bind
+			rows="3"
+			value="a.footer"
+			label="footer">
+		</rb-textarea>
 
 		<!-- BUTTONS -->
 		<section class="buttons">
@@ -100,11 +105,13 @@
 	</form>
 
 	<!-- API -->
-	<section>
-		<h5 rba-text-curve>API</h5>
+	<rba-toggle
+		text-curve
+		show="true"
+		caption="API">
 		<rba-table source="RB_MODAL_API" inject></rba-table>
-	</section>
+	</rba-toggle>
 
 	<!-- CHANGELOG -->
-	<rba-changelog source="rb-modal"></rba-changelog>
+	<rba-changelog component="rb-modal"></rba-changelog>
 </div>

@@ -1,5 +1,5 @@
 <div ng-controller="rbAlertController">
-	<header class="page-header">
+	<header class="page-header with-source-nav">
 		<h1>
 			<rba-install
 				source="alert"
@@ -13,22 +13,34 @@
 	<!-- COMPONENT -->
 	<section class="grid">
 		<div class="col">
-			<div rba-builder="markup"></div>
+			<section class="demo-component" ng-class="a.dark && 'dark'">
+				<div rba-builder="markup"></div>
+			</section>
 		</div>
 		<div class="col-6">
-			<rba-code
+			<textarea
 				scroll
-				bind="markup"
+				readonly
+				rba-code
+				model="markup"
 				actions="copy"
-				caption="html">
-			</rba-code>
+				caption="html"
+				height="tall">
+			</textarea>
 		</div>
 	</section>
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Demo</h5>
+		<h5 rba-text-curve>Configure</h5>
 
+		<rb-textarea
+			rb-bind
+			value="a.content"
+			label="content">
+		</rb-textarea>
+
+		<!-- RADIOS -->
 		<rb-radios
 			toggle
 			rb-bind
@@ -37,16 +49,22 @@
 			value="a.kind"
 			data="{{kinds}}">
 		</rb-radios>
+
+		<!-- VALUELESS -->
 		<rb-checkbox
+			inline
+			rb-bind
+			value="a.dark"
+			sublabel="dark"
+			ng-if="env.is.dev">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
 			rb-bind
 			horizontal
 			value="a.removable"
 			sublabel="removable">
 		</rb-checkbox>
-		<rba-textarea
-			model="a.content"
-			caption="content">
-		</rba-textarea>
 
 		<!-- BUTTONS -->
 		<section class="buttons">
@@ -61,17 +79,16 @@
 	</form>
 
 	<!-- API -->
-	<section>
-		<h5 rba-text-curve>API</h5>
+	<rba-toggle
+		text-curve
+		show="true"
+		caption="API">
 		<rba-table source="RB_ALERT_API" inject></rba-table>
-	</section>
+	</rba-toggle>
 
 	<!-- CSS Variables -->
-	<section>
-		<h5 rba-text-curve>CSS Variables</h5>
-		<rba-table source="RB_ALERT_CSS_VARS" inject></rba-table>
-	</section>
+	<rba-css-vars component="rb-alert"></rba-css-vars>
 
 	<!-- CHANGELOG -->
-	<rba-changelog source="rb-alert"></rba-changelog>
+	<rba-changelog component="rb-alert"></rba-changelog>
 </div>

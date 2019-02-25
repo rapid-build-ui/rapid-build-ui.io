@@ -2,9 +2,9 @@
  * LINKS
  ********/
 a {
-	$links:  #db3a4d; // red in logo is #d0021b
+	$links:  #78a4c8;
 	$hover:  $links;
-	$active: darken($links, 5);
+	$active: #6798c1;
 
 	color: $links;
 	text-decoration: none;

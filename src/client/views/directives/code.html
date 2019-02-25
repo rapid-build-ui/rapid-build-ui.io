@@ -1,13 +1,12 @@
 <div ng-show="show === undefined ? true : show"
 	 ng-class="['rb-code', kind,
-				!!size ? size+'-size' : '',
+	 			!!readonly ? 'readonly' : '',
 				!!height ? height+'-height' : '',
-				scroll !== undefined ? 'scroll' : '',
-				nowrap !== undefined ? 'pre-nowrap' : ''
+				scroll !== undefined ? 'scroll' : ''
 			   ].join(' ')">
 	<h5 ng-show="!!caption || !!actions">
 		{{ caption }}
-		<div class="actions" ng-if="!!actions">
+		<div class="actions">
 			<!-- <a href tabindex="0" ng-click="clear()">clear</a> -->
 			<!-- <a href tabindex="0" ng-click="addAction()">add</a> -->
 			<!-- <a href tabindex="0" ng-click="compress()">compress</a> -->
@@ -18,24 +17,13 @@
 				position="top"
 				icon-kind="copy"
 				ngclipboard-success="copied(e)"
-				data-clipboard-target="{{hasModel ? 'textarea' : 'pre'}}">
+				data-clipboard-target="textarea">
 				Copied! <rb-icon kind="thumbs-up"></rb-icon>
 			</rb-popover>
 		</div>
 	</h5>
-	<span
-		class="optional"
-		ng-hide="optional === undefined"
-		ng-bind-html="optional !== undefined && !!optional ? optional : '(optional)'">
-	</span>
-	<div class="content">
-		<textarea
-			readonly
-			ng-model="model"
-			ng-keydown="keydown($event)"
-			placeholder="{{placeholder}}">
-		</textarea>
-		<pre ng-bind="bind"></pre>
-		<pre ng-transclude></pre>
-	</div>
+	<textarea
+		tabindex="-1"
+		ng-model="model"
+		ui-codemirror="editorOpts"></textarea>
 </div>
