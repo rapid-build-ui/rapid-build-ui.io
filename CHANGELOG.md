@@ -1,3 +1,48 @@
+## [0.0.16](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.15...v0.0.16) (2019-02-25)
+
+
+### Bug Fixes
+
+* **browser support table:** from cutting off rb-popover ([f2bd1ed](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/f2bd1ed))
+* **page header:** prevent heading from overlapping source nav ([f9d1945](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/f9d1945))
+* **rb-nav:** from not displaying over each other correctly in responsive mode ([abf6d64](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/abf6d64))
+* **table styling:** remove extra left and right borders from table header ([2a1f54a](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/2a1f54a))
+
+
+### Features
+
+* **bump:** deps all rb components ([9d230e3](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/9d230e3))
+* **components:** document icon-valign for rb-button and rb-popover ([a7645c1](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/a7645c1))
+* **components:** document the name attribute for all rb form controls ([f5e37ee](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/f5e37ee))
+* **components:** place open toggles on all of api sections ([4562b48](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/4562b48))
+* **css variables:** place toggles on all component css variable sections ([6a66337](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/6a66337))
+* **css-variables:** automate the documenting of css variables ([d2d9f07](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/d2d9f07))
+* **dogfood:** swap in rb-textarea ([533658d](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/533658d))
+* **getting started page:** update documentation for easier understanding ([f56b68b](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/f56b68b))
+* **rb-dropdown:** add it to the showcase but only expose it in the dev environment ([7480873](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/7480873))
+* **rb-nav:** add responsive options to configure and api section ([aa91d8f](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/aa91d8f))
+* **rb-popover:** document pin option ([d395229](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/d395229))
+* **rb-popover:** document how to use with all rb form controls ([5bbf67d](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/5bbf67d))
+* **rb-textarea:** create showcase page for it ([69dd037](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/69dd037))
+* **rba-css-vars:** create and add it for displaying rb component's css variables ([1e5ae44](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/1e5ae44))
+* **rba-code:** create and add it to the showcase for displaying code awesomely ([39827d2](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/39827d2))
+* **rba-popover-value:** create and add it to all rb form controls to easily view the demo's value ([6d926dd](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/6d926dd))
+* **rba-toggle:** create new directive rba-toggle ([afe94fc](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/afe94fc))
+
+
+### Performance Improvements
+
+* **server compression:** boost performance by [gzipping](https://www.npmjs.com/package/compression) server requests ([aaf879f](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/aaf879f))
+
+
+### Dependencies
+
+* **bump:**
+	* client dep codemirror ([6e061bd](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/6e061bd))
+	* server dep marked ([7855347](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/7855347))
+
+
+
 ## [0.0.15](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.14...v0.0.15) (2018-12-05)
 
 
