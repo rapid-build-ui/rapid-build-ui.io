@@ -1,11 +1,11 @@
 STEP 1
 ------
-git checkout master && g pull && git merge continuous --no-ff -m "chore(merge): continuous" && npm run bump
+g checkout master && g pull && g merge continuous --no-ff -m "chore(merge): continuous" && npm run bump
 
 STEP 2
 ------
-git commit -am "chore(bump): v0.0.6" && g push
+g commit -am "chore(bump): v0.0.6" && g push
 
 STEP 3
 ------
-git checkout continuous && git pull && git merge master -m "chore(merge): master" && git push
+g checkout continuous && g pull && g merge master -m "chore(merge): master" && g push
