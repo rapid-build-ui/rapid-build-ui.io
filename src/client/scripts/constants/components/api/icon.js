@@ -12,6 +12,24 @@ p.constant('RB_ICON_API',
 		type: 'string',
 		required: true
 	}),
+	// {
+	// 	attribute: 'library',
+	// 	description: `
+	// 		<em class="info-heading">defaults to fa</em>
+	// 		Choose between one of the two icon libraries:
+	// 		<ul>
+	// 			<li>
+	// 				<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome</a>
+	// 			</li>
+	// 			<li>
+	// 				<a target="_blank" href="https://goo.gl/V1rZqm">material</a>
+	// 			</li>
+	// 		</ul>
+	// 	`,
+	// 	options: 'material',
+	// 	type: 'string',
+	// 	required: false
+	// },
 	common.get('size', {
 		options: null,
 		type: 'number',
