@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$element', 'typeService',
-	function($scope, $element, type) {
+angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$element', 'typeService', 'usaStatesValue',
+	function($scope, $element, type, usaStatesValue) {
 		/* Builder
 		 **********/
 		const createMarkup = function() {
@@ -40,10 +40,10 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 
 			switch ($scope.a.data) {
 				case 'array of strings':
-					_data = $scope.data[0];
+					_data = getUsaStateNames();
 					break;
 				case 'array of objects':
-					_data = $scope.data[1];
+					_data = usaStatesValue;
 					break;
 			}
 
@@ -82,20 +82,20 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 
 		/* Props
 		 ********/
-		$scope.data = [
-			['batman', 'superman', 'spiderman', 'wolverine'],
-			[
-				{id: 1, name: 'batman'},
-				{id: 2, name: 'superman'},
-				{id: 3, name: 'spiderman'},
-				{id: 4, name: 'wolverine'}
-			]
-		];
+		// console.log(usaStatesValue);
+		const getUsaStateNames = () => {
+			const states = [];
+			for (const state of usaStatesValue)
+				states.push(state.name);
+
+			return states;
+		}
+
 		$scope.dataLabels = [
 			'array of strings',
 			'array of objects'
 		];
-		$scope.labelKeys = ['name', 'id'];
+		$scope.labelKeys = ['name', 'abbreviation'];
 		$scope.validationLabels = [
 			'required'
 		];
@@ -107,7 +107,7 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 		 **********/
 		$scope.reset = () => {
 			$scope.a = {
-				label: 'Superheroes',
+				label: 'US States',
 				data: 'array of strings'
 			};
 		};
