@@ -30,11 +30,6 @@ p.constant('RB_ICON_API',
 	// 	type: 'string',
 	// 	required: false
 	// },
-	common.get('size', {
-		options: null,
-		type: 'number',
-		required: false
-	}),
 	{
 		attribute: 'source',
 		description: `
@@ -43,6 +38,73 @@ p.constant('RB_ICON_API',
 		`,
 		options: 'brands | solid',
 		type: 'string',
+		required: false
+	},
+	{
+		attribute: 'burst',
+		description: `
+			<em class="info-heading">animation</em>
+			Bursts icon.
+		`,
+		options: null,
+		type: `n/a | bool`,
+		required: false
+	},
+	{
+		attribute: 'flip',
+		description: `
+			Flips icon.
+		`,
+		options: 'horizontal | vertical | both',
+		type: 'string',
+		required: false
+	},
+	{
+		attribute: 'pulse',
+		description: `
+			<em class="info-heading">animation</em>
+			Pulsates icon.
+		`,
+		options: null,
+		type: `n/a | bool`,
+		required: false
+	},
+	{
+		attribute: 'rotate',
+		description: `
+			<em class="info-heading">number of degrees</em>
+			Rotates icon.
+
+		`,
+		options: null,
+		type: 'number',
+		required: false
+	},
+	{
+		attribute: 'size',
+		description: `Changes icon size.`,
+		options: null,
+		type: 'number',
+		required: false
+	},
+	{
+		attribute: 'speed',
+		description: `
+			<em class="info-heading">defaults to 2</em>
+			Animation speed. Number of seconds to complete one cycle.
+		`,
+		options: null,
+		type: 'number',
+		required: false
+	},
+	{
+		attribute: 'spin',
+		description: `
+			<em class="info-heading">animation</em>
+			Spins icon.
+		`,
+		options: null,
+		type: `n/a | bool`,
 		required: false
 	},
 	{

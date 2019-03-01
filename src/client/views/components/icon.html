@@ -15,6 +15,11 @@
 		<div class="col">
 			<section class="demo-component" ng-class="a.dark && 'dark'">
 				<div rba-builder="markup"></div>
+				<!-- <rb-button size="small"
+					ng-click="updateIcon()"
+					class="block top-bumper">
+					Update Icon
+				</rb-button> -->
 			</section>
 		</div>
 		<div class="col-6">
@@ -54,6 +59,13 @@
 			label="kind"
 			value="a.kind"
 			data="{{kinds}}">
+			<rb-popover position="top" slot="popover">
+				<h6 class="text-center">set source to</h6>
+				<ul>
+					<li><strong>solid</strong> for spinner</li>
+					<li><strong>brands</strong> for github</li>
+				</ul>
+			</rb-popover>
 		</rb-radios>
 		<!-- <rb-radios
 			toggle
@@ -75,16 +87,18 @@
 			toggle
 			rb-bind
 			horizontal
+			label="flip"
+			value="a.flip"
+			data="{{flip}}">
+		</rb-radios>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
 			label="valign"
 			value="a.valign"
 			data="{{valigns}}">
 		</rb-radios>
-		<rb-input
-			rb-bind
-			label="size"
-			type="number"
-			value="a.size">
-		</rb-input>
 
 		<!-- VALUELESS -->
 		<rb-checkbox
@@ -94,6 +108,48 @@
 			sublabel="dark"
 			ng-if="env.is.dev">
 		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.burst"
+			sublabel="burst">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.pulse"
+			sublabel="pulse">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.spin"
+			sublabel="spin">
+		</rb-checkbox>
+		<br>
+
+		<!-- INPUTS -->
+		<rb-input
+			inline
+			rb-bind
+			type="number"
+			label="rotate"
+			value="a.rotate">
+		</rb-input>
+		<rb-input
+			inline
+			rb-bind
+			type="number"
+			label="size"
+			value="a.size">
+		</rb-input>
+		<rb-input
+			inline
+			rb-bind
+			type="number"
+			label="speed"
+			value="a.speed">
+		</rb-input>
 
 		<!-- BUTTONS -->
 		<section class="buttons">
