@@ -86,13 +86,14 @@
 			value="a.iconPosition"
 			sublabel="{{iconPosition}}">
 		</rb-checkbox>
-		<rb-checkbox
+		<rb-radios
+			toggle
 			rb-bind
 			horizontal
 			label="type"
 			value="a.type"
-			sublabel="{{type}}">
-		</rb-checkbox>
+			data="{{types}}">
+		</rb-radios>
 
 		<!-- VALIDATION -->
 		<rb-checkboxes

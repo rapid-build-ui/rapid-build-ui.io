@@ -12,7 +12,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			attrs += "#{nt}disabled" if $scope.a.disabled
 			attrs += "#{nt}readonly" if $scope.a.readonly
 			attrs += "#{nt}label=\"#{$scope.a.label}\"" if $scope.a.label
-			attrs += "#{nt}type=\"number\"" if $scope.a.type
+			attrs += "#{nt}type=\"#{$scope.a.type}\"" if $scope.a.type
 			attrs += "#{nt}value=\"#{$scope.a.value}\"" if $scope.a.value
 			attrs += "#{nt}subtext=\"#{$scope.a.subtext}\"" if $scope.a.subtext
 			attrs += "#{nt}placeholder=\"#{$scope.a.placeholder}\"" if $scope.a.placeholder
@@ -72,7 +72,7 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 		$scope.iconKinds    = ['heart','user','github']
 		$scope.iconSources  = ['solid','brands']
 		$scope.iconPosition = 'left'
-		$scope.type 		= 'number'
+		$scope.types        = ['email','number','password','url']
 		$scope.validationLabels = [
 			'required'
 			'minLength'

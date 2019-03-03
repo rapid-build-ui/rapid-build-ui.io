@@ -13,7 +13,9 @@ p.constant('RB_INPUT_API',
 	common.get('popover'),
 	common.get('right'),
 	common.get('subtext'),
-	common.get('type'),
+	common.get('type', {
+		options: 'email | number | password | url',
+	}),
 	common.get('value', {
 		description: `Component's value.`,
 		type: 'string'
