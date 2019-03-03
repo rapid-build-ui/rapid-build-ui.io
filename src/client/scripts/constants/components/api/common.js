@@ -42,7 +42,7 @@ options:
 		attribute: 'disabled',
 		description: `Disables component.`,
 		options: null,
-		type: null,
+		type: `n/a | bool`,
 		required: false
 	},
 	{
@@ -50,6 +50,25 @@ options:
 		description: `Displays component horizontally.`,
 		options: null,
 		type: null,
+		required: false
+	},
+	{
+		attribute: 'icon-burst',
+		description: `
+			<em class="info-heading">animation</em>
+			Bursts icon.
+		`,
+		options: null,
+		type: `n/a | bool`,
+		required: false
+	},
+	{
+		attribute: 'icon-flip',
+		description: `
+			Flips icon.
+		`,
+		options: 'horizontal | vertical | both',
+		type: 'string',
 		required: false
 	},
 	{
@@ -72,12 +91,52 @@ options:
 		required: false
 	},
 	{
+		attribute: 'icon-pulse',
+		description: `
+			<em class="info-heading">animation</em>
+			Pulsates icon.
+		`,
+		options: null,
+		type: `n/a | bool`,
+		required: false
+	},
+	{
+		attribute: 'icon-rotate',
+		description: `
+			<em class="info-heading">number of degrees</em>
+			Rotates icon.
+		`,
+		options: null,
+		type: 'number',
+		required: false
+	},
+	{
 		attribute: 'icon-size',
 		description: `Changes icon size.`,
 		options: `
 			<a href="/components/rb-icon">rb-icon size</a>
 		`,
 		type: 'number',
+		required: false
+	},
+	{
+		attribute: 'icon-speed',
+		description: `
+			<em class="info-heading">defaults to 2</em>
+			Animation speed. Number of seconds to complete one cycle.
+		`,
+		options: null,
+		type: 'number',
+		required: false
+	},
+	{
+		attribute: 'icon-spin',
+		description: `
+			<em class="info-heading">animation</em>
+			Spins icon.
+		`,
+		options: null,
+		type: `n/a | bool`,
 		required: false
 	},
 	{

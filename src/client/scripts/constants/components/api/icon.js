@@ -74,7 +74,6 @@ p.constant('RB_ICON_API',
 		description: `
 			<em class="info-heading">number of degrees</em>
 			Rotates icon.
-
 		`,
 		options: null,
 		type: 'number',

@@ -1,7 +1,7 @@
 /*************
  * RB-POPOVER
  *************/
-rb-popover {
+rb-popover:not([id^='built__']) {
 	/* Headings
 	 ***********/
 	h6 {

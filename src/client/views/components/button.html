@@ -74,6 +74,12 @@
 			label="icon-kind"
 			value="a.iconKind"
 			data="{{iconKinds}}">
+			<rb-popover position="top" slot="popover">
+				<h6 class="text-center">set icon-source to</h6>
+				<ul>
+					<li><strong>solid</strong> for sync</li>
+				</ul>
+			</rb-popover>
 		</rb-radios>
 		<rb-radios
 			toggle
@@ -83,19 +89,50 @@
 			value="a.iconSource"
 			data="{{iconSources}}">
 		</rb-radios>
+		<!-- <rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="icon-flip"
+			value="a.iconFlip"
+			data="{{iconFlips}}">
+		</rb-radios> -->
 		<rb-checkbox
 			rb-bind
 			horizontal
+			sublabel="left"
 			label="icon-position"
-			value="a.iconPosition"
-			sublabel="{{iconPosition}}">
+			value="a.iconPosition">
 		</rb-checkbox>
+		<rb-checkboxes
+			rb-bind
+			horizontal
+			label="icon animation"
+			value="a.iconAnimation"
+			data="{{iconAnimation}}">
+		</rb-checkboxes>
+		<!-- <rb-input
+			inline
+			rb-bind
+			type="number"
+			label="icon-rotate"
+			value="a.iconRotate">
+		</rb-input> -->
 		<rb-input
+			inline
 			rb-bind
 			type="number"
 			label="icon-size"
 			value="a.iconSize">
 		</rb-input>
+		<rb-input
+			inline
+			rb-bind
+			type="number"
+			label="icon-speed"
+			value="a.iconSpeed">
+		</rb-input>
+		<br>
 
 		<!-- VALUELESS -->
 		<rb-checkbox
