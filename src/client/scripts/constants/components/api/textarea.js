@@ -15,6 +15,7 @@ p.constant('RB_TEXTAREA_API',
 	common.get('name'),
 	common.get('placeholder'),
 	common.get('popover'),
+	common.get('readonly'),
 	common.get('right'),
 	{
 		attribute: 'rows',

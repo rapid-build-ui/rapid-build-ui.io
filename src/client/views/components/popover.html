@@ -35,24 +35,17 @@
 		<h5 rba-text-curve>Configure</h5>
 
 		<!-- INPUTS -->
-		<rb-textarea
-			rb-bind
-			value="a.content"
-			label="content">
-		</rb-textarea>
 		<rb-input
 			inline
 			rb-bind
 			label="caption"
 			value="a.caption">
 		</rb-input>
-		<rb-input
-			inline
+		<rb-textarea
 			rb-bind
-			type="number"
-			label="icon-size"
-			value="a.iconSize">
-		</rb-input>
+			value="a.content"
+			label="content">
+		</rb-textarea>
 
 		<!-- RADIOS -->
 		<rb-radios
@@ -78,6 +71,13 @@
 			label="icon-kind"
 			value="a.iconKind"
 			data="{{iconKinds}}">
+			<rb-popover position="top" slot="popover">
+				<h6 class="text-center">set source to</h6>
+				<ul>
+					<li><strong>solid</strong> for download</li>
+					<li><strong>brands</strong> for github</li>
+				</ul>
+			</rb-popover>
 		</rb-radios>
 		<rb-radios
 			toggle
@@ -87,6 +87,43 @@
 			value="a.iconSource"
 			data="{{iconSources}}">
 		</rb-radios>
+		<!-- <rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="icon-flip"
+			value="a.iconFlip"
+			data="{{iconFlips}}">
+		</rb-radios> -->
+		<rb-checkboxes
+			rb-bind
+			horizontal
+			label="icon animation"
+			value="a.iconAnimation"
+			data="{{iconAnimation}}">
+		</rb-checkboxes>
+		<!-- <rb-input
+			inline
+			rb-bind
+			type="number"
+			label="icon-rotate"
+			value="a.iconRotate">
+		</rb-input> -->
+		<rb-input
+			inline
+			rb-bind
+			type="number"
+			label="icon-size"
+			value="a.iconSize">
+		</rb-input>
+		<rb-input
+			inline
+			rb-bind
+			type="number"
+			label="icon-speed"
+			value="a.iconSpeed">
+		</rb-input>
+		<br>
 
 		<!-- VALUELESS -->
 		<rb-checkbox

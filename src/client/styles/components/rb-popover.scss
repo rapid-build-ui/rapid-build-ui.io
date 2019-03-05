@@ -1,0 +1,25 @@
+/*************
+ * RB-POPOVER
+ *************/
+rb-popover:not([id^='built__']) {
+	/* Headings
+	 ***********/
+	h6 {
+		margin: 0 0 3px;
+		padding: 0;
+		color: inherit;
+		font-size: remy(13.5);
+		font-weight: 600;
+		text-shadow: none;
+		text-transform: uppercase;
+	}
+	/* Lists
+	 ********/
+	ol, ul {
+		margin: 0;
+		padding-left: 1.2em;
+		li {
+			margin: 0;
+		}
+	}
+}

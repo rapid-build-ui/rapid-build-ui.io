@@ -1,0 +1,10 @@
+/***********
+ * RB-INPUT
+ ***********/
+rb-input:not([id^='built__']) {
+	/* Types
+	 ********/
+	&[type='number'] {
+		width: 89px; // fits 3 in row on iphone+
+	}
+}

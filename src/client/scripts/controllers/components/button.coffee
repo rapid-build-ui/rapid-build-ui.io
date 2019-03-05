@@ -8,11 +8,17 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 
 			attrs += "#{nt}dark" if $scope.a.dark # TODO
 			attrs += "#{nt}disabled" if $scope.a.disabled
+			attrs += "#{nt}icon-spin" if $scope.a.iconAnimation and $scope.a.iconAnimation.includes 'spin'
+			attrs += "#{nt}icon-burst" if $scope.a.iconAnimation and $scope.a.iconAnimation.includes 'burst'
+			attrs += "#{nt}icon-pulse" if $scope.a.iconAnimation and $scope.a.iconAnimation.includes 'pulse'
 			attrs += "#{nt}size=\"#{$scope.a.size}\"" if $scope.a.size
 			attrs += "#{nt}type=\"#{$scope.a.type}\"" if $scope.a.type
 			attrs += "#{nt}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
+			attrs += "#{nt}icon-flip=\"#{$scope.a.iconFlip}\"" if $scope.a.iconFlip
 			attrs += "#{nt}icon-size=\"#{$scope.a.iconSize}\"" if $scope.a.iconSize
 			attrs += "#{nt}icon-kind=\"#{$scope.a.iconKind}\"" if $scope.a.iconKind
+			attrs += "#{nt}icon-speed=\"#{$scope.a.iconSpeed}\"" if $scope.a.iconSpeed
+			attrs += "#{nt}icon-rotate=\"#{$scope.a.iconRotate}\"" if $scope.a.iconRotate
 			attrs += "#{nt}icon-source=\"#{$scope.a.iconSource}\"" if $scope.a.iconSource
 			attrs += "#{nt}icon-position=\"left\"" if $scope.a.iconPosition
 			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
@@ -21,12 +27,13 @@ angular.module('rapid-build').controller 'rbButtonController', ['$scope', '$elem
 
 		# Props
 		# =====
-		$scope.iconKinds    = ['heart','user','github']
-		$scope.iconSources  = ['solid','brands']
-		$scope.kinds        = ['success','danger','warning','info','secondary','text']
-		$scope.sizes        = ['small','big']
-		$scope.types        = ['reset','submit']
-		$scope.iconPosition = 'left'
+		$scope.iconFlips     = ['horizontal','vertical','both']
+		$scope.iconKinds     = ['save','sync','trash-alt']
+		$scope.iconSources   = ['solid','brands']
+		$scope.iconAnimation = ['burst','pulse','spin']
+		$scope.kinds         = ['success','danger','warning','info','secondary','text']
+		$scope.sizes         = ['small','big']
+		$scope.types         = ['reset','submit']
 
 		# Methods
 		# =======

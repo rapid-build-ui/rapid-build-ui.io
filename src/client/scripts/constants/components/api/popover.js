@@ -30,13 +30,19 @@ p.constant('RB_POPOVER_API',
 	common.get('kind', {
 		options: 'info | danger | success | warning'
 	}),
+	common.get('icon-burst'),
+	common.get('icon-flip'),
 	common.get('icon-kind', {
 		description: `
 			<em class="info-heading">defaults to info-circle</em>
 			Popover trigger.
 		`
 	}),
+	common.get('icon-pulse'),
+	common.get('icon-rotate'),
 	common.get('icon-size'),
+	common.get('icon-speed'),
+	common.get('icon-spin'),
 	common.get('icon-source'),
 	common.get('icon-valign'),
 	{
