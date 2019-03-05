@@ -9,6 +9,14 @@
 	<meta name="Author" content="The Rapid Build UI Team!">
 	<link rel="icon" type="image/png" sizes="16x16" href="/images/logos/rapid-build-ui-icon-16x16.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/images/logos/rapid-build-ui-icon-32x32.png">
+	<style>
+		rb-icon:not(:defined) {
+			display: inline-block;
+			height: 100vh;
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out;
+		}
+	</style>
 </head>
 <body>
 	<h1>
@@ -48,6 +56,13 @@
 			label="Superhero"
 			validation='["required"]'>
 		</rb-input>
+		<rb-dropdown
+			name="strongest"
+			label="Strongest"
+			placeholder="Select"
+			validation='["required"]'
+			data='["batman","superman","spiderman"]'>
+		</rb-dropdown>
 		<rb-checkbox
 			name="awesome"
 			label="Superman"
