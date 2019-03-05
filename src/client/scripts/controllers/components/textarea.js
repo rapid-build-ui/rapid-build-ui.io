@@ -10,6 +10,7 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 			if ($scope.a.right)       attrs += `${nt}right`;
 			if ($scope.a.inline)      attrs += `${nt}inline`;
 			if ($scope.a.disabled)    attrs += `${nt}disabled`;
+			if ($scope.a.readonly)    attrs += `${nt}readonly`;
 			if ($scope.a.autoHeight)  attrs += `${nt}auto-height`;
 			if ($scope.a.rows)        attrs += `${nt}rows="${$scope.a.rows}"`;
 			if ($scope.a.label)       attrs += `${nt}label="${$scope.a.label}"`;
