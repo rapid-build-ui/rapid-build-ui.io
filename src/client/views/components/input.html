@@ -67,9 +67,26 @@
 			toggle
 			rb-bind
 			horizontal
+			label="type"
+			value="a.type"
+			data="{{types}}">
+		</rb-radios>
+
+		<!-- ICON OPTIONS -->
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
 			label="icon-kind"
 			value="a.iconKind"
 			data="{{iconKinds}}">
+			<rb-popover position="top" slot="popover">
+				<h6 class="text-center">set source to</h6>
+				<ul>
+					<li><strong>solid</strong> for spinner</li>
+					<li><strong>brands</strong> for github</li>
+				</ul>
+			</rb-popover>
 		</rb-radios>
 		<rb-radios
 			toggle
@@ -79,21 +96,42 @@
 			value="a.iconSource"
 			data="{{iconSources}}">
 		</rb-radios>
-		<rb-checkbox
-			rb-bind
-			horizontal
-			label="icon-position"
-			value="a.iconPosition"
-			sublabel="{{iconPosition}}">
-		</rb-checkbox>
-		<rb-radios
+		<!-- <rb-radios
 			toggle
 			rb-bind
 			horizontal
-			label="type"
-			value="a.type"
-			data="{{types}}">
-		</rb-radios>
+			label="icon-flip"
+			value="a.iconFlip"
+			data="{{iconFlips}}">
+		</rb-radios> -->
+		<rb-checkbox
+			rb-bind
+			horizontal
+			sublabel="left"
+			label="icon-position"
+			value="a.iconPosition">
+		</rb-checkbox>
+		<rb-checkboxes
+			rb-bind
+			horizontal
+			label="icon animation"
+			value="a.iconAnimation"
+			data="{{iconAnimation}}">
+		</rb-checkboxes>
+		<!-- <rb-input
+			inline
+			rb-bind
+			type="number"
+			label="icon-rotate"
+			value="a.iconRotate">
+		</rb-input> -->
+		<!-- <rb-input
+			inline
+			rb-bind
+			type="number"
+			label="icon-speed"
+			value="a.iconSpeed">
+		</rb-input> -->
 
 		<!-- VALIDATION -->
 		<rb-checkboxes
