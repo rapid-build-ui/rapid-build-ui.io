@@ -220,6 +220,16 @@ options:
 		required: false
 	},
 	{
+		attribute: 'readonly',
+		description: `
+			Makes component's value
+			readable but not editable.
+		`,
+		options: null,
+		type: `n/a | bool`,
+		required: false
+	},
+	{
 		attribute: 'right',
 		description: `Align's component right.`,
 		options: null,

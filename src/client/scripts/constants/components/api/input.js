@@ -17,6 +17,7 @@ p.constant('RB_INPUT_API',
 	common.get('name'),
 	common.get('placeholder'),
 	common.get('popover'),
+	common.get('readonly'),
 	common.get('right'),
 	common.get('subtext'),
 	common.get('type', {
