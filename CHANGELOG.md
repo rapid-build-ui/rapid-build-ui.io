@@ -1,3 +1,24 @@
+## [0.0.17](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.16...v0.0.17) (2019-03-05)
+
+
+### Features
+
+* **bump:** deps all rb components ([1031c9b](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/1031c9b))
+* **rb-icon:** add and document icon animation ([edd3503](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/edd3503))
+* **rb-button:** add and document icon animation ([64f58d7](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/64f58d7))
+* **rb-input:** add and document icon animation ([20d0182](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/20d0182))
+* **rb-input:** add type options: email, password and url ([7107684](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/7107684))
+* **rb-input:** document readonly option ([bb36d6b](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/bb36d6b))
+* **rb-popover:** add and document icon animation ([d0c4e20](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/d0c4e20))
+* **rb-textarea:** add and document readonly option ([3afbddc](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/3afbddc))
+
+
+### Performance Improvements
+
+* **rb-icon:** v0.0.13 bump includes a [major performance boost](https://github.com/rapid-build-ui/rb-icon/commit/fabf049) 🚀
+
+
+
 ## [0.0.16](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.15...v0.0.16) (2019-02-25)
 
 
