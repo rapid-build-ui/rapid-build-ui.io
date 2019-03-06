@@ -3,7 +3,12 @@
 	dividers
 	responsive
 	active="path">
+
 	<h3>Forms</h3>
 	<a href="/examples/crud">crud</a>
 	<a href="/examples/form-validation">validation</a>
+
+	<h3 ng-if="env.is.dev">CSS Variables</h3>
+	<a href="/examples/themes" ng-if="env.is.dev">themes</a>
+
 </rb-nav>
