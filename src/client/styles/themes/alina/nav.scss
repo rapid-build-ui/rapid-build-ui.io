@@ -2,9 +2,140 @@
  * ALINA THEME: RB-NAV (TODO)
  **********************/
 rb-nav {
-	// Font Family
-	// --rb-nav-default-heading-font-family: cursive;
+	/* COMMON (to light and dark themes)
+	 *********/
+	// --rb-nav-default-heading-font-family: times;
 	// --rb-nav-primary-heading-font-family: cursive;
-	// --rb-nav-default-link-font-family:    cursive;
-	// --rb-nav-primary-link-font-family:    cursive;
+	// --rb-nav-default-link-font-family: times;
+	// --rb-nav-primary-link-font-family: cursive;
+	--rb-nav-default-heading-font-size: 14px;
+	--rb-nav-default-heading-font-weight: 700;
+	--rb-nav-default-heading-letter-spacing: .1px;
+	--rb-nav-default-heading-text-transform: uppercase;
+	--rb-nav-default-link-font-size: 17px;
+	--rb-nav-default-link-font-weight: 400;
+	--rb-nav-default-link-letter-spacing: normal;
+	--rb-nav-default-link-text-transform: lowercase;
+	// --rb-nav-primary-heading-font-size: 13px;
+	// --rb-nav-primary-heading-font-weight: 700;
+	// --rb-nav-primary-heading-letter-spacing: .1px;
+	// --rb-nav-primary-heading-text-transform: uppercase;
+	// --rb-nav-primary-link-font-size: 13px;
+	// --rb-nav-primary-link-font-weight: 600;
+	// --rb-nav-primary-link-letter-spacing: .1px;
+	// --rb-nav-primary-link-text-transform: uppercase;
+	// --rb-nav-primary-horizontal-link-border-radius: 10px;
+	// --rb-nav-primary-vertical-dividers-link-border-radius: 6px;
+	--rb-nav-default-responsive-nav-border-radius: 10px;
+	--rb-nav-default-responsive-trigger-border-radius: 10px;
+	// --rb-nav-primary-responsive-nav-border-radius: 5px;
+	--rb-nav-primary-responsive-trigger-border-radius: 10px;
+
+	/* LIGHT THEME
+	 **************/
+	--rb-nav-light-default-vertical-dividers-heading-bg: #ffd9b3;
+	--rb-nav-light-default-vertical-dividers-link-bg: linen;
+	--rb-nav-light-default-vertical-dividers-link-bg-hover: #f9f9f9;
+	--rb-nav-light-default-vertical-dividers-link-bg-click: #fff2e6;
+	--rb-nav-light-default-vertical-dividers-link-bg-active: #ffe6cc;
+	--rb-nav-light-primary-horizontal-no-dividers-link-bg: #8cba49;
+	--rb-nav-light-primary-horizontal-no-dividers-link-bg-hover: #b3d483;
+	--rb-nav-light-primary-horizontal-no-dividers-link-bg-click: #8cba49;
+	--rb-nav-light-primary-horizontal-no-dividers-link-bg-active: plum;
+	// --rb-nav-light-primary-horizontal-dividers-link-bg: #fff;
+	// --rb-nav-light-primary-horizontal-dividers-link-bg-hover: #f9f9f9;
+	// --rb-nav-light-primary-horizontal-dividers-link-bg-click: #f9f9f9;
+	// --rb-nav-light-primary-horizontal-dividers-link-bg-active: #f9f9f9;
+	--rb-nav-light-primary-vertical-dividers-link-bg: #8cba49;
+	--rb-nav-light-primary-vertical-dividers-link-bg-hover: #b3d483;
+	--rb-nav-light-primary-vertical-dividers-link-bg-click: #8cba49;
+	--rb-nav-light-primary-vertical-dividers-link-bg-active: plum;
+
+	// --rb-nav-light-primary-responsive-dividers-heading-bg: #f5f5f5;
+	--rb-nav-light-default-responsive-nav-bg: #f0f0f5;
+	--rb-nav-light-default-responsive-trigger-bg: #ffd9b3; //beware of brightness filter!!!
+	--rb-nav-light-default-responsive-trigger-bars-bg: #000;
+	--rb-nav-light-default-responsive-trigger-bars-bg-hover: #4682b4;
+	--rb-nav-light-primary-responsive-nav-bg: #8cba49;
+	--rb-nav-light-primary-responsive-trigger-bg: linen;
+	--rb-nav-light-primary-responsive-trigger-bars-bg: #000;
+	// --rb-nav-light-primary-responsive-trigger-bars-bg-hover: #4682b4;
+	--rb-nav-light-default-vertical-dividers-nav-border-top: 1px solid #fff;
+	--rb-nav-light-default-vertical-dividers-nav-border-bottom: 1px solid #fff;
+	--rb-nav-light-default-horizontal-dividers-link-border-color: red;
+	--rb-nav-light-default-vertical-dividers-heading-border-bottom: 1px solid #fff;
+	--rb-nav-light-default-vertical-dividers-link-border-bottom: 1px solid #fff;
+	--rb-nav-light-primary-horizontal-no-dividers-link-border: 1px solid pink;
+	//to do add border states!!!
+	//--rb-nav-light-primary-horizontal-dividers-link-border: 1px solid #dcdcdc;
+	--rb-nav-light-primary-vertical-dividers-link-border: 1px solid pink;
+	--rb-nav-light-default-responsive-nav-border: 1px solid grey;
+	--rb-nav-light-default-responsive-trigger-border: 1px solid grey;
+	// --rb-nav-light-primary-responsive-nav-border: 1px solid #bbb;
+	--rb-nav-light-primary-responsive-trigger-border: 1px solid grey;
+	--rb-nav-light-default-heading-color: #5d6b78;
+	--rb-nav-light-default-heading-text-shadow: #e6f7ff;
+	--rb-nav-light-default-link-color: steelblue;
+	--rb-nav-light-default-link-color-hover: #0099e6;
+	--rb-nav-light-default-link-color-click: #006699;
+	--rb-nav-light-default-link-color-active: #004466;
+	// --rb-nav-light-primary-heading-color: #5d6b78;
+	--rb-nav-light-primary-heading-text-shadow: 1px 1px #666;
+	--rb-nav-light-primary-link-color: #fff;
+	--rb-nav-light-primary-link-color-hover: #fff;
+	--rb-nav-light-primary-link-color-click: #fff;
+	--rb-nav-light-primary-link-color-active: #fff;
+
+	/* DARK THEME
+	 *************/
+	// --rb-nav-dark-default-vertical-dividers-heading-bg: #575757;
+	// --rb-nav-dark-default-vertical-dividers-link-bg: #323232;
+	// --rb-nav-dark-default-vertical-dividers-link-bg-hover: #292929;
+	// --rb-nav-dark-default-vertical-dividers-link-bg-click: #292929;
+	// --rb-nav-dark-default-vertical-dividers-link-bg-active: #292929;
+	// --rb-nav-dark-primary-horizontal-no-dividers-link-bg: transparent;
+	// --rb-nav-dark-primary-horizontal-no-dividers-link-bg-hover: #292929;
+	// --rb-nav-dark-primary-horizontal-no-dividers-link-bg-click: #292929;
+	// --rb-nav-dark-primary-horizontal-no-dividers-link-bg-active: #292929;
+	// --rb-nav-dark-primary-horizontal-dividers-link-bg: #323232;
+	// --rb-nav-dark-primary-horizontal-dividers-link-bg-hover: #292929;
+	// --rb-nav-dark-primary-horizontal-dividers-link-bg-click: #292929;
+	// --rb-nav-dark-primary-horizontal-dividers-link-bg-active: #292929;
+	// --rb-nav-dark-primary-vertical-dividers-link-bg: #323232;
+	// --rb-nav-dark-primary-vertical-dividers-link-bg-hover: #292929;
+	// --rb-nav-dark-primary-vertical-dividers-link-bg-click: #292929;
+	// --rb-nav-dark-primary-vertical-dividers-link-bg-active: #292929;
+	// --rb-nav-dark-primary-responsive-dividers-heading-bg: #575757;
+	// --rb-nav-dark-default-responsive-nav-bg: #323232;
+	// --rb-nav-dark-default-responsive-trigger-bg: #323232;
+	// --rb-nav-dark-default-responsive-trigger-bars-bg: gray;
+	// --rb-nav-dark-default-responsive-trigger-bars-bg-hover: #bbb;
+	// --rb-nav-dark-primary-responsive-nav-bg: #323232;
+	// --rb-nav-dark-primary-responsive-trigger-bg: #323232;
+	// --rb-nav-dark-primary-responsive-trigger-bars-bg: gray;
+	// --rb-nav-dark-primary-responsive-trigger-bars-bg-hover: #bbb;
+	// --rb-nav-dark-default-vertical-dividers-nav-border-top: 1px solid #696969;
+	// --rb-nav-dark-default-vertical-dividers-nav-border-bottom: 1px solid #696969;
+	// --rb-nav-dark-default-horizontal-dividers-link-border-color: #696969;
+	// --rb-nav-dark-default-vertical-dividers-heading-border-bottom: 1px solid #696969;
+	// --rb-nav-dark-default-vertical-dividers-link-border-bottom: 1px solid #696969;
+	// --rb-nav-dark-primary-horizontal-no-dividers-link-border: 1px solid #696969;
+	// --rb-nav-dark-primary-horizontal-dividers-link-border: 1px solid #696969;
+	// --rb-nav-dark-primary-vertical-dividers-link-border: 1px solid #696969;
+	// --rb-nav-dark-default-responsive-nav-border: 1px solid #696969;
+	// --rb-nav-dark-default-responsive-trigger-border: 1px solid #696969;
+	// --rb-nav-dark-primary-responsive-nav-border: 1px solid #696969;
+	// --rb-nav-dark-primary-responsive-trigger-border: 1px solid #696969;
+	// --rb-nav-dark-default-heading-color: #bbb;
+	// --rb-nav-dark-default-heading-text-shadow: #323232;
+	// --rb-nav-dark-default-link-color: gray;
+	// --rb-nav-dark-default-link-color-hover: #bbb;
+	// --rb-nav-dark-default-link-color-click: #c1c1c1;
+	// --rb-nav-dark-default-link-color-active: #d0d0d0;
+	// --rb-nav-dark-primary-heading-color: #bbb;
+	// --rb-nav-dark-primary-heading-text-shadow: #323232;
+	// --rb-nav-dark-primary-link-color: gray;
+	// --rb-nav-dark-primary-link-color-hover: #bbb;
+	// --rb-nav-dark-primary-link-color-click: #c1c1c1;
+	// --rb-nav-dark-primary-link-color-active: #d0d0d0;
 }
