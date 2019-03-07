@@ -96,6 +96,7 @@ common:
 					/\s<rba-copy|<\/rba-copy>\s/gi
 					/\s<rba-install|<\/rba-install>\s/gi
 					/<textarea(\s*?.*?)*?\/textarea>/gi # for codemirror
+					/disabled|hidden|multiple|nowrap|open|readonly|required|reversed|selected|sortable/gi # boolean attrs
 				]
 
 	order:
