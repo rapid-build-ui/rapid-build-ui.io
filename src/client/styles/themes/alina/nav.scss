@@ -65,7 +65,10 @@ rb-nav {
 	--rb-nav-light-default-horizontal-dividers-link-border-color: red;
 	--rb-nav-light-default-vertical-dividers-heading-border-bottom: 1px solid #fff;
 	--rb-nav-light-default-vertical-dividers-link-border-bottom: 1px solid #fff;
-	--rb-nav-light-primary-horizontal-no-dividers-link-border: 1px solid pink;
+	--rb-nav-light-primary-horizontal-no-dividers-link-border: 1px solid #b3d483;
+	--rb-nav-light-primary-horizontal-no-dividers-link-border-hover: 1px solid #b3d483;
+	--rb-nav-light-primary-horizontal-no-dividers-link-border-click: 1px solid #b3d483;
+	--rb-nav-light-primary-horizontal-no-dividers-link-border-active: 1px solid pink;
 	//to do add border states!!!
 	//--rb-nav-light-primary-horizontal-dividers-link-border: 1px solid #dcdcdc;
 	--rb-nav-light-primary-vertical-dividers-link-border: 1px solid pink;
