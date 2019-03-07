@@ -14,7 +14,8 @@ p.constant('RB_DROPDOWN_API',
 			Placeholder text.<br>
 			Displays in the input and as the
 			first option in the dropdown list.
-		`
+		`,
+		type: `n/a | string`
 	}),
 	common.get('popover'),
 	common.get('right'),
