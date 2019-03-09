@@ -1,5 +1,6 @@
-angular.module('rapid-build').controller('formValidationController', ['$scope', $scope => {
+angular.module('rapid-build').controller('formValidationController', ['$scope', '$element',
+	($scope, $element) => {
 
-	// console.log('Form Validation Example');
+		// const rbInput = $element[0].querySelector('rb-input');
 
 }]);
