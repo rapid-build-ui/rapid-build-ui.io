@@ -39,34 +39,18 @@
 	<form name="demoForm">
 		<h5 rba-text-curve>Configure</h5>
 
-		<rb-input
-			toggle
+		<!-- RADIOS -->
+		<rb-dropdown
 			rb-bind
-			value="a.kind"
-			placeholder="any font awesome icon">
+			label="kind"
+			id="iconKinds"
+			value="a.kind">
 			<rb-popover position="top" slot="popover">
 				Name of any free
 				<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
 				Font awesome icon style must match icon source.
 			</rb-popover>
-		</rb-input>
-
-		<!-- RADIOS -->
-		<rb-radios
-			toggle
-			rb-bind
-			horizontal
-			label="kind"
-			value="a.kind"
-			data="{{kinds}}">
-			<rb-popover position="top" slot="popover">
-				<h6 class="text-center">set source to</h6>
-				<ul>
-					<li><strong>solid</strong> for spinner</li>
-					<li><strong>brands</strong> for github</li>
-				</ul>
-			</rb-popover>
-		</rb-radios>
+		</rb-dropdown>
 		<!-- <rb-radios
 			toggle
 			rb-bind
