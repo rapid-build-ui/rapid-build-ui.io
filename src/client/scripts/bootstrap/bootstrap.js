@@ -3,6 +3,6 @@
  ************************/
 angular.element(() => {
 	angular.bootstrap(document, ['rapid-build'], {
-		strictDi: false
+		strictDi: true
 	});
 });

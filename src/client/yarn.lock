@@ -120,11 +120,6 @@
     "@rapid-build-ui/rb-base" "^0.0.8"
     "@rapid-build-ui/rb-popover" "^0.0.15"
 
-angular-ui-codemirror@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/angular-ui-codemirror/-/angular-ui-codemirror-0.3.0.tgz#e4286fc50f393f2a6e697c1bf3170424e12cbb60"
-  integrity sha1-5ChvxQ85PypuaXwb8xcEJOEsu2A=
-
 clipboard@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.4.tgz#836dafd66cf0fea5d71ce5d5b0bf6e958009112d"

@@ -9,7 +9,7 @@ common:
 
 	angular:
 		moduleName: 'rapid-build'
-		modules: ['ngclipboard', 'ui.codemirror']
+		modules: ['ngclipboard']
 		templateCache:
 			dev: true
 			useAbsolutePaths: true
@@ -54,7 +54,6 @@ common:
 					'node_modules/codemirror/mode/shell/shell.js'
 					'node_modules/codemirror/mode/htmlmixed/htmlmixed.js'
 					'node_modules/codemirror/addon/display/placeholder.js'
-					# 'node_modules/angular-ui-codemirror/src/ui-codemirror.js' # causes js error
 				]
 
 	exclude:
@@ -102,7 +101,6 @@ common:
 		scripts:
 			first: [
 				'node_modules/clipboard/dist/clipboard.min.js'
-				'node_modules/ngclipboard/dist/ngclipboard.min.js'
 				'node_modules/codemirror/lib/codemirror.js'
 				'node_modules/codemirror/mode/xml/xml.js'
 				'node_modules/codemirror/mode/css/css.js'
@@ -110,7 +108,7 @@ common:
 				'node_modules/codemirror/mode/shell/shell.js'
 				'node_modules/codemirror/mode/htmlmixed/htmlmixed.js'
 				'node_modules/codemirror/addon/display/placeholder.js'
-				'node_modules/angular-ui-codemirror/src/ui-codemirror.js'
+				'node_modules/ngclipboard/dist/ngclipboard.min.js'
 			]
 			last: [
 				'scripts/bootstrap/bootstrap.js'
