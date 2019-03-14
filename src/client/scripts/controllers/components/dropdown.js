@@ -15,6 +15,7 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 			if ($scope.a.value)       attrs += `${nt}value='${$scope.a.value}'`;
 			if ($scope.a.subtext)     attrs += `${nt}subtext=\"${$scope.a.subtext}\"`;
 			if ($scope.a.labelKey)    attrs += `${nt}label-key='${$scope.a.labelKey}'`;
+			if ($scope.a.valueKey)    attrs += `${nt}value-key='${$scope.a.valueKey}'`;
 			if ($scope.a.data)        attrs += `${nt}data='${buldDataMarkup()}'`;
 			if ($scope.a.validation && $scope.a.validation.length) attrs += `${nt}validation='${buldValidationMarkup()}'`;
 			if ($scope.a.popover) content += getPopoverSlot();
@@ -114,7 +115,12 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 		$scope.reset = () => {
 			$scope.a = {
 				label: 'US States',
-				data: 'array of strings'
+				// placeholder: 'select a state',
+				// labelKey: 'name',
+				// valueKey: 'abbreviation',
+				// data: 'array of objects'
+				data: 'array of strings',
+				// value: 'District Of Columbia'
 			};
 		};
 
