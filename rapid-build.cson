@@ -10,7 +10,6 @@ common:
 	angular:
 		moduleName: 'rapid-build'
 		modules: ['ngclipboard', 'ui.codemirror']
-		bootstrap: true
 		templateCache:
 			dev: true
 			useAbsolutePaths: true
@@ -112,6 +111,9 @@ common:
 				'node_modules/codemirror/mode/htmlmixed/htmlmixed.js'
 				'node_modules/codemirror/addon/display/placeholder.js'
 				'node_modules/angular-ui-codemirror/src/ui-codemirror.js'
+			]
+			last: [
+				'scripts/bootstrap/bootstrap.js'
 			]
 		styles:
 			first: [
