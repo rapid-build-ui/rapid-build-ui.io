@@ -7,27 +7,27 @@ rb-alert {
 	// --rb-alert-border-style:  solid; // comment out until prod build is fixed
 	--rb-alert-border-width:  1px;
 
-	// BG Color
-	--rb-alert-default-bg:   #f0ebfa;
-	--rb-alert-danger-bg:    #ffb3b3;
-	--rb-alert-info-bg:      #cce6ff;
-	--rb-alert-secondary-bg: #e0e0eb;
-	--rb-alert-success-bg:   #e6fff7;
-	--rb-alert-warning-bg:   #ffdacc;
+	// BG
+	--rb-alert-default-bg: #f0ebfa;
+	--rb-alert-danger-bg:  #ffb3b3;
+	--rb-alert-info-bg:    #cce6ff;
+	--rb-alert-neutral-bg: #e0e0eb;
+	--rb-alert-success-bg: #e6fff7;
+	--rb-alert-warning-bg: #ffdacc;
 
 	// Border Color
-	--rb-alert-default-border-color:   #e0d6f5;
-	--rb-alert-danger-border-color:    #ff9999;
-	--rb-alert-info-border-color:      #b3d9ff;
-	--rb-alert-secondary-border-color: #d1d1e0;
-	--rb-alert-success-border-color:   #b3ffef;
-	--rb-alert-warning-border-color:   #ffc8b3;
+	--rb-alert-default-border-color: #e0d6f5;
+	--rb-alert-danger-border-color:  #ff9999;
+	--rb-alert-info-border-color:    #b3d9ff;
+	--rb-alert-neutral-border-color: #d1d1e0;
+	--rb-alert-success-border-color: #b3ffef;
+	--rb-alert-warning-border-color: #ffc8b3;
 
-	// Color
-	--rb-alert-default-text-color:   #291452;
-	--rb-alert-danger-text-color:    #800000;
-	--rb-alert-info-text-color:      #00264d;
-	--rb-alert-secondary-text-color: #003300;
-	--rb-alert-success-text-color:   #006644;
-	--rb-alert-warning-text-color:   #661b00;
+	// Text Color
+	--rb-alert-default-text-color: #291452;
+	--rb-alert-danger-text-color:  #800000;
+	--rb-alert-info-text-color:    #00264d;
+	--rb-alert-neutral-text-color: #003300;
+	--rb-alert-success-text-color: #006644;
+	--rb-alert-warning-text-color: #661b00;
 }

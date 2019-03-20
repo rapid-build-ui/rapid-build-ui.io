@@ -5,24 +5,35 @@ rb-popover {
 	// Common
 	--rb-popover-border-radius: 5px;
 
-	// Popover BG Color
+	// Caption BG
 	--rb-popover-default-caption-bg: #f0ebfa;
 	--rb-popover-danger-caption-bg:  #f7bbbb;
 	--rb-popover-info-caption-bg:    #b3ecff;
+	--rb-popover-neutral-caption-bg: #eeeef4;
 	--rb-popover-success-caption-bg: #adebad;
 	--rb-popover-warning-caption-bg: #ffdacc;
 
-	// Popover Color
-	--rb-popover-default-text-color: #291452;
-	--rb-popover-danger-text-color:  #5b0b0b;
-	--rb-popover-info-text-color:    #00394d;
-	--rb-popover-success-text-color: #0f3e0f;
-	--rb-popover-warning-text-color: #661d00;
+	// Caption Text Color
+	--rb-popover-default-caption-color: #291452;
+	--rb-popover-danger-caption-color:  #5b0b0b;
+	--rb-popover-info-caption-color:    #00394d;
+	--rb-popover-neutral-caption-color: #727282;
+	--rb-popover-success-caption-color: #0f3e0f;
+	--rb-popover-warning-caption-color: #661d00;
 
 	// Trigger Color
-	--rb-popover-default-trigger-color: #c2adeb;
-	--rb-popover-danger-trigger-color:  #ec5f5f;
-	--rb-popover-info-trigger-color:    #66d9ff;
-	--rb-popover-success-trigger-color: #98e698;
+	--rb-popover-default-trigger-color: #a385e0; // c2adeb
+	--rb-popover-danger-trigger-color:  #ff66b8; // ec5f5f
+	--rb-popover-info-trigger-color:    #00bfff; // 66d9ff
+	--rb-popover-neutral-trigger-color: #b3b3cc;
+	--rb-popover-success-trigger-color: #53c687; // 98e698
 	--rb-popover-warning-trigger-color: #ff9166;
+
+	// Trigger Color Hover
+	--rb-popover-default-trigger-color-hover: #d1c2f0;
+	--rb-popover-danger-trigger-color-hover:  #ffb3db;
+	--rb-popover-info-trigger-color-hover:    #80dfff;
+	--rb-popover-neutral-trigger-color-hover: #d5d5e3;
+	--rb-popover-success-trigger-color-hover: #8cd9af;
+	--rb-popover-warning-trigger-color-hover: #ffb99d;
 }

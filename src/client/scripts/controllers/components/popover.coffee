@@ -9,11 +9,11 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 			attrs += "#{nt}pin" if $scope.a.pin
 			attrs += "#{nt}dark" if $scope.a.dark # TODO
 			attrs += "#{nt}hover" if $scope.a.hover
-			attrs += "#{nt}unstyled" if $scope.a.unstyled
 			attrs += "#{nt}icon-spin" if $scope.a.iconAnimation and $scope.a.iconAnimation.includes 'spin'
 			attrs += "#{nt}icon-burst" if $scope.a.iconAnimation and $scope.a.iconAnimation.includes 'burst'
 			attrs += "#{nt}icon-pulse" if $scope.a.iconAnimation and $scope.a.iconAnimation.includes 'pulse'
 			attrs += "#{nt}fit-content" if $scope.a.fitContent
+			attrs += "#{nt}inherit-color" if $scope.a.inheritColor
 			attrs += "#{nt}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{nt}position=\"#{$scope.a.position}\"" if $scope.a.position
 			attrs += "#{nt}show-popover=\"#{$scope.a.showPopover}\"" if $scope.a.showPopover
@@ -30,7 +30,7 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 
 		# Props
 		# =====
-		$scope.kinds         = ['success','danger','warning','info']
+		$scope.kinds         = ['danger','info','neutral','success','warning']
 		$scope.positions     = ['top','bottom','left']
 		$scope.iconFlips     = ['horizontal','vertical','both']
 		$scope.iconKinds     = ['question-circle','download','github']

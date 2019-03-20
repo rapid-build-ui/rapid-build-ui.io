@@ -6,9 +6,9 @@ p.constant('RB_ALERT_API',
 	common.get('kind'),
 	{
 		attribute: 'removable',
-		description: 'Adds removable option to display.',
+		description: 'Adds removable icon to display.',
 		options: null,
-		type: null,
+		type: `n/a | bool`,
 		required: false
 	}
 ]

@@ -15,7 +15,7 @@
 		<div class="col-3_md-4 nowrap">
 			<h5>
 				<rb-button
-					kind="text"
+					text
 					icon-size=".85"
 					icon-source="solid"
 					icon-kind="plus-circle"
@@ -65,14 +65,12 @@
 					<rb-button
 						icon-size=".96"
 						icon-kind="save"
-						icon-position="left"
 						type="submit">
 						Save
 					</rb-button>
 					<rb-button
 						kind="danger"
 						icon-size=".95"
-						icon-position="left"
 						icon-kind="trash-alt"
 						ng-if="!!superhero.id"
 						ng-click="crud.delete()">

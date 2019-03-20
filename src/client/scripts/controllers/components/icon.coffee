@@ -25,7 +25,6 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 		# Props
 		# =====
 		# $scope.libraries = ['material']
-		# $scope.kinds     = ['heart','spinner','github']
 		$scope.sources   = ['solid','brands']
 		$scope.flip      = ['horizontal', 'vertical', 'both']
 		$scope.valigns   = ['bottom','middle','top']

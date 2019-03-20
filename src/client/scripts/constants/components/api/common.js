@@ -81,6 +81,15 @@ options:
 		required: false
 	},
 	{
+		attribute: 'icon-left',
+		description: `
+			Position icon left.
+		`,
+		options: null,
+		type: null,
+		required: false
+	},
+	{
 		attribute: 'icon-position',
 		description: `
 			<em class="info-heading">defaults to right</em>
@@ -98,6 +107,15 @@ options:
 		`,
 		options: null,
 		type: `n/a | bool`,
+		required: false
+	},
+	{
+		attribute: 'icon-right',
+		description: `
+			Position icon right.
+		`,
+		options: null,
+		type: null,
 		required: false
 	},
 	{
@@ -170,7 +188,7 @@ options:
 	{
 		attribute: 'kind',
 		description: `Varies look of display.`,
-		options: `danger | info | success | secondary | warning`,
+		options: `danger | info | neutral | success | warning`,
 		type: 'string',
 		required: false
 	},

@@ -147,6 +147,12 @@
 		<rb-checkbox
 			inline
 			rb-bind
+			value="a.inheritColor"
+			sublabel="inherit-color">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
 			value="a.pin"
 			sublabel="pin">
 		</rb-checkbox>
@@ -156,20 +162,13 @@
 			value="a.showPopover"
 			sublabel="show-popover">
 		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.unstyled"
-			sublabel="unstyled">
-		</rb-checkbox>
 
 		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button
 				data-reset
 				icon-kind="sync"
-				icon-source="solid"
-				icon-position="left">
+				icon-source="solid">
 				Reset
 			</rb-button>
 		</section>

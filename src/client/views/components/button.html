@@ -15,6 +15,14 @@
 		<div class="col">
 			<section class="demo-component" ng-class="a.dark && 'dark'">
 				<div rba-builder="markup"></div>
+				<!-- <section class="buttons no-divider">
+					<rb-button text>Button</rb-button>
+					<rb-button text kind="danger">Button</rb-button>
+					<rb-button text kind="info">Button</rb-button>
+					<rb-button text kind="neutral">Button</rb-button>
+					<rb-button text kind="success">Button</rb-button>
+					<rb-button text kind="warning">Button</rb-button>
+				</section> -->
 			</section>
 		</div>
 		<div class="col-6">
@@ -53,6 +61,14 @@
 			toggle
 			rb-bind
 			horizontal
+			label="text"
+			value="a.text"
+			data="{{textOpts}}">
+		</rb-radios>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
 			label="size"
 			value="a.size"
 			data="{{sizes}}">
@@ -67,19 +83,13 @@
 		</rb-radios>
 
 		<!-- ICON OPTIONS -->
-		<rb-radios
-			toggle
+		<rb-dropdown
 			rb-bind
-			horizontal
+			id="iconKinds"
 			label="icon-kind"
 			value="a.iconKind"
-			data="{{iconKinds}}">
-			<rb-popover position="top" slot="popover" caption="set icon-source to">
-				<ul>
-					<li><strong>solid</strong> for sync</li>
-				</ul>
-			</rb-popover>
-		</rb-radios>
+			placeholder="Select...">
+		</rb-dropdown>
 		<rb-radios
 			toggle
 			rb-bind
@@ -96,13 +106,6 @@
 			value="a.iconFlip"
 			data="{{iconFlips}}">
 		</rb-radios> -->
-		<rb-checkbox
-			rb-bind
-			horizontal
-			sublabel="left"
-			label="icon-position"
-			value="a.iconPosition">
-		</rb-checkbox>
 		<rb-checkboxes
 			rb-bind
 			horizontal
@@ -147,14 +150,19 @@
 			value="a.disabled"
 			sublabel="disabled">
 		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.iconRight"
+			sublabel="icon-right">
+		</rb-checkbox>
 
 		<!-- BUTTONS -->
 		<section class="buttons">
 			<rb-button
 				data-reset
 				icon-kind="sync"
-				icon-source="solid"
-				icon-position="left">
+				icon-source="solid">
 				Reset
 			</rb-button>
 		</section>

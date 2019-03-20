@@ -4,14 +4,7 @@
 .rb-toggle {
 	.trigger {
 		white-space: nowrap;
-		rb-button {
-			&:hover,
-			&:focus  { filter: brightness(115%); }
-			&:active { filter: brightness(90%);  }
-		}
 		rb-popover {
-			position: relative;
-			top: 1px;
 			white-space: normal;
 		}
 	}

@@ -27,9 +27,7 @@ p.constant('RB_POPOVER_API',
 		type: null,
 		required: false
 	},
-	common.get('kind', {
-		options: 'info | danger | success | warning'
-	}),
+	common.get('kind'),
 	common.get('icon-burst'),
 	common.get('icon-flip'),
 	common.get('icon-kind', {
@@ -45,6 +43,16 @@ p.constant('RB_POPOVER_API',
 	common.get('icon-spin'),
 	common.get('icon-source'),
 	common.get('icon-valign'),
+	{
+		attribute: 'inherit-color',
+		description: `
+			Trigger color is
+			<a target="_blank" href="https://goo.gl/bkoDwm">inherited</a>.
+		`,
+		options: null,
+		type: null,
+		required: false
+	},
 	{
 		attribute: 'pin',
 		description: `Popover will only close when the trigger is clicked.`,
@@ -71,16 +79,6 @@ p.constant('RB_POPOVER_API',
 		`,
 		options: 'true',
 		type: 'bool',
-		required: false
-	},
-	{
-		attribute: 'unstyled',
-		description: `
-			Trigger color is
-			<a target="_blank" href="https://goo.gl/bkoDwm">inherited</a>.
-		`,
-		options: null,
-		type: null,
 		required: false
 	}
 ]
