@@ -10,7 +10,6 @@ const ignoreHostnames = [
 	'localhost',
 	'jyounce-mac.local',
 	'yokun-mac.local',
-	'dev.rapid-build-ui.io',
 	'staging.rapid-build-ui.io'
 ]
 
