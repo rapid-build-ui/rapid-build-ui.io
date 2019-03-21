@@ -68,6 +68,12 @@
 		filter: brightness(50%);
 	}
 
+	/* Scrollbar
+	 ************/
+	.CodeMirror-scroll {
+		-webkit-overflow-scrolling: touch; // momentum scrolling on iOS
+	}
+
 	/* Readonly
 	 ***********/
 	&.readonly .CodeMirror {
