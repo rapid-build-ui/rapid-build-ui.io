@@ -9,8 +9,16 @@ angular.module('rapid-build').directive('rbaCode', ['$timeout', 'preService', 'E
 	/* COMPILE
 	 **********/
 	const Compile = function(tElement, tAttrs) {
-		if (tAttrs.actions === undefined)
-			tElement[0].querySelector('.actions').remove();
+		const elm = tElement[0];
+		const { actions, caption } = tAttrs;
+
+		actions === undefined && caption === undefined
+			? elm.querySelector('.title-bar').remove()
+			: actions === undefined
+				? elm.querySelector('.actions').remove()
+				: caption === undefined
+					? elm.querySelector('h3').remove()
+					: null;
 
 		return { pre: Link } // must be pre for editor
 	};
