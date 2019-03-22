@@ -1,0 +1,135 @@
+<div ng-controller="rbToggleController">
+	<header class="page-header with-source-nav">
+		<h1>
+			<rba-install
+				source="toggle"
+				icon-size=".55">
+			</rba-install>
+			rb-toggle
+		</h1>
+		<rba-source-nav source="RB_TOGGLE_SRC_NAV" inject></rba-source-nav>
+	</header>
+
+	<!-- COMPONENT -->
+	<section class="grid">
+		<div class="col">
+			<section class="demo-component" ng-class="a.dark && 'dark'">
+				<div rba-builder="markup"></div>
+			</section>
+		</div>
+		<div class="col-6">
+			<textarea
+				scroll
+				readonly
+				rba-code
+				model="markup"
+				actions="copy"
+				caption="html"
+				height="xxtall">
+			</textarea>
+		</div>
+	</section>
+
+	<!-- DEMO -->
+	<form name="demoForm">
+		<h5 rba-text-curve>Configure</h5>
+
+		<!-- INPUTS -->
+		<rb-input
+			inline
+			rb-bind
+			label="caption"
+			value="a.caption">
+		</rb-input>
+		<rb-textarea
+			rb-bind
+			value="a.content"
+			label="content">
+		</rb-textarea>
+
+		<!-- RADIOS -->
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="kind"
+			value="a.kind"
+			data="{{kinds}}">
+		</rb-radios>
+
+		<!-- VALUELESS -->
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.action"
+			sublabel="action">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.cache"
+			sublabel="cache">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.dark"
+			sublabel="dark"
+			ng-if="env.is.dev">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.disabled"
+			sublabel="disabled">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.inline"
+			sublabel="inline">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.open"
+			sublabel="open">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.popover"
+			sublabel="popover">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.templateUrl"
+			sublabel="template-url">
+		</rb-checkbox>
+
+		<!-- BUTTONS -->
+		<section class="buttons">
+			<rb-button
+				data-reset
+				icon-kind="sync"
+				icon-source="solid">
+				Reset
+			</rb-button>
+		</section>
+	</form>
+
+	<!-- API -->
+	<rba-toggle
+		text-curve
+		show="true"
+		caption="API">
+		<rba-table source="RB_TOGGLE_API" inject></rba-table>
+	</rba-toggle>
+
+	<!-- CSS Variables -->
+	<!-- <rba-css-vars component="rb-toggle"></rba-css-vars> -->
+
+	<!-- CHANGELOG -->
+	<rba-changelog component="rb-toggle"></rba-changelog>
+</div>
