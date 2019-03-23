@@ -14,7 +14,6 @@ angular.module('rapid-build').controller('rbToggleController', ['$scope', '$elem
 			if ($scope.a.kind)          attrs += `${nt}kind=\"${$scope.a.kind}\"`;
 			if ($scope.a.caption)       attrs += `${nt}caption=\"${$scope.a.caption}\"`;
 			if ($scope.a.templateUrl)   attrs += `${nt}template-url=\"${$scope.a.templateUrl}\"`;
-			if ($scope.a.templateClass) attrs += `${nt}template-class=\"${$scope.a.templateClass}\"`;
 			if ($scope.a.action)        attrs += `${nt}${getAction()}`;
 			if ($scope.a.popover) content += getPopoverSlot();
 			if ($scope.a.content) content += `${nt}${$scope.a.content}${n}`;
