@@ -37,37 +37,23 @@ p.constant('RB_TOGGLE_API',
 		type: 'string',
 		required: false
 	},
+	{
+		attribute: 'closed-icon-kind',
+		description: `Icon used when toggle is closed.`,
+		options: `<a href="/components/rb-icon">rb-icon kind</a>`,
+		type: 'string',
+		required: false
+	},
+	{
+		attribute: 'closed-icon-source',
+		description: `Refer to options.`,
+		options: `<a href="/components/rb-icon">rb-icon source</a>`,
+		type: 'string',
+		required: false
+	},
 	common.get('content'),
 	// common.get('dark'),
 	common.get('disabled'),
-	{
-		attribute: 'icon-kind-open',
-		description: `Toggle open icon.`,
-		options: `<a href="/components/rb-icon">rb-icon kind</a>`,
-		type: 'string',
-		required: false
-	},
-	{
-		attribute: 'icon-kind-closed',
-		description: `Toggle closed icon.`,
-		options: `<a href="/components/rb-icon">rb-icon kind</a>`,
-		type: 'string',
-		required: false
-	},
-	{
-		attribute: 'icon-source-open',
-		description: `Refer to options.`,
-		options: `<a href="/components/rb-icon">rb-icon source</a>`,
-		type: 'string',
-		required: false
-	},
-	{
-		attribute: 'icon-source-closed',
-		description: `Refer to options.`,
-		options: `<a href="/components/rb-icon">rb-icon source</a>`,
-		type: 'string',
-		required: false
-	},
 	common.get('inline'),
 	common.get('kind'),
 	{
@@ -78,6 +64,20 @@ p.constant('RB_TOGGLE_API',
 		`,
 		options: 'true',
 		type: `n/a | bool`,
+		required: false
+	},
+	{
+		attribute: 'open-icon-kind',
+		description: `Icon used when toggle is open.`,
+		options: `<a href="/components/rb-icon">rb-icon kind</a>`,
+		type: 'string',
+		required: false
+	},
+	{
+		attribute: 'open-icon-source',
+		description: `Refer to options.`,
+		options: `<a href="/components/rb-icon">rb-icon source</a>`,
+		type: 'string',
 		required: false
 	},
 	common.get('popover'),
