@@ -45,6 +45,15 @@ p.constant('RB_TOGGLE_API',
 		required: false
 	},
 	{
+		attribute: 'closed-icon-size',
+		description: `Changes icon size.`,
+		options: `
+			<a href="/components/rb-icon">rb-icon size</a>
+		`,
+		type: 'number',
+		required: false
+	},
+	{
 		attribute: 'closed-icon-source',
 		description: `Refer to options.`,
 		options: `<a href="/components/rb-icon">rb-icon source</a>`,
@@ -71,6 +80,15 @@ p.constant('RB_TOGGLE_API',
 		description: `Icon used when toggle is open.`,
 		options: `<a href="/components/rb-icon">rb-icon kind</a>`,
 		type: 'string',
+		required: false
+	},
+	{
+		attribute: 'open-icon-size',
+		description: `Changes icon size.`,
+		options: `
+			<a href="/components/rb-icon">rb-icon size</a>
+		`,
+		type: 'number',
 		required: false
 	},
 	{
