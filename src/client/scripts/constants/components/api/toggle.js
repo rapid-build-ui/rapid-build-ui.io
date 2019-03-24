@@ -37,16 +37,26 @@ p.constant('RB_TOGGLE_API',
 		type: 'string',
 		required: false
 	},
+	common.get('content'),
+	// common.get('dark'),
+	common.get('disabled'),
 	{
-		attribute: 'closed-icon-kind',
-		description: `Icon used when toggle is closed.`,
+		attribute: 'icon-kind-closed',
+		description: `Closed toggle icon.`,
 		options: `<a href="/components/rb-icon">rb-icon kind</a>`,
 		type: 'string',
 		required: false
 	},
 	{
-		attribute: 'closed-icon-size',
-		description: `Changes icon size.`,
+		attribute: 'icon-kind-open',
+		description: `Open toggle icon.`,
+		options: `<a href="/components/rb-icon">rb-icon kind</a>`,
+		type: 'string',
+		required: false
+	},
+	{
+		attribute: 'icon-size-closed',
+		description: `Closed toggle icon size.`,
 		options: `
 			<a href="/components/rb-icon">rb-icon size</a>
 		`,
@@ -54,15 +64,28 @@ p.constant('RB_TOGGLE_API',
 		required: false
 	},
 	{
-		attribute: 'closed-icon-source',
+		attribute: 'icon-size-open',
+		description: `Open toggle icon size.`,
+		options: `
+			<a href="/components/rb-icon">rb-icon size</a>
+		`,
+		type: 'number',
+		required: false
+	},
+	{
+		attribute: 'icon-source-closed',
 		description: `Refer to options.`,
 		options: `<a href="/components/rb-icon">rb-icon source</a>`,
 		type: 'string',
 		required: false
 	},
-	common.get('content'),
-	// common.get('dark'),
-	common.get('disabled'),
+	{
+		attribute: 'icon-source-open',
+		description: `Refer to options.`,
+		options: `<a href="/components/rb-icon">rb-icon source</a>`,
+		type: 'string',
+		required: false
+	},
 	common.get('inline'),
 	common.get('kind'),
 	{
@@ -73,29 +96,6 @@ p.constant('RB_TOGGLE_API',
 		`,
 		options: 'true',
 		type: `n/a | bool`,
-		required: false
-	},
-	{
-		attribute: 'open-icon-kind',
-		description: `Icon used when toggle is open.`,
-		options: `<a href="/components/rb-icon">rb-icon kind</a>`,
-		type: 'string',
-		required: false
-	},
-	{
-		attribute: 'open-icon-size',
-		description: `Changes icon size.`,
-		options: `
-			<a href="/components/rb-icon">rb-icon size</a>
-		`,
-		type: 'number',
-		required: false
-	},
-	{
-		attribute: 'open-icon-source',
-		description: `Refer to options.`,
-		options: `<a href="/components/rb-icon">rb-icon source</a>`,
-		type: 'string',
 		required: false
 	},
 	common.get('popover'),
