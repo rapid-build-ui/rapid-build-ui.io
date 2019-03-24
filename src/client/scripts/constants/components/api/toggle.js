@@ -4,15 +4,21 @@ p.constant('RB_TOGGLE_API',
 	{
 		attribute: 'action',
 		description: `
-			<em class="info-heading">toggle
-			opens once function completes</em>
-			Function to execute when opening
-			toggle.
-			<br>
-			<em class="info-sub">if
-			function returns a string or
-			returns a promise that resolves a string,
-			content will be set to that string</em>
+			Function to execute when opening toggle.
+			<ul>
+				<li>
+					<em class="info-sub no-parens">
+						toggle opens once function completes
+					</em>
+				</li>
+				<li>
+					<em class="info-sub no-parens">
+						if function returns a string or
+						a promise that resolves a string,
+						content will be set to that string
+					</em>
+				</li>
+			</ul>
 		`,
 		options: null,
 		type: 'function',
