@@ -31,7 +31,7 @@ options:
 			<a target="_blank" href="https://goo.gl/d9wizE">primitive</a>
 			values or
 			<a target="_blank" href="https://goo.gl/uZEoeU">objects</a>.
-			<em class="info-sub">see label-key
+			<em class="info-sub">see label-key or value-key
 			when data is an array of objects</em>
 		`,
 		options: null,
@@ -307,6 +307,16 @@ options:
 		`,
 		options: null,
 		type: `primitives | object`,
+		required: false
+	},
+	{
+		attribute: 'value-key',
+		description: `
+			<em class="info-heading">data must be array of objects</em>
+			Property name in data object used for component's value.
+		`,
+		options: null,
+		type: 'string',
 		required: false
 	}
 ],
