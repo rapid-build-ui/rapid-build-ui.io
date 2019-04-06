@@ -29,8 +29,8 @@ angular.module('rapid-build').controller('rbToggleController', ['$scope', '$elem
 
 		const getOnclick = () => { // :string<function>
 			let onclick = `
-				(() => {
-					this.kind = 'success';
+				return (() => {
+					return 'Piece of Cake!';
 				})()
 			`;
 			onclick = preService.get.text(onclick);
