@@ -1,7 +1,7 @@
 angular.module('rapid-build').config(['$provide', 'RB_COMMON_API', (p, common) => {
 p.constant('RB_DROPDOWN_API',
 [
-	common.get('dark'),
+	// common.get('dark'),
 	common.get('data'),
 	common.get('disabled'),
 	common.get('inline'),
