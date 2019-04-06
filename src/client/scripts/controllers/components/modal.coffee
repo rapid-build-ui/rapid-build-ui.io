@@ -19,7 +19,6 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 
 		# Test Without Builder
 		# ====================
-		# linkCnt = 1
 		# $scope.links = [
 		# 	href:    'home'
 		# 	content: 'home'
@@ -30,6 +29,8 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		# 	href:    'contact'
 		# 	content: 'contact <rb-icon kind="heart"></rb-icon></a>'
 		# ]
+
+		# linkCnt = 1
 		# $element[0].querySelector('[data-add-link]').onclick = ->
 		# 	newLink = "link#{linkCnt++}"
 		# 	newLink = href: newLink, content: newLink
