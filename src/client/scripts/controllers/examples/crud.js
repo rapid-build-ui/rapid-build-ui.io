@@ -2,7 +2,9 @@ angular.module('rapid-build').controller('crudController', ['$scope', '$element'
 	($scope, $element, $timeout, Superhero) => {
 		/* Private
 		 **********/
-		const form = $element[0].querySelector('form');
+		const form          = $element[0].querySelector('form');
+		const newHeroBtn    = $element[0].querySelector('[data-new-hero]');
+		const deleteHeroBtn = $element[0].querySelector('[data-delete-hero]');
 
 		const findHeroIndex = hero => // :number
 			$scope.superheroes.findIndex(_hero => _hero.id === hero.id)
@@ -16,7 +18,7 @@ angular.module('rapid-build').controller('crudController', ['$scope', '$element'
 				});
 			},
 			delete() { // :void
-				$scope.superhero.$delete(hero => {
+				return $scope.superhero.$delete(hero => {
 					const index = findHeroIndex(hero);
 					$scope.superheroes.splice(index, 1);
 					$scope.newHero();
@@ -44,10 +46,17 @@ angular.module('rapid-build').controller('crudController', ['$scope', '$element'
 			$scope.crud[action]();
 		}
 
-		$scope.newHero = () => { // :void
+		$scope.newHero = evt => { // :void
 			$scope.superhero = new Superhero();
 			form.rb && form.rb.setPristine();
+			if (!evt) return;
+			$scope.$apply();
 		}
+
+		/* Events
+		 *********/
+		newHeroBtn.onclick    = $scope.newHero;
+		deleteHeroBtn.onclick = $scope.crud.delete;
 
 		/* Init
 		 *******/

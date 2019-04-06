@@ -16,11 +16,11 @@
 			<h5>
 				<rb-button
 					text
+					data-new-hero
 					icon-size=".85"
 					icon-source="solid"
 					icon-kind="plus-circle"
-					title="Create Superhero"
-					ng-click="newHero()">
+					title="Create Superhero">
 				</rb-button>
 				Superheroes
 			</h5>
@@ -71,9 +71,9 @@
 					<rb-button
 						kind="danger"
 						icon-size=".95"
+						data-delete-hero
 						icon-kind="trash-alt"
-						ng-if="!!superhero.id"
-						ng-click="crud.delete()">
+						ng-show="!!superhero.id">
 						Delete
 					</rb-button>
 				</section>
