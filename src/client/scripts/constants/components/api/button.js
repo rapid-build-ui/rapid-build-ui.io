@@ -21,7 +21,7 @@ p.constant('RB_BUTTON_API',
 	common.get('onclick', {
 		description: `
 			Function to execute onclick.
-			<em class="info-sub no-parens">you'll
+			<em class="info-sub no-parens">You'll
 			usually set this in javascript, example:<br>
 			rbButton.onclick = someFunction</em>
 		`
