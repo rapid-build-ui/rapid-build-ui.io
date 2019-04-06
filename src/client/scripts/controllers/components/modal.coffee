@@ -30,13 +30,15 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		# 	href:    'contact'
 		# 	content: 'contact <rb-icon kind="heart"></rb-icon></a>'
 		# ]
-		# $scope.addLink = ->
+		# $element[0].querySelector('[data-add-link]').onclick = ->
 		# 	newLink = "link#{linkCnt++}"
 		# 	newLink = href: newLink, content: newLink
 		# 	$scope.links.push newLink
-		# $scope.removeLink = ->
+		# 	$scope.$apply()
+		# $element[0].querySelector('[data-remove-link]').onclick = ->
 		# 	$scope.links.pop()
 		# 	linkCnt--
+		# 	$scope.$apply()
 
 		# Props
 		# =====

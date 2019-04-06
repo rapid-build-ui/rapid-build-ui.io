@@ -19,8 +19,8 @@
 				<a ng-href="#{{link.href}}" ng-repeat="link in links" ng-bind-html="link.content | trustHtml" slot="header"></a>
 				<a ng-href="#{{link.href}}" ng-repeat="link in links" ng-bind-html="link.content | trustHtml" slot="footer"></a>
 			</rb-modal>
-			<rb-button size="small" ng-click="addLink()">add</rb-button>
-			<rb-button size="small" ng-click="removeLink()">remove</rb-button> -->
+			<rb-button size="small" data-add-link>add</rb-button>
+			<rb-button size="small" data-remove-link>remove</rb-button> -->
 			<textarea
 				scroll
 				readonly
