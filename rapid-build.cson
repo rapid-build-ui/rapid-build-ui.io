@@ -26,7 +26,7 @@ common:
 	extra:
 		copy:
 			client: [
-				'examples/bare-bones.html'
+				'examples/**'
 				'node_modules/**'
 			]
 			server: [
@@ -34,7 +34,7 @@ common:
 			]
 		watch:
 			client: [
-				'examples/bare-bones.html'
+				'examples/**'
 				'node_modules/@rapid-build-ui/'
 			]
 			server: [
