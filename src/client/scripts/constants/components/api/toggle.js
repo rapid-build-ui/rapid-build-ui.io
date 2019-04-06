@@ -2,36 +2,14 @@ angular.module('rapid-build').config(['$provide', 'RB_COMMON_API', (p, common) =
 p.constant('RB_TOGGLE_API',
 [
 	{
-		attribute: 'action',
-		description: `
-			Function to execute when opening toggle.
-			<ul>
-				<li>
-					<em class="info-sub no-parens">
-						toggle opens once function completes
-					</em>
-				</li>
-				<li>
-					<em class="info-sub no-parens">
-						if function returns a string or
-						a promise that resolves a string,
-						content will be set to that string
-					</em>
-				</li>
-			</ul>
-		`,
-		options: null,
-		type: 'function',
-		required: false
-	},
-	{
 		attribute: 'cache',
 		description: `
-			Fire action the first time the
-			toggle opens then never again.
+			<em class="info-heading">defaults to true</em>
+			If cache is true, onclick and fetch options will only
+			fire the first time the toggle is opened.
 		`,
-		options: null,
-		type: null,
+		options: 'false',
+		type: `bool`,
 		required: false
 	},
 	{
@@ -54,6 +32,13 @@ p.constant('RB_TOGGLE_API',
 		required: false
 	},
 	{
+		attribute: 'icon-kind-loading',
+		description: `Loading icon.`,
+		options: `<a href="/components/rb-icon">rb-icon kind</a>`,
+		type: 'string',
+		required: false
+	},
+	{
 		attribute: 'icon-kind-open',
 		description: `Open toggle icon.`,
 		options: `<a href="/components/rb-icon">rb-icon kind</a>`,
@@ -63,6 +48,15 @@ p.constant('RB_TOGGLE_API',
 	{
 		attribute: 'icon-size-closed',
 		description: `Closed toggle icon size.`,
+		options: `
+			<a href="/components/rb-icon">rb-icon size</a>
+		`,
+		type: 'number',
+		required: false
+	},
+	{
+		attribute: 'icon-size-loading',
+		description: `Loading icon size.`,
 		options: `
 			<a href="/components/rb-icon">rb-icon size</a>
 		`,
@@ -86,9 +80,39 @@ p.constant('RB_TOGGLE_API',
 		required: false
 	},
 	{
+		attribute: 'icon-source-loading',
+		description: `Refer to options.`,
+		options: `<a href="/components/rb-icon">rb-icon source</a>`,
+		type: 'string',
+		required: false
+	},
+	{
 		attribute: 'icon-source-open',
 		description: `Refer to options.`,
 		options: `<a href="/components/rb-icon">rb-icon source</a>`,
+		type: 'string',
+		required: false
+	},
+	{
+		attribute: 'fetch',
+		description: `
+			Path or url to file.
+			<ul>
+				<li>
+					<em class="info-sub no-parens">
+						toggle opens once
+						file is fetched
+					</em>
+				</li>
+				<li>
+					<em class="info-sub no-parens">
+						content will be set
+						to file's contents
+					</em>
+				</li>
+			</ul>
+		`,
+		options: null,
 		type: 'string',
 		required: false
 	},
@@ -104,18 +128,30 @@ p.constant('RB_TOGGLE_API',
 		type: `n/a | bool`,
 		required: false
 	},
-	common.get('popover'),
-	{
-		attribute: 'template-url',
+	common.get('onclick', {
 		description: `
-			Path or url to html file.
-			<em class="info-sub">content
-			will be set to html file's
-			contents</em>
-		`,
-		options: null,
-		type: 'string',
-		required: false
-	}
+			Function to execute when opening toggle.
+			<ul>
+				<li>
+					<em class="info-sub no-parens">
+						toggle opens once function completes
+					</em>
+				</li>
+				<li>
+					<em class="info-sub no-parens">
+						if function returns a string or
+						a promise that resolves a string,
+						content will be set to that string
+					</em>
+				</li>
+				<li>
+					<em class="info-sub no-parens">
+						you'll usually set this in javascript
+					</em>
+				</li>
+			</ul>
+		`
+	}),
+	common.get('popover')
 ]
 )}])
