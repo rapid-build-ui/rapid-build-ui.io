@@ -29,11 +29,10 @@ angular.module('rapid-build').controller('rbToggleController', ['$scope', '$elem
 
 		const getOnclick = () => { // :string<function>
 			let onclick = `
-				!function() {
-					console.log('toggled');
-				}()
+				(() => {
+					this.kind = 'success';
+				})()
 			`;
-			// return new Promise(resolve => setTimeout(resolve, 3000));
 			onclick = preService.get.text(onclick);
 			return `onclick="${onclick}"`;
 		}

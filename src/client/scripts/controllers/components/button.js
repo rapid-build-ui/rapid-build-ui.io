@@ -34,9 +34,9 @@ angular.module('rapid-build').controller('rbButtonController', ['$scope', '$elem
 		const getAttr = {
 			onclick(fmt) { // :attr<function>
 				let onclick = `
-					!function() {
-						console.log('clicked');
-					}()
+					(() => {
+						this.size = 'big';
+					})()
 				`;
 				onclick = preService.get.text(onclick);
 				return `${fmt}onclick="${onclick}"`;
@@ -81,7 +81,7 @@ angular.module('rapid-build').controller('rbButtonController', ['$scope', '$elem
 		 **********/
 		$scope.reset = () => {
 			$scope.a = {
-				content: 'Button',
+				content: 'Button'
 			};
 		};
 
