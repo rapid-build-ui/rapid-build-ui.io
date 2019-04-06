@@ -24,28 +24,28 @@ p.constant('RB_TOGGLE_API',
 	common.get('content'),
 	// common.get('dark'),
 	common.get('disabled'),
-	{
+	/*{
 		attribute: 'icon-kind-closed',
 		description: `Closed toggle icon.`,
 		options: `<a href="/components/rb-icon">rb-icon kind</a>`,
 		type: 'string',
 		required: false
-	},
-	{
+	},*/
+	/*{
 		attribute: 'icon-kind-loading',
 		description: `Loading icon.`,
 		options: `<a href="/components/rb-icon">rb-icon kind</a>`,
 		type: 'string',
 		required: false
-	},
-	{
+	},*/
+	/*{
 		attribute: 'icon-kind-open',
 		description: `Open toggle icon.`,
 		options: `<a href="/components/rb-icon">rb-icon kind</a>`,
 		type: 'string',
 		required: false
-	},
-	{
+	},*/
+	/*{
 		attribute: 'icon-size-closed',
 		description: `Closed toggle icon size.`,
 		options: `
@@ -53,8 +53,8 @@ p.constant('RB_TOGGLE_API',
 		`,
 		type: 'number',
 		required: false
-	},
-	{
+	},*/
+	/*{
 		attribute: 'icon-size-loading',
 		description: `Loading icon size.`,
 		options: `
@@ -62,8 +62,8 @@ p.constant('RB_TOGGLE_API',
 		`,
 		type: 'number',
 		required: false
-	},
-	{
+	},*/
+	/*{
 		attribute: 'icon-size-open',
 		description: `Open toggle icon size.`,
 		options: `
@@ -71,28 +71,28 @@ p.constant('RB_TOGGLE_API',
 		`,
 		type: 'number',
 		required: false
-	},
-	{
+	},*/
+	/*{
 		attribute: 'icon-source-closed',
 		description: `Refer to options.`,
 		options: `<a href="/components/rb-icon">rb-icon source</a>`,
 		type: 'string',
 		required: false
-	},
-	{
+	},*/
+	/*{
 		attribute: 'icon-source-loading',
 		description: `Refer to options.`,
 		options: `<a href="/components/rb-icon">rb-icon source</a>`,
 		type: 'string',
 		required: false
-	},
-	{
+	},*/
+	/*{
 		attribute: 'icon-source-open',
 		description: `Refer to options.`,
 		options: `<a href="/components/rb-icon">rb-icon source</a>`,
 		type: 'string',
 		required: false
-	},
+	},*/
 	{
 		attribute: 'fetch',
 		description: `
