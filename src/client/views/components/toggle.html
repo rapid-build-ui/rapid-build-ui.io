@@ -15,6 +15,13 @@
 		<div class="col">
 			<section class="demo-component" ng-class="a.dark && 'dark'">
 				<div rba-builder="markup"></div>
+				<!-- <rb-toggle
+					open
+					cache="false"
+					caption="Toggle 2"
+					fetch="/examples/toggle">
+					Content...
+				</rb-toggle> -->
 			</section>
 		</div>
 		<div class="col-6">
@@ -61,12 +68,6 @@
 		<rb-checkbox
 			inline
 			rb-bind
-			value="a.action"
-			sublabel="action">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
 			value="a.cache"
 			sublabel="cache">
 		</rb-checkbox>
@@ -86,8 +87,20 @@
 		<rb-checkbox
 			inline
 			rb-bind
+			value="a.fetch"
+			sublabel="fetch">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
 			value="a.inline"
 			sublabel="inline">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.onclick"
+			sublabel="onclick">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
@@ -100,12 +113,6 @@
 			rb-bind
 			value="a.popover"
 			sublabel="popover">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.templateUrl"
-			sublabel="template-url">
 		</rb-checkbox>
 
 		<!-- BUTTONS -->
