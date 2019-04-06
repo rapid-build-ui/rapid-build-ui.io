@@ -48,11 +48,27 @@
 			label="caption"
 			value="a.caption">
 		</rb-input>
+
+		<!-- CONTENT OPTIONS -->
 		<rb-textarea
 			rb-bind
 			value="a.content"
 			label="content">
 		</rb-textarea>
+		<rb-checkboxes
+			rb-bind
+			horizontal
+			label="content"
+			value="a.contentAlts"
+			data="{{contentAlts}}">
+			<rb-popover position="top" slot="popover" caption="content alternatives">
+				<p>Two other ways to set content.</p>
+				<ul>
+					<li>fetch: url to file</li>
+					<li>onclick: return a string</li>
+				</ul>
+			</rb-popover>
+		</rb-checkboxes>
 
 		<!-- RADIOS -->
 		<rb-radios
@@ -87,20 +103,8 @@
 		<rb-checkbox
 			inline
 			rb-bind
-			value="a.fetch"
-			sublabel="fetch">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
 			value="a.inline"
 			sublabel="inline">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.onclick"
-			sublabel="onclick">
 		</rb-checkbox>
 		<rb-checkbox
 			inline

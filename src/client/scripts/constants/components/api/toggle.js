@@ -96,6 +96,7 @@ p.constant('RB_TOGGLE_API',
 	{
 		attribute: 'fetch',
 		description: `
+			<em class="info-heading">sets content</em>
 			Path or url to file.
 			<ul>
 				<li>
@@ -130,6 +131,7 @@ p.constant('RB_TOGGLE_API',
 	},
 	common.get('onclick', {
 		description: `
+			<em class="info-heading">can set content</em>
 			Function to execute when opening toggle.
 			<ul>
 				<li>

@@ -2,6 +2,10 @@
  * RB-POPOVER
  *************/
 rb-popover:not([id^='built__']) {
+	p {
+		margin-bottom: 5px;
+	}
+
 	/* Lists
 	 ********/
 	ol, ul {

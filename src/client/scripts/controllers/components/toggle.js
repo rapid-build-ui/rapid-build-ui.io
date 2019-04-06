@@ -5,6 +5,7 @@ angular.module('rapid-build').controller('rbToggleController', ['$scope', '$elem
 		const createMarkup = function() {
 			let attrs = ''; let content = '';
 			const s = ' ', t = '\t', n = '\n', nt = '\n\t';
+			const { contentAlts } = $scope.a;
 
 			if ($scope.a.dark)     attrs += `${nt}dark`; // TODO
 			if ($scope.a.open)     attrs += `${nt}open`;
@@ -13,8 +14,8 @@ angular.module('rapid-build').controller('rbToggleController', ['$scope', '$elem
 			if ($scope.a.kind)     attrs += `${nt}kind="${$scope.a.kind}"`;
 			if (!$scope.a.cache)   attrs += `${nt}cache="false"`;
 			if ($scope.a.caption)  attrs += `${nt}caption="${$scope.a.caption}"`;
-			if ($scope.a.fetch)    attrs += `${nt}fetch="/examples/toggle"`;
-			if ($scope.a.onclick)  attrs += `${nt}${getOnclick()}`;
+			if (contentAlts && contentAlts.includes('fetch'))   attrs += `${nt}fetch="/examples/toggle"`;
+			if (contentAlts && contentAlts.includes('onclick')) attrs += `${nt}${getOnclick()}`;
 			if ($scope.a.popover) content += getPopoverSlot();
 			if ($scope.a.content) content += `${nt}${$scope.a.content}${n}`;
 
@@ -24,7 +25,7 @@ angular.module('rapid-build').controller('rbToggleController', ['$scope', '$elem
 		/* Helpers
 		 **********/
 		const getPopoverSlot = () => { // :string
-			return '\n\t<rb-popover\n\t\tslot="popover"\n\t\tposition="top">\n\t\tmore info...\n\t</rb-popover>\n';
+			return '\n\t<rb-popover\n\t\tslot="popover"\n\t\tposition="top">\n\t\tmore info...\n\t</rb-popover>';
 		}
 
 		const getOnclick = () => { // :string<function>
@@ -40,13 +41,14 @@ angular.module('rapid-build').controller('rbToggleController', ['$scope', '$elem
 		/* Props
 		 ********/
 		$scope.kinds = ['danger','info','neutral','success','warning']
+		$scope.contentAlts = ['fetch','onclick']
 
 		/* Methods
 		 **********/
 		$scope.reset = () => {
 			$scope.a = {
 				caption: 'Toggle',
-				content: 'Content...',
+				content: 'Elementary my dear Watson',
 				cache: true
 			};
 		};
