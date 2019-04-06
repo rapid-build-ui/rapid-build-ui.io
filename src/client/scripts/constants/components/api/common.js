@@ -220,6 +220,17 @@ options:
 		required: false
 	},
 	{
+		attribute: 'onclick',
+		description: `
+			Function to execute onclick.
+			<em class="info-sub-inline">usually
+			set in javascript</em>
+		`,
+		options: null,
+		type: 'function',
+		required: false
+	},
+	{
 		attribute: 'placeholder',
 		description: `Placeholder text.`,
 		options: null,
