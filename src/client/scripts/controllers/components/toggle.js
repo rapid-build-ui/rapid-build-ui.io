@@ -62,7 +62,7 @@ angular.module('rapid-build').controller('rbToggleController', ['$scope', '$elem
 		 *****************/
 		const resetFrm = () => $scope.$apply($scope.reset);
 		const resetBtn = $element[0].querySelector('[data-reset]');
-		resetBtn.addEventListener('clicked', resetFrm);
+		resetBtn.onclick = resetFrm;
 
 		/* Testing
 		 **********/
@@ -83,7 +83,6 @@ angular.module('rapid-build').controller('rbToggleController', ['$scope', '$elem
 		/* Destroy
 		 **********/
 		$scope.$on('$destroy', () => {
-			resetBtn.removeEventListener('clicked', resetFrm);
 			markupWatch();
 		});
 	}

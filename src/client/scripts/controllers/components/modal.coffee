@@ -75,8 +75,8 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		# Event Handlers
 		# ==============
 		resetFrm = -> $scope.$apply $scope.reset
-		resetBtn = $element[0].querySelector('[data-reset]')
-		resetBtn.addEventListener 'clicked', resetFrm
+		resetBtn = $element[0].querySelector '[data-reset]'
+		resetBtn.onclick = resetFrm
 
 		# Init
 		# ====
@@ -85,6 +85,5 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		# Destroys
 		# ========
 		$scope.$on '$destroy', ->
-			resetBtn.removeEventListener 'clicked', resetFrm
 			markupWatch()
 ]

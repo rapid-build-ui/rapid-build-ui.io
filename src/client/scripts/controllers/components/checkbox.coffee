@@ -110,8 +110,8 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 		# Event Handlers
 		# ==============
 		resetFrm = -> $scope.$apply $scope.reset
-		resetBtn = $element[0].querySelector('[data-reset]')
-		resetBtn.addEventListener 'clicked', resetFrm
+		resetBtn = $element[0].querySelector '[data-reset]'
+		resetBtn.onclick = resetFrm
 
 		# Init
 		# ====
@@ -120,7 +120,6 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 		# Destroys
 		# ========
 		$scope.$on '$destroy', ->
-			resetBtn.removeEventListener 'clicked', resetFrm
 			markupWatch()
 
 ]
