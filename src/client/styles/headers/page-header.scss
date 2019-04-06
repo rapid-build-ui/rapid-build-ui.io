@@ -47,7 +47,7 @@ header.page-header {
 	@media (max-width: mapGet($gl-mq-list, xxxs)) {
 		&.with-source-nav {
 			h1 {
-				flex-basis: 58%;
+				flex-basis: 57%; // was 58%
 			}
 		}
 	}
