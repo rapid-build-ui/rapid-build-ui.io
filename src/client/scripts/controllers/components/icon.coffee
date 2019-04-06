@@ -37,12 +37,13 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 
 		# Testing
 		# =======
-		$scope.updateIcon = -> # :void (for testing only)
-			rbIcon = $element[0].querySelector '[id^="built__"]'
-			rbIcon.spin  = !rbIcon.spin  unless type.is.undefined rbIcon.spin
-			rbIcon.burst = !rbIcon.burst unless type.is.undefined rbIcon.burst
-			rbIcon.pulse = !rbIcon.pulse unless type.is.undefined rbIcon.pulse
-			rbIcon.flip  = 'both'
+		# updateIconBtn = $element[0].querySelector '[data-update-icon]'
+		# updateIconBtn.onclick = -> # :void (for testing only)
+		# 	rbIcon = $element[0].querySelector '[id^="built__"]'
+		# 	rbIcon.spin  = !rbIcon.spin  unless type.is.undefined rbIcon.spin
+		# 	rbIcon.burst = !rbIcon.burst unless type.is.undefined rbIcon.burst
+		# 	rbIcon.pulse = !rbIcon.pulse unless type.is.undefined rbIcon.pulse
+		# 	rbIcon.flip  = 'both'
 
 		# Methods
 		# =======
