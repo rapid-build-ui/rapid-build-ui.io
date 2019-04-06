@@ -16,7 +16,7 @@ angular.module('rapid-build').controller('rbToggleController', ['$scope', '$elem
 			if ($scope.a.caption)  attrs += `${nt}caption="${$scope.a.caption}"`;
 			if (contentAlts && contentAlts.includes('fetch'))   attrs += `${nt}fetch="/examples/toggle"`;
 			if (contentAlts && contentAlts.includes('onclick')) attrs += `${nt}${getOnclick()}`;
-			if ($scope.a.popover) content += getPopoverSlot();
+			// if ($scope.a.popover) content += getPopoverSlot();
 			if ($scope.a.content) content += `${nt}${$scope.a.content}${n}`;
 
 			return `<rb-toggle${attrs}>${content}</rb-toggle>`;
@@ -24,9 +24,9 @@ angular.module('rapid-build').controller('rbToggleController', ['$scope', '$elem
 
 		/* Helpers
 		 **********/
-		const getPopoverSlot = () => { // :string
-			return '\n\t<rb-popover\n\t\tslot="popover"\n\t\tposition="top">\n\t\tmore info...\n\t</rb-popover>';
-		}
+		// const getPopoverSlot = () => { // :string
+		// 	return '\n\t<rb-popover\n\t\tslot="popover"\n\t\tposition="top">\n\t\tmore info...\n\t</rb-popover>';
+		// }
 
 		const getOnclick = () => { // :string<function>
 			let onclick = `

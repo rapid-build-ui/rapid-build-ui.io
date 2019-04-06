@@ -154,6 +154,6 @@ p.constant('RB_TOGGLE_API',
 			</ul>
 		`
 	}),
-	common.get('popover')
+	// common.get('popover')
 ]
 )}])
