@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller('rbButtonController', ['$scope', '$element', 'preService',
-	($scope, $element, preService) => {
+angular.module('rapid-build').controller('rbButtonController', ['$scope', '$element', 'preService', 'typeService',
+	function($scope, $element, preService, type) {
 		/* Builder
 		 **********/
 		const createMarkup = function() {
@@ -22,8 +22,8 @@ angular.module('rapid-build').controller('rbButtonController', ['$scope', '$elem
 			if ($scope.a.iconSpeed)     attrs += `${nt}icon-speed="${$scope.a.iconSpeed}"`;
 			if ($scope.a.iconRotate)    attrs += `${nt}icon-rotate="${$scope.a.iconRotate}"`;
 			if ($scope.a.iconSource)    attrs += `${nt}icon-source="${$scope.a.iconSource}"`;
-			if ($scope.a.action)        attrs += `${getAttr.action(nt)}`; // TODO
 			if ($scope.a.text)          attrs += `${getAttr.text(nt,1)}`;
+			if ($scope.a.onclick)       attrs += `${getAttr.onclick(nt)}`;
 			if ($scope.a.content) content += `${nt}${$scope.a.content}${n}`;
 
 			return `<rb-button${attrs}>${content}</rb-button>`;
@@ -32,14 +32,14 @@ angular.module('rapid-build').controller('rbButtonController', ['$scope', '$elem
 		/* Attr Helpers
 		 ***************/
 		const getAttr = {
-			action(fmt) { // :attr<function>
-				let action = `
-					function() {
-						console.log('ACTION');
-					}
+			onclick(fmt) { // :attr<function>
+				let onclick = `
+					!function() {
+						console.log('clicked');
+					}()
 				`;
-				action = preService.get.text(action);
-				return `${fmt}action="${action}"`;
+				onclick = preService.get.text(onclick);
+				return `${fmt}onclick="${onclick}"`;
 			},
 			text(fmt, index) { // :attr | attr<object> | string<empty>
 				if ($scope.a.text !== $scope.textOpts[index]) return '';
@@ -108,11 +108,13 @@ angular.module('rapid-build').controller('rbButtonController', ['$scope', '$elem
 
 		/* Testing
 		 **********/
-		// const rbButton = $element[0].querySelector('rb-button');
-		// console.log(rbButton);
-		// rbButton.action = () => {
-		// 	console.log('ACTION TEST');
-		// 	$scope.$apply($scope.reset);
+		// const updateIconBtn = $element[0].querySelector('[data-update-icon]');
+		// updateIconBtn.onclick = () => {
+		// 	const rbBtn = $element[0].querySelector('[id^="built__"]');
+		// 	if (!type.is.undefined(rbBtn.iconSpin))  rbBtn.iconSpin  = !rbBtn.iconSpin;
+		// 	if (!type.is.undefined(rbBtn.iconBurst)) rbBtn.iconBurst = !rbBtn.iconBurst;
+		// 	if (!type.is.undefined(rbBtn.iconPulse)) rbBtn.iconPulse = !rbBtn.iconPulse;
+		// 	rbBtn.iconFlip = 'both';
 		// };
 
 		// $scope.save = evt => {
