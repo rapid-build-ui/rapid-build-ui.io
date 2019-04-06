@@ -18,6 +18,14 @@ p.constant('RB_BUTTON_API',
 	common.get('kind', {
 		options: `info | danger | neutral | success | warning`
 	}),
+	common.get('onclick', {
+		description: `
+			Function to execute onclick.
+			<em class="info-sub no-parens">you'll
+			usually set this in javascript, example:<br>
+			rbButton.onclick = someFunction</em>
+		`
+	}),
 	common.get('size'),
 	{
 		attribute: 'text',
