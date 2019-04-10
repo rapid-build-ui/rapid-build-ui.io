@@ -9,7 +9,6 @@ angular.module('rapid-build').controller('rbToggleController', ['$scope', '$elem
 
 			if ($scope.a.dark)     attrs += `${nt}dark`; // TODO
 			if ($scope.a.open)     attrs += `${nt}open`;
-			if ($scope.a.inline)   attrs += `${nt}inline`;
 			if ($scope.a.disabled) attrs += `${nt}disabled`;
 			if ($scope.a.kind)     attrs += `${nt}kind="${$scope.a.kind}"`;
 			if (!$scope.a.cache)   attrs += `${nt}cache="false"`;
