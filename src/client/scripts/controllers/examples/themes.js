@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller('themesExController', ['$scope', '$element',
-	($scope, $element) => {
+angular.module('rapid-build').controller('themesExController', ['$scope', '$element', 'ENV',
+	($scope, $element, ENV) => {
 		/* Private Vars
 		 ***************/
 		const radios = $element[0].querySelector('rb-radios');
@@ -7,14 +7,16 @@ angular.module('rapid-build').controller('themesExController', ['$scope', '$elem
 		/* Scope Props
 		 **************/
 		$scope.themes = [
-			{ name: 'alina',   cssClass: 'alina-theme' },
-			{ name: 'testing', cssClass: 'testing-theme' }
+			{ name: 'alina', cssClass: 'alina-theme' }
 		];
 
 		/* Helpers
 		 **********/
-		const Themes = { // :void
-			init() {
+		const Themes = {
+			init() { // :void
+				if (ENV.is.local)
+					$scope.themes.push({ name: 'testing', cssClass: 'testing-theme' });
+
 				for (const [i, theme] of Object.entries($scope.themes)) {
 					if (!document.body.classList.contains(theme.cssClass)) continue;
 					radios.value = $scope.themes[i];
