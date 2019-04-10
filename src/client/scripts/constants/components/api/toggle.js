@@ -117,6 +117,19 @@ p.constant('RB_TOGGLE_API',
 		type: 'string',
 		required: false
 	},
+	{
+		attribute: 'fetch-opts',
+		description: `
+			<em class="info-heading">fetch option required</em>
+			Options object for the request.
+			<em class="info-sub">see options for more info</em>
+		`,
+		options: `
+			<a target="_blank" title="Refer to init parameter." href="https://mzl.la/2Gcxp6R">options</a>
+		`,
+		type: 'object',
+		required: false
+	},
 	common.get('inline'),
 	common.get('kind'),
 	{
