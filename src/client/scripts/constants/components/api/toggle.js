@@ -130,6 +130,7 @@ p.constant('RB_TOGGLE_API',
 		type: 'object',
 		required: false
 	},
+	common.get('inline'),
 	common.get('kind'),
 	{
 		attribute: 'open',
