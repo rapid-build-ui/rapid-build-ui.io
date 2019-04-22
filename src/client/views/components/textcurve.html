@@ -1,0 +1,117 @@
+<div ng-controller="rbTextcurveController">
+	<header class="page-header with-source-nav">
+		<h1>
+			<rba-install
+				source="textcurve"
+				icon-size=".55">
+			</rba-install>
+			rb-textcurve
+		</h1>
+		<rba-source-nav source="RB_TEXTCURVE_SRC_NAV" inject></rba-source-nav>
+	</header>
+
+	<!-- COMPONENT -->
+	<section class="grid">
+		<div class="col">
+			<section class="demo-component" ng-class="a.dark && 'dark'">
+				<div rba-builder="markup"></div>
+			</section>
+		</div>
+		<div class="col-5">
+			<textarea
+				scroll
+				readonly
+				rba-code
+				line-nowrap
+				model="markup"
+				actions="copy"
+				caption="html"
+				height="tall">
+			</textarea>
+		</div>
+	</section>
+
+	<!-- DEMO -->
+	<form name="demoForm">
+		<rb-textcurve>
+			<h5>Configure</h5>
+		</rb-textcurve>
+
+		<!-- SLOTS -->
+		<rb-input
+			inline
+			rb-bind
+			label="content"
+			value="a.content">
+		</rb-input>
+		<rb-input
+			inline
+			rb-bind
+			label="subtext"
+			value="a.subtext">
+		</rb-input>
+
+		<!-- <rb-textarea
+			rb-bind
+			auto-height
+			value="a.content"
+			label="content">
+		</rb-textarea>
+		<rb-textarea
+			rb-bind
+			auto-height
+			value="a.subtext"
+			label="subtext">
+		</rb-textarea> -->
+
+		<!-- RADIOS -->
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="kind"
+			value="a.kind"
+			data="{{kinds}}">
+		</rb-radios>
+
+		<!-- VALUELESS -->
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.dark"
+			sublabel="dark"
+			ng-if="env.is.dev">
+		</rb-checkbox>
+		<!-- <rb-checkbox
+			inline
+			rb-bind
+			value="a.inline"
+			sublabel="inline">
+		</rb-checkbox> -->
+
+		<!-- BUTTONS -->
+		<section class="buttons">
+			<rb-button
+				data-reset
+				icon-kind="sync"
+				icon-source="solid">
+				Reset
+			</rb-button>
+		</section>
+	</form>
+
+	<!-- API -->
+	<section>
+		<rba-api component="rb-textcurve"></rba-api>
+	</section>
+
+	<!-- CSS Variables -->
+	<!-- <section>
+		<rba-css-vars component="rb-textcurve"></rba-css-vars>
+	</section> -->
+
+	<!-- CHANGELOG -->
+	<section>
+		<rba-changelog component="rb-textcurve"></rba-changelog>
+	</section>
+</div>
