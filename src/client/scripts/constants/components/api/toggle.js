@@ -168,5 +168,56 @@ p.constant('RB_TOGGLE_API',
 		`
 	}),
 	// common.get('popover')
+	{
+		attribute: 'target',
+		description: `
+			Toggle any element in the
+			<a target="_blank" href="https://mzl.la/2s8nYAw">dom</a>.
+			Value must be a valid
+			<a target="_blank" href="https://mzl.la/2IvP4bY">css selector</a>.
+			<ul>
+				<li>
+					<em class="info-sub no-parens">
+						uses document.querySelector()
+					</em>
+				</li>
+				<li>
+					<em class="info-sub no-parens">
+						see target-root option
+						to query from an element
+						other than the document
+					</em>
+				</li>
+			</ul>
+		`,
+		options: null,
+		type: 'string',
+		required: false
+	},
+	{
+		attribute: 'target-root',
+		description: `
+			<em class="info-heading">target option required</em>
+			Start query from an element other than the document.
+			<ul>
+				<li>
+					<em class="info-sub no-parens">
+						useful when creating
+						modular toggles
+					</em>
+				</li>
+				<li>
+					<em class="info-sub no-parens">
+						uses
+						<a target="_blank" href="https://mzl.la/2KRH9YR">element.closest()</a>
+						where element is rb-toggle
+					</em>
+				</li>
+			</ul>
+		`,
+		options: null,
+		type: 'string',
+		required: false
+	}
 ]
 )}])

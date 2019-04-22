@@ -15,13 +15,6 @@
 		<div class="col">
 			<section class="demo-component" ng-class="a.dark && 'dark'">
 				<div rba-builder="markup"></div>
-				<!-- <rb-toggle
-					open
-					cache="false"
-					caption="Toggle 2"
-					fetch="/examples/toggle">
-					Content...
-				</rb-toggle> -->
 			</section>
 		</div>
 		<div class="col-6">
@@ -29,10 +22,11 @@
 				scroll
 				readonly
 				rba-code
+				line-nowrap
 				model="markup"
 				actions="copy"
 				caption="html"
-				height="xxtall">
+				height="xxxtall">
 			</textarea>
 		</div>
 	</section>
@@ -62,10 +56,15 @@
 			value="a.contentAlts"
 			data="{{contentAlts}}">
 			<rb-popover position="top" slot="popover" caption="content alternatives">
-				<p>Two other ways to set content.</p>
+				<p>Three other ways to set content.</p>
 				<ul>
 					<li>fetch: url to file</li>
 					<li>onclick: return a string</li>
+					<li>
+						target: any element in the
+						<a target="_blank" href="https://mzl.la/2s8nYAw">dom</a>
+						<span class="sub block">target-root: target option required</span>
+					</li>
 				</ul>
 			</rb-popover>
 		</rb-checkboxes>
