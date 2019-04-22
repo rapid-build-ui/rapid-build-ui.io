@@ -1,5 +1,5 @@
-angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$element', 'typeService', 'usaStatesValue',
-	function($scope, $element, type, usaStatesValue) {
+angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$element', 'typeService', 'usStatesValue',
+	function($scope, $element, type, usStatesValue) {
 		/* Builder
 		 **********/
 		const createMarkup = function() {
@@ -50,7 +50,7 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 					_data = getUsaStateNames();
 					break;
 				case 'array of objects':
-					_data = usaStatesValue;
+					_data = usStatesValue;
 					break;
 			}
 
@@ -89,10 +89,10 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 
 		/* Props
 		 ********/
-		// console.log(usaStatesValue);
+		// console.log(usStatesValue);
 		const getUsaStateNames = () => {
 			const states = [];
-			for (const state of usaStatesValue)
+			for (const state of usStatesValue)
 				states.push(state.name);
 
 			return states;

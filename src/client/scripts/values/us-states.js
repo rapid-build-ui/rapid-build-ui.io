@@ -1,4 +1,4 @@
-angular.module('rapid-build').value('usaStatesValue', [
+angular.module('rapid-build').value('usStatesValue', [
 	{
 		"name": "Alabama",
 		"abbreviation": "AL"
