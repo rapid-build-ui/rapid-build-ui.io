@@ -171,14 +171,12 @@ p.constant('RB_TOGGLE_API',
 	{
 		attribute: 'target',
 		description: `
-			Toggle any element in the
-			<a target="_blank" href="https://mzl.la/2s8nYAw">dom</a>.
-			Value must be a valid
-			<a target="_blank" href="https://mzl.la/2IvP4bY">css selector</a>.
+			Toggle any element in the dom.
 			<ul>
 				<li>
 					<em class="info-sub no-parens">
-						uses document.querySelector()
+						value is a <a target="_blank" href="https://mzl.la/2IvP4bY">css selector</a>
+						for <a target="_blank" href="https://mzl.la/2s8nYAw">document.querySelector()</a>
 					</em>
 				</li>
 				<li>
@@ -208,8 +206,8 @@ p.constant('RB_TOGGLE_API',
 				</li>
 				<li>
 					<em class="info-sub no-parens">
-						uses
-						<a target="_blank" href="https://mzl.la/2KRH9YR">element.closest()</a>
+						value is a <a target="_blank" href="https://mzl.la/2XAFI2l">css selector</a>
+						for <a target="_blank" href="https://mzl.la/2KRH9YR">element.closest()</a>
 						where element is rb-toggle
 					</em>
 				</li>
