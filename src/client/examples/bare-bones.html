@@ -10,6 +10,9 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="/images/logos/rapid-build-ui-icon-16x16.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/images/logos/rapid-build-ui-icon-32x32.png">
 	<style>
+		[rb-hide] {
+			display: none !important;
+		}
 		rb-icon:not(:defined) {
 			display: inline-block;
 			height: 100vh;
@@ -29,6 +32,10 @@
 
 	<!-- RB COMPONENTS -->
 	<rb-alert>Hello Gorgeous!</rb-alert>
+
+	<rb-toggle caption="Toggle">
+		Elementary my dear Watson
+	</rb-toggle>
 
 	<rb-button onclick="showModal(event)">Show Modal</rb-button>
 
