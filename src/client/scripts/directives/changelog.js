@@ -12,13 +12,10 @@ angular.module('rapid-build').directive('rbaChangelog', ['changelogService',
 		/* LINK
 		 *******/
 		const Link = (scope, iElement, iAttrs) => {
-			/* Methods
-			 **********/
-			scope.getChangelog = component => { // :void
-				return changelogService.get(component).then(changelog => {
-					return changelog;
-				});
-			};
+			/* RB TOGGLE
+			 ************/
+			iElement[0].querySelector('rb-toggle').onclick = () =>
+				changelogService.get(scope.component)
 		}
 
 		/* API

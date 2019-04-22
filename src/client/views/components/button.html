@@ -45,7 +45,9 @@
 
 	<!-- CONFIGURE -->
 	<form name="demoForm" ng-submit="save($event)">
-		<h5 rba-text-curve>Configure</h5>
+		<rb-textcurve>
+			<h5>Configure</h5>
+		</rb-textcurve>
 
 		<rb-input
 			rb-bind
@@ -179,16 +181,17 @@
 	</form>
 
 	<!-- API -->
-	<rba-toggle
-		text-curve
-		show="true"
-		caption="API">
-		<rba-table source="RB_BUTTON_API" inject></rba-table>
-	</rba-toggle>
+	<section>
+		<rba-api component="rb-button"></rba-api>
+	</section>
 
 	<!-- CSS Variables -->
-	<rba-css-vars component="rb-button"></rba-css-vars>
+	<section>
+		<rba-css-vars component="rb-button"></rba-css-vars>
+	</section>
 
 	<!-- CHANGELOG -->
-	<rba-changelog component="rb-button"></rba-changelog>
+	<section>
+		<rba-changelog component="rb-button"></rba-changelog>
+	</section>
 </div>

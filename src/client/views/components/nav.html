@@ -79,7 +79,9 @@
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Configure</h5>
+		<rb-textcurve>
+			<h5>Configure</h5>
+		</rb-textcurve>
 
 		<rb-radios
 			toggle
@@ -154,18 +156,17 @@
 	</form>
 
 	<!-- API -->
-	<rba-toggle
-		text-curve
-		show="true"
-		caption="API">
-		<rba-table source="RB_NAV_API" inject></rba-table>
-	</rba-toggle>
+	<section>
+		<rba-api component="rb-nav"></rba-api>
+	</section>
 
 	<!-- CSS VARIABLES -->
-	<rba-css-vars component="rb-nav" theme="common"></rba-css-vars>
-	<rba-css-vars component="rb-nav" theme="light"></rba-css-vars>
-	<rba-css-vars component="rb-nav" theme="dark"></rba-css-vars>
+	<section><rba-css-vars component="rb-nav" theme="common"></rba-css-vars></section>
+	<section><rba-css-vars component="rb-nav" theme="light"></rba-css-vars></section>
+	<section><rba-css-vars component="rb-nav" theme="dark"></rba-css-vars></section>
 
 	<!-- CHANGELOG -->
-	<rba-changelog component="rb-nav"></rba-changelog>
+	<section>
+		<rba-changelog component="rb-nav"></rba-changelog>
+	</section>
 </div>

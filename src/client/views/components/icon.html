@@ -38,7 +38,9 @@
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Configure</h5>
+		<rb-textcurve>
+			<h5>Configure</h5>
+		</rb-textcurve>
 
 		<!-- RADIOS -->
 		<rb-dropdown
@@ -148,13 +150,17 @@
 	</form>
 
 	<!-- API -->
-	<rba-toggle
-		text-curve
-		show="true"
-		caption="API">
-		<rba-table source="RB_ICON_API" inject></rba-table>
-	</rba-toggle>
+	<section>
+		<rba-api component="rb-icon"></rba-api>
+	</section>
+
+	<!-- CSS Variables -->
+	<!-- <section>
+		<rba-css-vars component="rb-icon"></rba-css-vars>
+	</section> -->
 
 	<!-- CHANGELOG -->
-	<rba-changelog component="rb-icon"></rba-changelog>
+	<section>
+		<rba-changelog component="rb-icon"></rba-changelog>
+	</section>
 </div>

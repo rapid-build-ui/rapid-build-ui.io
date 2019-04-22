@@ -32,7 +32,9 @@
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Configure</h5>
+		<rb-textcurve>
+			<h5>Configure</h5>
+		</rb-textcurve>
 
 		<!-- INPUTS -->
 		<rb-textarea
@@ -135,13 +137,17 @@
 	</form>
 
 	<!-- API -->
-	<rba-toggle
-		text-curve
-		show="true"
-		caption="API">
-		<rba-table source="RB_TEXTAREA_API" inject></rba-table>
-	</rba-toggle>
+	<section>
+		<rba-api component="rb-textarea"></rba-api>
+	</section>
+
+	<!-- CSS Variables -->
+	<!-- <section>
+		<rba-css-vars component="rb-textarea"></rba-css-vars>
+	</section> -->
 
 	<!-- CHANGELOG -->
-	<rba-changelog component="rb-textarea"></rba-changelog>
+	<section>
+		<rba-changelog component="rb-textarea"></rba-changelog>
+	</section>
 </div>

@@ -35,7 +35,9 @@
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Configure</h5>
+		<rb-textcurve>
+			<h5>Configure</h5>
+		</rb-textcurve>
 
 		<!-- VALUELESS -->
 		<rb-checkbox
@@ -104,13 +106,17 @@
 	</form>
 
 	<!-- API -->
-	<rba-toggle
-		text-curve
-		show="true"
-		caption="API">
-		<rba-table source="RB_MODAL_API" inject></rba-table>
-	</rba-toggle>
+	<section>
+		<rba-api component="rb-modal"></rba-api>
+	</section>
+
+	<!-- CSS Variables -->
+	<!-- <section>
+		<rba-css-vars component="rb-modal"></rba-css-vars>
+	</section> -->
 
 	<!-- CHANGELOG -->
-	<rba-changelog component="rb-modal"></rba-changelog>
+	<section>
+		<rba-changelog component="rb-modal"></rba-changelog>
+	</section>
 </div>

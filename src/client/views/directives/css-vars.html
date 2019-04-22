@@ -1,23 +1,32 @@
-<rba-toggle
-	text-curve
-	caption="{{caption}}"
-	popover="{{popover}}"
-	action="getCssVars(component, theme)">
-	<div ng-if="!error" class="responsive-table">
-		<table class="api-table">
-			<thead>
-				<tr>
-					<th ng-class="th-name">name</th>
-					<th ng-class="th-value">value</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="(key, value) in ::cssVars">
-					<td class="td-name">{{key}}</td>
-					<td class="td-value">{{value}}</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<span ng-if="error" class="error-text">{{error}}</span>
-</rba-toggle>
+<rb-textcurve>
+	<rb-toggle
+		inline
+		caption="{{caption}}"
+		target="div"
+		target-root="rba-css-vars">
+	</rb-toggle>
+	<rb-popover
+		position="top"
+		ng-if="popover"
+		icon-size=".93"
+		ng-bind-html="popover | trustHtml">
+	</rb-popover>
+</rb-textcurve>
+
+<div ng-class="!error ? 'responsive-table' : ''">
+	<table ng-if="!error" class="api-table">
+		<thead>
+			<tr>
+				<th ng-class="th-name">name</th>
+				<th ng-class="th-value">value</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="(key, value) in ::cssVars">
+				<td class="td-name">{{key}}</td>
+				<td class="td-value">{{value}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<p ng-if="error" class="error-text">{{error}}</p>
+</div>
