@@ -120,6 +120,13 @@
     "@rapid-build-ui/rb-base" "^0.0.8"
     "@rapid-build-ui/rb-popover" "^0.0.15"
 
+"@rapid-build-ui/rb-textcurve@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-textcurve/-/rb-textcurve-0.0.0.tgz#50cfc3b0751f2139b99ece7d6294c1991e414c51"
+  integrity sha512-jh7apYaGtACIUpfwg3dFcVfUlKv4+6MCQsuUnCO75R5hR6SARXw3SR7nXQDf1y66qFEIyKf0oQvSeV5qWUcSNQ==
+  dependencies:
+    "@rapid-build-ui/rb-base" "^0.0.8"
+
 "@rapid-build-ui/rb-toggle@^0.0.0":
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-toggle/-/rb-toggle-0.0.0.tgz#8d347320b2c3b88f016a93de0084f67fbe0d2aa1"

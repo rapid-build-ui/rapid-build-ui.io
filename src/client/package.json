@@ -44,6 +44,7 @@
     "@rapid-build-ui/rb-popover": "^0.0.15",
     "@rapid-build-ui/rb-radios": "^0.0.10",
     "@rapid-build-ui/rb-textarea": "^0.0.2",
+    "@rapid-build-ui/rb-textcurve": "^0.0.0",
     "@rapid-build-ui/rb-toggle": "^0.0.0",
     "codemirror": "^5.45.0",
     "codemirror-one-dark-theme": "^1.1.1",
