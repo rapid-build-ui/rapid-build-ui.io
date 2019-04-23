@@ -3,6 +3,7 @@ p.constant('RB_ALERT_API',
 [
 	common.get('content'),
 	// common.get('dark'),
+	common.get('inline'),
 	common.get('kind'),
 	{
 		attribute: 'removable',

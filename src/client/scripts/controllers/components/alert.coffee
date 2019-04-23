@@ -7,6 +7,7 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
 			attrs += "#{nt}dark" if $scope.a.dark # TODO
+			attrs += "#{nt}inline" if $scope.a.inline
 			attrs += "#{nt}removable" if $scope.a.removable
 			attrs += "#{nt}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
