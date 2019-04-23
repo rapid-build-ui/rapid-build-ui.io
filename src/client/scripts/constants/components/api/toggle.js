@@ -132,16 +132,12 @@ p.constant('RB_TOGGLE_API',
 	},
 	common.get('inline'),
 	common.get('kind'),
-	{
-		attribute: 'open',
+	common.get('open', {
 		description: `
 			<em class="info-heading">defaults to false</em>
-			Opens the toggle.
-		`,
-		options: 'true',
-		type: `n/a | bool`,
-		required: false
-	},
+			Opens toggle.
+		`
+	}),
 	common.get('onclick', {
 		description: `
 			<em class="info-heading">can set content</em>

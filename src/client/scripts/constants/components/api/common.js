@@ -220,6 +220,16 @@ options:
 		required: false
 	},
 	{
+		attribute: 'open',
+		description: `
+			<em class="info-heading">defaults to false</em>
+			Opens component.
+		`,
+		options: 'true',
+		type: `n/a | bool`,
+		required: false
+	},
+	{
 		attribute: 'onclick',
 		description: `
 			Function to execute onclick.
