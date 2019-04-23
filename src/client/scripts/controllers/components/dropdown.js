@@ -1,5 +1,5 @@
 angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$element', 'typeService', 'usStatesValue',
-	function($scope, $element, type, usStatesValue) {
+	function($scope, $element, type, States) {
 		/* Builder
 		 **********/
 		const createMarkup = function() {
@@ -43,22 +43,10 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 		};
 
 		const buldDataMarkup = () => {
-			let _data = [];
-
-			switch ($scope.a.data) {
-				case 'array of strings':
-					_data = getUsaStateNames();
-					break;
-				case 'array of objects':
-					_data = usStatesValue;
-					break;
-			}
-
-			return JSON.stringify(_data, stringifyModifier, '\t')
-				.replace(/\\n/g, '\n')
-				.replace(/\\"/g, '"')
-				.replace(/"function\s*\((.*)\)/g, 'function($1)')
-				.replace(/\}"/g, '}');
+			const data = $scope.a.data.includes('strings')
+				? States.names
+				: States.objects;
+			return JSON.stringify(data, null, '\t');
 		};
 
 		const buldValidationMarkup = () => {
@@ -89,15 +77,6 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 
 		/* Props
 		 ********/
-		// console.log(usStatesValue);
-		const getUsaStateNames = () => {
-			const states = [];
-			for (const state of usStatesValue)
-				states.push(state.name);
-
-			return states;
-		}
-
 		$scope.dataLabels = [
 			'array of strings',
 			'array of objects'
@@ -139,6 +118,10 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 		/* Init
 		 *******/
 		$scope.reset();
+		States.init().then(() => {
+			$scope.markup = createMarkup();
+			$scope.$apply();
+		});
 
 		/* Destroy
 		 **********/
@@ -146,5 +129,4 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 			markupWatch();
 		});
 	}
-
 ]);
