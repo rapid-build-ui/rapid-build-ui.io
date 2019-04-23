@@ -81,7 +81,7 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 			'array of strings',
 			'array of objects'
 		]
-		$scope.labelKeys = ['name', 'id']
+		$scope.labelKeys = ['id', 'name']
 		$scope.validationLabels = [
 			'required'
 		]

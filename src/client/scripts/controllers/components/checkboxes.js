@@ -94,7 +94,7 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 
 		/* Props
 		 ********/
-		$scope.labelKeys = ['name', 'id'];
+		$scope.labelKeys = ['id', 'name'];
 		$scope.validationLabels = Object.keys(validations);
 		$scope.data = [
 			['batman', 'superman', 'wolverine'],
