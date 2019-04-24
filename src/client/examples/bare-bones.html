@@ -41,7 +41,7 @@
 		Elementary my dear Watson
 	</rb-toggle>
 
-	<rb-button onclick="showModal(event)">Show Modal</rb-button>
+	<rb-button onclick="openModal(event)">Show Modal</rb-button>
 
 	<rb-icon kind="thumbs-up"></rb-icon>
 
@@ -111,9 +111,9 @@
 
 	<!-- RB COMPONENTS -->
 	<script>
-		function showModal(evt) { // :void
+		function openModal(evt) { // :void
 			const modal = document.querySelector('rb-modal');
-			modal.show = true;
+			modal.open = true;
 		}
 	</script>
 	<script src="/scripts/es-modules/rapid-build-ui.js" type="module"></script>

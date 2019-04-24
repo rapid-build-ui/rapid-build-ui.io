@@ -226,7 +226,7 @@ options:
 			Opens component.
 		`,
 		options: 'true',
-		type: `n/a | bool`,
+		type: `bool`,
 		required: false
 	},
 	{

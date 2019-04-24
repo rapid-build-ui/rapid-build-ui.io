@@ -136,7 +136,8 @@ p.constant('RB_TOGGLE_API',
 		description: `
 			<em class="info-heading">defaults to false</em>
 			Opens toggle.
-		`
+		`,
+		type: `n/a | bool`
 	}),
 	common.get('onclick', {
 		description: `

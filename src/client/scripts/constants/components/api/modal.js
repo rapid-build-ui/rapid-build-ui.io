@@ -1,6 +1,15 @@
 angular.module('rapid-build').config(['$provide', 'RB_COMMON_API', (p, common) => {
 p.constant('RB_MODAL_API',
 [
+	{
+		attribute: 'center',
+		description: `
+			Centers modal vertically.
+		`,
+		options: null,
+		type: null,
+		required: false
+	},
 	common.get('content', {
 		description: `
 			<em class="info-heading">not attribute</em>
@@ -8,16 +17,6 @@ p.constant('RB_MODAL_API',
 			header or footer slot.
 		`
 	}),
-	{
-		attribute: 'header',
-		description: `
-			<em class="info-heading">slot not attribute</em>
-			Any html element inside tag with attribute slot="header".
-		`,
-		options: null,
-		type: 'html | string',
-		required: false
-	},
 	{
 		attribute: 'footer',
 		description: `
@@ -29,22 +28,13 @@ p.constant('RB_MODAL_API',
 		required: false
 	},
 	{
-		attribute: 'center',
+		attribute: 'header',
 		description: `
-			Vertically centers modal.
+			<em class="info-heading">slot not attribute</em>
+			Any html element inside tag with attribute slot="header".
 		`,
 		options: null,
-		type: null,
-		required: false
-	},
-	{
-		attribute: 'show',
-		description: `
-			<em class="info-heading">defaults to false</em>
-			Shows or hides the modal.
-		`,
-		options: 'true',
-		type: 'bool',
+		type: 'html | string',
 		required: false
 	},
 	{
@@ -56,6 +46,12 @@ p.constant('RB_MODAL_API',
 		type: null,
 		required: false
 	},
+	common.get('open', {
+		description: `
+			<em class="info-heading">defaults to false</em>
+			Opens modal.
+		`
+	}),
 	{
 		attribute: 'unclosable',
 		description: `
