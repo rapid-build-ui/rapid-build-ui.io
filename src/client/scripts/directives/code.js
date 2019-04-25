@@ -53,8 +53,8 @@ angular.module('rapid-build').directive('rbaCode', ['$timeout', 'preService', 'E
 			hide(trigger, delay) {
 				if (!this._isShowing()) return;
 				this._timer = $timeout(() => {
-					this._timer         = null;
-					trigger.showPopover = false;
+					this._timer  = null;
+					trigger.open = false;
 				}, delay);
 			},
 			updateTextarea(evt) {

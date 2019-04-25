@@ -53,6 +53,14 @@ p.constant('RB_POPOVER_API',
 		type: null,
 		required: false
 	},
+	common.get('open', {
+		description: `
+			<em class="info-heading">defaults to false</em>
+			Opens popover.
+			<em class="info-sub">useful if you need to
+			programmatically open or close popover</em>
+		`
+	}),
 	{
 		attribute: 'pin',
 		description: `Popover will only close when the trigger is clicked.`,
@@ -69,16 +77,6 @@ p.constant('RB_POPOVER_API',
 		`,
 		options: 'bottom | left | top',
 		type: 'string',
-		required: false
-	},
-	{
-		attribute: 'show-popover',
-		description: `
-			<em class="info-heading">defaults to false</em>
-			Programmatically show or hide the popover.
-		`,
-		options: 'true',
-		type: 'bool',
 		required: false
 	}
 ]

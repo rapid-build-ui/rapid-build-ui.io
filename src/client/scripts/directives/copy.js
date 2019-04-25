@@ -21,7 +21,7 @@ angular.module('rapid-build').directive('rbaCopy', ['$timeout', $timeout => {
 			hide(trigger, delay) {
 				if (!this._isShowing()) return;
 				this._timer = $timeout(() => {
-					trigger.showPopover = false;
+					trigger.open = false;
 					this._timer = null;
 				}, delay);
 			}
