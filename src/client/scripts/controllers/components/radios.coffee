@@ -26,7 +26,7 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 		# Helpers
 		# =======
 		getPopoverSlot = -> # :html
-			'\n\t<rb-popover\n\t\tslot="popover"\n\t\tposition="top">\n\t\tmore info...\n\t</rb-popover>\n'
+			'\n\t<rb-popover\n\t\tslot="popover">\n\t\tmore info...\n\t</rb-popover>\n'
 
 		stringifyModifier = (key, val) ->
 			val = angular.copy val

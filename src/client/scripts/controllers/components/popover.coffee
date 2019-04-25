@@ -31,7 +31,7 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 		# Props
 		# =====
 		$scope.kinds         = ['danger','info','neutral','success','warning']
-		$scope.positions     = ['top','bottom','left']
+		$scope.positions     = ['bottom','left','right']
 		$scope.iconFlips     = ['horizontal','vertical','both']
 		$scope.iconKinds     = ['question-circle','download','github']
 		$scope.iconSources   = ['solid','brands']

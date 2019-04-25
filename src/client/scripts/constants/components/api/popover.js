@@ -71,11 +71,11 @@ p.constant('RB_POPOVER_API',
 	{
 		attribute: 'position',
 		description: `
-			<em class="info-heading">defaults to right</em>
+			<em class="info-heading">defaults to top</em>
 			Position where popover opens. Will adjust if not in
 			<a target="_blank" href="https://goo.gl/DwJ1ke">viewport</a>.
 		`,
-		options: 'bottom | left | top',
+		options: 'bottom | left | right',
 		type: 'string',
 		required: false
 	}

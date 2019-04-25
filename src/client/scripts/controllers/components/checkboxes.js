@@ -26,7 +26,7 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 		/* Helpers
 		 **********/
 		const getPopoverSlot = () => {
-			return '\n\t<rb-popover\n\t\tslot="popover"\n\t\tposition="top">\n\t\tmore info...\n\t</rb-popover>\n';
+			return '\n\t<rb-popover\n\t\tslot="popover">\n\t\tmore info...\n\t</rb-popover>\n';
 		}
 
 		const getValue = val => { // TODO: fix!

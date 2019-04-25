@@ -27,7 +27,7 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 		/* Helpers
 		 **********/
 		const getPopoverSlot = () => { // :string
-			return '\n\t<rb-popover\n\t\tslot="popover"\n\t\tposition="top">\n\t\tmore info...\n\t</rb-popover>\n';
+			return '\n\t<rb-popover\n\t\tslot="popover">\n\t\tmore info...\n\t</rb-popover>\n';
 		}
 		const getPlaceholder = () => { // :string
 			let { placeholder } = $scope.a;

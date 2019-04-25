@@ -69,8 +69,7 @@ angular.module('rapid-build').controller('rbToggleController', ['$scope', '$elem
 					if (!$scope.a.popover) return '';
 					let popover = `
 						<rb-popover
-							slot="popover"
-							position="top">
+							slot="popover">
 							more info...
 						</rb-popover>`
 					return preService.get.text(popover).replace(/^|\n/g,'\n\t');
