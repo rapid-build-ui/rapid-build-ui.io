@@ -2,12 +2,32 @@ angular.module('rapid-build').config(['$provide', 'RB_COMMON_API', (p, common) =
 p.constant('RB_MODAL_API',
 [
 	{
+		attribute: 'backdrop',
+		description: `
+			<em class="info-heading">defaults to true</em>
+			Displays modal with backdrop.
+		`,
+		options: 'false',
+		type: `bool`,
+		required: false
+	},
+	{
 		attribute: 'center',
 		description: `
 			Centers modal vertically.
 		`,
 		options: null,
 		type: null,
+		required: false
+	},
+	{
+		attribute: 'closable',
+		description: `
+			<em class="info-heading">defaults to true</em>
+			Modal can be closed.
+		`,
+		options: 'false',
+		type: `bool`,
 		required: false
 	},
 	common.get('content', {
@@ -37,29 +57,11 @@ p.constant('RB_MODAL_API',
 		type: 'html | string',
 		required: false
 	},
-	{
-		attribute: 'no-backdrop',
-		description: `
-			Displays modal without backdrop.
-		`,
-		option: null,
-		type: null,
-		required: false
-	},
 	common.get('open', {
 		description: `
 			<em class="info-heading">defaults to false</em>
 			Opens modal.
 		`
-	}),
-	{
-		attribute: 'unclosable',
-		description: `
-			Prevents the modal from being closed.
-		`,
-		option: null,
-		type: null,
-		required: false
-	}
+	})
 ]
 )}])

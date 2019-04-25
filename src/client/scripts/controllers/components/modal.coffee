@@ -7,10 +7,10 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t'; ntt = '\n\t\t';
 
 			attrs  += "#{s}center" if $scope.a.center
-			attrs  += "#{s}no-backdrop" if $scope.a.noBackdrop
-			attrs  += "#{s}unclosable" if $scope.a.unclosable
 			attrs  += "#{s}open=\"#{$scope.a.open}\"" if $scope.a.open
-			# attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
+			# attrs  += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
+			attrs  += "#{s}backdrop=\"#{$scope.a.backdrop}\"" unless $scope.a.backdrop
+			attrs  += "#{s}closable=\"#{$scope.a.closable}\"" unless $scope.a.closable
 			content += "#{nt}#{$scope.a.content}" if $scope.a.content
 			content += "#{nt}#{$scope.a.header}"  if $scope.a.header
 			content += "#{nt}#{$scope.a.footer}"  if $scope.a.footer
@@ -64,7 +64,8 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		$scope.reset = ->
 			$scope.a =
 				# open: true
-				open: false
+				backdrop: true
+				closable: true
 				content: 'Easy peasy modal content!'
 				header:  '<h5 slot="header">Modal Header</h5>'
 				footer:  '<em slot="footer">Modal Footer</em>'
