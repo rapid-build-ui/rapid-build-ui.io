@@ -126,7 +126,7 @@ angular.module('rapid-build').directive('rbaCode', ['$timeout', 'preService', 'E
 			/* VALUELESS
 			 ************/
 			lineNumbers: '@?', // *false
-			lineNowrap:  '@?', // *false
+			lineWrap:    '@?', // *false
 			readonly:    '@?', // *false
 			scroll:      '@?'  // *false
 		}

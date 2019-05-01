@@ -45,7 +45,7 @@ angular.module('rapid-build').factory('Editor', [function() {
 					indentWithTabs: opts.indentWithTabs === false ? false : true,
 					placeholder:    opts.placeholder,
 					lineNumbers:    opts.lineNumbers !== undefined,
-					lineWrapping:   opts.lineNowrap  === undefined,
+					lineWrapping:   opts.lineWrap  !== undefined,
 					readOnly:       !!opts.readonly && true,
 					mode:           Modes[opts.mode] || Modes.html,
 					theme:          opts.theme || 'one-dark'
