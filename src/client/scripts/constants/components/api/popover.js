@@ -63,7 +63,11 @@ p.constant('RB_POPOVER_API',
 	}),
 	{
 		attribute: 'pin',
-		description: `Popover will only close when the trigger is clicked.`,
+		description: `
+			Popover will only close when trigger is clicked.
+			<em class="info-sub">displays
+			thumbtack icon when popover is open and pinned</em>
+		`,
 		options: null,
 		type: null,
 		required: false
