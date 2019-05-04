@@ -31,6 +31,15 @@
 	flex-direction: row-reverse !important;
 }
 
+/* Text Formatting
+ ******************/
+.nowrap {
+	white-space: nowrap !important;
+}
+.subtext {
+	color: #92a2b2 !important;
+}
+
 /* State Texts
  **************/
 .error-text {
