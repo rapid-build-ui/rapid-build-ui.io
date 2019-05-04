@@ -1,10 +1,6 @@
 /*********************
  * SHOWCASE VARIABLES
  *********************/
-// COLORS
-$greyCharcoal: #323232;
-$greyDarkest:  #5f6e7e;
-
 /* FONT FAMILIES
  * - mac: Helvetica Neue
  * - windows: Microsoft Sans Serif | Segoe UI
@@ -18,8 +14,3 @@ $greyDarkest:  #5f6e7e;
  ******************************************************/
 $generalFont: 'Helvetica Neue', 'Microsoft Sans Serif', 'Segoe UI', sans-serif;
 $monoFont:     Monaco, Menlo, Consolas, 'Courier New', monospace; // fixed width font
-
-/* State colors for border, bg and text
- ***************************************/
-$generalTextColor:   $greyDarkest;
-$generalTextSize:    1rem; // browser default = 16px (usually)

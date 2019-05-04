@@ -1,0 +1,37 @@
+/****************
+ * COLOR PALETTE (names from coolors)
+ ****************/
+$palette: (
+	// Common
+	trans: transparent,
+	black: #000, // currently unused
+	white: #fff, // th (color)
+
+	// Blues
+	cerulean:         #037bab, // thead tr {bottom gradient}
+	ceruleanFrost:    #6798c1, // a:active (color)
+	darkPastelBlue:   #78a4c8, // a | a:focus:hover (color)
+	steelBlue:        #4682b4, // headings (color)
+	richElectricBlue: #019fcc, // thead tr {top gradient}
+
+	// Darks
+	charlestonGreen:  #282c34, // rb-code | .demo-component.dark (bg)
+	darkGunmetal:     #20232a, // code.title-bar (bg)
+	jet:              #323232, // footer.main (bg)
+	onyx:             #34373d, // code.title-bar (border)
+
+	// Greys
+	blackCoral:       #52626b, // th (text shadow)
+	cadetGrey:        #92a2b2, // .subheading | .subtext (color)
+	paynesGrey:       #5f6e7e, // body (color)
+	spanishGray:      #999,    // code.title-bar (color) | footer.main (color) | img.bordered (border)
+
+	// Lights
+	gainsboro:        #ddd,    // hr | section.separated (border)
+	isabelline:       #eee,    // headings (text shadow)
+	lightGray:        #d3d3d3, // tbody | tfoot (border)
+	pastelGray:       #cacaca, // .headlines section (border)
+	platinum:         #e3e3e3, // aside.main | header.main | main > header (border)
+	snow:             #fafafa, // tbody tr:hover (bg)
+	whiteSmoke:       #f5f5f5, // header.main (bg)
+);

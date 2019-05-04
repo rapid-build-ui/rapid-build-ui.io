@@ -13,6 +13,6 @@
 	&.dark {
 		padding: 15px;
 		border-radius: 5px;
-		background-color: #282c34; // same as rb-code
+		background-color: mapGet($palette, charlestonGreen); // same as rb-code
 	}
 }

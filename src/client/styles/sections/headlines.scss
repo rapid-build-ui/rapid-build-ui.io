@@ -6,7 +6,7 @@
 		margin: 0 0 remy(40);
 		padding: 0 0 remy(60);
 		text-align: center;
-		border-bottom: 1px dashed #cacaca;
+		border-bottom: 1px dashed mapGet($palette, pastelGray);
 		@include removeLastChildBottomSpacing();
 
 		p {

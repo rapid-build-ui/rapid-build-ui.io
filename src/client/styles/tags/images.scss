@@ -3,7 +3,7 @@
  *********/
 img {
 	&.bordered {
-		border: 1px solid #999;
+		border: 1px solid mapGet($palette, spanishGray);
 	}
 	&.rounded {
 		border-radius: 6px;

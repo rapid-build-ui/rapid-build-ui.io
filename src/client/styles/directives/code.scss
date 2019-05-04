@@ -13,7 +13,7 @@
 		margin: 0;
 		padding: 0;
 		opacity: 0;
-		border-color: transparent; // can't copy with border none
+		border-color: mapGet($palette, trans); // can't copy with border none
 		display: block !important;
 		// height: 200px;
 	}
@@ -29,9 +29,9 @@
 		padding: 5px 13px 8px 8px;
 		min-height: 17.5px; // copy icon height, prevents shift shock
 		line-height: 16.5px;
-		color: #999;
-		background: #20232a;
-		border-bottom: 1px solid #34373d;
+		color: mapGet($palette, spanishGray);
+		background: mapGet($palette, darkGunmetal);
+		border-bottom: 1px solid mapGet($palette, onyx);
 		> * {
 			flex: auto; // grow items to container width
 		}
@@ -119,7 +119,7 @@
 	// .cm-s-one-dark,
 	// .cm-s-one-dark .CodeMirror-gutter,
 	// .cm-s-one-dark .CodeMirror-gutters {
-	// 	background-color: #141414;
+	// 	background-color: #141414; // licorice
 	// }
 
 	// Placeholder
