@@ -131,6 +131,39 @@
 	.CodeMirror-scroll {
 		-webkit-overflow-scrolling: touch; // momentum scrolling on iOS
 	}
+	.CodeMirror-scrollbar-filler {
+		// (windows only)
+		// shows bottom right square when
+		// vertical and horizontal scrollbars are out
+		background-color: transparent;
+	}
+	.CodeMirror-hscrollbar,
+	.CodeMirror-vscrollbar {
+		// normalize scrollbar look (mac | windows)
+		// scrollbar- props only supported by firefox
+		scrollbar-width: thin;
+		scrollbar-color: #00000080 transparent; // 1st thumb, 2nd track
+
+		&::-webkit-scrollbar,
+		&::-webkit-scrollbar-thumb {
+			border-radius: 100px;
+		}
+		&::-webkit-scrollbar {
+			width:  8px;
+			height: 8px;
+			&:hover {
+				background: #00000017;
+			}
+		}
+		&::-webkit-scrollbar-thumb {
+			background: #00000080;
+			&:active {
+				background: #0000009c; // darker onclick
+			}
+			&:vertical   { min-height: 10px; }
+			&:horizontal { min-width:  10px; }
+		}
+	}
 
 	// Readonly
 	&.readonly .CodeMirror {
