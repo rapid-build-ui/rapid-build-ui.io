@@ -64,9 +64,18 @@ $whiteLight:      #fcfcfc;
 $yellow:          #f7c401;
 $yellowLightest:  #ffffe1; // super light yellow
 
-/* Font Families
- ****************/
-$generalFont: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/* FONT FAMILIES
+ * - mac: Helvetica Neue
+ * - windows: Microsoft Sans Serif | Segoe UI
+ * - web safe: sans-serif
+ * Supported Font Weights (400 is normal)
+ * - Helvetica Neue:       300 | 400 | 500 | 600
+ * - Microsoft Sans Serif: 400 | 600
+ * - Segoe UI:             300 | 400 | 500 | 700 | 800
+ * - sans-serif (mac):     300 | 400 | 600
+ * - sans-serif (windows): 300 | 600 | 800
+ ******************************************************/
+$generalFont: 'Helvetica Neue', 'Microsoft Sans Serif', 'Segoe UI', sans-serif;
 $monoFont:     Monaco, Menlo, Consolas, 'Courier New', monospace; // fixed width font
 // $headerFont:  'Segoe UI', 'myriad pro', myriad, helvetica, arial, sans-serif;
 
