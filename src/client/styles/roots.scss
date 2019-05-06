@@ -14,5 +14,5 @@ body {
 	font-size: 1rem; // browser default = 16px (usually)
 	line-height: 1.5;
 	font-weight: 400;
-	font-family: $generalFont;
+	font-family: mapGet($fonts, default);
 }

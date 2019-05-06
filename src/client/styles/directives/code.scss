@@ -64,27 +64,27 @@
 .rb-code {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	.title-bar,
+	&.readonly .CodeMirror::before {
+		font-family: mapGet($fonts, default);
+	}
 	.title-bar {
 		h3 {
 			font-size: 13px;
 			font-weight: 700;
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
 		}
 		.actions {
 			font-size: 14.5px;
 		}
 	}
+	&.readonly .CodeMirror::before {
+		font-size: 12px;
+		font-weight: normal;
+	}
 	.CodeMirror {
 		font-size: 11.5px;
 		font-weight: 600;
-		font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
-	}
-	&.readonly .CodeMirror {
-		&::before {
-			font-size: 12px;
-			font-weight: normal;
-			font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
-		}
+		font-family: mapGet($fonts, monospaced);
 	}
 }
 
