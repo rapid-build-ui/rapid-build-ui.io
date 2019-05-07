@@ -12,14 +12,13 @@ $fonts: (
 	 * Supported Font Weights (400 is normal)
 	 * -------------------------------------------------
 	 * Helvetica Neue:       300 | 400 | 500 | 600
-	 * Microsoft Sans Serif: 400 | 600
+	 * Microsoft Sans Serif: 400 | 600 (unused)
 	 * Segoe UI:             300 | 400 | 500 | 700 | 800
 	 * sans-serif (mac):     300 | 400 | 600
 	 * sans-serif (windows): 300 | 600 | 800
 	 ****************************************************/
 	default: (
 		'Helvetica Neue',
-		'Microsoft Sans Serif',
 		'Segoe UI',
 		sans-serif
 	),
@@ -28,7 +27,7 @@ $fonts: (
 	 * OPERATING SYSTEMS
 	 * --------------------------------------
 	 * mac: Menlo | Monaco | Consolas
-	 * windows: Lucida Console | Consolas
+	 * windows: Consolas
 	 * fallback: monospace
 	 * --------------------------------------
 	 * Supported Font Weights (400 is normal)
@@ -38,7 +37,6 @@ $fonts: (
 	monospaced: (
 		Menlo,
 		Monaco,
-		'Lucida Console',
 		Consolas,
 		monospace
 	)

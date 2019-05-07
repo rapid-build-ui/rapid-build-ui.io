@@ -31,7 +31,7 @@ $textColors: (
 	 ******************/
 	.td- {
 		&name, // css vars table
-		&attribute { font-weight: 600; }
+		&attribute { font-weight: 700; }
 		&options { color: mapGet($textColors, options); }
 		&type,
 		&required { color: mapGet($textColors, required); }
@@ -47,7 +47,7 @@ $textColors: (
 		&notes { width: 39%; }
 	}
 	.td- {
-		&browser { font-weight: 600; }
+		&browser { font-weight: 700; }
 	}
 	.support { text-align: center; }
 
@@ -81,7 +81,7 @@ $textColors: (
 		margin: 4px 0 3px;
 		padding: 0;
 		color: inherit;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: inherit;
 		text-shadow: none;
 	}
