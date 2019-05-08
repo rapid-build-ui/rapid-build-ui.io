@@ -70,7 +70,7 @@ common:
 					'scripts/es-modules/**'
 				]
 				styles: [
-					'styles/themes/*/*'
+					'styles/themes/*/*/*'
 				]
 
 	minify:

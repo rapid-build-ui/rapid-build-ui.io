@@ -3,8 +3,10 @@
  *********************************/
 // :root body.rb.showcase { // for testing
 :root .lavender-theme {
-	@import 'lavender/alert.scss';
-	@import 'lavender/button.scss';
-	@import 'lavender/nav.scss';
-	@import 'lavender/popover.scss';
+	@import 'alert.scss';
+	@import 'button.scss';
+	@import 'nav.scss';
+	@import 'popover.scss';
+	@import 'textcurve.scss';
+	@import 'toggle.scss';
 }

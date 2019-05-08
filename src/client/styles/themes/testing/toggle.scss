@@ -1,0 +1,20 @@
+/***************************
+ * TESTING THEME: RB-TOGGLE
+ ***************************/
+rb-toggle {
+	// Caption Color
+	--rb-toggle-default-caption-color: hotpink;
+	--rb-toggle-danger-caption-color:  red;
+	--rb-toggle-info-caption-color:    dodgerblue;
+	--rb-toggle-neutral-caption-color: black;
+	--rb-toggle-success-caption-color: green;
+	--rb-toggle-warning-caption-color: blue;
+
+	// Caption Color Hover
+	--rb-toggle-default-caption-color-hover: red;
+	--rb-toggle-danger-caption-color-hover:  darkred;
+	--rb-toggle-info-caption-color-hover:    brown;
+	--rb-toggle-neutral-caption-color-hover: white;
+	--rb-toggle-success-caption-color-hover: darkgreen;
+	--rb-toggle-warning-caption-color-hover: darkblue;
+}
