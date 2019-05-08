@@ -1,0 +1,10 @@
+/*********************************
+ * LAVENDER THEME: RAPID BUILD UI
+ *********************************/
+// :root body.rb.showcase { // for testing
+:root .lavender-theme {
+	@import 'lavender/alert.scss';
+	@import 'lavender/button.scss';
+	@import 'lavender/nav.scss';
+	@import 'lavender/popover.scss';
+}

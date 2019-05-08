@@ -7,7 +7,7 @@ angular.module('rapid-build').controller('themesExController', ['$scope', '$elem
 		/* Scope Props
 		 **************/
 		$scope.themes = [
-			{ name: 'alina', cssClass: 'alina-theme' }
+			{ name: 'lavender', cssClass: 'lavender-theme' }
 		];
 
 		/* Helpers
