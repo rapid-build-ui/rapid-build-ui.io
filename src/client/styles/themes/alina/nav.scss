@@ -34,6 +34,7 @@ rb-nav {
 
 	/* LIGHT THEME
 	 **************/
+	$darkViolet: #291450;
 	--rb-nav-light-default-vertical-dividers-heading-bg: #b299e6;
 	--rb-nav-light-default-vertical-dividers-link-bg: #f0ebfa;
 	--rb-nav-light-default-vertical-dividers-link-bg-hover: #f9f9f9;
@@ -60,21 +61,21 @@ rb-nav {
 	--rb-nav-light-primary-horizontal-no-dividers-link-border-click: 1px solid #e0d6f5;
 	--rb-nav-light-primary-horizontal-no-dividers-link-border-active: 1px solid #e0d6f5;
 
-	// todo: add border states!!!
+	// TODO: add border states!!!
 	--rb-nav-light-primary-horizontal-dividers-link-border: 1px solid #e0d6f5;
 	--rb-nav-light-primary-vertical-dividers-link-border: 1px solid #fff;
 	--rb-nav-light-default-heading-color: #fff;
 	--rb-nav-light-default-heading-text-shadow: steelblue;
 	--rb-nav-light-default-link-color: steelblue;
-	--rb-nav-light-default-link-color-hover: #291450;
+	--rb-nav-light-default-link-color-hover: #{$darkViolet};
 	--rb-nav-light-default-link-color-click: #006699;
-	--rb-nav-light-default-link-color-active: #291450;
+	--rb-nav-light-default-link-color-active: #{$darkViolet};
 
 	// --rb-nav-light-primary-heading-color: #fff;
 	// --rb-nav-light-primary-heading-text-shadow: steelblue;
 
 	--rb-nav-light-primary-link-color: #855dd5;
-	--rb-nav-light-primary-link-color-hover: #291450;
+	--rb-nav-light-primary-link-color-hover: #{$darkViolet};
 	--rb-nav-light-primary-link-color-click: #006699;
 	--rb-nav-light-primary-link-color-active: white;
 
@@ -95,60 +96,78 @@ rb-nav {
 	--rb-nav-light-primary-responsive-open-trigger-bars-bg: #323232;
 	--rb-nav-light-primary-responsive-open-trigger-border: 1px solid #aaa;
 
-	// todo: add ability to set heading color with dividers
+	// TODO: add ability to set heading color with dividers
 	--rb-nav-light-primary-responsive-dividers-heading-bg: #b299e6;
 
 
 	/* DARK THEME
 	 *************/
-	// --rb-nav-dark-default-vertical-dividers-heading-bg: #575757;
-	// --rb-nav-dark-default-vertical-dividers-link-bg: #323232;
-	// --rb-nav-dark-default-vertical-dividers-link-bg-hover: #292929;
-	// --rb-nav-dark-default-vertical-dividers-link-bg-click: #292929;
-	// --rb-nav-dark-default-vertical-dividers-link-bg-active: #292929;
-	// --rb-nav-dark-primary-horizontal-no-dividers-link-bg: transparent;
-	// --rb-nav-dark-primary-horizontal-no-dividers-link-bg-hover: #292929;
-	// --rb-nav-dark-primary-horizontal-no-dividers-link-bg-click: #292929;
-	// --rb-nav-dark-primary-horizontal-no-dividers-link-bg-active: #292929;
-	// --rb-nav-dark-primary-horizontal-dividers-link-bg: #323232;
-	// --rb-nav-dark-primary-horizontal-dividers-link-bg-hover: #292929;
-	// --rb-nav-dark-primary-horizontal-dividers-link-bg-click: #292929;
-	// --rb-nav-dark-primary-horizontal-dividers-link-bg-active: #292929;
-	// --rb-nav-dark-primary-vertical-dividers-link-bg: #323232;
-	// --rb-nav-dark-primary-vertical-dividers-link-bg-hover: #292929;
-	// --rb-nav-dark-primary-vertical-dividers-link-bg-click: #292929;
-	// --rb-nav-dark-primary-vertical-dividers-link-bg-active: #292929;
-	// --rb-nav-dark-primary-responsive-dividers-heading-bg: #575757;
-	// --rb-nav-dark-default-responsive-nav-bg: #323232;
-	// --rb-nav-dark-default-responsive-trigger-bg: #323232;
-	// --rb-nav-dark-default-responsive-trigger-bars-bg: gray;
-	// --rb-nav-dark-default-responsive-trigger-bars-bg-hover: #bbb;
-	// --rb-nav-dark-primary-responsive-nav-bg: #323232;
-	// --rb-nav-dark-primary-responsive-trigger-bg: #323232;
-	// --rb-nav-dark-primary-responsive-trigger-bars-bg: gray;
-	// --rb-nav-dark-primary-responsive-trigger-bars-bg-hover: #bbb;
-	// --rb-nav-dark-default-vertical-dividers-nav-border-top: 1px solid #696969;
-	// --rb-nav-dark-default-vertical-dividers-nav-border-bottom: 1px solid #696969;
-	// --rb-nav-dark-default-horizontal-dividers-link-border-color: #696969;
-	// --rb-nav-dark-default-vertical-dividers-heading-border-bottom: 1px solid #696969;
-	// --rb-nav-dark-default-vertical-dividers-link-border-bottom: 1px solid #696969;
-	// --rb-nav-dark-primary-horizontal-no-dividers-link-border: 1px solid #696969;
-	// --rb-nav-dark-primary-horizontal-dividers-link-border: 1px solid #696969;
-	// --rb-nav-dark-primary-vertical-dividers-link-border: 1px solid #696969;
-	// --rb-nav-dark-default-responsive-nav-border: 1px solid #696969;
-	// --rb-nav-dark-default-responsive-trigger-border: 1px solid #696969;
-	// --rb-nav-dark-primary-responsive-nav-border: 1px solid #696969;
-	// --rb-nav-dark-primary-responsive-trigger-border: 1px solid #696969;
-	// --rb-nav-dark-default-heading-color: #bbb;
-	// --rb-nav-dark-default-heading-text-shadow: #323232;
-	// --rb-nav-dark-default-link-color: gray;
-	// --rb-nav-dark-default-link-color-hover: #bbb;
-	// --rb-nav-dark-default-link-color-click: #c1c1c1;
-	// --rb-nav-dark-default-link-color-active: #d0d0d0;
-	// --rb-nav-dark-primary-heading-color: #bbb;
-	// --rb-nav-dark-primary-heading-text-shadow: #323232;
-	// --rb-nav-dark-primary-link-color: gray;
-	// --rb-nav-dark-primary-link-color-hover: #bbb;
-	// --rb-nav-dark-primary-link-color-click: #c1c1c1;
-	// --rb-nav-dark-primary-link-color-active: #d0d0d0;
+	--rb-nav-dark-default-vertical-dividers-heading-bg: #b299e6;
+	--rb-nav-dark-default-vertical-dividers-link-bg: #f0ebfa;
+	// TODO --rb-nav-dark-default-vertical-dividers-link-color
+	--rb-nav-dark-default-vertical-dividers-link-bg-hover: #f9f9f9;
+	--rb-nav-dark-default-vertical-dividers-link-bg-click: #d1c2f0;
+	--rb-nav-dark-default-vertical-dividers-link-bg-active: #b39ae5;
+	--rb-nav-dark-primary-horizontal-no-dividers-link-bg-hover: #f9f9f9;
+	--rb-nav-dark-primary-horizontal-no-dividers-link-bg-click: #d1c2f0;
+	--rb-nav-dark-primary-horizontal-no-dividers-link-bg-active: #b39ae5;
+	--rb-nav-dark-primary-horizontal-dividers-link-bg: #f0ebfa;
+	--rb-nav-dark-primary-horizontal-dividers-link-bg-hover: #f9f9f9;
+	--rb-nav-dark-primary-horizontal-dividers-link-bg-click: #d1c2f0;
+	--rb-nav-dark-primary-horizontal-dividers-link-bg-active: #b39ae5;
+	--rb-nav-dark-primary-vertical-dividers-link-bg: #f0ebfa;
+	--rb-nav-dark-primary-vertical-dividers-link-bg-hover: #f9f9f9;
+	--rb-nav-dark-primary-vertical-dividers-link-bg-click: #d1c2f0;
+	--rb-nav-dark-primary-vertical-dividers-link-bg-active: #b39ae5;
+
+	--rb-nav-dark-default-vertical-dividers-nav-border-top: 1px solid #fff;
+	--rb-nav-dark-default-vertical-dividers-nav-border-bottom: 1px solid #fff;
+	--rb-nav-dark-default-horizontal-dividers-link-border-color: #efeafa;
+	--rb-nav-dark-default-vertical-dividers-heading-border-bottom: 1px solid #fff;
+	--rb-nav-dark-default-vertical-dividers-link-border-bottom: 1px solid #fff;
+	--rb-nav-dark-primary-horizontal-no-dividers-link-border-hover: 1px solid #e0d6f5;
+	--rb-nav-dark-primary-horizontal-no-dividers-link-border-click: 1px solid #e0d6f5;
+	--rb-nav-dark-primary-horizontal-no-dividers-link-border-active: 1px solid #e0d6f5;
+
+	// TODO: add border states!!!
+	--rb-nav-dark-primary-horizontal-dividers-link-border: 1px solid #e0d6f5;
+	--rb-nav-dark-primary-vertical-dividers-link-border: 1px solid #fff;
+	--rb-nav-dark-default-heading-color: #fff;
+	--rb-nav-dark-default-heading-text-shadow: steelblue;
+	--rb-nav-dark-default-link-color: #926fdc;
+	--rb-nav-dark-default-link-color-hover: #b299e6;
+	--rb-nav-dark-default-link-color-click: #7346d2;
+	--rb-nav-dark-default-link-color-active: #fff;
+
+	// --rb-nav-dark-primary-heading-color: #fff;
+	// --rb-nav-dark-primary-heading-text-shadow: steelblue;
+
+	--rb-nav-dark-primary-link-color: #926fdc;
+	--rb-nav-dark-primary-link-color-hover: #b299e6;
+	--rb-nav-dark-primary-link-color-click: #7346d2;
+	--rb-nav-dark-primary-link-color-active: #fff;
+
+	// Responsive (TODO no-dividers active link)
+	--rb-nav-dark-default-responsive-nav-bg: #f0f0f5;
+	--rb-nav-dark-default-responsive-closed-trigger-bg: #d1c2f0;
+	--rb-nav-dark-default-responsive-closed-trigger-bars-bg: #606060;
+	--rb-nav-dark-default-responsive-closed-trigger-bars-bg-hover: steelblue;
+	--rb-nav-dark-default-responsive-closed-trigger-border: 1px solid #ababab;
+	--rb-nav-dark-default-responsive-open-trigger-bg: #f0ebfa;
+	--rb-nav-dark-default-responsive-open-trigger-bars-bg: #606060;
+	--rb-nav-dark-default-responsive-open-trigger-bars-bg-hover: steelblue;
+	--rb-nav-dark-default-responsive-open-trigger-border: 1px solid #ababab;
+
+	--rb-nav-dark-primary-responsive-nav-bg: #f0ebfa;
+	--rb-nav-dark-primary-responsive-closed-trigger-bg: #d1c2f0;
+	--rb-nav-dark-primary-responsive-closed-trigger-bars-bg: #323232;
+	--rb-nav-dark-primary-responsive-closed-trigger-bars-bg-hover: steelblue;
+	--rb-nav-dark-primary-responsive-closed-trigger-border: 1px solid #999;
+	--rb-nav-dark-primary-responsive-open-trigger-bg: #d1c2f0;
+	--rb-nav-dark-primary-responsive-open-trigger-bars-bg: #323232;
+	--rb-nav-dark-primary-responsive-open-trigger-bars-bg-hover: steelblue;
+	--rb-nav-dark-primary-responsive-open-trigger-border: 1px solid #aaa;
+
+	// TODO: add ability to set heading color with dividers
+	--rb-nav-dark-primary-responsive-dividers-heading-bg: #b299e6;
 }
