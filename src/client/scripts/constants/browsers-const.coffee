@@ -102,15 +102,14 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		<em class="info-heading">chromium version</em>
-		Microsoft Edge fully supported.
+		Microsoft Edge on Chromium fully supported.
 		<ul>
 			<li>
 				future version
 			</li>
 			<li>
 				<a target="_blank" href="https://www.youtube.com/watch?v=dKmzyj-ovkg" title="preview video">
-					coming soon
+					coming soon...
 				</a>
 			</li>
 			<li>
@@ -141,7 +140,6 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		<em class="info-heading">current version</em>
 		Microsoft Edge unsupported.
 	'
 	'full support': null
