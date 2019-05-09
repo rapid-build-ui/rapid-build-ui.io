@@ -1,3 +1,54 @@
+## [0.0.18](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.17...v0.0.18) (2019-05-09)
+
+
+### Bug Fixes
+
+* **bare bones page:** rb-icon fouc ([e819e45](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/e819e45))
+* **page header:** from slightly overlapping src nav when viewport is extra small ([beb68d0](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/beb68d0))
+* **rba-code:** normalize scrollbar look on mac and windows ([64eb967](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/64eb967))
+* **windows:** huge heading font size via using Segoe UI as the font family ([dd79209](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/dd79209))
+
+
+### Features
+
+* **new rb components 🚀**
+	* rb-dropdown ([7480873](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/7480873))
+	* rb-textcurve ([1a20068](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/1a20068))
+	* rb-toggle ([d991b2c](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/d991b2c))
+* **rb-alert:** add api option inline ([7ea5f9e](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/7ea5f9e))
+* **rb-button:** add api option onclick ([7f6cc42](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/7f6cc42))
+* **rb-icon:** use rb-dropdown to show all icon kind options ([af8c3d4](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/af8c3d4))
+* **rba-api:** new angular directive for displaying rb component's api ([0ed6c9e](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/0ed6c9e))
+* **rba-code:** add momentum scrolling for iOS ([898d703](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/898d703))
+* **rba-code:** style the title bar ([e907cd7](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/e907cd7))
+* **android fonts:** add roboto and roboto mono ([4770413](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/4770413))
+* **themes page:** create it but only expose on dev site (not ready for prod yet) ([6ed189b](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/6ed189b))
+* **lavender theme:** rename alina theme to lavender (which will be an official theme) ([fe655e3](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/fe655e3))
+* **dev site:** 🔒 now accessible via https so redirect http to https with status code 301 ([da109ad](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/da109ad))
+* **new server data route:** /api/data/us-states ([c4d76e8](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/c4d76e8))
+* **dogfood**
+	* swap in rb-textcurve and rb-toggle ([59a549b](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/59a549b))
+	* swap in rb-dropdown to show all icon kind options ([af8c3d4](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/af8c3d4))
+
+
+### Performance Improvements
+
+* **rapid build ui logo:** inline it reducing server requests by 2 and speeding up page load ([133147c](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/133147c))
+* **angular app:**
+	* disable debugInfo ([57f61cd](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/57f61cd))
+	* disable comment and css directives ([c19ee61](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/c19ee61))
+	* bootstrap app with option strictDi true ([43cf9de](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/43cf9de))
+
+
+### Dependencies
+
+* **bump:**
+	* client dep codemirror ([9d8cefd](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/9d8cefd))
+	* client deps all rb components 👍 ([39dbf2c](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/39dbf2c))
+	* server dep compression ([0337875](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/0337875))
+
+
+
 ## [0.0.17](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.16...v0.0.17) (2019-03-05)
 
 
