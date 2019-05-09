@@ -52,6 +52,13 @@
     "@rapid-build-ui/rb-checkbox" "^0.0.6"
     "@rapid-build-ui/rb-popover" "^0.0.16"
 
+"@rapid-build-ui/rb-code@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-code/-/rb-code-0.0.0.tgz#7fc54a477e9c0a301ae3e61033866a72e605fe47"
+  integrity sha512-1FJxNTOywrAu2KpqexHHOhlMh1C4KkppOkoyVbqPZcGOOWxIVBx5mVmCshllBRA9TXWYXHdh4dwlzRpHKbzrZQ==
+  dependencies:
+    "@rapid-build-ui/rb-base" "^0.0.9"
+
 "@rapid-build-ui/rb-dropdown@^0.0.3":
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-dropdown/-/rb-dropdown-0.0.3.tgz#03816b8bf7e1a440309eeaeba6a0a8fa23876118"
@@ -110,6 +117,13 @@
     "@rapid-build-ui/form-control" "^0.0.8"
     "@rapid-build-ui/rb-base" "^0.0.9"
     "@rapid-build-ui/rb-popover" "^0.0.16"
+
+"@rapid-build-ui/rb-table@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-table/-/rb-table-0.0.0.tgz#85e1e59caf11cc1eb3358787a9a848c6fbf796a3"
+  integrity sha512-DoBLVJBb3Gwy7CkhOl7zvMTr6e25zfv6vUM6YbT+muyfBH6BSI7zK261IMYw2RKwrZYaJ6anSaDqxBThyUGNwg==
+  dependencies:
+    "@rapid-build-ui/rb-base" "^0.0.9"
 
 "@rapid-build-ui/rb-textarea@^0.0.3":
   version "0.0.3"
