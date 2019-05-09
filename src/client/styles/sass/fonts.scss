@@ -9,7 +9,7 @@ $fonts: (
 	 * windows: Microsoft Sans Serif | Segoe UI
 	 * fallback: sans-serif
 	 * -------------------------------------------------
-	 * Supported Font Weights (400 is normal)
+	 * Supported Font Weights (400 normal | 700 bold)
 	 * -------------------------------------------------
 	 * Helvetica Neue:       300 | 400 | 500 | 600
 	 * Microsoft Sans Serif: 400 | 600 (unused)
@@ -23,17 +23,17 @@ $fonts: (
 		sans-serif
 	),
 
-	/*****************************************
+	/*************************************************
 	 * OPERATING SYSTEMS
-	 * --------------------------------------
+	 * ----------------------------------------------
 	 * mac: Menlo | Monaco | Consolas
 	 * windows: Consolas
 	 * fallback: monospace
-	 * --------------------------------------
-	 * Supported Font Weights (400 is normal)
-	 * --------------------------------------
+	 * ----------------------------------------------
+	 * Supported Font Weights (400 normal | 700 bold)
+	 * ----------------------------------------------
 	 * All: 400 | 600
-	 *****************************************/
+	 *************************************************/
 	monospaced: (
 		Menlo,
 		Monaco,
