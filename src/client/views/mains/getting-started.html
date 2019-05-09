@@ -25,27 +25,23 @@
 		</h3>
 		<ul>
 			<li>
-				<a target="_blank" href="https://nodejs.org/">
-					Node.js
-				</a>
+				<a target="_blank" href="https://nodejs.org/">Node.js</a>
 			</li>
 			<li>
-				<a target="_blank" href="https://www.npmjs.com/package/yarn">
-					Yarn
-				</a>
+				<a target="_blank" href="https://www.npmjs.com/get-npm">npm</a>
+				<span class="subtext">or</span>
+				<a target="_blank" href="https://www.npmjs.com/package/yarn">yarn</a>
 				<ul>
 					<li>
-						You can use <strong>npm instead</strong> just
-						make sure the components are
+						Only one version of a component can be installed.
+					</li>
+					<li>
+						If you use <strong>npm</strong>
+						instead of yarn make sure the components are
 						<a target="_blank" href="https://goo.gl/5zwDfb">installed flat</a>.
 					</li>
 					<li>
-						Only one version of each
-						component can be installed.
-					</li>
-					<li>
-						Yarn has a built in
-						feature: yarn install --flat.
+						Yarn has a built in feature: yarn install --flat
 					</li>
 				</ul>
 			</li>
@@ -55,21 +51,28 @@
 	<section>
 		<h3>
 			<rb-icon kind="check-circle" source="solid" size=".8"></rb-icon>
-			How to Use <small class="subtext">(each component is it's own package)</small>
+			How to Use
 		</h3>
+		<p>
+			Every component is its own package.<br>
+			So if you only want to use one, <em>no problemo!</em>
+		</p>
 		<ol>
 			<li>
-				Click on the install icon on any of the
-				<a href="/components/">component pages</a> and run command.
+				Click the install icon on any of the
+				<a href="/components/">component pages</a>
+				and run the command.
 				<br>
-				Example:
+				<span class="subtext">Example:</span>
 				<rba-install source="alert"></rba-install>
 			</li>
 			<li>
-				Once installed components can be
-				loaded 2 ways, <strong>choose one</strong>.
+				Once installed, components can be loaded
+				via 2 ways <strong>choose one</strong>.
 				<br>
-				Example <em class="subtext">(type="module" required)</em>:
+				<span class="subtext">
+					Example (type="module" required on script tag):
+				</span>
 				<textarea readonly rba-code line-wrap mode="htmlmixed" class="small-top-bumper">
 					<!doctype html>
 					<html>
