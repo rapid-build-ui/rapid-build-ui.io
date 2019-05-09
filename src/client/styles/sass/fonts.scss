@@ -5,20 +5,23 @@ $fonts: (
 	/****************************************************
 	 * OPERATING SYSTEMS
 	 * -------------------------------------------------
-	 * mac: Helvetica Neue
-	 * windows: Microsoft Sans Serif | Segoe UI
+	 * mac:      Helvetica Neue
+	 * windows:  Segoe UI | Microsoft Sans Serif
+	 * android:  Roboto
 	 * fallback: sans-serif
 	 * -------------------------------------------------
 	 * Supported Font Weights (400 normal | 700 bold)
 	 * -------------------------------------------------
 	 * Helvetica Neue:       300 | 400 | 500 | 600
 	 * Microsoft Sans Serif: 400 | 600 (unused)
+	 * Roboto:               300 | 400 | 500 | 700 | 900
 	 * Segoe UI:             300 | 400 | 500 | 700 | 800
 	 * sans-serif (mac):     300 | 400 | 600
 	 * sans-serif (windows): 300 | 600 | 800
 	 ****************************************************/
 	default: (
 		'Helvetica Neue',
+		Roboto,
 		'Segoe UI',
 		sans-serif
 	),
@@ -26,8 +29,9 @@ $fonts: (
 	/*************************************************
 	 * OPERATING SYSTEMS
 	 * ----------------------------------------------
-	 * mac: Menlo | Monaco | Consolas
-	 * windows: Consolas
+	 * mac:      Menlo | Monaco | Consolas
+	 * windows:  Consolas
+	 * android:  Monaco (unsure) | Roboto Mono
 	 * fallback: monospace
 	 * ----------------------------------------------
 	 * Supported Font Weights (400 normal | 700 bold)
@@ -37,6 +41,7 @@ $fonts: (
 	monospaced: (
 		Menlo,
 		Monaco,
+		'Roboto Mono',
 		Consolas,
 		monospace
 	)
