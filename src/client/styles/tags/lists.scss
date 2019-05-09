@@ -3,4 +3,7 @@
  ********/
 li {
 	margin: 0 0 remy(8);
+	> ol, > ul {
+		margin-top: remy(8);
+	}
 }
