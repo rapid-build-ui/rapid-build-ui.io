@@ -18,8 +18,8 @@
 	h1, h2 {
 		margin: remy(20) 0;
 		padding: remy(6) 0;
-		color: #92a2b2;
-		border-bottom: 1px dotted lightgrey; // #d3d3d3
+		color: mapGet($palette, cadetGrey);
+		border-bottom: 1px dotted mapGet($palette, lightGray);
 		&:first-of-type {
 			margin-top: 0;
 			padding-top: 0;
@@ -27,9 +27,5 @@
 	}
 	h3, h4, h5, h6 {
 		margin-bottom: remy(10);
-	}
-
-	a {
-		color: steelblue;
 	}
 }

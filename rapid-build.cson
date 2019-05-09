@@ -9,8 +9,7 @@ common:
 
 	angular:
 		moduleName: 'rapid-build'
-		modules: ['ngclipboard', 'ui.codemirror']
-		bootstrap: true
+		modules: ['ngclipboard']
 		templateCache:
 			dev: true
 			useAbsolutePaths: true
@@ -27,7 +26,7 @@ common:
 	extra:
 		copy:
 			client: [
-				'examples/bare-bones.html'
+				'examples/**'
 				'node_modules/**'
 			]
 			server: [
@@ -35,7 +34,7 @@ common:
 			]
 		watch:
 			client: [
-				'examples/bare-bones.html'
+				'examples/**'
 				'node_modules/@rapid-build-ui/'
 			]
 			server: [
@@ -55,7 +54,6 @@ common:
 					'node_modules/codemirror/mode/shell/shell.js'
 					'node_modules/codemirror/mode/htmlmixed/htmlmixed.js'
 					'node_modules/codemirror/addon/display/placeholder.js'
-					# 'node_modules/angular-ui-codemirror/src/ui-codemirror.js' # causes js error
 				]
 
 	exclude:
@@ -72,7 +70,7 @@ common:
 					'scripts/es-modules/**'
 				]
 				styles: [
-					'styles/themes/*/*'
+					'styles/themes/*/*/*'
 				]
 
 	minify:
@@ -96,13 +94,13 @@ common:
 					/\s<rba-copy|<\/rba-copy>\s/gi
 					/\s<rba-install|<\/rba-install>\s/gi
 					/<textarea(\s*?.*?)*?\/textarea>/gi # for codemirror
+					/disabled|hidden|multiple|nowrap|open|readonly|required|reversed|selected|sortable/gi # boolean attrs
 				]
 
 	order:
 		scripts:
 			first: [
 				'node_modules/clipboard/dist/clipboard.min.js'
-				'node_modules/ngclipboard/dist/ngclipboard.min.js'
 				'node_modules/codemirror/lib/codemirror.js'
 				'node_modules/codemirror/mode/xml/xml.js'
 				'node_modules/codemirror/mode/css/css.js'
@@ -110,7 +108,10 @@ common:
 				'node_modules/codemirror/mode/shell/shell.js'
 				'node_modules/codemirror/mode/htmlmixed/htmlmixed.js'
 				'node_modules/codemirror/addon/display/placeholder.js'
-				'node_modules/angular-ui-codemirror/src/ui-codemirror.js'
+				'node_modules/ngclipboard/dist/ngclipboard.min.js'
+			]
+			last: [
+				'scripts/bootstrap/bootstrap.js'
 			]
 		styles:
 			first: [

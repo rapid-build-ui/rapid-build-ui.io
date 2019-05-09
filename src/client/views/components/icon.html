@@ -15,8 +15,9 @@
 		<div class="col">
 			<section class="demo-component" ng-class="a.dark && 'dark'">
 				<div rba-builder="markup"></div>
-				<!-- <rb-button size="small"
-					ng-click="updateIcon()"
+				<!-- <rb-button
+					size="small"
+					data-update-icon
 					class="block top-bumper">
 					Update Icon
 				</rb-button> -->
@@ -37,36 +38,22 @@
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Configure</h5>
+		<rb-textcurve>
+			<h5>Configure</h5>
+		</rb-textcurve>
 
-		<rb-input
-			toggle
+		<!-- RADIOS -->
+		<rb-dropdown
 			rb-bind
-			value="a.kind"
-			placeholder="any font awesome icon">
-			<rb-popover position="top" slot="popover">
+			label="kind"
+			id="iconKinds"
+			value="a.kind">
+			<rb-popover slot="popover">
 				Name of any free
 				<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
 				Font awesome icon style must match icon source.
 			</rb-popover>
-		</rb-input>
-
-		<!-- RADIOS -->
-		<rb-radios
-			toggle
-			rb-bind
-			horizontal
-			label="kind"
-			value="a.kind"
-			data="{{kinds}}">
-			<rb-popover position="top" slot="popover">
-				<h6 class="text-center">set source to</h6>
-				<ul>
-					<li><strong>solid</strong> for spinner</li>
-					<li><strong>brands</strong> for github</li>
-				</ul>
-			</rb-popover>
-		</rb-radios>
+		</rb-dropdown>
 		<!-- <rb-radios
 			toggle
 			rb-bind
@@ -156,21 +143,24 @@
 			<rb-button
 				data-reset
 				icon-kind="sync"
-				icon-source="solid"
-				icon-position="left">
+				icon-source="solid">
 				Reset
 			</rb-button>
 		</section>
 	</form>
 
 	<!-- API -->
-	<rba-toggle
-		text-curve
-		show="true"
-		caption="API">
-		<rba-table source="RB_ICON_API" inject></rba-table>
-	</rba-toggle>
+	<section>
+		<rba-api component="rb-icon"></rba-api>
+	</section>
+
+	<!-- CSS Variables -->
+	<!-- <section>
+		<rba-css-vars component="rb-icon"></rba-css-vars>
+	</section> -->
 
 	<!-- CHANGELOG -->
-	<rba-changelog component="rb-icon"></rba-changelog>
+	<section>
+		<rba-changelog component="rb-icon"></rba-changelog>
+	</section>
 </div>

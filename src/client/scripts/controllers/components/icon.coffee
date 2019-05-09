@@ -25,23 +25,31 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 		# Props
 		# =====
 		# $scope.libraries = ['material']
-		$scope.kinds     = ['heart','spinner','github']
 		$scope.sources   = ['solid','brands']
 		$scope.flip      = ['horizontal', 'vertical', 'both']
 		$scope.valigns   = ['bottom','middle','top']
 
+		# Elms and Global
+		# ===============
+		RB_ICONS     = window.rbIcons
+		iconKindsElm = document.getElementById 'iconKinds'
+		defaultIcon  = 'heart'
+
+		# Testing
+		# =======
+		# updateIconBtn = $element[0].querySelector '[data-update-icon]'
+		# updateIconBtn.onclick = -> # :void (for testing only)
+		# 	rbIcon = $element[0].querySelector '[id^="built__"]'
+		# 	rbIcon.spin  = !rbIcon.spin  unless type.is.undefined rbIcon.spin
+		# 	rbIcon.burst = !rbIcon.burst unless type.is.undefined rbIcon.burst
+		# 	rbIcon.pulse = !rbIcon.pulse unless type.is.undefined rbIcon.pulse
+		# 	rbIcon.flip  = 'both'
+
 		# Methods
 		# =======
-		$scope.updateIcon = -> # :void (for testing only)
-			rbIcon = $element[0].querySelector '[id^="built__"]'
-			rbIcon.spin  = !rbIcon.spin  unless type.is.undefined rbIcon.spin
-			rbIcon.burst = !rbIcon.burst unless type.is.undefined rbIcon.burst
-			rbIcon.pulse = !rbIcon.pulse unless type.is.undefined rbIcon.pulse
-			rbIcon.flip  = 'both'
-
 		$scope.reset = ->
 			$scope.a =
-				kind: 'heart' # :string (required)
+				kind: defaultIcon # :string (required)
 
 		# Watches
 		# =======
@@ -49,11 +57,18 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 			$scope.markup = createMarkup()
 		, true
 
+		sourceWatch = $scope.$watch 'a.source', (newSource, oldSource) ->
+			newSource = 'regular' unless newSource
+			iconKindsElm.data = RB_ICONS[newSource]
+			return $scope.a.kind = 'github' if newSource is 'brands'
+			return if RB_ICONS[newSource].includes $scope.a.kind
+			$scope.a.kind = defaultIcon
+
 		# Event Handlers
 		# ==============
 		resetFrm = -> $scope.$apply $scope.reset
-		resetBtn = $element[0].querySelector('[data-reset]')
-		resetBtn.addEventListener 'clicked', resetFrm
+		resetBtn = $element[0].querySelector '[data-reset]'
+		resetBtn.onclick = resetFrm
 
 		# Init
 		# ====
@@ -62,6 +77,6 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 		# Destroys
 		# ========
 		$scope.$on '$destroy', ->
-			resetBtn.removeEventListener 'clicked', resetFrm
+			sourceWatch()
 			markupWatch()
 ]

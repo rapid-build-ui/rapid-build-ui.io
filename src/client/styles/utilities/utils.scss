@@ -31,10 +31,25 @@
 	flex-direction: row-reverse !important;
 }
 
+/* Text Formatting
+ ******************/
+.nowrap {
+	white-space: nowrap !important;
+}
+.subtext {
+	color: mapGet($palette, cadetGrey) !important;
+}
+
 /* State Texts
  **************/
 .error-text {
-	color: #db3a4d !important;
+	color: mapGet($palette, rustyRed) !important;
+}
+.success-text {
+	color: mapGet($palette, wageningenGreen) !important;
+}
+.warning-text {
+	color: mapGet($palette, vividAmber) !important;
 }
 
 /* Text Align

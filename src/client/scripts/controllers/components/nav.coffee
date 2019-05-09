@@ -77,15 +77,16 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 			content: 'contact <rb-icon kind="heart"></rb-icon></a>'
 		]
 
-		linkCnt = 1
-		$scope.addLink = ->
-			newLink = "link#{linkCnt++}"
-			newLink = href: newLink, content: newLink
-			$scope.links.push newLink
-
-		$scope.removeLink = ->
-			$scope.links.pop()
-			linkCnt--
+		# linkCnt = 1
+		# $element[0].querySelector('[data-add-link]').onclick = ->
+		# 	newLink = "link#{linkCnt++}"
+		# 	newLink = href: newLink, content: newLink
+		# 	$scope.links.push newLink
+		# 	$scope.$apply()
+		# $element[0].querySelector('[data-remove-link]').onclick = ->
+		# 	$scope.links.pop()
+		# 	linkCnt--
+		# 	$scope.$apply()
 
 		# HELPERS
 		# =======
@@ -142,8 +143,8 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 		# Event Handlers
 		# ==============
 		resetFrm = -> $scope.$apply $scope.reset
-		resetBtn = $element[0].querySelector('[data-reset]')
-		resetBtn.addEventListener 'clicked', resetFrm
+		resetBtn = $element[0].querySelector '[data-reset]'
+		resetBtn.onclick = resetFrm
 
 		# Init
 		# ====
@@ -152,6 +153,5 @@ angular.module('rapid-build').controller 'rbNavController', ['$scope', '$element
 		# Destroys
 		# ========
 		$scope.$on '$destroy', ->
-			resetBtn.removeEventListener 'clicked', resetFrm
 			markupWatch()
 ]

@@ -10,9 +10,9 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	color: $generalTextColor;
-	font-size: $generalTextSize;
+	color: mapGet($palette, paynesGrey);
+	font-size: 1rem; // browser default = 16px (usually)
 	line-height: 1.5;
 	font-weight: 400;
-	font-family: $generalFont;
+	font-family: mapGet($fonts, default);
 }

@@ -32,7 +32,9 @@
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Configure</h5>
+		<rb-textcurve>
+			<h5>Configure</h5>
+		</rb-textcurve>
 
 		<!-- INPUTS -->
 		<rb-input
@@ -59,6 +61,9 @@
 			rb-bind
 			label="placeholder"
 			value="a.placeholder">
+			<rb-popover slot="popover">
+				Add space for blank placeholder.
+			</rb-popover>
 		</rb-input>
 
 		<!-- RADIOS -->
@@ -75,6 +80,14 @@
 			horizontal
 			label="label-key"
 			value="a.labelKey"
+			data="{{labelKeys}}">
+		</rb-radios>
+		<rb-radios
+			toggle
+			rb-bind
+			horizontal
+			label="value-key"
+			value="a.valueKey"
 			data="{{labelKeys}}">
 		</rb-radios>
 
@@ -125,21 +138,24 @@
 			<rb-button
 				data-reset
 				icon-kind="sync"
-				icon-source="solid"
-				icon-position="left">
+				icon-source="solid">
 				Reset
 			</rb-button>
 		</section>
 	</form>
 
 	<!-- API -->
-	<rba-toggle
-		text-curve
-		show="true"
-		caption="API">
-		<rba-table source="RB_DROPDOWN_API" inject></rba-table>
-	</rba-toggle>
+	<section>
+		<rba-api component="rb-dropdown"></rba-api>
+	</section>
+
+	<!-- CSS Variables -->
+	<!-- <section>
+		<rba-css-vars component="rb-dropdown"></rba-css-vars>
+	</section> -->
 
 	<!-- CHANGELOG -->
-	<rba-changelog component="rb-dropdown"></rba-changelog>
+	<section>
+		<rba-changelog component="rb-dropdown"></rba-changelog>
+	</section>
 </div>

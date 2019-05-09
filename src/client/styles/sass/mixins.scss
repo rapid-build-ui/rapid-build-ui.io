@@ -13,10 +13,3 @@
 		padding-bottom: 0;
 	}
 }
-
-@mixin tabSize($size:4) {
-	-webkit-tab-size: $size;
-	   -moz-tab-size: $size;
-	     -o-tab-size: $size;
-	        tab-size: $size;
-}

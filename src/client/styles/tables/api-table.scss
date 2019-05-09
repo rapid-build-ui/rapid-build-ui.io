@@ -2,12 +2,11 @@
  * COMPONENT API TABLE
  **********************/
 $textColors: (
-	general:     #3a87ad, // set in tables.scss
-	required:    #7c8895,
-	options:     #7c8895,
-	sub:         #c3c8ce,
-	infoSub:     #92a2b2,
-	infoHeading: #c3c8ce
+	required:    mapGet($palette, lightSlateGray),
+	options:     mapGet($palette, lightSlateGray),
+	sub:         mapGet($palette, lavenderGray),
+	infoHeading: mapGet($palette, lavenderGray),
+	infoSub:     mapGet($palette, cadetGrey)
 );
 
 .api-table {
@@ -32,7 +31,7 @@ $textColors: (
 	 ******************/
 	.td- {
 		&name, // css vars table
-		&attribute { font-weight: 600; }
+		&attribute { font-weight: 700; }
 		&options { color: mapGet($textColors, options); }
 		&type,
 		&required { color: mapGet($textColors, required); }
@@ -48,14 +47,14 @@ $textColors: (
 		&notes { width: 39%; }
 	}
 	.td- {
-		&browser { font-weight: 600; }
+		&browser { font-weight: 700; }
 	}
 	.support { text-align: center; }
 
 	// icon colors
-	.full-support    { color: #28a745; }
-	.partial-support { color: #e7af00; }
-	.no-support      { color: #dc3545; }
+	.full-support    { color: mapGet($palette, wageningenGreen); }
+	.partial-support { color: mapGet($palette, vividAmber); }
+	.no-support      { color: mapGet($palette, rustyRed); }
 
 	/* Filtering
 	 ************/
@@ -82,7 +81,7 @@ $textColors: (
 		margin: 4px 0 3px;
 		padding: 0;
 		color: inherit;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: inherit;
 		text-shadow: none;
 	}

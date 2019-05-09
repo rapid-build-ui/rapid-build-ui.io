@@ -1,0 +1,18 @@
+<div ng-controller="themesExController">
+	<header class="page-header">
+		<h1>
+			Themes with Css Variables
+		</h1>
+	</header>
+
+	<!-- THEMES -->
+	<section>
+		<rb-radios
+			toggle
+			data="{{themes}}"
+			label-key="name"
+			label="Apply Theme"
+			subtext="Theme removed on browser reload.">
+		</rb-radios>
+	</section>
+</div>

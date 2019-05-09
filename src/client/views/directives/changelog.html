@@ -1,7 +1,8 @@
-<rba-toggle
-	text-curve
-	caption="CHANGELOG"
-	template-from-action
-	template-class="changelog"
-	action="getChangelog(component)">
-</rba-toggle>
+<rb-textcurve>
+	<rb-toggle
+		caption="changelog"
+		target=".changelog"
+		target-root="rba-changelog">
+	</rb-toggle>
+</rb-textcurve>
+<div class="changelog"></div>

@@ -10,12 +10,12 @@ h5 { margin-bottom: remy(18); }
 h6 { margin-bottom: remy(18); }
 
 // colors
-h1 { color: steelblue; }
-h2 { color: steelblue; }
-h3 { color: steelblue; }
-h4 { color: steelblue; }
-h5 { color: steelblue; }
-h6 { color: steelblue; }
+h1 { color: mapGet($palette, steelBlue); }
+h2 { color: mapGet($palette, steelBlue); }
+h3 { color: mapGet($palette, steelBlue); }
+h4 { color: mapGet($palette, steelBlue); }
+h5 { color: mapGet($palette, steelBlue); }
+h6 { color: mapGet($palette, steelBlue); }
 
 // font weights
 h1 { font-weight: 300; }
@@ -34,12 +34,12 @@ h5 { font-size: remy(17); }
 h6 { font-size: remy(18); }
 
 // extra styling
-h1, h2, h3, h4, h5, h6 { text-shadow: 1px 1px 4px #eee; }
+h1, h2, h3, h4, h5, h6 { text-shadow: 1px 1px 4px mapGet($palette, isabelline); }
 h4, h5 { text-transform: uppercase; }
 
 // sub headings
 h1, h2, h3, h4, h5, h6 {
-	&.sub {
-		color: #92a2b2;
+	&.subheading {
+		color: mapGet($palette, cadetGrey);
 	}
 }

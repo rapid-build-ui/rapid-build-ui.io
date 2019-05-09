@@ -1,15 +1,19 @@
 /******************
  * BUTTONS SECTION
  ******************/
-section.buttons {
+.buttons {
 	display: flex;
 	flex-wrap: wrap;
+	margin: 0 0 remy(15);
 	padding: remy(15) 0;
-	border-top: 1px dashed #eee;
+	border-top: 1px dashed mapGet($palette, isabelline);
 	rb-button {
 		margin: 0 remy(10) 0 0;
 		&:last-child {
 			margin-right: 0;
 		}
+	}
+	&.no-divider {
+		border: none;
 	}
 }

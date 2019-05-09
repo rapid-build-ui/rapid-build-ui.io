@@ -1,66 +1,56 @@
-angular.module('rapid-build').directive('rbaBuilder', ['$compile', 'idService', '$timeout',
-	($compile, idService, $timeout) => {
+angular.module('rapid-build').directive('rbaBuilder', ['$compile', 'idService',
+	($compile, idService) => {
 		/* LINK
 		 *******/
-		const Link = (scope, iElement, iAttrs, controller) => {
+		const Link = (scope, iElement, iAttrs) => {
 			const buildStr = iAttrs.rbaBuilder;
 			if (!buildStr) return;
 
 			const id = `built___${idService.next()}`;
-			let timer      = null;
-			let oldScope   = null;
-			let canDestroy = false;
-			let debounce   = null;
+			let oldScope = null;
 
-			const clearDebounce = () => {
-				if (!debounce) return;
-				$timeout.cancel(debounce);
-				debounce = null;
+			const destroyOldScope = () => { // :void
+				if (!oldScope) return;
+				if (!oldScope.$destroy) return;
+				oldScope.$destroy();
+				oldScope = null;
 			}
 
-			const builder = (newVal, oldVal) => {
-				clearDebounce();
+			const buildIt = (markup) => {
 				let elmBuilt = document.getElementById(id);
 				if (elmBuilt) angular.element(elmBuilt).replaceWith(iElement);
 
-				let template = newVal.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+				let template = markup.replace(/&lt;/g, '<').replace(/&gt;/g, '>');
 					template = `<div id="${id}">${template}</div>`;
+
 				let elmTemplate = angular.element(template);
 				let elmChildren = elmTemplate[0].childNodes;
-				if (elmChildren.length === 1 && elmChildren[0].nodeType === 1)
+
+				const hasOneChildElm = elmChildren.length === 1 && elmChildren[0].nodeType === 1; // 1 = Elm Node
+				if (hasOneChildElm)
 					template = elmTemplate.children().eq(0).attr('id', id)[0].outerHTML;
 
 				elmBuilt = elmTemplate = elmChildren = null; // cleanup
 
 				const quotationMarks = template.match(/"/g);
-				const isValid        = !!quotationMarks && quotationMarks.length % 2 === 0;
-				if (isValid === false) return;
+				const valid          = !!quotationMarks && quotationMarks.length % 2 === 0;
+				if (!valid) return;
 
-				const compileScope = !angular.isUndefined(iAttrs.newScope) ? scope.$new() : scope;
-				$compile(template)(compileScope, elm => {
-					if (iElement.children().eq(0)) iElement.children().eq(0).remove();
-					iElement.replaceWith(elm);
-					if (oldScope && oldScope.$destroy && canDestroy) {
-						oldScope.$destroy();
-						oldScope = null;
-					}
-					timer = $timeout(() => {
-						oldScope   = elm.isolateScope() || elm.scope();
-						canDestroy = oldScope && scope.$id !== oldScope.$id;
-					});
+				$compile(template)(scope.$new(), (elm, newScope) => {
+					iElement.empty().replaceWith(elm);
+					destroyOldScope();
+					oldScope = newScope;
 				});
 			}
 
 			const builderWatch = scope.$watch(buildStr, (newVal, oldVal) => {
-				clearDebounce();
-				if (newVal === void 0) return;
-				if (newVal === oldVal) return builder(newVal, oldVal);
-				debounce = $timeout(builder, 50, false, newVal, oldVal);
+				if (typeof newVal !== 'string') return;
+				if (newVal === oldVal && oldScope) return;
+				buildIt(newVal);
 			});
 
 			const destroy = scope.$on('$destroy', () => {
-				if (timer) $timeout.cancel(timer);
-				clearDebounce();
+				destroyOldScope();
 				builderWatch();
 				destroy();
 			});

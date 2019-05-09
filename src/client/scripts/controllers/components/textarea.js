@@ -26,7 +26,7 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 		/* Helpers
 		 **********/
 		const getPopoverSlot = () => {
-			return ' <rb-popover slot="popover" position="top">more info...</rb-popover>';
+			return ' <rb-popover slot="popover">more info...</rb-popover>';
 		}
 
 		const stringifyModifier = (key, val) => {
@@ -86,12 +86,9 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 
 		/* Event Handlers
 		 *****************/
-		const resetFrm = () => {
-			$scope.$apply($scope.reset);
-		};
-
+		const resetFrm = () => $scope.$apply($scope.reset);
 		const resetBtn = $element[0].querySelector('[data-reset]');
-		resetBtn.addEventListener('clicked', resetFrm);
+		resetBtn.onclick = resetFrm;
 
 		/* Init
 		 *******/
@@ -100,7 +97,6 @@ angular.module('rapid-build').controller('rbTextareaController', ['$scope', '$el
 		/* Destroy
 		 **********/
 		$scope.$on('$destroy', () => {
-			resetBtn.removeEventListener('clicked', resetFrm);
 			markupWatch();
 		});
 

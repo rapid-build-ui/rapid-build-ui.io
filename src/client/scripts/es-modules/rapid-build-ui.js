@@ -13,3 +13,5 @@ import '/node_modules/@rapid-build-ui/rb-nav/scripts/rb-nav.js';
 import '/node_modules/@rapid-build-ui/rb-popover/scripts/rb-popover.js';
 import '/node_modules/@rapid-build-ui/rb-radios/scripts/rb-radios.js';
 import '/node_modules/@rapid-build-ui/rb-textarea/scripts/rb-textarea.js';
+import '/node_modules/@rapid-build-ui/rb-textcurve/scripts/rb-textcurve.js';
+import '/node_modules/@rapid-build-ui/rb-toggle/scripts/rb-toggle.js';

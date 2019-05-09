@@ -1,0 +1,31 @@
+/*******************************
+ * LAVENDER THEME: RB-TEXTCURVE
+ *******************************/
+rb-textcurve {
+	// BG
+	--rb-textcurve-default-bg: transparent; // TODO: maybe change
+	--rb-textcurve-danger-bg:  #ffb3b3;
+	--rb-textcurve-info-bg:    #cce6ff;
+	--rb-textcurve-neutral-bg: #e0e0eb;
+	--rb-textcurve-primary-bg: #f0ebfa;
+	--rb-textcurve-success-bg: #e6fff7;
+	--rb-textcurve-warning-bg: #ffdacc;
+
+	// Border Color
+	--rb-textcurve-default-border-color: #e2e3e5; // TODO: maybe change
+	--rb-textcurve-danger-border-color:  #ff9999;
+	--rb-textcurve-info-border-color:    #b3d9ff;
+	--rb-textcurve-neutral-border-color: #d1d1e0;
+	--rb-textcurve-primary-border-color: #e0d6f5;
+	--rb-textcurve-success-border-color: #b3ffef;
+	--rb-textcurve-warning-border-color: #ffc8b3;
+
+	// Subtext Color
+	--rb-textcurve-default-subtext-color: #778799; // TODO: maybe change
+	--rb-textcurve-danger-subtext-color:  #800000;
+	--rb-textcurve-info-subtext-color:    #00264d;
+	--rb-textcurve-neutral-subtext-color: #003300;
+	--rb-textcurve-primary-subtext-color: #291452;
+	--rb-textcurve-success-subtext-color: #006644;
+	--rb-textcurve-warning-subtext-color: #661b00;
+}

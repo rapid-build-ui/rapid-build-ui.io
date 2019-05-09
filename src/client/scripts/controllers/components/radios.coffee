@@ -26,7 +26,7 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 		# Helpers
 		# =======
 		getPopoverSlot = -> # :html
-			'\n\t<rb-popover\n\t\tslot="popover"\n\t\tposition="top">\n\t\tmore info...\n\t</rb-popover>\n'
+			'\n\t<rb-popover\n\t\tslot="popover">\n\t\tmore info...\n\t</rb-popover>\n'
 
 		stringifyModifier = (key, val) ->
 			val = angular.copy val
@@ -81,7 +81,7 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 			'array of strings',
 			'array of objects'
 		]
-		$scope.labelKeys = ['name', 'id']
+		$scope.labelKeys = ['id', 'name']
 		$scope.validationLabels = [
 			'required'
 		]
@@ -105,8 +105,8 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 		# Event Handlers
 		# ==============
 		resetFrm = -> $scope.$apply $scope.reset
-		resetBtn = $element[0].querySelector('[data-reset]')
-		resetBtn.addEventListener 'clicked', resetFrm
+		resetBtn = $element[0].querySelector '[data-reset]'
+		resetBtn.onclick = resetFrm
 
 		# Init
 		# ====
@@ -115,7 +115,6 @@ angular.module('rapid-build').controller 'rbRadiosController', ['$scope', '$elem
 		# Destroys
 		# ========
 		$scope.$on '$destroy', ->
-			resetBtn.removeEventListener 'clicked', resetFrm
 			markupWatch()
 
 ]

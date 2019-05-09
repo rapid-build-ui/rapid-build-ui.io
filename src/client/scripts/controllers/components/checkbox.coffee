@@ -25,7 +25,7 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 		# Helpers
 		# =======
 		getPopoverSlot = -> # :html
-			'\n\t<rb-popover\n\t\tslot="popover"\n\t\tposition="top">\n\t\tmore info...\n\t</rb-popover>\n'
+			'\n\t<rb-popover\n\t\tslot="popover">\n\t\tmore info...\n\t</rb-popover>\n'
 
 		stringifyModifier = (key, val) ->
 			val = angular.copy val
@@ -110,8 +110,8 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 		# Event Handlers
 		# ==============
 		resetFrm = -> $scope.$apply $scope.reset
-		resetBtn = $element[0].querySelector('[data-reset]')
-		resetBtn.addEventListener 'clicked', resetFrm
+		resetBtn = $element[0].querySelector '[data-reset]'
+		resetBtn.onclick = resetFrm
 
 		# Init
 		# ====
@@ -120,7 +120,6 @@ angular.module('rapid-build').controller 'rbCheckboxController', ['$scope', '$el
 		# Destroys
 		# ========
 		$scope.$on '$destroy', ->
-			resetBtn.removeEventListener 'clicked', resetFrm
 			markupWatch()
 
 ]

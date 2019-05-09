@@ -2,11 +2,11 @@
  * LINKS
  ********/
 a {
-	$links:  #78a4c8;
-	$hover:  $links;
-	$active: #6798c1;
+	$default: mapGet($palette, darkPastelBlue);
+	$hover:   mapGet($palette, darkPastelBlue);
+	$active:  mapGet($palette, ceruleanFrost);
 
-	color: $links;
+	color: $default;
 	text-decoration: none;
 
 	&:focus,

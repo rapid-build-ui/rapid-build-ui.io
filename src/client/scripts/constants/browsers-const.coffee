@@ -91,6 +91,44 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 	'
 	'no support': null
 ,
+	# EDGE CHROMIUM
+	# =============
+	browser: '
+		<rb-icon
+			size="2.5"
+			kind="edge"
+			title="Microsoft Edge"
+			source="brands">
+		</rb-icon>
+	'
+	notes: '
+		Microsoft Edge on Chromium fully supported.
+		<ul>
+			<li>
+				future version
+			</li>
+			<li>
+				<a target="_blank" href="https://www.youtube.com/watch?v=dKmzyj-ovkg" title="preview video">
+					coming soon...
+				</a>
+			</li>
+			<li>
+				<a target="_blank" href="https://www.microsoftedgeinsider.com/">
+					download here
+				</a>
+			</li>
+		</ul>
+	'
+	'full support': '
+		<rb-icon
+			size="2"
+			kind="check"
+			source="solid"
+			class="full-support">
+		</rb-icon>
+	'
+	'no support': null
+,
 	# EDGE
 	# ====
 	browser: '
@@ -102,11 +140,7 @@ angular.module('rapid-build').constant 'BROWSER_SUPPORT', [
 		</rb-icon>
 	'
 	notes: '
-		Microsoft Edge currently unsupported until
-		<strong>custom elements</strong> and
-		<strong>shadow dom</strong> is supported.
-		<a target="_blank" href="https://goo.gl/WB51yG" title="Microsoft Edge Dev Blog">Please
-		join the thousands of people and upvote for them</a>.
+		Microsoft Edge unsupported.
 	'
 	'full support': null
 	'no support': '

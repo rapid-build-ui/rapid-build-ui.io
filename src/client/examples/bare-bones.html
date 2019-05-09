@@ -9,6 +9,17 @@
 	<meta name="Author" content="The Rapid Build UI Team!">
 	<link rel="icon" type="image/png" sizes="16x16" href="/images/logos/rapid-build-ui-icon-16x16.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/images/logos/rapid-build-ui-icon-32x32.png">
+	<style>
+		[rb-hide] {
+			display: none !important;
+		}
+		rb-icon:not(:defined) {
+			display: inline-block;
+			height: 100vh;
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out;
+		}
+	</style>
 </head>
 <body>
 	<h1>
@@ -20,9 +31,17 @@
 	</p>
 
 	<!-- RB COMPONENTS -->
+	<rb-textcurve>
+		<h3>Textcurve</h3>
+	</rb-textcurve>
+
 	<rb-alert>Hello Gorgeous!</rb-alert>
 
-	<rb-button onclick="showModal(event)">Show Modal</rb-button>
+	<rb-toggle caption="Toggle">
+		Elementary my dear Watson
+	</rb-toggle>
+
+	<rb-button onclick="openModal(event)">Show Modal</rb-button>
 
 	<rb-icon kind="thumbs-up"></rb-icon>
 
@@ -48,6 +67,13 @@
 			label="Superhero"
 			validation='["required"]'>
 		</rb-input>
+		<rb-dropdown
+			name="strongest"
+			label="Strongest"
+			placeholder="Select"
+			validation='["required"]'
+			data='["batman","superman","spiderman"]'>
+		</rb-dropdown>
 		<rb-checkbox
 			name="awesome"
 			label="Superman"
@@ -85,9 +111,9 @@
 
 	<!-- RB COMPONENTS -->
 	<script>
-		function showModal(evt) { // :void
+		function openModal(evt) { // :void
 			const modal = document.querySelector('rb-modal');
-			modal.show = true;
+			modal.open = true;
 		}
 	</script>
 	<script src="/scripts/es-modules/rapid-build-ui.js" type="module"></script>

@@ -2,7 +2,6 @@
  * TABLES
  *********/
 table {
-	color: #5f6e7e;
 	border-collapse: collapse;
 
 	/* Common
@@ -17,11 +16,11 @@ table {
 	 **************/
 	th {
 		font-size: remy(13);
-		color: white;
+		color: mapGet($palette, white);
 		font-weight: 700;
 		letter-spacing: .3px;
 		text-transform: uppercase;
-		text-shadow: 1px 1px #52626b;
+		text-shadow: 1px 1px mapGet($palette, blackCoral);
 	}
 	td {
 		font-size: remy(13.5);
@@ -40,7 +39,7 @@ table {
 		&:last-child::after {
 			position: absolute;
 			top: 0;
-			width: $capWidth + 1px; 
+			width: $capWidth + 1px;
 			height: 100%;
 			content: '';
 		}
@@ -60,7 +59,10 @@ table {
 		tr,
 		th:first-child::before,
 		th:last-child::after {
-			background: linear-gradient(#019fcc, #037bab);
+			background: linear-gradient(
+				mapGet($palette, richElectricBlue),
+				mapGet($palette, cerulean)
+			);
 		}
 	}
 	tbody {
@@ -68,8 +70,7 @@ table {
 			&,
 			td:first-child::before,
 			td:last-child::after {
-				// background-color: #f4f7fc;
-				background-color: #fafafa;
+				background-color: mapGet($palette, snow);
 			}
 		}
 	}
@@ -77,7 +78,7 @@ table {
 		tr,
 		td:first-child::before,
 		td:last-child::after {
-			background-color: #fafafa;
+			background-color: mapGet($palette, snow);
 		}
 	}
 
@@ -89,22 +90,22 @@ table {
 				position: absolute;
 				top: 0;
 				right: 0;
-				border-left: 1px solid #0674ad;
-				border-right: 1px solid #1d9dc7;
+				border-left: 1px solid mapGet($palette, cerulean);
+				border-right: 1px solid mapGet($palette, richElectricBlue);
 				height: 100%;
 				content: '';
 			}
 		}
 	}
-	tbody,
-	tfoot {
-		tr {
-			border-bottom: 1px dotted lightgrey;
+	tbody {
+		tr:not(:last-child) {
+			border-bottom: 1px dotted mapGet($palette, lightGray);
 		}
 	}
-	tbody {
-		tr:last-child {
-			border-bottom: none;
+	tfoot {
+		tr {
+			border-top: 1px dotted mapGet($palette, lightGray);
+			border-bottom: 1px dotted mapGet($palette, lightGray);
 		}
 	}
 
@@ -115,8 +116,8 @@ table {
 		&:last-child::after {
 			top: -1px;
 			border-radius: 0;
-			border-top: 1px dotted lightgrey;
-			border-bottom: 1px dotted lightgrey;
+			border-top: 1px dotted mapGet($palette, lightGray);
+			border-bottom: 1px dotted mapGet($palette, lightGray);
 		}
 	}
 }

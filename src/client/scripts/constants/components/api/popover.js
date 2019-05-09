@@ -27,9 +27,7 @@ p.constant('RB_POPOVER_API',
 		type: null,
 		required: false
 	},
-	common.get('kind', {
-		options: 'info | danger | success | warning'
-	}),
+	common.get('kind'),
 	common.get('icon-burst'),
 	common.get('icon-flip'),
 	common.get('icon-kind', {
@@ -46,8 +44,30 @@ p.constant('RB_POPOVER_API',
 	common.get('icon-source'),
 	common.get('icon-valign'),
 	{
+		attribute: 'inherit-color',
+		description: `
+			Trigger color is
+			<a target="_blank" href="https://goo.gl/bkoDwm">inherited</a>.
+		`,
+		options: null,
+		type: null,
+		required: false
+	},
+	common.get('open', {
+		description: `
+			<em class="info-heading">defaults to false</em>
+			Opens popover.
+			<em class="info-sub">useful if you need to
+			programmatically open or close popover</em>
+		`
+	}),
+	{
 		attribute: 'pin',
-		description: `Popover will only close when the trigger is clicked.`,
+		description: `
+			Popover will only close when trigger is clicked.
+			<em class="info-sub">displays
+			thumbtack icon when popover is open and pinned</em>
+		`,
 		options: null,
 		type: null,
 		required: false
@@ -55,32 +75,12 @@ p.constant('RB_POPOVER_API',
 	{
 		attribute: 'position',
 		description: `
-			<em class="info-heading">defaults to right</em>
+			<em class="info-heading">defaults to top</em>
 			Position where popover opens. Will adjust if not in
 			<a target="_blank" href="https://goo.gl/DwJ1ke">viewport</a>.
 		`,
-		options: 'bottom | left | top',
+		options: 'bottom | left | right',
 		type: 'string',
-		required: false
-	},
-	{
-		attribute: 'show-popover',
-		description: `
-			<em class="info-heading">defaults to false</em>
-			Programmatically show or hide the popover.
-		`,
-		options: 'true',
-		type: 'bool',
-		required: false
-	},
-	{
-		attribute: 'unstyled',
-		description: `
-			Trigger color is
-			<a target="_blank" href="https://goo.gl/bkoDwm">inherited</a>.
-		`,
-		options: null,
-		type: null,
 		required: false
 	}
 ]

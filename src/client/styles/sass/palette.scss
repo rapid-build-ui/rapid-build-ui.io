@@ -1,0 +1,50 @@
+/*************************
+ * SHOWCASE COLOR PALETTE (names from coolors)
+ *************************/
+$palette: (
+	// Common
+	trans: transparent,
+	black: #000, // currently unused
+	white: #fff, // th (color)
+
+	// Blues
+	cerulean:         #037bab, // thead tr {bottom gradient}
+	ceruleanFrost:    #6798c1, // a:active (color)
+	darkPastelBlue:   #78a4c8, // a | a:focus:hover (color)
+	steelBlue:        #4682b4, // headings (color)
+	richElectricBlue: #019fcc, // thead tr {top gradient}
+
+	// Darks
+	charlestonGreen:  #282c34, // rb-code | .demo-component.dark (bg)
+	darkGunmetal:     #20232a, // code.title-bar (bg)
+	jet:              #323232, // footer.main (bg)
+	onyx:             #34373d, // code.title-bar (border)
+
+	// Greens
+	wageningenGreen:  #28a745, // .success-text | .full-support (color)
+
+	// Greys
+	blackCoral:       #52626b, // th (text shadow)
+	cadetGrey:        #92a2b2, // .info-sub | .subheading | .subtext (color)
+	lightSlateGray:   #7c8895, // td-[options,required,type] | .optionize (color)
+	paynesGrey:       #5f6e7e, // body (color)
+	spanishGray:      #999,    // code.title-bar (color) | footer.main (color) | img.bordered (border)
+
+	// Lights
+	gainsboro:        #ddd,    // hr | section.separated (border)
+	lavenderGray:     #c3c8ce, // .info-heading | .na | .no (color)
+	lightGray:        #d3d3d3, // tbody | tfoot (border)
+	pastelGray:       #cacaca, // .headlines section (border)
+
+	// Lighters
+	isabelline:       #eee,    // headings (text shadow)
+	platinum:         #e3e3e3, // aside.main | header.main | main > header (border)
+	snow:             #fafafa, // tbody tr:hover (bg)
+	whiteSmoke:       #f5f5f5, // header.main (bg)
+
+	// Reds
+	rustyRed:         #dc3545, // .error-text | .no-support (color)
+
+	// Yellows
+	vividAmber:       #d2a000, // .warning-text | .partial-support (color)
+);

@@ -62,7 +62,7 @@ const getCssVarsFromJsFile = async (clientPath, component) => { // :{}
 		const vars = css.match(regex) || []; // :[] | null (get all theme variables)
 		for (const _var of vars) {
 			const name = _var.match(/.+(?=:)/g)[0]; // variable name, ex: --rb-nav-link-color
-			const val  = _var.match(/(?<=:\s*)\S+.+(?=;)/g)[0]; // variable value, ex: blue
+			const val  = _var.match(/(?<=:\s*)\S+.*(?=;)/g)[0]; // variable value, ex: blue
 			theme[name] = val;
 		}
 	}

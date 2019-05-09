@@ -1,29 +1,32 @@
-<div ng-show="show === undefined ? true : show"
-	 ng-class="['rb-code', kind,
-	 			!!readonly ? 'readonly' : '',
-				!!height ? height+'-height' : '',
-				scroll !== undefined ? 'scroll' : ''
-			   ].join(' ')">
-	<h5 ng-show="!!caption || !!actions">
-		{{ caption }}
+<div
+	class="rb-code"
+	ng-show="show === undefined ? true : show"
+	ng-class="[
+		kind,
+		!!readonly ? 'readonly' : '',
+		!!height ? height+'-height' : '',
+		scroll !== undefined ? 'scroll' : ''
+		].join(' ')
+	">
+	<section class="title-bar">
+		<h3 ng-show="!!caption" ng-bind="::caption"></h3>
 		<div class="actions">
-			<!-- <a href tabindex="0" ng-click="clear()">clear</a> -->
-			<!-- <a href tabindex="0" ng-click="addAction()">add</a> -->
-			<!-- <a href tabindex="0" ng-click="compress()">compress</a> -->
-			<!-- <a href tabindex="0" ng-click="edit()">edit</a> -->
+			<!-- <rb-button text='{ "inherit": "color" }' ng-click="addAction()" icon-kind="plus-square"></rb-button> -->
+			<!-- <rb-button text='{ "inherit": "color" }' ng-click="edit()" icon-kind="edit"></rb-button> -->
+			<!-- <rb-button text='{ "inherit": "color" }' ng-click="compress()" icon-kind="compress" icon-source="solid"></rb-button> -->
+			<!-- <rb-button text='{ "inherit": "color" }' ng-click="clear()" icon-kind="times-circle"></rb-button> -->
 			<rb-popover
-				unstyled
 				ngclipboard
-				position="top"
+				inherit-color
 				icon-kind="copy"
 				ngclipboard-success="copied(e)"
 				data-clipboard-target="textarea">
 				Copied! <rb-icon kind="thumbs-up"></rb-icon>
 			</rb-popover>
 		</div>
-	</h5>
+	</section>
 	<textarea
 		tabindex="-1"
 		ng-model="model"
-		ui-codemirror="editorOpts"></textarea>
+		rba-codemirror="editorOpts"></textarea>
 </div>

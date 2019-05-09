@@ -1,0 +1,20 @@
+/****************************
+ * LAVENDER THEME: RB-TOGGLE
+ ****************************/
+rb-toggle {
+	// Caption Color
+	--rb-toggle-default-caption-color: #a385e0;
+	--rb-toggle-danger-caption-color:  #ff66b8;
+	--rb-toggle-info-caption-color:    #00bfff;
+	--rb-toggle-neutral-caption-color: #a6a6a6;
+	--rb-toggle-success-caption-color: #53c687;
+	--rb-toggle-warning-caption-color: #ff981a;
+
+	// Caption Color Hover
+	--rb-toggle-default-caption-color-hover: #d1c2f0;
+	--rb-toggle-danger-caption-color-hover:  #ffb3db;
+	--rb-toggle-info-caption-color-hover:    #80dfff;
+	--rb-toggle-neutral-caption-color-hover: #b3b3cc;
+	--rb-toggle-success-caption-color-hover: #8cd9af;
+	--rb-toggle-warning-caption-color-hover: #ffba66;
+}

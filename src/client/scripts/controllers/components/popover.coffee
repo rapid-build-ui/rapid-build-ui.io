@@ -9,14 +9,14 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 			attrs += "#{nt}pin" if $scope.a.pin
 			attrs += "#{nt}dark" if $scope.a.dark # TODO
 			attrs += "#{nt}hover" if $scope.a.hover
-			attrs += "#{nt}unstyled" if $scope.a.unstyled
 			attrs += "#{nt}icon-spin" if $scope.a.iconAnimation and $scope.a.iconAnimation.includes 'spin'
 			attrs += "#{nt}icon-burst" if $scope.a.iconAnimation and $scope.a.iconAnimation.includes 'burst'
 			attrs += "#{nt}icon-pulse" if $scope.a.iconAnimation and $scope.a.iconAnimation.includes 'pulse'
 			attrs += "#{nt}fit-content" if $scope.a.fitContent
+			attrs += "#{nt}inherit-color" if $scope.a.inheritColor
+			attrs += "#{nt}open=\"#{$scope.a.open}\"" if $scope.a.open
 			attrs += "#{nt}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			attrs += "#{nt}position=\"#{$scope.a.position}\"" if $scope.a.position
-			attrs += "#{nt}show-popover=\"#{$scope.a.showPopover}\"" if $scope.a.showPopover
 			attrs += "#{nt}icon-flip=\"#{$scope.a.iconFlip}\"" if $scope.a.iconFlip
 			attrs += "#{nt}icon-size=\"#{$scope.a.iconSize}\"" if $scope.a.iconSize
 			attrs += "#{nt}icon-kind=\"#{$scope.a.iconKind}\"" if $scope.a.iconKind
@@ -30,8 +30,8 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 
 		# Props
 		# =====
-		$scope.kinds         = ['success','danger','warning','info']
-		$scope.positions     = ['top','bottom','left']
+		$scope.kinds         = ['danger','info','neutral','success','warning']
+		$scope.positions     = ['bottom','left','right']
 		$scope.iconFlips     = ['horizontal','vertical','both']
 		$scope.iconKinds     = ['question-circle','download','github']
 		$scope.iconSources   = ['solid','brands']
@@ -53,8 +53,8 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 		# Event Handlers
 		# ==============
 		resetFrm = -> $scope.$apply $scope.reset
-		resetBtn = $element[0].querySelector('[data-reset]')
-		resetBtn.addEventListener 'clicked', resetFrm
+		resetBtn = $element[0].querySelector '[data-reset]'
+		resetBtn.onclick = resetFrm
 
 		# Init
 		# ====
@@ -63,6 +63,5 @@ angular.module('rapid-build').controller 'rbPopoverController', ['$scope', '$ele
 		# Destroys
 		# ========
 		$scope.$on '$destroy', ->
-			resetBtn.removeEventListener 'clicked', resetFrm
 			markupWatch()
 ]

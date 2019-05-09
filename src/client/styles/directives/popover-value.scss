@@ -2,14 +2,13 @@
  * POPOVER VALUE
  ****************/
 .rb-popover-value {
-	color: $greyDarkest;
 	display: inline-block;
 	white-space: pre-wrap;
 	word-break: break-all;
 	line-height: 18px;
 	letter-spacing: .1px;
 	font-size: 11px;
-	font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New, monospace;
+	font-family: mapGet($fonts, monospaced);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }

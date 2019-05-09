@@ -32,7 +32,9 @@
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Configure</h5>
+		<rb-textcurve>
+			<h5>Configure</h5>
+		</rb-textcurve>
 
 		<rb-textarea
 			rb-bind
@@ -61,6 +63,12 @@
 		<rb-checkbox
 			inline
 			rb-bind
+			value="a.inline"
+			sublabel="inline">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
 			horizontal
 			value="a.removable"
 			sublabel="removable">
@@ -71,24 +79,24 @@
 			<rb-button
 				data-reset
 				icon-kind="sync"
-				icon-source="solid"
-				icon-position="left">
+				icon-source="solid">
 				Reset
 			</rb-button>
 		</section>
 	</form>
 
 	<!-- API -->
-	<rba-toggle
-		text-curve
-		show="true"
-		caption="API">
-		<rba-table source="RB_ALERT_API" inject></rba-table>
-	</rba-toggle>
+	<section>
+		<rba-api component="rb-alert"></rba-api>
+	</section>
 
 	<!-- CSS Variables -->
-	<rba-css-vars component="rb-alert"></rba-css-vars>
+	<section>
+		<rba-css-vars component="rb-alert"></rba-css-vars>
+	</section>
 
 	<!-- CHANGELOG -->
-	<rba-changelog component="rb-alert"></rba-changelog>
+	<section>
+		<rba-changelog component="rb-alert"></rba-changelog>
+	</section>
 </div>

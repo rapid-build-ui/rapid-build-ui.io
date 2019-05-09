@@ -31,7 +31,7 @@ options:
 			<a target="_blank" href="https://goo.gl/d9wizE">primitive</a>
 			values or
 			<a target="_blank" href="https://goo.gl/uZEoeU">objects</a>.
-			<em class="info-sub">see label-key
+			<em class="info-sub">see label-key or value-key
 			when data is an array of objects</em>
 		`,
 		options: null,
@@ -81,6 +81,15 @@ options:
 		required: false
 	},
 	{
+		attribute: 'icon-left',
+		description: `
+			Position icon left.
+		`,
+		options: null,
+		type: null,
+		required: false
+	},
+	{
 		attribute: 'icon-position',
 		description: `
 			<em class="info-heading">defaults to right</em>
@@ -98,6 +107,15 @@ options:
 		`,
 		options: null,
 		type: `n/a | bool`,
+		required: false
+	},
+	{
+		attribute: 'icon-right',
+		description: `
+			Position icon right.
+		`,
+		options: null,
+		type: null,
 		required: false
 	},
 	{
@@ -170,7 +188,7 @@ options:
 	{
 		attribute: 'kind',
 		description: `Varies look of display.`,
-		options: `danger | info | success | secondary | warning`,
+		options: `danger | info | neutral | success | warning`,
 		type: 'string',
 		required: false
 	},
@@ -199,6 +217,27 @@ options:
 		`,
 		options: null,
 		type: 'string',
+		required: false
+	},
+	{
+		attribute: 'open',
+		description: `
+			<em class="info-heading">defaults to false</em>
+			Opens component.
+		`,
+		options: 'true',
+		type: `bool`,
+		required: false
+	},
+	{
+		attribute: 'onclick',
+		description: `
+			Function to execute onclick.
+			<em class="info-sub-inline">usually
+			set in javascript</em>
+		`,
+		options: null,
+		type: 'function',
 		required: false
 	},
 	{
@@ -289,6 +328,16 @@ options:
 		`,
 		options: null,
 		type: `primitives | object`,
+		required: false
+	},
+	{
+		attribute: 'value-key',
+		description: `
+			<em class="info-heading">data must be array of objects</em>
+			Property name in data object used for component's value.
+		`,
+		options: null,
+		type: 'string',
 		required: false
 	}
 ],

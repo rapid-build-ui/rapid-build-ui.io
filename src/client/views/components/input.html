@@ -32,7 +32,9 @@
 
 	<!-- DEMO -->
 	<form name="demoForm">
-		<h5 rba-text-curve>Configure</h5>
+		<rb-textcurve>
+			<h5>Configure</h5>
+		</rb-textcurve>
 
 		<!-- INPUTS -->
 		<rb-input
@@ -80,8 +82,7 @@
 			label="icon-kind"
 			value="a.iconKind"
 			data="{{iconKinds}}">
-			<rb-popover position="top" slot="popover">
-				<h6 class="text-center">set source to</h6>
+			<rb-popover slot="popover" caption="set icon-source to">
 				<ul>
 					<li><strong>solid</strong> for spinner</li>
 					<li><strong>brands</strong> for github</li>
@@ -186,21 +187,24 @@
 			<rb-button
 				data-reset
 				icon-kind="sync"
-				icon-source="solid"
-				icon-position="left">
+				icon-source="solid">
 				Reset
 			</rb-button>
 		</section>
 	</form>
 
 	<!-- API -->
-	<rba-toggle
-		text-curve
-		show="true"
-		caption="API">
-		<rba-table source="RB_INPUT_API" inject></rba-table>
-	</rba-toggle>
+	<section>
+		<rba-api component="rb-input"></rba-api>
+	</section>
+
+	<!-- CSS Variables -->
+	<!-- <section>
+		<rba-css-vars component="rb-input"></rba-css-vars>
+	</section> -->
 
 	<!-- CHANGELOG -->
-	<rba-changelog component="rb-input"></rba-changelog>
+	<section>
+		<rba-changelog component="rb-input"></rba-changelog>
+	</section>
 </div>

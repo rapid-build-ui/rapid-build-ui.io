@@ -6,8 +6,7 @@ section {
 
 	/* Sections
 	 ***********/
-	&.grid,
-	&.buttons {
+	&.grid {
 		margin-bottom: remy(15);
 	}
 
@@ -16,7 +15,7 @@ section {
 	&.separated {
 		margin-bottom: remy(32);
 		padding-bottom: remy(33);
-		border-bottom: 1px dashed #ddd;
+		border-bottom: 1px dashed mapGet($palette, gainsboro);
 		@include removeLastChildBottomSpacing();
 	}
 }

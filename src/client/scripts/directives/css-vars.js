@@ -31,15 +31,14 @@ angular.module('rapid-build').directive('rbaCssVars', ['cssVarsService',
 					scope.caption = 'CSS VARIABLES';
 			}
 
-			/* Methods
-			 **********/
-			scope.getCssVars = (component, theme) => { // :void
-				return cssVarsService.get(component, theme).then(cssVars => {
+			/* RB TOGGLE
+			 ************/
+			iElement[0].querySelector('rb-toggle').onclick = () =>
+				cssVarsService.get(scope.component, scope.theme).then(cssVars => {
 					scope.cssVars = cssVars;
 				}).catch(error => {
 					scope.error = error.data.message;
-				});
-			};
+				})
 		}
 
 		/* API

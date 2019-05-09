@@ -1,21 +1,22 @@
-angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$element', 'typeService', 'usaStatesValue',
-	function($scope, $element, type, usaStatesValue) {
+angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$element', 'typeService', 'usStatesValue',
+	function($scope, $element, type, States) {
 		/* Builder
 		 **********/
 		const createMarkup = function() {
 			let attrs = ''; let content = '';
 			const s = ' ', t = '\t', n = '\n', nt = '\n\t';
 
-			if ($scope.a.dark)     attrs += `${nt}dark`; // TODO
-			if ($scope.a.right)    attrs += `${nt}right`;
-			if ($scope.a.inline)   attrs += `${nt}inline`;
-			if ($scope.a.disabled) attrs += `${nt}disabled`;
-			if ($scope.a.label)    attrs += `${nt}label=\"${$scope.a.label}\"`;
-			if ($scope.a.value)    attrs += `${nt}value='${$scope.a.value}'`;
-			if ($scope.a.subtext)  attrs += `${nt}subtext=\"${$scope.a.subtext}\"`;
-			if ($scope.a.placeholder)  attrs += `${nt}placeholder=\"${$scope.a.placeholder}\"`;
-			if ($scope.a.labelKey) attrs += `${nt}label-key='${$scope.a.labelKey}'`;
-			if ($scope.a.data)     attrs += `${nt}data='${buldDataMarkup()}'`;
+			if ($scope.a.dark)        attrs += `${nt}dark`; // TODO
+			if ($scope.a.right)       attrs += `${nt}right`;
+			if ($scope.a.inline)      attrs += `${nt}inline`;
+			if ($scope.a.disabled)    attrs += `${nt}disabled`;
+			if ($scope.a.placeholder) attrs += `${nt}${getPlaceholder()}`;
+			if ($scope.a.label)       attrs += `${nt}label=\"${$scope.a.label}\"`;
+			if ($scope.a.value)       attrs += `${nt}value='${$scope.a.value}'`;
+			if ($scope.a.subtext)     attrs += `${nt}subtext=\"${$scope.a.subtext}\"`;
+			if ($scope.a.labelKey)    attrs += `${nt}label-key="${$scope.a.labelKey}"`;
+			if ($scope.a.valueKey)    attrs += `${nt}value-key="${$scope.a.valueKey}"`;
+			if ($scope.a.data)        attrs += `${nt}data='${buldDataMarkup()}'`;
 			if ($scope.a.validation && $scope.a.validation.length) attrs += `${nt}validation='${buldValidationMarkup()}'`;
 			if ($scope.a.popover) content += getPopoverSlot();
 			if (!content) content = n;
@@ -25,33 +26,20 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 
 		/* Helpers
 		 **********/
-		const getPopoverSlot = () => {
-			return '\n\t<rb-popover\n\t\tslot="popover"\n\t\tposition="top">\n\t\tmore info...\n\t</rb-popover>\n';
+		const getPopoverSlot = () => { // :string
+			return '\n\t<rb-popover\n\t\tslot="popover">\n\t\tmore info...\n\t</rb-popover>\n';
+		}
+		const getPlaceholder = () => { // :string
+			let { placeholder } = $scope.a;
+			placeholder = placeholder.trim();
+			if (!placeholder) return 'placeholder';
+			return `placeholder="${placeholder}"`;
 		}
 
 		const stringifyModifier = (key, val) => {
 			val = angular.copy(val);
 			if (!type.is.function(val)) { return val; }
 			return val.toString();
-		};
-
-		const buldDataMarkup = () => {
-			let _data = [];
-
-			switch ($scope.a.data) {
-				case 'array of strings':
-					_data = getUsaStateNames();
-					break;
-				case 'array of objects':
-					_data = usaStatesValue;
-					break;
-			}
-
-			return JSON.stringify(_data, stringifyModifier, '\t')
-				.replace(/\\n/g, '\n')
-				.replace(/\\"/g, '"')
-				.replace(/"function\s*\((.*)\)/g, 'function($1)')
-				.replace(/\}"/g, '}');
 		};
 
 		const buldValidationMarkup = () => {
@@ -80,22 +68,35 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 				.replace(/\}"/g, '}');
 		};
 
+		/* Data Markup Helpers
+		 **********************/
+		// const buldDataMarkup = () => {
+		// 	const data = $scope.a.data.includes('strings')
+		// 		? States.names
+		// 		: States.objects;
+		// 	return JSON.stringify(data, null, '\t');
+		// };
+
+		const buldDataMarkup = () => {
+			const data = $scope.a.data.includes('strings')
+				? ['thor', 'batman', 'superman', 'wolverine']
+				: [
+					{id: 1, name: 'thor'},
+					{id: 2, name: 'batman'},
+					{id: 3, name: 'superman'},
+					{id: 4, name: 'wolverine'}
+				];
+			return JSON.stringify(data, null, '\t');
+		};
+
 		/* Props
 		 ********/
-		// console.log(usaStatesValue);
-		const getUsaStateNames = () => {
-			const states = [];
-			for (const state of usaStatesValue)
-				states.push(state.name);
-
-			return states;
-		}
-
 		$scope.dataLabels = [
 			'array of strings',
 			'array of objects'
 		];
-		$scope.labelKeys = ['name', 'abbreviation'];
+		// $scope.labelKeys = ['abbreviation', 'name'];
+		$scope.labelKeys = ['id', 'name'];
 		$scope.validationLabels = [
 			'required'
 		];
@@ -107,8 +108,15 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 		 **********/
 		$scope.reset = () => {
 			$scope.a = {
-				label: 'US States',
-				data: 'array of strings'
+				label: 'Superheroes',
+				// label: 'US States',
+				// placeholder: 'Select',
+				// labelKey: 'name',
+				// valueKey: 'id',
+				// valueKey: 'abbreviation',
+				// data: 'array of objects'
+				data: 'array of strings',
+				// value: 'District Of Columbia'
 			};
 		};
 
@@ -122,18 +130,20 @@ angular.module('rapid-build').controller('rbDropdownController', ['$scope', '$el
 		 *****************/
 		const resetFrm = () => $scope.$apply($scope.reset);
 		const resetBtn = $element[0].querySelector('[data-reset]');
-		resetBtn.addEventListener('clicked', resetFrm);
+		resetBtn.onclick = resetFrm;
 
 		/* Init
 		 *******/
 		$scope.reset();
+		// States.init().then(() => {
+		// 	$scope.markup = createMarkup();
+		// 	$scope.$apply();
+		// });
 
 		/* Destroy
 		 **********/
 		$scope.$on('$destroy', () => {
-			resetBtn.removeEventListener('clicked', resetFrm);
 			markupWatch();
 		});
 	}
-
 ]);

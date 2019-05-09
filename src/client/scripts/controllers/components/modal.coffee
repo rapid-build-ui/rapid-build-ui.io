@@ -7,10 +7,10 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t'; ntt = '\n\t\t';
 
 			attrs  += "#{s}center" if $scope.a.center
-			attrs  += "#{s}no-backdrop" if $scope.a.noBackdrop
-			attrs  += "#{s}unclosable" if $scope.a.unclosable
-			attrs  += "#{s}show=\"#{$scope.a.show}\"" if $scope.a.show
-			# attrs += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
+			attrs  += "#{s}open=\"#{$scope.a.open}\"" if $scope.a.open
+			# attrs  += "#{s}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
+			attrs  += "#{s}backdrop=\"#{$scope.a.backdrop}\"" unless $scope.a.backdrop
+			attrs  += "#{s}closable=\"#{$scope.a.closable}\"" unless $scope.a.closable
 			content += "#{nt}#{$scope.a.content}" if $scope.a.content
 			content += "#{nt}#{$scope.a.header}"  if $scope.a.header
 			content += "#{nt}#{$scope.a.footer}"  if $scope.a.footer
@@ -19,7 +19,6 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 
 		# Test Without Builder
 		# ====================
-		# linkCnt = 1
 		# $scope.links = [
 		# 	href:    'home'
 		# 	content: 'home'
@@ -30,23 +29,43 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		# 	href:    'contact'
 		# 	content: 'contact <rb-icon kind="heart"></rb-icon></a>'
 		# ]
-		# $scope.addLink = ->
+
+		# linkCnt = 1
+		# $element[0].querySelector('[data-add-link]').onclick = ->
 		# 	newLink = "link#{linkCnt++}"
 		# 	newLink = href: newLink, content: newLink
 		# 	$scope.links.push newLink
-		# $scope.removeLink = ->
+		# 	$scope.$apply()
+		# $element[0].querySelector('[data-remove-link]').onclick = ->
 		# 	$scope.links.pop()
 		# 	linkCnt--
+		# 	$scope.$apply()
+
+		# Open Helper
+		# ===========
+		openHelper = (open) -> # needed for builder
+			return unless open
+			updateOpen = (evt) ->
+				$scope.a.open = evt.detail.open
+				$scope.$apply()
+				@removeEventListener 'open-changed', updateOpen
+			timer = $timeout ->
+				$timeout.cancel timer
+				modal = $element[0].querySelector 'rb-modal'
+				modal.addEventListener 'open-changed', updateOpen
+			, 75
 
 		# Props
 		# =====
-		$scope.kinds = ['success','danger','warning','info']
+		$scope.kinds = ['danger','info','neutral','success','warning']
 
 		# Methods
 		# =======
 		$scope.reset = ->
 			$scope.a =
-				show: false
+				# open: true
+				backdrop: true
+				closable: true
 				content: 'Easy peasy modal content!'
 				header:  '<h5 slot="header">Modal Header</h5>'
 				footer:  '<em slot="footer">Modal Footer</em>'
@@ -55,28 +74,14 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		# =======
 		markupWatch = $scope.$watch 'a', (newVal, oldVal) ->
 			$scope.markup = createMarkup()
-			showHelper newVal.show
+			openHelper newVal.open
 		, true
-
-		# Show Helper
-		# ===========
-		showHelper = (show) -> # needed for builder
-			return unless show
-			updateShow = (evt) ->
-				$scope.a.show = evt.detail.show
-				$scope.$apply()
-				@removeEventListener 'show-changed', updateShow
-			timer = $timeout ->
-				$timeout.cancel timer
-				modal = $element[0].querySelector 'rb-modal'
-				modal.addEventListener 'show-changed', updateShow
-			, 75
 
 		# Event Handlers
 		# ==============
 		resetFrm = -> $scope.$apply $scope.reset
-		resetBtn = $element[0].querySelector('[data-reset]')
-		resetBtn.addEventListener 'clicked', resetFrm
+		resetBtn = $element[0].querySelector '[data-reset]'
+		resetBtn.onclick = resetFrm
 
 		# Init
 		# ====
@@ -85,6 +90,5 @@ angular.module('rapid-build').controller 'rbModalController', ['$scope', '$eleme
 		# Destroys
 		# ========
 		$scope.$on '$destroy', ->
-			resetBtn.removeEventListener 'clicked', resetFrm
 			markupWatch()
 ]

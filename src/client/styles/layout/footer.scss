@@ -2,9 +2,9 @@
  * LAYOUT FOOTER
  ****************/
 footer.main {
-	color: grey;
+	color: mapGet($palette, spanishGray);
 	text-align: center;
-	background-color: #333;
+	background-color: mapGet($palette, jet);
 
 	.rb-logo-link {
 		display: inline-block;

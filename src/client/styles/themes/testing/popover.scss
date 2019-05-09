@@ -5,24 +5,43 @@ rb-popover {
 	// Common
 	--rb-popover-border-radius: 15px;
 
-	// Popover BG Color
+	// Caption BG
 	--rb-popover-default-caption-bg: pink;
 	--rb-popover-danger-caption-bg:  red;
 	--rb-popover-info-caption-bg:    lightblue;
+	--rb-popover-neutral-caption-bg: pink;
 	--rb-popover-success-caption-bg: green;
 	--rb-popover-warning-caption-bg: orange;
 
-	// Popover Color
-	--rb-popover-default-text-color: darkblue;
-	--rb-popover-danger-text-color:  green;
-	--rb-popover-info-text-color:    grey;
-	--rb-popover-success-text-color: black;
-	--rb-popover-warning-text-color: darkblue;
+	// Caption Text Color
+	--rb-popover-default-caption-color: darkblue;
+	--rb-popover-danger-caption-color:  green;
+	--rb-popover-info-caption-color:    grey;
+	--rb-popover-neutral-caption-color: white;
+	--rb-popover-success-caption-color: black;
+	--rb-popover-warning-caption-color: darkblue;
+
+	// Content Text Color
+	--rb-popover-default-content-color: pink;
+	--rb-popover-danger-content-color:  red;
+	--rb-popover-info-content-color:    lightblue;
+	--rb-popover-neutral-content-color: pink;
+	--rb-popover-success-content-color: green;
+	--rb-popover-warning-content-color: orange;
 
 	// Trigger Color
 	--rb-popover-default-trigger-color: orange;
 	--rb-popover-danger-trigger-color:  yellow;
 	--rb-popover-info-trigger-color:    darkblue;
-	--rb-popover-success-trigger-color: red;
+	--rb-popover-neutral-trigger-color: deeppink;
+	--rb-popover-success-trigger-color: forestgreen;
 	--rb-popover-warning-trigger-color: brown;
+
+	// Trigger Color Hover
+	--rb-popover-default-trigger-color-hover: pink;
+	--rb-popover-danger-trigger-color-hover:  red;
+	--rb-popover-info-trigger-color-hover:    lightblue;
+	--rb-popover-neutral-trigger-color-hover: yellow;
+	--rb-popover-success-trigger-color-hover: orange;
+	--rb-popover-warning-trigger-color-hover: aquamarine;
 }

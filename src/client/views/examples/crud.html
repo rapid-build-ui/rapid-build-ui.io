@@ -15,12 +15,12 @@
 		<div class="col-3_md-4 nowrap">
 			<h5>
 				<rb-button
-					kind="text"
+					text
+					data-new-hero
 					icon-size=".85"
 					icon-source="solid"
 					icon-kind="plus-circle"
-					title="Create Superhero"
-					ng-click="newHero()">
+					title="Create Superhero">
 				</rb-button>
 				Superheroes
 			</h5>
@@ -65,17 +65,15 @@
 					<rb-button
 						icon-size=".96"
 						icon-kind="save"
-						icon-position="left"
 						type="submit">
 						Save
 					</rb-button>
 					<rb-button
 						kind="danger"
 						icon-size=".95"
-						icon-position="left"
+						data-delete-hero
 						icon-kind="trash-alt"
-						ng-if="!!superhero.id"
-						ng-click="crud.delete()">
+						ng-show="!!superhero.id">
 						Delete
 					</rb-button>
 				</section>

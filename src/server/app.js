@@ -15,6 +15,8 @@ module.exports = server => {
 	 *********/
 	routes.changelog(app);
 	routes.cssVars(app, { paths: server.paths });
+	routes.data(app);
 	routes.examples(app, { paths: server.paths });
 	routes.superheroes(app);
+	routes.tests(app);
 };

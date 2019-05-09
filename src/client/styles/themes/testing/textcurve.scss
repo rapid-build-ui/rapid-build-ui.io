@@ -1,0 +1,31 @@
+/******************************
+ * TESTING THEME: RB-TEXTCURVE
+ ******************************/
+rb-textcurve {
+	// BG
+	--rb-textcurve-default-bg: pink;
+	--rb-textcurve-danger-bg:  lavender;
+	--rb-textcurve-info-bg:    lightblue;
+	--rb-textcurve-neutral-bg: grey;
+	--rb-textcurve-primary-bg: salmon;
+	--rb-textcurve-success-bg: aliceblue;
+	--rb-textcurve-warning-bg: cornsilk;
+
+	// Border Color
+	--rb-textcurve-default-border-color: hotpink;
+	--rb-textcurve-danger-border-color:  red;
+	--rb-textcurve-info-border-color:    dodgerblue;
+	--rb-textcurve-neutral-border-color: black;
+	--rb-textcurve-primary-border-color: steelblue;
+	--rb-textcurve-success-border-color: green;
+	--rb-textcurve-warning-border-color: blue;
+
+	// Subtext Color
+	--rb-textcurve-default-subtext-color: red;
+	--rb-textcurve-danger-subtext-color:  darkred;
+	--rb-textcurve-info-subtext-color:    brown;
+	--rb-textcurve-neutral-subtext-color: white;
+	--rb-textcurve-primary-subtext-color: cornsilk;
+	--rb-textcurve-success-subtext-color: darkgreen;
+	--rb-textcurve-warning-subtext-color: darkblue;
+}

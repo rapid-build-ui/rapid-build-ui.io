@@ -7,6 +7,7 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 			s = ' '; t = '\t'; n = '\n'; nt = '\n\t';
 
 			attrs += "#{nt}dark" if $scope.a.dark # TODO
+			attrs += "#{nt}inline" if $scope.a.inline
 			attrs += "#{nt}removable" if $scope.a.removable
 			attrs += "#{nt}kind=\"#{$scope.a.kind}\"" if $scope.a.kind
 			content = "#{nt}#{$scope.a.content}#{n}" if $scope.a.content
@@ -15,7 +16,7 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 
 		# Props
 		# =====
-		$scope.kinds = ['success','danger','warning','info','secondary']
+		$scope.kinds = ['danger','info','neutral','success','warning']
 
 		# Content
 		# =======
@@ -42,8 +43,8 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 		# Event Handlers
 		# ==============
 		resetFrm = -> $scope.$apply $scope.reset
-		resetBtn = $element[0].querySelector('[data-reset]')
-		resetBtn.addEventListener 'clicked', resetFrm
+		resetBtn = $element[0].querySelector '[data-reset]'
+		resetBtn.onclick = resetFrm
 
 		# Init
 		# ====
@@ -52,7 +53,6 @@ angular.module('rapid-build').controller 'rbAlertController', ['$scope', '$eleme
 		# Destroys
 		# ========
 		$scope.$on '$destroy', ->
-			resetBtn.removeEventListener 'clicked', resetFrm
 			markupWatch()
 
 ]

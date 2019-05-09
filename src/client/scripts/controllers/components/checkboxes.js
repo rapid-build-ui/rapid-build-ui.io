@@ -26,7 +26,7 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 		/* Helpers
 		 **********/
 		const getPopoverSlot = () => {
-			return '\n\t<rb-popover\n\t\tslot="popover"\n\t\tposition="top">\n\t\tmore info...\n\t</rb-popover>\n';
+			return '\n\t<rb-popover\n\t\tslot="popover">\n\t\tmore info...\n\t</rb-popover>\n';
 		}
 
 		const getValue = val => { // TODO: fix!
@@ -94,7 +94,7 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 
 		/* Props
 		 ********/
-		$scope.labelKeys = ['name', 'id'];
+		$scope.labelKeys = ['id', 'name'];
 		$scope.validationLabels = Object.keys(validations);
 		$scope.data = [
 			['batman', 'superman', 'wolverine'],
@@ -126,11 +126,9 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 
 		/* Event Handlers
 		 *****************/
-		const resetFrm = () => {
-			$scope.$apply($scope.reset);
-		};
+		const resetFrm = () => $scope.$apply($scope.reset);
 		const resetBtn = $element[0].querySelector('[data-reset]');
-		resetBtn.addEventListener('clicked', resetFrm);
+		resetBtn.onclick = resetFrm;
 
 		/* Init
 		 *******/
@@ -139,7 +137,6 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 		/* Destroy
 		 **********/
 		$scope.$on('$destroy', () => {
-			resetBtn.removeEventListener('clicked', resetFrm);
 			markupWatch();
 		});
 

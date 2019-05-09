@@ -7,27 +7,27 @@ rb-alert {
 	// --rb-alert-border-style:  dashed; // comment out until prod build is fixed
 	--rb-alert-border-width:  10px;
 
-	// BG Color
-	--rb-alert-default-bg:   pink;
-	--rb-alert-danger-bg:    lavender;
-	--rb-alert-info-bg:      lightblue;
-	--rb-alert-success-bg:   aliceblue;
-	--rb-alert-secondary-bg: grey;
-	--rb-alert-warning-bg:   cornsilk;
+	// BG
+	--rb-alert-default-bg: pink;
+	--rb-alert-danger-bg:  lavender;
+	--rb-alert-info-bg:    lightblue;
+	--rb-alert-neutral-bg: grey;
+	--rb-alert-success-bg: aliceblue;
+	--rb-alert-warning-bg: cornsilk;
 
 	// Border Color
-	--rb-alert-default-border-color:   hotpink;
-	--rb-alert-danger-border-color:    red;
-	--rb-alert-info-border-color:      dodgerblue;
-	--rb-alert-secondary-border-color: black;
-	--rb-alert-success-border-color:   green;
-	--rb-alert-warning-border-color:   blue;
+	--rb-alert-default-border-color: hotpink;
+	--rb-alert-danger-border-color:  red;
+	--rb-alert-info-border-color:    dodgerblue;
+	--rb-alert-neutral-border-color: black;
+	--rb-alert-success-border-color: green;
+	--rb-alert-warning-border-color: blue;
 
-	// Color
-	--rb-alert-default-text-color:   red;
-	--rb-alert-danger-text-color:    darkred;
-	--rb-alert-info-text-color:      brown;
-	--rb-alert-secondary-text-color: white;
-	--rb-alert-success-text-color:   darkgreen;
-	--rb-alert-warning-text-color:   darkblue;
+	// Text Color
+	--rb-alert-default-text-color: red;
+	--rb-alert-danger-text-color:  darkred;
+	--rb-alert-info-text-color:    brown;
+	--rb-alert-neutral-text-color: white;
+	--rb-alert-success-text-color: darkgreen;
+	--rb-alert-warning-text-color: darkblue;
 }

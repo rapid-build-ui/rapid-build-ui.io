@@ -9,8 +9,16 @@ angular.module('rapid-build').directive('rbaCode', ['$timeout', 'preService', 'E
 	/* COMPILE
 	 **********/
 	const Compile = function(tElement, tAttrs) {
-		if (tAttrs.actions === undefined)
-			tElement[0].querySelector('.actions').remove();
+		const elm = tElement[0];
+		const { actions, caption } = tAttrs;
+
+		actions === undefined && caption === undefined
+			? elm.querySelector('.title-bar').remove()
+			: actions === undefined
+				? elm.querySelector('.actions').remove()
+				: caption === undefined
+					? elm.querySelector('h3').remove()
+					: null;
 
 		return { pre: Link } // must be pre for editor
 	};
@@ -45,8 +53,8 @@ angular.module('rapid-build').directive('rbaCode', ['$timeout', 'preService', 'E
 			hide(trigger, delay) {
 				if (!this._isShowing()) return;
 				this._timer = $timeout(() => {
-					this._timer         = null;
-					trigger.showPopover = false;
+					this._timer  = null;
+					trigger.open = false;
 				}, delay);
 			},
 			updateTextarea(evt) {
@@ -118,7 +126,7 @@ angular.module('rapid-build').directive('rbaCode', ['$timeout', 'preService', 'E
 			/* VALUELESS
 			 ************/
 			lineNumbers: '@?', // *false
-			lineNowrap:  '@?', // *false
+			lineWrap:    '@?', // *false
 			readonly:    '@?', // *false
 			scroll:      '@?'  // *false
 		}

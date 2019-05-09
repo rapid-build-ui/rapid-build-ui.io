@@ -4,8 +4,9 @@
 // Sassy Goodness
 @import 'sass/functions.scss';
 @import 'sass/grid-vars.scss';
+@import 'sass/fonts.scss';
+@import 'sass/palette.scss';
 @import 'sass/spacers.scss';
-@import 'sass/variables.scss';
 @import 'sass/mixins.scss';
 
 // Roots and Layout
@@ -15,7 +16,6 @@
 // Showcase
 .rb.showcase {
 	// Tags
-	@import 'tags/buttons.scss';
 	@import 'tags/forms.scss';
 	@import 'tags/headers.scss';
 	@import 'tags/headings.scss';
@@ -35,12 +35,9 @@
 	@import 'directives/code.scss';
 	@import 'directives/copy.scss';
 	@import 'directives/popover-value.scss';
-	@import 'directives/source-nav.scss';
-	@import 'directives/text-curve.scss';
-	@import 'directives/toggle.scss';
 
 	// Misc
-	@import 'misc/logos.scss';
+	@import 'images/rb-logos.scss';
 
 	// Layout
 	@import 'layout/common.scss';
@@ -68,9 +65,6 @@
 
 	// Tables
 	@import 'tables/api-table.scss';
-
-	// Formatting
-	@import 'formatting/text.scss';
 
 	// Utilities
 	@import 'utilities/bumpers.scss';
