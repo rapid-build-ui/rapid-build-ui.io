@@ -16,3 +16,5 @@
 14. modal:        0.0.8
 15. textcurve:    0.0.1
 16. toggle:       0.0.1
+17. code:         0.0.0
+18. table:        0.0.0
