@@ -48,7 +48,7 @@
     "@rapid-build-ui/rb-textarea": "^0.0.3",
     "@rapid-build-ui/rb-textcurve": "^0.0.1",
     "@rapid-build-ui/rb-toggle": "^0.0.1",
-    "codemirror": "^5.46.0",
+    "codemirror": "^5.47.0",
     "codemirror-one-dark-theme": "^1.1.1",
     "gridlex": "2.7.1",
     "ngclipboard": "^2.0.0"
