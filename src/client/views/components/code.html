@@ -12,7 +12,7 @@
 
 	<!-- COMPONENT -->
 	<section class="grid">
-		<div class="col">
+		<div class="col-7">
 			<section class="demo-component" ng-class="a.dark && 'dark'">
 				<div rba-builder="markup"></div>
 			</section>
@@ -36,13 +36,37 @@
 			<h5>Configure</h5>
 		</rb-textcurve>
 
-		<!-- SLOTS -->
-		<!-- <rb-input
+		<rb-dropdown
 			inline
 			rb-bind
-			label="content"
-			value="a.content">
-		</rb-input> -->
+			label="mode"
+			value="a.mode"
+			data="{{modes}}"
+			placeholder="default">
+		</rb-dropdown>
+		<rb-dropdown
+			inline
+			rb-bind
+			label="theme"
+			value="a.theme"
+			data="{{themes}}"
+			placeholder="default">
+		</rb-dropdown>
+
+		<rb-dropdown
+			inline
+			rb-bind
+			label="height"
+			value="a.height"
+			data="{{heights}}">
+		</rb-dropdown>
+
+		<rb-input
+			inline
+			rb-bind
+			label="caption"
+			value="a.caption">
+		</rb-input>
 
 		<rb-textarea
 			rb-bind
@@ -52,14 +76,14 @@
 		</rb-textarea>
 
 		<!-- RADIOS -->
-		<rb-radios
+		<!-- <rb-radios
 			toggle
 			rb-bind
 			horizontal
 			label="kind"
 			value="a.kind"
 			data="{{kinds}}">
-		</rb-radios>
+		</rb-radios> -->
 
 		<!-- VALUELESS -->
 		<rb-checkbox
@@ -68,6 +92,18 @@
 			value="a.dark"
 			sublabel="dark"
 			ng-if="env.is.dev">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.readonly"
+			sublabel="readonly">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind
+			value="a.scrollable"
+			sublabel="scrollable">
 		</rb-checkbox>
 
 		<!-- BUTTONS -->

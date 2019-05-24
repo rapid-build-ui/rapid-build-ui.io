@@ -6,8 +6,14 @@ angular.module('rapid-build').controller('rbCodeController', ['$scope', '$elemen
 			let attrs = content = component = '';
 			const s = ' ', t = '\t', n = '\n', nt = '\n\t';
 
-			if ($scope.a.dark) attrs += `${nt}dark`; // TODO
-			if ($scope.a.kind) attrs += `${nt}kind="${$scope.a.kind}"`;
+			if ($scope.a.dark)              attrs += `${nt}dark`; // TODO
+			if ($scope.a.readonly)          attrs += `${nt}readonly`;
+			if ($scope.a.kind)              attrs += `${nt}kind="${$scope.a.kind}"`;
+			if ($scope.a.mode)              attrs += `${nt}mode="${$scope.a.mode}"`;
+			if ($scope.a.theme)             attrs += `${nt}theme="${$scope.a.theme}"`;
+			if ($scope.a.height !== 'tall') attrs += `${nt}height="${$scope.a.height}"`;
+			if (!$scope.a.scrollable)       attrs += `${nt}scrollable="${$scope.a.scrollable}"`;
+			if ($scope.a.caption)           attrs += `${nt}caption="${$scope.a.caption}"`;
 
 			content += get.content.content();
 			component = `<rb-code${attrs}>${content}${n}</rb-code>`;
@@ -29,15 +35,26 @@ angular.module('rapid-build').controller('rbCodeController', ['$scope', '$elemen
 			}
 		}
 
+		/* Global RB Code Options
+		 *************************/
+		const RB_CODE_OPTS = window.showcase.code;
+
 		/* Props
 		 ********/
-		$scope.kinds = ['danger','info','neutral','success','warning']
+		// $scope.kinds   = ['danger','info','neutral','success','warning']
+		$scope.modes   = RB_CODE_OPTS.modes;
+		$scope.themes  = RB_CODE_OPTS.themes;
+		$scope.heights = RB_CODE_OPTS.heights;
 
 		/* Methods
 		 **********/
 		$scope.reset = () => {
 			$scope.a = {
-				content: 'rb-code'
+				// content: 'rb-code',
+				content: '<div>rb-code</div>',
+				height: 'tall',
+				mode: 'html',
+				scrollable: true
 			};
 		};
 

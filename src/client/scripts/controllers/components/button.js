@@ -74,7 +74,7 @@ angular.module('rapid-build').controller('rbButtonController', ['$scope', '$elem
 
 		/* Global RB Icons
 		 ******************/
-		const RB_ICONS    = window.rbIcons;
+		const RB_ICONS    = window.showcase.icons;
 		const ddIconKinds = $element[0].querySelector(`[label='icon-kind']`);
 
 		/* Methods
