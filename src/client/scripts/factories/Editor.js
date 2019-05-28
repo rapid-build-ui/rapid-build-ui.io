@@ -69,6 +69,7 @@ angular.module('rapid-build').factory('Editor', [function() {
 			},
 
 			destroy() { // :void
+				if (!this._code) return;
 				this._code.off('copy', this._handlers.copy);
 				this._code = null;
 			},
