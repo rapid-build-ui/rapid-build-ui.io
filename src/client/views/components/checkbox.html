@@ -18,15 +18,16 @@
 			</section>
 		</div>
 		<div class="col-6">
-			<textarea
-				scroll
+			<rb-code
 				readonly
-				rba-code
-				model="markup"
-				actions="copy"
-				caption="html"
-				height="xxtall">
-			</textarea>
+				scrollable
+				rows="8"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["copy"]'>
+			</rb-code>
 		</div>
 	</section>
 
@@ -39,78 +40,78 @@
 		<!-- INPUTS -->
 		<rb-input
 			inline
-			rb-bind
 			label="label"
+			rb-bind="value"
 			value="a.label">
 		</rb-input>
 		<rb-input
 			inline
-			rb-bind
+			rb-bind="value"
 			label="sublabel"
 			value="a.sublabel">
 		</rb-input>
 		<rb-input
 			inline
-			rb-bind
 			label="subtext"
+			rb-bind="value"
 			value="a.subtext">
 		</rb-input>
 
 		<!-- VALUE -->
 		<rb-radios
 			toggle
-			rb-bind
 			horizontal
 			label="value"
 			value="a.value"
+			rb-bind="value"
 			data="{{valueLabels}}">
 			<rba-popover-value></rba-popover-value>
 		</rb-radios>
 
 		<!-- VALIDATION -->
 		<rb-checkboxes
-			rb-bind
 			horizontal
-			value="a.validation"
+			rb-bind="value"
 			label="validation"
+			value="a.validation"
 			data="{{validationLabels}}">
 		</rb-checkboxes>
 
 		<!-- VALUELESS -->
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.dark"
+			rb-bind="value"
 			sublabel="dark"
 			ng-if="env.is.dev">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.disabled"
 			sublabel="disabled">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.horizontal"
 			sublabel="horizontal">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.inline"
 			sublabel="inline">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.popover"
 			sublabel="popover">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.right"
 			sublabel="right">
 		</rb-checkbox>

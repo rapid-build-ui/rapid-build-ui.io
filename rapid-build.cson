@@ -40,21 +40,6 @@ common:
 			server: [
 				'data/**'
 			]
-		minify:
-			client:
-				css: [
-					'node_modules/codemirror/lib/codemirror.css'
-					'node_modules/codemirror-one-dark-theme/one-dark.css'
-				]
-				js: [
-					'node_modules/codemirror/lib/codemirror.js'
-					'node_modules/codemirror/mode/xml/xml.js'
-					'node_modules/codemirror/mode/css/css.js'
-					'node_modules/codemirror/mode/javascript/javascript.js'
-					'node_modules/codemirror/mode/shell/shell.js'
-					'node_modules/codemirror/mode/htmlmixed/htmlmixed.js'
-					'node_modules/codemirror/addon/display/placeholder.js'
-				]
 
 	exclude:
 		from:
@@ -90,10 +75,9 @@ common:
 					/\s<rb-icon|<\/rb-icon>\s/gi
 					/\s<rb-button|<\/rb-button>\s/gi
 					/\s<rb-popover|<\/rb-popover>\s/gi
-					/<rba-code(\s*?.*?)*?rba-code>/gi
+					/<\s*rb-code[^]*<\s*\/\s*rb-code\s*>/gi
 					/\s<rba-copy|<\/rba-copy>\s/gi
 					/\s<rba-install|<\/rba-install>\s/gi
-					/<textarea(\s*?.*?)*?\/textarea>/gi # for codemirror
 					/disabled|hidden|multiple|nowrap|open|readonly|required|reversed|selected|sortable/gi # boolean attrs
 				]
 
@@ -101,13 +85,6 @@ common:
 		scripts:
 			first: [
 				'node_modules/clipboard/dist/clipboard.min.js'
-				'node_modules/codemirror/lib/codemirror.js'
-				'node_modules/codemirror/mode/xml/xml.js'
-				'node_modules/codemirror/mode/css/css.js'
-				'node_modules/codemirror/mode/javascript/javascript.js'
-				'node_modules/codemirror/mode/shell/shell.js'
-				'node_modules/codemirror/mode/htmlmixed/htmlmixed.js'
-				'node_modules/codemirror/addon/display/placeholder.js'
 				'node_modules/ngclipboard/dist/ngclipboard.min.js'
 			]
 			last: [
@@ -117,6 +94,4 @@ common:
 			first: [
 				'styles/reset.css'
 				'styles/grid.css'
-				'node_modules/codemirror/lib/codemirror.css'
-				'node_modules/codemirror-one-dark-theme/one-dark.css'
 			]

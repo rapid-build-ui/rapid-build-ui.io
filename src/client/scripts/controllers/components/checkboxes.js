@@ -14,7 +14,7 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 			if ($scope.a.label)      attrs += `${nt}label="${$scope.a.label}"`;
 			if ($scope.a.subtext)    attrs += `${nt}subtext="${$scope.a.subtext}"`;
 			if ($scope.a.labelKey)   attrs += `${nt}label-key="${$scope.a.labelKey}"`;
-			if ($scope.a.value)      attrs += `${nt}value='${getValue(value)}'`;
+			if ($scope.a.value)      attrs += `${nt}value='${getValue($scope.a.value)}'`;
 			if ($scope.a.data)       attrs += `${nt}data='${buldDataMarkup()}'`;
 			if ($scope.a.validation && $scope.a.validation.length) attrs += `${nt}validation='${buldValidationMarkup()}'`;
 			if ($scope.a.popover) content += getPopoverSlot();
@@ -116,6 +116,11 @@ angular.module('rapid-build').controller('rbCheckboxesController', ['$scope', '$
 				label: 'Superheroes',
 				data: 'array of strings'
 			};
+			// TODO: fix getValue() then we won't have to do this.
+			// demo checkboxes: needed to update popover value
+			const checkboxes = $element[0].querySelector('[id^="built"]');
+			if (!checkboxes) return;
+			checkboxes.value = [];
 		};
 
 		/* Watches

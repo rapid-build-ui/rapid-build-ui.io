@@ -11,14 +11,14 @@
 			<div rba-builder="markup"></div>
 		</div>
 		<div class="col-7">
-
-			<textarea
-				scroll
-				rba-code
-				model="markup"
-				actions="copy"
-				caption="html"
-				height="xxjumbo">
+			<rb-code
+				scrollable
+				rows="30"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["copy"]'><xmp>
 				<form action>
 					<rb-input
 						name="hero"
@@ -63,15 +63,13 @@
 					<rb-textarea
 						name="description"
 						label="Description"
-						validation='[
-						"required"
-					]'></rb-textarea>
+						validation='["required"]'>
+					</rb-textarea>
 					<rb-button type="submit">
 						Submit
 					</rb-button>
 				</form>
-			</textarea>
-
+			</xmp></rb-code>
 		</div>
 	</section>
 </div>

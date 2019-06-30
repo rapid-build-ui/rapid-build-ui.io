@@ -65,15 +65,16 @@
 			</section>
 		</div>
 		<div class="col-6">
-			<textarea
-				scroll
+			<rb-code
 				readonly
-				rba-code
-				model="markup"
-				actions="copy"
-				caption="html"
-				height="xxtall">
-			</textarea>
+				scrollable
+				rows="7"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["copy"]'>
+			</rb-code>
 		</div>
 	</section>
 
@@ -85,24 +86,24 @@
 
 		<rb-radios
 			toggle
-			rb-bind
 			horizontal
 			label="kind"
 			value="a.kind"
+			rb-bind="value"
 			data="{{kinds}}">
 		</rb-radios>
 		<rb-radios
 			toggle
-			rb-bind
 			horizontal
 			label="active"
+			rb-bind="value"
 			value="a.active"
 			data="{{actives}}">
 		</rb-radios>
 		<rb-radios
 			toggle
-			rb-bind
 			horizontal
+			rb-bind="value"
 			label="responsive"
 			value="a.responsive"
 			data="{{responsives}}">
@@ -114,35 +115,38 @@
 		<!-- VALUELESS -->
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.dark"
+			rb-bind="value"
 			sublabel="dark">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.dividers"
 			sublabel="dividers">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.inline"
 			sublabel="inline">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.vertical"
 			sublabel="vertical">
 		</rb-checkbox>
 
 		<!-- CONTENT -->
-		<rb-textarea
-			rb-bind
-			value="a.content"
-			label="content">
-		</rb-textarea>
+		<rb-code
+			rows="4"
+			mode="html"
+			theme="rapid"
+			label="content"
+			rb-bind="value"
+			value="a.content">
+		</rb-code>
 
 		<!-- BUTTONS -->
 		<section class="buttons">

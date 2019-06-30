@@ -13,20 +13,24 @@
 	<!-- COMPONENT -->
 	<section class="grid">
 		<div class="col-7">
+			<!-- <section class="demo-component">
+				<div rba-builder="markup"></div>
+			</section> -->
 			<section class="demo-component" ng-class="a.dark && 'dark'">
 				<div rba-builder="markup"></div>
 			</section>
 		</div>
 		<div class="col-5">
-			<textarea
-				scroll
+			<rb-code
 				readonly
-				rba-code
-				model="markup"
-				actions="copy"
-				caption="html"
-				height="tall">
-			</textarea>
+				scrollable
+				rows="11"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["copy"]'>
+			</rb-code>
 		</div>
 	</section>
 
@@ -38,72 +42,110 @@
 
 		<rb-dropdown
 			inline
-			rb-bind
 			label="mode"
 			value="a.mode"
+			rb-bind="value"
 			data="{{modes}}"
-			placeholder="default">
+			placeholder="defaults to text">
 		</rb-dropdown>
 		<rb-dropdown
 			inline
-			rb-bind
 			label="theme"
 			value="a.theme"
+			rb-bind="value"
 			data="{{themes}}"
 			placeholder="default">
 		</rb-dropdown>
-
-		<rb-dropdown
-			inline
-			rb-bind
-			label="height"
-			value="a.height"
-			data="{{heights}}">
-		</rb-dropdown>
-
+		<br>
 		<rb-input
 			inline
-			rb-bind
-			label="caption"
-			value="a.caption">
+			label="label"
+			value="a.label"
+			rb-bind="value"
+			placeholder="defaults to mode">
+			<rb-popover slot="popover">
+				Add space for blank label.
+			</rb-popover>
+		</rb-input>
+		<rb-input
+			inline
+			rb-bind="value"
+			label="placeholder"
+			value="a.placeholder">
+		</rb-input>
+		<rb-input
+			inline
+			label="subtext"
+			rb-bind="value"
+			value="a.subtext">
+		</rb-input>
+		<rb-input
+			inline
+			label="rows"
+			type="number"
+			rb-bind="value"
+			value="a.rows">
 		</rb-input>
 
-		<rb-textarea
-			rb-bind
-			auto-height
-			value="a.content"
-			label="content">
-		</rb-textarea>
-
-		<!-- RADIOS -->
-		<!-- <rb-radios
-			toggle
-			rb-bind
+		<br>
+		<rb-checkboxes
 			horizontal
-			label="kind"
-			value="a.kind"
-			data="{{kinds}}">
-		</rb-radios> -->
+			label="actions"
+			rb-bind="value"
+			value="a.actions"
+			data="{{actionLabels}}">
+		</rb-checkboxes>
+		<rb-checkboxes
+			horizontal
+			rb-bind="value"
+			label="validation"
+			value="a.validation"
+			data="{{validationLabels}}">
+		</rb-checkboxes>
 
 		<!-- VALUELESS -->
 		<rb-checkbox
 			inline
-			rb-bind
-			value="a.dark"
-			sublabel="dark"
-			ng-if="env.is.dev">
+			rb-bind="value"
+			value="a.inline"
+			sublabel="inline">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
+			value="a.lineNumbers"
+			sublabel="line-numbers">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind="value"
+			value="a.lineWrapping"
+			sublabel="line-wrapping">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind="value"
 			value="a.readonly"
 			sublabel="readonly">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
+			value="a.right"
+			sublabel="right">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			rb-bind="value"
 			value="a.scrollable"
 			sublabel="scrollable">
+		</rb-checkbox>
+		<rb-checkbox
+			inline
+			value="a.dark"
+			sublabel="dark"
+			rb-bind="value"
+			ng-if="env.is.dev">
 		</rb-checkbox>
 
 		<!-- BUTTONS -->

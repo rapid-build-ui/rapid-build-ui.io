@@ -30,7 +30,7 @@ angular.module('rapid-build').directive('rbaPopoverValue', ['AwaitSelector',
 				valueChanged(evt) { // :void
 					// console.log('VALUE CHANGED:', evt.detail.value);
 					scope.value = evt.detail.value;
-					scope.$applyAsync()
+					scope.$applyAsync();
 				},
 				elmDestroyed(evt) { // :void
 					// console.log('DESTROYED:', this);
@@ -46,12 +46,11 @@ angular.module('rapid-build').directive('rbaPopoverValue', ['AwaitSelector',
 
 			const Awaiter = AwaitSelector(`${selector}`, (err, elms) => { // :void
 				const component = elms[0];
-
-				if (component.value === undefined) // no value attr
+				scope.$applyAsync(() => {
 					scope.value = component.value;
-
-				component.addEventListener('value-changed', Events.valueChanged);
-				angular.element(component).on('$destroy', Events.elmDestroyed);
+					component.addEventListener('value-changed', Events.valueChanged);
+					angular.element(component).on('$destroy', Events.elmDestroyed);
+				});
 			}, awaiterOpts);
 
 			/* Destroy

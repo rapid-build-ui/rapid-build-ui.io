@@ -18,15 +18,16 @@
 			</section>
 		</div>
 		<div class="col-6">
-			<textarea
-				scroll
+			<rb-code
 				readonly
-				rba-code
-				model="markup"
-				actions="copy"
-				caption="html"
-				height="xxxxxtall">
-			</textarea>
+				scrollable
+				rows="10"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["copy"]'>
+			</rb-code>
 		</div>
 	</section>
 
@@ -39,36 +40,36 @@
 		<!-- INPUTS -->
 		<rb-input
 			inline
-			rb-bind
 			label="label"
+			rb-bind="value"
 			value="a.label">
 		</rb-input>
 		<rb-input
 			inline
-			rb-bind
 			label="value"
+			rb-bind="value"
 			value="a.value">
 			<rba-popover-value></rba-popover-value>
 		</rb-input>
 		<rb-input
 			inline
-			rb-bind
 			label="subtext"
+			rb-bind="value"
 			value="a.subtext">
 		</rb-input>
 
 		<!-- RADIOS -->
 		<rb-radios
-			rb-bind
 			horizontal
 			label="data"
 			value="a.data"
+			rb-bind="value"
 			data="{{dataLabels}}">
 		</rb-radios>
 		<rb-radios
 			toggle
-			rb-bind
 			horizontal
+			rb-bind="value"
 			label="label-key"
 			value="a.labelKey"
 			data="{{labelKeys}}">
@@ -76,54 +77,54 @@
 
 		<!-- VALIDATION -->
 		<rb-checkboxes
-			rb-bind
 			horizontal
-			value="a.validation"
+			rb-bind="value"
 			label="validation"
+			value="a.validation"
 			data="{{validationLabels}}">
 		</rb-checkboxes>
 
 		<!-- VALUELESS -->
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.dark"
+			rb-bind="value"
 			sublabel="dark"
 			ng-if="env.is.dev">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.disabled"
 			sublabel="disabled">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.horizontal"
 			sublabel="horizontal">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.inline"
 			sublabel="inline">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.popover"
 			sublabel="popover">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.right"
+			rb-bind="value"
 			sublabel="right">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.toggle"
 			sublabel="toggle">
 		</rb-checkbox>

@@ -18,15 +18,16 @@
 			</section>
 		</div>
 		<div class="col-6">
-			<textarea
-				scroll
+			<rb-code
 				readonly
-				rba-code
-				model="markup"
-				actions="copy"
-				caption="html"
-				height="tall">
-			</textarea>
+				scrollable
+				rows="6"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["copy"]'>
+			</rb-code>
 		</div>
 	</section>
 
@@ -36,40 +37,43 @@
 			<h5>Configure</h5>
 		</rb-textcurve>
 
-		<rb-textarea
-			rb-bind
-			value="a.content"
-			label="content">
-		</rb-textarea>
+		<rb-code
+			rows="4"
+			mode="html"
+			theme="rapid"
+			label="content"
+			rb-bind="value"
+			value="a.content">
+		</rb-code>
 
 		<!-- RADIOS -->
 		<rb-radios
 			toggle
-			rb-bind
 			horizontal
 			label="kind"
 			value="a.kind"
+			rb-bind="value"
 			data="{{kinds}}">
 		</rb-radios>
 
 		<!-- VALUELESS -->
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.dark"
 			sublabel="dark"
+			rb-bind="value"
 			ng-if="env.is.dev">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.inline"
 			sublabel="inline">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
 			horizontal
+			rb-bind="value"
 			value="a.removable"
 			sublabel="removable">
 		</rb-checkbox>

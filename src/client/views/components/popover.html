@@ -18,15 +18,16 @@
 			</section>
 		</div>
 		<div class="col-6">
-			<textarea
-				scroll
+			<rb-code
 				readonly
-				rba-code
-				model="markup"
-				actions="copy"
-				caption="html"
-				height="xxtall">
-			</textarea>
+				scrollable
+				rows="7"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["copy"]'>
+			</rb-code>
 		</div>
 	</section>
 
@@ -39,37 +40,40 @@
 		<!-- INPUTS -->
 		<rb-input
 			inline
-			rb-bind
 			label="caption"
+			rb-bind="value"
 			value="a.caption">
 		</rb-input>
-		<rb-textarea
-			rb-bind
-			value="a.content"
-			label="content">
-		</rb-textarea>
+		<rb-code
+			rows="4"
+			mode="html"
+			theme="rapid"
+			label="content"
+			rb-bind="value"
+			value="a.content">
+		</rb-code>
 
 		<!-- RADIOS -->
 		<rb-radios
 			toggle
-			rb-bind
 			horizontal
 			label="kind"
 			value="a.kind"
+			rb-bind="value"
 			data="{{kinds}}">
 		</rb-radios>
 		<rb-radios
 			toggle
-			rb-bind
 			horizontal
+			rb-bind="value"
 			label="position"
 			value="a.position"
 			data="{{positions}}">
 		</rb-radios>
 		<rb-radios
 			toggle
-			rb-bind
 			horizontal
+			rb-bind="value"
 			label="icon-kind"
 			value="a.iconKind"
 			data="{{iconKinds}}">
@@ -82,45 +86,45 @@
 		</rb-radios>
 		<rb-radios
 			toggle
-			rb-bind
 			horizontal
+			rb-bind="value"
 			label="icon-source"
 			value="a.iconSource"
 			data="{{iconSources}}">
 		</rb-radios>
 		<!-- <rb-radios
 			toggle
-			rb-bind
 			horizontal
+			rb-bind="value"
 			label="icon-flip"
 			value="a.iconFlip"
 			data="{{iconFlips}}">
 		</rb-radios> -->
 		<rb-checkboxes
-			rb-bind
 			horizontal
+			rb-bind="value"
 			label="icon animation"
 			value="a.iconAnimation"
 			data="{{iconAnimation}}">
 		</rb-checkboxes>
 		<!-- <rb-input
 			inline
-			rb-bind
 			type="number"
+			rb-bind="value"
 			label="icon-rotate"
 			value="a.iconRotate">
 		</rb-input> -->
 		<rb-input
 			inline
-			rb-bind
 			type="number"
+			rb-bind="value"
 			label="icon-size"
 			value="a.iconSize">
 		</rb-input>
 		<rb-input
 			inline
-			rb-bind
 			type="number"
+			rb-bind="value"
 			label="icon-speed"
 			value="a.iconSpeed">
 		</rb-input>
@@ -129,45 +133,45 @@
 		<!-- VALUELESS -->
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.dark"
+			rb-bind="value"
 			sublabel="dark"
 			ng-if="env.is.dev">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.fitContent"
 			sublabel="fit-content">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.hover"
+			rb-bind="value"
 			sublabel="hover">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.inheritColor"
 			sublabel="inherit-color">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.onclick"
 			sublabel="onclick">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.open"
+			rb-bind="value"
 			sublabel="open">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.pin"
+			rb-bind="value"
 			sublabel="pin">
 		</rb-checkbox>
 

@@ -18,15 +18,16 @@
 			</section>
 		</div>
 		<div class="col-6">
-			<textarea
-				scroll
+			<rb-code
 				readonly
-				rba-code
-				model="markup"
-				actions="copy"
-				caption="html"
-				height="xxxtall">
-			</textarea>
+				scrollable
+				rows="8"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["copy"]'>
+			</rb-code>
 		</div>
 	</section>
 
@@ -39,21 +40,24 @@
 		<!-- INPUTS -->
 		<rb-input
 			inline
-			rb-bind
 			label="caption"
+			rb-bind="value"
 			value="a.caption">
 		</rb-input>
 
 		<!-- CONTENT OPTIONS -->
-		<rb-textarea
-			rb-bind
-			value="a.content"
-			label="content">
-		</rb-textarea>
+		<rb-code
+			rows="3"
+			mode="html"
+			theme="rapid"
+			label="content"
+			rb-bind="value"
+			value="a.content">
+		</rb-code>
 		<rb-checkboxes
-			rb-bind
 			horizontal
 			label="content"
+			rb-bind="value"
 			value="a.contentAlts"
 			data="{{contentAlts}}">
 			<rb-popover slot="popover" caption="content alternatives">
@@ -73,54 +77,54 @@
 		<!-- RADIOS -->
 		<rb-radios
 			toggle
-			rb-bind
 			horizontal
 			label="kind"
 			value="a.kind"
+			rb-bind="value"
 			data="{{kinds}}">
 		</rb-radios>
 
 		<!-- VALUELESS -->
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.cache"
+			rb-bind="value"
 			sublabel="cache">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.dark"
+			rb-bind="value"
 			sublabel="dark"
 			ng-if="env.is.dev">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.disabled"
 			sublabel="disabled">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.fetchOpts"
 			sublabel="fetch-opts">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.inline"
 			sublabel="inline">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.open"
+			rb-bind="value"
 			sublabel="open">
 		</rb-checkbox>
 		<!-- <rb-checkbox
 			inline
-			rb-bind
+			rb-bind="value"
 			value="a.popover"
 			sublabel="popover">
 		</rb-checkbox> -->

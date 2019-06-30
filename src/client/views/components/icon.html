@@ -24,15 +24,16 @@
 			</section>
 		</div>
 		<div class="col-6">
-			<textarea
-				scroll
+			<rb-code
 				readonly
-				rba-code
-				model="markup"
-				actions="copy"
-				caption="html"
-				height="tall">
-			</textarea>
+				scrollable
+				rows="6"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["copy"]'>
+			</rb-code>
 		</div>
 	</section>
 
@@ -44,9 +45,9 @@
 
 		<!-- RADIOS -->
 		<rb-dropdown
-			rb-bind
 			label="kind"
 			id="iconKinds"
+			rb-bind="value"
 			value="a.kind">
 			<rb-popover slot="popover">
 				Name of any free
@@ -56,33 +57,33 @@
 		</rb-dropdown>
 		<!-- <rb-radios
 			toggle
-			rb-bind
 			horizontal
 			label="library"
+			rb-bind="value"
 			value="a.library"
 			data="{{libraries}}">
 		</rb-radios> -->
 		<rb-radios
 			toggle
-			rb-bind
 			horizontal
 			label="source"
+			rb-bind="value"
 			value="a.source"
 			data="{{sources}}">
 		</rb-radios>
 		<rb-radios
 			toggle
-			rb-bind
 			horizontal
 			label="flip"
 			value="a.flip"
+			rb-bind="value"
 			data="{{flip}}">
 		</rb-radios>
 		<rb-radios
 			toggle
-			rb-bind
 			horizontal
 			label="valign"
+			rb-bind="value"
 			value="a.valign"
 			data="{{valigns}}">
 		</rb-radios>
@@ -90,27 +91,27 @@
 		<!-- VALUELESS -->
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.dark"
+			rb-bind="value"
 			sublabel="dark"
 			ng-if="env.is.dev">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.burst"
+			rb-bind="value"
 			sublabel="burst">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.pulse"
+			rb-bind="value"
 			sublabel="pulse">
 		</rb-checkbox>
 		<rb-checkbox
 			inline
-			rb-bind
 			value="a.spin"
+			rb-bind="value"
 			sublabel="spin">
 		</rb-checkbox>
 		<br>
@@ -118,23 +119,23 @@
 		<!-- INPUTS -->
 		<rb-input
 			inline
-			rb-bind
 			type="number"
 			label="rotate"
+			rb-bind="value"
 			value="a.rotate">
 		</rb-input>
 		<rb-input
 			inline
-			rb-bind
-			type="number"
 			label="size"
+			type="number"
+			rb-bind="value"
 			value="a.size">
 		</rb-input>
 		<rb-input
 			inline
-			rb-bind
 			type="number"
 			label="speed"
+			rb-bind="value"
 			value="a.speed">
 		</rb-input>
 
