@@ -12,8 +12,8 @@ angular.module('rapid-build').controller('rbCodeController', ['$scope', '$elemen
 			if ($scope.a.readonly)     attrs += `${nt}readonly`;
 			if ($scope.a.scrollable)   attrs += `${nt}scrollable`;
 			if ($scope.a.lineNumbers)  attrs += `${nt}line-numbers`;
-			if ($scope.a.lineWrapping) attrs += `${nt}line-wrapping`;
 			if ($scope.a.rows)         attrs += `${nt}rows="${$scope.a.rows}"`;
+			if (!$scope.a.nowrap)      attrs += `${nt}nowrap="false"`;
 			if ($scope.a.label)        attrs += `${nt}${get.attr.label()}`;
 			// if ($scope.a.kind)         attrs += `${nt}kind="${$scope.a.kind}"`;
 			if ($scope.a.theme)        attrs += `${nt}theme="${$scope.a.theme}"`;
@@ -100,6 +100,7 @@ angular.module('rapid-build').controller('rbCodeController', ['$scope', '$elemen
 		 **********/
 		$scope.reset = () => {
 			$scope.a = {
+				nowrap: true, // default
 				mode: 'javascript',
 				theme: 'one-dark',
 				value: formatValue(snippets['javascript']),
