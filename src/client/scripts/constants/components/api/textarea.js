@@ -17,16 +17,12 @@ p.constant('RB_TEXTAREA_API',
 	common.get('popover'),
 	common.get('readonly'),
 	common.get('right'),
-	{
-		attribute: 'rows',
+	common.get('rows', {
 		description: `
 			<em class="info-heading">defaults to 5</em>
-			Sets textearea height.
-		`,
-		options: null,
-		type: 'number',
-		required: false
-	},
+			Amount of lines to initially show.
+		`
+	}),
 	common.get('subtext'),
 	common.get('value', {
 		description: `

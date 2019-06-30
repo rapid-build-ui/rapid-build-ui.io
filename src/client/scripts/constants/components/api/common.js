@@ -276,6 +276,15 @@ options:
 		required: false
 	},
 	{
+		attribute: 'rows',
+		description: `
+			Amount of lines to initially show.
+		`,
+		options: null,
+		type: 'number',
+		required: false
+	},
+	{
 		attribute: 'size',
 		description: `Changes the size.`,
 		options: 'big | small',
