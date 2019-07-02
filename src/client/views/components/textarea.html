@@ -31,109 +31,115 @@
 		</div>
 	</section>
 
-	<!-- DEMO -->
-	<form name="demoForm">
+	<!-- CONFIGURE -->
+	<section>
 		<rb-textcurve>
-			<h5>Configure</h5>
+			<rb-toggle
+				open
+				target="form"
+				caption="Configure"
+				target-root="section">
+			</rb-toggle>
 		</rb-textcurve>
+		<form name="demoForm">
+			<!-- INPUTS -->
+			<rb-textarea
+				label="value"
+				rb-bind="value"
+				value="a.value">
+			</rb-textarea>
+			<rb-input
+				inline
+				label="label"
+				rb-bind="value"
+				value="a.label">
+			</rb-input>
+			<rb-input
+				inline
+				rb-bind="value"
+				label="placeholder"
+				value="a.placeholder">
+			</rb-input>
+			<br>
+			<rb-input
+				inline
+				label="subtext"
+				rb-bind="value"
+				value="a.subtext">
+			</rb-input>
+			<rb-input
+				inline
+				label="rows"
+				type="number"
+				rb-bind="value"
+				value="a.rows">
+			</rb-input>
 
-		<!-- INPUTS -->
-		<rb-textarea
-			label="value"
-			rb-bind="value"
-			value="a.value">
-		</rb-textarea>
-		<rb-input
-			inline
-			label="label"
-			rb-bind="value"
-			value="a.label">
-		</rb-input>
-		<rb-input
-			inline
-			rb-bind="value"
-			label="placeholder"
-			value="a.placeholder">
-		</rb-input>
-		<br>
-		<rb-input
-			inline
-			label="subtext"
-			rb-bind="value"
-			value="a.subtext">
-		</rb-input>
-		<rb-input
-			inline
-			label="rows"
-			type="number"
-			rb-bind="value"
-			value="a.rows">
-		</rb-input>
+			<!-- VALIDATION -->
+			<rb-checkboxes
+				horizontal
+				rb-bind="value"
+				label="validation"
+				value="a.validation"
+				data="{{validationLabels}}">
+			</rb-checkboxes>
 
-		<!-- VALIDATION -->
-		<rb-checkboxes
-			horizontal
-			rb-bind="value"
-			label="validation"
-			value="a.validation"
-			data="{{validationLabels}}">
-		</rb-checkboxes>
+			<!-- VALUELESS -->
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.autoHeight"
+				sublabel="auto-height">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				value="a.dark"
+				rb-bind="value"
+				sublabel="dark"
+				ng-if="env.is.dev">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.disabled"
+				sublabel="disabled">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.inline"
+				sublabel="inline">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.popover"
+				sublabel="popover">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.readonly"
+				sublabel="readonly">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.right"
+				sublabel="right">
+			</rb-checkbox>
 
-		<!-- VALUELESS -->
-		<rb-checkbox
-			inline
-			rb-bind="value"
-			value="a.autoHeight"
-			sublabel="auto-height">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			value="a.dark"
-			rb-bind="value"
-			sublabel="dark"
-			ng-if="env.is.dev">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind="value"
-			value="a.disabled"
-			sublabel="disabled">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind="value"
-			value="a.inline"
-			sublabel="inline">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind="value"
-			value="a.popover"
-			sublabel="popover">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind="value"
-			value="a.readonly"
-			sublabel="readonly">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind="value"
-			value="a.right"
-			sublabel="right">
-		</rb-checkbox>
-
-		<!-- BUTTONS -->
-		<section class="buttons">
-			<rb-button
-				data-reset
-				icon-kind="sync"
-				icon-source="solid">
-				Reset
-			</rb-button>
-		</section>
-	</form>
+			<!-- BUTTONS -->
+			<section class="buttons">
+				<rb-button
+					data-reset
+					icon-kind="sync"
+					icon-source="solid">
+					Reset
+				</rb-button>
+			</section>
+		</form>
+	</section>
 
 	<!-- API -->
 	<section>

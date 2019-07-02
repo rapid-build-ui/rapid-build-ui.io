@@ -5,7 +5,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0 0 remy(15);
-	padding: remy(15) 0;
+	padding: remy(15) 0 0;
 	border-top: 1px dashed mapGet($palette, isabelline);
 	rb-button {
 		margin: 0 remy(10) 0 0;

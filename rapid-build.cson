@@ -75,7 +75,7 @@ common:
 					/\s<rb-icon|<\/rb-icon>\s/gi
 					/\s<rb-button|<\/rb-button>\s/gi
 					/\s<rb-popover|<\/rb-popover>\s/gi
-					/<\s*rb-code[^]*<\s*\/\s*rb-code\s*>/gi
+					/<rb-code\b[^>]*>(.|\n)*?<\/rb-code>/gi
 					/\s<rba-copy|<\/rba-copy>\s/gi
 					/\s<rba-install|<\/rba-install>\s/gi
 					/disabled|hidden|multiple|nowrap|open|readonly|required|reversed|selected|sortable/gi # boolean attrs

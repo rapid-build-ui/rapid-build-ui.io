@@ -31,168 +31,174 @@
 		</div>
 	</section>
 
-	<!-- DEMO -->
-	<form name="demoForm">
+	<!-- CONFIGURE -->
+	<section>
 		<rb-textcurve>
-			<h5>Configure</h5>
+			<rb-toggle
+				open
+				target="form"
+				caption="Configure"
+				target-root="section">
+			</rb-toggle>
 		</rb-textcurve>
+		<form name="demoForm">
+			<!-- INPUTS -->
+			<rb-input
+				inline
+				label="label"
+				rb-bind="value"
+				value="a.label">
+			</rb-input>
+			<rb-input
+				inline
+				label="value"
+				rb-bind="value"
+				value="a.value">
+				<rba-popover-value></rba-popover-value>
+			</rb-input>
+			<br>
+			<rb-input
+				inline
+				rb-bind="value"
+				label="placeholder"
+				value="a.placeholder">
+			</rb-input>
+			<rb-input
+				inline
+				label="subtext"
+				rb-bind="value"
+				value="a.subtext">
+			</rb-input>
 
-		<!-- INPUTS -->
-		<rb-input
-			inline
-			label="label"
-			rb-bind="value"
-			value="a.label">
-		</rb-input>
-		<rb-input
-			inline
-			label="value"
-			rb-bind="value"
-			value="a.value">
-			<rba-popover-value></rba-popover-value>
-		</rb-input>
-		<br>
-		<rb-input
-			inline
-			rb-bind="value"
-			label="placeholder"
-			value="a.placeholder">
-		</rb-input>
-		<rb-input
-			inline
-			label="subtext"
-			rb-bind="value"
-			value="a.subtext">
-		</rb-input>
+			<!-- OPTIONS -->
+			<rb-radios
+				toggle
+				horizontal
+				label="type"
+				value="a.type"
+				rb-bind="value"
+				data="{{types}}">
+			</rb-radios>
 
-		<!-- OPTIONS -->
-		<rb-radios
-			toggle
-			horizontal
-			label="type"
-			value="a.type"
-			rb-bind="value"
-			data="{{types}}">
-		</rb-radios>
+			<!-- ICON OPTIONS -->
+			<rb-radios
+				toggle
+				horizontal
+				rb-bind="value"
+				label="icon-kind"
+				value="a.iconKind"
+				data="{{iconKinds}}">
+				<rb-popover slot="popover" caption="set icon-source to">
+					<ul>
+						<li><strong>solid</strong> for spinner</li>
+						<li><strong>brands</strong> for github</li>
+					</ul>
+				</rb-popover>
+			</rb-radios>
+			<rb-radios
+				toggle
+				horizontal
+				rb-bind="value"
+				label="icon-source"
+				value="a.iconSource"
+				data="{{iconSources}}">
+			</rb-radios>
+			<!-- <rb-radios
+				toggle
+				horizontal
+				rb-bind="value"
+				label="icon-flip"
+				value="a.iconFlip"
+				data="{{iconFlips}}">
+			</rb-radios> -->
+			<rb-checkbox
+				horizontal
+				rb-bind="value"
+				sublabel="left"
+				label="icon-position"
+				value="a.iconPosition">
+			</rb-checkbox>
+			<rb-checkboxes
+				horizontal
+				rb-bind="value"
+				label="icon animation"
+				value="a.iconAnimation"
+				data="{{iconAnimation}}">
+			</rb-checkboxes>
+			<!-- <rb-input
+				inline
+				type="number"
+				rb-bind="value"
+				label="icon-rotate"
+				value="a.iconRotate">
+			</rb-input> -->
+			<!-- <rb-input
+				inline
+				type="number"
+				rb-bind="value"
+				label="icon-speed"
+				value="a.iconSpeed">
+			</rb-input> -->
 
-		<!-- ICON OPTIONS -->
-		<rb-radios
-			toggle
-			horizontal
-			rb-bind="value"
-			label="icon-kind"
-			value="a.iconKind"
-			data="{{iconKinds}}">
-			<rb-popover slot="popover" caption="set icon-source to">
-				<ul>
-					<li><strong>solid</strong> for spinner</li>
-					<li><strong>brands</strong> for github</li>
-				</ul>
-			</rb-popover>
-		</rb-radios>
-		<rb-radios
-			toggle
-			horizontal
-			rb-bind="value"
-			label="icon-source"
-			value="a.iconSource"
-			data="{{iconSources}}">
-		</rb-radios>
-		<!-- <rb-radios
-			toggle
-			horizontal
-			rb-bind="value"
-			label="icon-flip"
-			value="a.iconFlip"
-			data="{{iconFlips}}">
-		</rb-radios> -->
-		<rb-checkbox
-			horizontal
-			rb-bind="value"
-			sublabel="left"
-			label="icon-position"
-			value="a.iconPosition">
-		</rb-checkbox>
-		<rb-checkboxes
-			horizontal
-			rb-bind="value"
-			label="icon animation"
-			value="a.iconAnimation"
-			data="{{iconAnimation}}">
-		</rb-checkboxes>
-		<!-- <rb-input
-			inline
-			type="number"
-			rb-bind="value"
-			label="icon-rotate"
-			value="a.iconRotate">
-		</rb-input> -->
-		<!-- <rb-input
-			inline
-			type="number"
-			rb-bind="value"
-			label="icon-speed"
-			value="a.iconSpeed">
-		</rb-input> -->
+			<!-- VALIDATION -->
+			<rb-checkboxes
+				horizontal
+				rb-bind="value"
+				value="a.validation"
+				label="validation"
+				data="{{validationLabels}}">
+			</rb-checkboxes>
 
-		<!-- VALIDATION -->
-		<rb-checkboxes
-			horizontal
-			rb-bind="value"
-			value="a.validation"
-			label="validation"
-			data="{{validationLabels}}">
-		</rb-checkboxes>
+			<!-- VALUELESS -->
+			<rb-checkbox
+				inline
+				value="a.dark"
+				rb-bind="value"
+				sublabel="dark"
+				ng-if="env.is.dev">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.disabled"
+				sublabel="disabled">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.inline"
+				sublabel="inline">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.popover"
+				sublabel="popover">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.readonly"
+				sublabel="readonly">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				value="a.right"
+				rb-bind="value"
+				sublabel="right">
+			</rb-checkbox>
 
-		<!-- VALUELESS -->
-		<rb-checkbox
-			inline
-			value="a.dark"
-			rb-bind="value"
-			sublabel="dark"
-			ng-if="env.is.dev">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind="value"
-			value="a.disabled"
-			sublabel="disabled">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind="value"
-			value="a.inline"
-			sublabel="inline">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind="value"
-			value="a.popover"
-			sublabel="popover">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind="value"
-			value="a.readonly"
-			sublabel="readonly">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			value="a.right"
-			rb-bind="value"
-			sublabel="right">
-		</rb-checkbox>
-
-		<!-- BUTTONS -->
-		<section class="buttons">
-			<rb-button
-				data-reset
-				icon-kind="sync"
-				icon-source="solid">
-				Reset
-			</rb-button>
-		</section>
-	</form>
+			<!-- BUTTONS -->
+			<section class="buttons">
+				<rb-button
+					data-reset
+					icon-kind="sync"
+					icon-source="solid">
+					Reset
+				</rb-button>
+			</section>
+		</form>
+	</section>
 
 	<!-- API -->
 	<section>

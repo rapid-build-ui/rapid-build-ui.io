@@ -37,118 +37,124 @@
 		</div>
 	</section>
 
-	<!-- DEMO -->
-	<form name="demoForm">
+	<!-- CONFIGURE -->
+	<section>
 		<rb-textcurve>
-			<h5>Configure</h5>
+			<rb-toggle
+				open
+				target="form"
+				caption="Configure"
+				target-root="section">
+			</rb-toggle>
 		</rb-textcurve>
+		<form name="demoForm">
+			<!-- RADIOS -->
+			<rb-dropdown
+				label="kind"
+				id="iconKinds"
+				rb-bind="value"
+				value="a.kind">
+				<rb-popover slot="popover">
+					Name of any free
+					<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
+					Font awesome icon style must match icon source.
+				</rb-popover>
+			</rb-dropdown>
+			<!-- <rb-radios
+				toggle
+				horizontal
+				label="library"
+				rb-bind="value"
+				value="a.library"
+				data="{{libraries}}">
+			</rb-radios> -->
+			<rb-radios
+				toggle
+				horizontal
+				label="source"
+				rb-bind="value"
+				value="a.source"
+				data="{{sources}}">
+			</rb-radios>
+			<rb-radios
+				toggle
+				horizontal
+				label="flip"
+				value="a.flip"
+				rb-bind="value"
+				data="{{flip}}">
+			</rb-radios>
+			<rb-radios
+				toggle
+				horizontal
+				label="valign"
+				rb-bind="value"
+				value="a.valign"
+				data="{{valigns}}">
+			</rb-radios>
 
-		<!-- RADIOS -->
-		<rb-dropdown
-			label="kind"
-			id="iconKinds"
-			rb-bind="value"
-			value="a.kind">
-			<rb-popover slot="popover">
-				Name of any free
-				<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
-				Font awesome icon style must match icon source.
-			</rb-popover>
-		</rb-dropdown>
-		<!-- <rb-radios
-			toggle
-			horizontal
-			label="library"
-			rb-bind="value"
-			value="a.library"
-			data="{{libraries}}">
-		</rb-radios> -->
-		<rb-radios
-			toggle
-			horizontal
-			label="source"
-			rb-bind="value"
-			value="a.source"
-			data="{{sources}}">
-		</rb-radios>
-		<rb-radios
-			toggle
-			horizontal
-			label="flip"
-			value="a.flip"
-			rb-bind="value"
-			data="{{flip}}">
-		</rb-radios>
-		<rb-radios
-			toggle
-			horizontal
-			label="valign"
-			rb-bind="value"
-			value="a.valign"
-			data="{{valigns}}">
-		</rb-radios>
+			<!-- VALUELESS -->
+			<rb-checkbox
+				inline
+				value="a.dark"
+				rb-bind="value"
+				sublabel="dark"
+				ng-if="env.is.dev">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				value="a.burst"
+				rb-bind="value"
+				sublabel="burst">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				value="a.pulse"
+				rb-bind="value"
+				sublabel="pulse">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				value="a.spin"
+				rb-bind="value"
+				sublabel="spin">
+			</rb-checkbox>
+			<br>
 
-		<!-- VALUELESS -->
-		<rb-checkbox
-			inline
-			value="a.dark"
-			rb-bind="value"
-			sublabel="dark"
-			ng-if="env.is.dev">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			value="a.burst"
-			rb-bind="value"
-			sublabel="burst">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			value="a.pulse"
-			rb-bind="value"
-			sublabel="pulse">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			value="a.spin"
-			rb-bind="value"
-			sublabel="spin">
-		</rb-checkbox>
-		<br>
+			<!-- INPUTS -->
+			<rb-input
+				inline
+				type="number"
+				label="rotate"
+				rb-bind="value"
+				value="a.rotate">
+			</rb-input>
+			<rb-input
+				inline
+				label="size"
+				type="number"
+				rb-bind="value"
+				value="a.size">
+			</rb-input>
+			<rb-input
+				inline
+				type="number"
+				label="speed"
+				rb-bind="value"
+				value="a.speed">
+			</rb-input>
 
-		<!-- INPUTS -->
-		<rb-input
-			inline
-			type="number"
-			label="rotate"
-			rb-bind="value"
-			value="a.rotate">
-		</rb-input>
-		<rb-input
-			inline
-			label="size"
-			type="number"
-			rb-bind="value"
-			value="a.size">
-		</rb-input>
-		<rb-input
-			inline
-			type="number"
-			label="speed"
-			rb-bind="value"
-			value="a.speed">
-		</rb-input>
-
-		<!-- BUTTONS -->
-		<section class="buttons">
-			<rb-button
-				data-reset
-				icon-kind="sync"
-				icon-source="solid">
-				Reset
-			</rb-button>
-		</section>
-	</form>
+			<!-- BUTTONS -->
+			<section class="buttons">
+				<rb-button
+					data-reset
+					icon-kind="sync"
+					icon-source="solid">
+					Reset
+				</rb-button>
+			</section>
+		</form>
+	</section>
 
 	<!-- API -->
 	<section>
