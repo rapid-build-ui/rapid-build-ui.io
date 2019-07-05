@@ -53,6 +53,23 @@ p.constant('RB_POPOVER_API',
 		type: null,
 		required: false
 	},
+	common.get('onclick', {
+		description: `
+			Function to execute when opening popover via click.
+			<ul>
+				<li>
+					<em class="info-sub no-parens">
+						popover opens once function completes
+					</em>
+				</li>
+				<li>
+					<em class="info-sub no-parens">
+						you'll usually set this in javascript
+					</em>
+				</li>
+			</ul>
+		`
+	}),
 	common.get('open', {
 		description: `
 			<em class="info-heading">defaults to false</em>

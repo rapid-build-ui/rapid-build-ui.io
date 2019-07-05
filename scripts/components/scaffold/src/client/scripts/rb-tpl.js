@@ -5,6 +5,13 @@ import { RbBase, props, html } from '../../rb-base/scripts/rb-base.js';
 import template                from '../views/{{name}}.html';
 
 export class {{className}} extends RbBase() {
+	/* Lifecycle
+	 ************/
+	constructor() {
+		super();
+		this.version = '0.0.0';
+	}
+
 	/* Properties
 	 *************/
 	static get props() {

@@ -84,6 +84,11 @@ $textColors: (
 		font-weight: 700;
 		font-size: inherit;
 		text-shadow: none;
+		&.important {
+			margin: 5px 0 2px;
+			font-size: 12px;
+			text-transform: uppercase;
+		}
 	}
 
 	/* Lists

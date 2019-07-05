@@ -11,6 +11,7 @@
 	// padding: 15px;
 
 	&.dark {
+		height: calc(100% - 25px); // rb-code bottom margin is 25
 		padding: 15px;
 		border-radius: 5px;
 		background-color: mapGet($palette, charlestonGreen); // same as rb-code

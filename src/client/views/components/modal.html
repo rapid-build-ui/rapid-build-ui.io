@@ -21,89 +21,102 @@
 			</rb-modal>
 			<rb-button size="small" data-add-link>add</rb-button>
 			<rb-button size="small" data-remove-link>remove</rb-button> -->
-			<textarea
-				scroll
+			<rb-code
 				readonly
-				rba-code
-				model="markup"
-				actions="copy"
-				caption="html"
-				height="tall">
-			</textarea>
+				scrollable
+				rows="6"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["copy"]'>
+			</rb-code>
 		</div>
 	</section>
 
 	<!-- DEMO -->
-	<form name="demoForm">
+	<section>
 		<rb-textcurve>
-			<h5>Configure</h5>
+			<rb-toggle
+				open
+				target="form"
+				caption="Demo"
+				target-root="section">
+			</rb-toggle>
 		</rb-textcurve>
+		<form name="demoForm">
+			<!-- VALUELESS -->
+			<rb-checkbox
+				inline
+				value="a.open"
+				rb-bind="value"
+				sublabel="open">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.backdrop"
+				sublabel="backdrop"
+				class="right-bumper">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.center"
+				sublabel="center">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.closable"
+				sublabel="closable">
+			</rb-checkbox>
+			<!-- <rb-radios
+				toggle
+				horizontal
+				label="kind"
+				value="a.kind"
+				rb-bind="value"
+				data="{{kinds}}">
+			</rb-radios> -->
 
-		<!-- VALUELESS -->
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.open"
-			sublabel="open">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.backdrop"
-			sublabel="backdrop"
-			class="right-bumper">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.center"
-			sublabel="center">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.closable"
-			sublabel="closable">
-		</rb-checkbox>
-		<!-- <rb-radios
-			toggle
-			horizontal
-			rb-bind
-			label="kind"
-			value="a.kind"
-			data="{{kinds}}">
-		</rb-radios> -->
+			<!-- CONTENT -->
+			<rb-code
+				rows="3"
+				mode="html"
+				theme="rapid"
+				label="content"
+				rb-bind="value"
+				value="a.content">
+			</rb-code>
+			<rb-code
+				rows="3"
+				mode="html"
+				theme="rapid"
+				label="header"
+				rb-bind="value"
+				value="a.header">
+			</rb-code>
+			<rb-code
+				rows="3"
+				mode="html"
+				theme="rapid"
+				label="footer"
+				rb-bind="value"
+				value="a.footer">
+			</rb-code>
 
-		<!-- CONTENT -->
-		<rb-textarea
-			rb-bind
-			rows="3"
-			value="a.content"
-			label="content">
-		</rb-textarea>
-		<rb-textarea
-			rb-bind
-			rows="3"
-			value="a.header"
-			label="header">
-		</rb-textarea>
-		<rb-textarea
-			rb-bind
-			rows="3"
-			value="a.footer"
-			label="footer">
-		</rb-textarea>
-
-		<!-- BUTTONS -->
-		<section class="buttons">
-			<rb-button
-				data-reset
-				icon-kind="sync"
-				icon-source="solid">
-				Reset
-			</rb-button>
-		</section>
-	</form>
+			<!-- BUTTONS -->
+			<section class="buttons">
+				<rb-button
+					data-reset
+					icon-kind="sync"
+					icon-source="solid">
+					Reset
+				</rb-button>
+			</section>
+		</form>
+	</section>
 
 	<!-- API -->
 	<section>

@@ -15,10 +15,8 @@ $palette: (
 	richElectricBlue: #019fcc, // thead tr {top gradient}
 
 	// Darks
-	charlestonGreen:  #282c34, // rb-code | .demo-component.dark (bg)
-	darkGunmetal:     #20232a, // code.title-bar (bg)
+	charlestonGreen:  #282c34, // .demo-component.dark (bg)
 	jet:              #323232, // footer.main (bg)
-	onyx:             #34373d, // code.title-bar (border)
 
 	// Greens
 	wageningenGreen:  #28a745, // .success-text | .full-support (color)
@@ -28,7 +26,7 @@ $palette: (
 	cadetGrey:        #92a2b2, // .info-sub | .subheading | .subtext (color)
 	lightSlateGray:   #7c8895, // td-[options,required,type] | .optionize (color)
 	paynesGrey:       #5f6e7e, // body (color)
-	spanishGray:      #999,    // code.title-bar (color) | footer.main (color) | img.bordered (border)
+	spanishGray:      #999,    // footer.main (color) | img.bordered (border)
 
 	// Lights
 	gainsboro:        #ddd,    // hr | section.separated (border)

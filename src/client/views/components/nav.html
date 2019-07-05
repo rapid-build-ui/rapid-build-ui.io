@@ -65,95 +65,105 @@
 			</section>
 		</div>
 		<div class="col-6">
-			<textarea
-				scroll
+			<rb-code
 				readonly
-				rba-code
-				model="markup"
-				actions="copy"
-				caption="html"
-				height="xxtall">
-			</textarea>
+				scrollable
+				rows="7"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["copy"]'>
+			</rb-code>
 		</div>
 	</section>
 
 	<!-- DEMO -->
-	<form name="demoForm">
+	<section>
 		<rb-textcurve>
-			<h5>Configure</h5>
+			<rb-toggle
+				open
+				target="form"
+				caption="Demo"
+				target-root="section">
+			</rb-toggle>
 		</rb-textcurve>
+		<form name="demoForm">
+			<rb-radios
+				toggle
+				horizontal
+				label="kind"
+				value="a.kind"
+				rb-bind="value"
+				data="{{kinds}}">
+			</rb-radios>
+			<rb-radios
+				toggle
+				horizontal
+				label="active"
+				rb-bind="value"
+				value="a.active"
+				data="{{actives}}">
+			</rb-radios>
+			<rb-radios
+				toggle
+				horizontal
+				rb-bind="value"
+				label="responsive"
+				value="a.responsive"
+				data="{{responsives}}">
+				<rb-popover slot="popover">
+					See api for more info.
+				</rb-popover>
+			</rb-radios>
 
-		<rb-radios
-			toggle
-			rb-bind
-			horizontal
-			label="kind"
-			value="a.kind"
-			data="{{kinds}}">
-		</rb-radios>
-		<rb-radios
-			toggle
-			rb-bind
-			horizontal
-			label="active"
-			value="a.active"
-			data="{{actives}}">
-		</rb-radios>
-		<rb-radios
-			toggle
-			rb-bind
-			horizontal
-			label="responsive"
-			value="a.responsive"
-			data="{{responsives}}">
-			<rb-popover slot="popover">
-				See api for more info.
-			</rb-popover>
-		</rb-radios>
+			<!-- VALUELESS -->
+			<rb-checkbox
+				inline
+				value="a.dark"
+				rb-bind="value"
+				sublabel="dark">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.dividers"
+				sublabel="dividers">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.inline"
+				sublabel="inline">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.vertical"
+				sublabel="vertical">
+			</rb-checkbox>
 
-		<!-- VALUELESS -->
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.dark"
-			sublabel="dark">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.dividers"
-			sublabel="dividers">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.inline"
-			sublabel="inline">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.vertical"
-			sublabel="vertical">
-		</rb-checkbox>
+			<!-- CONTENT -->
+			<rb-code
+				rows="4"
+				mode="html"
+				theme="rapid"
+				label="content"
+				rb-bind="value"
+				value="a.content">
+			</rb-code>
 
-		<!-- CONTENT -->
-		<rb-textarea
-			rb-bind
-			value="a.content"
-			label="content">
-		</rb-textarea>
-
-		<!-- BUTTONS -->
-		<section class="buttons">
-			<rb-button
-				data-reset
-				icon-kind="sync"
-				icon-source="solid">
-				Reset
-			</rb-button>
-		</section>
-	</form>
+			<!-- BUTTONS -->
+			<section class="buttons">
+				<rb-button
+					data-reset
+					icon-kind="sync"
+					icon-source="solid">
+					Reset
+				</rb-button>
+			</section>
+		</form>
+	</section>
 
 	<!-- API -->
 	<section>

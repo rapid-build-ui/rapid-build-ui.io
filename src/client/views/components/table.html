@@ -1,13 +1,13 @@
-<div ng-controller="rbAlertController">
+<div ng-controller="rbTableController">
 	<header class="page-header with-source-nav">
 		<h1>
 			<rba-install
-				source="alert"
+				source="table"
 				icon-size=".55">
 			</rba-install>
-			rb-alert
+			rb-table
 		</h1>
-		<rba-source-nav source="RB_ALERT_SRC_NAV" inject></rba-source-nav>
+		<rba-source-nav source="RB_TABLE_SRC_NAV" inject></rba-source-nav>
 	</header>
 
 	<!-- COMPONENT -->
@@ -17,7 +17,7 @@
 				<div rba-builder="markup"></div>
 			</section>
 		</div>
-		<div class="col-6">
+		<div class="col-5">
 			<rb-code
 				readonly
 				scrollable
@@ -42,6 +42,7 @@
 			</rb-toggle>
 		</rb-textcurve>
 		<form name="demoForm">
+			<!-- SLOTS -->
 			<rb-code
 				rows="4"
 				mode="html"
@@ -65,22 +66,9 @@
 			<rb-checkbox
 				inline
 				value="a.dark"
+				rb-bind="value"
 				sublabel="dark"
-				rb-bind="value"
 				ng-if="env.is.dev">
-			</rb-checkbox>
-			<rb-checkbox
-				inline
-				rb-bind="value"
-				value="a.inline"
-				sublabel="inline">
-			</rb-checkbox>
-			<rb-checkbox
-				inline
-				horizontal
-				rb-bind="value"
-				value="a.removable"
-				sublabel="removable">
 			</rb-checkbox>
 
 			<!-- BUTTONS -->
@@ -97,16 +85,16 @@
 
 	<!-- API -->
 	<section>
-		<rba-api component="rb-alert"></rba-api>
+		<rba-api component="rb-table"></rba-api>
 	</section>
 
 	<!-- CSS Variables -->
-	<section>
-		<rba-css-vars component="rb-alert"></rba-css-vars>
-	</section>
+	<!-- <section>
+		<rba-css-vars component="rb-table"></rba-css-vars>
+	</section> -->
 
 	<!-- CHANGELOG -->
 	<section>
-		<rba-changelog component="rb-alert"></rba-changelog>
+		<rba-changelog component="rb-table"></rba-changelog>
 	</section>
 </div>

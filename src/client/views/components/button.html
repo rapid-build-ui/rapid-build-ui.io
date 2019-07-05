@@ -31,154 +31,161 @@
 			</section>
 		</div>
 		<div class="col-6">
-			<textarea
-				scroll
+			<rb-code
 				readonly
-				rba-code
-				model="markup"
-				actions="copy"
-				caption="html"
-				height="tall">
-			</textarea>
+				scrollable
+				rows="6"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["copy"]'>
+			</rb-code>
 		</div>
 	</section>
 
-	<!-- CONFIGURE -->
-	<form name="demoForm" ng-submit="save($event)">
+	<!-- DEMO -->
+	<section>
 		<rb-textcurve>
-			<h5>Configure</h5>
+			<rb-toggle
+				open
+				target="form"
+				caption="Demo"
+				target-root="section">
+			</rb-toggle>
 		</rb-textcurve>
+		<form name="demoForm" ng-submit="save($event)">
+			<rb-input
+				label="content"
+				rb-bind="value"
+				value="a.content">
+			</rb-input>
 
-		<rb-input
-			rb-bind
-			label="content"
-			value="a.content">
-		</rb-input>
+			<!-- RADIOS -->
+			<rb-radios
+				toggle
+				horizontal
+				label="kind"
+				value="a.kind"
+				rb-bind="value"
+				data="{{kinds}}">
+			</rb-radios>
+			<rb-radios
+				toggle
+				horizontal
+				label="text"
+				value="a.text"
+				rb-bind="value"
+				data="{{textOpts}}">
+			</rb-radios>
+			<rb-radios
+				toggle
+				horizontal
+				label="size"
+				value="a.size"
+				rb-bind="value"
+				data="{{sizes}}">
+			</rb-radios>
+			<rb-radios
+				toggle
+				horizontal
+				label="type"
+				value="a.type"
+				rb-bind="value"
+				data="{{types}}">
+			</rb-radios>
 
-		<!-- RADIOS -->
-		<rb-radios
-			toggle
-			rb-bind
-			horizontal
-			label="kind"
-			value="a.kind"
-			data="{{kinds}}">
-		</rb-radios>
-		<rb-radios
-			toggle
-			rb-bind
-			horizontal
-			label="text"
-			value="a.text"
-			data="{{textOpts}}">
-		</rb-radios>
-		<rb-radios
-			toggle
-			rb-bind
-			horizontal
-			label="size"
-			value="a.size"
-			data="{{sizes}}">
-		</rb-radios>
-		<rb-radios
-			toggle
-			rb-bind
-			horizontal
-			label="type"
-			value="a.type"
-			data="{{types}}">
-		</rb-radios>
+			<!-- ICON OPTIONS -->
+			<rb-dropdown
+				rb-bind="value"
+				label="icon-kind"
+				value="a.iconKind"
+				placeholder="Select...">
+			</rb-dropdown>
+			<rb-radios
+				toggle
+				horizontal
+				rb-bind="value"
+				label="icon-source"
+				value="a.iconSource"
+				data="{{iconSources}}">
+			</rb-radios>
+			<!-- <rb-radios
+				toggle
+				horizontal
+				rb-bind="value"
+				label="icon-flip"
+				value="a.iconFlip"
+				data="{{iconFlips}}">
+			</rb-radios> -->
+			<rb-checkboxes
+				horizontal
+				rb-bind="value"
+				label="icon animation"
+				value="a.iconAnimation"
+				data="{{iconAnimation}}">
+			</rb-checkboxes>
+			<!-- <rb-input
+				inline
+				type="number"
+				rb-bind="value"
+				label="icon-rotate"
+				value="a.iconRotate">
+			</rb-input> -->
+			<rb-input
+				inline
+				type="number"
+				rb-bind="value"
+				label="icon-size"
+				value="a.iconSize">
+			</rb-input>
+			<rb-input
+				inline
+				type="number"
+				rb-bind="value"
+				label="icon-speed"
+				value="a.iconSpeed">
+			</rb-input>
+			<br>
 
-		<!-- ICON OPTIONS -->
-		<rb-dropdown
-			rb-bind
-			label="icon-kind"
-			value="a.iconKind"
-			placeholder="Select...">
-		</rb-dropdown>
-		<rb-radios
-			toggle
-			rb-bind
-			horizontal
-			label="icon-source"
-			value="a.iconSource"
-			data="{{iconSources}}">
-		</rb-radios>
-		<!-- <rb-radios
-			toggle
-			rb-bind
-			horizontal
-			label="icon-flip"
-			value="a.iconFlip"
-			data="{{iconFlips}}">
-		</rb-radios> -->
-		<rb-checkboxes
-			rb-bind
-			horizontal
-			label="icon animation"
-			value="a.iconAnimation"
-			data="{{iconAnimation}}">
-		</rb-checkboxes>
-		<!-- <rb-input
-			inline
-			rb-bind
-			type="number"
-			label="icon-rotate"
-			value="a.iconRotate">
-		</rb-input> -->
-		<rb-input
-			inline
-			rb-bind
-			type="number"
-			label="icon-size"
-			value="a.iconSize">
-		</rb-input>
-		<rb-input
-			inline
-			rb-bind
-			type="number"
-			label="icon-speed"
-			value="a.iconSpeed">
-		</rb-input>
-		<br>
+			<!-- VALUELESS -->
+			<rb-checkbox
+				inline
+				value="a.dark"
+				rb-bind="value"
+				sublabel="dark"
+				ng-if="env.is.dev">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.disabled"
+				sublabel="disabled">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.iconRight"
+				sublabel="icon-right">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.onclick"
+				sublabel="onclick">
+			</rb-checkbox>
 
-		<!-- VALUELESS -->
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.dark"
-			sublabel="dark"
-			ng-if="env.is.dev">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.disabled"
-			sublabel="disabled">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.iconRight"
-			sublabel="icon-right">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.onclick"
-			sublabel="onclick">
-		</rb-checkbox>
-
-		<!-- BUTTONS -->
-		<section class="buttons">
-			<rb-button
-				data-reset
-				icon-kind="sync"
-				icon-source="solid">
-				Reset
-			</rb-button>
-		</section>
-	</form>
+			<!-- BUTTONS -->
+			<section class="buttons">
+				<rb-button
+					data-reset
+					icon-kind="sync"
+					icon-source="solid">
+					Reset
+				</rb-button>
+			</section>
+		</form>
+	</section>
 
 	<!-- API -->
 	<section>

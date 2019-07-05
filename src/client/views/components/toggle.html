@@ -18,123 +18,133 @@
 			</section>
 		</div>
 		<div class="col-6">
-			<textarea
-				scroll
+			<rb-code
 				readonly
-				rba-code
-				model="markup"
-				actions="copy"
-				caption="html"
-				height="xxxtall">
-			</textarea>
+				scrollable
+				rows="8"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["copy"]'>
+			</rb-code>
 		</div>
 	</section>
 
 	<!-- DEMO -->
-	<form name="demoForm">
+	<section>
 		<rb-textcurve>
-			<h5>Configure</h5>
+			<rb-toggle
+				open
+				target="form"
+				caption="Demo"
+				target-root="section">
+			</rb-toggle>
 		</rb-textcurve>
+		<form name="demoForm">
+			<!-- INPUTS -->
+			<rb-input
+				inline
+				label="caption"
+				rb-bind="value"
+				value="a.caption">
+			</rb-input>
 
-		<!-- INPUTS -->
-		<rb-input
-			inline
-			rb-bind
-			label="caption"
-			value="a.caption">
-		</rb-input>
+			<!-- CONTENT OPTIONS -->
+			<rb-code
+				rows="3"
+				mode="html"
+				theme="rapid"
+				label="content"
+				rb-bind="value"
+				value="a.content">
+			</rb-code>
+			<rb-checkboxes
+				horizontal
+				label="content"
+				rb-bind="value"
+				value="a.contentAlts"
+				data="{{contentAlts}}">
+				<rb-popover slot="popover" caption="content alternatives">
+					<p>Three other ways to set content.</p>
+					<ul>
+						<li>fetch: url to file</li>
+						<li>onclick: return a string</li>
+						<li>
+							target: any element in the
+							<a target="_blank" href="https://mzl.la/2s8nYAw">dom</a>
+							<span class="subtext block">target-root: target option required</span>
+						</li>
+					</ul>
+				</rb-popover>
+			</rb-checkboxes>
 
-		<!-- CONTENT OPTIONS -->
-		<rb-textarea
-			rb-bind
-			value="a.content"
-			label="content">
-		</rb-textarea>
-		<rb-checkboxes
-			rb-bind
-			horizontal
-			label="content"
-			value="a.contentAlts"
-			data="{{contentAlts}}">
-			<rb-popover slot="popover" caption="content alternatives">
-				<p>Three other ways to set content.</p>
-				<ul>
-					<li>fetch: url to file</li>
-					<li>onclick: return a string</li>
-					<li>
-						target: any element in the
-						<a target="_blank" href="https://mzl.la/2s8nYAw">dom</a>
-						<span class="subtext block">target-root: target option required</span>
-					</li>
-				</ul>
-			</rb-popover>
-		</rb-checkboxes>
+			<!-- RADIOS -->
+			<rb-radios
+				toggle
+				horizontal
+				label="kind"
+				value="a.kind"
+				rb-bind="value"
+				data="{{kinds}}">
+			</rb-radios>
 
-		<!-- RADIOS -->
-		<rb-radios
-			toggle
-			rb-bind
-			horizontal
-			label="kind"
-			value="a.kind"
-			data="{{kinds}}">
-		</rb-radios>
+			<!-- VALUELESS -->
+			<rb-checkbox
+				inline
+				value="a.cache"
+				rb-bind="value"
+				sublabel="cache">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				value="a.dark"
+				rb-bind="value"
+				sublabel="dark"
+				ng-if="env.is.dev">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.disabled"
+				sublabel="disabled">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.fetchOpts"
+				sublabel="fetch-opts">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.inline"
+				sublabel="inline">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				value="a.open"
+				rb-bind="value"
+				sublabel="open">
+			</rb-checkbox>
+			<!-- <rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.popover"
+				sublabel="popover">
+			</rb-checkbox> -->
 
-		<!-- VALUELESS -->
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.cache"
-			sublabel="cache">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.dark"
-			sublabel="dark"
-			ng-if="env.is.dev">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.disabled"
-			sublabel="disabled">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.fetchOpts"
-			sublabel="fetch-opts">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.inline"
-			sublabel="inline">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.open"
-			sublabel="open">
-		</rb-checkbox>
-		<!-- <rb-checkbox
-			inline
-			rb-bind
-			value="a.popover"
-			sublabel="popover">
-		</rb-checkbox> -->
-
-		<!-- BUTTONS -->
-		<section class="buttons">
-			<rb-button
-				data-reset
-				icon-kind="sync"
-				icon-source="solid">
-				Reset
-			</rb-button>
-		</section>
-	</form>
+			<!-- BUTTONS -->
+			<section class="buttons">
+				<rb-button
+					data-reset
+					icon-kind="sync"
+					icon-source="solid">
+					Reset
+				</rb-button>
+			</section>
+		</form>
+	</section>
 
 	<!-- API -->
 	<section>

@@ -31,7 +31,7 @@ angular.module('rapid-build').controller 'rbIconController', ['$scope', '$elemen
 
 		# Elms and Global
 		# ===============
-		RB_ICONS     = window.rbIcons
+		RB_ICONS     = window.showcase.icons
 		iconKindsElm = document.getElementById 'iconKinds'
 		defaultIcon  = 'heart'
 

@@ -18,122 +18,129 @@
 			</section>
 		</div>
 		<div class="col-6">
-			<textarea
-				scroll
+			<rb-code
 				readonly
-				rba-code
-				model="markup"
-				actions="copy"
-				caption="html"
-				height="xxxxxtall">
-			</textarea>
+				scrollable
+				rows="10"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["copy"]'>
+			</rb-code>
 		</div>
 	</section>
 
 	<!-- DEMO -->
-	<form name="demoForm">
+	<section>
 		<rb-textcurve>
-			<h5>Configure</h5>
+			<rb-toggle
+				open
+				target="form"
+				caption="Demo"
+				target-root="section">
+			</rb-toggle>
 		</rb-textcurve>
+		<form name="demoForm">
+			<!-- INPUTS -->
+			<rb-input
+				inline
+				label="label"
+				rb-bind="value"
+				value="a.label">
+			</rb-input>
+			<rb-input
+				inline
+				readonly
+				label="value"
+				value="a.value"
+				rb-bind="value"
+				placeholder="readonly select checkboxes">
+				<rba-popover-value></rba-popover-value>
+			</rb-input>
+			<rb-input
+				inline
+				label="subtext"
+				rb-bind="value"
+				value="a.subtext">
+			</rb-input>
 
-		<!-- INPUTS -->
-		<rb-input
-			inline
-			rb-bind
-			label="label"
-			value="a.label">
-		</rb-input>
-		<rb-input
-			inline
-			rb-bind
-			readonly
-			label="value"
-			value="a.value"
-			placeholder="readonly select checkboxes">
-			<rba-popover-value></rba-popover-value>
-		</rb-input>
-		<rb-input
-			inline
-			rb-bind
-			label="subtext"
-			value="a.subtext">
-		</rb-input>
+			<!-- RADIOS -->
+			<rb-radios
+				horizontal
+				label="data"
+				value="a.data"
+				rb-bind="value"
+				data="{{dataLabels}}">
+			</rb-radios>
+			<rb-radios
+				toggle
+				horizontal
+				rb-bind="value"
+				label="label-key"
+				value="a.labelKey"
+				data="{{labelKeys}}">
+			</rb-radios>
 
-		<!-- RADIOS -->
-		<rb-radios
-			rb-bind
-			horizontal
-			label="data"
-			value="a.data"
-			data="{{dataLabels}}">
-		</rb-radios>
-		<rb-radios
-			toggle
-			rb-bind
-			horizontal
-			label="label-key"
-			value="a.labelKey"
-			data="{{labelKeys}}">
-		</rb-radios>
+			<!-- VALIDATION -->
+			<rb-checkboxes
+				horizontal
+				rb-bind="value"
+				label="validation"
+				value="a.validation"
+				data="{{validationLabels}}">
+			</rb-checkboxes>
 
-		<!-- VALIDATION -->
-		<rb-checkboxes
-			rb-bind
-			horizontal
-			value="a.validation"
-			label="validation"
-			data="{{validationLabels}}">
-		</rb-checkboxes>
+			<!-- VALUELESS -->
+			<rb-checkbox
+				inline
+				value="a.dark"
+				rb-bind="value"
+				sublabel="dark"
+				ng-if="env.is.dev">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.disabled"
+				sublabel="disabled">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.horizontal"
+				sublabel="horizontal">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.inline"
+				sublabel="inline">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				rb-bind="value"
+				value="a.popover"
+				sublabel="popover">
+			</rb-checkbox>
+			<rb-checkbox
+				inline
+				value="a.right"
+				rb-bind="value"
+				sublabel="right">
+			</rb-checkbox>
 
-		<!-- VALUELESS -->
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.dark"
-			sublabel="dark"
-			ng-if="env.is.dev">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.disabled"
-			sublabel="disabled">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.horizontal"
-			sublabel="horizontal">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.inline"
-			sublabel="inline">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.popover"
-			sublabel="popover">
-		</rb-checkbox>
-		<rb-checkbox
-			inline
-			rb-bind
-			value="a.right"
-			sublabel="right">
-		</rb-checkbox>
-
-		<!-- BUTTONS -->
-		<section class="buttons">
-			<rb-button
-				data-reset
-				icon-kind="sync"
-				icon-source="solid">
-				Reset
-			</rb-button>
-		</section>
-	</form>
+			<!-- BUTTONS -->
+			<section class="buttons">
+				<rb-button
+					data-reset
+					icon-kind="sync"
+					icon-source="solid">
+					Reset
+				</rb-button>
+			</section>
+		</form>
+	</section>
 
 	<!-- API -->
 	<section>

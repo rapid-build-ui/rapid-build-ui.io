@@ -101,9 +101,20 @@
 		<rb-textarea
 			name="message"
 			label="Message"
-			validation='[
-				"required"
-		]'></rb-textarea>
+			validation='["required"]'>
+		</rb-textarea>
+		<rb-code
+			rows="4"
+			mode="html"
+			name="html"
+			line-numbers
+			theme="one-dark"
+			style="width: 300px"
+			validation='["required"]'
+			actions='["clear","copy"]'
+			placeholder="Your awesome html!">
+		</rb-code>
+		<br>
 		<rb-button type="submit">
 			Submit
 		</rb-button>
