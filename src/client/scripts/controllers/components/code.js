@@ -106,7 +106,7 @@ angular.module('rapid-build').controller('rbCodeController', ['$scope', '$elemen
 				value: formatValue(snippets['javascript']),
 				lineNumbers: true,
 				actions: ['clear','copy'],
-				rows: 6,
+				rows: 11,
 				// theme: 'rapid',
 				// label: 'content',
 				// mode: 'html',
