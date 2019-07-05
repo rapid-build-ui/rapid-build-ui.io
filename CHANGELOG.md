@@ -1,3 +1,24 @@
+## [0.0.19](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.18...v0.0.19) (2019-07-05)
+
+
+### Features
+
+* **new rb component:** rb-code 🚀 ([a4eb1c6](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/a4eb1c6))
+* **rb-popover:** add new api option onclick ([fecdc22](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/fecdc22))
+* **dogfood:** swap in rb-code ([7aeb988](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/7aeb988))
+
+
+### Performance Improvements
+
+* **builder:** remove $compile since we aren't building angular directives ([742536d](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/742536d))
+
+
+### Dependencies
+
+* **bump:** client deps all rb components 👍 ([d879aef](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/d879aef))
+
+
+
 ## [0.0.18](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.17...v0.0.18) (2019-05-09)
 
 
