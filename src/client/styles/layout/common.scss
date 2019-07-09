@@ -13,7 +13,6 @@ footer.main {
 }
 
 header.main {
-	padding-top: remy(23);
 	> [class*='col'] {
 		&:first-child { padding-right: 0; }
 		&:last-child  { padding-left:  0; }

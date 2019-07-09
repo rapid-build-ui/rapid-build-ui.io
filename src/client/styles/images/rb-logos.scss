@@ -13,7 +13,7 @@
 .rb-logo-link {
 	display: inline-block;
 	.rb-logo {
-		transition: filter 1s;
+		transition: filter .5s, height .15s;
 	}
 	&:focus,
 	&:hover {
