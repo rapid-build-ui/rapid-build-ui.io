@@ -46,16 +46,19 @@ header.main {
 	}
 	@media (min-width: 768px) {
 		min-height: 82px;
-	}
-	@media (min-width: 900px) {
 		.header-logo {
-			.rb-logo { height: 41px; }
+			.rb-logo { height: 42px; }
 		}
 	}
 	@media (min-width: 1024px) {
 		min-height: 86px;
 		.header-logo {
 			.rb-logo { height: 45px; }
+		}
+	}
+	@media (min-width: 1280px) {
+		.header-logo {
+			.rb-logo { height: 46px; }
 		}
 	}
 }
