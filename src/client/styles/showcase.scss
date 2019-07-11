@@ -57,13 +57,15 @@
 	// Sections
 	@import 'sections/buttons.scss';
 	@import 'sections/changelog.scss';
-	@import 'sections/headlines.scss';
 
 	// Demo Sections
 	@import 'demos/component.scss';
 
 	// Tables
 	@import 'tables/api-table.scss';
+
+	// Pages
+	@import 'pages/home.scss';
 
 	// Utilities
 	@import 'utilities/bumpers.scss';

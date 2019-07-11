@@ -1,0 +1,83 @@
+/************
+ * HOME PAGE
+ ************/
+.home-page {
+	section {
+		margin: 0 0 remy(40);
+		padding: 0 0 remy(60);
+		text-align: center;
+		border-bottom: 1px dashed mapGet($palette, pastelGray);
+		@include removeLastChildBottomSpacing();
+
+		h2 {
+			margin-bottom: remy(25);
+		}
+		p {
+			font-size: remy(18);
+		}
+		&:first-child {
+			margin-top: remy(30);
+			padding-bottom: remy(55);
+		}
+		&:last-child {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+	}
+
+	/* Reasons (on grid)
+	 **********/
+	.reasons {
+		position: relative; // for rb-logo
+
+		.list {
+			display: inline-block;
+			margin-bottom: 0;
+			padding-left: 0;
+			list-style: none;
+			text-align: left;
+			font-size: 17px;
+			li {
+				position: relative;
+				padding-left: 22px;
+				&:not(:last-child) {
+					margin-bottom: 12px;
+				}
+				&:last-child {
+					margin-bottom: 0;
+				}
+				> rb-popover {
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
+		.rb-logo {
+			margin-top: 10%;
+		}
+
+		/* Responsive
+		 *************/
+		@media (max-width: 768px) {
+			.logo-wrap {
+				display: none;
+			}
+		}
+		@media (max-width: 464px) {
+			text-align: left;
+			> [class*='col']:first-child {
+				> .list:last-child li {
+					margin-bottom: 12px;
+				}
+			}
+			.logo-wrap {
+				display: block;
+				position: absolute;
+				top: 0;
+				right: 0;
+				opacity: .15;
+			}
+		}
+	}
+}
