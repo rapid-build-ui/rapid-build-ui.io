@@ -1,7 +1,7 @@
 angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 	$routeProvider
 		.when '/',
-			layout: 'star-lord'
+			layout: 'thor'
 			templateUrl: '/views/mains/home.html'
 
 		.when '/getting-started',
