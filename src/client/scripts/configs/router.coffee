@@ -1,15 +1,15 @@
 angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 	$routeProvider
 		.when '/',
-			layout: 'thor'
+			layout: 'superman'
 			templateUrl: '/views/mains/home.html'
 
 		.when '/getting-started',
-			layout: 'superman'
+			layout: 'thor'
 			templateUrl: '/views/mains/getting-started.html'
 
 		.when '/browser-support',
-			layout: 'superman'
+			layout: 'thor'
 			templateUrl: '/views/mains/browser-support.html'
 
 		.when '/components/:component',
