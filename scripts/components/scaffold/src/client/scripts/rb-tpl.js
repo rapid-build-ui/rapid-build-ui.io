@@ -1,7 +1,7 @@
 /***********
  * {{upName}}
  ***********/
-import { RbBase, props, html } from '../../rb-base/scripts/rb-base.js';
+import { RbBase, props, html } from '../../base/scripts/base.js';
 import template                from '../views/{{name}}.html';
 
 export class {{className}} extends RbBase() {
