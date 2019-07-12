@@ -1,3 +1,17 @@
+## [0.0.20](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.19...v0.0.20) (2019-07-12)
+
+
+### Bug Fixes
+
+* **rb logo link:** from partially getting clicked in the header ([7ac2cdb](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/7ac2cdb))
+
+
+### Features
+
+* **homepage:** redesign 🚀 ([911dfd5](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/911dfd5))
+
+
+
 ## [0.0.19](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.18...v0.0.19) (2019-07-05)
 
 
