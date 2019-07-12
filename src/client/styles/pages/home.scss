@@ -3,33 +3,30 @@
  ************/
 .home-page {
 	section {
-		margin: 0 0 remy(40);
-		padding: 0 0 remy(60);
+		margin: 0;
+		padding: remy(40) remy(10) remy(60);
 		text-align: center;
-		border-bottom: 1px dashed mapGet($palette, pastelGray);
-		@include removeLastChildBottomSpacing();
-
 		h2 {
 			margin-bottom: remy(25);
 		}
 		p {
 			font-size: remy(18);
 		}
-		&:first-child {
-			margin-top: remy(30);
-			padding-bottom: remy(55);
+		&:first-child { // jumbotron
+			padding-top: remy(50);
 		}
-		&:last-child {
-			padding-bottom: 0;
-			border-bottom: none;
+		&:last-child { // rb example
+			padding-bottom: remy(85);
+		}
+		> div {
+			@include removeLastChildBottomSpacing();
 		}
 	}
 
-	/* Reasons (on grid)
+	/* Reasons
 	 **********/
 	.reasons {
 		position: relative; // for rb-logo
-
 		.list {
 			display: inline-block;
 			margin-bottom: 0;
@@ -38,18 +35,11 @@
 			text-align: left;
 			font-size: 17px;
 			li {
-				position: relative;
-				padding-left: 22px;
-				&:not(:last-child) {
-					margin-bottom: 12px;
-				}
 				&:last-child {
 					margin-bottom: 0;
 				}
-				> rb-popover {
-					position: absolute;
-					top: 0;
-					left: 0;
+				&:not(:last-child) {
+					margin-bottom: 12px;
 				}
 			}
 		}

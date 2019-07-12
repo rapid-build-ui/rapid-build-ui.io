@@ -78,3 +78,12 @@
 .valign-top {
 	vertical-align: top !important;
 }
+
+/* Styles
+ *********/
+.stripe {
+	$stripe: 1px dashed mapGet($palette, pastelGray);
+	border-top:    $stripe;
+	border-bottom: $stripe;
+	background: mapGet($palette, snow);
+}
