@@ -1,3 +1,17 @@
+## [0.0.21](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.20...v0.0.21) (2019-07-12)
+
+
+Maintenance release, we renamed 2 dependencies which affected all rb components:
+* utils changed to cli
+* rb-base changed to base
+
+
+### Dependencies
+
+* **bump:** all rb components ([04f39c2](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/04f39c2))
+
+
+
 ## [0.0.20](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.19...v0.0.20) (2019-07-12)
 
 
