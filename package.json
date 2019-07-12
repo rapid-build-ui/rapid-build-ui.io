@@ -32,9 +32,9 @@
     "url": "https://github.com/rapid-build-ui/rapid-build-ui.io/issues"
   },
   "scripts": {
-    "build-continuous": "node node_modules/@rapid-build-ui/utils/ci showcase continuous",
-    "build-release": "node node_modules/@rapid-build-ui/utils/ci showcase release",
-    "bump": "node node_modules/@rapid-build-ui/utils/bump showcase patch",
+    "build-continuous": "node node_modules/@rapid-build-ui/cli/ci showcase continuous",
+    "build-release": "node node_modules/@rapid-build-ui/cli/ci showcase release",
+    "bump": "node node_modules/@rapid-build-ui/cli/bump showcase patch",
     "create-component": "node scripts/api/create-component",
     "create-mixin": "node scripts/api/create-mixin",
     "install-client": "cd src/client/ && yarn install --ignore-engines",
@@ -44,7 +44,7 @@
     "setup-components": "node scripts/api/setup-components"
   },
   "dependencies": {
-    "@rapid-build-ui/utils": "~0.0.12",
+    "@rapid-build-ui/cli": "~0.0.13",
     "colors": "^1.3.3",
     "del": "^5.0.0",
     "fs-extra": "^8.1.0",

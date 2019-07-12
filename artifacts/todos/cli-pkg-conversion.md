@@ -1,10 +1,7 @@
-# RENAME PACKAGES
+# CLI PACKAGE CONVERSION
 
 * **@rapid-build-ui/cli**
-	* renamed from utils
 	* convert to global npm package
-* **@rapid-build-ui/base**
-	* renamed from rb-base
 
 ## CLI (name: rapid-build-ui)
 
@@ -13,12 +10,12 @@
 * rapid-build-ui ci component release
 * rapid-build-ui ci showcase  continuous
 * rapid-build-ui ci showcase  release
-* rapid-build-ui ci utils     continuous
-* rapid-build-ui ci utils     release
+* rapid-build-ui ci cli       continuous
+* rapid-build-ui ci cli       release
 
 * rapid-build-ui bump component patch src/client/scripts/rb-input.js
 * rapid-build-ui bump showcase  patch
-* rapid-build-ui bump utils     patch
+* rapid-build-ui bump cli     patch
 
 #### NEW TODO (move from showcase)
 * rapid-build-ui link-component
