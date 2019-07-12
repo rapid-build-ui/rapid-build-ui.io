@@ -10,10 +10,10 @@
 		}
 	}
 }
-
 .rb-logo-link {
+	display: inline-block;
 	.rb-logo {
-		transition: filter 1s;
+		transition: all .15s, filter .5s;
 	}
 	&:focus,
 	&:hover {
