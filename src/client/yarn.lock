@@ -2,156 +2,153 @@
 # yarn lockfile v1
 
 
-"@rapid-build-ui/base@^0.0.11":
+"@rapid-build-ui/base@^0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/base/-/base-0.0.12.tgz#e2edef0e065adb9facd9f2778378027841015c8d"
+  integrity sha512-rJrrcA9tYv/1Dy33fy7GCJoPgrTjL2XqB3zzgQRlb375sIRWC1qVV3fKbNmnsUVpwHSlvSn3q6fIv6mIfsWV3g==
+
+"@rapid-build-ui/form-control@^0.0.11":
   version "0.0.11"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/base/-/base-0.0.11.tgz#c68cbc86192bedea55ab5919e16c30d06b48cc7d"
-  integrity sha512-TdposTc4oNY+QWIumOS729Z90jrRFLl72glmSrh6oE8noOuWyVkDFNPBuep2ojiDqVa92T7WBN8Wuxu8NX8edw==
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/form-control/-/form-control-0.0.11.tgz#887c87bc18cd1e3296758d6c858a18f9536d733a"
+  integrity sha512-RzHlAYdOLJDJfrtbMjv4D675Zp0eO5b/UmjWTLd431MxaAuASXs2lgXdlJf7HbzdhiscVd/5J7bjTmc3bQg73g==
   dependencies:
-    lit-html "^1.1.1"
-    skatejs "^5.2.4"
+    "@rapid-build-ui/base" "^0.0.12"
 
-"@rapid-build-ui/form-control@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/form-control/-/form-control-0.0.10.tgz#0d95ed9f8a28b395f4b21f43dc509ea43cb0b3f2"
-  integrity sha512-BtCtSzGCESNf0wy9MOkVQLWDG74t8fGBTAK7goWMOlrak57znjQVFSyj6XmxDAbVP8sAG3szC98DkIn+3Vz2Uw==
+"@rapid-build-ui/rb-alert@^0.0.23":
+  version "0.0.23"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-alert/-/rb-alert-0.0.23.tgz#6462a6006bd93f457ed9f15fc26493eca428b862"
+  integrity sha512-LTXmIEwi5pH+/9XejF8vbuZJcIpQ8Y2uQw8HQwWj+ZyEEmq2RIx0HWW6e1FUnFoi8FtFqaa+deOfplcwDDvxYA==
   dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
+    "@rapid-build-ui/base" "^0.0.12"
+    "@rapid-build-ui/rb-button" "^0.0.19"
 
-"@rapid-build-ui/rb-alert@^0.0.22":
-  version "0.0.22"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-alert/-/rb-alert-0.0.22.tgz#353b998d0035499ef65da09107368ddf3910e85d"
-  integrity sha512-Hw7/iUyMMtRz8evmw3JRBtmBTZiMzIxB2qbvpDon+O3KY9n8SNt2WdPDQc7fUiADw6xYh3LiBMvnyNpfZBuXIA==
+"@rapid-build-ui/rb-button@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-button/-/rb-button-0.0.19.tgz#dc86ae36e68a35d0e5a6ad504f13db0d75d5ff5d"
+  integrity sha512-dEDQXPA1n2js+VKwLZqXSZhE1OEb/dATtOM/t8Z0pT9PeNkoL4lJqWWXAv4G3COhu3DqD+dSoF+ErvPTUHBpIQ==
   dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
-    "@rapid-build-ui/rb-button" "^0.0.18"
+    "@rapid-build-ui/base" "^0.0.12"
+    "@rapid-build-ui/rb-icon" "^0.0.17"
 
-"@rapid-build-ui/rb-button@^0.0.18":
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-button/-/rb-button-0.0.18.tgz#55e6a1987482df70b01cba4e8b8d489ea9537172"
-  integrity sha512-uAFs5HvFXP1kYBepjity8BXpxZ5uD8YfZWiOUY9jeOhR+LrfBVaIR/z9jBCwVe3lPxc0aypVTjuTwksr6P4GAw==
+"@rapid-build-ui/rb-checkbox@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-checkbox/-/rb-checkbox-0.0.9.tgz#662fad36b8d5a77ef488a63767decb3e2df48428"
+  integrity sha512-oU7VThxF6Gm40XtFcQ0WwhXc1GJGAuhZeCDF/mKSpICsaymAUNCINnW64W5XaW1SblTH8CAnIFFY7n9xuuF2LA==
   dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
-    "@rapid-build-ui/rb-icon" "^0.0.16"
+    "@rapid-build-ui/base" "^0.0.12"
+    "@rapid-build-ui/form-control" "^0.0.11"
+    "@rapid-build-ui/rb-popover" "^0.0.19"
 
-"@rapid-build-ui/rb-checkbox@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-checkbox/-/rb-checkbox-0.0.8.tgz#c4acd96cbac884d403aaa4858a7637d850c6a35a"
-  integrity sha512-yBWMA4+Snse/aGPUcQ1dUFKlV6RnOHTyYw2PY9PY+jxp5DSvklFOF085YACHnRztML0BDv++ReO65v5CcrPPNw==
+"@rapid-build-ui/rb-checkboxes@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-checkboxes/-/rb-checkboxes-0.0.7.tgz#97a711dc03fe2179447f0eae75c34762d9ddf94b"
+  integrity sha512-S9jS6146oUIL5zODjN+vn1DyrXErpZDiK1ZkSxEj+ecT7zXADXWZBzNG2VVCyqcjOlEeSM3gbRGubQ+vcUcZ+Q==
   dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
-    "@rapid-build-ui/form-control" "^0.0.10"
-    "@rapid-build-ui/rb-popover" "^0.0.18"
+    "@rapid-build-ui/base" "^0.0.12"
+    "@rapid-build-ui/form-control" "^0.0.11"
+    "@rapid-build-ui/rb-checkbox" "^0.0.9"
+    "@rapid-build-ui/rb-popover" "^0.0.19"
 
-"@rapid-build-ui/rb-checkboxes@^0.0.6":
+"@rapid-build-ui/rb-code@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-code/-/rb-code-0.0.3.tgz#e1ccb609c709d642bb8b01b6100f94ae1d7259a7"
+  integrity sha512-xeT3wQFqFZeYRLZlXKFUgVZaBCk8tuCVQKQ4iRdcQXGRvgQ+B0XPnrFmTa3bUg081Qbp73njMA9whkfDG4wkKw==
+  dependencies:
+    "@rapid-build-ui/base" "^0.0.12"
+    "@rapid-build-ui/form-control" "^0.0.11"
+    "@rapid-build-ui/rb-button" "^0.0.19"
+    "@rapid-build-ui/rb-icon" "^0.0.17"
+    "@rapid-build-ui/rb-popover" "^0.0.19"
+
+"@rapid-build-ui/rb-dropdown@^0.0.6":
   version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-checkboxes/-/rb-checkboxes-0.0.6.tgz#231f13142825002e8b8b98c3fc6c4d19d9de72d9"
-  integrity sha512-ooY/lQwMimfj+YCGPokOOOBLSza7pIpuhfzy0qIB10D+A8hC8/+qJQTJnekNWjx7JyqiLgSujAbEAhcaL0n+CA==
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-dropdown/-/rb-dropdown-0.0.6.tgz#0edd482d9b9b54dc0d854f941f9a4017fd5a5e72"
+  integrity sha512-MeXbrqqbi2kl602S3kCAdhToQ39gNgLWHETlfYk32IvdUkwMXq2drvfOZiMJ25owukbWZtZT8/h/guk/q+tvxQ==
   dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
-    "@rapid-build-ui/form-control" "^0.0.10"
-    "@rapid-build-ui/rb-checkbox" "^0.0.8"
-    "@rapid-build-ui/rb-popover" "^0.0.18"
+    "@rapid-build-ui/base" "^0.0.12"
+    "@rapid-build-ui/form-control" "^0.0.11"
+    "@rapid-build-ui/rb-input" "^0.0.18"
+    "@rapid-build-ui/rb-popover" "^0.0.19"
 
-"@rapid-build-ui/rb-code@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-code/-/rb-code-0.0.2.tgz#4533d94765d803626d916eb9ebcc7e91e607e987"
-  integrity sha512-m68Flw4Mn2AWzPPL7U92nutL099F1SsgGdra4YVfXLsKLhDoGPvY9VTIDJyRrVxADYwoIVPzgK41dWlrsNjKVA==
-  dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
-    "@rapid-build-ui/form-control" "^0.0.10"
-    "@rapid-build-ui/rb-button" "^0.0.18"
-    "@rapid-build-ui/rb-icon" "^0.0.16"
-    "@rapid-build-ui/rb-popover" "^0.0.18"
-
-"@rapid-build-ui/rb-dropdown@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-dropdown/-/rb-dropdown-0.0.5.tgz#948b715408069e51d82a76c3fe8675faab7db114"
-  integrity sha512-fp1eMC9kv3dPaYCtaGZOX87SZR51nZCUErx0Kl9pI188/9RQDvQ6FSj0gNdUZn6wPgJYZGJXItKJzU85MoWS+Q==
-  dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
-    "@rapid-build-ui/form-control" "^0.0.10"
-    "@rapid-build-ui/rb-input" "^0.0.17"
-    "@rapid-build-ui/rb-popover" "^0.0.18"
-
-"@rapid-build-ui/rb-icon@^0.0.16":
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-icon/-/rb-icon-0.0.16.tgz#10b30e0707c4c64e2ffd68ac1d7865efb8ace40c"
-  integrity sha512-kqVz9ldnuXpcxahMJOwCecfkVcWFAclYCdvXuyTETwlZMQMGdNI50d6GXSK5wmREmmtIb7c6aLuEe7ac6FYNhg==
-  dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
-
-"@rapid-build-ui/rb-input@^0.0.17":
+"@rapid-build-ui/rb-icon@^0.0.17":
   version "0.0.17"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-input/-/rb-input-0.0.17.tgz#19308105e21a17ac1969e0042652a77eeac40b99"
-  integrity sha512-pkwmPytkZlRvYo6dMwUur3fu1KGjH4uzwN/H29aYes6okEr7nukY0tRB1LqZ51IrZT8HXh6OZ3ChYmSSbhtZlA==
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-icon/-/rb-icon-0.0.17.tgz#b54cb02f0ab6ddd58e7ee9dfbcd1cbcae9cb9dc9"
+  integrity sha512-+NyDbKnyFLIe8HdTWld/V2Y3w2WPCT1rsuYcG506DQBKz/7aAA3HA008M+XoX8U7tNQf+a8SVquwUu5tEKpujw==
   dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
-    "@rapid-build-ui/form-control" "^0.0.10"
-    "@rapid-build-ui/rb-icon" "^0.0.16"
-    "@rapid-build-ui/rb-popover" "^0.0.18"
+    "@rapid-build-ui/base" "^0.0.12"
 
-"@rapid-build-ui/rb-modal@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-modal/-/rb-modal-0.0.10.tgz#01dd88c6eb275a3abadc014084bcfda39c92984a"
-  integrity sha512-C57JuHbYOZmn0xOfTjHN+TlMv4rMCRpsQ0p+7YVkZvcDHSBvIQbwbARnK9dM2cXUb++NX70nG6u4EyP+wkt5OA==
-  dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
-    "@rapid-build-ui/rb-button" "^0.0.18"
-
-"@rapid-build-ui/rb-nav@^0.0.16":
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-nav/-/rb-nav-0.0.16.tgz#00e9d0939209757b4649329fdec5c7ab45dc3256"
-  integrity sha512-8OQMYiK+fsiGTL6ThosJ+6ObRnEpODjFtqI2gZ8ZXVrPFwbFR9Apno+Uf86wJ1/P/aiAjhQvB0fqwUBhsMXi7w==
-  dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
-
-"@rapid-build-ui/rb-popover@^0.0.18":
+"@rapid-build-ui/rb-input@^0.0.18":
   version "0.0.18"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-popover/-/rb-popover-0.0.18.tgz#3c615cf987010e78d6d6e6f9e543d474bed06438"
-  integrity sha512-TOLhYZnkLi2JBGWjVASfYa5uDPLHR9ZtFDqlDWncFP0iY95Fd8hLuQSvJRTnJKA6PcrxKj/G919z7flSd5eDmw==
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-input/-/rb-input-0.0.18.tgz#dbe7a60185bb0ead9215c16041239b2284c5311b"
+  integrity sha512-PSBc8QKwtV9hpufODGTH3NT6DnSoCXXBAZ1+O6ZWsihMSg6QmokM66TtCY6/c3rSUC6/mDk9MbsNTAHOK+8CJQ==
   dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
-    "@rapid-build-ui/rb-button" "^0.0.18"
+    "@rapid-build-ui/base" "^0.0.12"
+    "@rapid-build-ui/form-control" "^0.0.11"
+    "@rapid-build-ui/rb-icon" "^0.0.17"
+    "@rapid-build-ui/rb-popover" "^0.0.19"
 
-"@rapid-build-ui/rb-radios@^0.0.13":
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-radios/-/rb-radios-0.0.13.tgz#863d1a2d843e2f779c0aefd17caeb2ed2162ebba"
-  integrity sha512-eUCZqNX7iCsAiifvADqm1vmEJ30McAaAjlfrroH8kUdtXUqwZfodiL04SdgrfJ+ZQp87XJuWVOTCb1cesRKRFg==
+"@rapid-build-ui/rb-modal@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-modal/-/rb-modal-0.0.11.tgz#7289444e27d7585ad68fb13ea08005f76dea5446"
+  integrity sha512-OGRm3o1bssbO+K9b+e2OiLn6jdxNWrT49FZS8SMXQorZX3GDr66kxspKSuZnTUZKy79FUKM1scwqeVi9l9oCVg==
   dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
-    "@rapid-build-ui/form-control" "^0.0.10"
-    "@rapid-build-ui/rb-popover" "^0.0.18"
+    "@rapid-build-ui/base" "^0.0.12"
+    "@rapid-build-ui/rb-button" "^0.0.19"
 
-"@rapid-build-ui/rb-table@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-table/-/rb-table-0.0.2.tgz#b4aec23f6a978a55bc177531054d171c52e62225"
-  integrity sha512-83Myjeg1lqKVamxKITqWSNDjFHz0f26VLfDbpa3GnH2q5pFXX7c13X6nDAxhpkey5neSTyeIEQG3ipS9Tu/XlA==
+"@rapid-build-ui/rb-nav@^0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-nav/-/rb-nav-0.0.17.tgz#1849952d43ebd84788f2d4bcd27ade86c8b520e7"
+  integrity sha512-DT0jq6m/NaT/9uzmm1zRxkEMGiw5ItdaioyvZhC23p1KtB/CHYu3OkArPaxT0j0H3wnzlqLQj79huoFZox6fow==
   dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
+    "@rapid-build-ui/base" "^0.0.12"
 
-"@rapid-build-ui/rb-textarea@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-textarea/-/rb-textarea-0.0.5.tgz#68aeefcc5fe0bbafa0bfd72cd1c7ff224e3a5df1"
-  integrity sha512-Daqo/9BwunFk1UuJ3k329EphV7H1wNY/LUl3SwO7AxTxiWHPNwE6bzS3XnivoQ/fXAXXuUxMFJIA2peAltqU1Q==
+"@rapid-build-ui/rb-popover@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-popover/-/rb-popover-0.0.19.tgz#ac4257bbd854941825d29e2b0bc93ed9a2eb1b68"
+  integrity sha512-HPxh9Ofsrk6nsXBMgaSpg3El0Cd53myxiZcO2u0al0d8ggeY2BYV3xlSHIEvYdk1YnElcNSN0Wk9FD23wzBlpQ==
   dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
-    "@rapid-build-ui/form-control" "^0.0.10"
-    "@rapid-build-ui/rb-popover" "^0.0.18"
+    "@rapid-build-ui/base" "^0.0.12"
+    "@rapid-build-ui/rb-button" "^0.0.19"
 
-"@rapid-build-ui/rb-textcurve@^0.0.3":
+"@rapid-build-ui/rb-radios@^0.0.14":
+  version "0.0.14"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-radios/-/rb-radios-0.0.14.tgz#63e5b65008e90ac2355aa95b5a65ebb29129c8d4"
+  integrity sha512-grJg1+82C5fj2TSdAr7NeVjZLWZX7kWlnN25MtRbbSBUqKw+MS4qvA8sf5oUFgLMnO+Mutfu0o0uGzkIkGHErg==
+  dependencies:
+    "@rapid-build-ui/base" "^0.0.12"
+    "@rapid-build-ui/form-control" "^0.0.11"
+    "@rapid-build-ui/rb-popover" "^0.0.19"
+
+"@rapid-build-ui/rb-table@^0.0.3":
   version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-textcurve/-/rb-textcurve-0.0.3.tgz#000886edc268e81ab4a7a6c86888e7830323623a"
-  integrity sha512-ESi50HYldh/Wd/xAbAWYwVHihB3Thrzx8+MK3/94zpN2UMlcgbi7kyv3k7UOBjnLfk9Jm1jQOVbTsgCNkrpGuw==
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-table/-/rb-table-0.0.3.tgz#45259ae50dbc83074f80a3c66f31f709f6c95600"
+  integrity sha512-3PuZg0UZveM17mk7I5wR09FZd+EBG9I5syXFG8mZpTZR96M9CCPi9moNtqkDwJ431V4GSOt5Tid3q4BDPs9O4w==
   dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
+    "@rapid-build-ui/base" "^0.0.12"
 
-"@rapid-build-ui/rb-toggle@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-toggle/-/rb-toggle-0.0.3.tgz#02dc79c005cfac55c35e170fda914b6833bce899"
-  integrity sha512-/NmIK8sKv2kJ3LnV0DEUx23mS83Q4ZKBsDdB0MOyQgFxdbi2Wz6lGB9SFTX0tVwLT2PNnwxUGBT/vEumDJR9ew==
+"@rapid-build-ui/rb-textarea@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-textarea/-/rb-textarea-0.0.6.tgz#9d35483cd8036cad391885beb299166316a66ee3"
+  integrity sha512-ZsOLgTY+siIkEO4TQoliTomZseGlAbjA5cg608ydYc7qAZq7Gvz4LLujbjOYaMxbj/5OrknFb3/1iH8+Arp20A==
   dependencies:
-    "@rapid-build-ui/base" "^0.0.11"
-    "@rapid-build-ui/rb-button" "^0.0.18"
+    "@rapid-build-ui/base" "^0.0.12"
+    "@rapid-build-ui/form-control" "^0.0.11"
+    "@rapid-build-ui/rb-popover" "^0.0.19"
+
+"@rapid-build-ui/rb-textcurve@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-textcurve/-/rb-textcurve-0.0.4.tgz#7de1e1759a790a7bee4ecc3e3757a1a3d1c0ba26"
+  integrity sha512-c1KWJiRlxAmvcgcAX1t7ym1bfgpQnJUtfciJdxeU9eccMNQlFi76+ivquUe50Ntybjvt0s8F/ThiTPqFmqExdA==
+  dependencies:
+    "@rapid-build-ui/base" "^0.0.12"
+
+"@rapid-build-ui/rb-toggle@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@rapid-build-ui/rb-toggle/-/rb-toggle-0.0.4.tgz#2b223b85073e342cd2cfa2654f4a4046ed6ad26f"
+  integrity sha512-bBasDUUtFEhaY57V1jJmSUXLzHgTvcqHIXqSjyvaJ7bB/Q+w0ax4PRDAsYmxsmk6/X5vaB/t9HFEb3djLM5UWg==
+  dependencies:
+    "@rapid-build-ui/base" "^0.0.12"
+    "@rapid-build-ui/rb-button" "^0.0.19"
 
 clipboard@^2.0.0:
   version "2.0.4"
@@ -179,11 +176,6 @@ gridlex@2.7.1:
   resolved "https://registry.yarnpkg.com/gridlex/-/gridlex-2.7.1.tgz#ff562762dc8fc7e59bee2163afaa116859961ef7"
   integrity sha512-LnBGyAzX3GNYG/I7Vp2sQRo8EaI3IzOn8a8j2AjrsZUS0kClKImJAuluwu75H+31/PwWvaBlUGNpd+qDflb/QA==
 
-lit-html@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.1.1.tgz#186ed6abcc70c0d24e1132b37411c3b2645ed1aa"
-  integrity sha512-1WqhkPpj+CKwLRXCCbyRGnWkcFKE4ft2+j8C2zaXwFUK9I2vYDzTuDGPh0H9hZcDBEwoe6YpPC8AO5734EPORQ==
-
 ngclipboard@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ngclipboard/-/ngclipboard-2.0.0.tgz#406f6c34d21d78c13faafa7f7df2ae4acd50e75a"
@@ -195,11 +187,6 @@ select@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/select/-/select-1.1.2.tgz#0e7350acdec80b1108528786ec1d4418d11b396d"
   integrity sha1-DnNQrN7ICxEIUoeG7B1EGNEbOW0=
-
-skatejs@^5.2.4:
-  version "5.2.4"
-  resolved "https://registry.yarnpkg.com/skatejs/-/skatejs-5.2.4.tgz#945f1451ffb2ed801d19e9baa03f0a259eb84e9e"
-  integrity sha512-Ygd4bB6VTiSFeVpry9R/EWej+/PGrYhO1eMMwsxDaBLMkzXfZRm0CHvggb7RAMEr0VCMc5cBt58I6IU0q6GLvw==
 
 tiny-emitter@^2.0.0:
   version "2.1.0"
