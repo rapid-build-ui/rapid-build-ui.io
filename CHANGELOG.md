@@ -1,3 +1,12 @@
+## [0.0.23](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.22...v0.0.23) (2019-07-16)
+
+
+### Dependencies
+
+* **bump:** all rb components ([bf3103f](https://github.com/rapid-build-ui/rapid-build-ui.io/commit/bf3103f))
+
+
+
 ## [0.0.22](https://github.com/rapid-build-ui/rapid-build-ui.io/compare/v0.0.21...v0.0.22) (2019-07-15)
 
 
