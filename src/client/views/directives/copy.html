@@ -5,12 +5,8 @@
 	icon-source="solid"
 	icon-kind="download"
 	icon-size="{{iconSize}}">
-	<rb-popover
-		ngclipboard
-		icon-kind="copy"
-		ngclipboard-success="copied(e)"
-		data-clipboard-target="#rb-copy-{{$id}}">
+	<rb-popover data-copy-trigger icon-kind="copy">
 		Copied! <rb-icon kind="thumbs-up"></rb-icon>
 	</rb-popover>
-	<span id="rb-copy-{{$id}}" class="rb-copy-msg" ng-transclude></span>
+	<span data-copy-target class="rb-copy-msg" ng-transclude></span>
 </rb-popover>

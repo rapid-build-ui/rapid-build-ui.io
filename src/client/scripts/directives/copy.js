@@ -8,31 +8,46 @@ angular.module('rapid-build').directive('rbaCopy', ['$timeout', $timeout => {
 	/* LINK
 	 *******/
 	const Link = (scope, iElement, iAttrs) => {
-		const popover = iElement[0].querySelector('rb-popover rb-popover');
+		const copyTrigger = iElement[0].querySelector('[data-copy-trigger]');
+		const copyTarget  = iElement[0].querySelector('[data-copy-target]');
 
 		const copiedMsg = {
 			_timer: null,
+			_trimmed: false,
+			_copy() {
+				const selection = window.getSelection();
+				const range     = document.createRange();
+				copiedMsg._trimTarget(); // TODO: find better solution
+				range.selectNodeContents(copyTarget);
+				selection.removeAllRanges();
+				selection.addRange(range);
+				document.execCommand('copy');
+				selection.removeAllRanges();
+			},
+			_trimTarget() {
+				if (copiedMsg._trimmed) return;
+				copyTarget.textContent = copyTarget.textContent.trim();
+				copiedMsg._trimmed = true;
+			},
 			_isShowing() {
-				if (!this._timer) return true;
-				$timeout.cancel(this._timer);
-				this._timer = null;
+				if (!copiedMsg._timer) return true;
+				$timeout.cancel(copiedMsg._timer);
+				copiedMsg._timer = null;
 				return false;
 			},
-			hide(trigger, delay) {
-				if (!this._isShowing()) return;
-				this._timer = $timeout(() => {
-					trigger.open = false;
-					this._timer = null;
-				}, delay);
+			hide(evt) {
+				if (!copiedMsg._isShowing()) return;
+				copiedMsg._copy();
+				copiedMsg._timer = $timeout(() => {
+					copyTrigger.open = false;
+					copiedMsg._timer = null;
+				}, 1500);
 			}
 		}
 
-		/* Methods
-		 **********/
-		scope.copied = e => {
-			copiedMsg.hide(e.trigger, 1500);
-			e.clearSelection();
-		};
+		/* Attach Event
+		 ***************/
+		copyTrigger.onclick = copiedMsg.hide;
 	}
 
 	/* API

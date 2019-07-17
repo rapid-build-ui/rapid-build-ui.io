@@ -9,7 +9,6 @@ common:
 
 	angular:
 		moduleName: 'rapid-build'
-		modules: ['ngclipboard']
 		templateCache:
 			dev: true
 			useAbsolutePaths: true
@@ -83,10 +82,6 @@ common:
 
 	order:
 		scripts:
-			first: [
-				'node_modules/clipboard/dist/clipboard.min.js'
-				'node_modules/ngclipboard/dist/ngclipboard.min.js'
-			]
 			last: [
 				'scripts/bootstrap/bootstrap.js'
 			]
