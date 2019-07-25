@@ -10,6 +10,16 @@
 		icon-size=".93"
 		ng-bind-html="popover | trustHtml">
 	</rb-popover>
+	<rb-input
+		right
+		hidden
+		class="search"
+		slot="subtext"
+		value="search"
+		rb-bind="value"
+		icon-kind="search"
+		icon-source="solid">
+	</rb-input>
 </rb-textcurve>
 
 <div ng-class="!error ? 'responsive-table' : ''">
@@ -21,9 +31,9 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="(key, value) in ::cssVars">
-				<td class="td-name">{{key}}</td>
-				<td class="td-value">{{value}}</td>
+			<tr ng-repeat="item in cssVars | filter: search">
+				<td class="td-name">{{item.name}}</td>
+				<td class="td-value">{{item.value}}</td>
 			</tr>
 		</tbody>
 	</table>

@@ -26,11 +26,20 @@ header.page-header {
 		}
 	}
 
+	rba-source-nav {
+		align-self: flex-start;
+		position: relative;
+		top: 10px;
+		> rb-nav[responsive] {
+			top: -5px;
+		}
+	}
+
 	/* Responsive
 	 *************/
 	@media (max-width: mapGet($gl-mq-list, sm)) {
 		rba-source-nav {
-			position: relative;
+			// position: relative;
 			right: remy(58);
 		}
 	}

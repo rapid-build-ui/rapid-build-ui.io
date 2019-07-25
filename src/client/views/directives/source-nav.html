@@ -1,27 +1,43 @@
 <rb-nav active="false">
-	<a target="_blank"
-	   ng-href="{{::src.url}}"
-	   ng-repeat="src in ::source"
-	   title="{{
-		   (src.type == 'github') ? 'Repository' :
-		   (src.type == 'js')     ? 'JS'         :
-		   (src.type == 'html')   ? 'HTML'       :
-		   (src.type == 'css')    ? 'CSS'        : ''
-	   }}">
+	<a target="_blank" ng-href="{{::source.package}}" ng-if="::source.package" title="Package">
 		<rb-icon
+			size="1.5"
+			kind="npm"
 			valign="middle"
-			source="{{
-				(src.type == 'github') ? 'brands' :
-				(src.type == 'js')     ? 'brands' :
-				(src.type == 'html')   ? 'brands' :
-				(src.type == 'css')    ? 'brands' : ''
-			}}"
-			kind="{{
-				(src.type == 'github') ? 'github'    :
-				(src.type == 'js')     ? 'js-square' :
-				(src.type == 'html')   ? 'html5'     :
-				(src.type == 'css')    ? 'css3-alt'  : ''
-			}}">
+			source="brands">
 		</rb-icon>
 	</a>
+	<rb-popover
+		icon-kind="git"
+		icon-size="1.1"
+		icon-valign="top"
+		icon-source="brands">
+		<rb-nav active="false">
+			<a target="_blank"
+			   ng-href="{{::src.url}}"
+			   ng-repeat="src in ::source.code"
+			   title="{{
+				   (src.type == 'github') ? 'Repo' :
+				   (src.type == 'js')     ? 'JS'   :
+				   (src.type == 'html')   ? 'HTML' :
+				   (src.type == 'css')    ? 'CSS'  : ''
+			   }}">
+				<rb-icon
+					valign="middle"
+					source="{{
+						(src.type == 'github') ? 'brands' :
+						(src.type == 'js')     ? 'brands' :
+						(src.type == 'html')   ? 'brands' :
+						(src.type == 'css')    ? 'brands' : ''
+					}}"
+					kind="{{
+						(src.type == 'github') ? 'github'    :
+						(src.type == 'js')     ? 'js-square' :
+						(src.type == 'html')   ? 'html5'     :
+						(src.type == 'css')    ? 'css3-alt'  : ''
+					}}">
+				</rb-icon>
+			</a>
+		</rb-nav>
+	</rb-popover>
 </rb-nav>

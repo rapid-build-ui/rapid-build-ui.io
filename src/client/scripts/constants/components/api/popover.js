@@ -60,6 +60,7 @@ p.constant('RB_POPOVER_API',
 				<li>
 					<em class="info-sub no-parens">
 						popover opens once function completes
+						or promise resolves
 					</em>
 				</li>
 				<li>

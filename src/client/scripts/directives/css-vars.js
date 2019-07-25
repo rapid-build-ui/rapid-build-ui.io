@@ -12,6 +12,9 @@ angular.module('rapid-build').directive('rbaCssVars', ['cssVarsService',
 		/* LINK
 		 *******/
 		const Link = (scope, iElement, iAttrs) => {
+			const toggle = iElement[0].querySelector('rb-toggle');
+			const search = iElement[0].querySelector('.search');
+
 			/* Scope Props
 			 **************/
 			switch(scope.theme) {
@@ -31,14 +34,29 @@ angular.module('rapid-build').directive('rbaCssVars', ['cssVarsService',
 					scope.caption = 'CSS VARIABLES';
 			}
 
-			/* RB TOGGLE
-			 ************/
-			iElement[0].querySelector('rb-toggle').onclick = () =>
-				cssVarsService.get(scope.component, scope.theme).then(cssVars => {
+			/* RB TOGGLE EVENTS
+			 *******************/
+			const ontoggle = evt =>
+				search.toggleAttribute('hidden');
+
+			toggle.addEventListener('toggled', ontoggle);
+
+			toggle.onclick = () =>
+				cssVarsService.get(scope.component, scope.theme).then(cssVarObj => {
+					const cssVars = [];
+					for (const [name, value] of Object.entries(cssVarObj))
+						cssVars.push({name, value});
 					scope.cssVars = cssVars;
 				}).catch(error => {
 					scope.error = error.data.message;
-				})
+				});
+
+			/* Destroy
+			 **********/
+			const destroy = scope.$on('$destroy', () => {
+				toggle.removeEventListener('toggled', ontoggle);
+				destroy();
+			});
 		}
 
 		/* API
