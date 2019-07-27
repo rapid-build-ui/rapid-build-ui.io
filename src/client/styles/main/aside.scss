@@ -9,7 +9,7 @@
 	 *************/
 	@media (max-width: mapGet($gl-mq-list, sm)) {
 		border: none;
-		rb-nav {
+		> rb-nav {
 			position: absolute;
 			top: remy(20);
 			right: 0;
