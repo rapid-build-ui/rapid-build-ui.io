@@ -1,15 +1,5 @@
 angular.module('rapid-build').controller('rbTableController', ['$scope', '$element', 'preService', 'typeService',
 	async function($scope, $element, preService, type) {
-
-		// const getSuperheroes = async () => {
-		// 	const response = await fetch('/api/superheroes');
-		// 	console.log('GOT SUPERHEROES');
-		// 	return await response.json();
-		// };
-
-		// const superheroes = await getSuperheroes();
-		// console.log('SUPERHEROES:', superheroes);
-
 		/* Builder
 		 **********/
 		const createMarkup = () => {
