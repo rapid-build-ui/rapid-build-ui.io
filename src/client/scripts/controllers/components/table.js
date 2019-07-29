@@ -1,13 +1,25 @@
 angular.module('rapid-build').controller('rbTableController', ['$scope', '$element', 'preService', 'typeService',
-	function($scope, $element, preService, type) {
+	async function($scope, $element, preService, type) {
+
+		// const getSuperheroes = async () => {
+		// 	const response = await fetch('/api/superheroes');
+		// 	console.log('GOT SUPERHEROES');
+		// 	return await response.json();
+		// };
+
+		// const superheroes = await getSuperheroes();
+		// console.log('SUPERHEROES:', superheroes);
+
 		/* Builder
 		 **********/
-		const createMarkup = function() {
+		const createMarkup = () => {
 			let attrs = content = component = '';
 			const s = ' ', t = '\t', n = '\n', nt = '\n\t';
 
 			if ($scope.a.dark) attrs += `${nt}dark`; // TODO
 			if ($scope.a.kind) attrs += `${nt}kind="${$scope.a.kind}"`;
+			attrs += `${nt}data='${buldDataMarkup()}'`;
+
 
 			content += get.content.content();
 			component = `<rb-table${attrs}>${content}${n}</rb-table>`;
@@ -29,6 +41,16 @@ angular.module('rapid-build').controller('rbTableController', ['$scope', '$eleme
 			}
 		}
 
+		const buldDataMarkup = () => {
+			const data = [
+					{id: 1, name: 'Thor', age: 18},
+					{id: 2, name: 'Batman', age: 24},
+					{id: 3, name: 'Superman', age: 19}
+				];
+			// return JSON.stringify(data, null, '\t');
+			return JSON.stringify(data);
+		};
+
 		/* Props
 		 ********/
 		$scope.kinds = ['danger','info','neutral','success','warning']
@@ -37,7 +59,10 @@ angular.module('rapid-build').controller('rbTableController', ['$scope', '$eleme
 		 **********/
 		$scope.reset = () => {
 			$scope.a = {
-				content: 'rb-table'
+				content:
+`<column key="id" caption="Id"></column>
+<column key="name" caption="Name" sort></column>
+<column key="age" caption="Age" sort></column>`
 			};
 		};
 
