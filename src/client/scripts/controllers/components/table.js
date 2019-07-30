@@ -33,9 +33,9 @@ angular.module('rapid-build').controller('rbTableController', ['$scope', '$eleme
 
 		const buldDataMarkup = () => {
 			const data = [
-					{id: 1, name: 'Thor', age: 18},
-					{id: 2, name: 'Batman', age: 24},
-					{id: 3, name: 'Superman', age: 19}
+					{id: 1, name: 'Thor', age: 18, description: 'Lorem ipsum dolor sit amet, eu vix nominavi luptatum intellegat. At est voluptua invenire facilisis, '},
+					{id: 2, name: 'Batman', age: 24, description: 'Lorem ipsum dolor sit amet, eu vix nominavi luptatum intellegat. At est voluptua invenire facilisis, '},
+					{id: 3, name: 'Superman', age: 19, description: 'Lorem ipsum dolor sit amet, eu vix nominavi luptatum intellegat. At est voluptua invenire facilisis, '}
 				];
 			// return JSON.stringify(data, null, '\t');
 			return JSON.stringify(data);
@@ -50,9 +50,10 @@ angular.module('rapid-build').controller('rbTableController', ['$scope', '$eleme
 		$scope.reset = () => {
 			$scope.a = {
 				content:
-`<column key="id" caption="Id"></column>
-<column key="name" caption="Name" sort></column>
-<column key="age" caption="Age" sort></column>`
+`<column key="id" caption="Id" width="50px"></column>
+<column key="name" caption="Name" sort width="2fr"></column>
+<column key="age" caption="Age" sort></column>
+<column key="description" caption="description" width="40%"></column>`
 			};
 		};
 
