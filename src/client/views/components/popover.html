@@ -75,20 +75,19 @@
 				value="a.position"
 				data="{{positions}}">
 			</rb-radios>
-			<rb-radios
-				toggle
-				horizontal
+
+			<!-- ICON OPTIONS -->
+			<rb-dropdown
 				rb-bind="value"
 				label="icon-kind"
 				value="a.iconKind"
-				data="{{iconKinds}}">
-				<rb-popover slot="popover" caption="set icon-source to">
-					<ul>
-						<li><strong>solid</strong> for download</li>
-						<li><strong>brands</strong> for github</li>
-					</ul>
+				placeholder="Select...">
+				<rb-popover slot="popover">
+					Name of any free
+					<a target="_blank" href="https://goo.gl/oJ2iTy">font awesome icon</a>.
+					Font awesome icon style must match icon source.
 				</rb-popover>
-			</rb-radios>
+			</rb-dropdown>
 			<rb-radios
 				toggle
 				horizontal

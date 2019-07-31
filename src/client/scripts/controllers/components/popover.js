@@ -63,6 +63,11 @@ angular.module('rapid-build').controller('rbPopoverController', ['$scope', '$ele
 		$scope.iconSources   = ['solid','brands'];
 		$scope.iconAnimation = ['burst','pulse','spin'];
 
+		/* Global RB Icons
+		 ******************/
+		const RB_ICONS    = window.showcase.icons;
+		const ddIconKinds = $element[0].querySelector(`[label='icon-kind']`);
+
 		/* Methods
 		 **********/
 		$scope.reset = () => {
@@ -77,6 +82,15 @@ angular.module('rapid-build').controller('rbPopoverController', ['$scope', '$ele
 		const markupWatch = $scope.$watch('a', (newVal, oldVal) => {
 			$scope.markup = createMarkup();
 		}, true);
+
+		const iconSourceWatch = $scope.$watch('a.iconSource', (newIconSource, oldIconSource) => {
+			if (!newIconSource) newIconSource = 'regular';
+			ddIconKinds.data = RB_ICONS[newIconSource];
+			const { a } = $scope;
+			if (newIconSource === 'brands') return a.iconKind = 'github';
+			if (RB_ICONS[newIconSource].includes(a.iconKind)) return;
+			a.iconKind = undefined;
+		});
 
 		/* Event Handlers
 		 *****************/
@@ -104,6 +118,7 @@ angular.module('rapid-build').controller('rbPopoverController', ['$scope', '$ele
 		/* Destroy
 		 **********/
 		$scope.$on('$destroy', () => {
+			iconSourceWatch();
 			markupWatch();
 		});
 	}

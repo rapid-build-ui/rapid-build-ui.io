@@ -93,6 +93,11 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			customValidation
 		]
 
+		# Elms and Global
+		# ===============
+		RB_ICONS    = window.showcase.icons
+		ddIconKinds = $element[0].querySelector '[label="icon-kind"]';
+
 		# Methods
 		# =======
 		$scope.reset = ->
@@ -109,6 +114,13 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 			$scope.markup = createMarkup()
 		, true
 
+		iconSourceWatch = $scope.$watch 'a.iconSource', (newIconSource, oldIconSource) ->
+			newIconSource = 'regular' unless newIconSource
+			ddIconKinds.data = RB_ICONS[newIconSource]
+			return $scope.a.iconKind = 'github' if newIconSource is 'brands'
+			return if RB_ICONS[newIconSource].includes $scope.a.iconKind
+			$scope.a.iconKind = undefined
+
 		# Event Handlers
 		# ==============
 		resetFrm = -> $scope.$apply $scope.reset
@@ -122,5 +134,6 @@ angular.module('rapid-build').controller 'rbInputController', ['$scope', '$eleme
 		# Destroys
 		# ========
 		$scope.$on '$destroy', ->
+			iconSourceWatch();
 			markupWatch()
 ]
