@@ -6,8 +6,10 @@ angular.module('rapid-build').controller('rbTableController', ['$scope', '$eleme
 			let attrs = content = component = '';
 			const s = ' ', t = '\t', n = '\n', nt = '\n\t';
 
-			if ($scope.a.dark) attrs += `${nt}dark`; // TODO
-			if ($scope.a.kind) attrs += `${nt}kind="${$scope.a.kind}"`;
+			if ($scope.a.dark)        attrs += `${nt}dark`;
+			if ($scope.a.columnAlign) attrs += `${nt}column-align="${$scope.a.columnAlign}"`;
+			if ($scope.a.captionAlign) attrs += `${nt}caption-align="${$scope.a.captionAlign}"`;
+
 			attrs += `${nt}data='${buldDataMarkup()}'`;
 
 
@@ -33,9 +35,9 @@ angular.module('rapid-build').controller('rbTableController', ['$scope', '$eleme
 
 		const buldDataMarkup = () => {
 			const data = [
-					{id: 1, name: 'Thor', age: 18, description: 'Lorem ipsum dolor sit amet, eu vix nominavi luptatum intellegat. At est voluptua invenire facilisis, '},
-					{id: 2, name: 'Batman', age: 24, description: 'Lorem ipsum dolor sit amet, eu vix nominavi luptatum intellegat. At est voluptua invenire facilisis, '},
-					{id: 3, name: 'Superman', age: 19, description: 'Lorem ipsum dolor sit amet, eu vix nominavi luptatum intellegat. At est voluptua invenire facilisis, '}
+					{id: 1, name: 'Thor', age: 18, description: 'Lorem ipsum dolor sit amet, eu vix nominavi luptatum intellegat... '},
+					{id: 2, name: 'Batman', age: 24, description: 'Lorem ipsum dolor sit amet, eu vix nominavi luptatum intellegat... '},
+					{id: 3, name: 'Superman', age: 19, description: 'Lorem ipsum dolor sit amet, eu vix nominavi luptatum intellegat... '}
 				];
 			// return JSON.stringify(data, null, '\t');
 			return JSON.stringify(data);
@@ -43,7 +45,8 @@ angular.module('rapid-build').controller('rbTableController', ['$scope', '$eleme
 
 		/* Props
 		 ********/
-		$scope.kinds = ['danger','info','neutral','success','warning']
+		$scope.captionAlignment = ['center','right']
+		$scope.columnAlignment = ['center','right']
 
 		/* Methods
 		 **********/
@@ -53,8 +56,8 @@ angular.module('rapid-build').controller('rbTableController', ['$scope', '$eleme
 `<column key="id" caption="Id" width="50px"></column>
 <column key="name" caption="Name" sort width="2fr"></column>
 <column key="age" caption="Age" sort></column>
-<column key="description" caption="description" width="40%"></column>`
-			};
+<column key="description" caption="description" width="40%"></column>
+`};
 		};
 
 		/* Watches

@@ -12,12 +12,12 @@
 
 	<!-- COMPONENT -->
 	<section class="grid">
-		<div class="col-5">
+		<div class="col-7">
 			<section class="demo-component" ng-class="a.dark && 'dark'">
 					<div rba-builder="markup"></div>
 			</section>
 		</div>
-		<div class="col-7">
+		<div class="col-5">
 			<rb-code
 				readonly
 				scrollable
@@ -56,10 +56,19 @@
 			<rb-radios
 				toggle
 				horizontal
-				label="kind"
-				value="a.kind"
+				label="caption-align"
+				value="a.captionAlign"
 				rb-bind="value"
-				data="{{kinds}}">
+				data="{{captionAlignment}}">
+			</rb-radios>
+
+			<rb-radios
+				toggle
+				horizontal
+				label="column-align"
+				value="a.columnAlign"
+				rb-bind="value"
+				data="{{columnAlignment}}">
 			</rb-radios>
 
 			<!-- VALUELESS -->
