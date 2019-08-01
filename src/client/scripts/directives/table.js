@@ -46,7 +46,8 @@ angular.module('rapid-build').directive('rbaTable', ['$filter', '$injector', 'pr
 			restrict: 'E',
 			templateUrl: '/views/directives/table.html',
 			scope: {
-				src: '<source',
+				filter: '<?',
+				src:    '<source'
 				/* VALUELESS
 				 ************/
 				// inject: '@?'

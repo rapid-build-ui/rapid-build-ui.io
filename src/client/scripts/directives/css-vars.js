@@ -13,7 +13,7 @@ angular.module('rapid-build').directive('rbaCssVars', ['cssVarsService',
 		 *******/
 		const Link = (scope, iElement, iAttrs) => {
 			const toggle = iElement[0].querySelector('rb-toggle');
-			const search = iElement[0].querySelector('.search');
+			const search = iElement[0].querySelector('[data-search]');
 
 			/* Scope Props
 			 **************/

@@ -9,7 +9,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="api in ::source">
+			<tr ng-repeat="api in source | filter: filter">
 				<td ng-repeat="heading in ::headings"
 					ng-class="[
 						'td-' + headings[$index],

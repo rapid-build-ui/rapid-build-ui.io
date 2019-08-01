@@ -5,5 +5,16 @@
 		target="rba-table"
 		target-root="rba-api">
 	</rb-toggle>
+	<rb-input
+		hidden
+		data-search
+		class="search"
+		slot="subtext"
+		value="search"
+		rb-bind="value"
+		icon-kind="search"
+		icon-source="solid"
+		placeholder="search">
+	</rb-input>
 </rb-textcurve>
-<rba-table inject></rba-table>
+<rba-table filter="search" inject></rba-table>
