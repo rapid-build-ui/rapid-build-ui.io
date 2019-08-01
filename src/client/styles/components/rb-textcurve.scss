@@ -3,6 +3,19 @@
  ***************/
 rb-textcurve:not([id^='built__']) {
 	.search {
-		width: 135px;
+		margin-right: 0;
+	}
+
+	/* Responsive
+	 *************/
+	@media (max-width: mapGet($gl-mq-list, xxs)) {
+		.search {
+			width: 130px;
+		}
+	}
+	@media (max-width: mapGet($gl-mq-list, xxxs)) {
+		.search {
+			width: 100px;
+		}
 	}
 }
