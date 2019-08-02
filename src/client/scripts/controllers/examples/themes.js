@@ -7,6 +7,7 @@ angular.module('rapid-build').controller('themesExController', ['$scope', '$elem
 		/* Scope Props
 		 **************/
 		$scope.themes = [
+			{ name: 'default' },
 			{ name: 'lavender', cssClass: 'lavender-theme' }
 		];
 
@@ -22,6 +23,9 @@ angular.module('rapid-build').controller('themesExController', ['$scope', '$elem
 					radios.value = $scope.themes[i];
 					break;
 				}
+
+				if (!!radios.value) return;
+				radios.value = $scope.themes[0];
 			},
 			add(theme) { // :void
 				document.body.classList.add(theme);
@@ -37,7 +41,7 @@ angular.module('rapid-build').controller('themesExController', ['$scope', '$elem
 		const applyTheme = evt => {
 			Themes.remove();
 			const { value: theme } = evt.detail;
-			if (!theme) return;
+			if (!theme || !theme.cssClass) return;
 			Themes.add(theme.cssClass);
 		};
 
