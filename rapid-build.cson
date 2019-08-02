@@ -34,7 +34,28 @@ common:
 		watch:
 			client: [
 				'examples/**'
-				'node_modules/@rapid-build-ui/'
+				# TODO: investigate in rapid build
+				# Not sure why but can't put /**/scripts/
+				# Might have something to do with symlinks.
+				# Listing them out for now to boost dev build performance.
+				'node_modules/@rapid-build-ui/base/scripts/'
+				'node_modules/@rapid-build-ui/form-control/scripts/'
+				'node_modules/@rapid-build-ui/rb-alert/scripts/'
+				'node_modules/@rapid-build-ui/rb-button/scripts/'
+				'node_modules/@rapid-build-ui/rb-checkbox/scripts/'
+				'node_modules/@rapid-build-ui/rb-checkboxes/scripts/'
+				'node_modules/@rapid-build-ui/rb-code/scripts/'
+				'node_modules/@rapid-build-ui/rb-dropdown/scripts/'
+				'node_modules/@rapid-build-ui/rb-icon/scripts/'
+				'node_modules/@rapid-build-ui/rb-input/scripts/'
+				'node_modules/@rapid-build-ui/rb-modal/scripts/'
+				'node_modules/@rapid-build-ui/rb-nav/scripts/'
+				'node_modules/@rapid-build-ui/rb-popover/scripts/'
+				'node_modules/@rapid-build-ui/rb-radios/scripts/'
+				'node_modules/@rapid-build-ui/rb-table/scripts/'
+				'node_modules/@rapid-build-ui/rb-textarea/scripts/'
+				'node_modules/@rapid-build-ui/rb-textcurve/scripts/'
+				'node_modules/@rapid-build-ui/rb-toggle/scripts/'
 			]
 			server: [
 				'data/**'
