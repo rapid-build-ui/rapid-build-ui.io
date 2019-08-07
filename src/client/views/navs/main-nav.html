@@ -2,8 +2,19 @@
 	kind="primary"
 	active='{ "segment": 1 }'
 	responsive='{ "at": 760, "dividers": true }'>
+
 	<a href="/getting-started">getting started</a>
 	<a href="/components/">components</a>
+	<a href="/themes/" ng-if="env.is.dev">themes</a>
 	<a href="/examples/">examples</a>
-	<a href="/browser-support">browser support</a>
+	<a href="/faq/">faq</a>
+	<a href="/builder" title="The Builder">
+		<rb-icon
+			size="1.3"
+			kind="code"
+			source="solid"
+			valign="text-top">
+		</rb-icon>
+	</a>
+
 </rb-nav>

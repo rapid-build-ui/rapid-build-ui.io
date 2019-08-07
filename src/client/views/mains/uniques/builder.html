@@ -1,0 +1,29 @@
+<div>
+	<header class="page-header">
+		<h1>Start Building</h1>
+	</header>
+
+	<section class="xlarge-bottom-bumper">
+		Improvements coming soon...<br>
+		Until then, try coding or pasting in a component.
+	</section>
+
+	<section class="grid">
+		<div class="col-6_sm-7">
+			<rb-code
+				scrollable
+				line-numbers
+				rows="30"
+				mode="html"
+				value="markup"
+				rb-bind="value"
+				theme="one-dark"
+				actions='["clear","copy"]'
+				placeholder="Your awesome html!">
+			</rb-code>
+		</div>
+		<div class="col">
+			<div rba-builder="markup"></div>
+		</div>
+	</section>
+</div>

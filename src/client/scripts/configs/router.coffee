@@ -1,16 +1,23 @@
 angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 	$routeProvider
+		# UNIQUES (unclassified root level routes)
+		# =======
 		.when '/',
 			layout: 'superman'
-			templateUrl: '/views/mains/home.html'
+			templateUrl: '/views/mains/uniques/home.html'
+
+		.when '/builder',
+			layout: 'thor'
+			templateUrl: '/views/mains/uniques/builder.html'
 
 		.when '/getting-started',
 			layout: 'thor'
-			templateUrl: '/views/mains/getting-started.html'
+			templateUrl: '/views/mains/uniques/getting-started.html'
 
-		.when '/browser-support',
-			layout: 'thor'
-			templateUrl: '/views/mains/browser-support.html'
+		# COMPONENTS (Oh Yeah!)
+		# ==========
+		.when '/components/',
+			redirectTo: '/components/rb-alert'
 
 		.when '/components/:component',
 			layout: 'wolverine'
@@ -19,22 +26,50 @@ angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 			views: aside: '/views/navs/components-nav.html'
 			templateUrl: (params) ->
 				view = params.component.replace /rb-/i, ''
-				"/views/components/#{view}.html"
+				"/views/mains/components/#{view}.html"
 
-		.when '/components/',
-			redirectTo: '/components/rb-alert'
+		# THEMES
+		# ======
+		.when '/themes/',
+			redirectTo: '/themes/introduction'
 
-		.when '/examples/:example',
+		.when '/themes/:page',
+			layout: 'wolverine'
+			reloadOnSearch: false
+			views: aside: '/views/navs/themes-nav.html'
+			templateUrl: (params) ->
+				view = params.page
+				"/views/mains/themes/#{view}.html"
+
+		# EXAMPLES
+		# ========
+		.when '/examples/',
+			redirectTo: '/examples/crud'
+
+		.when '/examples/:page',
 			layout: 'wolverine'
 			reloadOnSearch: false
 			views: aside: '/views/navs/examples-nav.html'
 			templateUrl: (params) ->
-				view = params.example
-				"/views/examples/#{view}.html"
+				view = params.page
+				"/views/mains/examples/#{view}.html"
 
-		.when '/examples/',
-			redirectTo: '/examples/crud'
+		# FAQ
+		# ===
+		.when '/faq/',
+			redirectTo: '/faq/list'
 
+		.when '/faq/:page',
+			layout: 'wolverine'
+			reloadOnSearch: false
+			views: aside: '/views/navs/faq-nav.html'
+			templateUrl: (params) ->
+				view = params.page
+				view = 'faq' if view is 'list'
+				"/views/mains/faq/#{view}.html"
+
+		# OTHERWISE (Go Home!)
+		# =========
 		.otherwise
 			redirectTo: '/'
 ]
