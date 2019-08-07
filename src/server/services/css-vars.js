@@ -45,10 +45,10 @@ const getCssVarsFromJsFile = async (clientPath, component) => { // :{}
 	let css = js.match(/(?<=<style>)[^]*(?=<\/style>)/g)[0]; // get the css
 	// await writeFile(_path, css);
 
-	css = css.match(/(?<=\()--rb.+?(?=\))/g).join('\n'); // get all css vars, ex: --rb-nav-link-color, blue
+	css = css.match(/(?<=\()--rb.+?(?=\)(?!\)))/g).join('\n'); // get all css vars, ex: --rb-nav-link-color, blue
 	// await writeFile(_path, css);
 
-	css = css.replace(/(?<=--rb\S*?),\s?/g, ': '); // each line replace first comma with colon space
+	css = css.replace(/(?<!var\(.*?)(?<=--rb\S*?),\s?/g, ': '); // each line replace first comma with colon space
 	// await writeFile(_path, css);
 
 	css = css.replace(/$/gm, ';'); // add semicolon to line endings
