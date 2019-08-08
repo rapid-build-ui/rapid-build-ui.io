@@ -5,14 +5,12 @@ const cssVarsSvc = require('./../services/css-vars');
 
 /* Routes
  *********/
-const Routes = (app, opts={}) => {
-	const clientPath = opts.paths.client;
-
+const Routes = async (app, opts={}) => { // :Promise<void>
 	app.get('/api/css-vars/:component', async (req, res) => {
 		try {
 			const component = req.params.component;
 			const theme     = req.query.theme; // common | light | dark
-			const cssVars   = await cssVarsSvc.getCssVars(clientPath, component, theme);
+			const cssVars   = await cssVarsSvc.getCssVars(component, theme);
 			res.json(cssVars);
 		} catch (error) {
 			const { code, message } = error;
@@ -21,6 +19,11 @@ const Routes = (app, opts={}) => {
 			res.type('json').status(status).send(data);
 		}
 	});
+
+	/* Init
+	 *******/
+	await cssVarsSvc.init(opts.paths); // paths = client & server
+	return cssVarsSvc.makeCssVars();
 }
 
 /* Export it!
