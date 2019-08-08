@@ -41,6 +41,14 @@ angular.module('rapid-build').config ['$routeProvider', ($routeProvider) ->
 				view = params.page
 				"/views/mains/themes/#{view}.html"
 
+		.when '/themes/css-variables/:page',
+			layout: 'wolverine'
+			reloadOnSearch: false
+			views: aside: '/views/navs/themes-nav.html'
+			templateUrl: (params) ->
+				view = params.page
+				"/views/mains/themes/css-variables/#{view}.html"
+
 		# EXAMPLES
 		# ========
 		.when '/examples/',
