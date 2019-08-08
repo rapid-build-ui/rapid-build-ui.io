@@ -7,7 +7,7 @@ angular.module('rapid-build').service('cssVarsService', ['$http', 'ENV',
 		this.get = (component, theme='common') => { // :Promise<object|string>
 			const config = {
 				method: 'GET',
-				url: `/api/css-vars/${component}`,
+				url: `/api/css-variables/${component}`,
 				params: { theme }
 			}
 

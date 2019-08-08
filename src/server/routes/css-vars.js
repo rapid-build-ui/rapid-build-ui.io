@@ -6,7 +6,7 @@ const cssVarsSvc = require('./../services/css-vars');
 /* Routes
  *********/
 const Routes = async (app, opts={}) => { // :Promise<void>
-	app.get('/api/css-vars/:component', async (req, res) => {
+	app.get('/api/css-variables/:component', async (req, res) => {
 		try {
 			const component = req.params.component;
 			const theme     = req.query.theme; // common | light | dark
