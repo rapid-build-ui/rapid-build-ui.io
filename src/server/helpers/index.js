@@ -12,6 +12,9 @@ const Helpers = {
 	copy(src, dest) { // :Promise<void>
 		return fse.copy(src, dest);
 	},
+	exists(_path) { // :boolean (runs sync)
+		return fs.existsSync(_path);
+	},
 	async getFileContents(_path) { // :fileContents<string>
 		const file = await fsPromises.readFile(_path); // :Buffer
 		return file.toString();
