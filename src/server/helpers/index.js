@@ -15,10 +15,6 @@ const Helpers = {
 	exists(_path) { // :boolean (runs sync)
 		return fs.existsSync(_path);
 	},
-	async getFileContents(_path) { // :fileContents<string>
-		const file = await fsPromises.readFile(_path); // :Buffer
-		return file.toString();
-	},
 	getFileName(_path, withExt = true) { // :string (file name)
 		if (withExt) return path.basename(_path);
 		return path.basename(_path, path.extname(_path));
@@ -30,10 +26,14 @@ const Helpers = {
 	mkdir(_path) { // :Promise<void>
 		return fsPromises.mkdir(_path, { recursive: true });
 	},
-	async readdir(_path, filter = true) { // :string[] (file names with extensions)
+	async readDir(_path, filter = true) { // :string[] (file names with extensions)
 		let files = await fsPromises.readdir(_path);
 		if (filter) files = files.filter(file => file[0] !== '.'); // filter out dot files (ex: .DS_Store)
 		return files;
+	},
+	async readFile(_path) { // :Promise<string> (file contents)
+		const file = await fsPromises.readFile(_path); // :Buffer
+		return file.toString();
 	},
 	remove(_path) { // :Promise<void>
 		return fse.remove(_path);

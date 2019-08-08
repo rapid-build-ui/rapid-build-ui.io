@@ -1,13 +1,8 @@
 /************************
  * CSS VARIABLES SERVICE
  ************************/
-const util      = require('util');
-const fs        = require('fs');
-const path      = require('path');
-const exists    = fs.existsSync;
-const mkdir     = util.promisify(fs.mkdir);
-const readFile  = util.promisify(fs.readFile);
-const writeFile = util.promisify(fs.writeFile);
+const path = require('path');
+const Help = require('../helpers');
 
 /* Private
  **********/
@@ -15,10 +10,9 @@ const getClientJsPath = (clientPath, component) => { // :string
 	return path.join(clientPath, 'node_modules', '@rapid-build-ui', component, 'scripts', `${component}.js`);
 }
 
-const getClientJsFile = async (clientPath, component) => { // :string (file contents)
+const getClientJsFile = (clientPath, component) => { // :Promise<string> (file contents)
 	const _path = getClientJsPath(clientPath, component);
-	const file  = await readFile(_path); // :Buffer
-	return file.toString();
+	return Help.readFile(_path);
 }
 
 const getServerCssVarsDir = () => { // :string
@@ -37,22 +31,22 @@ const getCssVarsStructure = () => { // :{}
 
 const getCssVarsFromJsFile = async (clientPath, component) => { // :{}
 	const cssVars = getCssVarsStructure();
-	const _path   = getServerCssVarsPath(component); // for testing writeFile()
+	const _path   = getServerCssVarsPath(component); // for testing Help.writeFile()
 
 	const js = await getClientJsFile(clientPath, component);
-	// await writeFile(_path, js);
+	// await Help.writeFile(_path, js);
 
 	let css = js.match(/(?<=<style>)[^]*(?=<\/style>)/g)[0]; // get the css
-	// await writeFile(_path, css);
+	// await Help.writeFile(_path, css);
 
 	css = css.match(/(?<=\()--rb.+?(?=\)(?!\)))/g).join('\n'); // get all css vars, ex: --rb-nav-link-color, blue
-	// await writeFile(_path, css);
+	// await Help.writeFile(_path, css);
 
 	css = css.replace(/(?<!var\(.*?)(?<=--rb\S*?),\s?/g, ': '); // each line replace first comma with colon space
-	// await writeFile(_path, css);
+	// await Help.writeFile(_path, css);
 
 	css = css.replace(/$/gm, ';'); // add semicolon to line endings
-	// await writeFile(_path, css);
+	// await Help.writeFile(_path, css);
 
 	// populate cssVars
 	for (const [type, theme] of Object.entries(cssVars)) {
@@ -73,10 +67,10 @@ const getCssVarsFromJsFile = async (clientPath, component) => { // :{}
 const writeCssVarsFile = async (clientPath, component) => { // :void
 	try {
 		const dir = getServerCssVarsDir();
-		if (!exists(dir)) await mkdir(dir);
+		if (!Help.exists(dir)) await Help.mkdir(dir);
 		const cssVars     = await getCssVarsFromJsFile(clientPath, component);
 		const cssVarsPath = getServerCssVarsPath(component);
-		await writeFile(cssVarsPath, JSON.stringify(cssVars, null, '\t'));
+		await Help.writeFile(cssVarsPath, JSON.stringify(cssVars, null, '\t'));
 	} catch(error) {
 		console.error(error);
 	}
