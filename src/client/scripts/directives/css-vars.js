@@ -1,8 +1,8 @@
 /*********************
  * CSS VARS DIRECTIVE
  *********************/
-angular.module('rapid-build').directive('rbaCssVars', ['cssVarsService',
-	(cssVarsService) => {
+angular.module('rapid-build').directive('rbaCssVars', ['cssVarsService', 'typeService',
+	(cssVarsService, Type) => {
 		/* COMPILE
 		 **********/
 		const Compile = function(tElement, tAttrs, transclude) {
@@ -51,6 +51,10 @@ angular.module('rapid-build').directive('rbaCssVars', ['cssVarsService',
 					scope.error = error.data.message;
 				});
 
+			/* Init
+			 *******/
+			toggle.open = !Type.is.undefined(iAttrs.open);
+
 			/* Destroy
 			 **********/
 			const destroy = scope.$on('$destroy', () => {
@@ -68,6 +72,9 @@ angular.module('rapid-build').directive('rbaCssVars', ['cssVarsService',
 			scope: {
 				component: '@',
 				theme: '@?'
+				/* VALUELESS
+				 ************/
+				// open: '@?'
 			}
 		};
 	}
